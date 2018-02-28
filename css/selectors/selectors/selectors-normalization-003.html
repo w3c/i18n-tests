@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Selectors: markup decomposed, CSS precomposed</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/selectors/Overview.html#lang-pseudo'>
+<script src="../../resources/testharness.js"></script>
+<script src="../../resources/testharnessreport.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resources/testharness.css">
+<meta name="assert" content="[Exploratory test] A fully decomposed class name will NOT match a fully precomposed CSS selector name.">
+<style type='text/css'>
+.test div { width: 50px; }
+#box.ti\1EBF ngvi\1EC7 t { width: 100px; }
+</style>
+</head>
+<body>
+
+
+
+<div class="test"><div id="box" class="tie&#x302;&#x301;ngvie&#x323;&#x302;t">&#xA0;</div></div>
+
+
+<script>
+test(function() {
+assert_equals(document.getElementById('box').offsetWidth, 50);
+}, " ");
+</script>
+
+<div id='log'></div>
+
+<!-- Notes:
+
+The assertion will hold true only if the user agent does no normalization between class name and selector. Note that the current CSS specification does NOT require this normalization to take place.
+
+-->
+</body>
+</html>

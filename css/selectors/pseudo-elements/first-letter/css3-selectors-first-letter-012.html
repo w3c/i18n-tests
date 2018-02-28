@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Selectors: hindi, consonant + 2 combining characters</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/css3-selectors/#first-letter'>
+<link rel="match" href="reference/css3-selectors-first-letter-012-ref.html">
+<meta name="assert" content=":first-letter will select a devanagari letter and two following combining characters at the start of a line.">
+<style type='text/css'>
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+
+			.test p:first-letter { font-size:300%; }
+			.ref span { font-size: 3em;  }
+		
+@font-face {
+    font-family: 'devanagariWebfont';
+    src: url('support/AnnapurnaSIL-R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+.test, .ref { font-family: devanagariWebfont, serif; }
+
+</style>
+<script src="support/script.js"> </script>
+
+</head>
+<body>
+<p class="instructions">Test passes if the two boxes are identical.</p>
+
+
+<div class="test" lang="hi">
+			<p>बांटना</p>
+			<p>पूंजी निवेश</p>
+			<p></p>
+			</div>
+
+
+
+
+
+<div class="ref" lang="hi">
+			<p><span>बां</span>टना</p>
+			<p><span>पूं</span>जी निवेश</p>
+			<p></p>
+			</div>
+
+
+
+
+</body>
+</html>
