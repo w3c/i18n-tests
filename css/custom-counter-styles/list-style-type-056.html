@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: korean-syllable</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to korean-syllable will produce list markers as described in the document Predefined Counter Styles.">
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: korean-syllable; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the two columns are the same (ignoring the suffix).</p>
+
+
+<div class="test"><ol><li title='1'>가.</li>
+<li title='2'>나.</li>
+<li title='3'>다.</li>
+<li title='4'>라.</li>
+<li title='5'>마.</li>
+<li title='6'>바.</li>
+<li title='7'>사.</li>
+<li title='8'>아.</li>
+<li title='9'>자.</li>
+<li title='10'>차.</li>
+<li title='11'>카.</li>
+<li title='12'>타.</li>
+<li title='13'>파.</li>
+<li title='14'>하.</li>
+</ol><hr /><ol start='15'><li title='15'>가가.</li></ol>
+<ol start='16'><li title='16'>가나.</li></ol>
+<ol start='43'><li title='43'>다가.</li></ol>
+<ol start='77'><li title='77'>마사.</li></ol>
+<ol start='80'><li title='80'>마차.</li></ol>
+<ol start='99'><li title='99'>사가.</li></ol>
+<ol start='100'><li title='100'>사나.</li></ol>
+<ol start='101'><li title='101'>사다.</li></ol>
+<ol start='222'><li title='222'>가가타.</li></ol>
+<ol start='540'><li title='540'>나차아.</li></ol>
+<ol start='999'><li title='999'>마가마.</li></ol>
+<ol start='1000'><li title='1000'>마가바.</li></ol>
+<ol start='1005'><li title='1005'>마가카.</li></ol>
+<ol start='1060'><li title='1060'>마마차.</li></ol>
+<ol start='1065'><li title='1065'>마바가.</li></ol>
+<ol start='1800'><li title='1800'>자나아.</li></ol>
+<ol start='1860'><li title='1860'>자바타.</li></ol>
+<ol start='5865'><li title='5865'>나가타파.</li></ol>
+<ol start='7005'><li title='7005'>나사차마.</li></ol>
+<ol start='7800'><li title='7800'>나카카나.</li></ol>
+<ol start='7864'><li title='7864'>나타가차.</li></ol>
+<ol start='9999'><li title='9999'>다아하다.</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

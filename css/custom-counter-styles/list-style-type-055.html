@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: korean-consonant</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to korean-consonant will produce list markers as described in the document Predefined Counter Styles.">
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: korean-consonant; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the two columns are the same (ignoring the suffix).</p>
+
+
+<div class="test"><ol><li title='1'>ㄱ.</li>
+<li title='2'>ㄴ.</li>
+<li title='3'>ㄷ.</li>
+<li title='4'>ㄹ.</li>
+<li title='5'>ㅁ.</li>
+<li title='6'>ㅂ.</li>
+<li title='7'>ㅅ.</li>
+<li title='8'>ㅇ.</li>
+<li title='9'>ㅈ.</li>
+<li title='10'>ㅊ.</li>
+<li title='11'>ㅋ.</li>
+<li title='12'>ㅌ.</li>
+<li title='13'>ㅍ.</li>
+<li title='14'>ㅎ.</li>
+</ol><hr /><ol start='15'><li title='15'>ㄱㄱ.</li></ol>
+<ol start='16'><li title='16'>ㄱㄴ.</li></ol>
+<ol start='43'><li title='43'>ㄷㄱ.</li></ol>
+<ol start='77'><li title='77'>ㅁㅅ.</li></ol>
+<ol start='80'><li title='80'>ㅁㅊ.</li></ol>
+<ol start='99'><li title='99'>ㅅㄱ.</li></ol>
+<ol start='100'><li title='100'>ㅅㄴ.</li></ol>
+<ol start='101'><li title='101'>ㅅㄷ.</li></ol>
+<ol start='222'><li title='222'>ㄱㄱㅌ.</li></ol>
+<ol start='540'><li title='540'>ㄴㅊㅇ.</li></ol>
+<ol start='999'><li title='999'>ㅁㄱㅁ.</li></ol>
+<ol start='1000'><li title='1000'>ㅁㄱㅂ.</li></ol>
+<ol start='1005'><li title='1005'>ㅁㄱㅋ.</li></ol>
+<ol start='1060'><li title='1060'>ㅁㅁㅊ.</li></ol>
+<ol start='1065'><li title='1065'>ㅁㅂㄱ.</li></ol>
+<ol start='1800'><li title='1800'>ㅈㄴㅇ.</li></ol>
+<ol start='1860'><li title='1860'>ㅈㅂㅌ.</li></ol>
+<ol start='5865'><li title='5865'>ㄴㄱㅌㅍ.</li></ol>
+<ol start='7005'><li title='7005'>ㄴㅅㅊㅁ.</li></ol>
+<ol start='7800'><li title='7800'>ㄴㅋㅋㄴ.</li></ol>
+<ol start='7864'><li title='7864'>ㄴㅌㄱㅊ.</li></ol>
+<ol start='9999'><li title='9999'>ㄷㅇㅎㄷ.</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>
