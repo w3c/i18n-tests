@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>text-decoration-skip edges</title>
+<meta name="assert" content="text-decoration:underline; text-decoration-skip:edges; there is a small gap in the line where the two spans meet">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#line-decoration">
+<!-- cosmetic styling -->
+<style>
+#htmlsrc { margin: 2em; }
+#htmlsrc p {
+	font-size: 28px;
+	border-radius: 5px;
+	line-height: 1.5;
+	}
+#htmlsrc span:first-of-type { color: blue; }
+:lang(mn) { font-family: "Mongolian Baiti", "Noto sans Mongolian", serif; }
+</style>
+<!-- the test -->
+<style>
+div span {
+text-decoration:underline;
+text-decoration-skip:edges;
+}</style>
+</head>
+<body>
+<p class="instructions">Test passes if there is a small gap in the line immediately after the blue text.</p>
+<div id="htmlsrc">
+
+<div>
+<p lang="ja"><span>可能性を最大限に</span><span>導き出すために</span></p>
+<p lang="zh"><span>引发网络的全部潜能</span><span>引發網絡的全部潛能</span></p>
+<p lang="en"><span>abra</span><span>cadabra</span></p>
+<p lang="ar"><span>ا به‌درستی</span><span>جهانی</span></p>
+<p lang="mn"><span>ᠦᠨᠳᠦᠰ</span><span>ᠦᠲᠡᠨᠠᠵᠢᠯᠯᠠᠭ᠎ᠠ</span></p>
+</div>  </div>
+</body>
+</html>

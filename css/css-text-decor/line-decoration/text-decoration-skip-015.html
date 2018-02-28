@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>text-decoration-skip spaces</title>
+<meta name="assert" content="text-decoration:underline; text-decoration-skip:spaces; the line below the characters skips ordinary spaces">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#line-decoration">
+<!-- cosmetic styling -->
+<style>
+#htmlsrc { margin: 2em; }
+#htmlsrc p {
+	font-size: 28px;
+	border-radius: 5px;
+	line-height: 1.5;
+	}
+</style>
+<!-- the test -->
+<style>
+div span {
+text-decoration:underline;
+text-decoration-skip:spaces;
+}</style>
+</head>
+<body>
+<p class="instructions">Test passes if the line below the characters skips the spaces.</p>
+<div id="htmlsrc">
+<div>
+<p lang="en"><span>&#x0020;U+0020&#x0020;SPACE&#x0020;character&#x0020;</span></p>
+</div>  </div>
+</body>
+</html>
