@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>ruby autohide (v)</title>
+<meta name="assert" content="If a ruby annotation has the exact same text content as its base, it is hidden.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#autohide">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#autohide">
+<style type="text/css">
+.test { margin: 40px;  padding: 10px; font-size: 110px; }
+rt { color: blue; }
+</style>
+<style type="text/css">/* this is the test */
+.test { writing-mode: vertical-rl; -webkit-writing-mode: vertical-lr; writing-mode: tb-rl; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the text is vertical and there is no annotation alongside the second base character.</p>
+<div class="test" lang="ja"><ruby>振<rt>ふ</rt>り<rt>り</rt>仮<rt>が</rt>名<rt>な</rt></ruby></div>
+<!-- Notes:
+-->
+</body>
+</html>

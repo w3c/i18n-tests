@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>ruby-position:inter-character default</title>
+<meta name="assert" content="[Exploratory test] to determine whether the browser applies special sizing for zh-TW language annotations.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#default-ua-ruby">
+<style type="text/css">
+.test { margin: 20px;  padding: 40px; font-size: 80px; writing-mode: vertical-rl; }
+p {margin-top: 0; }
+rt { color: blue; }
+</style>
+<style type="text/css">/* this is the test */
+ruby { ruby-position: inter-character; }
+</style>
+</head>
+<body>
+<p class="instructions">Note whether the size of the zhuyin annotations are closer to 30% of the base character in the second line (zh-TW).</p>
+<div class="test">
+<p><ruby>安<rt>ㄢ</rt>西<rt>ㄒㄧ</rt>心<rt>ㄒㄧㄣ</rt></ruby></p>
+<p lang="zh-TW"><ruby>安<rt>ㄢ</rt>西<rt>ㄒㄧ</rt>心<rt>ㄒㄧㄣ</rt></ruby></p>
+</div>
+<!-- Notes:
+This test is looking to see whether the informative UA style sheet rule is applied to what is assumed to be bopomofo annotations. This rule may need to be overwritten by the user if the annotations are pinyin or something other than bopomofo.
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>ruby-merge: auto</title>
+<meta name="assert" content="[Exploratory test] ruby-merge:auto produces a distribution of annotation text across base text as described in JLREQ.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#collapsed-ruby">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#collapsed-ruby">
+<style type="text/css">
+.test { margin: 20px;  padding: 40px; font-size: 110px; }
+rt { color: blue; }
+rt#middle { color: #b1d7fe; }
+/* the CSS above is not part of the test */
+ruby { ruby-merge: auto; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the first base character is associated with 1 annotation character, and the remaining annotation characters are distributed evenly over the second and third base characters.</p>
+<div class="test" lang="ja"><ruby><rb>思</rb><rt>し</rt><rb>春</rb><rt id="middle">しゅん</rt><rb>期</rb><rt>き</rt></ruby></div>
+<!-- Notes:
+The algorithm described in JLREQ is not mandatory for the auto value.
+-->
+</body>
+</html>

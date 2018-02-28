@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>ruby-position control</title>
+<meta name="assert" content="[Exploratory test] to determine whether and how the browser handles ruby by default.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#rubypos">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#rubypos">
+<style type="text/css">
+.test { margin: 20px;  padding: 40px; font-size: 110px; }
+rt { color: blue; }
+</style>
+</head>
+<body>
+<p class="instructions">Note the position of the annotation relative to the base text.</p>
+<div class="test" lang="ja"><ruby>漢<rt>かん</rt>字<rt>じ</rt></ruby></div>
+<!-- Notes:
+This test is a control, to ascertain whether a ruby position is applied automatically by the browser.
+-->
+</body>
+</html>

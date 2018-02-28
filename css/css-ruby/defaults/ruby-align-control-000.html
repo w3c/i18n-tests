@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>ruby-align control</title>
+<meta name="assert" content="[Exploratory test] to establish how the browser aligns ruby text by default.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#rubypos">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#rubypos">
+<style type="text/css">
+.test { margin: 20px;  padding: 40px; font-size: 110px; }
+rt { color: blue; }
+ruby { border: 1px solid #b1d7fe; }
+</style>
+</head>
+<body>
+<p class="instructions">Note how the base text and annotation text are aligned relative to each other.</p>
+<div class="test" lang="ja">
+<ruby><rb>境界面</rb><rt>インターフェース</rt></ruby>
+<ruby><rb>浮世絵</rb><rt>うきよえ</rt></ruby>
+<ruby><rb>浮世絵</rb><rt>ab c de</rt></ruby>
+<ruby><rb>ab c de</rb><rt>インターフェース</rt></ruby>
+</div>
+<!-- Notes:
+This test is a control, to ascertain whether a ruby position is applied automatically by the browser.
+-->
+</body>
+</html>
