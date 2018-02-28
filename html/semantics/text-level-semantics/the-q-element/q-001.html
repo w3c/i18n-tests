@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>one q</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/text-level-semantics.html#the-q-element">
+<meta name="assert" content="Text inside a q element will be rendered with quotation marks.">
+<style type="text/css">
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the word <samp>two</samp> is surrounded by quotation marks.</p>
+<div class="test">one <q>two</q></div>
+<!-- Notes:
+the lang attribute has been left off the html tag because this tests defaults 
+-->
+</body>
+</html>

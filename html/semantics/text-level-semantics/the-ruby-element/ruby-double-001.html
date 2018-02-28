@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The ruby elements: double-sided ruby, mono, one rtc</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element'>
+<meta name="assert" content="If there are two sets of mono-ruby annotations, and only one rtc element, both are placed alongside the base text, and alongside the appropriate base character.">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+.test { font-size: 42px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if both lowercase letters and numbers are alongside the appropriate uppercase letters, but on separate lines, where A corresponds to a and 1, and so on.</p>
+<div class="test"> 
+<ruby><rb>A</rb><rb>B</rb><rb>C</rb><rb>D</rb><rt>aaa</rt><rt>bb</rt><rt>cc</rt><rt>d</rt><rtc><rt>111</rt><rt>22</rt><rt>33</rt><rt>4</rt></rtc></ruby>...
+</div>
+</body>
+</html>

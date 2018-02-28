@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Bidi rendering: textarea with dir=auto, all-N between all-Rs</title>
+<link rel='author' title='HTML5 bidi test WG' href='mailto:public-i18n-bidi@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/rendering.html#bidi-rendering'>
+<link rel="match" href="reference/bidi-rendering-textarea-105-ref.html">
+<meta name="assert" content="       When dir='auto', the direction is set according to the first strong character       of the text.       For textarea and pre elements, the heuristic is applied on a per-paragraph level.       If there is no strong character, as in this test, the direction defaults to LTR.">
+<style type='text/css'>
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+input { margin: 5px; }
+/*
+@font-face {
+    font-family: 'ezra_silregular';
+    src: url('support/sileotsr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'scheherazaderegular';
+    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
+    font-weight: normal;
+    font-style: normal;
+	}
+.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
+*/
+
+      textarea {
+        font-size:18px;
+        text-align:left;
+      }
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+<!--<div class="comments">
+      Key to entities used below:
+        &#x5d0; - The Hebrew letter Alef (strongly RTL).
+      We use text-align:left because neither the dir="auto" nor the unicode-bidi:plaintext
+      specification states whether text-align:start and text-align:end should obey the paragraph
+      direction or the direction property in a unicode-bidi:plaintext element.
+      The ...! paragraph, being neutral, is supposed to be displayed LTR (i.e. as ...!, not as !...)
+      despite both the paragraph before it and the paragraph after it being all-RTL, which makes the
+      element as a whole RTL.
+    </div>-->
+
+
+
+<div class="test">
+      <div dir="ltr">
+        <textarea rows="4" dir="auto">
+&#x5d0;
+...!
+&#x5d0;
+        </textarea>
+      </div>
+      <div dir="rtl">
+        <textarea rows="4" dir="auto">
+&#x5d0;
+...!
+&#x5d0;
+        </textarea>
+      </div>
+    </div>
+
+
+
+
+
+<div class="ref">
+      <div dir="ltr">
+        <textarea rows="4" dir="rtl">
+&#x5d0;
+!...
+&#x5d0;
+        </textarea>
+      </div>
+      <div dir="rtl">
+        <textarea rows="4" dir="rtl">
+&#x5d0;
+!...
+&#x5d0;
+        </textarea>
+      </div>
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>q + lang</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="The browser uses different quotation marks when the lang tag is set.">
+<style type="text/css">
+.test { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+p:before { content: '[' attr(lang) '] '; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the quotation marks vary across any of the lines below.</p>
+
+<div class="test">
+<p>one <q>two <q>three</q></q></p>
+<p lang="af">one <q>two <q>three</q></q></p>
+<p lang="agq">one <q>two <q>three</q></q></p>
+<p lang="ak">one <q>two <q>three</q></q></p>
+<p lang="am">one <q>two <q>three</q></q></p>
+<p lang="ar">one <q>two <q>three</q></q></p>
+<p lang="asa">one <q>two <q>three</q></q></p>
+<p lang="az-Cyrl">one <q>two <q>three</q></q></p>
+<p lang="bas">one <q>two <q>three</q></q></p>
+<p lang="bem">one <q>two <q>three</q></q></p>
+<p lang="bez">one <q>two <q>three</q></q></p>
+<p lang="bg">one <q>two <q>three</q></q></p>
+<p lang="bm">one <q>two <q>three</q></q></p>
+<p lang="bn">one <q>two <q>three</q></q></p>
+<p lang="br">one <q>two <q>three</q></q></p>
+<p lang="brx">one <q>two <q>three</q></q></p>
+<p lang="bs-Cyrl">one <q>two <q>three</q></q></p>
+<p lang="ca">one <q>two <q>three</q></q></p>
+<p lang="cgg">one <q>two <q>three</q></q></p>
+<p lang="chr">one <q>two <q>three</q></q></p>
+<p lang="cs">one <q>two <q>three</q></q></p>
+<p lang="da">one <q>two <q>three</q></q></p>
+<p lang="dav">one <q>two <q>three</q></q></p>
+<p lang="de">one <q>two <q>three</q></q></p>
+<p lang="de-CH">one <q>two <q>three</q></q></p>
+<p lang="dje">one <q>two <q>three</q></q></p>
+<p lang="dua">one <q>two <q>three</q></q></p>
+<p lang="dyo">one <q>two <q>three</q></q></p>
+<p lang="dz">one <q>two <q>three</q></q></p>
+<p lang="ebu">one <q>two <q>three</q></q></p>
+<p lang="ee">one <q>two <q>three</q></q></p>
+<p lang="el">one <q>two <q>three</q></q></p>
+<p lang="en">one <q>two <q>three</q></q></p>
+<p lang="es">one <q>two <q>three</q></q></p>
+<p lang="et">one <q>two <q>three</q></q></p>
+<p lang="eu">one <q>two <q>three</q></q></p>
+<p lang="ewo">one <q>two <q>three</q></q></p>
+<p lang="fa">one <q>two <q>three</q></q></p>
+<p lang="ff">one <q>two <q>three</q></q></p>
+<p lang="fi">one <q>two <q>three</q></q></p>
+<p lang="fr">one <q>two <q>three</q></q></p>
+<p lang="fr-CA">one <q>two <q>three</q></q></p>
+<p lang="fr-CH">one <q>two <q>three</q></q></p>
+<p lang="gsw">one <q>two <q>three</q></q></p>
+<p lang="gu">one <q>two <q>three</q></q></p>
+<p lang="guz">one <q>two <q>three</q></q></p>
+<p lang="ha">one <q>two <q>three</q></q></p>
+<p lang="he">one <q>two <q>three</q></q></p>
+<p lang="hi">one <q>two <q>three</q></q></p>
+<p lang="hr">one <q>two <q>three</q></q></p>
+<p lang="hu">one <q>two <q>three</q></q></p>
+<p lang="id">one <q>two <q>three</q></q></p>
+<p lang="ig">one <q>two <q>three</q></q></p>
+<p lang="it">one <q>two <q>three</q></q></p>
+<p lang="ja">one <q>two <q>three</q></q></p>
+<p lang="jgo">one <q>two <q>three</q></q></p>
+<p lang="jmc">one <q>two <q>three</q></q></p>
+<p lang="kab">one <q>two <q>three</q></q></p>
+<p lang="kam">one <q>two <q>three</q></q></p>
+<p lang="kde">one <q>two <q>three</q></q></p>
+<p lang="kea">one <q>two <q>three</q></q></p>
+<p lang="khq">one <q>two <q>three</q></q></p>
+<p lang="ki">one <q>two <q>three</q></q></p>
+<p lang="kkj">one <q>two <q>three</q></q></p>
+<p lang="kln">one <q>two <q>three</q></q></p>
+<p lang="km">one <q>two <q>three</q></q></p>
+<p lang="kn">one <q>two <q>three</q></q></p>
+<p lang="ko">one <q>two <q>three</q></q></p>
+<p lang="ksb">one <q>two <q>three</q></q></p>
+<p lang="ksf">one <q>two <q>three</q></q></p>
+<p lang="lag">one <q>two <q>three</q></q></p>
+<p lang="lg">one <q>two <q>three</q></q></p>
+<p lang="ln">one <q>two <q>three</q></q></p>
+<p lang="lo">one <q>two <q>three</q></q></p>
+<p lang="lt">one <q>two <q>three</q></q></p>
+<p lang="lu">one <q>two <q>three</q></q></p>
+<p lang="luo">one <q>two <q>three</q></q></p>
+<p lang="luy">one <q>two <q>three</q></q></p>
+<p lang="lv">one <q>two <q>three</q></q></p>
+<p lang="mas">one <q>two <q>three</q></q></p>
+<p lang="mer">one <q>two <q>three</q></q></p>
+<p lang="mfe">one <q>two <q>three</q></q></p>
+<p lang="mg">one <q>two <q>three</q></q></p>
+<p lang="mgo">one <q>two <q>three</q></q></p>
+<p lang="mk">one <q>two <q>three</q></q></p>
+<p lang="ml">one <q>two <q>three</q></q></p>
+<p lang="mr">one <q>two <q>three</q></q></p>
+<p lang="ms">one <q>two <q>three</q></q></p>
+<p lang="mua">one <q>two <q>three</q></q></p>
+<p lang="my">one <q>two <q>three</q></q></p>
+<p lang="naq">one <q>two <q>three</q></q></p>
+<p lang="nb">one <q>two <q>three</q></q></p>
+<p lang="nd">one <q>two <q>three</q></q></p>
+<p lang="nl">one <q>two <q>three</q></q></p>
+<p lang="nmg">one <q>two <q>three</q></q></p>
+<p lang="nn">one <q>two <q>three</q></q></p>
+<p lang="nnh">one <q>two <q>three</q></q></p>
+<p lang="nus">one <q>two <q>three</q></q></p>
+<p lang="nyn">one <q>two <q>three</q></q></p>
+<p lang="pl">one <q>two <q>three</q></q></p>
+<p lang="pt">one <q>two <q>three</q></q></p>
+<p lang="pt-PT">one <q>two <q>three</q></q></p>
+<p lang="rn">one <q>two <q>three</q></q></p>
+<p lang="ro">one <q>two <q>three</q></q></p>
+<p lang="rof">one <q>two <q>three</q></q></p>
+<p lang="ru">one <q>two <q>three</q></q></p>
+<p lang="rw">one <q>two <q>three</q></q></p>
+<p lang="rwk">one <q>two <q>three</q></q></p>
+<p lang="saq">one <q>two <q>three</q></q></p>
+<p lang="sbp">one <q>two <q>three</q></q></p>
+<p lang="seh">one <q>two <q>three</q></q></p>
+<p lang="ses">one <q>two <q>three</q></q></p>
+<p lang="sg">one <q>two <q>three</q></q></p>
+<p lang="shi">one <q>two <q>three</q></q></p>
+<p lang="shi-Latn">one <q>two <q>three</q></q></p>
+<p lang="si">one <q>two <q>three</q></q></p>
+<p lang="sk">one <q>two <q>three</q></q></p>
+<p lang="sl">one <q>two <q>three</q></q></p>
+<p lang="sn">one <q>two <q>three</q></q></p>
+<p lang="so">one <q>two <q>three</q></q></p>
+<p lang="sq">one <q>two <q>three</q></q></p>
+<p lang="sr">one <q>two <q>three</q></q></p>
+<p lang="sr-Latn">one <q>two <q>three</q></q></p>
+<p lang="sv">one <q>two <q>three</q></q></p>
+<p lang="sw">one <q>two <q>three</q></q></p>
+<p lang="swc">one <q>two <q>three</q></q></p>
+<p lang="ta">one <q>two <q>three</q></q></p>
+<p lang="te">one <q>two <q>three</q></q></p>
+<p lang="teo">one <q>two <q>three</q></q></p>
+<p lang="th">one <q>two <q>three</q></q></p>
+<p lang="ti-ER">one <q>two <q>three</q></q></p>
+<p lang="to">one <q>two <q>three</q></q></p>
+<p lang="tr">one <q>two <q>three</q></q></p>
+<p lang="twq">one <q>two <q>three</q></q></p>
+<p lang="tzm">one <q>two <q>three</q></q></p>
+<p lang="uk">one <q>two <q>three</q></q></p>
+<p lang="ur">one <q>two <q>three</q></q></p>
+<p lang="vai">one <q>two <q>three</q></q></p>
+<p lang="vai-Latn">one <q>two <q>three</q></q></p>
+<p lang="vi">one <q>two <q>three</q></q></p>
+<p lang="vun">one <q>two <q>three</q></q></p>
+<p lang="xh">one <q>two <q>three</q></q></p>
+<p lang="xog">one <q>two <q>three</q></q></p>
+<p lang="yav">one <q>two <q>three</q></q></p>
+<p lang="yo">one <q>two <q>three</q></q></p>
+<p lang="zh">one <q>two <q>three</q></q></p>
+<p lang="zh-Hant">one <q>two <q>three</q></q></p>
+</div>
+<!-- Notes:
+- the lang attribute has been left off the html tag because this tests defaults
+- the rationale for this test is that CSS suggests this would be appropriate
+-->
+</body>
+</html>

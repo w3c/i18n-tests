@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The ruby elements: rb styling, no rb tag</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element'>
+<meta name="assert" content="rb elements can be styled when no rb tags are used.">
+<style type='text/css'>
+
+rb  { background-color: #39f; color: white; }
+
+/* the CSS below is not part of the test */
+.test { font-size: 42px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the uppercase letters (only) have a blue background.</p>
+
+
+<div class="test">
+<ruby>A<rt>aaa</rt>B<rt>bb</rt>C<rt>cc</rt>D<rt>d</rt></ruby>...
+</div>
+
+
+
+
+
+</body>
+</html>

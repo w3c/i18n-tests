@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Translate flag test: Default</title>
+<style>
+.title:after { content: attr(title); }
+.lang:after { content: attr(lang); }
+</style>
+</head>
+
+<body>
+<ol>
+<li><p>test &gt; <img class="alt" alt="This  text should be translated." src="xxxx.png" /></p></li>
+<li><p>test &gt; <img translate="no" class="alt" alt="This text should NOT be translated." src="xxxx.png" /></p></li>
+
+<li><p><span class="title" title="This text should be translated.">test &gt;  </span></p></li>
+<li><p><span class="title" translate="no" title="This text should NOT be translated.">test &gt; </span></p></li>
+
+<li><p><input class="input" placeholder="This text should be translated" /></p></li>
+<li><p><input class="input" translate="no" placeholder="This text should NOT be translated" /></p></li>
+
+<li><p><span class="lang" lang="en">test &gt; </span></p></li>
+<li><p><span class="lang" translate="no" lang="en">test &gt;  </span></p></li>
+</ol>
+
+
+</body>
+</html>

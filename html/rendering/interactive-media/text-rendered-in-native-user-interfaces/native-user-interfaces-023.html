@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  dir="rtl"  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Native user interfaces: javascript confirm box, rtl on html, R</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/rendering.html#text-rendered-in-native-user-interfaces'>
+<meta name='flags' content='interact'>
+<meta name="assert" content="When the html tag sets dir to rtl, text runs in a JavaScript confirm box are ordered according to the first strong character. In this case class R.">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+.test { text-align: center; }
+button { font-family: serif, sans-serif; font-size: 18px; border-radius: 10px; }
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Click on the button. Test passes if the order of characters in the confirm box follows that in the button.</p>
+
+
+<div class="test"><button onclick="confirm('\u05D0\u05D7\u05D3 \u05E9\u05E0\u05D9\u05DD three four'); return false;">&#x202B;&#x05D0;&#x05D7;&#x05D3; &#x05E9;&#x05E0;&#x05D9;&#x05DD; three four&#x202C;</button></div>
+
+
+
+
+</body>
+</html>

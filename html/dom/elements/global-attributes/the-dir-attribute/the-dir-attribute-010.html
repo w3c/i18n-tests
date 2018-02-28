@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html    lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The dir attribute: default direction, basic test</title>
+<link rel='author' title='HTML5 bidi test WG' href='mailto:public-i18n-bidi@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/dom.html#the-dir-attribute'>
+<link rel="match" href="reference/the-dir-attribute-010-ref.html">
+<meta name="assert" content="If the root element has no dir attribute, the directionality of an element is 'ltr'.">
+<style type='text/css'>
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+input { margin: 5px; }
+/*
+@font-face {
+    font-family: 'ezra_silregular';
+    src: url('support/sileotsr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'scheherazaderegular';
+    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
+    font-weight: normal;
+    font-style: normal;
+	}
+.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
+*/
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+
+
+<div class="test"><p>مكتب W3C הישראלי</p></div>
+
+
+
+
+
+<div class="test"><p>&#x202A;مكتب W3C הישראלי&#x202C;</p></div>
+
+
+
+
+</body>
+</html>

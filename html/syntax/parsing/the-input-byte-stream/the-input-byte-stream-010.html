@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+ <meta charset="iso-8859-15"> <title>meta charset attribute, lowercase</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/syntax.html#the-input-byte-stream'>
+<script src="../../../../resources/testharness.js"></script>
+<script src="../../../../resources/testharnessreport.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../resources/testharness.css">
+<meta name="assert" content="The character encoding of the page can be set by a meta element with charset attribute when the encoding label is in lowercase.">
+<meta name='flags' content='http'>
+<style type='text/css'>
+.test div { width: 50px; }</style>
+<link rel="stylesheet" type="text/css" href="support/encodingtests-15.css">
+</head>
+<body>
+
+
+
+<div class='test'><div id='box' class='ýäè'>&#xA0;</div></div>
+
+
+<!--Notes:
+
+The only character encoding declaration for this HTML file is in the charset attribute of the meta element, which declares the encoding to be ISO 8859-15.
+
+The test contains a div with a class name that contains the following sequence of bytes: 0xC3 0xBD 0xC3 0xA4 0xC3 0xA8. These represent different sequences of characters in ISO 8859-15, ISO 8859-1 and UTF-8. The external, UTF-8-encoded stylesheet contains a selector <code>.test div.&#x00C3;&#x0153;&#x00C3;&#x20AC;&#x00C3;&#x0161;</code>. This matches the sequence of bytes above when they are interpreted as ISO 8859-15. If the class name matches the selector then the test will pass.
+
+On the W3C Apache server the .htaccess file says:
+<Files ~ 'the-input-byte-stream-009.html'>
+ForceType 'text/html'
+</Files>
+This should prevent the file from having a encoding declaration in the HTTP header, however some settings on the server override that and send files as 'text/html; charset=utf-8'.  To counter this it was necessary to add the following to a .htaccess file higher up the file hierarchy:
+RemoveCharset php
+AddDefaultCharSet off
+
+-->
+<script>
+test(function() {
+assert_equals(document.getElementById('box').offsetWidth, 100);
+}, " ");
+</script>
+
+<div id='log'></div>
+
+</body>
+</html>

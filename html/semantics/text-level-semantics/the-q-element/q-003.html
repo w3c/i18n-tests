@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>nested qs, difference?</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/text-level-semantics.html#the-q-element">
+<meta name="assert" content="Text in nested q elements are rendered with different nested quotation marks.">
+<style type="text/css">
+.test { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the word <samp>three</samp> and the phrase <samp>two three</samp> are surrounded by DIFFERENT quotation marks.</p>
+<div class="test">one <q>two <q>three</q></q></div>
+<!-- Notes:
+- the lang attribute has been left off the html tag because this tests defaults
+- the spec doesn't actually require this, but suggests it in the rendering section
+-->
+</body>
+</html>

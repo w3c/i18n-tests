@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The br element: BR in inline ancestors</title>
+<link rel='author' title='HTML5 bidi test WG' href='mailto:public-i18n-bidi@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-br-element'>
+<meta name="assert" content="'A br element should separate paragraphs for the purposes of the Unicode bidirectional algorithm.' 'If an inline element is broken around a bidi paragraph boundary (e.g. if split by a block or forced paragraph break), then the bidi control codes corresponding to the end of the element are added before the interruption and the codes corresponding to the start of the element are added after it. (In other words, any embedding levels or overrides started by the element are closed at the paragraph break and reopened on the other side of it.)'">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+input { margin: 5px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the two boxes are identical.</p>
+<!--<div class="comments">
+      Key to entities used below:
+        &#x5d0; ... &#x5d8; - The first nine Hebrew letters (strongly RTL).
+        &#x200e; - The LRM (left-to-right mark) formatting character (invisible, stronly LTR).
+        &#x2005; - The RLM (right-to-left mark) formatting character (invisible, stronly RTL).
+        &#x202d; - The LRO (left-to-right override) formatting character.
+        &#x202c; - The PDF (pop directional formatting) formatting character; closes LRO.
+    </div>-->
+
+
+
+<div class="ref">
+      &#x202d;&#x5d0;&#x5d1; &#x5d2;&#x5d3; 1. I like &#x5d4;. fg hi&#x202c;
+      <br/>
+      &#x202d;ab cd 2. &#x5d4; is great! &#x5d5;&#x5d6; &#x5d7;&#x5d8;&#x202c;
+    </div>
+
+
+
+
+
+<div class="ref">
+      &#x202d;&#x5d0;&#x5d1; &#x5d2;&#x5d3; 1. I like &#x5d4;. fg hi&#x202c;
+      <br/>
+      &#x202d;ab cd 2. &#x5d4; is great! &#x5d5;&#x5d6; &#x5d7;&#x5d8;&#x202c;
+    </div>
+
+
+
+
+</body>
+</html>

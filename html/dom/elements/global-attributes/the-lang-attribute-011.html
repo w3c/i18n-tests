@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Multiple languages in HTTP header</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/dom.html#the-lang-and-xml:lang-attributes'>
+<script src="../../../../resources/testharness.js"></script>
+<script src="../../../../resources/testharnessreport.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../testharness.css">
+<meta name="assert" content="[Exploratory] The browser will not recognize a language declaration in the HTTP Content Language header when more than one language is declared.">
+<meta name='flags' content='http dom :lang'>
+<style type='text/css'>
+#colonlangcontroltest { color: red; font-weight: bold; width: 400px; }
+#colonlangcontroltest:lang(xx) { display:none; } 
+.test div { width: 50px; }
+#box:lang(ko) { width: 100px; }
+#box:lang(zh) { width: 100px; }
+#box:lang(ja) { width: 100px; }
+
+/* styling for debugging related notes */
+.extra span#ko:lang(ko) { background-color: #0000FF; color: white; padding: 0 5px; }
+.extra span#zh:lang(zh) { background-color: #0000FF; color: white; padding: 0 5px; }
+.extra span#ja:lang(ja) { background-color: #0000FF; color: white; padding: 0 5px; }
+</style>
+</head>
+<body>
+<div class="test"><div id="box">&#xA0;</div></div>
+<p lang='xx' id='colonlangcontroltest'>This test failed because it relies on :lang for results, but :lang is not supported by this browser.</p>
+<!--Notes:
+This test uses :lang to detect whether the language has been set. If :lang is not supported, a message will appear and the test will fail.
+
+The HTTP headers include the following: Content-Language: ko,zh,ja
+-->
+<script>
+test(function() {
+assert_equals(document.getElementById('colonlangcontroltest').offsetWidth, 0)
+assert_equals(document.getElementById('box').offsetWidth, 50);
+}, " ");
+</script>
+<div id='log'></div>
+<p class="extra">The following language(s) are set if the background is blue: <span id='ko'>ko</span>, <span id='zh'>zh</span>, <span id='ja'>ja</span>.</p>
+</body>
+</html>

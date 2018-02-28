@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="UTF-8"/>
+<title>HTML5, character references: supplementary character</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/syntax.html#character-references'>
+<script src="../../../../resources/testharness.js"></script>
+<script src="../../../../resources/testharnessreport.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../resources/testharness.css">
+<meta name='flags' content='dom'>
+<meta name="assert" content="A hexadecimal numeric reference containing the Unicode code point of a supplementary character produces the intended character.">
+</head>
+<style>
+.test { color: white; }
+</style>
+<body>
+<div class="test" id="test"><span id="one">&#x10384;</span><span id="two" class="reference">𐎄</span></div>
+<script>
+test(function() {
+assert_equals(document.getElementById("one").firstChild.data, document.getElementById("two").firstChild.data);
+}, " ");
+</script>
+<div id='log'></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The ruby elements: rt styling, only start tags</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element'>
+<meta name="assert" content="rt elements can be styled when only start tags are used.">
+<style type='text/css'>
+
+rt  { background-color: #39f; color: white; }
+
+/* the CSS below is not part of the test */
+.test { font-size: 42px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the lowercase letters (only) have a blue background.</p>
+
+
+<div class="test">
+<ruby><rb>A<rt>aaa<rb>B<rt>bb<rb>C<rt>cc<rb>D<rt>d</ruby>...
+</div>
+
+
+
+
+
+</body>
+</html>

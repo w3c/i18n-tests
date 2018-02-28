@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The dir attribute: dir=auto, inline auto direction</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/dom.html#the-dir-attribute'>
+<link rel="match" href="reference/the-dir-attribute-046-ref.html">
+<meta name="assert" content="When dir='auto', the direction is set according to the first strong character of the text. dir=auto is applied to an inline element here, in various base direction contexts.">
+<style type='text/css'>
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+input { margin: 5px; }
+/*
+@font-face {
+    font-family: 'ezra_silregular';
+    src: url('support/sileotsr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'scheherazaderegular';
+    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
+    font-weight: normal;
+    font-style: normal;
+	}
+.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
+*/
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+<!--<div class="comments">
+      Key to entities used below:
+      &#x5d0; - The Hebrew letter Alef (strongly RTL).
+      &#x202d; - The LRO (left-to-right-override) formatting character.
+      &#x202c; - The PDF (pop directional formatting) formatting character; closes LRO.
+    </div>-->
+
+
+
+<div class="test">
+      <div dir="rtl">
+        &#x5d0; <span dir="auto">a!</span> &#x5d0;
+      </div>
+      <div dir="ltr">
+        &#x5d0; <span dir="auto">a!</span> &#x5d0;
+      </div>
+      <div dir="ltr">
+        a <span dir="auto">&#x5d0;!</span> a
+      </div>
+      <div dir="rtl">
+        a <span dir="auto">&#x5d0;!</span> a
+      </div>
+    </div>
+
+
+
+
+
+<div class="ref">
+      <div dir="rtl">
+        &#x202d;&#x5d0; a! &#x5d0;&#x202c;
+      </div>
+      <div dir="ltr">
+        &#x202d;&#x5d0; a! &#x5d0;&#x202c;
+      </div>
+      <div dir="ltr">
+        &#x202d;a !&#x5d0; a&#x202c;
+      </div>
+      <div dir="rtl">
+        &#x202d;a !&#x5d0; a&#x202c;
+      </div>
+    </div>
+
+
+
+
+</body>
+</html>

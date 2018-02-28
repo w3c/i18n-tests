@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Bidi rendering: newline in pre separates bidi paragraphs</title>
+<link rel='author' title='HTML5 bidi test WG' href='mailto:public-i18n-bidi@w3.org'>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/rendering.html#bidi-rendering'>
+<link rel="match" href="reference/bidi-rendering-pre-115-ref.html">
+<meta name="assert" content="A newline in a pre element should separate paragraphs for the purposes of the Unicode bidirectional algorithm.">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+input { margin: 5px; }
+pre { font-family: sans-serif; font-size: 18px; margin:0; padding: 0; } .ref div { font-family: sans-serif; font-size: 18px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the two boxes are identical.</p>
+
+
+<div class="test">
+      <pre>A Hebrew letter and a full stop: &#x5d0;.
+&#x5d0; this line begins with a Hebrew letter.</pre>
+    </div>
+
+
+
+
+
+<div class="ref">
+     <div>A Hebrew letter and a full stop: &#x5d0;.</div>
+     <div> &#x5d0; this line begins with a Hebrew letter.</div>
+    </div>
+
+
+
+
+</body>
+</html>

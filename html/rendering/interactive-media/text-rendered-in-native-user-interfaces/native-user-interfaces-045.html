@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  dir="rtl"  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Native user interfaces: javascript prompt box, rtl on html, L</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/rendering.html#text-rendered-in-native-user-interfaces'>
+<meta name='flags' content='interact'>
+<meta name="assert" content="When the html tag sets dir to rtl, text runs in the chrome of a JavaScript prompt box are ordered according to the first strong character. In this case class L.">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+.test { text-align: center; }
+button { font-family: serif, sans-serif; font-size: 18px; border-radius: 10px; }
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Click on the button. Test passes if the order of characters in the CHROME of the prompt box follows that in the button.</p>
+
+
+<div class="test"><button onclick="prompt('one two \u05E9\u05DC\u05D5\u05E9\u05D4 \u05D0\u05E8\u05D1\u05E2\u05D4', '...'); return false;">&#x202A;one two &#x05E9;&#x05DC;&#x05D5;&#x05E9;&#x05D4; &#x05D0;&#x05E8;&#x05D1;&#x05E2;&#x05D4;&#x202C;</button></div>
+
+
+
+
+</body>
+</html>

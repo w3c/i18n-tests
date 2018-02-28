@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Native user interfaces: rtl html, page title R</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/rendering.html#text-rendered-in-native-user-interfaces'>
+<meta name='flags' content='interact'>
+<meta name="assert" content="When the html tag sets dir to rtl, text in the window header has the same directionality as the title element. Here the title element starts with an R character.">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+.test { font-size: 150%; margin: 10px; }
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Click on the link. Test passes if the text in the title of the window that opens is the same as that in the orange box.</p>
+
+
+<div class='test'><a href='http://www.w3.org/International/tests/repository/html5/native-user-interfaces/support/native-user-interfaces-090-subtest' target='_blank'>Click here</a></div>
+
+
+
+
+</body>
+</html>

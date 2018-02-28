@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The dir attribute: BDI: neutral to another immediately following BDI</title>
+<link rel='author' title='HTML5 bidi test WG' href='mailto:public-i18n-bidi@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/dom.html#the-dir-attribute'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-bdi-element'>
+<link rel="match" href="reference/the-dir-attribute-096-ref.html">
+<meta name="assert" content="       'For the purposes of applying the bidirectional algorithm to the paragraph-level       container that a bdi element finds itself within, the bdi element must be treated       like a U+FFFC OBJECT REPLACEMENT CHARACTER.'       Thus, when a BDIs contains text of the same strong direction as another BDI following it, the       two must not form a directional run as would be the case if the BDIs were just SPANs, even if       the two BDIs are not separated by anything at all.">
+<style type='text/css'>
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+input { margin: 5px; }
+/*
+@font-face {
+    font-family: 'ezra_silregular';
+    src: url('support/sileotsr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'scheherazaderegular';
+    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
+    font-weight: normal;
+    font-style: normal;
+	}
+.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
+*/
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+<!--<div class="comments">
+      Key to entities used below:
+        &#x5d0; ... &#x5d5; - The first six Hebrew letters (strongly RTL).
+        &#x202d; - The LRO (left-to-right-override) formatting character.
+        &#x202c; - The PDF (pop directional formatting) formatting character; closes LRO.
+      If the BDIs in the test's first DIV were SPANs, the &#x5d1; would be rendered to the left of
+      the &#x5d0;.
+    </div>-->
+
+
+
+<div class="test">
+      <div dir="ltr"><bdi>&#x5d0;</bdi><bdi>&#x5d1;</bdi>...</div>
+      <div dir="ltr"><bdi dir="rtl">&#x5d0;</bdi><bdi dir="rtl">&#x5d1;</bdi>...</div>
+      <div dir="ltr"><bdi dir="ltr">&#x5d0;</bdi><bdi dir="ltr">&#x5d1;</bdi>...</div>
+      <div dir="rtl"><bdi>a</bdi><bdi>b</bdi>...</div>
+      <div dir="rtl"><bdi dir="ltr">a</bdi><bdi dir="ltr">b</bdi>...</div>
+      <div dir="rtl"><bdi dir="rtl">a</bdi><bdi dir="rtl">b</bdi>...</div>
+    </div>
+
+
+
+
+
+<div class="ref">
+      <div dir="ltr">&#x202d;&#x5d0;&#x5d1;...&#x202c;</div>
+      <div dir="ltr">&#x202d;&#x5d0;&#x5d1;...&#x202c;</div>
+      <div dir="ltr">&#x202d;&#x5d0;&#x5d1;...&#x202c;</div>
+      <div dir="rtl">&#x202d;...ba&#x202c;</div>
+      <div dir="rtl">&#x202d;...ba&#x202c;</div>
+      <div dir="rtl">&#x202d;...ba&#x202c;</div>
+    </div>
+
+
+
+
+</body>
+</html>

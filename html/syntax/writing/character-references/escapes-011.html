@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="UTF-8"/>
+<title>HTML5, character references: decimal ncr for C1 position of euro sign</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/syntax.html#character-references'>
+<script src="http://w3c-test.org/resources/testharness.js"></script>
+<script src="http://w3c-test.org/resources/testharnessreport.js"></script>
+<link rel="stylesheet" type="text/css" href="../../i18ntests.css">
+<meta name='flags' content='dom'>
+<meta name="assert" content="A numeric reference containing the code point for &amp;#x000D; should NOT produce a line break.">
+<style>
+.test, .ref { font-size: 36px; border: 1px solid orange; }
+</style>
+</head>
+<body>
+
+
+
+<div class="test" id="test"><pre>1&#x000D;2</pre></div>
+
+<div class="ref" id="ref"><pre>12</pre></div>
+
+</body>
+</html>

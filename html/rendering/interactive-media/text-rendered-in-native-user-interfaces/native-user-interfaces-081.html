@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Native user interfaces: tooltips, rtl, AL</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/rendering.html#text-rendered-in-native-user-interfaces'>
+<meta name='flags' content='interact'>
+<meta name="assert" content="When an element sets dir to rtl, text runs in a tooltip are ordered according to the direction of the element from which is was obtained. In this case the class of the first character is AL.">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+.test { margin: 10px; font-size: 150%; text-align: center; }</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Mouse over the text below. Test passes if the order of characters in the tootip that pops up is the same as you moused over.</p>
+
+
+<div class="test" dir="rtl" title="&#x0648;&#x0627;&#x062D;&#x062F; &#x0627;&#x062B;&#x0646;&#x0627;&#x0646; three four"> &#x0648;&#x0627;&#x062D;&#x062F; &#x0627;&#x062B;&#x0646;&#x0627;&#x0646; three four</div>
+
+
+
+
+</body>
+</html>

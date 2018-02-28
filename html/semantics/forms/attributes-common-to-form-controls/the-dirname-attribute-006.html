@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The dirname attribute: dirname, auto, ltr text</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/forms.html#the-dirname-attribute'>
+<link rel='help' href='http://www.w3.org/TR/html5/forms.html#form-control-dirname-attribute'>
+<meta name='flags' content='interact http'>
+<meta name="assert" content="The dir attribute is set to auto. If the form field auto-detects ltr direction based on first strong character input, the dirname attribute will cause the direction of the input element to be passed with the form parameters.">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+input { margin: 5px; width: 15em; color: #999; }
+</style>
+</head>
+<body>
+<div class="instructions"><p>Click on submit. The page that opens will indicate whether the test passes.</p></div>
+
+
+<div class='test'>
+<form action='support/check-dirname.html' method='get'>
+<p><input type=text name='comment' dirname='commentdir' required value='Hello!'> <button name='mode' type=submit value='add'>Submit</button></p>
+<input dir='auto' type='hidden' value='ltr' name='expected' />
+</form>
+</div>
+
+
+
+
+</body>
+</html>

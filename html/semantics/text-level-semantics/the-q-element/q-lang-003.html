@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>q + lang by locale</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="The browser uses quotation marks per language as specified by the HTML5 spec.">
+<style type="text/css">
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if, for each pair of boxes, the quotation marks used are the same.</p>
+
+<p class="cue">[af]</p>
+<div class="test"><p lang="af">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="af">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[agq]</p>
+<div class="test"><p lang="agq">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="agq">one &#x201e;two &#x201a;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ak]</p>
+<div class="test"><p lang="ak">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ak">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[am]</p>
+<div class="test"><p lang="am">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="am">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[ar]</p>
+<div class="test"><p lang="ar">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ar">one &#x201d;two &#x2019;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[asa]</p>
+<div class="test"><p lang="asa">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="asa">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[az-Cyrl]</p>
+<div class="test"><p lang="az-Cyrl">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="az-Cyrl">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[bas]</p>
+<div class="test"><p lang="bas">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="bas">one &#x00ab;two &#x201e;three&#x201c;&#x00bb;</p></div>
+
+<p class="cue">[bem]</p>
+<div class="test"><p lang="bem">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="bem">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[bez]</p>
+<div class="test"><p lang="bez">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="bez">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[bg]</p>
+<div class="test"><p lang="bg">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="bg">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[bm]</p>
+<div class="test"><p lang="bm">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="bm">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[bn]</p>
+<div class="test"><p lang="bn">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="bn">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[br]</p>
+<div class="test"><p lang="br">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="br">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[brx]</p>
+<div class="test"><p lang="brx">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="brx">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[bs-Cyrl]</p>
+<div class="test"><p lang="bs-Cyrl">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="bs-Cyrl">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[ca]</p>
+<div class="test"><p lang="ca">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ca">one &#x201c;two &#x00ab;three&#x00bb;&#x201d;</p></div>
+
+<p class="cue">[cgg]</p>
+<div class="test"><p lang="cgg">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="cgg">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[chr]</p>
+<div class="test"><p lang="chr">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="chr">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[cs]</p>
+<div class="test"><p lang="cs">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="cs">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[da]</p>
+<div class="test"><p lang="da">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="da">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[dav]</p>
+<div class="test"><p lang="dav">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="dav">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[de]</p>
+<div class="test"><p lang="de">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="de">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[de-CH]</p>
+<div class="test"><p lang="de-CH">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="de-CH">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[dje]</p>
+<div class="test"><p lang="dje">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="dje">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[dua]</p>
+<div class="test"><p lang="dua">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="dua">one &#x00ab;two &#x2018;three&#x2019;&#x00bb;</p></div>
+
+<p class="cue">[dyo]</p>
+<div class="test"><p lang="dyo">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="dyo">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[dz]</p>
+<div class="test"><p lang="dz">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="dz">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ebu]</p>
+<div class="test"><p lang="ebu">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ebu">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ee]</p>
+<div class="test"><p lang="ee">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ee">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[el]</p>
+<div class="test"><p lang="el">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="el">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[en]</p>
+<div class="test"><p lang="en">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="en">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[es]</p>
+<div class="test"><p lang="es">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="es">one &#x201c;two &#x00ab;three&#x00bb;&#x201d;</p></div>
+
+<p class="cue">[et]</p>
+<div class="test"><p lang="et">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="et">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[eu]</p>
+<div class="test"><p lang="eu">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="eu">one &#x201c;two &#x00ab;three&#x00bb;&#x201d;</p></div>
+
+<p class="cue">[ewo]</p>
+<div class="test"><p lang="ewo">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ewo">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[fa]</p>
+<div class="test"><p lang="fa">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="fa">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[ff]</p>
+<div class="test"><p lang="ff">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ff">one &#x201e;two &#x201a;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[fi]</p>
+<div class="test"><p lang="fi">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="fi">one &#x201d;two &#x2019;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[fr]</p>
+<div class="test"><p lang="fr">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="fr">one &#x00ab;two &#x00ab;three&#x00bb;&#x00bb;</p></div>
+
+<p class="cue">[fr-CA]</p>
+<div class="test"><p lang="fr-CA">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="fr-CA">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[fr-CH]</p>
+<div class="test"><p lang="fr-CH">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="fr-CH">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[gsw]</p>
+<div class="test"><p lang="gsw">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="gsw">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[gu]</p>
+<div class="test"><p lang="gu">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="gu">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[guz]</p>
+<div class="test"><p lang="guz">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="guz">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ha]</p>
+<div class="test"><p lang="ha">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ha">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[he]</p>
+<div class="test"><p lang="he">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="he">one &#x0022;two &#x0027;three&#x0027;&#x0022;</p></div>
+
+<p class="cue">[hi]</p>
+<div class="test"><p lang="hi">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="hi">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[hr]</p>
+<div class="test"><p lang="hr">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="hr">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[hu]</p>
+<div class="test"><p lang="hu">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="hu">one &#x201e;two &#x00bb;three&#x00ab;&#x201d;</p></div>
+
+<p class="cue">[id]</p>
+<div class="test"><p lang="id">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="id">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ig]</p>
+<div class="test"><p lang="ig">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ig">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[it]</p>
+<div class="test"><p lang="it">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="it">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[ja]</p>
+<div class="test"><p lang="ja">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ja">one &#x300c;two &#x300e;three&#x300f;&#x300d;</p></div>
+
+<p class="cue">[jgo]</p>
+<div class="test"><p lang="jgo">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="jgo">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[jmc]</p>
+<div class="test"><p lang="jmc">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="jmc">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[kab]</p>
+<div class="test"><p lang="kab">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="kab">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[kam]</p>
+<div class="test"><p lang="kam">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="kam">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[kde]</p>
+<div class="test"><p lang="kde">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="kde">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[kea]</p>
+<div class="test"><p lang="kea">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="kea">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[khq]</p>
+<div class="test"><p lang="khq">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="khq">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ki]</p>
+<div class="test"><p lang="ki">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ki">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[kkj]</p>
+<div class="test"><p lang="kkj">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="kkj">one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+
+<p class="cue">[kln]</p>
+<div class="test"><p lang="kln">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="kln">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[km]</p>
+<div class="test"><p lang="km">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="km">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[kn]</p>
+<div class="test"><p lang="kn">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="kn">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ko]</p>
+<div class="test"><p lang="ko">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ko">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ksb]</p>
+<div class="test"><p lang="ksb">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ksb">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ksf]</p>
+<div class="test"><p lang="ksf">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ksf">one &#x00ab;two &#x2018;three&#x2019;&#x00bb;</p></div>
+
+<p class="cue">[lag]</p>
+<div class="test"><p lang="lag">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="lag">one &#x201d;two &#x2019;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[lg]</p>
+<div class="test"><p lang="lg">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="lg">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ln]</p>
+<div class="test"><p lang="ln">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ln">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[lo]</p>
+<div class="test"><p lang="lo">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="lo">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[lt]</p>
+<div class="test"><p lang="lt">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="lt">one &#x201e;two &#x201e;three&#x201c;&#x201c;</p></div>
+
+<p class="cue">[lu]</p>
+<div class="test"><p lang="lu">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="lu">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[luo]</p>
+<div class="test"><p lang="luo">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="luo">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[luy]</p>
+<div class="test"><p lang="luy">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="luy">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[lv]</p>
+<div class="test"><p lang="lv">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="lv">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[mas]</p>
+<div class="test"><p lang="mas">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="mas">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[mer]</p>
+<div class="test"><p lang="mer">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="mer">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[mfe]</p>
+<div class="test"><p lang="mfe">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="mfe">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[mg]</p>
+<div class="test"><p lang="mg">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="mg">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[mgo]</p>
+<div class="test"><p lang="mgo">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="mgo">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[mk]</p>
+<div class="test"><p lang="mk">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="mk">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[ml]</p>
+<div class="test"><p lang="ml">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ml">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[mr]</p>
+<div class="test"><p lang="mr">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="mr">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ms]</p>
+<div class="test"><p lang="ms">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ms">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[mua]</p>
+<div class="test"><p lang="mua">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="mua">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[my]</p>
+<div class="test"><p lang="my">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="my">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[naq]</p>
+<div class="test"><p lang="naq">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="naq">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[nb]</p>
+<div class="test"><p lang="nb">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="nb">one &#x00ab;two &#x2018;three&#x2019;&#x00bb;</p></div>
+
+<p class="cue">[nd]</p>
+<div class="test"><p lang="nd">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="nd">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[nl]</p>
+<div class="test"><p lang="nl">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="nl">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[nmg]</p>
+<div class="test"><p lang="nmg">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="nmg">one &#x201e;two &#x00ab;three&#x00bb;&#x201d;</p></div>
+
+<p class="cue">[nn]</p>
+<div class="test"><p lang="nn">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="nn">one &#x00ab;two &#x2018;three&#x2019;&#x00bb;</p></div>
+
+<p class="cue">[nnh]</p>
+<div class="test"><p lang="nnh">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="nnh">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[nus]</p>
+<div class="test"><p lang="nus">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="nus">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[nyn]</p>
+<div class="test"><p lang="nyn">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="nyn">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[pl]</p>
+<div class="test"><p lang="pl">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="pl">one &#x201e;two &#x00ab;three&#x00bb;&#x201d;</p></div>
+
+<p class="cue">[pt]</p>
+<div class="test"><p lang="pt">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="pt">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[pt-PT]</p>
+<div class="test"><p lang="pt-PT">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="pt-PT">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[rn]</p>
+<div class="test"><p lang="rn">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="rn">one &#x201d;two &#x2019;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ro]</p>
+<div class="test"><p lang="ro">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ro">one &#x201e;two &#x00ab;three&#x00bb;&#x201d;</p></div>
+
+<p class="cue">[rof]</p>
+<div class="test"><p lang="rof">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="rof">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ru]</p>
+<div class="test"><p lang="ru">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ru">one &#x00ab;two &#x201e;three&#x201c;&#x00bb;</p></div>
+
+<p class="cue">[rw]</p>
+<div class="test"><p lang="rw">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="rw">one &#x00ab;two &#x2018;three&#x2019;&#x00bb;</p></div>
+
+<p class="cue">[rwk]</p>
+<div class="test"><p lang="rwk">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="rwk">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[saq]</p>
+<div class="test"><p lang="saq">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="saq">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[sbp]</p>
+<div class="test"><p lang="sbp">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sbp">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[seh]</p>
+<div class="test"><p lang="seh">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="seh">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ses]</p>
+<div class="test"><p lang="ses">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ses">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[sg]</p>
+<div class="test"><p lang="sg">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sg">one &#x00ab;two &#x201c;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[shi]</p>
+<div class="test"><p lang="shi">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="shi">one &#x00ab;two &#x201e;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[shi-Latn]</p>
+<div class="test"><p lang="shi-Latn">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="shi-Latn">one &#x00ab;two &#x201e;three&#x201d;&#x00bb;</p></div>
+
+<p class="cue">[si]</p>
+<div class="test"><p lang="si">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="si">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[sk]</p>
+<div class="test"><p lang="sk">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sk">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[sl]</p>
+<div class="test"><p lang="sl">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sl">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[sn]</p>
+<div class="test"><p lang="sn">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sn">one &#x201d;two &#x2019;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[so]</p>
+<div class="test"><p lang="so">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="so">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[sq]</p>
+<div class="test"><p lang="sq">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sq">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[sr]</p>
+<div class="test"><p lang="sr">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sr">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[sr-Latn]</p>
+<div class="test"><p lang="sr-Latn">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sr-Latn">one &#x201e;two &#x201a;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[sv]</p>
+<div class="test"><p lang="sv">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sv">one &#x201d;two &#x2019;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[sw]</p>
+<div class="test"><p lang="sw">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="sw">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[swc]</p>
+<div class="test"><p lang="swc">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="swc">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ta]</p>
+<div class="test"><p lang="ta">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ta">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[te]</p>
+<div class="test"><p lang="te">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="te">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[teo]</p>
+<div class="test"><p lang="teo">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="teo">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[th]</p>
+<div class="test"><p lang="th">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="th">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[ti-ER]</p>
+<div class="test"><p lang="ti-ER">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ti-ER">one &#x2018;two &#x201c;three&#x201d;&#x2019;</p></div>
+
+<p class="cue">[to]</p>
+<div class="test"><p lang="to">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="to">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[tr]</p>
+<div class="test"><p lang="tr">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="tr">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[twq]</p>
+<div class="test"><p lang="twq">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="twq">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[tzm]</p>
+<div class="test"><p lang="tzm">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="tzm">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[uk]</p>
+<div class="test"><p lang="uk">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="uk">one &#x00ab;two &#x201e;three&#x201c;&#x00bb;</p></div>
+
+<p class="cue">[ur]</p>
+<div class="test"><p lang="ur">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="ur">one &#x201d;two &#x2019;three&#x2018;&#x201c;</p></div>
+
+<p class="cue">[vai]</p>
+<div class="test"><p lang="vai">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="vai">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[vai-Latn]</p>
+<div class="test"><p lang="vai-Latn">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="vai-Latn">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[vi]</p>
+<div class="test"><p lang="vi">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="vi">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[vun]</p>
+<div class="test"><p lang="vun">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="vun">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[xh]</p>
+<div class="test"><p lang="xh">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="xh">one &#x2018;two &#x201c;three&#x201d;&#x2019;</p></div>
+
+<p class="cue">[xog]</p>
+<div class="test"><p lang="xog">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="xog">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[yav]</p>
+<div class="test"><p lang="yav">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="yav">one &#x00ab;two &#x00ab;three&#x00bb;&#x00bb;</p></div>
+
+<p class="cue">[yo]</p>
+<div class="test"><p lang="yo">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="yo">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[zh]</p>
+<div class="test"><p lang="zh">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="zh">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+
+<p class="cue">[zh-Hant]</p>
+<div class="test"><p lang="zh-Hant">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="zh-Hant">one &#x300c;two &#x300e;three&#x300f;&#x300d;</p></div>
+
+<p class="cue">[zu]</p>
+<div class="test"><p lang="zu">one <q>two <q>three</q></q></p></div>
+<div class="ref"><p lang="zu">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+<!-- Notes:
+- the lang attribute has been left off the html tag because this tests defaults
+-->
+</body>
+</html>

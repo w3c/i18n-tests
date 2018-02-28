@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The dir attribute: BDI: paragraph-level container</title>
+<link rel='author' title='HTML5 bidi test WG' href='mailto:public-i18n-bidi@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/dom.html#the-dir-attribute'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-bdi-element'>
+<link rel="match" href="reference/the-dir-attribute-086-ref.html">
+<meta name="assert" content="For the purposes of applying the bidirectional algorithm to the paragraph-level       container that a bdi element finds itself within, the bdi element must be treated       like a U+FFFC OBJECT REPLACEMENT CHARACTER.       Thus, under no circumstances should any part of the content outside a BDI be visually       reordered inside the BDI's content.">
+<style type='text/css'>
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+input { margin: 5px; }
+/*
+@font-face {
+    font-family: 'ezra_silregular';
+    src: url('support/sileotsr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'scheherazaderegular';
+    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
+    font-weight: normal;
+    font-style: normal;
+	}
+.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
+*/
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+<!--<div class="comments">
+      Key to entities used below:
+        &#x5d0; ... &#x5d5; - The first six Hebrew letters (strongly RTL).
+        &#x202d; - The LRO (left-to-right-override) formatting character.
+        &#x202c; - The PDF (pop directional formatting) formatting character; closes LRO.
+      If the BDIs in the test's first DIV were just SPANs, the &#x5d0; would appear between the 1
+      and the b, and the &#x5d5; between the d and the &#x5d4;.
+    </div>-->
+
+
+
+<div class="test">
+      <div dir="ltr">&#x5d0; <bdi>[1 b]</bdi> c <bdi>[d &#x5d4;]</bdi> &#x5d5;...</div>
+      <div dir="rtl">a <bdi>[1 &#x5d1;]</bdi> &#x5d2; <bdi>[&#x5d3; e]</bdi> f...</div>
+    </div>
+
+
+
+
+
+<div class="ref">
+      <div dir="ltr">&#x202d;&#x5d0; [1 b] c [d &#x5d4;] &#x5d5;...&#x202c;</div>
+      <div dir="rtl">&#x202d;...f [e &#x5d3;] &#x5d2; [&#x5d1; 1] a&#x202c;</div>
+    </div>
+
+
+
+
+</body>
+</html>

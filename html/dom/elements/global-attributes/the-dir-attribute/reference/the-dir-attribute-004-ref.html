@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The dir attribute: rtl context, ltr table</title>
+<link rel='author' title='HTML5 bidi test WG' href='mailto:public-i18n-bidi@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/dom.html#the-dir-attribute'>
+<meta name="assert" content="[Exploratory] When dir='ltr' is added to a table in a rtl context, (a) directional runs in the table are ordered left-to-right, (b) columns run left-to-right, (c) text is left-aligned within cells, and (d) the table is right-aligned on the page.">
+<style type='text/css'>
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+input { margin: 5px; }
+/*
+@font-face {
+    font-family: 'ezra_silregular';
+    src: url('support/sileotsr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'scheherazaderegular';
+    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
+    font-weight: normal;
+    font-style: normal;
+	}
+.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
+*/
+td { border: 1px dotted #ccc; } .ref table { align: left; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the two boxes are identical.</p>
+
+
+<div class="ref">
+			<table style="float:right;"> 
+			<tr><td>1</td><td>2</td><td>3</td></tr> 
+			<tr><td>مكتب W3C הישראלי</td><td>مكتب W3C הישראלי</td><td>مكتب W3C הישראלי</td></tr> 
+			</table>
+			<br style="clear:both;"/>
+			</div>
+
+
+
+
+
+<div class="ref">
+			<table style="float:right;"> 
+			<tr><td>1</td><td>2</td><td>3</td></tr> 
+			<tr><td>مكتب W3C הישראלי</td><td>مكتب W3C הישראלי</td><td>مكتب W3C הישראלי</td></tr> 
+			</table>
+			<br style="clear:both;"/>
+			</div>
+
+
+
+
+</body>
+</html>

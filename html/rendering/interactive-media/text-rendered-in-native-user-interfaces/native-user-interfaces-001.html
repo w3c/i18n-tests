@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html  dir="rtl"  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Native user interfaces: dir on html, vertical scrollbar alignment</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/rendering.html#text-rendered-in-native-user-interfaces'>
+<meta name='flags' content='interact'>
+<meta name="assert" content="[Exploratory] When the html tag sets dir to rtl, the browser window's vertical scroll bar will be on the usual side of the window.">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+input { font-family: serif, sans-serif; font-size: 18px; }
+button { font-family: serif, sans-serif; font-size: 18px; border-radius: 10px; }
+.test { width: 50%; height: 2000px; }
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Test passes if the window's vertical scrollbar is on the usual side of the window. (Adjust the window size, if necessary.)</p>
+
+
+<div class="test">&#xA0;</div>
+
+
+
+
+</body>
+</html>

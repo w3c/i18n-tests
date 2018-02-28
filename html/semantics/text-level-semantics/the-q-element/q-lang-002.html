@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>q default marks</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="The browser uses the quotation marks specified in the HTML5 spec when no language information is available.">
+<style type="text/css">
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the quotation marks in the top box are the same as those in the lower box.</p>
+<div class="test"><p>one <q>two <q>three</q></q></p></div>
+<div class="ref"><p>one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+<!-- Notes:
+- the lang attribute has been left off the html tag because this tests defaults
+-->
+</body>
+</html>

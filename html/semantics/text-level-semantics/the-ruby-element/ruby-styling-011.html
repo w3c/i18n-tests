@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The ruby elements: ruby styling, span on ruby annotation</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element'>
+<meta name="assert" content=" It is possible to style part of the ruby annotation text using a span element.">
+<style type='text/css'>
+
+span  { background-color: #39f; color: white; }
+
+/* the CSS below is not part of the test */
+.test { font-size: 42px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the letter x (only) has a blue background.</p>
+
+
+<div class="test">
+<ruby><rb>A</rb><rt>a<span>x</span>a</rt><rb>B</rb><rt>bb</rt></ruby>...
+</div>
+
+
+
+
+
+</body>
+</html>

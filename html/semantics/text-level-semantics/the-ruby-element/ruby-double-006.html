@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The ruby elements: double-sided ruby, group+mono, two rtcs</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element'>
+<meta name="assert" content="If there are two sets of ruby annotations, the first group- the other mono-ruby, in two rtc elements, both are placed alongside the base text, with mono-ruby alongside the appropriate base character, and group-ruby spanning all.">
+<style type='text/css'>
+
+/* the CSS below is not part of the test */
+.test { font-size: 42px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if all the lowercase letters are alongside the appropriate uppercase letters (A with a, etc), and the numbers span the base text as a whole, both annotations on separate lines.</p>
+
+
+<div class="test"> 
+<ruby><rb>A</rb><rb>B</rb><rb>C</rb><rb>D</rb><rtc>11122334</rtc><rtc><rt>aaa</rt><rt>bb</rt><rt>cc</rt><rt>d</rt></rtc></ruby>...
+</div>
+
+
+
+
+</body>
+</html>

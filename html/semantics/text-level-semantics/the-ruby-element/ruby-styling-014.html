@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The ruby elements: ruby styling, rtc, full markup</title>
+<script src="../../../../resources/testharness.js"></script>
+<script src="../../../../resources/testharnessreport.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../resources/testharness.css">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element">
+<meta name="assert" content="The browser recognises and styles an rtc element with full markup.">
+<style type="text/css">
+rtc { background-color: #39f; color: white; }
+ppp { background-color: #39f; color: white; }
+
+/* the CSS below is not part of the test */
+.test { font-size: 42px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if bb (only) has a blue background.</p>
+<div class="test">
+<ruby><rb>AAAA</rb><rt>aa</rt><rtc>bb</rtc></ruby><ppp>hello</ppp>
+</div>
+<script> 
+console.log(document.querySelector('ppp').textContent)
+test(function () {
+    assert_equals(document.querySelector('rtc').textContent, 'bb');
+	}, ' ');
+</script>
+<div id="log"></div>
+
+<script>
+var ruby = document.querySelector('ruby')
+out = ''
+for (i=0;i<ruby.childNodes.length;i++) {
+	out += ruby.childNodes[i].nodeName+' '
+	}
+console.log(out)
+</script>
+
+
+
+<!--script>
+// node types 1 is element, 3 is text
+var root = document.querySelector('ruby')
+var index = 0
+var rubySegments = []
+var currentBases = []
+var currentBasesRange = null
+var currentBasesRangeStart = null
+var currentAnnotationContainers = []
+var currentAutomaticBaseNodes = []
+var currentAutomaticBaseRangeStart = null
+
+if (index >= root.childNodes.length) commitRubySegment()
+
+var currentChild = root.childNodes[index]
+console.log('currentChild type', currentChild.nodeType)
+
+for (index=0;index<root.childNodes.length;index++) {
+	var currentChild = root.childNodes[index]
+	if (currentChild.nodeType !== 1 && currentChild.nodeType !== 3) continue
+	else if (currentChild.nodeName === 'rp') continue
+	else if (currentChild.nodeName === 'rt') {
+		if (currentAutomaticBaseNodes.length === 0) continue
+		nodes = false
+		for (n=0;n<currentAutomaticBaseNodes.length;n++) {
+			if (currentAutomaticBaseNodes[n].nodeType !== 3 || currentAutomaticBaseNodes[n].nodeType !== ' ') {
+				if (currentBases.length === 0) currentBasesRangeStart = currentAutomaticBaseRangeStart
+				
+				}
+			}
+		}
+	
+	}
+
+</script-->
+</body>
+</html>

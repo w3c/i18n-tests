@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Accesskey: multiple Hebrew characters</title>
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://w3c.github.io/html/editing.html#the-accesskey-attribute">
+<meta name="assert" content="A Hebrew accesskey value is recognised for a key press that produces more than one codepoint.">
+<style>
+button { font-size: 200%; background-color: white; padding: 1em; }
+</style>
+</head>
+<body>
+<p class="instructions"><strong>Prerequisites: A keyboard that maps שׁ to a single key (such as a Hebrew keyboard).</strong></p>
+<p class="instructions">Click on the test page to ensure it has focus, then in combination with <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">the appropriate platform-specific modifier keys</a>, press on the key indicated below.<br/>Test passes if the background of the button turns green.</p>
+
+<div class="test">
+<p>
+  <button onfocus="this.style.backgroundColor='#00FF00'" onblur="this.style.backgroundColor='white'" accesskey="שׁ">Press the key needed (with Shift if necessary) to enter שׁ.</button></p>
+<p><button style="color:white;border:0;" onfocus="this.style.backgroundColor='#FF0000'" onblur="this.style.backgroundColor='white'" accesskey="a">Matched 'ש'!</button></p>
+<p><button style="color:white;border:0;" onfocus="this.style.backgroundColor='#FF0000'" onblur="this.style.backgroundColor='white'" accesskey="a">Matched 'ׁ'!</button></p>
+</div>
+
+</body>
+</html>

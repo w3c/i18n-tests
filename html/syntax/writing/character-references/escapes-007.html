@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="UTF-8"/>
+<title>HTML5, character references: decimal ncr outside range of charset</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/syntax.html#character-references'>
+<meta name='flags' content='font dom'>
+<meta name="assert" content="A decimal numeric reference containing the Unicode code point of a character which is not supported by the current character encoding still produces the intended character.">
+<style type='text/css'>
+/* the CSS below is not part of the test */
+.test { font-size: 40px; }
+.reference img { vertical-align: middle; margin-left: 12px; }
+</style></head>
+<body>
+<p class="instructions">Test passes if you see the same character twice. (Font differences are irrelevant.).</p>
+<div class="test">&#946; <img src="support/beta.png" alt="reference image" ></div>
+<!-- Notes:
+You need a font with Greek characters to be able to do the visual check.
+The HTML page is served as ISO 8859-1 (covers Western Latin), but the character referenced is Greek.
+-->
+</body>
+</html>

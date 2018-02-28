@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The ruby elements: rb styling, rb,rb,rt,rt format</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element'>
+<meta name="assert" content="rb elements can be styled when all tags are used but all rb elements are grouped together.">
+<style type='text/css'>
+
+rb  { background-color: #39f; color: white; }
+
+/* the CSS below is not part of the test */
+.test { font-size: 42px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the uppercase letters (only) have a blue background.</p>
+
+
+<div class="test">
+<ruby><rb>A</rb><rb>B</rb><rb>C</rb><rb>D</rb><rt>aaa</rt><rt>bb</rt><rt>cc</rt><rt>d</rt></ruby>...
+</div>
+
+
+
+
+
+</body>
+</html>

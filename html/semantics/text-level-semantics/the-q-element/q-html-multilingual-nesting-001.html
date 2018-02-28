@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>quote in other lang (html5)</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="Whenever the language changes, the quotes change to the new language. So a simple japanese quote in an English paragraph is surrounded by Japanese quotation marks.">
+<style type="text/css">
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the quotation marks in both boxes are the same.</p>
+<div class="test">
+<p lang="en">one <q lang="ja">two</q></p>
+</div>
+<div class="ref">
+<p lang="en">one 「<span lang="ja">two</span>」</p>
+</div>
+<!-- Notes:
+- this test is only valid if the browser makes a difference based on the lang tag, and if it supports different quotation marks for en and ja
+- the lang attribute has been left off the html tag because language is part of the test
+- this is based on rules recommended by the published Rec of HTML5
+-->
+</body>
+</html>

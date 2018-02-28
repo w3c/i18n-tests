@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>The ruby elements: ruby gaps, separated</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element'>
+<meta name="assert" content="An empty rt element causes a gap above it's associated base text in markup where all rts appear grouped after all the rbs.">
+<style type='text/css'>
+
+/* the CSS below is not part of the test */
+.test { font-size: 42px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the lowercase letters appear alongside the related uppercase letters, on a separate line, but there is a gap above B.</p>
+
+
+<div class="test">
+<ruby><rb>A</rb><rb>B</rb><rb>C</rb><rb>D</rb><rt>aaa</rt><rt></rt><rt>cc</rt><rt>d</rt></ruby>...
+</div>
+
+
+
+
+
+</body>
+</html>

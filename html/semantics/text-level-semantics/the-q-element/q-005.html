@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>triple-nested qs variations</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/text-level-semantics.html#the-q-element">
+<meta name="assert" content="[Exploratory test] Text in triple-nested q elements are rendered such that the inner-most nested quotation marks are the same as the outer-most.">
+<style type="text/css">
+.test { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the word <samp>four</samp> and the phrase <samp>two three four</samp> use the same quotation marks, and the phrase <samp>three four</samp> uses different quotation marks.</p>
+<div class="test">one <q>two <q>three <q>four</q></q></q></div>
+<!-- Notes:
+- the lang attribute has been left off the html tag because this tests defaults
+- the rationale for this test is that CSS suggests this would be appropriate
+-->
+</body>
+</html>

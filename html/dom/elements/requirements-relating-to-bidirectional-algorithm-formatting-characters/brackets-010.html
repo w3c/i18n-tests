@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RTL base, ltr mismatched parens</title>
+<meta name="assert" content="The bidi algorithm will NOT keep paired characters around Latin text at the boundary of two runs with a RTL base direction if the paired characters are not the same.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm">
+<style type="text/css">
+/* the CSS below is not part of the test */
+.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Test passes if the paired characters are in the same positions in both boxes.</p>
+<div class="test">
+<div dir="rtl">&#x0627;&#x0644;&#x062A;&#x062F;&#x0648;&#x064A;&#x0644;&#x060C; Internationalization (i18n]</div>
+</div>
+<div class="ref">
+<div dir="rtl"><bdo dir="ltr">[Internationalization (i18n &#x060C;&#x0644;&#x064A;&#x0648;&#x062F;&#x062A;&#x0644;&#x0627;</bdo> </div>
+</div>
+<!--Notes:
+The sequence of escapes represents the Arabic word التدويل followed by an Arabic comma.
+This is not a reference test because the positioning of the text in the reference box relative to the right edge is not always the same as the box containing the test - presumably because of the way certain browsers render the bdo element.
+-->
+</body></html>

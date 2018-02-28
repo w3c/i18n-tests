@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Translation services: alt attribute, translate no</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/dom.html#the-translate-attribute'>
+<meta name='flags' content='interact'>
+<meta name="assert" content="If the tag has translate=no, the value of an alt attribute will NOT be translated by an online translation service.">
+<style type='text/css'>
+.test { font-size: 200%; }
+</style>
+</head>
+<body>
+<p class="instructions">Click on the link and a page will appear in a new window. Run that page through the online translation service.<br/>Test passes if the text after &gt; in item #2 is NOT translated. (If the browser shows no text after &gt;, use a browser that does, such as Firefox.)</p>
+
+
+<div class='test'><a href='support/attributes.html' target='_blank'>Click here</a></div>
+
+
+<!--Notes:
+Online services can be found at URLs such as:<br/><a href='http://translate.google.com/'>http://translate.google.com/</a> (Google)<br/><a href='http://www.microsofttranslator.com'>http://www.microsofttranslator.com</a> (Microsoft)<br/><a href='http://translate.yandex.com/'>http://translate.yandex.com/</a> (Yandex)
+
+-->
+
+
+</body>
+</html>

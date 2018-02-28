@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="UTF-8"/>
+<title>HTML5, character references: hex ncr for C1 position of euro sign</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/html5/syntax.html#tokenizing-character-references'>
+<script src="../../../../resources/testharness.js"></script>
+<script src="../../../../resources/testharnessreport.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../resources/testharness.css">
+<meta name='flags' content='dom'>
+<meta name="assert" content="A hexadecimal numeric reference containing the code point for the euro in the Windows 1252 code page should produce a euro sign.">
+<style>
+.test { color: white; }
+</style>
+</head>
+<body>
+<div class="test" id="test"><span id="one">&#x80;</span><span id="two" class="reference">€</span></div>
+<script>
+test(function() {
+assert_equals(document.getElementById("one").firstChild.data, document.getElementById("two").firstChild.data);
+}, " ");
+</script>
+<div id='log'></div>
+</body>
+</html>
