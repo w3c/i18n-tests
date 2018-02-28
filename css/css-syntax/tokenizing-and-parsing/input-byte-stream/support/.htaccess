@@ -1,0 +1,60 @@
+AddType 'text/html' html
+AddType 'text/css' css
+
+<Files ~ "bom-charset1\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "bom\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset-unknown\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset1\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15-beforespaces\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15-blankline\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15-endspaces\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15-linebreak\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15-midspaces\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15-nocolon\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15-singlequotes\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15lcvalue\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "charset15uc\.css">
+ForceType 'text/css'
+</Files>
+<Files ~ "http1-bom\.css">
+ForceType 'text/css; charset=iso-8859-1'
+</Files>
+<Files ~ "http1-charset8\.css">
+ForceType 'text/css; charset=iso-8859-1'
+</Files>
+<Files ~ "http1\.css">
+ForceType 'text/css; charset=iso-8859-1'
+</Files>
+<Files ~ "http15\.css">
+ForceType 'text/css; charset=iso-8859-15'
+</Files>
+<Files ~ "none\.css">
+ForceType 'text/css'
+</Files>
