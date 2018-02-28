@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>hyphens:auto, with soft hyphen</title>
+<meta name="assert" content="Automatic hyphenation opportunities within a word must be ignored if the word contains a conditional hyphen (&shy; or U+00AD), in favor of the conditional hyphen(s).">
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#hyphens-property'>
+<meta name="flags" content="font" />
+<style type='text/css'>
+@font-face {
+	font-family: 'csstest_asciiregular';
+	src: url('../../../fonts/CSSTest/csstest-ascii.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test { border: 1px solid #02D7F6;  margin: 20px;  padding: 10px; width: 250px; font: 24px/1 csstest_asciiregular; }
+/* the CSS above is not part of the test */
+.test { -moz-hyphens: auto; -webkit-hyphens: auto; -ms-hyphens: auto; }
+</style>
+</head>
+<body>
+<p class='instructions'>Test passes if the word 'opportunities' wraps with a hyphen after 'opp'.</p>
+<div class="test" lang="en">hyphenation opp&#x00AD;ortunities</div>
+<!-- Notes:
+Ignore this test if hyphens-auto-001 doesn't pass., ie. if hyphens: auto is not supported.
+-->
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>soft hyphens, hidden by default</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#word-break-property'>
+<meta name="assert" content="The UA will break the line at a soft-hyphen and display the hyphen at the end of the line.">
+<style type='text/css'>
+@font-face {
+	font-family: 'csstest_asciiregular';
+	src: url('support/csstest-ascii.eot');
+	src: url('support/csstest-ascii.eot?#iefix') format('embedded-opentype'),
+		 url('support/csstest-ascii.woff2') format('woff2'),
+		 url('support/csstest-ascii.woff') format('woff'),
+		 url('support/csstest-ascii.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { border: 1px solid orange;  margin: 20px;  padding: 10px; width: 390px; font: 24px/1 csstest_asciiregular; width: 50px; }
+.ref { white-space: nowrap; }
+/* the CSS above is not part of the test */
+</style>
+</head>
+<body>
+<div id='instructions'>Test passes if the two boxes and their overflow are identical.</div>
+<div class="test" lang="de"><span id="testspan">Eingabe&#x00AD;verarbeitungs&#x00AD;funktionen</span></div>
+<div class="ref" lang="de"><span id="refspan">Eingabe-<br/>verarbeitungs-<br/>funktionen</div>
+</body>
+</html>

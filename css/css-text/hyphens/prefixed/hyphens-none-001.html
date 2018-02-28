@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>hyphens:none</title>
+<meta name="assert" content="hyphens:none means words are not hyphenated.">
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#hyphens-property'>
+<meta name="flags" content="font" />
+<style type='text/css'>
+@font-face {
+	font-family: 'csstest_asciiregular';
+	src: url('../../../fonts/CSSTest/csstest-ascii.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { border: 1px solid orange;  margin: 20px;  padding: 10px; width: 75px; font: 24px/1 csstest_asciiregular; }
+/* the CSS above is not part of the test */
+.test { -moz-hyphens: none; -webkit-hyphens: none; -ms-hyphens: none; }
+</style>
+</head>
+<body>
+<p class='instructions'>Test passes if the two orange boxes and their overflow look the same.</p>
+<div class="test" lang="en">Automatic hyphenation languages dictionaries integrated opportunities override extend.</div>
+<div class="ref" lang="en"><span style="white-space:nowrap;">Automatic</span><br/><span style="white-space:nowrap;">hyphenation</span><br/><span style="white-space:nowrap;">languages</span><br/><span style="white-space:nowrap;">dictionaries</span><br/><span style="white-space:nowrap;">integrated</span><br/><span style="white-space:nowrap;">opportunities</span><br/><span style="white-space:nowrap;">override</span><br/><span style="white-space:nowrap;">extend.</span></div>
+<!-- Notes:
+If the test hyphens-auto-001 fails, you can ignore this test, since you can't be sure that the CSS property is causing hyphenation to be inhibited.
+-->
+</body>
+</html>

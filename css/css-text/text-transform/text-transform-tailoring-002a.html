@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: uppercase, Greek dialytika</title>
+<meta name="assert" content="[Exploratory] the brower tailors text-transform: uppercase such that Greek words that are all uppercase lose tonos, but not dialytika.">
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#text-transform'>
+<link rel="match" href="reference/text-transform-tailoring-002-ref.html">
+<style type='text/css'>
+.test, .ref { font-size: 200%; line-height: 2.5em; font-family: 'Gentium Plus', 'Noto Serif', 'Noto Sans', webfont, sans-serif; }
+.test span, .ref span { margin-right: 1em; white-space: nowrap; }
+.test span { color: red; }
+span { display: inline-block; min-width: 5em; }
+.ref { position:absolute; top:0; }
+
+/* the CSS above is not part of the test */
+.test { text-transform: uppercase; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the orange boxes are identical.</p>
+
+<div style="position:relative">
+<div class="test" lang="el">θεϊκό</div>
+<div class="ref">ΘΕΪΚΟ</div>
+</div>
+</body>
+</html>

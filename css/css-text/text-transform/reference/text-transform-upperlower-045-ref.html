@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: Cherokee, lowercase</title>
+<meta name="assert" content="For the Cherokee Unicode block, text-transform: lowercase puts all letters in lowercase .">
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<style type='text/css'>
+@font-face {
+	font-family: 'webfont';
+	src: url('../../fonts/notosanscherokee-regular-webfont.woff2') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 200%; line-height: 2.5em; font-family: webfont, serif; }
+.test span, .ref span { margin-right: 1em; white-space: nowrap; }
+/* the CSS above is not part of the test */
+.test { text-transform: lowercase; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if both characters in each pair match. If you are missing a font glyph for a character, ignore that pair, but report which characters were ignored.</p>
+<div class="test">
+<span title="&#x13A0;">&#xAB70; &#xAB70;</span> <span title="&#x13A1;">&#xAB71; &#xAB71;</span> <span title="&#x13A2;">&#xAB72; &#xAB72;</span> <span title="&#x13A3;">&#xAB73; &#xAB73;</span> <span title="&#x13A4;">&#xAB74; &#xAB74;</span> <span title="&#x13A5;">&#xAB75; &#xAB75;</span> <span title="&#x13A6;">&#xAB76; &#xAB76;</span> <span title="&#x13A7;">&#xAB77; &#xAB77;</span> <span title="&#x13A8;">&#xAB78; &#xAB78;</span> <span title="&#x13A9;">&#xAB79; &#xAB79;</span> <span title="&#x13AA;">&#xAB7A; &#xAB7A;</span> <span title="&#x13AB;">&#xAB7B; &#xAB7B;</span> <span title="&#x13AC;">&#xAB7C; &#xAB7C;</span> <span title="&#x13AD;">&#xAB7D; &#xAB7D;</span> <span title="&#x13AE;">&#xAB7E; &#xAB7E;</span> <span title="&#x13AF;">&#xAB7F; &#xAB7F;</span> <span title="&#x13B0;">&#xAB80; &#xAB80;</span> <span title="&#x13B1;">&#xAB81; &#xAB81;</span> <span title="&#x13B2;">&#xAB82; &#xAB82;</span> <span title="&#x13B3;">&#xAB83; &#xAB83;</span> <span title="&#x13B4;">&#xAB84; &#xAB84;</span> <span title="&#x13B5;">&#xAB85; &#xAB85;</span> <span title="&#x13B6;">&#xAB86; &#xAB86;</span> <span title="&#x13B7;">&#xAB87; &#xAB87;</span> <span title="&#x13B8;">&#xAB88; &#xAB88;</span> <span title="&#x13B9;">&#xAB89; &#xAB89;</span> <span title="&#x13BA;">&#xAB8A; &#xAB8A;</span> <span title="&#x13BB;">&#xAB8B; &#xAB8B;</span> <span title="&#x13BC;">&#xAB8C; &#xAB8C;</span> <span title="&#x13BD;">&#xAB8D; &#xAB8D;</span> <span title="&#x13BE;">&#xAB8E; &#xAB8E;</span> <span title="&#x13BF;">&#xAB8F; &#xAB8F;</span> <span title="&#x13C0;">&#xAB90; &#xAB90;</span> <span title="&#x13C1;">&#xAB91; &#xAB91;</span> <span title="&#x13C2;">&#xAB92; &#xAB92;</span> <span title="&#x13C3;">&#xAB93; &#xAB93;</span> <span title="&#x13C4;">&#xAB94; &#xAB94;</span> <span title="&#x13C5;">&#xAB95; &#xAB95;</span> <span title="&#x13C6;">&#xAB96; &#xAB96;</span> <span title="&#x13C7;">&#xAB97; &#xAB97;</span> <span title="&#x13C8;">&#xAB98; &#xAB98;</span> <span title="&#x13C9;">&#xAB99; &#xAB99;</span> <span title="&#x13CA;">&#xAB9A; &#xAB9A;</span> <span title="&#x13CB;">&#xAB9B; &#xAB9B;</span> <span title="&#x13CC;">&#xAB9C; &#xAB9C;</span> <span title="&#x13CD;">&#xAB9D; &#xAB9D;</span> <span title="&#x13CE;">&#xAB9E; &#xAB9E;</span> <span title="&#x13CF;">&#xAB9F; &#xAB9F;</span> <span title="&#x13D0;">&#xABA0; &#xABA0;</span> <span title="&#x13D1;">&#xABA1; &#xABA1;</span> <span title="&#x13D2;">&#xABA2; &#xABA2;</span> <span title="&#x13D3;">&#xABA3; &#xABA3;</span> <span title="&#x13D4;">&#xABA4; &#xABA4;</span> <span title="&#x13D5;">&#xABA5; &#xABA5;</span> <span title="&#x13D6;">&#xABA6; &#xABA6;</span> <span title="&#x13D7;">&#xABA7; &#xABA7;</span> <span title="&#x13D8;">&#xABA8; &#xABA8;</span> <span title="&#x13D9;">&#xABA9; &#xABA9;</span> <span title="&#x13DA;">&#xABAA; &#xABAA;</span> <span title="&#x13DB;">&#xABAB; &#xABAB;</span> <span title="&#x13DC;">&#xABAC; &#xABAC;</span> <span title="&#x13DD;">&#xABAD; &#xABAD;</span> <span title="&#x13DE;">&#xABAE; &#xABAE;</span> <span title="&#x13DF;">&#xABAF; &#xABAF;</span> <span title="&#x13E0;">&#xABB0; &#xABB0;</span> <span title="&#x13E1;">&#xABB1; &#xABB1;</span> <span title="&#x13E2;">&#xABB2; &#xABB2;</span> <span title="&#x13E3;">&#xABB3; &#xABB3;</span> <span title="&#x13E4;">&#xABB4; &#xABB4;</span> <span title="&#x13E5;">&#xABB5; &#xABB5;</span> <span title="&#x13E6;">&#xABB6; &#xABB6;</span> <span title="&#x13E7;">&#xABB7; &#xABB7;</span> <span title="&#x13E8;">&#xABB8; &#xABB8;</span> <span title="&#x13E9;">&#xABB9; &#xABB9;</span> <span title="&#x13EA;">&#xABBA; &#xABBA;</span> <span title="&#x13EB;">&#xABBB; &#xABBB;</span> <span title="&#x13EC;">&#xABBC; &#xABBC;</span> <span title="&#x13ED;">&#xABBD; &#xABBD;</span> <span title="&#x13EE;">&#xABBE; &#xABBE;</span> <span title="&#x13EF;">&#xABBF; &#xABBF;</span> <span title="&#x13F0;">&#x13F8; &#x13F8;</span> <span title="&#x13F1;">&#x13F9; &#x13F9;</span> <span title="&#x13F2;">&#x13FA; &#x13FA;</span> <span title="&#x13F3;">&#x13FB; &#x13FB;</span> <span title="&#x13F4;">&#x13FC; &#x13FC;</span> <span title="&#x13F5;">&#x13FD; &#x13FD;</span> 
+</div>
+	</body>
+</html>

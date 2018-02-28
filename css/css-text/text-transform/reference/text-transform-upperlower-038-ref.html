@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: Greek final sigma, lowercase</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<meta name='flags' content=''>
+<style type='text/css'>
+@font-face {
+	font-family: 'webfont';
+	src: url('../../fonts/GentiumPlus-R.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 36px; font-family: 'Gentium Plus', 'Noto Serif', 'Noto Sans', webfont, sans-serif;  margin: 10px; width: 200px;  padding: 5px; }
+.test span { color: red; }
+span { display: inline-block; min-width: 5em; }
+.ref { position:absolute; top:0; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the orange boxes are identical.</p>
+
+<div style="position:relative">
+<div class="test">οδυσσευς</div>
+<div class="ref">οδυσσευς</div>
+</div>
+</body>
+</html>
