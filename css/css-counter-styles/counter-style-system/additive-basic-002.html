@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>additive basic, extended</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-counter-styles/#additive-system">
+<meta name="flags" content="font">
+<meta name="assert" content="The browser can produce an additive custom counter style.">
+<style type="text/css">
+@counter-style additive {
+system: additive;
+range: 1 9999;
+additive-symbols: 9000 '\554', 8000 '\553', 7000 '\552', 6000 '\551', 5000 '\550', 4000 '\54F', 3000 '\54E', 2000 '\54D', 1000 '\54C', 900 '\54B', 800 '\54A', 700 '\549', 600 '\548', 500 '\547', 400 '\546', 300 '\545', 200 '\544', 100 '\543', 90 '\542', 80 '\541', 70 '\540', 60 '\53F', 50 '\53E', 40 '\53D', 30 '\53C', 20 '\53B', 10 '\53A', 9 '\539', 8 '\538', 7 '\537', 6 '\536', 5 '\535', 4 '\534', 3 '\533', 2 '\532', 1 '\531';
+/* additive-symbols: 9000 'Ք', 8000 'Փ', 7000 'Ւ', 6000 'Ց', 5000 'Ր', 4000 'Տ', 3000 'Վ', 2000 'Ս', 1000 'Ռ', 900 'Ջ', 800 'Պ', 700 'Չ', 600 'Ո', 500 'Շ', 400 'Ն', 300 'Յ', 200 'Մ', 100 'Ճ', 90 'Ղ', 80 'Ձ', 70 'Հ', 60 'Կ', ;50 'Ծ', 40 'Խ', 30 'Լ', 20 'Ի', 10 'Ժ', 9 'Թ', 8 'Ը', 7 'Է', 6 'Զ', 5 'Ե', 4 'Դ', 3 'Գ', 2 'Բ', 1 'Ա'; */
+suffix: ".";
+} 
+ol li { list-style-type: additive;  }
+
+/* the following CSS is not part of the test */
+ol, li { 
+    list-style-position: inside;
+    margin: 0; padding: 0;
+    line-height: 40px;
+    }
+div { line-height: 40px; }
+.ref { position:absolute; top:0;  }
+.test { color: red; }
+.test, .ref { font-size: 25px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you don't see different red characters below the black.</p>
+
+<div style="position:relative">
+<div class="test">
+<ol start="10"><li title="10">&nbsp;</li></ol>
+<ol start="11"><li title="11">&nbsp;</li></ol>
+<ol start="12"><li title="12">&nbsp;</li></ol>
+<ol start="43"><li title="43">&nbsp;</li></ol>
+<ol start="77"><li title="77">&nbsp;</li></ol>
+<ol start="80"><li title="80">&nbsp;</li></ol>
+<ol start="99"><li title="99">&nbsp;</li></ol>
+<ol start="100"><li title="100">&nbsp;</li></ol>
+<ol start="101"><li title="101">&nbsp;</li></ol>
+<ol start="222"><li title="222">&nbsp;</li></ol>
+<ol start="540"><li title="540">&nbsp;</li></ol>
+<ol start="999"><li title="999">&nbsp;</li></ol>
+<ol start="1000"><li title="1000">&nbsp;</li></ol>
+<ol start="1005"><li title="1005">&nbsp;</li></ol>
+<ol start="1060"><li title="1060">&nbsp;</li></ol>
+<ol start="1065"><li title="1065">&nbsp;</li></ol>
+<ol start="1800"><li title="1800">&nbsp;</li></ol>
+<ol start="1860"><li title="1860">&nbsp;</li></ol>
+<ol start="1865"><li title="1865">&nbsp;</li></ol>
+<ol start="5865"><li title="5865">&nbsp;</li></ol>
+<ol start="7005"><li title="7005">&nbsp;</li></ol>
+<ol start="7800"><li title="7800">&nbsp;</li></ol>
+<ol start="7865"><li title="7865">&nbsp;</li></ol>
+<ol start="9999"><li title="9999">&nbsp;</li></ol>
+</div>
+<div class="ref">
+<div>Ժ.</div>
+<div>ԺԱ.</div>
+<div>ԺԲ.</div>
+<div>ԽԳ.</div>
+<div>ՀԷ.</div>
+<div>Ձ.</div>
+<div>ՂԹ.</div>
+<div>Ճ.</div>
+<div>ՃԱ.</div>
+<div>ՄԻԲ.</div>
+<div>ՇԽ.</div>
+<div>ՋՂԹ.</div>
+<div>Ռ.</div>
+<div>ՌԵ.</div>
+<div>ՌԿ.</div>
+<div>ՌԿԵ.</div>
+<div>ՌՊ.</div>
+<div>ՌՊԿ.</div>
+<div>ՌՊԿԵ.</div>
+<div>ՐՊԿԵ.</div>
+<div>ՒԵ.</div>
+<div>ՒՊ.</div>
+<div>ՒՊԿԵ.</div>
+<div>ՔՋՂԹ.</div>
+</div>
+</div>
+<!--Notes:
+You will need an appropriate font to run this test.
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>prefix/suffix (cyclic)</title>
+<meta name="assert" content="The browser can produce a prefix and suffix as specified for cyclic counters.">
+<style type="text/css">
+@counter-style cyclic {
+system: cyclic;
+symbols: '*' ⁑ † ‡;
+prefix: '(';
+suffix: ')';
+} 
+ol li { list-style-type: cyclic;  }
+/* the following CSS is not part of the test */
+.test { font-size: 25px; }
+ol { margin: 0; padding-left: 8em; }
+li { background-color: orange; color: orange; }
+</style>
+</head>
+<body>
+<p class="instructions">Skip this test if cyclic counter styles are not supported.</p>
+<p class="instructions">Test passes if the counters are surrounded by parentheses, with no additional characters or spaces.</p>
+<div class="test">
+<ol>
+<li title="1">*</li>
+<li title="2">⁑</li>
+<li title="3">†</li>
+</ol>
+<ol start="10">
+<li title="10">⁑</li>
+<li title="11">†</li>
+</ol>
+<ol start="108">
+<li title="108">‡</li>
+<li title="109">*</li>
+<li title="110">⁑</li>
+<li title="111">†</li>
+</ol>
+</div>
+<!--Notes:
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>

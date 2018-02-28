@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>additive basic, simple</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-counter-styles/#additive-system">
+<meta name="flags" content="font">
+<meta name="assert" content="The browser can produce an additive custom counter style.">
+<style type="text/css">
+@counter-style additive {
+system: additive;
+range: 1 9999;
+additive-symbols: 9000 '\554', 8000 '\553', 7000 '\552', 6000 '\551', 5000 '\550', 4000 '\54F', 3000 '\54E', 2000 '\54D', 1000 '\54C', 900 '\54B', 800 '\54A', 700 '\549', 600 '\548', 500 '\547', 400 '\546', 300 '\545', 200 '\544', 100 '\543', 90 '\542', 80 '\541', 70 '\540', 60 '\53F', 50 '\53E', 40 '\53D', 30 '\53C', 20 '\53B', 10 '\53A', 9 '\539', 8 '\538', 7 '\537', 6 '\536', 5 '\535', 4 '\534', 3 '\533', 2 '\532', 1 '\531';
+/* additive-symbols: 9000 'Ք', 8000 'Փ', 7000 'Ւ', 6000 'Ց', 5000 'Ր', 4000 'Տ', 3000 'Վ', 2000 'Ս', 1000 'Ռ', 900 'Ջ', 800 'Պ', 700 'Չ', 600 'Ո', 500 'Շ', 400 'Ն', 300 'Յ', 200 'Մ', 100 'Ճ', 90 'Ղ', 80 'Ձ', 70 'Հ', 60 'Կ', ;50 'Ծ', 40 'Խ', 30 'Լ', 20 'Ի', 10 'Ժ', 9 'Թ', 8 'Ը', 7 'Է', 6 'Զ', 5 'Ե', 4 'Դ', 3 'Գ', 2 'Բ', 1 'Ա'; */
+suffix: ".";
+} 
+ol li { list-style-type: additive;  }
+
+/* the following CSS is not part of the test */
+ol, li { 
+    list-style-position: inside;
+    margin: 0; padding: 0;
+    line-height: 40px;
+    }
+div { line-height: 40px; }
+.ref { position:absolute; top:0;  }
+.test { color: red; }
+.test, .ref { font-size: 25px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you don't see different red characters below the black.</p>
+
+<div style="position:relative">
+<div class="test"><ol>
+<li title="1">&nbsp;</li>
+<li title="2">&nbsp;</li>
+<li title="3">&nbsp;</li>
+<li title="4">&nbsp;</li>
+<li title="5">&nbsp;</li>
+<li title="6">&nbsp;</li>
+<li title="7">&nbsp;</li>
+<li title="8">&nbsp;</li>
+<li title="9">&nbsp;</li>
+</ol>
+</div>
+<div class="ref">
+<div title="1">Ա.</div>
+<div title="2">Բ.</div>
+<div title="3">Գ.</div>
+<div title="4">Դ.</div>
+<div title="5">Ե.</div>
+<div title="6">Զ.</div>
+<div title="7">Է.</div>
+<div title="8">Ը.</div>
+<div title="9">Թ.</div>
+</div>
+</div>
+<!--Notes:
+You will need an appropriate font to run this test.
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>
