@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>i18n test runner</title>
+<link rel="stylesheet" type="text/css" href="./runstyle.css">
+<script src="runfunctions.js"></script>
+<script>
+// get parameters
+var firstTest = ''
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+    pairs = parameters[p].split('=');
+    if (pairs[0] == 'base') { if (pairs[1]) { var base = pairs[1] } }
+    if (pairs[0] == 'batch') { if (pairs[1]) { var batch = pairs[1] } }
+    if (pairs[0] == 'test') { if (pairs[1]) { var testparam = pairs[1] } }
+    }
+
+var ptr = 0; // current index in tests array
+// load the appropriate db file	
+if (! base.match(/\.\./) && ! batch.match(/\.\./)) {
+    var db = document.createElement('script')
+    db.src = 'batches/' + batch +'.json'
+    db.async = false
+    document.head.appendChild(db)
+    }
+else alert("Invalid base or batch name.")
+</script>
+<style type="text/css">
+.test div { width: 50px; }
+body { height: 100%; }
+iframe { height: 800px; width: 80%; border: 1px solid #CCC; }
+</style>
+<script>
+function initialise () {  
+    // set select options
+    for (let t=0; t<tests.length; t++) {
+        var option = document.createElement('option')
+        option.value = t
+        option.appendChild(document.createTextNode(tests[t][0]))
+        document.getElementById('selector').appendChild(option)
+        }
+    
+    // display the requested test
+    if (testparam) {
+        if (testparam.match("/\.\./")) {
+            firstTest = ''
+            }
+        else {
+            for (let t=0;t<tests.length;t++) {
+                if (tests[t][0] === testparam) { firstTest = t; break; }
+                } 
+            }
+        if (firstTest === '') { alert('Bad test name.'); firstTest = 0; }
+        }
+    else { firstTest = 0; }
+
+    setTest(firstTest, base)
+    }
+</script>
+
+</head>
+<body onLoad="initialise()">
+<p id="title" class="title">HTTP charset</p>
+<p id="scoring" style="display:none;"><button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'pass'); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Pass</button>
+<button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'fail'); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Fail</button>
+<button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'partial'); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Partial</button>
+<button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'skipped'); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Skip</button>  &nbsp;&nbsp; 
+<select onChange="_browsertype = this.value">
+<option value="">Select a browser</option>
+<optgroup label="desktop">
+<option value="Firefox">Firefox</option>
+<option value="Chrome">Chrome</option>
+<option value="Opera">Opera</option>
+<option value="Safari">Safari</option>
+<option value="Edge">Edge</option>
+<option value="Internet Explorer">Internet Explorer</option>
+</optgroup>
+<optgroup label="nightlies">
+<option value="Nightly">Firefox nightly</option>
+<option value="Canary">Google canary</option>
+<option value="Webkit">WebKit</option>
+</optgroup>
+<optgroup label="mobile / tablet">
+<option value="Android">Android</option>
+<option value="SafariMobile">Safari Mobile</option>
+<option value="ChromeMobile">Chrome Mobile</option>
+<option value="UC Browser">UC Browser</option>
+<option value="OperaAndroid">Opera Android</option>
+<option value="OperaMini">Opera Mini</option>
+</optgroup>
+<option value="Other">Other</option>
+</select>
+</p>
+
+
+<iframe name="testframe" id="testframe" src="none.html">Test framework not supported</iframe>
+
+
+
+
+<div class="nexttest">
+<p class="jump" style="margin-top: 0;"><select id="selector" onChange="setTest(this.value, base);"></select></p>
+
+<div style="color:teal; cursor:pointer; text-align:right;"><span onclick="if (ptr>0) {ptr--; setTest(ptr, base); }">Previous</span> &bull; <span onclick="if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Next</span></div>
+<p class="jump">
+<a id="speclink" href="http://www.w3.org/TR/html5/syntax.html#the-input-byte-stream" target="_blank">Link to spec</a><br/>	
+<a href="http://www.w3.org/International/tests/" target="_blank">i18n tests</a></p>
+<div id="prerequisites" class="prereq"></div>
+<div id="assertion" class="assert" title="Assertion">The character encoding of the page can be set by a meta element with http-equiv and content attributes.</div>
+</div>
+
+
+<div id="interact">
+<div id="info" style="font-size: 90%; font-style: italic;"></div>
+<p><button onClick="setUpScoring();">Score</button> &nbsp; &nbsp; <a href="howto" class="jump" style="font-size: 90%; font-style:italic;" target="_blank">How to score and send results</a> <button id="resultsButton" style="display:none;" onClick="dump();">Show results</button>  
+</p>
+</div>
+<!--div id=testdetail></div-->
+<textarea id="testdetail" style="display:none; width: 80%; height: 200px;"></textarea>
+
+<script>
+//setTest(<?php echo $firsttest; ?>,base);
+
+document.getElementById('info').innerHTML = navigator.userAgent;
+
+
+
+
+</script>
+</body>
+</html>
+
+
