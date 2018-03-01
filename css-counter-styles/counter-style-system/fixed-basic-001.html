@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>fixed basic</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-counter-styles-3/#simple-numeric">
+<meta name="flags" content="font">
+<meta name="assert" content="The browser can produce a fixed custom counter style.">
+<style type="text/css">
+@counter-style fixed {
+system: fixed;
+symbols: '\249C' '\249D' '\249E' '\249F' '\24A0' '\24A1' '\24A2' '\24A3' '\24A4' '\24A5' '\24A6' '\24A7' '\24A8' '\24A9' '\24AA' '\24AB' '\24AC' '\24AD' '\24AE' '\24AF' '\24B0' '\24B1' '\24B2' '\24B3' '\24B4' '\24B5';
+/* symbols: '⒜' '⒝' '⒞' '⒟' '⒠' '⒡' '⒢' '⒣' '⒤' '⒥' '⒦' '⒧' '⒨' '⒩' '⒪' '⒫' '⒬' '⒭' '⒮' '⒯' '⒰' '⒱' '⒲' '⒳' '⒴' '⒵'; */
+suffix: ' ';
+} 
+ol li { list-style-type: fixed;  }
+
+/* the following CSS is not part of the test */
+ol, li { 
+    list-style-position: inside;
+    margin: 0; padding: 0;
+    line-height: 40px;
+    }
+div { line-height: 40px; }
+.ref { position:absolute; top:0;  }
+.test { color: red; }
+.test, .ref { font-size: 25px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red characters behind the black, IGNORING the suffix.</p>
+<div style="position:relative">
+<div class="test">
+<ol>
+<li title="1">&nbsp;</li>
+<li title="2">&nbsp;</li>
+<li title="3">&nbsp;</li>
+<li title="4">&nbsp;</li>
+<li title="5">&nbsp;</li>
+<li title="6">&nbsp;</li>
+<li title="7">&nbsp;</li>
+<li title="8">&nbsp;</li>
+<li title="9">&nbsp;</li>
+</ol>
+</div>
+<div class="ref">
+<div title="1">⒜</div>
+<div title="2">⒝</div>
+<div title="3">⒞</div>
+<div title="4">⒟</div>
+<div title="5">⒠</div>
+<div title="6">⒡</div>
+<div title="7">⒢</div>
+<div title="8">⒣</div>
+<div title="9">⒤</div>
+</div>
+</div>
+<!--Notes:
+You will need an appropriate font to run this test.
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>

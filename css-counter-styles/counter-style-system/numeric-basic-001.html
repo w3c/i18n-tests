@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>numeric basic, simple</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-counter-styles-3/#simple-numeric">
+<meta name="flags" content="font">
+<meta name="assert" content="The browser can produce a numeric custom counter style.">
+<style type="text/css">
+@counter-style numeric {
+system: numeric;
+symbols: '\9E6' '\9E7' '\9E8' '\9E9' '\9EA' '\9EB' '\9EC' '\9ED' '\9EE' '\9EF';
+/* symbols: '০' '১' '২' '৩' '৪' '৫' '৬' '৭' '৮' '৯'; */
+suffix: " ";
+} 
+ol li { list-style-type: numeric;  }
+
+/* the following CSS is not part of the test */
+ol, li { 
+    list-style-position: inside;
+    margin: 0; padding: 0;
+    line-height: 40px;
+    }
+div { line-height: 40px; }
+.ref { position:absolute; top:0;  }
+.test { color: red; }
+.test, .ref { font-size: 25px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red characters behind the black, IGNORING the suffix.</p>
+<div style="position:relative">
+<div class="test">
+<ol>
+<li title="1">&nbsp;</li>
+<li title="2">&nbsp;</li>
+<li title="3">&nbsp;</li>
+<li title="4">&nbsp;</li>
+<li title="5">&nbsp;</li>
+<li title="6">&nbsp;</li>
+<li title="7">&nbsp;</li>
+<li title="8">&nbsp;</li>
+<li title="9">&nbsp;</li>
+</ol>
+</div>
+<div class="ref">
+<div title="1">১</div>
+<div title="2">২</div>
+<div title="3">৩</div>
+<div title="4">৪</div>
+<div title="5">৫</div>
+<div title="6">৬</div>
+<div title="7">৭</div>
+<div title="8">৮</div>
+<div title="9">৯</div>
+</div>
+</div>
+<!--Notes:
+You will need an appropriate font to run this test.
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>

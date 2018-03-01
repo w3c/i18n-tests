@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>alphabetic basic, simple</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-counter-styles/#alphabetic-system">
+<meta name="flags" content="font">
+<meta name="assert" content="The browser can produce an alphabetic custom counter style.">
+<style type="text/css">
+@counter-style alphabetic {
+system: alphabetic;
+symbols: '\3B1' '\3B2' '\3B3' '\3B4' '\3B5' '\3B6' '\3B7' '\3B8' '\3B9' '\3BA' '\3BB' '\3BC' '\3BD' '\3BE' '\3BF' '\3C0' '\3C1' '\3C3' '\3C4' '\3C5' '\3C6' '\3C7' '\3C8' '\3C9';
+/* symbols: 'α' 'β' 'γ' 'δ' 'ε' 'ζ' 'η' 'θ' 'ι' 'κ' 'λ' 'μ' 'ν' 'ξ' 'ο' 'π' 'ρ' 'σ' 'τ' 'υ' 'φ' 'χ' 'ψ' 'ω'; */
+suffix: " ";
+} 
+ol li { list-style-type: alphabetic;  }
+
+/* the following CSS is not part of the test */
+ol, li { 
+    list-style-position: inside;
+    margin: 0; padding: 0;
+    line-height: 40px;
+    }
+div { line-height: 40px; }
+.ref { position:absolute; top:0;  }
+.test { color: red; }
+.test, .ref { font-size: 25px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red characters behind the black, IGNORING the suffix.</p>
+<div style="position:relative">
+<div class="test"><ol>
+<li title="1">&nbsp;</li>
+<li title="2">&nbsp;</li>
+<li title="3">&nbsp;</li>
+<li title="4">&nbsp;</li>
+<li title="5">&nbsp;</li>
+<li title="6">&nbsp;</li>
+<li title="7">&nbsp;</li>
+<li title="8">&nbsp;</li>
+<li title="9">&nbsp;</li>
+<li title="10">&nbsp;</li>
+<li title="11">&nbsp;</li>
+<li title="12">&nbsp;</li>
+<li title="13">&nbsp;</li>
+<li title="14">&nbsp;</li>
+<li title="15">&nbsp;</li>
+<li title="16">&nbsp;</li>
+<li title="17">&nbsp;</li>
+<li title="18">&nbsp;</li>
+<li title="19">&nbsp;</li>
+<li title="20">&nbsp;</li>
+<li title="21">&nbsp;</li>
+<li title="22">&nbsp;</li>
+<li title="23">&nbsp;</li>
+<li title="24">&nbsp;</li>
+</ol></div>
+<div class="ref">
+<div title="1">α</div>
+<div title="2">β</div>
+<div title="3">γ</div>
+<div title="4">δ</div>
+<div title="5">ε</div>
+<div title="6">ζ</div>
+<div title="7">η</div>
+<div title="8">θ</div>
+<div title="9">ι</div>
+<div title="10">κ</div>
+<div title="11">λ</div>
+<div title="12">μ</div>
+<div title="13">ν</div>
+<div title="14">ξ</div>
+<div title="15">ο</div>
+<div title="16">π</div>
+<div title="17">ρ</div>
+<div title="18">σ</div>
+<div title="19">τ</div>
+<div title="20">υ</div>
+<div title="21">φ</div>
+<div title="22">χ</div>
+<div title="23">ψ</div>
+<div title="24">ω</div>
+</div>
+</div>
+<!--Notes:
+You will need an appropriate font to run this test.
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>

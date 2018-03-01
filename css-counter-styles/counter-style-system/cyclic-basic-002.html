@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>cyclic basic, 4 symbols</title>
+<meta name="assert" content="The browser can produce a cyclic custom counter style.">
+<style type="text/css">
+@counter-style cyclic {
+system: cyclic;
+symbols: '*' ⁑ † ‡;
+suffix: " ";
+} 
+ol li { list-style-type: cyclic;  }
+
+/* the following CSS is not part of the test */
+ol, li { 
+    list-style-position: inside;
+    margin: 0; padding: 0;
+    line-height: 40px;
+    }
+div { line-height: 40px; }
+.ref { position:absolute; top:0;  }
+.test { color: red; }
+.test, .ref { font-size: 25px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red characters behind the black, IGNORING the suffix.</p>
+<div style="position:relative">
+<div class="test">
+<ol>
+<li title="1">&nbsp;</li>
+<li title="2">&nbsp;</li>
+<li title="3">&nbsp;</li>
+</ol>
+<ol start="10">
+<li title="10">&nbsp;</li>
+<li title="11">&nbsp;</li>
+</ol>
+<ol start="108">
+<li title="108">&nbsp;</li>
+<li title="109">&nbsp;</li>
+<li title="110">&nbsp;</li>
+<li title="111">&nbsp;</li>
+</ol>
+</div>
+<div class="ref">
+<div title="1">*</div>
+<div title="2">⁑</div>
+<div title="3">†</div>
+<div title="10">⁑</div>
+<div title="11">†</div>
+<div title="108">‡</div>
+<div title="109">*</div>
+<div title="110">⁑</div>
+<div title="111">†</div>
+</div>
+</div>
+<!--Notes:
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>

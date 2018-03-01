@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>symbolic basic</title>
+<meta name="assert" content="The browser can produce a symbolic custom counter style.">
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-counter-styles-3/#simple-numeric">
+<style type="text/css">
+@counter-style symbolic {
+system: symbolic;
+symbols: '*' ⁑ † ‡;
+suffix: " ";
+} 
+ol li { list-style-type: symbolic;  }
+
+/* the following CSS is not part of the test */
+ol, li { 
+    list-style-position: inside;
+    margin: 0; padding: 0;
+    line-height: 40px;
+    }
+div { line-height: 40px; }
+.ref { position:absolute; top:0;  }
+.test { color: red; }
+.test, .ref { font-size: 25px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red characters behind the black, IGNORING the suffix.</p>
+<div style="position:relative">
+<div class="test">
+<ol>
+<li title="1">&nbsp;</li>
+<li title="2">&nbsp;</li>
+<li title="3">&nbsp;</li>
+</ol>
+<ol start="10">
+<li title="10">&nbsp;</li>
+<li title="11">&nbsp;</li>
+</ol>
+<ol start="18">
+<li title="18">&nbsp;</li>
+<li title="19">&nbsp;</li>
+<li title="120">&nbsp;</li>
+<li title="11">&nbsp;</li>
+</ol>
+</div>
+<div class="ref">
+<div title="1">*</div>
+<div title="2">⁑</div>
+<div title="3">†</div>
+<div title="10">⁑⁑⁑</div>
+<div title="11">†††</div>
+<div title="18">⁑⁑⁑⁑⁑</div>
+<div title="19">†††††</div>
+<div title="120">‡‡‡‡‡</div>
+<div title="11">******</div>
+</div>
+</div>
+<!--Notes:
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>
