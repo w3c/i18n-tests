@@ -1,0 +1,8 @@
+selectors-normalization-001.html
+selectors-normalization-002.html
+selectors-normalization-003.html
+selectors-normalization-004.html
+selectors-normalization-005.html
+selectors-normalization-006.html
+selectors-normalization-007.html
+selectors-normalization-008.html

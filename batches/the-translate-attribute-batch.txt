@@ -1,0 +1,6 @@
+the-translate-attribute-007.html
+the-translate-attribute-008.html
+the-translate-attribute-009.html
+the-translate-attribute-010.html
+the-translate-attribute-011.html
+the-translate-attribute-012.html

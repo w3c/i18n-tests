@@ -1,0 +1,163 @@
+# arabic
+list-style-type-001.html
+list-style-type-002.html
+list-style-type-096.html
+list-style-type-097.html
+
+# armenian
+list-style-type-110.html
+list-style-type-110a.html
+list-style-type-111.html
+list-style-type-111a.html
+list-style-type-112.html
+list-style-type-112a.html
+
+# bengali
+list-style-type-010.html
+list-style-type-011.html
+
+# cyrillic
+list-style-type-031.html
+list-style-type-032.html
+list-style-type-033.html
+list-style-type-034.html
+list-style-type-035.html
+list-style-type-036.html
+list-style-type-037.html
+list-style-type-038.html
+list-style-type-039.html
+list-style-type-040.html
+list-style-type-041.html
+list-style-type-042.html
+list-style-type-043.html
+list-style-type-044.html
+list-style-type-045.html
+list-style-type-046.html
+
+# devanagari
+list-style-type-009.html
+list-style-type-018.html
+list-style-type-047.html
+
+# ethiopic
+list-style-type-059.html
+list-style-type-060.html
+list-style-type-061.html
+list-style-type-062.html
+list-style-type-063.html
+list-style-type-064.html
+list-style-type-065.html
+list-style-type-066.html
+list-style-type-067.html
+list-style-type-068.html
+list-style-type-069.html
+list-style-type-070.html
+list-style-type-071.html
+list-style-type-072.html
+list-style-type-073.html
+list-style-type-074.html
+list-style-type-075.html
+list-style-type-076.html
+list-style-type-077.html
+list-style-type-078.html
+list-style-type-079.html
+list-style-type-080.html
+
+# georgian
+list-style-type-114.html
+list-style-type-114a.html
+
+# greek
+list-style-type-030.html
+list-style-type-115.html
+list-style-type-130.html
+list-style-type-131.html
+list-style-type-132.html
+list-style-type-133.html
+list-style-type-115a.html
+
+# gujarati
+list-style-type-012.html
+
+# gurmukhi
+list-style-type-014.html
+
+# hebrew
+list-style-type-116.html
+list-style-type-116a.html
+
+# ideographic
+list-style-type-024.html
+list-style-type-053.html
+list-style-type-054.html
+list-style-type-119.html
+list-style-type-120.html
+list-style-type-122.html
+list-style-type-123.html
+
+# japanese
+list-style-type-049.html
+list-style-type-050.html
+list-style-type-051.html
+list-style-type-052.html
+
+# kannada
+list-style-type-015.html
+
+# khmer
+list-style-type-005.html
+list-style-type-004.html
+list-style-type-125.html
+list-style-type-124.html
+
+# korean
+list-style-type-121.html
+list-style-type-055.html
+list-style-type-056.html
+list-style-type-092.html
+list-style-type-093.html
+list-style-type-094.html
+list-style-type-095.html
+
+# lao
+list-style-type-006.html
+
+# latin
+list-style-type-025.html
+list-style-type-057.html
+list-style-type-058.html
+list-style-type-081.html
+list-style-type-082.html
+list-style-type-090.html
+list-style-type-091.html
+
+# lepcha
+list-style-type-016.html
+
+# malayalam
+list-style-type-017.html
+
+# mongolian
+list-style-type-023.html
+
+# myanmar
+list-style-type-007.html
+list-style-type-008.html
+
+# oriya
+list-style-type-019.html
+
+# tamil
+list-style-type-020.html
+list-style-type-118.html
+list-style-type-118a.html
+
+# telugu
+list-style-type-021.html
+
+# thai
+list-style-type-003.html
+list-style-type-048.html
+
+# tibetan
+list-style-type-022.html
