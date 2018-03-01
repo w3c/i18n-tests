@@ -5,7 +5,6 @@
 <title>fixed basic</title>
 <link rel="author" title="r12a" href="mailto:ishida@w3.org">
 <link rel="help" href="http://www.w3.org/TR/css-counter-styles-3/#simple-numeric">
-<meta name="flags" content="font">
 <meta name="assert" content="The browser can produce a fixed custom counter style.">
 <style type="text/css">
 @counter-style fixed {
@@ -13,11 +12,11 @@ system: fixed;
 symbols: '\249C' '\249D' '\249E' '\249F' '\24A0' '\24A1' '\24A2' '\24A3' '\24A4' '\24A5' '\24A6' '\24A7' '\24A8' '\24A9' '\24AA' '\24AB' '\24AC' '\24AD' '\24AE' '\24AF' '\24B0' '\24B1' '\24B2' '\24B3' '\24B4' '\24B5';
 /* symbols: '⒜' '⒝' '⒞' '⒟' '⒠' '⒡' '⒢' '⒣' '⒤' '⒥' '⒦' '⒧' '⒨' '⒩' '⒪' '⒫' '⒬' '⒭' '⒮' '⒯' '⒰' '⒱' '⒲' '⒳' '⒴' '⒵'; */
 suffix: ' ';
-} 
+}
 ol li { list-style-type: fixed;  }
 
 /* the following CSS is not part of the test */
-ol, li { 
+ol, li {
     list-style-position: inside;
     margin: 0; padding: 0;
     line-height: 40px;

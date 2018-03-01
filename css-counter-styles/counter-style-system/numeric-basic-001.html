@@ -5,7 +5,6 @@
 <title>numeric basic, simple</title>
 <link rel="author" title="r12a" href="mailto:ishida@w3.org">
 <link rel="help" href="http://www.w3.org/TR/css-counter-styles-3/#simple-numeric">
-<meta name="flags" content="font">
 <meta name="assert" content="The browser can produce a numeric custom counter style.">
 <style type="text/css">
 @counter-style numeric {
@@ -13,11 +12,11 @@ system: numeric;
 symbols: '\9E6' '\9E7' '\9E8' '\9E9' '\9EA' '\9EB' '\9EC' '\9ED' '\9EE' '\9EF';
 /* symbols: '০' '১' '২' '৩' '৪' '৫' '৬' '৭' '৮' '৯'; */
 suffix: " ";
-} 
+}
 ol li { list-style-type: numeric;  }
 
 /* the following CSS is not part of the test */
-ol, li { 
+ol, li {
     list-style-position: inside;
     margin: 0; padding: 0;
     line-height: 40px;

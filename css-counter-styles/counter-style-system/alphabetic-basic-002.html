@@ -5,7 +5,6 @@
 <title>alphabetic basic, extended</title>
 <link rel="author" title="r12a" href="mailto:ishida@w3.org">
 <link rel="help" href="https://drafts.csswg.org/css-counter-styles/#alphabetic-system">
-<meta name="flags" content="font">
 <meta name="assert" content="The browser can produce an alphabetic custom counter style.">
 <style type="text/css">
 @counter-style alphabetic {
@@ -13,11 +12,11 @@ system: alphabetic;
 symbols: '\3B1' '\3B2' '\3B3' '\3B4' '\3B5' '\3B6' '\3B7' '\3B8' '\3B9' '\3BA' '\3BB' '\3BC' '\3BD' '\3BE' '\3BF' '\3C0' '\3C1' '\3C3' '\3C4' '\3C5' '\3C6' '\3C7' '\3C8' '\3C9';
 /* symbols: 'α' 'β' 'γ' 'δ' 'ε' 'ζ' 'η' 'θ' 'ι' 'κ' 'λ' 'μ' 'ν' 'ξ' 'ο' 'π' 'ρ' 'σ' 'τ' 'υ' 'φ' 'χ' 'ψ' 'ω'; */
 suffix: " ";
-} 
+}
 ol li { list-style-type: alphabetic;  }
 
 /* the following CSS is not part of the test */
-ol, li { 
+ol, li {
     list-style-position: inside;
     margin: 0; padding: 0;
     line-height: 40px;
