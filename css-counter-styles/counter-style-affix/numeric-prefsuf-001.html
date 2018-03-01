@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>prefix/suffix (numeric)</title>
+<meta name="assert" content="The browser can produce a prefix and suffix as specified for numeric counters.">
+<style type="text/css">
+@counter-style numeric {
+system: numeric;
+symbols: '\9E6' '\9E7' '\9E8' '\9E9' '\9EA' '\9EB' '\9EC' '\9ED' '\9EE' '\9EF';
+prefix: '(';
+suffix: ')';
+} 
+ol li { list-style-type: numeric;  }
+
+/* the following CSS is not part of the test */
+ol, li {
+    list-style-position: inside;
+    margin: 0; padding: 0;
+    line-height: 40px;
+    }
+div { line-height: 40px; }
+.ref { position:absolute; top:0;  }
+.test { color: red; }
+.test, .ref { font-size: 25px; }
+.blank { background-color: orange; color: orange; }
+</style>
+</head>
+<body>
+<p class="instructions">Skip this test if numeric counter styles are not supported.</p>
+<p class="instructions">Test passes if you see no red text, and there is NO space just before the orange blob.</p>
+<div style="position:relative">
+<div class="test">
+<ol start="1"><li title="1">&nbsp;</li></ol>
+<ol start="11"><li title="11">&nbsp;</li></ol>
+<ol start="101"><li title="101">&nbsp;</li></ol>
+<ol start="1005"><li title="1005">&nbsp;</li></ol>
+</div>
+<div class="ref">
+<div title="1">(১)<span class="blank">x</span></div>
+<div title="11">(১১)<span class="blank">x</span></div>
+<div title="101">(১০১)<span class="blank">x</span></div>
+<div title="1005">(১০০৫)<span class="blank">x</span></div>
+</div>
+</div>
+<!--Notes:
+You will need an appropriate font to run this test.
+The test relies on the start attribute working.
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>

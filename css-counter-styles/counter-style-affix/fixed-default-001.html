@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>prefix/suffix default (fixed)</title>
+<meta name="assert" content="The browser can produce a default prefix and suffix as specified for fixed counters.">
+<style type="text/css">
+@counter-style fixed {
+system: fixed;
+symbols: '\627' '\628' '\62C' '\62F' '\647\200D' '\648' '\632' '\62D' '\637' '\6CC' '\6A9' '\644' '\645' '\646' '\633' '\639' '\641' '\635' '\642' '\631' '\634' '\62A' '\62B' '\62E' '\630' '\636' '\638' '\63A';
+} ol li { list-style-type: fixed;  }
+
+/* the following CSS is not part of the test */
+ol, li {
+    list-style-position: inside;
+    margin: 0; padding: 0;
+    line-height: 40px;
+    }
+div { line-height: 40px; }
+.ref { position:absolute; top:0;  }
+.test { color: red; }
+.test, .ref { font-size: 25px; }
+.blank { background-color: orange; color: orange; }
+</style>
+</head>
+<body>
+<p class="instructions">Skip this test if fixed counter styles are not supported.</p>
+<p class="instructions">Test passes if you see no red text, and there is a space just before the orange blob.</p>
+<div style="position:relative">
+<div class="test">
+<ol>
+<li title="1">&nbsp;</li>
+<li title="2">&nbsp;</li>
+<li title="3">&nbsp;</li>
+</ol>
+</div>
+<div class="ref">
+<div title="1">ا. <span class="blank">x</span></div>
+<div title="2">ب. <span class="blank">x</span></div>
+<div title="3">ج. <span class="blank">x</span></div>
+</div>
+</div>
+<!--Notes:
+You will need an appropriate font to run this test.
+To see the ASCII decimal number associated with a row, mouse over it and the number will pop up in a tooltip.
+-->
+</body>
+</html>
