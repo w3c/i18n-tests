@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: tibetan</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to tibetan will produce list numbering as described in the document Predefined Counter Styles.">
+<script src="support/createref.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: tibetan; }
+</style>
+</head>
+<body onload="completeTest('')">
+<p class="instructions">Test passes if there are no alternative, red characters, IGNORING the suffix.</p>
+
+
+<div class='test'><ol>
+                <li title='1'>༡</li>
+                <li title='2'>༢</li>
+                <li title='3'>༣</li>
+
+                <li title='4'>༤</li>
+                <li title='5'>༥</li>
+                <li title='6'>༦</li>
+                <li title='7'>༧</li>
+                <li title='8'>༨</li>
+
+                <li title='9'>༩</li>
+                <li title='10'>༡༠</li>
+                <li title='11'>༡༡</li>
+                <li title='12'>༡༢</li>
+            </ol>
+
+            <ol start='43'>
+                <li title='43'>༤༣</li>
+            </ol>
+            <ol start='77'>
+                <li title='77'>༧༧</li>
+            </ol>
+            <ol start='80'>
+
+                <li title='80'>༨༠</li>
+            </ol>
+            <ol start='99'>
+                <li title='99'>༩༩</li>
+                <li title='100'>༡༠༠</li>
+                <li title='101'>༡༠༡</li>
+
+            </ol>
+            <ol start='222'>
+                <li title='222'>༢༢༢</li>
+            </ol>
+            <ol start='540'>
+                <li title='540'>༥༤༠</li>
+            </ol>
+
+            <ol start='999'>
+                <li title='999'>༩༩༩</li>
+                <li title='1000'>༡༠༠༠</li>
+            </ol>
+            <ol start='1005'>
+                <li title='1005'>༡༠༠༥</li>
+
+            </ol>
+            <ol start='1060'>
+                <li title='1060'>༡༠༦༠</li>
+            </ol>
+            <ol start='1065'>
+                <li title='1065'>༡༠༦༥</li>
+            </ol>
+
+            <ol start='1800'>
+                <li title='1800'>༡༨༠༠</li>
+            </ol>
+            <ol start='1860'>
+                <li title='1860'>༡༨༦༠</li>
+            </ol>
+            <ol start='1865'>
+
+                <li title='1865'>༡༨༦༥</li>
+            </ol>
+            <ol start='5865'>
+                <li title='5865'>༥༨༦༥</li>
+            </ol>
+            <ol start='7005'>
+                <li title='7005'>༧༠༠༥</li>
+
+            </ol>
+            <ol start='7800'>
+                <li title='7800'>༧༨༠༠</li>
+            </ol>
+            <ol start='7864'>
+                <li title='7864'>༧༨༦༤</li>
+            </ol>
+
+            <ol start='9999'>
+                <li title='9999'>༩༩༩༩</li>
+            </ol></div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

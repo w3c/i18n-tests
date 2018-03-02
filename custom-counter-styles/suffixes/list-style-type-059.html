@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: afar, suffix</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to afar will produce list markers as described in the document Predefined Counter Styles.">
+<script src="../support/createsuffix.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: afar; }
+</style>
+</head>
+<body onload="completeTest('፦ ')">
+<p class="instructions">Test passes if there are no alternative, red characters, INCLUDING the suffix.</p>
+
+
+<div class="test"><ol><li title='1'>ሀ</li>
+<li title='2'>ለ</li>
+<li title='3'>ሐ</li>
+<li title='4'>መ</li>
+<li title='5'>ረ</li>
+<li title='6'>ሰ</li>
+<li title='7'>በ</li>
+<li title='8'>ተ</li>
+<li title='9'>ነ</li>
+<li title='10'>አ</li>
+<li title='11'>ከ</li>
+<li title='12'>ወ</li>
+<li title='13'>ዐ</li>
+<li title='14'>የ</li>
+<li title='15'>ደ</li>
+<li title='16'>ዸ</li>
+<li title='17'>ገ</li>
+<li title='18'>ጸ</li>
+<li title='19'>ፈ</li>
+</ol>
+<ol start='20'><li title='20'>ሀሀ</li></ol>
+<ol start='21'><li title='21'>ሀለ</li></ol>
+<ol start='43'><li title='43'>ለረ</li></ol>
+<ol start='77'><li title='77'>መሀ</li></ol>
+<ol start='80'><li title='80'>መመ</li></ol>
+<ol start='99'><li title='99'>ረመ</li></ol>
+<ol start='100'><li title='100'>ረረ</li></ol>
+<ol start='101'><li title='101'>ረሰ</li></ol>
+<ol start='222'><li title='222'>ከዐ</li></ol>
+<ol start='540'><li title='540'>ሀነተ</li></ol>
+<ol start='999'><li title='999'>ለየከ</li></ol>
+<ol start='1000'><li title='1000'>ለየወ</li></ol>
+<ol start='1005'><li title='1005'>ለየገ</li></ol>
+<ol start='1060'><li title='1060'>ለገደ</li></ol>
+<ol start='1065'><li title='1065'>ለጸሀ</li></ol>
+<ol start='1800'><li title='1800'>መጸየ</li></ol>
+<ol start='1860'><li title='1860'>ረለገ</li></ol>
+<ol start='5865'><li title='5865'>ዸመዐ</li></ol>
+<ol start='7005'><li title='7005'>ፈበዐ</li></ol>
+<ol start='7800'><li title='7800'>ሀለከአ</li></ol>
+<ol start='7864'><li title='7864'>ሀለየገ</li></ol>
+<ol start='9999'><li title='9999'>ሀተዐረ</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

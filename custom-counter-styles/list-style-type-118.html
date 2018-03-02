@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: ancient-tamil</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to ancient-tamil will produce list markers as described in the document Predefined Counter Styles.">
+<script src="support/createref.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: ancient-tamil; }
+</style>
+</head>
+<body onload="completeTest('')">
+<p class="instructions">Test passes if there are no alternative, red characters, IGNORING the suffix.</p>
+
+
+<div class="test"><ol start='1'><li title='1'>௧</li></ol>
+<ol start='2'><li title='2'>௨</li></ol>
+<ol start='3'><li title='3'>௩</li></ol>
+<ol start='4'><li title='4'>௪</li></ol>
+<ol start='5'><li title='5'>௫</li></ol>
+<ol start='6'><li title='6'>௬</li></ol>
+<ol start='7'><li title='7'>௭</li></ol>
+<ol start='8'><li title='8'>௮</li></ol>
+<ol start='9'><li title='9'>௯</li></ol>
+<ol start='10'><li title='10'>௰</li></ol>
+<ol start='11'><li title='11'>௰௧</li></ol>
+<ol start='12'><li title='12'>௰௨</li></ol>
+<ol start='43'><li title='43'>௪௰௩</li></ol>
+<ol start='77'><li title='77'>௭௰௭</li></ol>
+<ol start='80'><li title='80'>௮௰</li></ol>
+<ol start='99'><li title='99'>௯௰௯</li></ol>
+<ol start='100'><li title='100'>௱</li></ol>
+<ol start='101'><li title='101'>௱௧</li></ol>
+<ol start='222'><li title='222'>௨௱௨௰௨</li></ol>
+<ol start='540'><li title='540'>௫௱௪௰</li></ol>
+<ol start='999'><li title='999'>௯௱௯௰௯</li></ol>
+<ol start='1000'><li title='1000'>௲</li></ol>
+<ol start='1005'><li title='1005'>௲௫</li></ol>
+<ol start='1060'><li title='1060'>௲௬௰</li></ol>
+<ol start='1065'><li title='1065'>௲௬௰௫</li></ol>
+<ol start='1800'><li title='1800'>௲௮௱</li></ol>
+<ol start='1860'><li title='1860'>௲௮௱௬௰</li></ol>
+<ol start='1865'><li title='1865'>௲௮௱௬௰௫</li></ol>
+<ol start='5865'><li title='5865'>௫௲௮௱௬௰௫</li></ol>
+<ol start='7005'><li title='7005'>௭௲௫</li></ol>
+<ol start='7800'><li title='7800'>௭௲௮௱</li></ol>
+<ol start='7865'><li title='7865'>௭௲௮௱௬௰௫</li></ol>
+<ol start='9999'><li title='9999'>௯௲௯௱௯௰௯</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

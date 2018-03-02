@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: persian-alphabetic, suffix</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to persian-alphabetic will produce list markers as described in the document Predefined Counter Styles.">
+<script src="../support/createsuffix.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: persian-alphabetic; }
+</style>
+</head>
+<body onload="completeTest('.')">
+<p class="instructions">Test passes if there are no alternative, red characters, INCLUDING the suffix.</p>
+
+
+<div class='test'><ol start='1'><li title='1'>ا</li>
+<li title='2'>ب</li>
+<li title='3'>پ</li>
+<li title='4'>ت</li>
+<li title='5'>ث</li>
+<li title='6'>ج</li>
+<li title='7'>چ</li>
+<li title='8'>ح</li>
+<li title='9'>خ</li>
+<li title='10'>د</li>
+<li title='11'>ذ</li>
+<li title='12'>ر</li>
+<li title='13'>ز</li>
+<li title='14'>ژ</li>
+<li title='15'>س</li>
+<li title='16'>ش</li>
+<li title='17'>ص</li>
+<li title='18'>ض</li>
+<li title='19'>ط</li>
+<li title='20'>ظ</li>
+<li title='21'>ع</li>
+<li title='22'>غ</li>
+<li title='23'>ف</li>
+<li title='24'>ق</li>
+<li title='25'>ک</li>
+<li title='26'>گ</li>
+<li title='27'>ل</li>
+<li title='28'>م</li>
+<li title='29'>ن</li>
+<li title='30'>و</li>
+<li title='31'>ه‍</li>
+<li title='32'>ی</li>
+<li title='33'>33</li>
+<li title='34'>34</li>
+</ol></div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

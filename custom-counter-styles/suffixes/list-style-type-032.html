@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: upper-belorussian, suffix</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to upper-belorussian will produce list markers as described in the document Predefined Counter Styles.">
+<script src="../support/createsuffix.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: upper-belorussian; }
+</style>
+</head>
+<body onload="completeTest('.')">
+<p class="instructions">Test passes if there are no alternative, red characters, INCLUDING the suffix.</p>
+
+
+<div class="test"><ol><li title='1'>А</li>
+<li title='2'>Б</li>
+<li title='3'>В</li>
+<li title='4'>Г</li>
+<li title='5'>Д</li>
+<li title='6'>Е</li>
+<li title='7'>Ё</li>
+<li title='8'>Ж</li>
+<li title='9'>З</li>
+<li title='10'>І</li>
+<li title='11'>Й</li>
+<li title='12'>К</li>
+<li title='13'>Л</li>
+<li title='14'>М</li>
+<li title='15'>Н</li>
+<li title='16'>О</li>
+<li title='17'>П</li>
+<li title='18'>Р</li>
+<li title='19'>С</li>
+<li title='20'>Т</li>
+<li title='21'>У</li>
+<li title='22'>Ў</li>
+<li title='23'>Ф</li>
+<li title='24'>Х</li>
+<li title='25'>Ц</li>
+<li title='26'>Ч</li>
+<li title='27'>Ш</li>
+<li title='28'>Ы</li>
+<li title='29'>Ь</li>
+<li title='30'>Э</li>
+<li title='31'>Ю</li>
+<li title='32'>Я</li>
+</ol>
+<ol start='33'><li title='33'>АА</li></ol>
+<ol start='34'><li title='34'>АБ</li></ol>
+<ol start='43'><li title='43'>АЙ</li></ol>
+<ol start='77'><li title='77'>БЛ</li></ol>
+<ol start='80'><li title='80'>БО</li></ol>
+<ol start='99'><li title='99'>ВВ</li></ol>
+<ol start='100'><li title='100'>ВГ</li></ol>
+<ol start='101'><li title='101'>ВД</li></ol>
+<ol start='222'><li title='222'>ЕЭ</li></ol>
+<ol start='540'><li title='540'>ОЫ</li></ol>
+<ol start='999'><li title='999'>ЮЁ</li></ol>
+<ol start='1000'><li title='1000'>ЮЖ</li></ol>
+<ol start='1005'><li title='1005'>ЮЛ</li></ol>
+<ol start='1060'><li title='1060'>ААГ</li></ol>
+<ol start='1065'><li title='1065'>ААЗ</li></ol>
+<ol start='1800'><li title='1800'>АХЖ</li></ol>
+<ol start='1860'><li title='1860'>АЧГ</li></ol>
+<ol start='5865'><li title='5865'>ДФЗ</li></ol>
+<ol start='7005'><li title='7005'>ЕЧЬ</li></ol>
+<ol start='7800'><li title='7800'>ЁСХ</li></ol>
+<ol start='7864'><li title='7864'>ЁУХ</li></ol>
+<ol start='9999'><li title='9999'>ЗХН</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: upper-bulgarian, suffix</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to upper-bulgarian will produce list markers as described in the document Predefined Counter Styles.">
+<script src="../support/createsuffix.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: upper-bulgarian; }
+</style>
+</head>
+<body onload="completeTest('.')">
+<p class="instructions">Test passes if there are no alternative, red characters, INCLUDING the suffix.</p>
+
+
+<div class="test"><ol><li title='1'>А</li>
+<li title='2'>Б</li>
+<li title='3'>В</li>
+<li title='4'>Г</li>
+<li title='5'>Д</li>
+<li title='6'>Е</li>
+<li title='7'>Ж</li>
+<li title='8'>З</li>
+<li title='9'>И</li>
+<li title='10'>Й</li>
+<li title='11'>К</li>
+<li title='12'>Л</li>
+<li title='13'>М</li>
+<li title='14'>Н</li>
+<li title='15'>О</li>
+<li title='16'>П</li>
+<li title='17'>Р</li>
+<li title='18'>С</li>
+<li title='19'>Т</li>
+<li title='20'>У</li>
+<li title='21'>Ф</li>
+<li title='22'>Х</li>
+<li title='23'>Ц</li>
+<li title='24'>Ч</li>
+<li title='25'>Ш</li>
+<li title='26'>Щ</li>
+<li title='27'>Ъ</li>
+<li title='28'>Ь</li>
+<li title='29'>Ю</li>
+<li title='30'>Я</li>
+</ol>
+<ol start='31'><li title='31'>АА</li></ol>
+<ol start='32'><li title='32'>АБ</li></ol>
+<ol start='43'><li title='43'>АМ</li></ol>
+<ol start='77'><li title='77'>БР</li></ol>
+<ol start='80'><li title='80'>БУ</li></ol>
+<ol start='99'><li title='99'>ВИ</li></ol>
+<ol start='100'><li title='100'>ВЙ</li></ol>
+<ol start='101'><li title='101'>ВК</li></ol>
+<ol start='222'><li title='222'>ЖЛ</li></ol>
+<ol start='540'><li title='540'>РЯ</li></ol>
+<ol start='999'><li title='999'>АВИ</li></ol>
+<ol start='1000'><li title='1000'>АВЙ</li></ol>
+<ol start='1005'><li title='1005'>АВО</li></ol>
+<ol start='1060'><li title='1060'>АДЙ</li></ol>
+<ol start='1065'><li title='1065'>АДО</li></ol>
+<ol start='1800'><li title='1800'>АЮЯ</li></ol>
+<ol start='1860'><li title='1860'>БАЯ</li></ol>
+<ol start='5865'><li title='5865'>ЕОО</li></ol>
+<ol start='7005'><li title='7005'>ЖЦО</li></ol>
+<ol start='7800'><li title='7800'>ЗТЯ</li></ol>
+<ol start='7864'><li title='7864'>ЗХГ</li></ol>
+<ol start='9999'><li title='9999'>КВИ</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

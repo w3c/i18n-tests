@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: fullwidth-lower-alpha</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to fullwidth-lower-alpha will produce list markers as described in the document Predefined Counter Styles.">
+<script src="support/createref.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: fullwidth-lower-alpha; }
+</style>
+</head>
+<body onload="completeTest('')">
+<p class="instructions">Test passes if there are no alternative, red characters, IGNORING the suffix.</p>
+
+
+<div class="test"><ol><li title='1'>ａ．</li>
+<li title='2'>ｂ．</li>
+<li title='3'>ｃ．</li>
+<li title='4'>ｄ．</li>
+<li title='5'>ｅ．</li>
+<li title='6'>ｆ．</li>
+<li title='7'>ｇ．</li>
+<li title='8'>ｈ．</li>
+<li title='9'>ｉ．</li>
+<li title='10'>ｊ．</li>
+<li title='11'>ｋ．</li>
+<li title='12'>ｌ．</li>
+<li title='13'>ｍ．</li>
+<li title='14'>ｎ．</li>
+<li title='15'>ｏ．</li>
+<li title='16'>ｐ．</li>
+<li title='17'>ｑ．</li>
+<li title='18'>ｒ．</li>
+<li title='19'>ｓ．</li>
+<li title='20'>ｔ．</li>
+<li title='21'>ｕ．</li>
+<li title='22'>ｖ．</li>
+<li title='23'>ｗ．</li>
+<li title='24'>ｘ．</li>
+<li title='25'>ｙ．</li>
+<li title='26'>ｚ．</li>
+</ol>
+<ol start='27'><li title='27'>ａａ．</li></ol>
+<ol start='28'><li title='28'>ａｂ．</li></ol>
+<ol start='43'><li title='43'>ａｑ．</li></ol>
+<ol start='77'><li title='77'>ｂｙ．</li></ol>
+<ol start='80'><li title='80'>ｃｂ．</li></ol>
+<ol start='99'><li title='99'>ｃｕ．</li></ol>
+<ol start='100'><li title='100'>ｃｖ．</li></ol>
+<ol start='101'><li title='101'>ｃｗ．</li></ol>
+<ol start='222'><li title='222'>ｈｎ．</li></ol>
+<ol start='540'><li title='540'>ｔｔ．</li></ol>
+<ol start='999'><li title='999'>ａｌｋ．</li></ol>
+<ol start='1000'><li title='1000'>ａｌｌ．</li></ol>
+<ol start='1005'><li title='1005'>ａｌｑ．</li></ol>
+<ol start='1060'><li title='1060'>ａｎｔ．</li></ol>
+<ol start='1065'><li title='1065'>ａｎｙ．</li></ol>
+<ol start='1800'><li title='1800'>ｂｑｆ．</li></ol>
+<ol start='1860'><li title='1860'>ｂｓｎ．</li></ol>
+<ol start='5865'><li title='5865'>ｈｑｏ．</li></ol>
+<ol start='7005'><li title='7005'>ｊｉｋ．</li></ol>
+<ol start='7800'><li title='7800'>ｋｍｚ．</li></ol>
+<ol start='7864'><li title='7864'>ｋｐｌ．</li></ol>
+<ol start='9999'><li title='9999'>ｎｔｏ．</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

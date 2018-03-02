@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: malayalam</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to malayalam will produce list numbering as described in the document Predefined Counter Styles.">
+<script src="support/createref.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: malayalam;  }
+</style>
+</head>
+<body onload="completeTest('')">
+<p class="instructions">Test passes if there are no alternative, red characters, IGNORING the suffix.</p>
+
+
+<div class='test'><ol>
+                <li title='1'>൧</li>
+                <li title='2'>൨</li>
+                <li title='3'>൩</li>
+
+                <li title='4'>൪</li>
+                <li title='5'>൫</li>
+                <li title='6'>൬</li>
+                <li title='7'>൭</li>
+                <li title='8'>൮</li>
+
+                <li title='9'>൯</li>
+                <li title='10'>൧൦</li>
+                <li title='11'>൧൧</li>
+                <li title='12'>൧൨</li>
+            </ol>
+
+            <ol start='43'>
+                <li title='43'>൪൩</li>
+            </ol>
+            <ol start='77'>
+                <li title='77'>൭൭</li>
+            </ol>
+            <ol start='80'>
+
+                <li title='80'>൮൦</li>
+            </ol>
+            <ol start='99'>
+                <li title='99'>൯൯</li>
+                <li title='100'>൧൦൦</li>
+                <li title='101'>൧൦൧</li>
+
+            </ol>
+            <ol start='222'>
+                <li title='222'>൨൨൨</li>
+            </ol>
+            <ol start='540'>
+                <li title='540'>൫൪൦</li>
+            </ol>
+
+            <ol start='999'>
+                <li title='999'>൯൯൯</li>
+                <li title='1000'>൧൦൦൦</li>
+            </ol>
+            <ol start='1005'>
+                <li title='1005'>൧൦൦൫</li>
+
+            </ol>
+            <ol start='1060'>
+                <li title='1060'>൧൦൬൦</li>
+            </ol>
+            <ol start='1065'>
+                <li title='1065'>൧൦൬൫</li>
+            </ol>
+
+            <ol start='1800'>
+                <li title='1800'>൧൮൦൦</li>
+            </ol>
+            <ol start='1860'>
+                <li title='1860'>൧൮൬൦</li>
+            </ol>
+            <ol start='1865'>
+
+                <li title='1865'>൧൮൬൫</li>
+            </ol>
+            <ol start='5865'>
+                <li title='5865'>൫൮൬൫</li>
+            </ol>
+            <ol start='7005'>
+                <li title='7005'>൭൦൦൫</li>
+
+            </ol>
+            <ol start='7800'>
+                <li title='7800'>൭൮൦൦</li>
+            </ol>
+            <ol start='7864'>
+                <li title='7864'>൭൮൬൪</li>
+            </ol>
+
+            <ol start='9999'>
+                <li title='9999'>൯൯൯൯</li>
+            </ol></div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

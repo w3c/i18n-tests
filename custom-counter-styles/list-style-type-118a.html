@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: ancient-tamil, outside range</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] With list-style-type set to ancient-tamil, list markers above the limit specified in CSS3 will be rendered in the fallback counter style.">
+<script src="support/createref.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: ancient-tamil; }
+</style>
+</head>
+<body onload="completeTest('')">
+<p class="instructions">Test passes if there are no alternative, red characters, IGNORING the suffix.</p><p class="instructionNote">Skip this test if ancient-tamil list styling is not supported.</p>
+
+
+<div class="test"><ol start='10000'><li title='10000'>10000</li></ol>
+<ol start='10001'><li title='10001'>10001</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

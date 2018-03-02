@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: dizi, suffix</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to dizi will produce list markers as described in the document Predefined Counter Styles.">
+<script src="../support/createsuffix.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: dizi; }
+</style>
+</head>
+<body onload="completeTest('፦ ')">
+<p class="instructions">Test passes if there are no alternative, red characters, INCLUDING the suffix.</p>
+
+
+<div class="test"><ol><li title='1'>ሀ</li>
+<li title='2'>ለ</li>
+<li title='3'>መ</li>
+<li title='4'>ረ</li>
+<li title='5'>ሰ</li>
+<li title='6'>ሸ</li>
+<li title='7'>ቀ</li>
+<li title='8'>በ</li>
+<li title='9'>ተ</li>
+<li title='10'>ቸ</li>
+<li title='11'>ነ</li>
+<li title='12'>ኘ</li>
+<li title='13'>ጀ</li>
+<li title='14'>ገ</li>
+<li title='15'>ጠ</li>
+<li title='16'>ጨ</li>
+<li title='17'>ጸ</li>
+<li title='18'>ፀ</li>
+<li title='19'>ፈ</li>
+</ol>
+<ol start='20'><li title='20'>ሀሀ</li></ol>
+<ol start='21'><li title='21'>ሀለ</li></ol>
+<ol start='43'><li title='43'>ለሰ</li></ol>
+<ol start='77'><li title='77'>ረሀ</li></ol>
+<ol start='80'><li title='80'>ረረ</li></ol>
+<ol start='99'><li title='99'>ሰረ</li></ol>
+<ol start='100'><li title='100'>ሰሰ</li></ol>
+<ol start='101'><li title='101'>ሰሸ</li></ol>
+<ol start='222'><li title='222'>ነጀ</li></ol>
+<ol start='540'><li title='540'>ሀተበ</li></ol>
+<ol start='999'><li title='999'>ለገነ</li></ol>
+<ol start='1000'><li title='1000'>ለገኘ</li></ol>
+<ol start='1005'><li title='1005'>ለገጸ</li></ol>
+<ol start='1060'><li title='1060'>ለጸጠ</li></ol>
+<ol start='1065'><li title='1065'>ለፀሀ</li></ol>
+<ol start='1800'><li title='1800'>ረፀገ</li></ol>
+<ol start='1860'><li title='1860'>ሰለጸ</li></ol>
+<ol start='5865'><li title='5865'>ጨረጀ</li></ol>
+<ol start='7005'><li title='7005'>ፈቀጀ</li></ol>
+<ol start='7800'><li title='7800'>ሀለነቸ</li></ol>
+<ol start='7864'><li title='7864'>ሀለገጸ</li></ol>
+<ol start='9999'><li title='9999'>ሀበጀሰ</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

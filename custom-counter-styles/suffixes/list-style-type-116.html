@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: hebrew, suffix</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to hebrew will produce list markers as described in the document Predefined Counter Styles.">
+<script src="../support/createsuffix.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: hebrew; }
+</style>
+</head>
+<body onload="completeTest('.')">
+<p class="instructions">Test passes if there are no alternative, red characters, INCLUDING the suffix.</p>
+
+
+<div class="test"><ol start='1'><li title='1'>א</li></ol>
+<ol start='2'><li title='2'>ב</li></ol>
+<ol start='3'><li title='3'>ג</li></ol>
+<ol start='4'><li title='4'>ד</li></ol>
+<ol start='5'><li title='5'>ה</li></ol>
+<ol start='6'><li title='6'>ו</li></ol>
+<ol start='7'><li title='7'>ז</li></ol>
+<ol start='8'><li title='8'>ח</li></ol>
+<ol start='9'><li title='9'>ט</li></ol>
+<ol start='10'><li title='10'>י</li></ol>
+<ol start='11'><li title='11'>יא</li></ol>
+<ol start='12'><li title='12'>יב</li></ol>
+<ol start='13'><li title='13'>יג</li></ol>
+<ol start='14'><li title='14'>יד</li></ol>
+<ol start='15'><li title='15'>טו</li></ol>
+<ol start='16'><li title='16'>טז</li></ol>
+<ol start='17'><li title='17'>יז</li></ol>
+<ol start='18'><li title='18'>יח</li></ol>
+<ol start='43'><li title='43'>מג</li></ol>
+<ol start='77'><li title='77'>עז</li></ol>
+<ol start='80'><li title='80'>פ</li></ol>
+<ol start='99'><li title='99'>צט</li></ol>
+<ol start='100'><li title='100'>ק</li></ol>
+<ol start='101'><li title='101'>קא</li></ol>
+<ol start='222'><li title='222'>רכב</li></ol>
+<ol start='400'><li title='400'>ת</li></ol>
+<ol start='401'><li title='401'>תא</li></ol>
+<ol start='499'><li title='499'>תצט</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

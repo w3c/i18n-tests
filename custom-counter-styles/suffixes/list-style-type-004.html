@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: cambodian, suffix</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to cambodian will produce list numbering as described in the document Predefined Counter Styles.">
+<script src="../support/createsuffix.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: cambodian;  }
+</style>
+</head>
+<body onload="completeTest('.')">
+<p class="instructions">Test passes if there are no alternative, red characters, INCLUDING the suffix.</p>
+
+
+<div class='test'><ol>
+                <li title='1'>១</li>
+                <li title='2'>២</li>
+                <li title='3'>៣</li>
+
+                <li title='4'>៤</li>
+                <li title='5'>៥</li>
+                <li title='6'>៦</li>
+                <li title='7'>៧</li>
+                <li title='8'>៨</li>
+
+                <li title='9'>៩</li>
+                <li title='10'>១០</li>
+                <li title='11'>១១</li>
+                <li title='12'>១២</li>
+            </ol>
+
+            <ol start='43'>
+                <li title='43'>៤៣</li>
+            </ol>
+            <ol start='77'>
+                <li title='77'>៧៧</li>
+            </ol>
+            <ol start='80'>
+
+                <li title='80'>៨០</li>
+            </ol>
+            <ol start='99'>
+                <li title='99'>៩៩</li>
+                <li title='100'>១០០</li>
+                <li title='101'>១០១</li>
+
+            </ol>
+            <ol start='222'>
+                <li title='222'>២២២</li>
+            </ol>
+            <ol start='540'>
+                <li title='540'>៥៤០</li>
+            </ol>
+
+            <ol start='999'>
+                <li title='999'>៩៩៩</li>
+                <li title='1000'>១០០០</li>
+            </ol>
+            <ol start='1005'>
+                <li title='1005'>១០០៥</li>
+
+            </ol>
+            <ol start='1060'>
+                <li title='1060'>១០៦០</li>
+            </ol>
+            <ol start='1065'>
+                <li title='1065'>១០៦៥</li>
+            </ol>
+
+            <ol start='1800'>
+                <li title='1800'>១៨០០</li>
+            </ol>
+            <ol start='1860'>
+                <li title='1860'>១៨៦០</li>
+            </ol>
+            <ol start='1865'>
+
+                <li title='1865'>១៨៦៥</li>
+            </ol>
+            <ol start='5865'>
+                <li title='5865'>៥៨៦៥</li>
+            </ol>
+            <ol start='7005'>
+                <li title='7005'>៧០០៥</li>
+
+            </ol>
+            <ol start='7800'>
+                <li title='7800'>៧៨០០</li>
+            </ol>
+            <ol start='7864'>
+                <li title='7864'>៧៨៦៤</li>
+            </ol>
+
+            <ol start='9999'>
+                <li title='9999'>៩៩៩៩</li>
+            </ol></div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>

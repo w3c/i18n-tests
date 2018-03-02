@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>list-style-type: blin</title>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://www.w3.org/TR/predefined-counter-styles/'>
+<meta name='flags' content='font start'>
+<meta name="assert" content="[Exploratory] Setting list-style-type to blin will produce list markers as described in the document Predefined Counter Styles.">
+<script src="support/createref.js"></script>
+<style type='text/css'>
+.test { font-size: 28px; }
+ol { margin: 0; padding-left: 8em; }
+
+ol li { list-style-type: blin; }
+</style>
+</head>
+<body onload="completeTest('')">
+<p class="instructions">Test passes if there are no alternative, red characters, IGNORING the suffix.</p>
+
+
+<div class="test"><ol><li title='1'>ሀ</li>
+<li title='2'>ለ</li>
+<li title='3'>ሐ</li>
+<li title='4'>መ</li>
+<li title='5'>ሰ</li>
+<li title='6'>ሸ</li>
+<li title='7'>ረ</li>
+<li title='8'>ቀ</li>
+<li title='9'>ቐ</li>
+<li title='10'>በ</li>
+<li title='11'>ተ</li>
+<li title='12'>ነ</li>
+<li title='13'>ጀ</li>
+<li title='14'>ገ</li>
+<li title='15'>ጘ</li>
+<li title='16'>ጠ</li>
+<li title='17'>ጨ</li>
+<li title='18'>ፈ</li>
+<li title='19'>ቸ</li>
+<li title='20'>ኘ</li>
+<li title='21'>ጸ</li>
+<li title='22'>ጰ</li>
+<li title='23'>ፐ</li>
+</ol>
+<ol start='24'><li title='24'>ሀሀ</li></ol>
+<ol start='25'><li title='25'>ሀለ</li></ol>
+<ol start='43'><li title='43'>ሀኘ</li></ol>
+<ol start='77'><li title='77'>ሐቀ</li></ol>
+<ol start='80'><li title='80'>ሐተ</li></ol>
+<ol start='99'><li title='99'>መረ</li></ol>
+<ol start='100'><li title='100'>መቀ</li></ol>
+<ol start='101'><li title='101'>መቐ</li></ol>
+<ol start='222'><li title='222'>ቐጘ</li></ol>
+<ol start='540'><li title='540'>ፐተ</li></ol>
+<ol start='999'><li title='999'>ሀኘበ</li></ol>
+<ol start='1000'><li title='1000'>ሀኘተ</li></ol>
+<ol start='1005'><li title='1005'>ሀኘጠ</li></ol>
+<ol start='1060'><li title='1060'>ሀፐለ</li></ol>
+<ol start='1065'><li title='1065'>ሀፐረ</li></ol>
+<ol start='1800'><li title='1800'>ሐቐሸ</li></ol>
+<ol start='1860'><li title='1860'>ሐተኘ</li></ol>
+<ol start='5865'><li title='5865'>ተሀፐ</li></ol>
+<ol start='7005'><li title='7005'>ጀሰጀ</li></ol>
+<ol start='7800'><li title='7800'>ገጨሐ</li></ol>
+<ol start='7864'><li title='7864'>ገቸጸ</li></ol>
+<ol start='9999'><li title='9999'>ፈኘጨ</li></ol>
+</div>
+
+
+<!--Notes:
+
+Mouse over the lines to see the number.
+
+
+-->
+
+
+</body>
+</html>
