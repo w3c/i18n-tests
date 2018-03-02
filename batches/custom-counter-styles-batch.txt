@@ -161,3 +161,164 @@ list-style-type-048.html
 
 # tibetan
 list-style-type-022.html
+
+
+# TESTS FOR SUFFIX
+#==============================
+
+# arabic
+suffixes/list-style-type-001.html
+suffixes/list-style-type-002.html
+suffixes/list-style-type-096.html
+suffixes/list-style-type-097.html
+
+# armenian
+suffixes/list-style-type-110.html
+suffixes/list-style-type-111.html
+suffixes/list-style-type-112.html
+
+# bengali
+suffixes/list-style-type-010.html
+suffixes/list-style-type-011.html
+
+# cyrillic
+suffixes/list-style-type-031.html
+suffixes/list-style-type-032.html
+suffixes/list-style-type-033.html
+suffixes/list-style-type-034.html
+suffixes/list-style-type-035.html
+suffixes/list-style-type-036.html
+suffixes/list-style-type-037.html
+suffixes/list-style-type-038.html
+suffixes/list-style-type-039.html
+suffixes/list-style-type-040.html
+suffixes/list-style-type-041.html
+suffixes/list-style-type-042.html
+suffixes/list-style-type-043.html
+suffixes/list-style-type-044.html
+suffixes/list-style-type-045.html
+suffixes/list-style-type-046.html
+
+# devanagari
+suffixes/list-style-type-009.html
+suffixes/list-style-type-018.html
+suffixes/list-style-type-047.html
+
+# ethiopic
+suffixes/list-style-type-059.html
+suffixes/list-style-type-060.html
+suffixes/list-style-type-061.html
+suffixes/list-style-type-062.html
+suffixes/list-style-type-063.html
+suffixes/list-style-type-064.html
+suffixes/list-style-type-065.html
+suffixes/list-style-type-066.html
+suffixes/list-style-type-067.html
+suffixes/list-style-type-068.html
+suffixes/list-style-type-069.html
+suffixes/list-style-type-070.html
+suffixes/list-style-type-071.html
+suffixes/list-style-type-072.html
+suffixes/list-style-type-073.html
+suffixes/list-style-type-074.html
+suffixes/list-style-type-075.html
+suffixes/list-style-type-076.html
+suffixes/list-style-type-077.html
+suffixes/list-style-type-078.html
+suffixes/list-style-type-079.html
+suffixes/list-style-type-080.html
+
+# georgian
+suffixes/list-style-type-114.html
+
+# greek
+suffixes/list-style-type-030.html
+suffixes/list-style-type-115.html
+suffixes/list-style-type-130.html
+suffixes/list-style-type-131.html
+suffixes/list-style-type-132.html
+suffixes/list-style-type-133.html
+
+# gujarati
+suffixes/list-style-type-012.html
+
+# gurmukhi
+suffixes/list-style-type-014.html
+
+# hebrew
+suffixes/list-style-type-116.html
+
+# ideographic
+suffixes/list-style-type-024.html
+suffixes/list-style-type-053.html
+suffixes/list-style-type-054.html
+suffixes/list-style-type-119.html
+suffixes/list-style-type-120.html
+suffixes/list-style-type-122.html
+suffixes/list-style-type-123.html
+
+# japanese
+suffixes/list-style-type-049.html
+suffixes/list-style-type-050.html
+suffixes/list-style-type-051.html
+suffixes/list-style-type-052.html
+
+# kannada
+suffixes/list-style-type-015.html
+
+# khmer
+suffixes/list-style-type-005.html
+suffixes/list-style-type-004.html
+suffixes/list-style-type-125.html
+suffixes/list-style-type-124.html
+
+# korean
+suffixes/list-style-type-121.html
+suffixes/list-style-type-055.html
+suffixes/list-style-type-056.html
+suffixes/list-style-type-092.html
+suffixes/list-style-type-093.html
+suffixes/list-style-type-094.html
+suffixes/list-style-type-095.html
+
+# lao
+suffixes/list-style-type-006.html
+
+# latin
+suffixes/list-style-type-025.html
+suffixes/list-style-type-057.html
+suffixes/list-style-type-058.html
+suffixes/list-style-type-081.html
+suffixes/list-style-type-082.html
+suffixes/list-style-type-090.html
+suffixes/list-style-type-091.html
+
+# lepcha
+suffixes/list-style-type-016.html
+
+# malayalam
+suffixes/list-style-type-017.html
+
+# mongolian
+suffixes/list-style-type-023.html
+
+# myanmar
+suffixes/list-style-type-007.html
+suffixes/list-style-type-008.html
+
+# oriya
+suffixes/list-style-type-019.html
+
+# tamil
+suffixes/list-style-type-020.html
+suffixes/list-style-type-118.html
+
+# telugu
+suffixes/list-style-type-021.html
+
+# thai
+suffixes/list-style-type-003.html
+suffixes/list-style-type-048.html
+
+# tibetan
+suffixes/list-style-type-022.html
