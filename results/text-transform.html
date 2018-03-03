@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CSS3 Text, text-transform</title>
+<meta name="description" content="Summary of results of CSS3 Text module tests" />
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'tests/repo/results'+'/' // the path to this file, not including /International or the file name
+f.filename = 'text-transform' // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
+f.previousauthors = '' // as above
+f.modifiers = '' // people making substantive changes, and their affiliation
+f.searchString = 'results-text-transform' // blog search string - usually the filename without extensions
+f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2015-08-24', time:'10:07'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2016-12-16', time:'19:37'} // date and time of latest edits to this document/translation
+f.contributors = '' // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+f.sources = '' // describes sources of information
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG' // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = 'tests'
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="text-transform-data/translation.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="results.css" type="text/css" />
+<script src="text-transform-data/data.js"></script>
+<script src="text-transform-data/manifest.js"></script>
+<script src="results-functions.js"></script>
+</head>
+
+<body>
+<header>
+  <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+  
+  <h1>Summarized test results: <br>
+  CSS3 Text, text-transform</h1>
+</header>
+
+
+<section>
+  <div id="audience">
+    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
+    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support text transforms per the CSS Text spec.</p>
+    <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
+    </div>
+    
+
+			<section> 
+                <p>These tests check whether user agents correctly apply the property <code class="kw" translate="no">text-transform</code> per the CSS-text-3 spec.</p>
+                <p>Future additions to this set of tests should include Warang Citi and (post Unicode 8.0) Cherokee. The current lack of  fonts needed to display the characters means that it is unlikely that these tests can be checked currently.</p>
+                <p>These tests examine a large number of characters. Webfonts are downloaded by the tests to cover characters that may not be available on the system where the test is run, but there may still be some characters that appear as tofu. In such cases, the tests instruct&nbsp;the tester to ignore those characters, but list which ones they were. This information appears in the notes below the tables.</p>
+              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
+<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
+<p><strong>Key:</strong></p>
+<table class="results" style="margin-right: 32%;">
+  <tbody>
+    <tr>
+      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
+      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
+      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+    </tr>
+  </tbody>
+</table>
+			</section>
+		</section>
+
+<!-- ·········································································· -->
+<br style="clear:both;"/>
+
+<!-- SECTION CONTAINERS GO HERE -->
+
+
+<section>
+  <h2 id="upperlower"><a href="#upperlower">text-transform: uppercase/lowercase</a></h2>
+
+
+<section>
+<h3 id="latin_ul"><a href="#latin_ul">Latin</a></h3>
+  <div id="latin_ul-data"></div>
+<div class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+  <li><strong>text-transform-upperlower-101</strong>: The following characters could not be verified due to a lack of font coverage: U+A79B, U+A79D, U+A79F. </li>
+  <li><strong>text-transform-upperlower-102</strong>: ditto: U+A79A, U+A79C, U+A79E. </li>
+  <li><strong>text-transform-upperlower-007</strong>, IE11: failed on 2 characters. </li>
+  <li><strong>text-transform-upperlower-010</strong>, IE11: failed on 3 characters. </li>
+  <li><strong>text-transform-upperlower-101</strong>, Chrome 41.0, Safari 8.0.3, Opera 27.0: failed on 2 characters. </li>
+  <li><strong>ditto</strong>,  IE11: failed on 9 characters. </li>
+  <li><strong>text-transform-upperlower-102</strong>, Chrome 41.0, Safari 8.0.3, Opera 27.0: failed on 7 characters. </li>
+  <li><strong>ditto</strong>,  IE11: failed on 16 characters. </li>
+  </ol>
+  </div>
+</section>
+
+<section>
+  <h3 id="greek_coptic_ul"><a href="#greek_coptic_ul">Greek &amp; Coptic</a></h3>
+  <div id="greek_coptic_ul-data"></div>
+  <div class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+    <li><strong>text-transform-upperlower-014</strong>, Chrome 41.0, Safari 8.0.3, Opera 27.0, IE11: failed on 1 character. </li>
+    <li><strong>text-transform-upperlower-015</strong>, Chrome 41.0, Safari 8.0.3, Opera 27.0, IE11: failed on 1 character. </li>
+<li><strong>text-transform-upperlower-016</strong>, Firefox fails for characters that are expected to have a form similar to ῼ. It produces instead  ΩΙ, which is the form obtained by decomposing the character first, then applying uppercase.</li>
+  </ol>
+  </div>
+</section>
+
+<section>
+  <h3 id="cyrillic_ul"><a href="#cyrillic_ul">Cyrillic</a></h3>
+  <div id="cyrillic_ul-data"></div>
+<div class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+  <li><strong>text-transform-103</strong>: The following characters could not be verified on Firefox, Chrome, Safari and Opera due to a lack of font coverage: U+A699, U+A69B. No characters could be verified on IE.</li>
+  <li><strong>text-transform-104</strong>: ditto: U+A698, U+A69A, and all characters on IE.</li>
+    <li><strong>text-transform-upperlower-020</strong>, Chrome 41.0, Safari 8.0.3, Opera 27.0: failed on 4 characters. </li>
+    <li><strong>ditto</strong>, IE11: failed on 6 characters. </li>
+    <li><strong>text-transform-upperlower-021</strong>, Chrome 41.0, Safari 8.0.3, Opera 27.0: failed on 4 characters. </li>
+    <li><strong>ditto</strong>, IE11: failed on 6 characters. </li>
+  </ol>
+  </div>
+</section>
+
+
+<section>
+  <h3 id="armenian_ul"><a href="#armenian_ul">Armenian</a></h3>
+  <div id="armenian_ul-data"></div>
+</section>
+
+
+<section>
+  <h3 id="cherokee_ul"><a href="#cherokee_ul">Cherokee</a></h3>
+  <div id="cherokee_ul-data"></div>
+</section>
+
+
+<section>
+  <h3 id="deseret_ul"><a href="#deseret_ul">Deseret</a></h3>
+  <div id="deseret_ul-data"></div>
+</section>
+
+
+<section>
+  <h3 id="georgian_ul"><a href="#georgian_ul">Georgian</a></h3>
+  <div id="georgian_ul-data"></div>
+</section>
+
+
+<section>
+  <h3 id="numforms_ul"><a href="#numforms_ul">Number forms</a></h3>
+  <div id="numforms_ul-data"></div>
+</section>
+
+
+<section>
+  <h3 id="alphanum_ul"><a href="#alphanum_ul">Enclosed alphanumerics</a></h3>
+  <div id="alphanum_ul-data"></div>
+</section>
+
+</section>
+
+
+
+
+<section>
+  <h2 id="fullwidth"><a href="#fullwidth">text-transform: fullwidth</a></h2>
+  <div id="fullwidth-data"></div>
+</section>
+
+
+
+
+<section>
+  <h2 id="capitalize"><a href="#capitalize">text-transform: capitalize</a></h2>
+
+
+<section>
+<h3 id="latin_cap"><a href="#latin_cap">Latin</a></h3>
+  <div id="latin_cap-data"></div>
+  <div class="notes">
+    <p class="notesheader">Notes</p>
+    <ol>
+      <li><strong>text-transform-capitalize-007</strong>, Firefox 36.0.1: The following characters were not converted: Ǆ, Ǉ, Ǌ, Ǳ. </li>
+      <li><strong>ditto</strong>, IE 11: The Serbo-Croatian digraphs were all uppercased, rather than titlecased: Ǆ, ǆ, Ǉ, ǉ, Ǌ, ǌ, Ǳ, ǳ. Also&nbsp;ȿ and ɀ&nbsp;were not converted.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h3 id="greek_coptic_cap"><a href="#greek_coptic_cap">Greek &amp; Coptic</a></h3>
+  <div id="greek_coptic_cap-data"></div>
+</section>
+
+<section>
+  <h3 id="cyrillic_cap"><a href="#cyrillic_cap">Cyrillic</a></h3>
+  <div id="cyrillic_cap-data"></div>
+</section>
+
+
+<section>
+  <h3 id="armenian_cap"><a href="#armenian_cap">Armenian</a></h3>
+  <div id="armenian_cap-data"></div>
+</section>
+
+
+<section>
+  <h3 id="cherokee_cap"><a href="#cherokee_cap">Cherokee</a></h3>
+  <div id="cherokee_cap-data"></div>
+</section>
+
+
+<section>
+  <h3 id="deseret_cap"><a href="#deseret_cap">Deseret</a></h3>
+  <div id="deseret_cap-data"></div>
+</section>
+
+
+<section>
+  <h3 id="georgian_cap"><a href="#georgian_cap">Georgian</a></h3>
+  <div id="georgian_cap-data"></div>
+</section>
+
+
+<section>
+  <h3 id="numforms_cap"><a href="#numforms_cap">Number forms</a></h3>
+  <div id="numforms_cap-data"></div>
+</section>
+
+
+<section>
+  <h3 id="alphanum_cap"><a href="#alphanum_cap">Enclosed alphanumerics</a></h3>
+  <div id="alphanum_cap-data"></div>
+</section>
+
+
+<section>
+  <h3 id="initial_punc"><a href="#initial_punc">Initial punctuation</a></h3>
+  <div id="initial_punc-data"></div>
+</section>
+
+</section>
+
+
+
+
+
+<section>
+  <h2 id="special"><a href="#special">Special casing</a></h2>
+  <p>These tests explore whether browsers apply the Unicode specialcasing rules.</p>
+
+
+<section>
+  <h3 id="latin_sc"><a href="#latin_sc">Latin</a></h3>
+  <div id="latin_sc-data"></div>
+</section>
+
+<section>
+  <h3 id="greek_coptic_sc"><a href="#greek_coptic_sc">Greek</a></h3>
+  <div id="greek_coptic_sc-data"></div>
+</section>
+<section>
+  <h3 id="armenian_sc"><a href="#armenian_sc">Armenian</a></h3>
+  <div id="armenian_sc-data"></div>
+</section>
+
+
+<section>
+  <h3 id="turkish_sc"><a href="#turkish_sc">Turkish/Azeri</a></h3>
+  <div id="turkish_sc-data"></div>
+</section>
+</section>
+
+
+
+
+
+<section>
+  <h2 id="tailoring"><a href="#tailoring">Tailoring</a></h2>
+  <p>These tests explore whether browsers have tailored the default case mappings in order to meet language-specific needs.</p>
+
+
+<section>
+  <h3 id="dutch_tailoring"><a href="#dutch_tailoring">Dutch</a></h3>
+  <div id="dutch_tailoring-data"></div>
+</section>
+
+<section>
+  <h3 id="greek_tailoring"><a href="#greek_tailoring">Greek</a></h3>
+  <div id="greek_tailoring-data"></div>
+</section>
+</section>
+
+
+
+
+
+<!-- ·········································································· -->
+
+<script> 	// DRAW THE TABLES
+  
+  
+  
+drawResults(
+	'latin_ul', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-001.html',
+		'text-transform/text-transform-upperlower-002.html',
+		'text-transform/text-transform-upperlower-003.html',
+		'text-transform/text-transform-upperlower-004.html',
+		'text-transform/text-transform-upperlower-005.html',
+		'text-transform/text-transform-upperlower-006.html',
+		'text-transform/text-transform-upperlower-007.html',
+		'text-transform/text-transform-upperlower-008.html',
+		'text-transform/text-transform-upperlower-009.html',
+		'text-transform/text-transform-upperlower-010.html',
+		'text-transform/text-transform-upperlower-101.html',
+		'text-transform/text-transform-upperlower-102.html',
+		'text-transform/text-transform-upperlower-011.html',
+		'text-transform/text-transform-upperlower-012.html',
+		]
+	 )
+
+drawResults(
+	'greek_coptic_ul', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-014.html',
+		'text-transform/text-transform-upperlower-015.html',
+		'text-transform/text-transform-upperlower-016.html',
+		'text-transform/text-transform-upperlower-017.html',
+		]
+	 )
+
+
+drawResults(
+	'cyrillic_ul', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-018.html',
+		'text-transform/text-transform-upperlower-019.html',
+		'text-transform/text-transform-upperlower-020.html',
+		'text-transform/text-transform-upperlower-021.html',
+		'text-transform/text-transform-upperlower-103.html',
+		'text-transform/text-transform-upperlower-104.html',
+		]
+	 )
+
+
+drawResults(
+	'armenian_ul', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-022.html',
+		'text-transform/text-transform-upperlower-023.html',
+		]
+	 )
+
+
+drawResults(
+	'cherokee_ul', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-044.html',
+		'text-transform/text-transform-upperlower-045.html',
+		]
+	 )
+
+
+drawResults(
+	'deseret_ul', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-028.html',
+		'text-transform/text-transform-upperlower-029.html',
+		]
+	 )
+
+
+drawResults(
+	'georgian_ul', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-030.html',
+		'text-transform/text-transform-upperlower-031.html',
+		]
+	 )
+
+
+drawResults(
+	'numforms_ul', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-024.html',
+		'text-transform/text-transform-upperlower-025.html',
+		]
+	 )
+
+
+drawResults(
+	'alphanum_ul', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-026.html',
+		'text-transform/text-transform-upperlower-027.html',
+		]
+	 )
+
+
+
+
+drawResults(
+	'fullwidth', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-fullwidth-001.html',
+		'text-transform/text-transform-fullwidth-002.html',
+		'text-transform/text-transform-fullwidth-003.html',
+		'text-transform/text-transform-fullwidth-004.html',
+		'text-transform/text-transform-fullwidth-005.html',
+		'text-transform/text-transform-fullwidth-006.html',
+		]
+	 )
+
+
+
+
+drawResults(
+	'latin_cap', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-001.html',
+		'text-transform/text-transform-capitalize-003.html',
+		'text-transform/text-transform-capitalize-005.html',
+		'text-transform/text-transform-capitalize-007.html',
+		'text-transform/text-transform-capitalize-009.html',
+		'text-transform/text-transform-capitalize-010.html',
+		'text-transform/text-transform-capitalize-011.html',
+		]
+	 )
+
+drawResults(
+	'greek_coptic_cap', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-014.html',
+		'text-transform/text-transform-capitalize-016.html',
+		]
+	 )
+
+
+drawResults(
+	'cyrillic_cap', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-018.html',
+		'text-transform/text-transform-capitalize-020.html',
+		]
+	 )
+
+
+drawResults(
+	'armenian_cap', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-022.html',
+		]
+	 )
+
+
+drawResults(
+	'cherokee_cap', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-029.html',
+		]
+	 )
+
+
+drawResults(
+	'deseret_cap', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-028.html',
+		]
+	 )
+
+
+drawResults(
+	'georgian_cap', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-030.html',
+		]
+	 )
+
+
+drawResults(
+	'numforms_cap', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-024.html',
+		]
+	 )
+
+
+drawResults(
+	'alphanum_cap', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-026.html',
+		]
+	 )
+
+
+drawResults(
+	'initial_punc', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-capitalize-031.html',
+		]
+	 )
+
+
+
+
+
+
+
+drawResults(
+	'latin_sc', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-032.html',
+		'text-transform/text-transform-upperlower-033.html',
+		'text-transform/text-transform-upperlower-039.html',
+		]
+	 )
+
+drawResults(
+	'greek_coptic_sc', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-035.html',
+		'text-transform/text-transform-upperlower-038.html',
+		]
+	 )
+
+
+drawResults(
+	'armenian_sc', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-034.html',
+		]
+	 )
+
+
+drawResults(
+	'turkish_sc', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-upperlower-040.html',
+		'text-transform/text-transform-upperlower-041.html',
+		'text-transform/text-transform-upperlower-042.html',
+		'text-transform/text-transform-upperlower-043.html',
+		]
+	 )
+
+
+
+
+
+drawResults(
+	'dutch_tailoring', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-tailoring-001.html',
+		]
+	 )
+
+drawResults(
+	'greek_tailoring', // sectionid 
+	'css-text', // base
+	'text-transform', // batch
+	'2.1', // specsection
+	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
+	'css3-text', // related 
+	 [
+		'text-transform/text-transform-tailoring-002.html',
+		'text-transform/text-transform-tailoring-002a.html',
+		'text-transform/text-transform-tailoring-003.html',
+		'text-transform/text-transform-tailoring-005.html',
+		'text-transform/text-transform-tailoring-004.html',
+		]
+	 )
+
+
+
+
+
+</script>
+
+
+
+
+
+<section>
+<h2 id="endlinks"><a href="#endlinks">Links</a></h2>
+<aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
+
+<ul id="full-links">
+		<li>
+		  <p><a href="http://dev.w3.org/csswg/css-text/#text-transform-property">CSS Text Level 3, 2.1 Case Transforms: the text-transform property</a> (editor's copy)</p>
+		</li>
+		<li>
+		  <p><a href="/International/tests/">i18n test suite home</a></p>
+	  </li>
+	</ul>
+</section>
+
+<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script type="text/javascript">completePage()</script>
+
+<script type="text/javascript">  
+generateStuffInPage();
+</script>
+</body>
+</html>
