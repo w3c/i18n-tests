@@ -46,7 +46,12 @@ text-transform/text-transform-upperlower-043.html
 text-transform/text-transform-upperlower-044.html
 text-transform/text-transform-upperlower-045.html
 
-text-transform-fullwidth-001.xht
+text-transform/text-transform-fullwidth-001.html
+text-transform/text-transform-fullwidth-002.html
+text-transform/text-transform-fullwidth-003.html
+text-transform/text-transform-fullwidth-004.html
+text-transform/text-transform-fullwidth-005.html
+text-transform/text-transform-fullwidth-006.html
 
 text-transform/text-transform-capitalize-001.html
 text-transform/text-transform-capitalize-003.html
