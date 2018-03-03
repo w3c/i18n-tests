@@ -1,0 +1,188 @@
+tests = []
+tests[0]=["defaults/vertical-support-001.html","vertical text support","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"[Exploratory test] to determine whether the browser handles vertical text."] 
+
+tests[1]=["rubypos/ruby-position-over-001.html","ruby-position: over","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:over will make ruby appear over the base in horizontal text."] 
+
+tests[2]=["rubypos/ruby-position-over-101.html","ruby-position: over (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:over will make ruby appear to the right of the base in vertical text."] 
+
+tests[3]=["prefix/ruby-position-over-001.html","[P] -webkit-ruby-position before","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"The addition of -webkit-ruby-position:before will make ruby appear over the base in horizontal text."] 
+
+tests[4]=["prefix/ruby-position-over-101.html","[P] -webkit-ruby-position before (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"The addition of -webkit-ruby-position:before will make ruby appear to the right of the base in vertical text."] 
+
+tests[5]=["rubypos/ruby-position-under-001.html","ruby-position: under","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:under will make ruby appear under the base in horizontal text."] 
+
+tests[6]=["rubypos/ruby-position-under-101.html","ruby-position: under (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:under will make ruby appear to the left of the base in vertical text."] 
+
+tests[7]=["prefix/ruby-position-under-001.html","[P] -webkit-ruby-position after","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"The addition of -webkit-ruby-position:after will make ruby appear under the base in horizontal text."] 
+
+tests[8]=["prefix/ruby-position-under-101.html","[P] -webkit-ruby-position after (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"The addition of -webkit-ruby-position:after will make ruby appear to the left of the base in vertical text."] 
+
+tests[9]=["rubypos/ruby-position-intercharacter-001.html","ruby-position: inter-character","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:intercharacter will make zhuyin annotations appear in vertical columns alongside the base in horizontal text."] 
+
+tests[10]=["rubypos/ruby-position-intercharacter-101.html","ruby-position: inter-character (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:intercharacter will make zhuyin annotations appear in vertical columns alongside the base in vertical text."] 
+
+tests[11]=["rubypos/ruby-position-intercharacter-002.html","ruby-position: inter-character, tones","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:intercharacter will make zhuyin non-neutral tone marks appear in the correct relative positions alongside the zhuyin characters in horizontal text."] 
+
+tests[12]=["rubypos/ruby-position-intercharacter-102.html","ruby-position: inter-character, tones (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:intercharacter will make zhuyin non-neutral tone marks appear in the correct relative positions alongside the zhuyin characters in vertical text."] 
+
+tests[13]=["rubypos/ruby-position-intercharacter-003.html","ruby-position: inter-character, neutral tones","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:intercharacter will make zhuyin neutral tone marks appear above the zhuyin characters in horizontal text."] 
+
+tests[14]=["rubypos/ruby-position-intercharacter-103.html","ruby-position: inter-character, neutral tones (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-position:intercharacter will make zhuyin neutral tone marks appear above the zhuyin characters in vertical text."] 
+
+tests[15]=["exploratory/ruby-position-inline-001.html","ruby-position: inline","",'https://drafts.csswg.org/css-ruby-1/#rubypos',"[Exploratory] ruby-position:inline will make ruby appear following the base in horizontal text."] 
+
+tests[16]=["exploratory/ruby-position-inline-101.html","ruby-position: inline (v)","",'https://drafts.csswg.org/css-ruby-1/#rubypos',"[Exploratory] ruby-position:inline will make ruby appear following the base in vertical text."] 
+
+tests[17]=["ruby-align-property/ruby-align-start-001.html","ruby-align: start, long base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-align: start will make ruby content aligned with the start edge of its box. Short ruby text will be flush left and set solid."] 
+
+tests[18]=["ruby-align-property/ruby-align-start-101.html","ruby-align: start, long base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-align: start will make ruby content aligned with the start edge of its box. Short ruby text will be flush left and set solid."] 
+
+tests[19]=["ruby-align-property/ruby-align-start-002.html","ruby-align: start, long annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-align: start will make ruby content aligned with the start edge of its box. Short base text will be flush left and set solid."] 
+
+tests[20]=["ruby-align-property/ruby-align-start-102.html","ruby-align: start, long annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-align: start will make ruby content aligned with the start edge of its box. Short base text will be flush left and set solid."] 
+
+tests[21]=["prefix/ruby-align-start-001.html","[P] ruby-align:left, long base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"The addition of ruby-align:left will make ruby content aligned with the start edge of its box. Short ruby text will be flush left and set solid."] 
+
+tests[22]=["prefix/ruby-align-start-101.html","[P] ruby-align:left, long base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"The addition of ruby-align:left will make ruby content aligned with the start edge of its box. Short ruby text will be flush left and set solid."] 
+
+tests[23]=["prefix/ruby-align-start-002.html","[P] ruby-align:left, long annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"The addition of ruby-align:left will make ruby content aligned with the start edge of its box. Short base text will be flush left and set solid."] 
+
+tests[24]=["prefix/ruby-align-start-102.html","[P] ruby-align:left, long annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"The addition of ruby-align:left will make ruby content aligned with the start edge of its box. Short base text will be flush left and set solid."] 
+
+tests[25]=["ruby-align-property/ruby-align-center-001.html","ruby-align: center, long base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-align:center will centre annotations shorter than the base within its box, and set them solid."] 
+
+tests[26]=["ruby-align-property/ruby-align-center-101.html","ruby-align: center, long base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-align:center will centre annotations shorter than the base within its box, and set them solid."] 
+
+tests[27]=["ruby-align-property/ruby-align-center-002.html","ruby-align: center, long annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-align: center will centre base text shorter than the annotations within its box, and set it solid."] 
+
+tests[28]=["ruby-align-property/ruby-align-center-102.html","ruby-align: center, long annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"ruby-align: center will centre base text shorter than the annotations within its box, and set it solid."] 
+
+tests[29]=["ruby-align-property/ruby-align-space-around-001.html","ruby-align: space-around, long base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell annotation shorter than its base, ruby-align:space-around adds equal space between annotation characters, with a half-character space either side."] 
+
+tests[30]=["ruby-align-property/ruby-align-space-around-101.html","ruby-align: space-around, long base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell annotation shorter than its base, ruby-align:space-around adds equal space between annotation characters, with a half-character space either side."] 
+
+tests[31]=["ruby-align-property/ruby-align-space-around-002.html","ruby-align: space-around, long annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell base shorter than its annotation, ruby-align:space-around adds equal space base between characters, with a half-character space either side."] 
+
+tests[32]=["ruby-align-property/ruby-align-space-around-102.html","ruby-align: space-around, long annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell base shorter than its annotation, ruby-align:space-around adds equal space base between characters, with a half-character space either side."] 
+
+tests[33]=["prefix/ruby-align-space-around-001.html","[P] ruby-align:distribute-space, long base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell annotation shorter than its base, ruby-align:distribute-space adds equal space between annotation characters, with a half-character space either side."] 
+
+tests[34]=["prefix/ruby-align-space-around-101.html","[P] ruby-align:distribute-space, long base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell annotation shorter than its base, ruby-align:distribute-space adds equal space between annotation characters, with a half-character space either side."] 
+
+tests[35]=["prefix/ruby-align-space-around-002.html","[P] ruby-align:distribute-space, long annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell base shorter than its annotation, ruby-align:distribute-space adds equal space base between characters, with a half-character space either side."] 
+
+tests[36]=["prefix/ruby-align-space-around-102.html","[P] ruby-align:distribute-space, long annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell base shorter than its annotation, ruby-align:distribute-space adds equal space base between characters, with a half-character space either side."] 
+
+tests[37]=["ruby-align-property/ruby-align-space-around-003.html","ruby-align: space-around, long base, one word latin annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation containing no spaces over a wider base, ruby-align:space-around will centre the annotation."] 
+
+tests[38]=["ruby-align-property/ruby-align-space-around-103.html","ruby-align: space-around, long base, one word latin annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation containing no spaces over a wider base, ruby-align:space-around will centre the annotation."] 
+
+tests[39]=["ruby-align-property/ruby-align-space-around-004.html","ruby-align: space-around, long base, multiword latin annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation with multiple words over a wider base, ruby-align: space-around will justify the words, with a small amount of space either side."] 
+
+tests[40]=["ruby-align-property/ruby-align-space-around-104.html","ruby-align: space-around, long base, multiword latin annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation with multiple words over a wider base, ruby-align: space-around will justify the words, with a small amount of space either side."] 
+
+tests[41]=["ruby-align-property/ruby-align-space-around-006.html","ruby-align:space-around, long annotation, one word latin base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base containing no spaces that is shorter than its annotation, ruby-align:space-around will centre the base."] 
+
+tests[42]=["ruby-align-property/ruby-align-space-around-106.html","ruby-align:space-around, long annotation, one word latin base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base containing no spaces that is shorter than its annotation, ruby-align:space-around will centre the base."] 
+
+tests[43]=["ruby-align-property/ruby-align-space-around-007.html","ruby-align:space-around, long annotation, multiword latin base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base with multiple words that is shorter than its annotation, ruby-align:space-around will justify the words, with a small amount of space either side."] 
+
+tests[44]=["ruby-align-property/ruby-align-space-around-107.html","ruby-align:space-around, long annotation, multiword latin base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base with multiple words that is shorter than its annotation, ruby-align:space-around will justify the words, with a small amount of space either side."] 
+
+tests[45]=["prefix/ruby-align-space-around-003.html","[P] ruby-align:distribute-space, long base, one word latin annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation containing no spaces over a wider base, ruby-align:distribute-space will centre the annotation."] 
+
+tests[46]=["prefix/ruby-align-space-around-103.html","[P] ruby-align:distribute-space, long base, one word latin annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation containing no spaces over a wider base, ruby-align:distribute-space will centre the annotation."] 
+
+tests[47]=["prefix/ruby-align-space-around-004.html","[P] ruby-align:distribute-space, long base, multiword latin annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation with multiple words over a wider base, ruby-align:distribute-space will justify the words, with a small amount of space either side."] 
+
+tests[48]=["prefix/ruby-align-space-around-104.html","[P] ruby-align:distribute-space, long base, multiword latin annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation with multiple words over a wider base, ruby-align:distribute-space will justify the words, with a small amount of space either side."] 
+
+tests[49]=["prefix/ruby-align-space-around-006.html","[P] ruby-align:distribute-space, long annotation, one word latin base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base containing no spaces that is shorter than its annotation, ruby-align:distribute-space will centre the base."] 
+
+tests[50]=["prefix/ruby-align-space-around-106.html","[P] ruby-align:distribute-space, long annotation, one word latin base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base containing no spaces that is shorter than its annotation, ruby-align:distribute-space will centre the base."] 
+
+tests[51]=["prefix/ruby-align-space-around-007.html","[P] ruby-align:distribute-space, long annotation, multiword latin base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base with multiple words that is shorter than its annotation, ruby-align:distribute-space will justify the words, with a small amount of space either side."] 
+
+tests[52]=["prefix/ruby-align-space-around-107.html","[P] ruby-align:distribute-space, long annotation, multiword latin base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base with multiple words that is shorter than its annotation, ruby-align:distribute-space will justify the words, with a small amount of space either side."] 
+
+tests[53]=["ruby-align-property/ruby-align-space-between-001.html","ruby-align: space-between, long base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell annotation shorter than its base, ruby-align:space-between adds equal space between annotation characters, with no extra space either side."] 
+
+tests[54]=["ruby-align-property/ruby-align-space-between-101.html","ruby-align: space-between, long base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell annotation shorter than its base, ruby-align:space-between adds equal space between annotation characters, with no extra space either side."] 
+
+tests[55]=["ruby-align-property/ruby-align-space-between-002.html","ruby-align: space-between, long annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell base shorter than its annotation, ruby-align:space-between adds equal space base between characters, with no extra space either side."] 
+
+tests[56]=["ruby-align-property/ruby-align-space-between-102.html","ruby-align: space-between, long annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell base shorter than its annotation, ruby-align:space-between adds equal space base between characters, with no extra space either side."] 
+
+tests[57]=["prefix/ruby-align-space-between-001.html","[P] ruby-align: distribute-letter, long base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell annotation shorter than its base, ruby-align:distribute-letter adds equal space between annotation characters, with no extra space either side."] 
+
+tests[58]=["prefix/ruby-align-space-between-101.html","[P] ruby-align: distribute-letter, long base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell annotation shorter than its base, ruby-align:distribute-letter adds equal space between annotation characters, with no extra space either side."] 
+
+tests[59]=["prefix/ruby-align-space-between-002.html","[P] ruby-align: distribute-letter, long annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell base shorter than its annotation, ruby-align:distribute-letter adds equal space base between characters, with no extra space either side."] 
+
+tests[60]=["prefix/ruby-align-space-between-102.html","[P] ruby-align: distribute-letter, long annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a wide-cell base shorter than its annotation, ruby-align:distribute-letter adds equal space base between characters, with no extra space either side."] 
+
+tests[61]=["ruby-align-property/ruby-align-space-between-003.html","ruby-align: space-between, long base, one word latin annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation containing no spaces over a wider base, ruby-align:space-between will centre the annotation."] 
+
+tests[62]=["ruby-align-property/ruby-align-space-between-103.html","ruby-align: space-between, long base, one word latin annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation containing no spaces over a wider base, ruby-align:space-between will centre the annotation."] 
+
+tests[63]=["ruby-align-property/ruby-align-space-between-004.html","ruby-align: space-between, long base, multiword latin annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation with multiple words over a wider base, ruby-align: space-between will justify the words, with no extra space either side."] 
+
+tests[64]=["ruby-align-property/ruby-align-space-between-104.html","ruby-align: space-between, long base, multiword latin annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation with multiple words over a wider base, ruby-align: space-between will justify the words, with no extra space either side."] 
+
+tests[65]=["ruby-align-property/ruby-align-space-between-006.html","ruby-align:space-between, long annotation, one word latin base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base containing no spaces that is shorter than its annotation, ruby-align:space-between will centre the base."] 
+
+tests[66]=["ruby-align-property/ruby-align-space-between-106.html","ruby-align:space-between, long annotation, one word latin base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base containing no spaces that is shorter than its annotation, ruby-align:space-between will centre the base."] 
+
+tests[67]=["ruby-align-property/ruby-align-space-between-007.html","ruby-align:space-between, long annotation, multiword latin base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base with multiple words that is shorter than its annotation, ruby-align:space-between will justify the words, with no extra space either side."] 
+
+tests[68]=["ruby-align-property/ruby-align-space-between-107.html","ruby-align:space-between, long annotation, multiword latin base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base with multiple words that is shorter than its annotation, ruby-align:space-between will justify the words, with no extra space either side."] 
+
+tests[69]=["prefix/ruby-align-space-between-003.html","[P] ruby-align: distribute-letter, long base, one word latin annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation containing no spaces over a wider base, ruby-align:distribute-letter will centre the annotation."] 
+
+tests[70]=["prefix/ruby-align-space-between-103.html","[P] ruby-align: distribute-letter, long base, one word latin annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation containing no spaces over a wider base, ruby-align:distribute-letter will centre the annotation."] 
+
+tests[71]=["prefix/ruby-align-space-between-004.html","[P] ruby-align: distribute-letter, long base, multiword latin annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation with multiple words over a wider base, ruby-align: distribute-letter will justify the words, with no extra space either side."] 
+
+tests[72]=["prefix/ruby-align-space-between-104.html","[P] ruby-align: distribute-letter, long base, multiword latin annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell annotation with multiple words over a wider base, ruby-align: distribute-letter will justify the words, with no extra space either side."] 
+
+tests[73]=["prefix/ruby-align-space-between-006.html","[P] ruby-align:distribute-letter, long annotation, one word latin base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base containing no spaces that is shorter than its annotation, ruby-align:distribute-letter will centre the base."] 
+
+tests[74]=["prefix/ruby-align-space-between-106.html","[P] ruby-align:distribute-letter, long annotation, one word latin base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base containing no spaces that is shorter than its annotation, ruby-align:distribute-letter will centre the base."] 
+
+tests[75]=["prefix/ruby-align-space-between-007.html","[P] ruby-align:distribute-letter, long annotation, multiword latin base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base with multiple words that is shorter than its annotation, ruby-align:distribute-letter will justify the words, with no extra space either side."] 
+
+tests[76]=["prefix/ruby-align-space-between-107.html","[P] ruby-align:distribute-letter, long annotation, multiword latin base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"For a narrow-cell base with multiple words that is shorter than its annotation, ruby-align:distribute-letter will justify the words, with no extra space either side."] 
+
+tests[77]=["exploratory/ruby-align-right-001.html","ruby-align: right, long base","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"[Exploratory] ruby-align:right will make a ruby annotation that is shorter than its base flush with the end of the base, and set solid."] 
+
+tests[78]=["exploratory/ruby-align-right-101.html","ruby-align: right, long base (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"[Exploratory] ruby-align:right will make ruby annotation that is shorter than its base flush with the bottom of the base, and set solid."] 
+
+tests[79]=["exploratory/ruby-align-right-002.html","ruby-align: right, long annotation","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"[Exploratory] ruby-align: end will make a ruby base that is shorter than its annotation flush with the end of the base, and set solid."] 
+
+tests[80]=["exploratory/ruby-align-right-102.html","ruby-align: right, long annotation (v)","",'http://www.w3.org/TR/css-ruby-1/#rubypos',"[Exploratory] ruby-align:right will make ruby base that is shorter than its annotation flush with the bottom of the base, and set solid."] 
+
+tests[81]=["collapsed-ruby/ruby-merge-separate-001.html","ruby-merge: separate","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"ruby-merge:separate will render each annotation in the same column as its base text."] 
+
+tests[82]=["collapsed-ruby/ruby-merge-separate-101.html","ruby-merge: separate (v)","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"ruby-merge:separate will render each annotation in the same column as its base text."] 
+
+tests[83]=["collapsed-ruby/ruby-merge-collapse-001.html","ruby-merge: collapse","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"ruby-merge:collapse will render all annotations evenly across the base text."] 
+
+tests[84]=["collapsed-ruby/ruby-merge-collapse-101.html","ruby-merge: collapse (v)","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"ruby-merge:collapse will render all annotations evenly across the base text."] 
+
+tests[85]=["collapsed-ruby/ruby-merge-collapse-002.html","ruby-merge: collapse, line break","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"When a line break occurs between base characters while applying ruby-merge:collapse, ruby annotations are kept together with their respective ruby bases."] 
+
+tests[86]=["collapsed-ruby/ruby-merge-collapse-102.html","ruby-merge: collapse, line break (v)","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"When a line break occurs between base characters while applying ruby-merge:collapse, ruby annotations are kept together with their respective ruby bases."] 
+
+tests[87]=["collapsed-ruby/ruby-merge-auto-001.html","ruby-merge: auto","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"[Exploratory test] ruby-merge:auto produces a distribution of annotation text across base text as described in JLREQ."] 
+
+tests[88]=["collapsed-ruby/ruby-merge-auto-101.html","ruby-merge: auto (v)","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"[Exploratory test] ruby-merge:auto produces a distribution of annotation text across base text as described in JLREQ."] 
+
+tests[89]=["collapsed-ruby/ruby-merge-auto-002.html","ruby-merge: auto, line break","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"When a line break occurs between base characters while applying ruby-merge:auto, ruby annotations are kept together with their respective ruby bases."] 
+
+tests[90]=["collapsed-ruby/ruby-merge-auto-102.html","ruby-merge: auto, line break (v)","",'http://www.w3.org/TR/css-ruby-1/#collapsed-ruby',"When a line break occurs between base characters while applying ruby-merge:auto, ruby annotations are kept together with their respective ruby bases."] 
+
+tests[91]=["ruby-model/ruby-autohide-001.html","ruby autohide","",'http://www.w3.org/TR/css-ruby-1/#autohide',"If a ruby annotation has the exact same text content as its base, it is hidden."] 
+
+tests[92]=["ruby-model/ruby-autohide-101.html","ruby autohide (v)","",'http://www.w3.org/TR/css-ruby-1/#autohide',"If a ruby annotation has the exact same text content as its base, it is hidden."] 
+
+tests[93]=['../testend','','','','']
