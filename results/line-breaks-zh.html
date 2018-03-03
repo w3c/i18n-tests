@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CSS3 Text, Line break, Chinese: Summarized test results</title>
+<meta name="description" content="Summary of results of CSS3 Text module tests" />
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'tests/repo/results'+'/' // the path to this file, not including /International or the file name
+f.filename = 'line-breaks-zh' // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
+f.previousauthors = '' // as above
+f.modifiers = '' // people making substantive changes, and their affiliation
+f.searchString = 'results-line-breaks-zh' // blog search string - usually the filename without extensions
+f.firstPubDate = '2012-08-24' // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2017-07-03', time:'10:07'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2017-07-03', time:'10:07'} // date and time of latest edits to this document/translation
+f.contributors = '' // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+f.sources = '' // describes sources of information
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG' // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = 'tests'
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="line-breaks-zh-data/translation.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="results.css" type="text/css" />
+<script src="line-breaks-ba-data/data.js"></script>
+<script src="line-breaks-ba-data/manifest.js"></script>
+<script src="results-functions.js"></script>
+</head>
+
+<body>
+<header>
+  <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+  
+  <h1>Summarized test results: <br>
+  CSS3 Text, Line break, Chinese</h1>
+</header>
+
+
+<section>
+  <div id="audience">
+    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
+    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know how well browsers support the line breaking properties of Unicode characters.</p>
+    <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
+    </div>
+    
+
+			<section> 
+                <p>These tests check whether browsers support the line-break property in CSS3 Text, by testing for behaviour of specific characters named in the spec in content labelled as Chinese <code>(lang=&quot;zh&quot;)</code>. </p>
+              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
+<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
+<p><strong>Key:</strong></p>
+<table class="results" style="margin-right: 32%;">
+  <tbody>
+    <tr>
+      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
+      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
+      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+    </tr>
+  </tbody>
+</table>
+			</section>
+		</section>
+		
+
+<section>
+<h2 id="strict"><a href="#strict">Strict</a></h2>
+
+<br style="clear:both;"/>
+<section>
+  <h3 id="strictns"><a href="#strictns">Non-starter (NS)</a></h3>
+  <div id="strictns-data"></div>
+</section>
+
+ <section>
+  <h3 id="strictba"><a href="#strictba">Break After (BA)</a></h3>
+  <div id="strictba-data"></div>
+</section>
+
+<section>
+  <h3 id="strictex"><a href="#strictex">Exclamation (EX)</a></h3>
+  <div id="strictex-data"></div>
+</section>
+
+<section>
+  <h3 id="strictis"><a href="#strictis">Infix Numeric Separator (IS)</a></h3>
+  <div id="strictis-data"></div>
+</section>
+
+<section>
+  <h3 id="strictxb"><a href="#strictxb">Postfix Numeric (XB)</a></h3>
+  <div id="strictxb-data"></div>
+</section>
+
+</section>
+
+
+
+
+<section>
+<h2 id="normal"><a href="#normal">Normal</a></h2>
+
+<section>
+  <h3 id="normalns"><a href="#normalns">Non-starter (NS)</a></h3>
+  <div id="normalns-data"></div>
+</section>
+
+ <section>
+  <h3 id="normalba"><a href="#normalba">Break After (BA)</a></h3>
+  <div id="normalba-data"></div>
+</section>
+
+<section>
+  <h3 id="normalex"><a href="#normalex">Exclamation (EX)</a></h3>
+  <div id="normalex-data"></div>
+</section>
+
+<section>
+  <h3 id="normalis"><a href="#normalis">Infix Numeric Separator (IS)</a></h3>
+  <div id="normalis-data"></div>
+</section>
+
+<section>
+  <h3 id="normalxb"><a href="#normalxb">Postfix Numeric (XB)</a></h3>
+  <div id="normalxb-data"></div>
+</section>
+
+</section>
+
+
+
+
+<section>
+<h2 id="loose"><a href="#loose">Loose</a></h2>
+
+<section>
+  <h3 id="loosens"><a href="#loosens">Non-starter (NS)</a></h3>
+  <div id="loosens-data"></div>
+</section>
+
+ <section>
+  <h3 id="looseba"><a href="#looseba">Break After (BA)</a></h3>
+  <div id="looseba-data"></div>
+</section>
+
+<section>
+  <h3 id="looseex"><a href="#looseex">Exclamation (EX)</a></h3>
+  <div id="looseex-data"></div>
+</section>
+
+<section>
+  <h3 id="looseis"><a href="#looseis">Infix Numeric Separator (IS)</a></h3>
+  <div id="looseis-data"></div>
+</section>
+
+<section>
+  <h3 id="loosexb"><a href="#loosexb">Postfix Numeric (XB)</a></h3>
+  <div id="loosexb-data"></div>
+</section>
+
+</section>
+
+
+
+
+
+<!-- ·········································································· -->
+
+<script> 	// DRAW THE TABLES
+  
+drawResults(
+	'strictns', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-303.html',
+		'css3-text-line-break-jazh-304.html',
+		'css3-text-line-break-jazh-305.html',
+		'css3-text-line-break-jazh-312.html',
+		'css3-text-line-break-jazh-313.html',
+		'css3-text-line-break-jazh-314.html',
+		'css3-text-line-break-jazh-315.html',
+		]
+	 )
+
+
+drawResults(
+	'strictba', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-301.html',
+		'css3-text-line-break-jazh-302.html',
+		]
+	 )
+
+
+drawResults(
+	'strictex', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-310.html',
+		'css3-text-line-break-jazh-311.html',
+		'css3-text-line-break-jazh-317.html',
+		]
+	 )
+
+
+drawResults(
+	'strictis', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-306.html',
+		'css3-text-line-break-jazh-307.html',
+		]
+	 )
+
+
+drawResults(
+	'strictxb', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-318.html',
+		'css3-text-line-break-jazh-319.html',
+		'css3-text-line-break-jazh-320.html',
+		'css3-text-line-break-jazh-321.html',
+		'css3-text-line-break-jazh-322.html',
+		'css3-text-line-break-jazh-323.html',
+		'css3-text-line-break-jazh-324.html',
+		'css3-text-line-break-jazh-325.html',
+		'css3-text-line-break-jazh-326.html',
+		'css3-text-line-break-jazh-327.html',
+		]
+	 )
+
+
+
+
+
+
+
+
+
+
+drawResults(
+	'normalns', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-403.html',
+		'css3-text-line-break-jazh-404.html',
+		'css3-text-line-break-jazh-405.html',
+		'css3-text-line-break-jazh-412.html',
+		'css3-text-line-break-jazh-413.html',
+		'css3-text-line-break-jazh-414.html',
+		'css3-text-line-break-jazh-415.html',
+		]
+	 )
+
+
+drawResults(
+	'normalba', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-401.html',
+		'css3-text-line-break-jazh-402.html',
+		]
+	 )
+
+
+drawResults(
+	'normalex', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-410.html',
+		'css3-text-line-break-jazh-411.html',
+		'css3-text-line-break-jazh-417.html',
+		]
+	 )
+
+
+drawResults(
+	'normalis', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-406.html',
+		'css3-text-line-break-jazh-407.html',
+		]
+	 )
+
+
+drawResults(
+	'normalxb', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-418.html',
+		'css3-text-line-break-jazh-419.html',
+		'css3-text-line-break-jazh-420.html',
+		'css3-text-line-break-jazh-421.html',
+		'css3-text-line-break-jazh-422.html',
+		'css3-text-line-break-jazh-423.html',
+		'css3-text-line-break-jazh-424.html',
+		'css3-text-line-break-jazh-425.html',
+		'css3-text-line-break-jazh-426.html',
+		'css3-text-line-break-jazh-427.html',
+		]
+	 )
+
+
+
+
+
+
+
+
+
+
+drawResults(
+	'loosens', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-353.html',
+		'css3-text-line-break-jazh-354.html',
+		'css3-text-line-break-jazh-355.html',
+		'css3-text-line-break-jazh-362.html',
+		'css3-text-line-break-jazh-363.html',
+		'css3-text-line-break-jazh-364.html',
+		'css3-text-line-break-jazh-365.html',
+		]
+	 )
+
+
+drawResults(
+	'looseba', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-351.html',
+		'css3-text-line-break-jazh-352.html',
+		]
+	 )
+
+
+drawResults(
+	'looseex', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-360.html',
+		'css3-text-line-break-jazh-361.html',
+		'css3-text-line-break-jazh-367.html',
+		]
+	 )
+
+
+drawResults(
+	'looseis', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-356.html',
+		'css3-text-line-break-jazh-357.html',
+		]
+	 )
+
+
+drawResults(
+	'loosexb', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.3', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-property', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-jazh-358.html',
+		'css3-text-line-break-jazh-359.html',
+		'css3-text-line-break-jazh-370.html',
+		'css3-text-line-break-jazh-371.html',
+		'css3-text-line-break-jazh-372.html',
+		'css3-text-line-break-jazh-373.html',
+		'css3-text-line-break-jazh-374.html',
+		'css3-text-line-break-jazh-375.html',
+		'css3-text-line-break-jazh-376.html',
+		'css3-text-line-break-jazh-377.html',
+		]
+	 )
+
+
+
+</script>
+
+
+
+
+
+<section>
+<h2 id="endlinks"><a href="#endlinks">Links</a></h2>
+<aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
+
+<ul id="full-links">
+		<li>
+			<p><a href="http://dev.w3.org/csswg/css-text/#line-break-property">CSS Text Level 3, 5.3 Breaking Rules for Punctuation: the line-break property</a> (editor's copy)</p>
+		</li>
+		<li>
+		  <p><a href="/International/tests/">i18n test suite home</a></p>
+	  </li>
+	</ul>
+</section>
+
+<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script type="text/javascript">completePage()</script>
+
+<script type="text/javascript">  
+generateStuffInPage();
+</script>
+</body>
+</html>

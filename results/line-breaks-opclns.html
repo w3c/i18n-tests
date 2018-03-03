@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CSS3 Text, Line break, OP, CL and NS: Summarized test results</title>
+<meta name="description" content="Summary of results of CSS3 Text module tests" />
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'tests/repo/results'+'/' // the path to this file, not including /International or the file name
+f.filename = 'line-breaks-opclns' // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
+f.previousauthors = '' // as above
+f.modifiers = '' // people making substantive changes, and their affiliation
+f.searchString = 'results-line-breaks-opclns' // blog search string - usually the filename without extensions
+f.firstPubDate = '2012-08-24' // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2017-07-03', time:'10:07'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2017-07-03', time:'10:07'} // date and time of latest edits to this document/translation
+f.contributors = '' // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+f.sources = '' // describes sources of information
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG' // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = 'tests'
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="line-breaks-opclns-data/translation.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="results.css" type="text/css" />
+<script src="line-breaks-ba-data/data.js"></script>
+<script src="line-breaks-ba-data/manifest.js"></script>
+<script src="results-functions.js"></script>
+</head>
+
+<body>
+<header>
+  <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+  
+  <h1>Summarized test results: <br>
+  CSS3 Text, Line break, OP, CL and NS</h1>
+</header>
+
+
+<section>
+  <div id="audience">
+    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
+    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know how well browsers support the line breaking properties of Unicode characters.</p>
+    <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
+    </div>
+    
+
+			<section> 
+                <p>These tests check the default behavior of characters against the expectations in the Unicode Standard Annex, version 5.1.0. The two-letter abbreviations are conventions for property names in the Unicode Standard. Non-tailorable characters have normative behavior in the Unicode Standard that applies in all normal circumstances. For more information about expected line break behavior and line break classes, see <a href="http://www.unicode.org/reports/tr14/">Unicode Standard Annex #14 Line Breaking Properties</a>.</p>
+              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
+<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
+<p><strong>Key:</strong></p>
+<table class="results" style="margin-right: 32%;">
+  <tbody>
+    <tr>
+      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
+      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
+      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+    </tr>
+  </tbody>
+</table>
+			</section>
+		</section>
+		
+
+<section>
+<h2 id="op"><a href="#op">OP: Opening punctuation</a></h2>
+  <div id="op-data"></div>
+</section>
+
+
+<section>
+<h2 id="cl"><a href="#cl">CL: Closing punctuation</a></h2>
+  <div id="cl-data"></div>
+</section>
+
+
+<section>
+<h2 id="ns"><a href="#ns">NS: Non-starters</a></h2>
+  <div id="ns-data"></div>
+</section>
+
+
+<section>
+<h2 id="kana"><a href="#kana">NS: Non-starters, small kana</a></h2>
+  <div id="kana-data"></div>
+</section>
+
+
+
+
+<!-- ·········································································· -->
+
+<script> 	// DRAW THE TABLES
+  
+drawResults(
+	'op', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.1', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-details', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-opclns-001.html',
+		'css3-text-line-break-opclns-002.html',
+		'css3-text-line-break-opclns-003.html',
+		'css3-text-line-break-opclns-004.html',
+		'css3-text-line-break-opclns-005.html',
+		'css3-text-line-break-opclns-006.html',
+		'css3-text-line-break-opclns-007.html',
+		'css3-text-line-break-opclns-008.html',
+		'css3-text-line-break-opclns-009.html',
+		'css3-text-line-break-opclns-010.html',
+		'css3-text-line-break-opclns-011.html',
+		'css3-text-line-break-opclns-012.html',
+		'css3-text-line-break-opclns-013.html',
+		'css3-text-line-break-opclns-014.html',
+		'css3-text-line-break-opclns-015.html',
+		'css3-text-line-break-opclns-016.html',
+		'css3-text-line-break-opclns-017.html',
+		'css3-text-line-break-opclns-018.html',
+		'css3-text-line-break-opclns-019.html',
+		'css3-text-line-break-opclns-020.html',
+		'css3-text-line-break-opclns-021.html',
+		'css3-text-line-break-opclns-022.html',
+		'css3-text-line-break-opclns-023.html',
+		'css3-text-line-break-opclns-024.html',
+		'css3-text-line-break-opclns-025.html',
+		'css3-text-line-break-opclns-026.html',
+		'css3-text-line-break-opclns-027.html',
+		'css3-text-line-break-opclns-028.html',
+		'css3-text-line-break-opclns-029.html',
+		'css3-text-line-break-opclns-030.html',
+		'css3-text-line-break-opclns-031.html',
+		'css3-text-line-break-opclns-032.html',
+		'css3-text-line-break-opclns-033.html',
+		'css3-text-line-break-opclns-034.html',
+		'css3-text-line-break-opclns-035.html',
+		'css3-text-line-break-opclns-036.html',
+		'css3-text-line-break-opclns-037.html',
+		'css3-text-line-break-opclns-038.html',
+		'css3-text-line-break-opclns-039.html',
+		'css3-text-line-break-opclns-040.html',
+		'css3-text-line-break-opclns-041.html',
+		'css3-text-line-break-opclns-042.html',
+		'css3-text-line-break-opclns-043.html',
+		'css3-text-line-break-opclns-044.html',
+		'css3-text-line-break-opclns-045.html',
+		'css3-text-line-break-opclns-046.html',
+		'css3-text-line-break-opclns-047.html',
+		'css3-text-line-break-opclns-048.html',
+		'css3-text-line-break-opclns-049.html',
+		'css3-text-line-break-opclns-050.html',
+		'css3-text-line-break-opclns-051.html',
+		'css3-text-line-break-opclns-052.html',
+		'css3-text-line-break-opclns-053.html',
+		'css3-text-line-break-opclns-054.html',
+		'css3-text-line-break-opclns-055.html',
+		'css3-text-line-break-opclns-056.html',
+		'css3-text-line-break-opclns-057.html',
+		'css3-text-line-break-opclns-058.html',
+		'css3-text-line-break-opclns-059.html',
+		'css3-text-line-break-opclns-060.html',
+		'css3-text-line-break-opclns-061.html',
+		'css3-text-line-break-opclns-062.html',
+		'css3-text-line-break-opclns-063.html',
+		'css3-text-line-break-opclns-064.html',
+		'css3-text-line-break-opclns-065.html',
+		]
+	 )
+
+
+
+drawResults(
+	'cl', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.1', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-details', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-opclns-100.html',
+		'css3-text-line-break-opclns-101.html',
+		'css3-text-line-break-opclns-102.html',
+		'css3-text-line-break-opclns-103.html',
+		'css3-text-line-break-opclns-104.html',
+		'css3-text-line-break-opclns-105.html',
+		'css3-text-line-break-opclns-106.html',
+		'css3-text-line-break-opclns-107.html',
+		'css3-text-line-break-opclns-108.html',
+		'css3-text-line-break-opclns-109.html',
+		'css3-text-line-break-opclns-110.html',
+		'css3-text-line-break-opclns-111.html',
+		'css3-text-line-break-opclns-112.html',
+		'css3-text-line-break-opclns-113.html',
+		'css3-text-line-break-opclns-114.html',
+		'css3-text-line-break-opclns-115.html',
+		'css3-text-line-break-opclns-116.html',
+		'css3-text-line-break-opclns-117.html',
+		'css3-text-line-break-opclns-118.html',
+		'css3-text-line-break-opclns-119.html',
+		'css3-text-line-break-opclns-120.html',
+		'css3-text-line-break-opclns-121.html',
+		'css3-text-line-break-opclns-122.html',
+		'css3-text-line-break-opclns-123.html',
+		'css3-text-line-break-opclns-124.html',
+		'css3-text-line-break-opclns-125.html',
+		'css3-text-line-break-opclns-126.html',
+		'css3-text-line-break-opclns-127.html',
+		'css3-text-line-break-opclns-128.html',
+		'css3-text-line-break-opclns-129.html',
+		'css3-text-line-break-opclns-130.html',
+		'css3-text-line-break-opclns-131.html',
+		'css3-text-line-break-opclns-132.html',
+		'css3-text-line-break-opclns-133.html',
+		'css3-text-line-break-opclns-134.html',
+		'css3-text-line-break-opclns-135.html',
+		'css3-text-line-break-opclns-136.html',
+		'css3-text-line-break-opclns-137.html',
+		'css3-text-line-break-opclns-138.html',
+		'css3-text-line-break-opclns-139.html',
+		'css3-text-line-break-opclns-140.html',
+		'css3-text-line-break-opclns-141.html',
+		'css3-text-line-break-opclns-142.html',
+		'css3-text-line-break-opclns-143.html',
+		'css3-text-line-break-opclns-144.html',
+		'css3-text-line-break-opclns-145.html',
+		'css3-text-line-break-opclns-146.html',
+		'css3-text-line-break-opclns-147.html',
+		'css3-text-line-break-opclns-148.html',
+		'css3-text-line-break-opclns-149.html',
+		'css3-text-line-break-opclns-150.html',
+		'css3-text-line-break-opclns-151.html',
+		'css3-text-line-break-opclns-152.html',
+		'css3-text-line-break-opclns-153.html',
+		'css3-text-line-break-opclns-154.html',
+		'css3-text-line-break-opclns-155.html',
+		'css3-text-line-break-opclns-156.html',
+		'css3-text-line-break-opclns-157.html',
+		'css3-text-line-break-opclns-158.html',
+		'css3-text-line-break-opclns-159.html',
+		'css3-text-line-break-opclns-160.html',
+		'css3-text-line-break-opclns-161.html',
+		'css3-text-line-break-opclns-162.html',
+		'css3-text-line-break-opclns-163.html',
+		'css3-text-line-break-opclns-164.html',
+		'css3-text-line-break-opclns-165.html',
+		'css3-text-line-break-opclns-166.html',
+		'css3-text-line-break-opclns-167.html',
+		'css3-text-line-break-opclns-168.html',
+		'css3-text-line-break-opclns-169.html',
+		'css3-text-line-break-opclns-170.html',
+		'css3-text-line-break-opclns-171.html',
+		]
+	 )
+
+
+
+drawResults(
+	'ns', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.1', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-details', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-opclns-200.html',
+		'css3-text-line-break-opclns-201.html',
+		'css3-text-line-break-opclns-202.html',
+		'css3-text-line-break-opclns-203.html',
+		'css3-text-line-break-opclns-204.html',
+		'css3-text-line-break-opclns-205.html',
+		'css3-text-line-break-opclns-206.html',
+		'css3-text-line-break-opclns-207.html',
+		'css3-text-line-break-opclns-208.html',
+		'css3-text-line-break-opclns-209.html',
+		'css3-text-line-break-opclns-210.html',
+		'css3-text-line-break-opclns-211.html',
+		'css3-text-line-break-opclns-212.html',
+		'css3-text-line-break-opclns-213.html',
+		'css3-text-line-break-opclns-214.html',
+		'css3-text-line-break-opclns-215.html',
+		'css3-text-line-break-opclns-216.html',
+		'css3-text-line-break-opclns-217.html',
+		'css3-text-line-break-opclns-218.html',
+		'css3-text-line-break-opclns-219.html',
+		'css3-text-line-break-opclns-220.html',
+		'css3-text-line-break-opclns-221.html',
+		'css3-text-line-break-opclns-222.html',
+		'css3-text-line-break-opclns-223.html',
+		'css3-text-line-break-opclns-224.html',
+		'css3-text-line-break-opclns-225.html',
+		'css3-text-line-break-opclns-226.html',
+		]
+	 )
+
+
+
+drawResults(
+	'kana', // sectionid 
+	'css-text/line-breaks', // base
+	'line-breaks', // batch
+	'5.1', // specsection
+	'http://dev.w3.org/csswg/css-text/#line-break-details', // uri 
+	'css3-text', // related 
+	 [
+		'css3-text-line-break-opclns-250.html',
+		'css3-text-line-break-opclns-251.html',
+		'css3-text-line-break-opclns-252.html',
+		'css3-text-line-break-opclns-253.html',
+		'css3-text-line-break-opclns-254.html',
+		'css3-text-line-break-opclns-255.html',
+		'css3-text-line-break-opclns-256.html',
+		'css3-text-line-break-opclns-257.html',
+		'css3-text-line-break-opclns-258.html',
+		'css3-text-line-break-opclns-259.html',
+		'css3-text-line-break-opclns-260.html',
+		'css3-text-line-break-opclns-261.html',
+		'css3-text-line-break-opclns-262.html',
+		'css3-text-line-break-opclns-263.html',
+		'css3-text-line-break-opclns-264.html',
+		'css3-text-line-break-opclns-265.html',
+		'css3-text-line-break-opclns-266.html',
+		'css3-text-line-break-opclns-267.html',
+		'css3-text-line-break-opclns-268.html',
+		'css3-text-line-break-opclns-269.html',
+		]
+	 )
+
+
+
+
+</script>
+
+
+
+
+
+<section>
+<h2 id="endlinks"><a href="#endlinks">Links</a></h2>
+<aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
+
+<ul id="full-links">
+		<li>
+			<p><a href="http://dev.w3.org/csswg/css-text/#line-break-details">CSS Text Level 3, 5.1 Line Breaking Details</a> (editor's copy)</p>
+		</li>
+		<li>
+		  <p><a href="/International/tests/">i18n test suite home</a></p>
+	  </li>
+	</ul>
+</section>
+
+<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script type="text/javascript">completePage()</script>
+
+<script type="text/javascript">  
+generateStuffInPage();
+</script>
+</body>
+</html>
