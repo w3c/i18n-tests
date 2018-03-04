@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CSS3 Text decoration, Line decoration: Summarized test results</title>
+<meta name="description" content="Summary of results of CSS3 Text decoration, Line decoration tests" />
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'tests/repo/results'+'/' // the path to this file, not including /International or the file name
+f.filename = 'line-decoration' // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
+f.previousauthors = '' // as above
+f.modifiers = '' // people making substantive changes, and their affiliation
+f.searchString = 'results-css-ruby' // blog search string - usually the filename without extensions
+f.firstPubDate = '2017-03-30' // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2017-04-10', time:'20:43'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2017-04-10', time:'20:43'} // date and time of latest edits to this document/translation
+f.contributors = '' // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+f.sources = '' // describes sources of information
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG' // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = 'tests'
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="line-decoration-data/translation.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="results.css" type="text/css" />
+<script src="line-decoration-data/data.js"></script>
+<script src="line-decoration-data/manifest.js"></script>
+<script src="results-functions.js"></script>
+</head>
+
+<body>
+<header>
+  <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+  
+  <h1>Summarized test results: <br>
+  CSS3 Text decoration, Line decoration</h1>
+</header>
+
+
+<section>
+  <div id="audience">
+    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
+    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p>
+    <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
+    </div>
+    
+
+			<section> 
+                <p>These tests check whether user agents correctly apply the properties defined in the CSS Text Decoration spec related to text decoration. These are simple, user-oriented tests, designed to check basic functionality, rather than test all edge cases and implementation details.</p>
+              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
+<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
+<p><strong>Key:</strong></p>
+<table class="results" style="margin-right: 32%;">
+  <tbody>
+    <tr>
+      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
+      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
+      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+    </tr>
+  </tbody>
+</table>
+			</section>
+		</section>
+
+<!-- ·········································································· -->
+<br style="clear:both;"/>
+
+<!-- SECTION CONTAINERS GO HERE -->
+
+<section>
+  <h2 id="text_dec"><a href="#text_dec">text-decoration</a></h2>
+  
+  <section>
+  <h3 id="text_dec_hor"><a href="#text_dec_hor">horizontal</a></h3>
+  <div id="text_dec_hor-data"></div>
+  <div class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+  <li><strong>Safari</strong> uses skip-ink by default for horizontal underlines and overlines, so the line is not solid. It doesn't appear to do the same for vertical text.</li>
+  <li><strong>text-decoration-003</strong>: On a Mac in <strong>Firefox</strong>, using default font for Arabic text , Mongolian Baiti for Mongolian, and the default font for Tibetan, the line through isn't centred on the characters, looking like an overline and two underlines, respectively. Perhaps the line is drawn in the centre of the line height, rather than through the characters?</li>
+  </ol>
+  </div>
+  </section>
+  
+  <section>
+  <h3 id="text_dec_rl"><a href="#text_dec_rl">vertical-rl</a></h3>
+  <div id="text_dec_rl-data"></div>
+  </section>
+  
+  <section>
+  <h3 id="text_dec_lr"><a href="#text_dec_rl">vertical-lr</a></h3>
+  <div id="text_dec_lr-data"></div>
+  </section>
+  
+  <section>
+  <h3 id="text_dec_srl"><a href="#text_dec_rl">sideways-rl</a></h3>
+  <div id="text_dec_srl-data"></div>
+  </section>
+  
+  <section>
+  <h3 id="text_dec_slr"><a href="#text_dec_rl">sideways-lr</a></h3>
+  <div id="text_dec_slr-data"></div>
+  </section>
+</section>
+
+
+
+<section>
+  <h2 id="text_dec_line"><a href="#text_dec">text-decoration-line</a></h2>
+  
+  <section>
+  <h3 id="text_dec_line_hor"><a href="#text_dec_line_hor">horizontal</a></h3>
+  <div id="text_dec_line_hor-data"></div>
+  <div class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+  <li><strong>Safari</strong> uses skip-ink by default for horizontal underlines and overlines, so the line is not solid. It doesn't appear to do the same for vertical text.</li>
+  <li><strong>text-decoration-003</strong>: On a Mac in <strong>Firefox</strong>, using default font for Arabic text , Mongolian Baiti for Mongolian, and the default font for Tibetan, the line through isn't centred on the characters, looking like an overline and two underlines, respectively. Perhaps the line is drawn in the centre of the line height, rather than through the characters?</li>
+  </ol>
+  </div>
+  </section>
+  
+  <section>
+  <h3 id="text_dec_line_rl"><a href="#text_dec_line_rl">vertical-rl</a></h3>
+  <div id="text_dec_line_rl-data"></div>
+  </section>
+  
+  <section>
+  <h3 id="text_dec_line_lr"><a href="#text_dec_line_rl">vertical-lr</a></h3>
+  <div id="text_dec_line_lr-data"></div>
+  </section>
+  
+  <section>
+  <h3 id="text_dec_line_srl"><a href="#text_dec_line_rl">sideways-rl</a></h3>
+  <div id="text_dec_line_srl-data"></div>
+  </section>
+  
+  <section>
+  <h3 id="text_dec_line_slr"><a href="#text_dec_line_rl">sideways-lr</a></h3>
+  <div id="text_dec_line_slr-data"></div>
+  </section>
+</section>
+
+
+<section>
+  <h2 id="text_dec_style"><a href="#text_dec_style">text-decoration-style</a></h2>
+  <div id="text_dec_style-data"></div>
+</section>
+
+<section>
+  <h2 id="text_dec_skip"><a href="#text_dec_skip">text-decoration-skip</a></h2>
+  <div id="text_dec_skip-data"></div>
+</section>
+
+<section>
+  <h2 id="text_und_pos"><a href="#text_und_pos">text-underline-position</a></h2>
+  <div id="text_und_pos-data"></div>
+</section>
+
+<!--section>
+  <h2 id="ruby_merge"><a href="#ruby_merge">ruby-merge</a></h2>
+  <div class="dependencies">
+    <p class="notesheader">Dependencies</p>
+    <ol>
+      <li><strong>ruby-merge-collapse-002</strong> and <strong>ruby-merge-auto-002</strong> are only significant if the test immediately previous passes. This is because they are testing whether the association of annotation to base text is preserved across line breaks even though the placement would otherwise obscure the relationships.</li>
+    </ol>
+  </div>
+  <div id="ruby_merge-data"></div>
+  <section class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+  <li><strong>hyphens-auto-001</strong>: This is a slightly difficult test to create in a generic fashion, since one has to assume that a hyphenation resource is available for the language of the text, and you don't know which words are identified by that resource for hyphenation, or what the rules are. Hopefully the selection of words chosen in this test, and the choice of English, will produce at least some hyphenation. </li>
+  </ol>
+  </section>
+</section-->
+
+
+<!-- ·········································································· -->
+
+<script> 	// DRAW THE TABLES
+ 
+ 
+// TEXT DECORATION 
+drawResults(
+	'text_dec_hor', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-001.html',
+		'text-decoration-002.html',
+		'text-decoration-003.html',
+		'text-decoration-004.html',
+		'text-decoration-001a.html',
+		'text-decoration-002a.html',
+		'text-decoration-003a.html',
+		]
+	 )
+
+
+drawResults(
+	'text_dec_rl', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-041.html',
+		'text-decoration-040a.html',
+		'text-decoration-040.html',
+		
+		'text-decoration-042.html',
+		'text-decoration-040b.html',
+		
+		'text-decoration-045.html',
+		'text-decoration-046a.html',
+		'text-decoration-044.html',
+		'text-decoration-046.html',
+		'text-decoration-046b.html',
+
+		'text-decoration-048.html',
+		'text-decoration-048a.html',
+		'text-decoration-049.html',
+		]
+	 )
+
+
+drawResults(
+	'text_dec_lr', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-080.html',
+		'text-decoration-081.html',
+		'text-decoration-085.html',
+		'text-decoration-082.html'
+		]
+	 )
+
+
+drawResults(
+	'text_dec_srl', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-090.html',
+		'text-decoration-091.html',
+		'text-decoration-092.html',
+		'text-decoration-090a.html',
+		'text-decoration-091a.html',
+		'text-decoration-092a.html',
+		]
+	 )
+
+
+drawResults(
+	'text_dec_slr', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-095.html',
+		'text-decoration-096.html',
+		'text-decoration-097.html',
+		'text-decoration-095a.html',
+		'text-decoration-096a.html',
+		'text-decoration-097a.html',
+		]
+	 )
+
+
+
+// TEXT DECORATION LINE
+drawResults(
+	'text_dec_line_hor', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-line-001.html',
+		'text-decoration-line-002.html',
+		'text-decoration-line-003.html',
+		'text-decoration-line-004.html',
+		'text-decoration-line-001a.html',
+		'text-decoration-line-002a.html',
+		'text-decoration-line-003a.html',
+		]
+	 )
+
+
+drawResults(
+	'text_dec_line_rl', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-line-041.html',
+		'text-decoration-line-040a.html',
+		'text-decoration-line-040.html',
+		
+		'text-decoration-line-042.html',
+		'text-decoration-line-040b.html',
+		
+		'text-decoration-line-045.html',
+		'text-decoration-line-046a.html',
+		'text-decoration-line-044.html',
+		'text-decoration-line-046.html',
+		'text-decoration-line-046b.html',
+
+		'text-decoration-line-048.html',
+		'text-decoration-line-048a.html',
+		'text-decoration-line-049.html',
+		]
+	 )
+
+
+drawResults(
+	'text_dec_line_lr', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-line-080.html',
+		'text-decoration-line-081.html',
+		'text-decoration-line-085.html',
+		'text-decoration-line-082.html'
+		]
+	 )
+
+
+drawResults(
+	'text_dec_line_srl', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-line-090.html',
+		'text-decoration-line-091.html',
+		'text-decoration-line-092.html',
+		'text-decoration-line-090a.html',
+		'text-decoration-line-091a.html',
+		'text-decoration-line-092a.html',
+		]
+	 )
+
+
+drawResults(
+	'text_dec_line_slr', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.4', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-line-095.html',
+		'text-decoration-line-096.html',
+		'text-decoration-line-097.html',
+		'text-decoration-line-095a.html',
+		'text-decoration-line-096a.html',
+		'text-decoration-line-097a.html',
+		]
+	 )
+
+
+
+
+
+//TEXT DECORATION STYLE
+drawResults(
+	'text_dec_style', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.3', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-style-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-style-009.html',
+		'text-decoration-style-010.html',
+		'text-decoration-style-011.html',
+		'text-decoration-style-012.html',
+		'text-decoration-style-014.html',
+		
+		'text-decoration-style-060.html',
+		'text-decoration-style-061.html',
+		'text-decoration-style-062.html',
+		'text-decoration-style-063.html',
+		'text-decoration-style-064.html',
+		'text-decoration-style-065.html'
+		]
+	 )
+
+
+drawResults(
+	'text_dec_skip', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.5', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-skip-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-decoration-skip-015.html',
+		'text-decoration-skip-015a.html',
+		'text-decoration-skip-015b.html',
+		'text-decoration-skip-015c.html',
+		'text-decoration-skip-016.html',
+		'text-decoration-skip-017.html',
+		'text-decoration-skip-018.html',
+		
+		'text-decoration-skip-066.html',
+		'text-decoration-skip-068.html',
+		'text-decoration-skip-069.html',
+		'text-decoration-skip-070.html'
+		]
+	 )
+
+
+drawResults(
+	'text_und_pos', // sectionid 
+	'css-text-decor/line-decoration', // base
+	'line-decoration', // batch
+	'2.6', // specsection
+	'https://drafts.csswg.org/css-text-decor-3/#text-underline-position-property', // uri 
+	'css3-text-decor', // related 
+	 [
+		'text-underline-position-019.html',
+		'text-underline-position-020.html',
+		'text-underline-position-021.html',
+		'text-underline-position-022.html',
+		
+		'text-underline-position-071.html',
+		'text-underline-position-072.html',
+		'text-underline-position-073.html',
+		'text-underline-position-074.html',
+		'text-underline-position-075.html',
+		'text-underline-position-076.html'
+		]
+	 )
+
+
+
+</script>
+
+
+
+
+
+<section>
+<h2 id="endlinks"><a href="#endlinks">Links</a></h2>
+<aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
+
+<ul id="full-links">
+		<li>
+			<p><a href="https://drafts.csswg.org/css-text-decor-3/">Tests CSS Text Decoration Module Level 3</a> (editor's copy)</p>
+		</li>
+		<li>
+		  <p><a href="/International/tests/">i18n test suite home</a></p>
+	  </li>
+	</ul>
+</section>
+
+<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script type="text/javascript">completePage()</script>
+
+<script type="text/javascript">  
+generateStuffInPage();
+</script>
+</body>
+</html>
