@@ -93,4 +93,4 @@ tests[90]=["block-plaintext-003.html","unicode-bidi: div plaintext inheritance",
 tests[91]=["block-plaintext-004.html","unicode-bidi: div plaintext with br","","","If unicode-bidi:plaintext is applied to a div element containing br tags, each line of characters that starts after br is displayed according to the first strong character after the br."] 
 tests[92]=["block-plaintext-005.html","unicode-bidi: textarea plaintext","","","If unicode-bidi:plaintext is applied to a textarea element, each line of characters after a linebreak is displayed according to the first strong character after the linebreak."] 
 tests[93]=["block-plaintext-006.html","unicode-bidi: pre plaintext","","","If unicode-bidi:plaintext is applied to a pre element, each line of characters after a linebreak is displayed according to the first strong character after the linebreak."] 
-tests[94]=['../../../testend','','','','']
+tests[94]=['../../testend','','','','']
