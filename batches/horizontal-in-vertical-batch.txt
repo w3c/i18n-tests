@@ -1,0 +1,8 @@
+text-orientation/text-orientation-upright-001.html
+text-orientation/text-orientation-upright-002.html
+
+text-combine-upright/text-combine-upright-all-001.html
+text-combine-upright/text-combine-upright-all-002.html
+text-combine-upright/text-combine-upright-digits-001.html
+text-combine-upright/text-combine-upright-digits-002.html
+text-combine-upright/text-combine-upright-digits-004.html
