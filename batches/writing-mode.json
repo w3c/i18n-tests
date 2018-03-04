@@ -77,4 +77,4 @@ tests[74]=["writing-mode-vlr-table-001.html","writing mode:vertical-lr, vertical
 tests[75]=["writing-mode-vlr-table-002.html","writing mode:vertical-lr, table cell order","","","writing-mode:vertical-lr will display table columns horizontally, with the top of the table on the left."] 
 tests[76]=["proprietary/writing-mode-vlr-table-001-prop.html","writing mode:vertical-lr, vertical lines","","","writing-mode:vertical-lr will display a line of text vertically within a table cell."] 
 tests[77]=["proprietary/writing-mode-vlr-table-002-prop.html","writing mode:vertical-lr, table cell order","","","writing-mode:vertical-lr will display table columns horizontally, with the top of the table on the left."] 
-tests[78]=['../../../testend','','','','']
+tests[78]=['../../testend','','','','']
