@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CSS3 Writing Modes, Bidi: Summarized test results</title>
+<meta name="description" content="Summary of results of CSS3 Text module tests" />
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'tests/repo/results'+'/' // the path to this file, not including /International or the file name
+f.filename = 'writing-modes-bidi' // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
+f.previousauthors = '' // as above
+f.modifiers = '' // people making substantive changes, and their affiliation
+f.searchString = 'results-writing-modes-bidi' // blog search string - usually the filename without extensions
+f.firstPubDate = '2015-03-25' // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2017-05-05', time:'06:07'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2017-05-05', time:'06:07'} // date and time of latest edits to this document/translation
+f.contributors = '' // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+f.sources = '' // describes sources of information
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG' // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = 'tests'
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="writing-modes-bidi-data/translation.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="results.css" type="text/css" />
+<script src="writing-modes-bidi-data/data.js"></script>
+<script src="writing-modes-bidi-data/manifest.js"></script>
+<script src="results-functions.js"></script>
+</head>
+
+<body>
+<header>
+  <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+  
+  <h1>Summarized test results: <br>
+  CSS3 Writing Modes, Bidi</h1>
+</header>
+
+
+<section>
+  <div id="audience">
+    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
+    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the bidi properties in the CSS Writing Modes spec.</p>
+    <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
+    </div>
+    
+
+			<section> 
+                <p>These tests check the default behavior of <code class="kw" translate="no">direction</code> and <code class="kw" translate="no">unicode-bidi</code> properties  in the CSS Writing Modes Level 3 specification against the expectations for handling of bidirectional text.  For more information  see <a href="http://www.w3.org/TR/css-writing-modes-3/">CSS Writing Modes Level 3.</a></p>
+              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
+<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
+<p><strong>Key:</strong></p>
+<table class="results" style="margin-right: 32%;">
+  <tbody>
+    <tr>
+      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
+      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
+      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+    </tr>
+  </tbody>
+</table>
+			</section>
+		</section>
+		
+
+<section>
+<h2 id="inline"><a href="#inline">Inline tests</a></h2>
+
+<!-- ·········································································· -->
+<br style="clear:both;"/>
+
+<!-- SECTION CONTAINERS GO HERE -->
+
+<section>
+  <h3 id="embed"><a href="#embed">unicode-bidi: embed</a></h3>
+  <div id="embed-data"></div>
+</section>
+
+<section>
+  <h3 id="isolate"><a href="#isolate">unicode-bidi: isolate</a></h3>
+  <div id="isolate-data"></div>
+</section>
+
+
+ <section>
+  <h3 id="normal"><a href="#normal">unicode-bidi: normal</a></h3>
+  <div id="normal-data"></div>
+</section>
+
+
+<section>
+  <h3 id="unset"><a href="#unset">unicode-bidi: unset</a></h3>
+  <div id="unset-data"></div>
+</section>
+
+
+<section>
+  <h3 id="bidi_override"><a href="#bidi_override">unicode-bidi: bidi-override</a></h3>
+  <div id="bidi_override-data"></div>
+</section>
+
+
+
+<section>
+  <h3 id="isolate_override"><a href="#isolate_override">unicode-bidi: isolate-override</a></h3>
+  <div id="isolate_override-data"></div>
+</section>
+
+
+<section>
+  <h3 id="plaintext"><a href="#plaintext">unicode-bidi: plaintext</a></h3>
+  <div id="plaintext-data"></div>
+</section>
+
+
+</section>
+
+
+<!-- ·········································································· -->
+
+
+<section>
+<h2 id="block"><a href="#block">Block tests</a></h2>
+
+
+<!-- SECTION CONTAINERS GO HERE -->
+
+<section>
+  <h3 id="block_embed"><a href="#block_embed">unicode-bidi: embed</a></h3>
+  <div id="block_embed-data"></div>
+</section>
+
+ <section>
+  <h3 id="block_override"><a href="#block_override">unicode-bidi: bidi-override</a></h3>
+  <div id="block_override-data"></div>
+</section>
+
+
+<section>
+  <h3 id="block_override_isolate"><a href="#block_override_isolate">unicode-bidi: isolate-override</a></h3>
+  <div id="block_override_isolate-data"></div>
+</section>
+
+
+<section>
+  <h3 id="block_plaintext"><a href="#block_plaintext">unicode-bidi: plaintext</a></h3>
+  <div id="block_plaintext-data"></div>
+</section>
+
+
+<section>
+  <h3 id="bidi_table"><a href="#bidi_table">Direction and table columns</a></h3>
+  <div id="bidi_table-data"></div>
+</section>
+
+
+</section>
+
+
+<!-- ·········································································· -->
+
+<script> 	// DRAW THE TABLES
+  
+drawResults(
+	'embed', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'bidi-embed-001.html',
+		'bidi-embed-002.html',
+		'bidi-embed-003.html',
+		'bidi-embed-004.html',
+		'bidi-embed-005.html',
+		'bidi-embed-006.html',
+		'bidi-embed-007.html',
+		'bidi-embed-008.html',
+		'bidi-embed-009.html',
+		'bidi-embed-010.html',
+		'bidi-embed-011.html',
+		]
+	 )
+
+
+drawResults(
+	'isolate', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'bidi-isolate-001.html',
+		'bidi-isolate-002.html',
+		'bidi-isolate-003.html',
+		'bidi-isolate-004.html',
+		'bidi-isolate-005.html',
+		'bidi-isolate-006.html',
+		'bidi-isolate-007.html',
+		'bidi-isolate-008.html',
+		'bidi-isolate-009.html',
+		'bidi-isolate-010.html',
+		'bidi-isolate-011.html',
+		]
+	 )
+
+
+drawResults(
+	'normal', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'bidi-normal-001.html',
+		'bidi-normal-002.html',
+		'bidi-normal-003.html',
+		'bidi-normal-004.html',
+		'bidi-normal-005.html',
+		'bidi-normal-006.html',
+		'bidi-normal-007.html',
+		'bidi-normal-008.html',
+		'bidi-normal-009.html',
+		'bidi-normal-010.html',
+		'bidi-normal-011.html',
+		]
+	 )
+
+
+drawResults(
+	'unset', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'bidi-unset-001.html',
+		'bidi-unset-002.html',
+		'bidi-unset-003.html',
+		'bidi-unset-004.html',
+		'bidi-unset-005.html',
+		'bidi-unset-006.html',
+		'bidi-unset-007.html',
+		'bidi-unset-008.html',
+		'bidi-unset-009.html',
+		'bidi-unset-010.html',
+		]
+	 )
+
+
+drawResults(
+	'bidi_override', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'bidi-override-001.html',
+		'bidi-override-002.html',
+		'bidi-override-003.html',
+		'bidi-override-004.html',
+		'bidi-override-005.html',
+		'bidi-override-006.html',
+		'bidi-override-007.html',
+		'bidi-override-008.html',
+		'bidi-override-009.html',
+		'bidi-override-010.html',
+		'bidi-override-011.html',
+		'bidi-override-012.html',
+		]
+	 )
+
+
+drawResults(
+	'isolate_override', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'bidi-isolate-override-001.html',
+		'bidi-isolate-override-002.html',
+		'bidi-isolate-override-003.html',
+		'bidi-isolate-override-004.html',
+		'bidi-isolate-override-005.html',
+		'bidi-isolate-override-006.html',
+		'bidi-isolate-override-007.html',
+		'bidi-isolate-override-008.html',
+		'bidi-isolate-override-009.html',
+		'bidi-isolate-override-010.html',
+		'bidi-isolate-override-011.html',
+		'bidi-isolate-override-012.html',
+		]
+	 )
+
+
+drawResults(
+	'plaintext', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'bidi-plaintext-001.html',
+		'bidi-plaintext-003.html',
+		'bidi-plaintext-005.html',
+		'bidi-plaintext-006.html',
+		'bidi-plaintext-007.html',
+		'bidi-plaintext-008.html',
+		'bidi-plaintext-009.html',
+		'bidi-plaintext-010.html',
+		'bidi-plaintext-011.html',
+		]
+	 )
+
+
+drawResults(
+	'block_embed', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'block-embed-001.html',
+		'block-embed-002.html',
+		'block-embed-003.html',
+		]
+	 )
+
+
+drawResults(
+	'block_override', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'block-override-001.html',
+		'block-override-002.html',
+		'block-override-003.html',
+		'block-override-004.html',
+		]
+	 )
+
+
+drawResults(
+	'block_override_isolate', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'block-override-isolate-001.html',
+		'block-override-isolate-002.html',
+		'block-override-isolate-003.html',
+		'block-override-isolate-004.html',
+		]
+	 )
+
+
+drawResults(
+	'block_plaintext', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'block-plaintext-001.html',
+		'block-plaintext-002.html',
+		'block-plaintext-003.html',
+		'block-plaintext-004.html',
+		'block-plaintext-005.html',
+		'block-plaintext-006.html',
+		]
+	 )
+
+
+drawResults(
+	'bidi_table', // sectionid 
+	'css-writing-modes/text-direction', // base
+	'writing-modes-bidi', // batch
+	'2', // specsection
+	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
+	'css3-writing-modes', // related 
+	 [
+		'bidi-table-001.html',
+		]
+	 )
+
+
+
+</script>
+
+
+
+
+
+<section>
+<h2 id="endlinks"><a href="#endlinks">Links</a></h2>
+<aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
+
+<ul id="full-links">
+		<li>
+		  <p><a href="http://dev.w3.org/csswg/css-writing-modes-3/">CSS Writing Modes Level 3, 2  Inline Direction and Bidirectionality property</a> (editor's copy)</p>
+		</li>
+		<li>
+		  <p><a href="/International/tests/">i18n test suite home</a></p>
+	  </li>
+	</ul>
+</section>
+
+<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script type="text/javascript">completePage()</script>
+
+<script type="text/javascript">  
+generateStuffInPage();
+</script>
+</body>
+</html>
