@@ -1,0 +1,78 @@
+tests = []
+tests[0]=["shaping-000.html","shaping: span","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries with no styling change."] 
+
+tests[1]=["shaping-001.html","shaping: colour","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries for changes to colour."] 
+
+tests[2]=["shaping-002.html","shaping: font-weight","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries for changes in font weight."] 
+
+tests[3]=["shaping-003.html","shaping: font-style","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries for changes in font style."] 
+
+tests[4]=["shaping-004.html","shaping: margin 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries when margin is set to 0."] 
+
+tests[5]=["shaping-005.html","shaping: padding 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries when padding is set to 0."] 
+
+tests[6]=["shaping-006.html","shaping: border 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries when border is set to 0."] 
+
+tests[7]=["shaping-007.html","shaping: font size 100%","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries when font-size is set to 100%."] 
+
+tests[8]=["shaping-008.html","shaping: font size 120%","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries for changes to font-size."] 
+
+tests[9]=["shaping-009.html","shaping: margin &gt; 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken across inline box boundaries when marginis set to a non-zero value."] 
+
+tests[10]=["shaping-010.html","shaping: padding &gt; 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken across inline box boundaries when padding is set to a non-zero value."] 
+
+tests[11]=["shaping-011.html","shaping: border &gt; 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken across inline box boundaries when border is set to a non-zero value."] 
+
+tests[12]=["shaping-012.html","shaping: isolation","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken across inline box boundaries when isolation occurs."] 
+
+tests[13]=["shaping_lig-000.html","shaping: span","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries with no styling change."] 
+
+tests[14]=["shaping_lig-001.html","shaping: colour","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries for changes to colour."] 
+
+tests[15]=["shaping_lig-002.html","shaping: font-weight","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries for changes in font weight."] 
+
+tests[16]=["shaping_lig-003.html","shaping: font-style","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries for changes in font style."] 
+
+tests[17]=["shaping_lig-004.html","shaping: margin 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries when margin is set to 0."] 
+
+tests[18]=["shaping_lig-005.html","shaping: padding 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries when padding is set to 0."] 
+
+tests[19]=["shaping_lig-006.html","shaping: border 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries when border is set to 0."] 
+
+tests[20]=["shaping_lig-007.html","shaping: font size 100%","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries when font-size is set to 100%."] 
+
+tests[21]=["shaping_lig-008.html","shaping: font size 120%","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries for changes to font-size."] 
+
+tests[22]=["shaping_lig-009.html","shaping: margin &gt; 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken across inline box boundaries when marginis set to a non-zero value."] 
+
+tests[23]=["shaping_lig-010.html","shaping: padding &gt; 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken across inline box boundaries when padding is set to a non-zero value."] 
+
+tests[24]=["shaping_lig-011.html","shaping: border &gt; 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken across inline box boundaries when border is set to a non-zero value."] 
+
+tests[25]=["shaping_lig-012.html","shaping: isolation","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken across inline box boundaries when isolation occurs."] 
+
+tests[26]=["shaping_cchar-000.html","shaping: span","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken by a span with no styling change for an intervening diacritic."] 
+
+tests[27]=["shaping_cchar-001.html","shaping: colour","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken for changes to colour for an intervening diacritic."] 
+
+tests[28]=["shaping_cchar-002.html","shaping: font-weight","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken for changes in font weight for an intervening diacritic."] 
+
+tests[29]=["shaping_cchar-003.html","shaping: font-style","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken for changes in font style for an intervening diacritic."] 
+
+tests[30]=["shaping_cchar-004.html","shaping: margin 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken when margin is set to 0 for an intervening diacritic."] 
+
+tests[31]=["shaping_cchar-005.html","shaping: padding 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken when padding is set to 0 for an intervening diacritic."] 
+
+tests[32]=["shaping_cchar-006.html","shaping: border 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken when border is set to 0 for an intervening diacritic."] 
+
+tests[33]=["shaping_cchar-007.html","shaping: font size 100%","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken when font-size is set to 100% for an intervening diacritic."] 
+
+tests[34]=["shaping_cchar-008.html","shaping: font size 120%","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken when font-size is changed for an intervening diacritic."] 
+
+tests[35]=["shaping_cchar-009.html","shaping: margin &gt; 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken when margin is set to a non-zero value on an intervening diacritic."] 
+
+tests[36]=["shaping_cchar-010.html","shaping: padding &gt; 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken when padding is set to a non-zero value on an intervening diacritic."] 
+
+tests[37]=["shaping_cchar-011.html","shaping: border &gt; 0","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping SHOULD be broken when border is set to a non-zero value on an intervening diacritic."] 
+
+tests[38]=['../../testend','','','','']
