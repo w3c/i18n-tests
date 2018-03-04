@@ -1,0 +1,4 @@
+@charset 'windows-1258';
+/* edit this file only in an editor that supports the Vietnamese code page! */
+.test p.tiêÌn { background-color: #00FF00; color: white; }
+.test p:before { content:'tiêÌn '; font-size: 50%; }
