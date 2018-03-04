@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>text-decoration-skip spaces ink</title>
+<meta name="assert" content="text-decoration:underline; text-decoration-skip:spaces ink; spaces are skipped and there is a small gap in the line where the two spans meet">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#line-decoration">
+<!-- cosmetic styling -->
+<style>
+#htmlsrc { margin: 2em; }
+#htmlsrc p {
+	font-size: 28px;
+	border-radius: 5px;
+	line-height: 1.5;
+	}
+.hint { color: brown; font-family: sans-serif; font-size: 90%; }
+.hint:before { content: '❗ '; }
+#htmlsrc span:first-of-type { color: blue; }
+</style>
+<!-- the test -->
+<style>
+div span {
+text-decoration:underline;
+text-decoration-skip:spaces ink;
+}</style>
+</head>
+<body>
+<p class="instructions">Test passes if spaces are skipped and there is a small gap in the line immediately after the blue text.<br/><span class="hint">Skip this test if other tests for either spaces or ink values failed.</span></p>
+<div id="htmlsrc">
+<div>
+<p lang="en"><span>The quick</span><span>brown fox jumps over the lazy dog.</span></p>
+<p lang="ja"><span>可能性を 最大限に 導き出</span><span>すために</span></p>
+</div>  </div>
+</body>
+</html>

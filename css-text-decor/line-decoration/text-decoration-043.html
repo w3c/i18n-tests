@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>text-decoration vertical-rl (mn)</title>
+<meta name="assert" content="text-decoration:underline; there is a line to the RIGHT of the characters  [exploratory test]">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#line-decoration">
+<!-- cosmetic styling -->
+<style>
+#htmlsrc { margin: 2em; }
+#htmlsrc p {
+	font-size: 28px;
+	border-radius: 5px;
+	line-height: 1.5;
+	}
+:lang(mn) { font-family: "Mongolian Baiti", "Noto sans Mongolian", serif; }
+</style>
+<!-- the test -->
+<style>
+div span {
+text-decoration:underline;
+}</style>
+</head>
+<body>
+<p class="instructions">Test passes if there is a line to the RIGHT of the characters  [exploratory test].</p>
+<div id="htmlsrc" style="writing-mode:vertical-rl">
+
+<div>
+<p lang="mn"><span>ᠣᠯᠠᠨ ᠦᠨᠳᠦᠰᠦᠲᠡᠨ ᠦ ᠪᠣᠯᠭᠠᠬᠤ ᠦᠢᠯᠡ ᠠᠵᠢᠯᠯᠠᠭ᠎ᠠ</span></p>
+</div>  </div>
+</body>
+</html>
