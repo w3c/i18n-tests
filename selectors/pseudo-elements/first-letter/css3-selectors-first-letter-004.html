@@ -8,27 +8,28 @@
 <link rel="match" href="reference/css3-selectors-first-letter-004-ref.html">
 <meta name="assert" content="[Exploratory] :first-letter will select an IJ as a single item at the start of a line in a Dutch context.">
 <style type='text/css'>
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
-.test p:first-letter { font-size:300%; }
-.ref span { font-size: 3em;  }
-   
 @font-face {
 font-family: 'webfont';
 src: url('../../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
 font-weight: normal;
 font-style: normal;
 }
-.test, .ref { font-family: webfont, serif; }
+.test, .ref { font-family: webfont, serif; font-size: 200%; margin-left: 1em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
+.ref span { font-size: 3em;  }
+
+.test p:first-letter { font-size: 3em; }
 </style>
-<script src="support/script.js"> </script>
 </head>
 <body>
-<p class="instructions">Test passes if the two boxes are identical.</p>
+<p class="instructions">Test passes if you see no red text.</p>
+<div style="position:relative;">
 <div class="test" lang="nl">
 <p>Ijsland</p>
 </div>
 <div class="ref" lang="nl">
 <p><span>Ij</span>sland</p>
+</div>
 </div>
 <!--Notes:
 According to the specification, the ij combination should be treated as a single item. This requires a tailoring of the algorithm, since it is not a recognised grapheme cluster.

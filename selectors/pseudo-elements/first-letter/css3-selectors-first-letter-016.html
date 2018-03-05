@@ -7,15 +7,14 @@
 <link rel='help' href='http://www.w3.org/TR/css3-selectors/#first-letter'>
 <meta name="assert" content="[Exploratory] :first-letter will select a devanagari two-consonant conjunct and a combining character at the start of a line.">
 <style type='text/css'>
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
-.test p:first-letter { font-size:300%; }
+.test, .ref { font-size: 150%; margin: 0 10px; }
+.test p:first-letter { font-size: 3em; }
 .ref span { font-size: 3em;  }
 </style>
-<script src="support/script.js"> </script>
 </head>
 <body>
-<p class="instructions">Test passes if the two boxes are identical.</p>
-<div class="test" lang="hi">
+<p id='fontChange'>Downloaded WOFF fonts are used for other tests, but for this particular test you can apply a specific font on your system by typing its name in the following box: <input class='css' name='fontName' id='fontName' value='' type='text'> <button type='button' onclick="document.getElementById('test').style.fontFamily = document.getElementById('fontName').value;">Apply</button>
+<div class="test" lang="hi" id="test">
 <p>क्लास</p>
 <p>स्तिठड</p>
 <p>प्याला</p>
@@ -23,7 +22,7 @@
 <p>ब्रेडक्रंब</p>
 </div>
 <!--Notes:
-This combination is not an extended grapheme cluster, so it will require tailoring of the browser's algorithm for dealing with Indic scripts. The grapheme cluster is limited to the first base character plus the virama.<p id='fontChange'>Downloaded WOFF fonts are used for other tests, but for this particular test you can apply a specific font on your system by typing its name in the following box: <input class='css' name='fontName' id='fontName' value='' type='text'> <button type='button' onclick="setFont();">Apply</button>
--->
+This combination is not an extended grapheme cluster, so it will require tailoring of the browser's algorithm for dealing with Indic scripts. The grapheme cluster is limited to the first base character plus the virama.-->
+
 </body>
 </html>
