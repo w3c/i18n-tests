@@ -8,37 +8,26 @@
 <link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-bdi-element'>
 <link rel="match" href="reference/the-dir-attribute-084-ref.html">
 <meta name="assert" content="For the purposes of applying the bidirectional algorithm to the paragraph-level       container that a bdi element finds itself within, the bdi element must be treated       like a U+FFFC OBJECT REPLACEMENT CHARACTER. This must apply when a BDI is nested within a BDI.">
-<style type='text/css'>
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
-input { margin: 5px; }
-/*
+<style type="text/css">
 @font-face {
-    font-family: 'ezra_silregular';
-    src: url('support/sileotsr-webfont.woff') format('woff');
+    font-family: 'hewebfont';
+    src: url('../../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
-	}
-@font-face {
-    font-family: 'scheherazaderegular';
-    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
-    font-weight: normal;
-    font-style: normal;
-	}
-.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
-*/
+  }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont, arwebfont, serif; font-size: 2.5em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
 </style>
 </head>
 <body>
-<p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+<p class="instructions" dir="ltr">Test passes if you see no red characters.</p>
 <!--<div class="comments">
       Key to entities used below:
         &#x5d0; ... &#x5d5; - The first six Hebrew letters (strongly RTL).
         &#x202d; - The LRO (left-to-right-override) formatting character.
         &#x202c; - The PDF (pop directional formatting) formatting character; closes LRO.
     </div>-->
-
-
-
+<div style="position: relative">
 <div class="test">
       <div dir="ltr">&#x5d0; + <bdi>[a + <bdi>[&#x5d1; + <bdi>[b + 4]</bdi> + 3]</bdi> + 2]</bdi> + 1</div>
       <div dir="ltr">&#x5d0; + <bdi dir="rtl">[a + <bdi dir="ltr">[&#x5d1; + <bdi dir="rtl">[b + 4]</bdi> + 3]</bdi> + 2]</bdi> + 1</div>
@@ -47,11 +36,6 @@ input { margin: 5px; }
       <div dir="rtl">a + <bdi dir="ltr">[&#x5d0; + <bdi dir="rtl">[b + <bdi dir="ltr">[&#x5d1; + 3]</bdi> + 2]</bdi> + 1]</bdi> + 0</div>
       <div dir="rtl">a + <bdi dir="rtl">[&#x5d0; + <bdi dir="ltr">[b + <bdi dir="rtl">[&#x5d1; + 3]</bdi> + 2]</bdi> + 1]</bdi> + 0</div>
     </div>
-
-
-
-
-
 <div class="ref">
       <div dir="ltr">&#x202d;1 + [a + [3 + [b + 4] + &#x5d1;] + 2] + &#x5d0;&#x202c;</div>
       <div dir="ltr">&#x202d;1 + [a + [3 + [b + 4] + &#x5d1;] + 2] + &#x5d0;&#x202c;</div>
@@ -60,9 +44,6 @@ input { margin: 5px; }
       <div dir="rtl">&#x202d;a + [1 + [b + [3 + &#x5d1;] + 2] + &#x5d0;] + 0&#x202c;</div>
       <div dir="rtl">&#x202d;a + [1 + [b + [3 + &#x5d1;] + 2] + &#x5d0;] + 0&#x202c;</div>
     </div>
-
-
-
-
+</div>
 </body>
 </html>

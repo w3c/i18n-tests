@@ -8,28 +8,19 @@
 <link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-bdi-element'>
 <link rel="match" href="reference/the-dir-attribute-092-ref.html">
 <meta name="assert" content="       'For the purposes of applying the bidirectional algorithm to the paragraph-level       container that a bdi element finds itself within, the bdi element must be treated       like a U+FFFC OBJECT REPLACEMENT CHARACTER.'       Thus, regardless of its content and its dir attribute (if any), a BDI will not prevent       a strongly RTL (or LTR) character preceding it from forming a single directional run with       another strongly RTL (LTR) character following it.">
-<style type='text/css'>
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
-input { margin: 5px; }
-/*
+<style type="text/css">
 @font-face {
-    font-family: 'ezra_silregular';
-    src: url('support/sileotsr-webfont.woff') format('woff');
+    font-family: 'hewebfont';
+    src: url('../../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
-	}
-@font-face {
-    font-family: 'scheherazaderegular';
-    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
-    font-weight: normal;
-    font-style: normal;
-	}
-.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
-*/
+  }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont, arwebfont, serif; font-size: 2.5em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
 </style>
 </head>
 <body>
-<p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+<p class="instructions" dir="ltr">Test passes if you see no red characters.</p>
 <!--<div class="comments">
       Key to entities used below:
         &#x5d0; ... &#x5d5; - The first six Hebrew letters (strongly RTL).
@@ -38,9 +29,7 @@ input { margin: 5px; }
       If the BDI in the test's first DIV were a SPAN, its b would prevent the &#x5d0; and the &#x5d1;
       from forming a single RTL run and thus keep the &gt;s between from being mirrored into &lt;s.
     </div>-->
-
-
-
+<div style="position: relative">
 <div class="test">
       <div dir="ltr">&#x5d0; &gt; <bdi>[b]</bdi> &gt; &#x5d2;...</div>
       <div dir="ltr">&#x5d0; &gt; <bdi dir="ltr">[b]</bdi> &gt; &#x5d2;...</div>
@@ -49,11 +38,6 @@ input { margin: 5px; }
       <div dir="rtl">a &gt; <bdi dir="ltr">[&#x5d1;]</bdi> &gt; c...</div>
       <div dir="rtl">a &gt; <bdi dir="rtl">[&#x5d1;]</bdi> &gt; c...</div>
     </div>
-
-
-
-
-
 <div class="ref">
       <div dir="ltr">&#x202d;&#x5d2; &lt; [b] &lt; &#x5d0;...&#x202c;</div>
       <div dir="ltr">&#x202d;&#x5d2; &lt; [b] &lt; &#x5d0;...&#x202c;</div>
@@ -62,9 +46,6 @@ input { margin: 5px; }
       <div dir="rtl">&#x202d;...a &gt; [&#x5d1;] &gt; c&#x202c;</div>
       <div dir="rtl">&#x202d;...a &gt; [&#x5d1;] &gt; c&#x202c;</div>
     </div>
-
-
-
-
+</div>
 </body>
 </html>

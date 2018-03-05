@@ -8,31 +8,22 @@
 <link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-bdi-element'>
 <link rel="match" href="reference/the-dir-attribute-093-ref.html">
 <meta name="assert" content="For the purposes of applying the bidirectional algorithm to the paragraph-level       container that a bdi element finds itself within, the bdi element must be treated       like a U+FFFC OBJECT REPLACEMENT CHARACTER.     Obviously, this should hold even if the BDI's content is wrapped over more than one line.       A single character (U+FFFC or otherwise) obviously never gets wrapped over more than one       line, but we still expect the part of the content preceding the BDI, if any, that is       displayed on the same line as some part of the BDI to be ordered the same as it would be       if that part of the BDI were replaced with U+FFFC. Similarly, we expect the part of the       content following the BDI, if any, that is displayed on the same line as some part of the       BDI to be ordered the same as it would be if that part of the BDI were replaced with U+FFFC.">
-<style type='text/css'>
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
-input { margin: 5px; }
-/*
+<style type="text/css">
 @font-face {
-    font-family: 'ezra_silregular';
-    src: url('support/sileotsr-webfont.woff') format('woff');
+    font-family: 'hewebfont';
+    src: url('../../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
-	}
-@font-face {
-    font-family: 'scheherazaderegular';
-    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
-    font-weight: normal;
-    font-style: normal;
-	}
-.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
-*/
+  }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont, arwebfont, serif; font-size: 2.5em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
 .test, .ref {
         width: 300px;
       }
 </style>
 </head>
 <body>
-<p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+<p class="instructions" dir="ltr">Test passes if you see no red characters.</p>
 <!--<div class="comments">
       Key to entities used below:
         &#xa0; - Non-breaking space.
@@ -40,11 +31,9 @@ input { margin: 5px; }
         &#x202d; - The LRO (left-to-right-override) formatting character.
         &#x202c; - The PDF (pop directional formatting) formatting character; closes LRO.
       The non-breaking spaces after the &gt;s make the &gt;s display on a line of its own.
-	  In the test below, the content surrounding the BDI forms a single directional run (despite       the containing element and the BDI both having the opposite direction, because the BDI is       treated as a neutral). Thus, on the line containing the first part of the BDI, the BDI's       content appears after the content preceding it, and on the line containing the last part of       the BDI, the BDI content appears before the content following it, where both 'before' and       'after' are defined relative to the surrounding content's direction. And, of course, the line       containing just BDI content should be ordered in the BDI's direction.
+    In the test below, the content surrounding the BDI forms a single directional run (despite       the containing element and the BDI both having the opposite direction, because the BDI is       treated as a neutral). Thus, on the line containing the first part of the BDI, the BDI's       content appears after the content preceding it, and on the line containing the last part of       the BDI, the BDI content appears before the content following it, where both 'before' and       'after' are defined relative to the surrounding content's direction. And, of course, the line       containing just BDI content should be ordered in the BDI's direction.
     </div>-->
-
-
-
+<div style="position: relative">
 <div class="test">
       <div dir="ltr">
         &#x5d0; &gt;
@@ -61,11 +50,6 @@ input { margin: 5px; }
         &gt; d...
       </div>
     </div>
-
-
-
-
-
 <div class="ref">
       <div dir="ltr">
         &#x202d;b &lt; &#x5d0;&#x202c;<br/>
@@ -78,9 +62,6 @@ input { margin: 5px; }
         &#x202d;...&#x5d2; &gt; d&#x202c;
       </div>
     </div>
-
-
-
-
+</div>
 </body>
 </html>
