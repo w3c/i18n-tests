@@ -3,22 +3,25 @@
 <head>
 <meta charset="utf-8"/>
 <title>The dir attribute: isolated from surrounding text, same direction</title>
-
-
 <link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
 <link rel="help" href='http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm'>
 <link rel='match' href='/reference/dir-isolation-009b-ref.html'>
 <meta name='assert' content="Element content with a dir attribute is treated as a neutral character and directionally isolated from surrounding text.">
 <style type='text/css'>
-[dir='ltr'], [dir='rtl'] { 
-	unicode-bidi: -webkit-isolate;
-	unicode-bidi: -moz-isolate;
-	unicode-bidi: -ms-isolate;
-	unicode-bidi: isolate;
-	} 
-
-
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+@font-face {
+    font-family: 'hewebfont';
+    src: url('../../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+[dir='ltr'], [dir='rtl'] {
+  unicode-bidi: -webkit-isolate;
+  unicode-bidi: -moz-isolate;
+  unicode-bidi: -ms-isolate;
+  unicode-bidi: isolate;
+  }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont, serif; font-size: 2.5em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
 input { margin: 5px; }
 /*
 @font-face {
@@ -26,7 +29,7 @@ input { margin: 5px; }
     src: url('support/sileotsr-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-	}
+  }
 .test, .ref { font-family: ezra_silregular, serif; }
 */
 </style>
@@ -41,25 +44,16 @@ input { margin: 5px; }
       If the BDI in the test's first DIV were a SPAN, its b would prevent the &#x5d0; and the &#x5d1;
       from forming a single RTL run and thus keep the &gt;s between from being mirrored into &lt;s.
     </div>-->
-
-
-
+<div style="position: relative;">
 <div class="test">
       <div dir="ltr">&#x5d0; &gt; <span dir="ltr">&gt; b &gt;</span> &gt; &#x5d2;...</div>
       <div dir="rtl">a &gt; <span dir="rtl">&gt; &#x5d1; &gt;</span> &gt; c...</div>
     </div>
-
-
-
-
-
 <div class="ref">
       <div dir="ltr">&#x202d;&#x5d2; &lt; &gt; b &gt; &lt; &#x5d0;...&#x202c;</div>
       <div dir="rtl">&#x202d;...a &gt; &lt; &#x5d1; &lt; &gt; c&#x202c;</div>
     </div>
-
-
-
-
+</div>
 </body>
+
 </html>

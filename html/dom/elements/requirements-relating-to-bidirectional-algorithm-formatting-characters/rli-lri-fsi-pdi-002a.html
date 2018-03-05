@@ -7,13 +7,21 @@
 <link rel="author" title='Richard Ishida' href='mailto:ishida@w3.org'>
 <link rel='help' href='http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm'>
 <link rel='match' href='/reference/dir-isolation-002-ref.html'>
-<style type="text/css">
+<style type='text/css'>
+@font-face {
+    font-family: 'hewebfont';
+    src: url('../../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 /* the CSS below is not part of the test */
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont, serif; font-size: 2.5em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
 </style>
 </head>
 <body>
 <p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+<div style="position: relative;">
 <div class="test">
       <div dir="ltr">&#x2067;> &#x5d0; >&#x2069; > 3 ></div>
       <div dir="ltr">&#x2067;> a >&#x2069; > 3 ></div>
@@ -35,4 +43,6 @@ Key to entities used in these tests:
         &#x2069; - The PDI (pop directional isolate) formatting character; closes RLI/LRI/FSI.
 The punctuation is moved around in the source to make it easier to do visual comparisons when the test is run.
 -->
-</body></html>
+</div>
+</body>
+</html>
