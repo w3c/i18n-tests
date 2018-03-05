@@ -7,4 +7,3 @@ css3-selectors-first-letter-011.html
 css3-selectors-first-letter-012.html
 css3-selectors-first-letter-014.html
 css3-selectors-first-letter-015.html
-css3-selectors-first-letter-016.html

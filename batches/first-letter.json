@@ -17,6 +17,4 @@ tests[7]=["css3-selectors-first-letter-014.html","CSS3 Selectors: hindi, simple 
 
 tests[8]=["css3-selectors-first-letter-015.html","CSS3 Selectors: hindi, conjunct plus combining character","",'http://www.w3.org/TR/css3-selectors/#first-letter',"[Exploratory] :first-letter will select a devanagari two-consonant conjunct and a combining character at the start of a line."] 
 
-tests[9]=["css3-selectors-first-letter-016.html","CSS3 Selectors: hindi, conjunct plus combining character (no webfont)","",'http://www.w3.org/TR/css3-selectors/#first-letter',"[Exploratory] :first-letter will select a devanagari two-consonant conjunct and a combining character at the start of a line."] 
-
-tests[10]=['../../../testend','','','','']
+tests[9]=['../../../testend','','','','']
