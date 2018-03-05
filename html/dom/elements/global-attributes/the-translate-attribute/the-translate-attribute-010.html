@@ -11,19 +11,12 @@
 <meta name="assert" content="If the translate attribute is set to no, javascript will detect the translation mode of elements inside that element with no translate flag as no-translate.">
 </head>
 <body>
-
-
-
 <div class="test"><div id="box" translate="no">&nbsp; <span id="spantest">&nbsp;</span></div></div>
-
-
 <script>
 test(function() {
 assert_false(document.getElementById('spantest').translate);
 }, " ");
 </script>
-
 <div id='log'></div>
-
 </body>
 </html>

@@ -11,19 +11,12 @@
 <meta name="assert" content="If the translate attribute is set to no, javascript will detect the translation mode of text as no-translate.">
 </head>
 <body>
-
-
-
 <div class="test"><div id="box" translate="no">&nbsp;</div></div>
-
-
 <script>
 test(function() {
 assert_false(document.getElementById('box').translate);
 }, " ");
 </script>
-
 <div id='log'></div>
-
 </body>
 </html>
