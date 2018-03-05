@@ -7,14 +7,21 @@
 <link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-br-element'>
 <link rel="match" href="reference/bidi-rendering-br-002-ref.html">
 <meta name="assert" content="A br element should separate paragraphs for the purposes of the Unicode bidirectional algorithm. If an inline element is broken around a bidi paragraph boundary (e.g. if split by a block or forced paragraph break), then the bidi control codes corresponding to the end of the element are added before the interruption and the codes corresponding to the start of the element are added after it. (In other words, any embedding levels or overrides started by the element are closed at the paragraph break and reopened on the other side of it.)">
-<style type='text/css'>
+<style type="text/css">
+@font-face {
+    font-family: 'hewebfont';
+    src: url('../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 /* the CSS below is not part of the test */
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont, serif; font-size: 2.5em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
 input { margin: 5px; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the two boxes are identical.</p>
+<p class="instructions">Test passes if you see no red characters.</p>
 <!--<div class="comments">
       Key to entities used below:
         &#x5d0; ... &#x5d8; - The first nine Hebrew letters (strongly RTL).
@@ -23,9 +30,7 @@ input { margin: 5px; }
         &#x202d; - The LRO (left-to-right override) formatting character.
         &#x202c; - The PDF (pop directional formatting) formatting character; closes LRO.
     </div>-->
-
-
-
+<div style="position: relative">
 <div class="test">
       &#x5d1;&#x5d0;&#x200e;
       <bdo dir="rtl">ih
@@ -38,19 +43,11 @@ input { margin: 5px; }
         ba</bdo>
       &#x200e;&#x5d8;&#x5d7;
     </div>
-
-
-
-
-
 <div class="ref">
       &#x202d;&#x5d0;&#x5d1; &#x5d2;&#x5d3; 1. I like &#x5d4;. fg hi&#x202c;
       <br/>
       &#x202d;ab cd 2. &#x5d4; is great! &#x5d5;&#x5d6; &#x5d7;&#x5d8;&#x202c;
     </div>
-
-
-
-
+</div>
 </body>
 </html>

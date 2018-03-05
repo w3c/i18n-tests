@@ -8,25 +8,28 @@
 <link rel='help' href='http://www.w3.org/TR/html5/rendering.html#bidi-rendering'>
 <meta name='flags' content='interact'>
 <meta name="assert" content="A newline in a textarea element, and in its raw value, should separate paragraphs for the purposes of the Unicode bidirectional algorithm.">
-<style type='text/css'>
+<style type="text/css">
+@font-face {
+    font-family: 'hewebfont';
+    src: url('../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 /* the CSS below is not part of the test */
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont, serif; font-size: 1.5em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
 input { margin: 5px; }
-textarea { font-family: sans-serif; font-size: 18px; margin:0; padding: 0; border: 1px solid #eee; }
+textarea { font-family: sans-serif; font-size: 1em; margin:0; padding: 0; border: 1px solid #eee; }
 </style>
 </head>
 <body>
 <p class="instructions">Test passes if the rightmost character in the first line  is a full stop and to the left of it is a Hebrew letter.</p>
-
-
+<div style="position: relative">
 <div class="test">
 <textarea cols="70" rows="3">
 A Hebrew letter and a full stop: &#x5d0;.
 &#x5d0; this line begins with a Hebrew letter.</textarea>
     </div>
-
-
-
-
+</div>
 </body>
 </html>

@@ -8,33 +8,30 @@
 <link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-br-element'>
 <link rel="match" href="reference/bidi-rendering-br-001-ref.html">
 <meta name="assert" content="A br element should separate paragraphs for the purposes of the Unicode bidirectional algorithm.">
-<style type='text/css'>
-/* the CSS below is not part of the test */
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+<style type="text/css">
+@font-face {
+    font-family: 'hewebfont';
+    src: url('../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont, serif; font-size: 2em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
 input { margin: 5px; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the two boxes are identical.</p>
-
-
+<p class="instructions">Test passes if you see no red characters.</p>
+<div style="position: relative">
 <div class="test">
       A Hebrew letter and a full stop: &#x5d0;.
       <br/>
       &#x5d0; this line begins with a Hebrew letter.
     </div>
-
-
-
-
-
 <div class="ref">
       <div>A Hebrew letter and a full stop: &#x5d0;.</div>
      <div> &#x5d0; this line begins with a Hebrew letter.</div>
     </div>
-
-
-
-
+</div>
 </body>
 </html>

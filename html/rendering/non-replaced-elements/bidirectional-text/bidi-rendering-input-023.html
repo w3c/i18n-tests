@@ -7,25 +7,16 @@
 <link rel='help' href='http://www.w3.org/TR/html5/rendering.html#bidi-rendering'>
 <link rel="match" href="reference/bidi-rendering-input-023-ref.html">
 <meta name="assert" content="When dir='auto', the direction of an input element of type search, telephone, url, or email is set as RTL when the first strong character of its value is of type R (here the Hebrew letter aleph).">
-<style type='text/css'>
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+<style type="text/css">
+@font-face {
+    font-family: 'hewebfont';
+    src: url('../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont, serif; font-size: 2.5em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
 input { margin: 5px; }
-/*
-@font-face {
-    font-family: 'ezra_silregular';
-    src: url('support/sileotsr-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-	}
-@font-face {
-    font-family: 'scheherazaderegular';
-    src: url('support/scheherazaderegot-webfont.woff' format('woff'));
-    font-weight: normal;
-    font-style: normal;
-	}
-.test, .ref { font-family: scheherazaderegular, ezra_silregular, serif; }
-*/
-
       input, textarea { font-size:1em; }
       .comments {
         display: none;
@@ -33,44 +24,34 @@ input { margin: 5px; }
 </style>
 </head>
 <body>
-<p class="instructions" dir="ltr">Test passes if the two boxes are identical.</p>
+<p class="instructions" dir="ltr">Test passes if you see no red characters.</p>
 <!--<div class="comments">
       Key to entities used below:
       &#x5d0; - The Hebrew letter Alef (strongly RTL).
       &#x5d1; - The Hebrew letter Bet (strongly RTL).
       &#x5d2; - The Hebrew letter Gimel (strongly RTL).
     </div>-->
-
-
-
+<div style="position: relative">
 <div class="test">
-			  <div dir="ltr"><input type="search" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="ltr"><input type="telephone" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="ltr"><input type="url" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="ltr"><input type="email" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="rtl"><input type="search" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="rtl"><input type="telephone" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="rtl"><input type="url" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="rtl"><input type="email" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			</div>
-
-
-
-
-
+        <div dir="ltr"><input type="search" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="ltr"><input type="telephone" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="ltr"><input type="url" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="ltr"><input type="email" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="rtl"><input type="search" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="rtl"><input type="telephone" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="rtl"><input type="url" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="rtl"><input type="email" dir="auto" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+      </div>
 <div class="ref">
-			  <div dir="ltr"><input type="search" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="ltr"><input type="telephone" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="ltr"><input type="url" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="ltr"><input type="email" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="rtl"><input type="search" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="rtl"><input type="telephone" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="rtl"><input type="url" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			  <div dir="rtl"><input type="email" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
-			</div>
-
-
-
-
+        <div dir="ltr"><input type="search" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="ltr"><input type="telephone" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="ltr"><input type="url" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="ltr"><input type="email" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="rtl"><input type="search" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="rtl"><input type="telephone" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="rtl"><input type="url" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+        <div dir="rtl"><input type="email" dir="rtl" value="&#x5D0;&#x5D1;&#x5D2;ABC."/></div>
+      </div>
+</div>
 </body>
 </html>
