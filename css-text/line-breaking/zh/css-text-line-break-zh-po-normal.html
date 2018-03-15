@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS text, linebreaks: PO AFW (normal,zh)</title>
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-text-3/#line-breaking">
+<script src="../../../resources/testharness.js"></script>
+<script src="../../../resources/testharnessreport.js"></script>
+<meta name="assert" content="When the language is Chinese, and line-break:normal, a browser will NOT allow a break before a PO character with East Asian Width of A, F, or W.">
+<style type="text/css">
+@font-face {
+    font-family: 'mplus-1p-regular';
+    src: url('../../../fonts/CSSTest/mplus-1p-regular.woff') format('woff');
+    }
+#wrapper { position: relative; }
+.ref { color: red; z-index: -100; }
+.test, .ref { position:absolute; top:0; font-size: 30px; font-family: mplus-1p-regular, sans-serif; width: 95px; padding: 0; border: 1px solid orange; line-height: 1em; }
+.test { line-break: normal; }
+</style>
+<script>
+var charlist = `00B0  DEGREE SIGN
+2030  PER MILLE SIGN
+2032  PRIME
+2033  DOUBLE PRIME
+2035  REVERSED PRIME
+2103  DEGREE CELSIUS
+2109  DEGREE FAHRENHEIT
+FE6A  SMALL PERCENT SIGN
+FF05  FULLWIDTH PERCENT SIGN
+FFE0  FULLWIDTH CENT SIGN`
+</script>
+</head>
+<body>
+<div id="log"></div>
+<div id="wrapper">
+<div class="test" id="test" lang="zh">文文文&#x2030;字<span id="testSpan">&zwnj;</span></div>
+<div class="ref" id="ref" lang="zh">文文<br/>文&#x2030;字<span id="refSpan">&zwnj;</span></div>
+</div>
+<script>
+var lines = charlist.split('\n')
+for (var i=0;i<lines.length;i++) {
+    var firstSpace = lines[i].indexOf(' ')
+    var hex = lines[i].substr(0,firstSpace)
+    var name = lines[i].substr(firstSpace)
+    
+    document.getElementById('test').innerHTML = '文文文&#x'+hex+';字<span id="testSpan">&zwnj;</span>'
+    document.getElementById('ref').innerHTML = '文文<br/>文&#x'+hex+';字<span id="refSpan">&zwnj;</span>'
+    
+    test(function() {
+        assert_true(document.getElementById('testSpan').offsetLeft === document.getElementById('refSpan').offsetLeft);
+        }, lines[i]);
+    }
+document.getElementById('wrapper').style.display = 'none'
+</script>
+<!--Notes:
+The test creates a box width that causes the 4th character to wrap. It also creates the expected final behaviour with a ref instance, using <br/>. Each line ends with a span containing a ZWSP. The test then checks whether the left edge of the span is in the same place in test and ref instance.
+For more information about expected line break behavior and line break classes, see http://www.unicode.org/reports/tr14/'>Unicode Standard Annex #14 Line Breaking Properties.
+-->
+</body>
+</html>
