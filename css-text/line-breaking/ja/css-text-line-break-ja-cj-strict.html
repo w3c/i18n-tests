@@ -85,7 +85,7 @@ class BreakTest {
     constructor(line) {
         this.line = line;
         let hex = line.split(' ', 1)[0];
-        let testChar = String.fromCharCode(parseInt(hex, 16));
+        let testChar = String.fromCodePoint(parseInt(hex, 16));
         let element = document.importNode(template.content.children[0], true);
         let walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
         while (walker.nextNode()) {
@@ -103,11 +103,15 @@ class BreakTest {
             assert_true(test.offsetLeft === ref.offsetLeft);
         }, `${this.line} should not break before if ja and strict`);
     }
+
+    static runAll(charlist) {
+        let tests = charlist.split('\n').map(line => new BreakTest(line));
+        for (let test of tests) {
+            test.run();
+        }
+    }
 }
-let tests = charlist.split('\n').map(line => new BreakTest(line));
-for (let test of tests) {
-    test.run();
-}
+BreakTest.runAll(charlist);
 </script>
 <!--Notes:
 The test creates a box width that causes the 4th character to wrap. It also creates the expected final behaviour with a ref instance, using <br/>. Each line ends with a span containing a ZWSP. The test then checks whether the left edge of the span is in the same place in test and ref instance.
