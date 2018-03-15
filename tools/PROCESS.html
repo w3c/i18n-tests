@@ -18,14 +18,14 @@ form { border: 1px solid #F67070; padding: 10px; }
 
 <h1 class="major_part">Create the tests</h1>
 <p>Add tests in the same directories as you would submit them to TTWF.</p>
-<p>The <code>batch</code> file contains a list of test names; the test names include the path from the base (if any) and the file extension.</p>
-<p><input id="batchname" type="text" placeholder="Add the batch name here (without -batch)" /></p>
 <p>The <code>base</code> is the path from the <code>repo</code> directory to the point where the entries in the batch file complete the path to the tests.</p>
 <p><input id="base" name="base" type="text" placeholder="Add the base here."></p>
 <p class="note">(You can stop earlier and include the rest of the path in the filenames, if you want to include multiple locations in one batch file.)</p>
+<p>The <code>batch</code> file contains a list of test names; the test names include the path from the base (if any) and the file extension.</p>
+<p><input id="batchname" type="text" placeholder="Add the batch name here (without -batch)" /></p>
 
-<h2>Prepare run.php</h2>
-<p>Add the <code>base</code> and the <code>batch</code> names to the security filter at the start of the file.</p>
+<!--h2>Prepare run.php</h2>
+<p>Add the <code>base</code> and the <code>batch</code> names to the security filter at the start of the file.</p-->
 
 <h2>Create a batch file</h2>
 <p>Create a file listing all the tests at <code>batches/BATCHNAME-batch.txt</code>.</p>
@@ -36,6 +36,22 @@ form { border: 1px solid #F67070; padding: 10px; }
 <button type="submit">do it</button>
 <p>Now copy the list to a file and order the files as needed for the results page.</p>
 </form>
+
+
+
+<h2>Create a json file</h2>
+<p>The json file contains metadata extracted from each test file, and is used for the test runner. It will be saved to <code>batches/BATCHNAME<span id="topic4"></span>.json</code>.</p>
+<form action="../tools/_make_json.php">
+<input id="baseShadow_json" type="hidden" name="base">
+<input id="batchShadow_json" type="hidden" name="batch">
+<input id="fnameShadow_json" type="hidden" name="filename">
+<p>Create a json file for this batch: <button onclick="
+    document.getElementById('baseShadow_json').value=document.getElementById('base').value;
+    document.getElementById('batchShadow_json').value=document.getElementById('batchname').value;" 
+    type="submit">do it</button></p>
+</form>
+
+
 
 
 <h2>Run the tests</h2>

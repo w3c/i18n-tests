@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<title>Make code for results page</title>
+<script>
+function makeOutput () {
+
+    var inp = document.getElementById('in').value
+    var out = ''
+    var code = ''
+    
+    var sections = inp.split('§')
+    console.log(sections)
+    for (s=0;s<sections.length;s++) {
+        sections[s]=sections[s].trim()
+        var lines = sections[s].split('\n')
+        var meta = lines[0].split(';')
+        out += `
+
+<section>
+  <h`+meta[2]+` id="`+meta[0]+`"><a href="#`+meta[0]+`">`+meta[1]+`</a></h`+meta[2]+`>
+  <div id="`+meta[0]+`-data"></div>
+  </section>
+
+`
+        code += `
+drawResults(
+	'`+meta[0]+`', // sectionid 
+	'BASE', // base
+	'BATCH', // batch
+	'SPECSECTION', // specsection
+	'SPECLINK', // uri 
+	'RELATED', // related 
+	 [
+    `
+        for (t=1;t<lines.length;t++){
+            code += "'"+lines[t]+"',\n"
+        }
+	code +=	`]
+	 )
+
+`
+        }
+    document.getElementById('out').value = out+"\n\n"+code
+}
+</script>
+</head>
+
+<body>
+<textarea id="in" style="width:100%;height:800px;" placeholder="Drop batch file here, than add lines between for (1) id, (2) heading, (3) heading level. Separate sections with §."></textarea>
+<button onClick="makeOutput()">Go</button>
+<textarea id="out" style="width:100%;height:800px;" ></textarea>
+</body>
+</html>
+
+<!--
+EXAMPLE INPUT
+
+cj;Conditional Japanese Starters (CJ);2
+ja/css-text-line-break-ja-cj-strict.html
+ja/css-text-line-break-ja-cj-normal.html
+ja/css-text-line-break-ja-cj-loose.html
+§
+ja;Japanese;2
+§
+ja_strict;Strict;3
+ja/css-text-line-break-ja-hyphens-strict.html
+ja/css-text-line-break-ja-iteration-strict.html
+ja/css-text-line-break-ja-in-strict.html
+ja/css-text-line-break-ja-cpm-strict.html
+ja/css-text-line-break-ja-po-strict.html
+§
+ja_normal;Normal;3
+ja/css-text-line-break-ja-hyphens-normal.html
+ja/css-text-line-break-ja-iteration-normal.html
+ja/css-text-line-break-ja-in-normal.html
+ja/css-text-line-break-ja-cpm-normal.html
+ja/css-text-line-break-ja-po-normal.html
+§
+ja_loose;Loose;3
+ja/css-text-line-break-ja-hyphens-loose.html
+ja/css-text-line-break-ja-iteration-loose.html
+ja/css-text-line-break-ja-in-loose.html
+ja/css-text-line-break-ja-cpm-loose.html
+ja/css-text-line-break-ja-po-loose.html
+§
+zh;Chinese;2
+§
+zh_strict;Strict;3
+zh/css-text-line-break-zh-hyphens-strict.html
+zh/css-text-line-break-zh-iteration-strict.html
+zh/css-text-line-break-zh-in-strict.html
+zh/css-text-line-break-zh-cpm-strict.html
+zh/css-text-line-break-zh-po-strict.html
+§
+zh_normal;Normal;3
+zh/css-text-line-break-zh-hyphens-normal.html
+zh/css-text-line-break-zh-iteration-normal.html
+zh/css-text-line-break-zh-in-normal.html
+zh/css-text-line-break-zh-cpm-normal.html
+zh/css-text-line-break-zh-po-normal.html
+§
+zh_loose;Loose;3
+zh/css-text-line-break-zh-hyphens-loose.html
+zh/css-text-line-break-zh-iteration-loose.html
+zh/css-text-line-break-zh-in-loose.html
+zh/css-text-line-break-zh-cpm-loose.html
+zh/css-text-line-break-zh-po-loose.html
+
+-->
