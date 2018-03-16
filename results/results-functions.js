@@ -359,7 +359,7 @@ function drawResults (sectionid, base, batch, specsection, uri, related, results
 		//testlist[testlist.length] = tname
 		var exp = ''
 		//if (tests[tname][assertion].substr(1,4) === 'Expl') exp = 'exp'
-		if (tests[tname][assertion].match('xploratory tes')) exp = 'exp'
+		if (tests[tname][assertion].match('xploratory')) exp = 'exp'
 		
 		//out += '<tr title="'+tname+'" data-testname="'+tname+'" data-sectionid="'+sectionid+'" onClick="showdetail(\''+tname+"','"+sectionid+'\');">\n'
 		out += '<tr title="'+tname+'" data-testname="'+tname+'" data-sectionid="'+sectionid+'">\n'
