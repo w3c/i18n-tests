@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Line-breaking: Breaking hyphens</title>
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-text-3/#line-breaking">
+<script src="../../../resources/testharness.js"></script>
+<script src="../../../resources/testharnessreport.js"></script>
+<meta name="assert" content="[Exploratory] The browser will break a line of text after each of the BA breaking hyphen characters.">
+<style type="text/css">
+.breakable { font-size: 25px; width: 800px; line-height: 30px; }
+</style>
+<script>
+var charlist = `2010 HYPHEN
+2012 FIGURE DASH
+2013 EN DASH
+00AD SOFT HYPHEN
+2027 HYPHENATION POINT`
+</script>
+</head>
+<body>
+<script>
+var lines = charlist.split('\n')
+var out = '<div id="log"></div>\n'
+for (var i=0;i<lines.length;i++) {
+	// get the data
+	var firstSpace = lines[i].indexOf(' ')
+	var hex = lines[i].substr(0,firstSpace)
+	var name = lines[i].substr(firstSpace)
+	// make a test
+	out +=  '<div><div>'+hex+'</div><div id="test'+i+'" class="breakable">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&#x'+hex+';bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div></div>'
+	}
+document.querySelector('body').innerHTML = out
+// run the test framework
+ for (i=0;i<lines.length;i++) {
+   test(function() {
+        assert_true(document.getElementById('test'+i).offsetHeight > 35);
+        }, lines[i]+' should allow a line break after');
+   }
+// hide successful tests
+for (i=0;i<lines.length;i++) {
+    if (document.getElementById('test'+i).offsetHeight > 35) document.getElementById('test'+i).parentNode.style.display = 'none'
+    }
+</script>
+<!--Notes:
+This list is based on property assignments for Unicode version 10.
+Each test creates an unbroken text item from two very long words connected by the character being tested. The whole text item is displayed in a box that is narrower than the width of the text item.  If the browser allows a line to wrap after the character being tested, the text item will break.  The test measures the height of the text box to determine whether the text wrapped.
+-->
+</body>
+</html>

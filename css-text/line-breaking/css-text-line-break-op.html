@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Line-breaking: Opening punctuation</title>
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-text-3/#line-breaking">
+<script src="../../../resources/testharness.js"></script>
+<script src="../../../resources/testharnessreport.js"></script>
+<meta name="assert" content="[Exploratory] The browser will not leave a character with the OP (Opening Punctuation) linebreak property at the end of a line.">
+<style type="text/css">
+@font-face {
+    font-family: 'mplus-1p-regular';
+    src: url('../../../fonts/CSSTest/mplus-1p-regular.woff') format('woff');
+    }
+#wrapper { position: relative; }
+.test { color: red; }
+.test, .ref { font-size: 30px; font-family: mplus-1p-regular, sans-serif; padding: 0; border: 1px solid orange; line-height: 1em; }
+</style>
+<style>
+.test { line-break: loose; }
+</style>
+<script>
+var charlist = `0028 LEFT PARENTHESIS
+005B LEFT SQUARE BRACKET
+007B LEFT CURLY BRACKET
+00A1 INVERTED EXCLAMATION MARK
+00BF INVERTED QUESTION MARK
+0F3A TIBETAN MARK GUG RTAGS GYON
+0F3C TIBETAN MARK ANG KHANG GYON
+169B OGHAM FEATHER MARK
+201A SINGLE LOW-9 QUOTATION MARK
+201E DOUBLE LOW-9 QUOTATION MARK
+2045 LEFT SQUARE BRACKET WITH QUILL
+207D SUPERSCRIPT LEFT PARENTHESIS
+208D SUBSCRIPT LEFT PARENTHESIS
+2308 LEFT CEILING
+230A LEFT FLOOR
+2329 LEFT-POINTING ANGLE BRACKET
+2768 MEDIUM LEFT PARENTHESIS ORNAMENT
+276A MEDIUM FLATTENED LEFT PARENTHESIS ORNAMENT
+276C MEDIUM LEFT-POINTING ANGLE BRACKET ORNAMENT
+276E HEAVY LEFT-POINTING ANGLE QUOTATION MARK ORNAMENT
+2770 HEAVY LEFT-POINTING ANGLE BRACKET ORNAMENT
+2772 LIGHT LEFT TORTOISE SHELL BRACKET ORNAMENT
+2774 MEDIUM LEFT CURLY BRACKET ORNAMENT
+27C5 LEFT S-SHAPED BAG DELIMITER
+27E6 MATHEMATICAL LEFT WHITE SQUARE BRACKET
+27E8 MATHEMATICAL LEFT ANGLE BRACKET
+27EA MATHEMATICAL LEFT DOUBLE ANGLE BRACKET
+27EC MATHEMATICAL LEFT WHITE TORTOISE SHELL BRACKET
+27EE MATHEMATICAL LEFT FLATTENED PARENTHESIS
+2983 LEFT WHITE CURLY BRACKET
+2985 LEFT WHITE PARENTHESIS
+2987 Z NOTATION LEFT IMAGE BRACKET
+2989 Z NOTATION LEFT BINDING BRACKET
+298B LEFT SQUARE BRACKET WITH UNDERBAR
+298D LEFT SQUARE BRACKET WITH TICK IN TOP CORNER
+298F LEFT SQUARE BRACKET WITH TICK IN BOTTOM CORNER
+2991 LEFT ANGLE BRACKET WITH DOT
+2993 LEFT ARC LESS-THAN BRACKET
+2995 DOUBLE LEFT ARC GREATER-THAN BRACKET
+2997 LEFT BLACK TORTOISE SHELL BRACKET
+29D8 LEFT WIGGLY FENCE
+29DA LEFT DOUBLE WIGGLY FENCE
+29FC LEFT-POINTING CURVED ANGLE BRACKET
+2E18 INVERTED INTERROBANG
+2E22 TOP LEFT HALF BRACKET
+2E24 BOTTOM LEFT HALF BRACKET
+2E26 LEFT SIDEWAYS U BRACKET
+2E28 LEFT DOUBLE PARENTHESIS
+2E42 DOUBLE LOW-REVERSED-9 QUOTATION MARK
+3008 LEFT ANGLE BRACKET
+300A LEFT DOUBLE ANGLE BRACKET
+300C LEFT CORNER BRACKET
+300E LEFT WHITE CORNER BRACKET
+3010 LEFT BLACK LENTICULAR BRACKET
+3014 LEFT TORTOISE SHELL BRACKET
+3016 LEFT WHITE LENTICULAR BRACKET
+3018 LEFT WHITE TORTOISE SHELL BRACKET
+301A LEFT WHITE SQUARE BRACKET
+301D REVERSED DOUBLE PRIME QUOTATION MARK
+FD3F ORNATE RIGHT PARENTHESIS
+FE17 PRESENTATION FORM FOR VERTICAL LEFT WHITE LENTICULAR BRACKET
+FE35 PRESENTATION FORM FOR VERTICAL LEFT PARENTHESIS
+FE37 PRESENTATION FORM FOR VERTICAL LEFT CURLY BRACKET
+FE39 PRESENTATION FORM FOR VERTICAL LEFT TORTOISE SHELL BRACKET
+FE3B PRESENTATION FORM FOR VERTICAL LEFT BLACK LENTICULAR BRACKET
+FE3D PRESENTATION FORM FOR VERTICAL LEFT DOUBLE ANGLE BRACKET
+FE3F PRESENTATION FORM FOR VERTICAL LEFT ANGLE BRACKET
+FE41 PRESENTATION FORM FOR VERTICAL LEFT CORNER BRACKET
+FE43 PRESENTATION FORM FOR VERTICAL LEFT WHITE CORNER BRACKET
+FE47 PRESENTATION FORM FOR VERTICAL LEFT SQUARE BRACKET
+FE59 SMALL LEFT PARENTHESIS
+FE5B SMALL LEFT CURLY BRACKET
+FE5D SMALL LEFT TORTOISE SHELL BRACKET
+FF08 FULLWIDTH LEFT PARENTHESIS
+FF3B FULLWIDTH LEFT SQUARE BRACKET
+FF5B FULLWIDTH LEFT CURLY BRACKET
+FF5F FULLWIDTH LEFT WHITE PARENTHESIS
+FF62 HALFWIDTH LEFT CORNER BRACKET
+13258 EGYPTIAN HIEROGLYPH O006A
+13259 EGYPTIAN HIEROGLYPH O006B
+1325A EGYPTIAN HIEROGLYPH O006C
+13286 EGYPTIAN HIEROGLYPH O036A
+13288 EGYPTIAN HIEROGLYPH O036C
+13379 EGYPTIAN HIEROGLYPH V011A
+145CE ANATOLIAN HIEROGLYPH A410 BEGIN LOGOGRAM MARK
+1E95E ADLAM INITIAL EXCLAMATION MARK
+1E95F ADLAM INITIAL QUESTION MARK`
+</script>
+</head>
+<body>
+<script>
+var lines = charlist.split('\n')
+var out = '<div id="log"></div>\n'
+for (var i=0;i<lines.length;i++) {
+	// get the data
+	var firstSpace = lines[i].indexOf(' ')
+	var hex = lines[i].substr(0,firstSpace)
+	var name = lines[i].substr(firstSpace)
+	// make a test
+	out +=  '<div class="wrapper"><div>'+hex+'</div>' +
+	'<div class="test" id="test'+i+'"><span id="testsp'+i+'">文文文文文文&#x'+hex+';字<span id="testSpan'+i+'">字</span></span></div>' +
+	 '<div class="ref" id="ref'+i+'"><span id="refsp'+i+'">文文文文文文<br/>&#x'+hex+';字<span id="refSpan'+i+'">字</span></span></div>' +
+	 '</div>'
+	}
+document.querySelector('body').innerHTML = out
+// hide successful tests
+for (i=0;i<lines.length;i++) {
+    console.log(document.getElementById('testsp'+i).offsetWidth, document.getElementById('testsp'+i).offsetWidth-58)
+    document.getElementById('test'+i).style.width = document.getElementById('testsp'+i).offsetWidth-58+'px'
+    if (document.getElementById('testSpan'+i).offsetLeft === document.getElementById('refSpan'+i).offsetLeft) document.getElementById('test'+i).parentNode.style.display = 'none'
+    }
+// run the test framework
+ for (i=0;i<lines.length;i++) {
+   test(function() {
+        assert_true(document.getElementById('testSpan'+i).offsetLeft === document.getElementById('refSpan'+i).offsetLeft);
+        }, lines[i]+' should not appear at the end of a line');
+   }
+</script>
+<!--Notes:
+This list is based on property assignments for Unicode version 10.
+The test creates a box width that causes the 8th character to wrap. It also creates the expected behaviour with a ref instance, using <br/>. Each line ends with a span. The test then checks whether the left edge of the span is in the same place in test and ref instance.
+-->
+</body>
+</html>

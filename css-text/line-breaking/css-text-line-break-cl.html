@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>Line-breaking: Closing punctuation</title>
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-text-3/#line-breaking">
+<script src="../../../resources/testharness.js"></script>
+<script src="../../../resources/testharnessreport.js"></script>
+<meta name="assert" content="[Exploratory] The browser will not allow a character with the CL (Closing Punctuation) linebreak property at the beginning of a line.">
+<style type="text/css">
+@font-face {
+    font-family: 'mplus-1p-regular';
+    src: url('../../../fonts/CSSTest/mplus-1p-regular.woff') format('woff');
+    }
+#wrapper { position: relative; }
+.test { color: red; }
+.test, .ref { font-size: 30px; font-family: mplus-1p-regular, sans-serif; width: 185px; padding: 0; border: 1px solid orange; line-height: 1em; }
+</style>
+<style>
+.test { line-break: loose; }
+</style>
+<script>
+var charlist = `007D RIGHT CURLY BRACKET
+0F3B TIBETAN MARK GUG RTAGS GYAS
+0F3D TIBETAN MARK ANG KHANG GYAS
+169C OGHAM REVERSED FEATHER MARK
+2046 RIGHT SQUARE BRACKET WITH QUILL
+207E SUPERSCRIPT RIGHT PARENTHESIS
+208E SUBSCRIPT RIGHT PARENTHESIS
+2309 RIGHT CEILING
+230B RIGHT FLOOR
+232A RIGHT-POINTING ANGLE BRACKET
+2769 MEDIUM RIGHT PARENTHESIS ORNAMENT
+276B MEDIUM FLATTENED RIGHT PARENTHESIS ORNAMENT
+276D MEDIUM RIGHT-POINTING ANGLE BRACKET ORNAMENT
+276F HEAVY RIGHT-POINTING ANGLE QUOTATION MARK ORNAMENT
+2771 HEAVY RIGHT-POINTING ANGLE BRACKET ORNAMENT
+2773 LIGHT RIGHT TORTOISE SHELL BRACKET ORNAMENT
+2775 MEDIUM RIGHT CURLY BRACKET ORNAMENT
+27C6 RIGHT S-SHAPED BAG DELIMITER
+27E7 MATHEMATICAL RIGHT WHITE SQUARE BRACKET
+27E9 MATHEMATICAL RIGHT ANGLE BRACKET
+27EB MATHEMATICAL RIGHT DOUBLE ANGLE BRACKET
+27ED MATHEMATICAL RIGHT WHITE TORTOISE SHELL BRACKET
+27EF MATHEMATICAL RIGHT FLATTENED PARENTHESIS
+2984 RIGHT WHITE CURLY BRACKET
+2986 RIGHT WHITE PARENTHESIS
+2988 Z NOTATION RIGHT IMAGE BRACKET
+298A Z NOTATION RIGHT BINDING BRACKET
+298C RIGHT SQUARE BRACKET WITH UNDERBAR
+298E RIGHT SQUARE BRACKET WITH TICK IN BOTTOM CORNER
+2990 RIGHT SQUARE BRACKET WITH TICK IN TOP CORNER
+2992 RIGHT ANGLE BRACKET WITH DOT
+2994 RIGHT ARC GREATER-THAN BRACKET
+2996 DOUBLE RIGHT ARC LESS-THAN BRACKET
+2998 RIGHT BLACK TORTOISE SHELL BRACKET
+29D9 RIGHT WIGGLY FENCE
+29DB RIGHT DOUBLE WIGGLY FENCE
+29FD RIGHT-POINTING CURVED ANGLE BRACKET
+2E23 TOP RIGHT HALF BRACKET
+2E25 BOTTOM RIGHT HALF BRACKET
+2E27 RIGHT SIDEWAYS U BRACKET
+2E29 RIGHT DOUBLE PARENTHESIS
+3001 IDEOGRAPHIC COMMA
+3002 IDEOGRAPHIC FULL STOP
+3009 RIGHT ANGLE BRACKET
+300B RIGHT DOUBLE ANGLE BRACKET
+300D RIGHT CORNER BRACKET
+300F RIGHT WHITE CORNER BRACKET
+3011 RIGHT BLACK LENTICULAR BRACKET
+3015 RIGHT TORTOISE SHELL BRACKET
+3017 RIGHT WHITE LENTICULAR BRACKET
+3019 RIGHT WHITE TORTOISE SHELL BRACKET
+301B RIGHT WHITE SQUARE BRACKET
+301E DOUBLE PRIME QUOTATION MARK
+301F LOW DOUBLE PRIME QUOTATION MARK
+FD3E ORNATE LEFT PARENTHESIS
+FE11 PRESENTATION FORM FOR VERTICAL IDEOGRAPHIC COMMA
+FE12 PRESENTATION FORM FOR VERTICAL IDEOGRAPHIC FULL STOP
+FE18 PRESENTATION FORM FOR VERTICAL RIGHT WHITE LENTICULAR BRAKCET
+FE36 PRESENTATION FORM FOR VERTICAL RIGHT PARENTHESIS
+FE38 PRESENTATION FORM FOR VERTICAL RIGHT CURLY BRACKET
+FE3A PRESENTATION FORM FOR VERTICAL RIGHT TORTOISE SHELL BRACKET
+FE3C PRESENTATION FORM FOR VERTICAL RIGHT BLACK LENTICULAR BRACKET
+FE3E PRESENTATION FORM FOR VERTICAL RIGHT DOUBLE ANGLE BRACKET
+FE40 PRESENTATION FORM FOR VERTICAL RIGHT ANGLE BRACKET
+FE42 PRESENTATION FORM FOR VERTICAL RIGHT CORNER BRACKET
+FE44 PRESENTATION FORM FOR VERTICAL RIGHT WHITE CORNER BRACKET
+FE48 PRESENTATION FORM FOR VERTICAL RIGHT SQUARE BRACKET
+FE50 SMALL COMMA
+FE52 SMALL FULL STOP
+FE5A SMALL RIGHT PARENTHESIS
+FE5C SMALL RIGHT CURLY BRACKET
+FE5E SMALL RIGHT TORTOISE SHELL BRACKET
+FF09 FULLWIDTH RIGHT PARENTHESIS
+FF0C FULLWIDTH COMMA
+FF0E FULLWIDTH FULL STOP
+FF3D FULLWIDTH RIGHT SQUARE BRACKET
+FF5D FULLWIDTH RIGHT CURLY BRACKET
+FF60 FULLWIDTH RIGHT WHITE PARENTHESIS
+FF61 HALFWIDTH IDEOGRAPHIC FULL STOP
+FF63 HALFWIDTH RIGHT CORNER BRACKET
+FF64 HALFWIDTH IDEOGRAPHIC COMMA
+1325B EGYPTIAN HIEROGLYPH O006D
+1325C EGYPTIAN HIEROGLYPH O006E
+1325D EGYPTIAN HIEROGLYPH O006F
+13282 EGYPTIAN HIEROGLYPH O033A
+13287 EGYPTIAN HIEROGLYPH O036B
+13289 EGYPTIAN HIEROGLYPH O036D
+1337A EGYPTIAN HIEROGLYPH V011B
+1337B EGYPTIAN HIEROGLYPH V011C
+145CF ANATOLIAN HIEROGLYPH A410A END LOGOGRAM MARK`
+</script>
+</head>
+<body>
+<script>
+var lines = charlist.split('\n')
+var out = '<div id="log"></div>\n'
+for (var i=0;i<lines.length;i++) {
+	// get the data
+	var firstSpace = lines[i].indexOf(' ')
+	var hex = lines[i].substr(0,firstSpace)
+	var name = lines[i].substr(firstSpace)
+	// make a test
+	out +=  '<div class="wrapper"><div>'+hex+'</div>' +
+	'<div class="test" id="test'+i+'" lang="ja">文文文文文文&#x'+hex+';字<span id="testSpan'+i+'">字</span></div>' +
+	 '<div class="ref" id="ref'+i+'" lang="ja">文文文文文<br/>文&#x'+hex+';字<span id="refSpan'+i+'">字</span></div>' +
+	 '</div>'
+	}
+document.querySelector('body').innerHTML = out
+// hide successful tests
+for (i=0;i<lines.length;i++) {
+    if (document.getElementById('testSpan'+i).offsetLeft === document.getElementById('refSpan'+i).offsetLeft) document.getElementById('test'+i).parentNode.style.display = 'none'
+    }
+// run the test framework
+ for (i=0;i<lines.length;i++) {
+   test(function() {
+        assert_true(document.getElementById('testSpan'+i).offsetLeft === document.getElementById('refSpan'+i).offsetLeft);
+        }, lines[i]+' should not appear at the start of a line');
+   }
+</script>
+<!--Notes:
+This list is based on property assignments for Unicode version 10.
+The test creates a box width that causes the 8th character to wrap. It also creates the expected behaviour with a ref instance, using <br/>. Each line ends with a span. The test then checks whether the left edge of the span is in the same place in test and ref instance.
+-->
+</body>
+</html>
