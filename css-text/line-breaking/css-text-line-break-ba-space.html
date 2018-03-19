@@ -32,13 +32,13 @@ var charlist = `2000 EN QUAD
 var lines = charlist.split('\n')
 var out = '<div id="log"></div>\n'
 for (var i=0;i<lines.length;i++) {
-	// get the data
-	var firstSpace = lines[i].indexOf(' ')
-	var hex = lines[i].substr(0,firstSpace)
-	var name = lines[i].substr(firstSpace)
-	// make a test
-	out +=  '<div><div>'+hex+'</div><div id="test'+i+'" class="breakable">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&#x'+hex+';bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div></div>'
-	}
+    // get the data
+    var firstSpace = lines[i].indexOf(' ')
+    var hex = lines[i].substr(0,firstSpace)
+    var name = lines[i].substr(firstSpace)
+    // make a test
+    out +=  '<div><div>'+hex+'</div><div id="test'+i+'" class="breakable">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&#x'+hex+';bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div></div>'
+    }
 document.querySelector('body').innerHTML = out
 // run the test framework
  for (i=0;i<lines.length;i++) {

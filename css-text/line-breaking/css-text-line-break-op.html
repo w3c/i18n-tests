@@ -115,20 +115,19 @@ FF62 HALFWIDTH LEFT CORNER BRACKET`
 var lines = charlist.split('\n')
 var out = '<div id="log"></div>\n'
 for (var i=0;i<lines.length;i++) {
-	// get the data
-	var firstSpace = lines[i].indexOf(' ')
-	var hex = lines[i].substr(0,firstSpace)
-	var name = lines[i].substr(firstSpace)
-	// make a test
-	out +=  '<div class="wrapper"><div>'+hex+'</div>' +
-	'<div class="test" id="test'+i+'"><span id="testsp'+i+'">文文文文文文&#x'+hex+';字<span id="testSpan'+i+'">字</span></span></div>' +
-	 '<div class="ref" id="ref'+i+'"><span id="refsp'+i+'">文文文文文文<br/>&#x'+hex+';字<span id="refSpan'+i+'">字</span></span></div>' +
-	 '</div>'
-	}
+    // get the data
+    var firstSpace = lines[i].indexOf(' ')
+    var hex = lines[i].substr(0,firstSpace)
+    var name = lines[i].substr(firstSpace)
+    // make a test
+    out +=  '<div class="wrapper"><div>'+hex+'</div>' +
+    '<div class="test" id="test'+i+'"><span id="testsp'+i+'">文文文文文文&#x'+hex+';字<span id="testSpan'+i+'">字</span></span></div>' +
+     '<div class="ref" id="ref'+i+'"><span id="refsp'+i+'">文文文文文文<br/>&#x'+hex+';字<span id="refSpan'+i+'">字</span></span></div>' +
+     '</div>'
+    }
 document.querySelector('body').innerHTML = out
 // hide successful tests
 for (i=0;i<lines.length;i++) {
-    console.log(document.getElementById('testsp'+i).offsetWidth, document.getElementById('testsp'+i).offsetWidth-58)
     document.getElementById('test'+i).style.width = document.getElementById('testsp'+i).offsetWidth-58+'px'
     if (document.getElementById('testSpan'+i).offsetLeft === document.getElementById('refSpan'+i).offsetLeft) document.getElementById('test'+i).parentNode.style.display = 'none'
     }

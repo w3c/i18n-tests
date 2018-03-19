@@ -118,16 +118,16 @@ FF64 HALFWIDTH IDEOGRAPHIC COMMA`
 var lines = charlist.split('\n')
 var out = '<div id="log"></div>\n'
 for (var i=0;i<lines.length;i++) {
-	// get the data
-	var firstSpace = lines[i].indexOf(' ')
-	var hex = lines[i].substr(0,firstSpace)
-	var name = lines[i].substr(firstSpace)
-	// make a test
-	out +=  '<div class="wrapper"><div>'+hex+'</div>' +
-	'<div class="test" id="test'+i+'" lang="ja">文文文文文文&#x'+hex+';字<span id="testSpan'+i+'">字</span></div>' +
-	 '<div class="ref" id="ref'+i+'" lang="ja">文文文文文<br/>文&#x'+hex+';字<span id="refSpan'+i+'">字</span></div>' +
-	 '</div>'
-	}
+    // get the data
+    var firstSpace = lines[i].indexOf(' ')
+    var hex = lines[i].substr(0,firstSpace)
+    var name = lines[i].substr(firstSpace)
+    // make a test
+    out +=  '<div class="wrapper"><div>'+hex+'</div>' +
+    '<div class="test" id="test'+i+'" lang="ja">文文文文文文&#x'+hex+';字<span id="testSpan'+i+'">字</span></div>' +
+     '<div class="ref" id="ref'+i+'" lang="ja">文文文文文<br/>文&#x'+hex+';字<span id="refSpan'+i+'">字</span></div>' +
+     '</div>'
+    }
 document.querySelector('body').innerHTML = out
 // hide successful tests
 for (i=0;i<lines.length;i++) {
