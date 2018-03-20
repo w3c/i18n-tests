@@ -2,10 +2,11 @@
 <html  lang="en" >
 <head>
 <meta charset="utf-8">
-<title>word-break: break-all, arabic</title>
-<meta name="assert" content="word-break: break-all means lines may break between any two typographic letter units. When shaping scripts such as Arabic are allowed to break within words due to break-all, the characters must still be shaped as if the word were not broken.">
+<title>word-break: break-all, hebrew</title>
+<meta name="assert" content="word-break: break-all means lines may break between any two typographic letter units.">
 <link rel='help' href='https://drafts.csswg.org/css-text-3/#word-break-property'>
-<link rel='match' href='reference/word-break-break-all-ref-004.html'>
+<script src="../../resources/testharness.js"></script>
+<script src="../../resources/testharnessreport.js"></script>
 <link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
 <style type='text/css'>
 .test { word-break: break-all; }
@@ -15,14 +16,18 @@
 </style>
 </head>
 <body>
-<div id='instructions'>Test passes if the two orange boxes are the same.</div>
+<div id='instructions'>Test passes if you see no red characters.</div>
 <div style="position:relative">
-<div class="test" dir="rtl" lang="ar"><div id="testdiv"><span id="testspan">التدويل نشاط التدويل</span></div></div>
-<div class="ref" dir="rtl" lang="ar"><span>التدويل نشاط التدوي&#x200D;<br/>&#x200D;ل</span></div>
+<div class="test" dir="rtl" lang="ar"><div id="testdiv"><span id="testspan">פעילות פעילות הבינאום</span><span id="testend">→</span></div></div>
+<div class="ref" dir="rtl" lang="ar"><span>פעילות פעילות הבינאו<br/>ם</span><span id="refend">→</span></div>
+</div>
+<div id="log" style="margin-top: 10em;"></div>
 <script>
 var sentenceWidth = document.getElementById('testspan').offsetWidth
 document.getElementById('testdiv').style.width = String(sentenceWidth - 5)+'px'
+test(function() {
+assert_true(document.getElementById('testend').offsetLeft === document.getElementById('refend').offsetLeft);
+}, ' The text should wrap between the last two typographic letter units');
 </script>
-</div>
 </body>
 </html>

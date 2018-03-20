@@ -2,14 +2,14 @@
 <html  lang="en" >
 <head>
 <meta charset="utf-8">
-<title>word-break: normal, hindi</title>
-<meta name="assert" content="word-break: normal breaking according to customary rules means Devanagari text will break on spaces.">
+<title>word-break: keep-all, korean</title>
+<meta name="assert" content="word-break: keep-all means breaking is forbidden within 'words'.  Korean text should break between space-separated words.">
 <link rel='help' href='https://drafts.csswg.org/css-text-3/#word-break-property'>
 <script src="../../resources/testharness.js"></script>
 <script src="../../resources/testharnessreport.js"></script>
 <link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
 <style type='text/css'>
-.test { word-break: normal; }
+.test { word-break: keep-all; }
 /* the CSS below is not part of the test */
 .test, .ref { margin: 20px;  font: 3em/1 sans-serif; position:absolute; top: 0; width:90%;}
 .ref { color:red; z-index: -100; }
@@ -18,8 +18,8 @@
 <body>
 <div id='instructions'>Test passes if you see no red characters.</div>
 <div style="position:relative">
-<div class="test" lang="hi"><div id="testdiv"><span id="testspan">हिंदी हिंदी हिंदी हिंदी</span><span id="testend">←</span></div></div>
-<div class="ref" lang="hi"><span>हिंदी हिंदी हिंदी<br/>हिंदी</span><span id="refend">←</span></div>
+<div class="test" lang="ko"><div id="testdiv"><span id="testspan">한글이 한글이 한글이</span><span id="testend">←</span></div></div>
+<div class="ref" lang="ko"><span>한글이 한글이<br/>한글이</span><span id="refend">←</span></div>
 </div>
 <div id="log" style="margin-top: 10em;"></div>
 <script>
@@ -27,7 +27,7 @@ var sentenceWidth = document.getElementById('testspan').offsetWidth
 document.getElementById('testdiv').style.width = String(sentenceWidth - 5)+'px'
 test(function() {
 assert_true(document.getElementById('testend').offsetLeft === document.getElementById('refend').offsetLeft);
-}, ' Hindi text should wrap at word boundaries');
+}, ' The text should wrap between the spaces');
 </script>
 </body>
 </html>

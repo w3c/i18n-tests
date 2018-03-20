@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <title>word-break: normal, tibetan</title>
-<meta name="assert" content="word-break: normal means words break according to their customary rules.">
+<meta name="assert" content="word-break: normal breaking according to customary rules means Tibetan text will break at tsek punctuation.">
 <link rel='help' href='https://drafts.csswg.org/css-text-3/#word-break-property'>
-<link rel='match' href='reference/word-break-normal-bo-ref-000.html'>
+<script src="../../resources/testharness.js"></script>
+<script src="../../resources/testharnessreport.js"></script>
 <link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
 <style type='text/css'>
 .test { word-break: normal; }
@@ -15,14 +16,18 @@
 </style>
 </head>
 <body>
-<div id='instructions'>Test passes if the two orange boxes are the same.</div>
+<div id='instructions'>Test passes if you see no red characters.</div>
 <div style="position:relative">
-<div class="test" lang="tdd"><div id="testdiv"><span id="testspan">ལྷ་སའི་སྐད་ལྷ་སའི་སྐད་</span></div></div>
-<div class="ref" lang="tdd"><span>ལྷ་སའི་སྐད་ལྷ་སའི་<br/>སྐད་</span></div>
+<div class="test" lang="tdd"><div id="testdiv"><span id="testspan">ལྷ་སའི་སྐད་ལྷ་སའི་སྐད་</span><span id="testend">←</span></div></div>
+<div class="ref" lang="tdd"><span>ལྷ་སའི་སྐད་ལྷ་སའི་<br/>སྐད་</span><span id="refend">←</span></div>
+</div>
+<div id="log" style="margin-top: 10em;"></div>
 <script>
 var sentenceWidth = document.getElementById('testspan').offsetWidth
 document.getElementById('testdiv').style.width = String(sentenceWidth - 5)+'px'
+test(function() {
+assert_true(document.getElementById('testend').offsetLeft === document.getElementById('refend').offsetLeft);
+}, ' Tibetan text should wrap at syllable boundaries');
 </script>
-</div>
 </body>
 </html>

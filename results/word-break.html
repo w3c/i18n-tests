@@ -42,8 +42,8 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
 <script src="word-break-data/data.js"></script>
-<script src="word-break-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/word-break.json"></script>
+<script src="results-functions-j.js"></script>
 </head>
 
 <body>
@@ -98,8 +98,7 @@ CSS3 Text, word-break</h1>
 <section class="notes">
 <p class="notesheader">Notes</p>
 <ol>
-<li> <strong>word-break-break-all-004</strong>: This test is exploratory because indic conjuncts containing more than one consonant are not covered by the extended grapheme cluster definition, and therefore constitute more than one typographic unit, per the definition in the CSS spec. Nevertheless, people using indic scripts expect the user agent to keep the orthographic syllable as a single unit. </li>
-<li> <strong>word-break-break-all-008, Safari 8.0.3, Opera 27.0</strong>: These two browsers split the word in the correct place, but didn't leave a left-joining glyph at the end of the first line or a right-joining glyph at the start of the second. </li>
+<li> <strong>word-break-break-all-008</strong>: This test is exploratory because indic conjuncts containing more than one consonant are not covered by the extended grapheme cluster definition, and therefore constitute more than one typographic unit, per the definition in the CSS spec. Nevertheless, people using indic scripts expect the user agent to keep the orthographic syllable as a single unit. </li>
 </ol>
 </section>
 </section>
@@ -125,21 +124,23 @@ drawResults(
 	'css-text', // related 
 	 [
         'word-break-normal-en-000.html',
+        'word-break-normal-hi-000.html',
         'word-break-normal-ar-000.html',
         'word-break-normal-bo-000.html',
-        'word-break-normal-hi-000.html',
         'word-break-normal-ja-000.html',
         'word-break-normal-ja-001.html',
         'word-break-normal-ja-002.html',
         'word-break-normal-ja-004.html',
-        'word-break-normal-km-000.html',
+        'word-break-normal-zh-000.html',
         'word-break-normal-ko-000.html',
+        'word-break-normal-km-000.html',
         'word-break-normal-lo-000.html',
         'word-break-normal-my-000.html',
         'word-break-normal-tdd-000.html',
         'word-break-normal-th-000.html',
-        'word-break-normal-zh-000.html',
-        'word-break-normal-001.html'
+        'word-break-normal-jv-000.html',
+        'word-break-normal-jv-001.html',
+        'word-break-normal-zwj-001.html'
 		]
 	 )
 
@@ -160,6 +161,7 @@ drawResults(
         'word-break-break-all-006.html',
         'word-break-break-all-007.html',
         'word-break-break-all-008.html',
+        'word-break-break-all-ar-001.html',
 		]
 	 )
 
@@ -172,9 +174,11 @@ drawResults(
 	'css-text', // related 
 	 [
         'word-break-keep-all-000.html',
-        'word-break-keep-all-001.html',
-        'word-break-keep-all-002.html',
-        'word-break-keep-all-003.html'
+        'word-break-keep-all-ko-000.html',
+        'word-break-keep-all-ko-001.html',
+        'word-break-keep-all-ja-001.html',
+        'word-break-keep-all-km-001.html',
+        'word-break-keep-all-th-001.html'
 		]
 	)
 

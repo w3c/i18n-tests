@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>word-break: break-all, arabic</title>
+<meta name="assert" content="word-break: break-all means lines may break between any two typographic letter units. When shaping scripts such as Arabic are allowed to break within words due to break-all, the characters must still be shaped as if the word were not broken.">
+<link rel='help' href='https://drafts.csswg.org/css-text-3/#word-break-property'>
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<style type='text/css'>
+.test { word-break: break-all; }
+/* the CSS below is not part of the test */
+.test, .ref { margin: 20px;  font: 3em/1 sans-serif; width:90%;}
+.ref { color:blue; z-index: -100; }
+</style>
+</head>
+<body>
+<div id='instructions'>Test passes if the two blue characters pointed at by arrows have similar (joining) shapes in the black text above (ignoring any baseline extension).</div>
+<div class="test" dir="rtl" lang="ar"><div id="testdiv"><span id="testspan">بالكرامة المتأصلة في جميع</span></div></div>
+<div class="ref" dir="rtl" lang="ar"><span>بالكرامة المتأصلة في جمي&#x200D;ـ<span id="refend">→</span><br/>ـع</span><span id="refend">→</span></div>
+</div>
+<div id="log" style="margin-top: 10em;"></div>
+<script>
+var sentenceWidth = document.getElementById('testspan').offsetWidth
+document.getElementById('testdiv').style.width = String(sentenceWidth - 5)+'px'
+</script>
+<!--
+It was not possible to make this into an automated script-based or ref test, because Chrome and Safari fail to apply ZWJ to the character at the start of the second line.
+-->
+</body>
+</html>

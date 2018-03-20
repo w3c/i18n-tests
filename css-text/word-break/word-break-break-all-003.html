@@ -5,7 +5,8 @@
 <title>word-break: break-all, thai</title>
 <meta name="assert" content="word-break: break-all means lines may break between any two typographic letter units.">
 <link rel='help' href='https://drafts.csswg.org/css-text-3/#word-break-property'>
-<link rel='match' href='reference/word-break-break-all-ref-003.html'>
+<script src="../../resources/testharness.js"></script>
+<script src="../../resources/testharnessreport.js"></script>
 <link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
 <style type='text/css'>
 .test { word-break: break-all; }
@@ -15,14 +16,18 @@
 </style>
 </head>
 <body>
-<div id='instructions'>Test passes if the two orange boxes are the same.</div>
+<div id='instructions'>Test passes if you see no red characters.</div>
 <div style="position:relative">
-<div class="test" lang="th"><div id="testdiv"><span id="testspan">ภาษาไทยภาษาไทย</span></div></div>
-<div class="ref" lang="th"><span>ภาษาไทยภาษาไท<br/>ย</span></div>
+<div class="test" lang="th"><div id="testdiv"><span id="testspan">ภาษาไทยภาษาไทย</span><span id="testend">←</span></div></div>
+<div class="ref" lang="th"><span>ภาษาไทยภาษาไท<br/>ย</span><span id="refend">←</span></div>
+</div>
+<div id="log" style="margin-top: 10em;"></div>
 <script>
 var sentenceWidth = document.getElementById('testspan').offsetWidth
 document.getElementById('testdiv').style.width = String(sentenceWidth - 5)+'px'
+test(function() {
+assert_true(document.getElementById('testend').offsetLeft === document.getElementById('refend').offsetLeft);
+}, ' The text should wrap between the last two typographic letter units');
 </script>
-</div>
 </body>
 </html>

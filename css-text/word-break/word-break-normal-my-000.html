@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <title>word-break: normal, myanmar</title>
-<meta name="assert" content="word-break: normal means words break according to their customary rules.">
+<meta name="assert" content="word-break: normal breaking according to customary rules means Myanmar text will break on invisible word boundaries.">
 <link rel='help' href='https://drafts.csswg.org/css-text-3/#word-break-property'>
-<link rel='match' href='reference/word-break-normal-my-ref-000.html'>
+<script src="../../resources/testharness.js"></script>
+<script src="../../resources/testharnessreport.js"></script>
 <link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
 <style type='text/css'>
 .test { word-break: normal; }
@@ -15,14 +16,18 @@
 </style>
 </head>
 <body>
-<div id='instructions'>Test passes if the two orange boxes are the same.</div>
+<div id='instructions'>Test passes if you see no red characters.</div>
 <div style="position:relative">
-<div class="test" lang="my"><div id="testdiv"><span id="testspan">မြန်မာစာမြန်မာစာမြန်မာစာ</span></div></div>
-<div class="ref" lang="my"><span>မြန်မာစာမြန်မာစာ<br/>မြန်မာစာ</span></div>
+<div class="test" lang="my"><div id="testdiv"><span id="testspan">မြန်မာစာမြန်မာစာမြန်မာစာ</span><span id="testend">←</span></div></div>
+<div class="ref" lang="my"><span>မြန်မာစာမြန်မာစာ<br/>မြန်မာစာ</span><span id="refend">←</span></div>
+</div>
+<div id="log" style="margin-top: 10em;"></div>
 <script>
 var sentenceWidth = document.getElementById('testspan').offsetWidth
-document.getElementById('testdiv').style.width = String(sentenceWidth - 5)+'px'
+document.getElementById('testdiv').style.width = String(sentenceWidth - 10)+'px'
+test(function() {
+assert_true(document.getElementById('testend').offsetLeft === document.getElementById('refend').offsetLeft);
+}, ' Myanmar text should wrap one word at a time');
 </script>
-</div>
 </body>
 </html>
