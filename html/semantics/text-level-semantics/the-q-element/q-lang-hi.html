@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
 <meta charset="utf-8"/>
-<title>q default marks</title>
+<title>q: html lang=hi</title>
 <link rel="author" title="r12a" href="mailto:ishida@w3.org">
 <link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
-<meta name="assert" content="The browser uses the quotation marks specified in the HTML5 spec when no language information is available.">
+<meta name="assert" content="Hindi quotation marks follow CLDR when the language is declared on the root tag.">
 <style type="text/css">
-.test, .ref { font-size: 300%; position: absolute; top: 40px; left: 20px; font-family: Arial, sans-serif; }
-.ref { color: red; z-index: -10; }
+.test, .ref { font-size: 300%; position: absolute; top: 1em; left: 1em; }
+.ref { color: red;  z-index: -10; }
 </style>
 </head>
 <body>
 <p class="instructions">Test passes if you see no different, red characters.</p>
+
 <div class="test"><p>one <q>two <q>three</q></q></p></div>
 <div class="ref"><p>one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
-<!-- Notes:
-- the lang attribute has been left off the html tag because this tests defaults
--->
 </body>
 </html>

@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <title>quote in other lang</title>
 <link rel="author" title="r12a" href="mailto:ishida@w3.org">
 <link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
-<meta name="assert" content="[Exploratory test] The browser applies quotation marks relevant to the language outside the first level of quotes when a simple quote in another language appears in a sentence.">
+<meta name="assert" content="The browser applies quotation marks relevant to the language outside the first level of quotes when a simple quote in another language appears in a sentence.">
 <style type="text/css">
-.test, .ref { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
+.test, .ref { font-size: 300%; position: absolute; top: 1em; left: 1em; }
+.ref { color:red; z-index: -10; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the quotation marks in both boxes are the same.</p>
+<p class="instructions">Test passes if you see no alternative quote marks in red.</p>
 <div class="test">
-<p lang="en">one <q lang="ja">two</q></p>
+<p>one <q lang="ja">two</q></p>
 </div>
 <div class="ref">
-<p lang="en">one <span lang="ja">“two”</span></p>
+<p>one “<span lang="ja">two</span>”</p>
 </div>
 <!-- Notes:
 - this test is only valid if the browser makes a difference based on the lang tag, and if it supports different quotation marks for en and ja
-- the lang attribute has been left off the html tag because language is part of the test
 - this is based on the assumption that quotation marks are always based on the language before the outermost q starts
 -->
 </body>

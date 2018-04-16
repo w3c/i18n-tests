@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="utf-8"/>
+<title>q: html lang=am</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="Amharic quotation marks follow CLDR when the language is declared on the root tag.">
+<style type="text/css">
+.test, .ref { font-size: 300%; position: absolute; top: 1em; left: 1em; }
+.ref { color: red;  z-index: -10; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no different, red characters.</p>
+
+<div class="test"><p>one <q>two <q>three</q></q></p></div>
+<div class="ref"><p>one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+</body>
+</html>

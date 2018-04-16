@@ -5,17 +5,17 @@
 <title>q + lang</title>
 <link rel="author" title="r12a" href="mailto:ishida@w3.org">
 <link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
-<meta name="assert" content="The browser uses different quotation marks when the lang tag is set.">
+<meta name="assert" content="The browser doesn't use different quotation marks by default when the language is set on a higher element but not on the root.">
 <style type="text/css">
-.test { font-size: 150%; border: 1px solid orange; margin: 10px; margin-right: 200px; padding: 5px; clear: both; }
-p:before { content: '[' attr(lang) '] '; }
+.test { font-size: 300%;  }
+#test p { position: absolute; top: 40px; left: 20px; font-family: Arial, sans-serif; }
+#test p[lang] { color: red; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the quotation marks vary across any of the lines below.</p>
+<p class="instructions">Test passes if you see no red below (other than an anti-aliasing shadow).</p>
 
-<div class="test">
-<p>one <q>two <q>three</q></q></p>
+<div id="test" class="test">
 <p lang="af">one <q>two <q>three</q></q></p>
 <p lang="agq">one <q>two <q>three</q></q></p>
 <p lang="ak">one <q>two <q>three</q></q></p>
@@ -162,10 +162,11 @@ p:before { content: '[' attr(lang) '] '; }
 <p lang="yo">one <q>two <q>three</q></q></p>
 <p lang="zh">one <q>two <q>three</q></q></p>
 <p lang="zh-Hant">one <q>two <q>three</q></q></p>
+<p id="default">one <q>two <q>three</q></q></p>
 </div>
 <!-- Notes:
-- the lang attribute has been left off the html tag because this tests defaults
-- the rationale for this test is that CSS suggests this would be appropriate
+- this tests the expectations of the latest W3C HTML5 spec - the WhatWG spec is different
+- the lang attribute has been left off the html tag because this test tests defaults
 -->
 </body>
 </html>
