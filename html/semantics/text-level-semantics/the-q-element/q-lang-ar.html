@@ -7,14 +7,16 @@
 <link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
 <meta name="assert" content="Arabic quotation marks follow CLDR when the language is declared on the root tag.">
 <style type="text/css">
-.test, .ref { font-size: 300%; position: absolute; top: 1em; left: 1em; }
-.ref { color: red;  z-index: -10; }
+.test, .ref { font-size: 300%;  }
+span { color: red; }
+q::before { color: red; }
+q::after { color: red; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if you see no different, red characters.</p>
+<p class="instructions">Test passes if the quotation marks on each line are the same.</p>
 
-<div class="test"><p lang="ar">one <q>two <q>three</q></q></p></div>
-<div class="ref"><p lang="ar">one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+<div class="test" dir="rtl"><p lang="ar">واحد <q>اثنينل <q>ثلاثة</q></q></p></div>
+<div class="ref" dir="rtl"><p lang="ar">واحد <span>&#x201d;</span>اثنينل <span>&#x2019;</span>ثلاثة<span>&#x2018;&#x201c;</span></p></div>
 </body>
 </html>

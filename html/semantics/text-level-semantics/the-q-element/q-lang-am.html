@@ -7,14 +7,16 @@
 <link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
 <meta name="assert" content="Amharic quotation marks follow CLDR when the language is declared on the root tag.">
 <style type="text/css">
-.test, .ref { font-size: 300%; position: absolute; top: 1em; left: 1em; }
-.ref { color: red;  z-index: -10; }
+.test, .ref { font-size: 300%;  }
+span { color: red; }
+q::before { color: red; }
+q::after { color: red; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if you see no different, red characters.</p>
+<p class="instructions">Test passes if the quotation marks on each line are the same.</p>
 
-<div class="test"><p>one <q>two <q>three</q></q></p></div>
-<div class="ref"><p>one &#x00ab;two &#x2039;three&#x203a;&#x00bb;</p></div>
+<div class="test"><p>አንድ <q>ሁለት <q>ሦስት</q></q></p></div>
+<div class="ref"><p>አንድ <span>&#x00ab;</span>ሁለት <span>&#x2039;</span>ሦስት<span>&#x203a;&#x00bb;</span></p></div>
 </body>
 </html>

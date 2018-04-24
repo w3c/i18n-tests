@@ -7,14 +7,16 @@
 <link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
 <meta name="assert" content="Chinese (zh) quotation marks follow CLDR when the language is declared on the root tag.">
 <style type="text/css">
-.test, .ref { font-size: 300%; position: absolute; top: 1em; left: 1em; }
-.ref { color: red;  z-index: -10; }
+.test, .ref { font-size: 300%;  }
+span { color: red; }
+q::before { color: red; }
+q::after { color: red; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if you see no different, red characters.</p>
+<p class="instructions">Test passes if the quotation marks on each line are the same.</p>
 
-<div class="test"><p>one <q>two <q>three</q></q></p></div>
-<div class="ref"><p>one &#x201c;two &#x2018;three&#x2019;&#x201d;</p></div>
+<div class="test"><p>一 <q>二 <q>三</q></q></p></div>
+<div class="ref"><p>一 <span>&#x201c;</span>二 <span>&#x2018;</span>三<span>&#x2019;&#x201d;</span></p></div>
 </body>
 </html>
