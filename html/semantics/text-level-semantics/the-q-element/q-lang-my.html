@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="utf-8"/>
+<title>q: html lang=my</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="Burmese quotation marks follow CLDR when the language is declared on the root tag.">
+<style type="text/css">
+.test, .ref { font-size: 300%;  }
+span { color: red; }
+q::before { color: red; }
+q::after { color: red; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the quotation marks on each line are the same.</p>
+
+<div class="test"><p>တစ်<q>နှစ်<q>သုံး</q></q></p></div>
+<div class="ref"><p>တစ်<span>&#x201C;</span>နှစ်<span>&#x2018;</span>သုံး<span>&#x2019;&#x201D;</span></p></div>
+</body>
+</html>

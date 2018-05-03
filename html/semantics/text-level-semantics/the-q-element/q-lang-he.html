@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="utf-8"/>
+<title>q: html lang=he</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="Hebrew quotation marks follow CLDR when the language is declared on the root tag.">
+<style type="text/css">
+.test, .ref { font-size: 300%;  }
+span { color: red; }
+q::before { color: red; }
+q::after { color: red; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the quotation marks on each line are the same.</p>
+
+<div class="test" dir="rtl"><p>אחת <q>שתיים <q>שלוש</q></q></p></div>
+<div class="ref" dir="rtl"><p>אחת <span>&#x201D;</span>שתיים <span>&#x2019;</span>שלוש<span>&#x2018;&#x201C;</span></p></div>
+</body>
+</html>

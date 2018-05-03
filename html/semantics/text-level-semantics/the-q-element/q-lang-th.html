@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<title>q: html lang=th</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="Thai quotation marks follow CLDR when the language is declared on the root tag.">
+<style type="text/css">
+.test, .ref { font-size: 300%;  }
+span { color: red; }
+q::before { color: red; }
+q::after { color: red; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the quotation marks on each line are the same.</p>
+
+<div class="test"><p>หนึ่ง<q>สอง<q>สาม</q></q></p></div>
+<div class="ref"><p>หนึ่ง<span>&#x201C;</span>สอง<span>&#x2018;</span>สาม<span>&#x2019;&#x201D;</span></p></div>
+</body>
+</html>

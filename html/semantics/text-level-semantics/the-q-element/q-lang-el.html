@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8"/>
+<title>q: html lang=el</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="Greek quotation marks follow CLDR when the language is declared on the root tag.">
+<style type="text/css">
+.test, .ref { font-size: 300%;  }
+span { color: red; }
+q::before { color: red; }
+q::after { color: red; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the quotation marks on each line are the same.</p>
+
+<div class="test"><p>ένα <q>δύο <q>τρία</q></q></p></div>
+<div class="ref"><p>ένα <span>&#x00AB;</span>δύο <span>&#x201C;</span>τρία<span>&#x201D;&#x00BB;</span></p></div>
+</body>
+</html>

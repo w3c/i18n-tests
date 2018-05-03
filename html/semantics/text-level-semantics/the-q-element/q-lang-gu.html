@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="utf-8"/>
+<title>q: html lang=gu</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="help" href="https://www.w3.org/TR/html5/rendering.html#quotes">
+<meta name="assert" content="Gujarati quotation marks follow CLDR when the language is declared on the root tag.">
+<style type="text/css">
+.test, .ref { font-size: 300%;  }
+span { color: red; }
+q::before { color: red; }
+q::after { color: red; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the quotation marks on each line are the same.</p>
+
+<div class="test"><p>એક <q>બે <q>રણ</q></q></p></div>
+<div class="ref"><p>એક <span>&#x201C;</span>બે <span>&#x2018;</span>રણ<span>&#x2019;&#x201D;</span></p></div>
+</body>
+</html>
