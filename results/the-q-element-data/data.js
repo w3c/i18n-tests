@@ -65,13 +65,15 @@ var testresults = {
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'13-4-2018  16:31:7' }, 
 	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'13-4-2018  16:38:8' }, 
 	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6', date:'13-4-2018  16:44:5' }, 
-	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'16-4-2018  15:8:25' }
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'16-4-2018  15:8:25' }, 
+	{browser:'Edge', status:'partial', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:38:50' }
 	],
 'q-lang-fr.html': [
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'13-4-2018  16:31:7' }, 
 	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'13-4-2018  16:38:8' }, 
 	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6', date:'13-4-2018  16:44:5' }, 
-	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'16-4-2018  15:8:25' }
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'16-4-2018  15:8:25' }, 
+	{browser:'Edge', status:'partial', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:39:4' }
 	],
 'q-lang-fr-ch.html': [
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'13-4-2018  16:31:7' }, 
@@ -83,7 +85,8 @@ var testresults = {
 	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'13-4-2018  16:31:10' }, 
 	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'13-4-2018  16:38:9' }, 
 	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6', date:'13-4-2018  16:44:7' }, 
-	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'16-4-2018  15:8:34' }
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'16-4-2018  15:8:34' }, 
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:39:32' }
 	],
 'q-lang-ja.html': [
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'13-4-2018  16:31:13' }, 
@@ -95,7 +98,8 @@ var testresults = {
 	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'13-4-2018  16:31:17' }, 
 	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'13-4-2018  16:38:17' }, 
 	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6', date:'13-4-2018  16:44:8' }, 
-	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'16-4-2018  15:8:41' }
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'16-4-2018  15:8:41' }, 
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:42:32' }
 	],
 'q-lang-zh-hans.html': [
 	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'13-4-2018  16:31:18' }, 
@@ -138,5 +142,77 @@ var testresults = {
 	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'13-4-2018  16:38:54' }, 
 	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6', date:'13-4-2018  16:44:23' }, 
 	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'16-4-2018  15:9:3' }
+	],
+'q-lang-chr.html': [
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:19:11' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:25:28' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:28:9' }, 
+	{browser:'Edge', status:'pass', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:38:3' }
+	],
+'q-lang-el.html': [
+	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:19:17' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:25:32' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:28:13' }, 
+	{browser:'Edge', status:'partial', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:38:11' }
+	],
+'q-lang-gu.html': [
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:19:40' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:25:47' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:28:22' }, 
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:39:22' }
+	],
+'q-lang-he.html': [
+	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:19:44' }, 
+	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:25:53' }, 
+	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:28:25' }, 
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:39:29' }
+	],
+'q-lang-hu.html': [
+	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:19:53' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:26:12' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:28:32' }, 
+	{browser:'Edge', status:'partial', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:42:0' }
+	],
+'q-lang-km.html': [
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:20:6' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:26:18' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:28:38' }, 
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:42:7' }
+	],
+'q-lang-ko.html': [
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:20:10' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:26:22' }, 
+	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:29:4' }, 
+	{browser:'Edge', status:'pass', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:42:12' }
+	],
+'q-lang-lo.html': [
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:20:15' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:26:24' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:29:9' }, 
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:42:15' }
+	],
+'q-lang-my.html': [
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:20:17' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:26:27' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:29:11' }, 
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:42:16' }
+	],
+'q-lang-nl.html': [
+	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:20:23' }, 
+	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:26:32' }, 
+	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:29:15' }, 
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:42:25' }
+	],
+'q-lang-pa.html': [
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:20:30' }, 
+	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:26:38' }, 
+	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:29:18' }, 
+	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:42:30' }
+	],
+'q-lang-th.html': [
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0', date:'3-5-2018  11:20:44' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36', date:'3-5-2018  11:26:51' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15', date:'3-5-2018  11:29:27' }, 
+	{browser:'Edge', status:'pass', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393', date:'3-5-2018  11:42:39' }
 	]
 }
