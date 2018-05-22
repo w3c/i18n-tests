@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Vowel separation, Khmer</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<style>
+.test, .ref {
+}
+
+/* the CSS below is not part of the test */
+.test, .ref {
+margin: 20px;
+font-size: 2em;
+}
+.test {
+width: 400px;
+font-size: 36px;
+border: 1px solid orange;
+text-align: justify;
+text-justify: inter-character;
+}
+</style>
+</head>
+<body>
+
+<div id="assertion"><b class="assertion">Assertion:</b> Text justified using text-justify:inter-character splits U+0E32 THAI CHARACTER SARA AA from its base character.</div>
+<div id="instructions">
+Use the slider to adjust the width of the box, if necessary.<br/>
+<b class="instructions">Test passes if</b> the first line of text is justified AND า is separated from the base character.</div>
+<div lang="km" class="test" id="test">การนําไปสู่การนําไปสู่การนําไปสู่</div>
+
+<p>Box width: <span id="sizeIndicator" style="font-size:80%;">400</span>px<br>
+    <input id="fontSizeSlider" min="300" max="450" step="1" value="400" oninput="document.getElementById('sizeIndicator').textContent = this.value; document.getElementById('test').style.width = this.value+'px';" style="width:10em;" type="range">
+
+</body>
+</html>
