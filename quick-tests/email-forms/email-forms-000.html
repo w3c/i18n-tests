@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Email forms: ascii@ascii.com</title>
+<meta name="assert" content="An email address entered into a form with both sides in ASCII will be accepted by the browser."/>
+</head>
+
+<body>
+<p>Reduce the window height, so that the text 'Hello!' is below the fold. Click on the submit button. Test passes if the page scrolls to show the 'Hello!' message.</p>
+
+<p><form action="#dummy" method="get"><input type="email" value="abc@def.com"/><button type="submit">Test it!</button></form></p>
+
+<p id="dummy" style="margin-top: 25em">Hello !</p>
+</body>
+</html>
