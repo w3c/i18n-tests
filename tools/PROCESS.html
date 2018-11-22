@@ -17,25 +17,41 @@ form { border: 1px solid #F67070; padding: 10px; }
 <h1>Process for adding tests to the framework</h1>
 
 <h1 class="major_part">Create the tests</h1>
-<p>Add tests in the same directories as you would submit them to TTWF.</p>
-<p>The <code>base</code> is the path from the <code>repo</code> directory to the point where the entries in the batch file complete the path to the tests.</p>
-<p><input id="base" name="base" type="text" placeholder="Add the base here."></p>
-<p class="note">(You can stop earlier and include the rest of the path in the filenames, if you want to include multiple locations in one batch file.)</p>
-<p>The <code>batch</code> file contains a list of test names; the test names include the path from the base (if any) and the file extension.</p>
+<p>Add tests in the same directories as you would submit them to WPT.</p>
+<p>The <code>batch</code> file contains a list of test names, including the file extension. They may also include part or all of the directory path (see  <em>Example,</em> below).</p>
 <p><input id="batchname" type="text" placeholder="Add the batch name here (without -batch)" /></p>
 
-<!--h2>Prepare run.php</h2>
-<p>Add the <code>base</code> and the <code>batch</code> names to the security filter at the start of the file.</p-->
+<p>The <code>base</code> is the path from the <code>repo</code> directory to the point where the entries in the batch file complete the path to the tests. </p>
+
+<p><input id="base" name="base" type="text" placeholder="Add the base here."></p>
+<details id="baseExample" style="font-size: 80%; padding: 1em; cursor: pointer;">
+<summary>Example</summary>
+<p>For example, given a file at <code>i18n-tests/css-text/text-transform/text-transform-capitalize-009.html</code>, the batch may contain the file name <code>text-transform-capitalize-009.html</code> and the base would be <code>css-text/text-transform</code>.</p>
+<p>Alternatively, you could put more (or all) of the base into the filename in the batch file, such as a base of <code>css-text</code> and filenames such as <code>text-transform/text-transform-capitalize-009.html</code>. This is particularly useful when the tests in a batch are spread over more than one directory.</p>
+</details>
+
 
 <h2>Create a batch file</h2>
-<p>Create a file listing all the tests at <code>batches/BATCHNAME-batch.txt</code>.</p>
+<form action="../tools/_make-batch-files.php">
+<input id="shadowBatch" type="hidden" name="batch">
+<p>Create a file listing all the tests at <code>batches/BATCHNAME-batch.txt</code>, and a file to contain the results data at <code>batches/BATCHNAME-data.js</code>.</p>
+<p><button onclick="document.getElementById('shadowBatch').value=document.getElementById('batchname').value;" type="submit">do it</button></p>
+</form>
+
+
 <form action="../tools/_make-batch-list.php">
-<p><button  onclick="document.getElementById('baseShadow').value=document.getElementById('base').value;">Create a list for the base directory</button></p>
-<p>Or, create a list of the files in another directory: <br/><input id="baseShadow" name="base" type="text" placeholder="base (path to directory starting from repo)"></p>
+<p>Now create a list of tests to add to the batch file.</p>
+<p>Either 
+<button  onclick="document.getElementById('baseShadow').value=document.getElementById('base').value;">Create a list for the base directory</button>
+</p>
+<p>Or:</p>
+<div style="border: 1px solid #ccc; border-radius: 3px; padding: 0 1em;">
+<p>Create a list of the files in another directory: <br/><input id="baseShadow" name="base" type="text" placeholder="base (path to directory starting from repo)"></p>
 <p>Add a prefix to the file names, if needed:<br/><input id="prefix" name="prefix" type="text" placeholder="prefix (don't include final /, it will be added automatically)"></p>
 <button type="submit">do it</button>
-<p>Now copy the list to a file and order the files as needed for the results page.</p>
+</div>
 </form>
+<p>Now copy the list to the .txt file and order the list so that there is a logical flow as you move through the tests. (This would normally be the same order as tests will be displayed in the results file.) You should have one test file name per line, and the name should include the file extension. Blank lines are ok.</p>
 
 
 
@@ -68,42 +84,61 @@ form { border: 1px solid #F67070; padding: 10px; }
 
 <h2>Create a results summary page</h2>
 <p>A results page can reflect results for a whole batch or part of it.</p>
-<p>Choose a filename: <code>
+<p> <button onclick="document.getElementById('topic').value=document.getElementById('batchname').value;">Add batch name to field just below</button> 
+or create your own name.
+</p>
+<p>Filename: <code>
   <input id="topic" type="text" style="width:200px;" onChange="document.getElementById('topic1').textContent=this.value; 
   document.getElementById('topic2').textContent=this.value; 
   document.getElementById('topic3').textContent=this.value; 
   document.getElementById('fnameShadow').value=this.value; 
-  document.getElementById('dataCreation').href='../tools/_make-data-file.php?topic='+this.value;"/>  
-  <button onclick="document.getElementById('topic').value=document.getElementById('batchname').value; document.getElementById('topic1').textContent=document.getElementById('topic').value; document.getElementById('topic2').textContent=document.getElementById('topic').value; document.getElementById('topic3').textContent=document.getElementById('topic').value; document.getElementById('topic4').textContent=document.getElementById('topic').value;
-document.getElementById('fnameShadow').value=this.value; document.getElementById('dataCreation').href='../tools/_make-data-file.php?topic='+document.getElementById('topic').value;">Use batch name</button>
+  document.getElementById('dataCreation').href='../tools/_make-data-file.php?topic='+this.value;"/>
 </code></p>
-<p>Create the following files</p>
+<p>The  files that will be created are:</p>
 <ul>
-<li><code>results/<span id="topic1"></span>-data/data.js</code></li>
-<li><code>results/<span id="topic3"></span>-data/translation.js</code></li>
-<li><code>results/<span id="topic2"></span>.en.html</code> and .var files.</li>
+<li><code>results/FILENAME-data/translation.js</code></li>
+<li><code>results/FILENAME.en.html</code></li>
+<li><code>results/FILENAME.var</code></li>
 </ul>
-<p><a href="" id="dataCreation">Create the pages!</a></p>
 
-
-<h2>Create a manifest file</h2>
-<p>The manifest file contains metadata extracted from each test file, and is used for the results page. It will be saved to <code>results/<span id="topic4"></span>-data/manifest.txt</code>.</p>
-<form action="../tools/_make-manifest.php">
-<input id="baseShadow2" type="hidden" name="base">
-<input id="batchShadow2" type="hidden" name="batch">
-<input id="fnameShadow" type="hidden" name="filename">
-<p>Create a manifest file for this batch: <button onclick="document.getElementById('baseShadow2').value=document.getElementById('base').value;document.getElementById('batchShadow2').value=document.getElementById('batchname').value;" type="submit">do it</button></p>
+<form action="../tools/_make-data-file.php">
+<input id="baseShadow_results" type="hidden" name="baseShadow_results">
+<input id="batchShadow_results" type="hidden" name="batchShadow_results">
+<input id="fnameShadow_results" type="hidden" name="fnameShadow_results">
+<p>Create the results pages:
+<button onclick="
+    document.getElementById('baseShadow_results').value=document.getElementById('base').value;
+    document.getElementById('batchShadow_results').value=document.getElementById('batchname').value;
+    document.getElementById('fnameShadow_results').value=document.getElementById('topic').value;" 
+    type="submit">do it</button>
+</p>
 </form>
+<p>Now edit the results page.</p>
+
+<details id="resultsChanges" style="font-size: 80%; padding: 1em; cursor: pointer;">
+<summary>What to edit</summary>
+<ul>
+<li>Provide a title in the title and h1 elements.</li>
+<li>Replace RELATED with a fragment id in the test overview page.</li>
+<li>Adapt introduction paragraphs as needed.</li>
+<li>Arrange and name sections to suit the page, changing titles and ids to suit.</li>
+<li>For each script element after a section:</li>
+<ul>
+    <li>Change the sectionid to the id of the section.</li>
+    <li>Look for "<!-- Pre-formatted list of tests -->", and move each line below that to an appropriate section, replacing the text 'TESTFILENAME'.</li>
+</ul>
+<li>In the #endlinks at the bottom of the page, add a fragment id for Related links, pointing to the appropriate location in the test overview page.</li>
+</ul>
+</details>
+
 
 <h1 class="major_part">Run the tests and record results</h1>
-<p>Run the tests in the framework and record the results, then merge each set of results in the merge tool page, then copy/paste the results to the data.js file.</p>
+<p>Run the tests in the framework and record the results, then merge each set of results in the merge tool page.</p>
 <form action="../tools/_mergeresults.php">
 <input id="batchShadow3" type="hidden" name="data">
-<p>Add the new results to <code>tools/_newresults.js</code>.</p>
-<p>Ensure that the name of the -data.js file in shown in the <samp>Choose a filename</samp> input field just above.</p>
-<p>Run the merge tool: 
+<p>Ensure that the name of the -data.js file in shown in the <samp>Filename</samp> input field just above.</p>
+<p>Run the merge tool and follow the instructions: 
    <button onclick="document.getElementById('batchShadow3').value=document.getElementById('topic').value;" type="submit">do it</button></p>
-<p>In a text editor, overwrite the contents of the -data.js file with the output and save.</p>
 </form>
 </body>
 </html>

@@ -1,4 +1,26 @@
 <?php
+# this file creates a .json file in the batches directory
+# the .json filename is the same as a related xxx-batch.txt file
+# the xxx is passed to this php script as 'base'
+# this script looks at each test file in the batch list, and sucks out information which it arranges in json format
+# that information is used by the i18n test framework and results pages
+
+// create a backup file
+$iteration = '';
+if (file_exists("../batches/".$_GET['batch'].".json")) {
+	if (file_exists("../batches/".$_GET['batch']."-backup.json")) {
+		$iteration = 1;
+		while (file_exists("../batches/".$_GET['batch']."-backup".strval($iteration).".json")) {
+			$iteration++;
+			}
+		}
+	$backedup = false;
+	$backedup = rename("../batches/".$_GET['batch'].".json", "../batches/".$_GET['batch']."-backup".strval($iteration).".json");
+	if ($backedup) echo "Old file backed up.<br>";
+	}
+else { echo 'No file found: '."../batches/".$_GET['batch'].".json"; }
+
+
 define("testname", 0);
 define("title", 2);
 define("flags", 3);
@@ -103,6 +125,9 @@ $backuppath = '';
 for ($i=0;$i<count($levels);$i++) { $backuppath .= '../'; }
 
 $out .= "tests[".$t."]=['".$backuppath."testend','','','','']\n";
+
+	$numbytes = file_put_contents( '../batches/'.$_GET['batch'].'.json', "$out");
+	chmod("../batches/".$_GET['batch'].'.json', 0777);
 
 echo '<textarea style="width:100%;height:1000px;">'.$out.'</textarea>';
 

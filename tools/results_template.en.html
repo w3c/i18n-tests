@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-REPLACEMENTS
-TITLE 
-FILENAME
-BASE
-BATCH
-RELATED
-Change dates
--->
-
 <head>
 <meta charset="utf-8" />
 <title>TITLE: Summarized test results</title>
@@ -19,19 +9,19 @@ Change dates
 var f = { }
 
 // AUTHORS should fill in these assignments:
-f.directory = 'tests/repo/results'+'/' // the path to this file, not including /International or the file name
-f.filename = 'FILENAME' // the file name WITHOUT extensions
+f.directory = 'results'+'/' // the path to this file, not including i18n-tests or the file name
+f.filename = 'SUB§FILENAME' // the file name WITHOUT extensions
 f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
 f.previousauthors = '' // as above
 f.modifiers = '' // people making substantive changes, and their affiliation
-f.searchString = 'results-FILENAME' // blog search string - usually the filename without extensions
-f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
-f.lastSubstUpdate = { date:'2018-03-03', time:'06:37'}  // date and time of latest substantive changes to this document
+f.searchString = 'results-SUB§FILENAME' // blog search string - usually the filename without extensions
+f.firstPubDate = 'SUB§DATE' // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'SUB§DATE', time:'SUB§TIME'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2018-03-03', time:'06:37'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'SUB§DATE', time:'SUB§TIME'} // date and time of latest edits to this document/translation
 f.contributors = '' // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 f.sources = '' // describes sources of information
@@ -43,7 +33,7 @@ f.breadcrumb = 'tests'
 
 f.additionalLinks = ''
 </script>
-<script type="text/javascript" src="FILENAME-data/translation.js"> </script>
+<script type="text/javascript" src="SUB§FILENAME-data/translation.js"> </script>
 <script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
 <script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
 <script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
@@ -51,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="FILENAME-data/data.js"></script>
-<script src="FILENAME-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/SUB§BATCH-data.js"></script>
+<script src="../batches/SUB§BATCH.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -67,16 +57,16 @@ f.additionalLinks = ''
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p>
+    <!--p><span id="intendedAudience" class="leadin">Intended audience:</span> 
+    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p-->
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
 
-			<section> 
-                <p>These tests check whether user agents correctly apply the properties defined in the CSS-ruby-1 spec. These are simple, user-oriented tests, designed to check basic functionality, rather than test all edge cases and implementation details.</p>
-                <p>Note that some tests pass because the browser displays the annotations in the same way by default, rather than necessarily because of the application of a CSS property. No special action is taken in these cases, since the result is the same for the user, however there are some exploratory tests below that enable you to see what the default rendering looks like.</p>
-              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
+<section> 
+<p>These tests check whether user agents correctly apply the properties defined in the CSS-ruby-1 spec. These are simple, user-oriented tests, designed to check basic functionality, rather than test all edge cases and implementation details.</p>
+<p>Note that some tests pass because the browser displays the annotations in the same way by default, rather than necessarily because of the application of a CSS property. No special action is taken in these cases, since the result is the same for the user, however there are some exploratory tests below that enable you to see what the default rendering looks like.</p>
+<p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
 <p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.  Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
 <p><strong>Key:</strong></p>
 <table class="results" style="margin-right: 32%;">
@@ -90,36 +80,47 @@ f.additionalLinks = ''
 </table>
 			</section>
 		</section>
-		
 
-
-<section>
-<h2 id="exploratory"><a href="#exploratory">Exploratory tests</a></h2>
-  <p>These two tests merely allow you to detect the default behaviour of the browser, in case you wish to compare it against what passes or fails in the other tests. </p>
-  <div style="margin-left:10%;">
-  <p><a href="/International/tests/repo/css-ruby-1/defaults/ruby-position-control-000.html" target="_blank">ruby-position default</a>  <span class="testName">ruby-position-control-000.html</span><br/>
-  <span class="exp" style="font-size:80%;">[Exploratory test] to determine whether and how the browser handles ruby by default.</span></p>
-  <p><a href="/International/tests/repo/css-ruby-1/defaults/ruby-align-control-000.html" target="_blank">ruby-align default	</a> <span class="testName">ruby-align-control-000.html</span><br/>
-  <span class="exp" style="font-size:80%;">[Exploratory test] to establish how the browser aligns ruby text by default.</span></p>
-  <p><a href="/International/tests/repo/css-ruby-1/defaults/ruby-position-intercharacter-000.html" target="_blank">zh-TW default size</a> <span class="testName">ruby-position-intercharacter-000.html</span><br/>
-  <span class="exp" style="font-size:80%;">[Exploratory test] to determine whether the browser applies special sizing for zh-TW language annotations.</span></p>
-</div>
-</section>
-  
 <!-- ·········································································· -->
 <br style="clear:both;"/>
 
-<!-- SECTION CONTAINERS GO HERE -->
+<!-- List of tests here -->
+
+
 
 <section>
   <h2 id="title1"><a href="#title1">TITLE1</a></h2>
   <div id="title1-data"></div>
 </section>
+<script>
+drawResults(
+	'title1', // sectionid 
+	'SUB§BASE', // base
+	'SUB§BATCH', // batch
+	 [
+		'TESTILENAME',
+		]
+	 )
+</script>
+
+
 
 <section>
   <h2 id="title2_id"><a href="#title2_id">TITLE2</a></h2>
   <div id="title2_id-data"></div>
 </section>
+<script>
+drawResults(
+	'title2_id', // sectionid 
+	'SUB§BASE', // base
+	'SUB§BATCH', // batch
+	 [
+		'TESTFILENAME',
+		]
+	 )
+</script>
+
+
 
  <section>
   <h2 id="title3_id"><a href="#title3_id">TITLE3</a></h2>
@@ -137,92 +138,36 @@ f.additionalLinks = ''
   </ol>
   </section>
 </section>
+<script>
+drawResults(
+	'title3_id', // sectionid 
+	'SUB§BASE', // base
+	'SUB§BATCH', // batch
+	 [
+		'TESTFILENAME',
+		]
+	)
+</script>
+
+
+
 
 
 <section>
   <h2 id="title4_id"><a href="#title4_id">TITLE4</a></h2>
   <div id="title4_id-data"></div>
 </section>
-
-
-
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script>
 drawResults(
-	'ruby_position', // sectionid 
-	'BASE', // base
-	'BATCH', // batch
-	'SPECSECTION', // specsection
-	'SPECLINK', // uri 
-	'RELATED', // related 
+	'title4_id', // sectionid 
+	'SUB§BASE', // base
+	'SUB§BATCH', // batch
 	 [
-		'rubypos/ruby-position-over-001.html',
-		'rubypos/ruby-position-under-001.html',
-		'rubypos/ruby-position-intercharacter-001.html',
-		'rubypos/ruby-position-intercharacter-002.html',
-		'rubypos/ruby-position-intercharacter-003.html',
-		]
-	 )
-
-drawResults(
-	'ruby_align', // sectionid 
-	'BASE', // base
-	'BATCH', // batch
-	'SPECSECTION', // specsection
-	'SPECLINK', // uri 
-	'RELATED', // related 
-	 [
-		'ruby-align-property/ruby-align-start-001.html',
-		'ruby-align-property/ruby-align-start-002.html',
-		'ruby-align-property/ruby-align-center-001.html',
-		'ruby-align-property/ruby-align-center-002.html',
-		'ruby-align-property/ruby-align-space-between-001.html',
-		'ruby-align-property/ruby-align-space-between-002.html',
-		'ruby-align-property/ruby-align-space-between-003.html',
-		'ruby-align-property/ruby-align-space-between-004.html',
-		'ruby-align-property/ruby-align-space-between-005.html',
-		'ruby-align-property/ruby-align-space-around-001.html',
-		'ruby-align-property/ruby-align-space-around-002.html',
-		'ruby-align-property/ruby-align-space-around-003.html',
-		'ruby-align-property/ruby-align-space-around-004.html',
-		'ruby-align-property/ruby-align-space-around-005.html',
-		]
-	 )
-
-drawResults(
-	'ruby_merge', // sectionid 
-	'BASE', // base
-	'BATCH', // batch
-	'SPECSECTION', // specsection
-	'SPECLINK', // uri 
-	'css3-ruby', // related 
-	 [
-		'collapsed-ruby/ruby-merge-separate-001.html',
-		'collapsed-ruby/ruby-merge-collapse-001.html',
-		'collapsed-ruby/ruby-merge-collapse-002.html',
-		'collapsed-ruby/ruby-merge-auto-001.html',
-		'collapsed-ruby/ruby-merge-auto-002.html',
+		'TESTFILENAME',
 		]
 	)
-
-drawResults(
-	'ruby_autohide', // sectionid 
-	'BASE', // base
-	'BATCH', // batch
-	'SPECSECTION', // specsection
-	'SPECLINK', // uri 
-	'RELATED', // related 
-	 [
-		'ruby-model/ruby-autohide-001.html',
-		]
-	)
-
-
-
 </script>
+
 
 
 
@@ -233,8 +178,8 @@ drawResults(
 <aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
 
 <ul id="full-links">
-		<li> <a href="https://drafts.csswg.org/css-ruby-1/">CSS Ruby Layout Module Level 1</a> (editor's copy)</li>
-		<li><a href="/International/tests/">i18n test suite home</a></li>
+    <li><a href="http://www.w3.org/International/tests/">i18n test suite home</a></li>
+    <li><a href="http://www.w3.org/International/tests/">Related tests</a></li>
 	</ul>
 </section>
 
