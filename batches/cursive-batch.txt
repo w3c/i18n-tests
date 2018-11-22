@@ -1,0 +1,12 @@
+css-text-decor/text-shadow-property/cursive-text-shadow-001.html
+css-text-decor/text-shadow-property/cursive-text-shadow-002.html
+css-text-decor/text-shadow-property/cursive-text-shadow-003.html
+css-text-decor/text-shadow-property/cursive-text-stroke-001.html
+css-text-decor/text-shadow-property/cursive-text-stroke-002.html
+css-text-decor/text-shadow-property/cursive-text-stroke-003.html
+css-color/transparency/cursive-opacity-001.html
+css-color/transparency/cursive-opacity-002.html
+css-color/transparency/cursive-opacity-003.html
+css-text/shaping/shaping-001.html
+css-text/shaping/shaping-022.html
+css-text/shaping/shaping-023.html

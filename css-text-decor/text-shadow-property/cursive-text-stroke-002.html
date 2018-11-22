@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>n'ko text-stroke</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<meta name="assert" content="[exploratory] -webkit-text-stroke on cursive N'ko text doesn't break the joins">
+<link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#line-decoration">
+<style>
+#test { -webkit-text-stroke: 4px pink; }
+
+/* the CSS below is not part of the test */
+.test, .ref {
+margin: .5em 5%;
+font-size: 8em;
+}
+#assertion, #advice { font-style: italic; color: #666; }
+</style>
+</head>
+<body>
+<div>Test passes if there are no pink lines between joined characters.</div>
+
+<div class="test" id="test" lang="nqo">ߟߐ߬ ߕߋ߬ߟߋ</div>
+
+<div class="control">Change the font: 
+<select id="fontList" name="fontList" onchange="document.getElementById('test').style.fontFamily = this.value; return false;">
+<option value="0">Select...</option>
+<optgroup label="Windows fonts">
+<option value="Ebrima">Ebrima</option>
+</optgroup>
+<optgroup label="Google fonts">
+<option value="Noto Serif NKo">Noto Serif NKo</option>
+</optgroup>
+<optgroup label="General fonts">
+<option value="sans-serif">sans-serif</option>
+<option value="serif">serif</option>
+</optgroup>
+</select>
+ </div>
+ </body>
+</html>
