@@ -97,8 +97,8 @@ or create your own name.
 <p>The  files that will be created are:</p>
 <ul>
 <li><code>results/FILENAME-data/translation.js</code></li>
-<li><code>results/FILENAME.en.html</code></li>
-<li><code>results/FILENAME.var</code></li>
+<li><code>results/FILENAME.html</code></li>
+<!--li><code>results/FILENAME.var</code></li-->
 </ul>
 
 <form action="../tools/_make-data-file.php">
@@ -119,13 +119,12 @@ or create your own name.
 <summary>What to edit</summary>
 <ul>
 <li>Provide a title in the title and h1 elements.</li>
-<li>Replace RELATED with a fragment id in the test overview page.</li>
 <li>Adapt introduction paragraphs as needed.</li>
 <li>Arrange and name sections to suit the page, changing titles and ids to suit.</li>
 <li>For each script element after a section:</li>
 <ul>
-    <li>Change the sectionid to the id of the section.</li>
-    <li>Look for "<!-- Pre-formatted list of tests -->", and move each line below that to an appropriate section, replacing the text 'TESTFILENAME'.</li>
+    <li>Change the sectionid to the id of the section (3 places).</li>
+    <li>Look for "&lt;!-- Pre-formatted list of tests -->", and move each line below that to an appropriate section, replacing the text 'TESTFILENAME'.</li>
 </ul>
 <li>In the #endlinks at the bottom of the page, add a fragment id for Related links, pointing to the appropriate location in the test overview page.</li>
 </ul>
