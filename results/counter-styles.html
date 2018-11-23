@@ -17,7 +17,7 @@ f.searchString = 'results-counter-styles' // blog search string - usually the fi
 f.firstPubDate = '2017-02-01' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2017-02-01', time:'07:30'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2017-02-01', time:'07:30'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="counter-styles-data/data.js"></script>
-<script src="counter-styles-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/counter-styles-data.js"></script>
+<script src="../batches/counter-styles.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -151,9 +151,6 @@ drawResults(
 	'basic_alphabetic', // sectionid 
 	'css-counter-styles', // base
 	'counter-styles', // batch
-	'3.1.4', // specsection
-	'https://www.w3.org/TR/css-counter-styles-3/#alphabetic-system', // uri 
-	'css3-counter-styles', // related 
 	 [
 		'counter-style-system/alphabetic-basic-001.html',
 		'counter-style-system/alphabetic-basic-002.html',
@@ -164,9 +161,6 @@ drawResults(
 	'basic_additive', // sectionid 
 	'css-counter-styles', // base
 	'counter-styles', // batch
-	'3.1.6', // specsection
-	'https://www.w3.org/TR/css-counter-styles-3/#additive-system', // uri 
-	'css3-counter-styles', // related 
 	 [
 		'counter-style-system/additive-basic-001.html',
 		'counter-style-system/additive-basic-002.html',
@@ -177,9 +171,6 @@ drawResults(
 	'basic_cyclic', // sectionid 
 	'css-counter-styles', // base
 	'counter-styles', // batch
-	'3.1.1', // specsection
-	'https://www.w3.org/TR/css-counter-styles-3/#cyclic-system', // uri 
-	'css3-counter-styles', // related 
 	 [
 		'counter-style-system/cyclic-basic-001.html',
 		'counter-style-system/cyclic-basic-002.html',
@@ -190,9 +181,6 @@ drawResults(
 	'basic_fixed', // sectionid 
 	'css-counter-styles', // base
 	'counter-styles', // batch
-	'3.1.2', // specsection
-	'https://www.w3.org/TR/css-counter-styles-3/#fixed-system', // uri 
-	'css3-counter-styles', // related 
 	 [
 		'counter-style-system/fixed-basic-001.html',
 		]
@@ -202,9 +190,6 @@ drawResults(
 	'basic_numeric', // sectionid 
 	'css-counter-styles', // base
 	'counter-styles', // batch
-	'3.1.5', // specsection
-	'https://www.w3.org/TR/css-counter-styles-3/#numeric-system', // uri 
-	'css3-counter-styles', // related 
 	 [
 		'counter-style-system/numeric-basic-001.html',
 		'counter-style-system/numeric-basic-002.html',
@@ -215,9 +200,6 @@ drawResults(
 	'basic_symbolic', // sectionid 
 	'css-counter-styles', // base
 	'counter-styles', // batch
-	'3.1.3', // specsection
-	'https://www.w3.org/TR/css-counter-styles-3/#symbolic-system', // uri 
-	'css3-counter-styles', // related 
 	 [
 		'counter-style-system/symbolic-basic-001.html',
 		]
@@ -230,9 +212,6 @@ drawResults(
 	'affix_basic', // sectionid 
 	'css-counter-styles', // base
 	'counter-styles', // batch
-	'3.3/4', // specsection
-	'https://www.w3.org/TR/css-counter-styles-3/#counter-style-prefix', // uri 
-	'css3-counter-styles', // related 
 	 [
 		'counter-style-affix/additive-prefsuf-001.html',
 		'counter-style-affix/alphabetic-prefsuf-001.html',
@@ -247,9 +226,6 @@ drawResults(
 	'affix_default', // sectionid 
 	'css-counter-styles', // base
 	'counter-styles', // batch
-	'3.3/4', // specsection
-	'https://www.w3.org/TR/css-counter-styles-3/#counter-style-prefix', // uri 
-	'css3-counter-styles', // related 
 	 [
 		'counter-style-affix/additive-default-001.html',
 		'counter-style-affix/alphabetic-default-001.html',
