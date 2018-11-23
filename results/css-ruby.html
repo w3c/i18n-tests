@@ -17,7 +17,7 @@ f.searchString = 'results-css-ruby' // blog search string - usually the filename
 f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2015-08-24', time:'10:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2016-04-11', time:'19:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="css-ruby-data/data.js"></script>
-<script src="css-ruby-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/css-ruby-data.js"></script>
+<script src="../batches/css-ruby.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -106,7 +106,20 @@ f.additionalLinks = ''
   <h3 id="ruby_position"><a href="#ruby_position">ruby-position</a></h3>
   <div id="ruby_position-data"></div>
 </section>
-  
+<script>
+drawResults(
+	'ruby_position', // sectionid 
+	'css-ruby', // base
+	'css-ruby', // batch
+	 [
+		'rubypos/ruby-position-over-001.html',
+		'rubypos/ruby-position-under-001.html',
+		'rubypos/ruby-position-intercharacter-001.html',
+		'rubypos/ruby-position-intercharacter-002.html',
+		'rubypos/ruby-position-intercharacter-003.html',
+		]
+	 )
+</script>
 <!-- ·········································································· -->
 
 
@@ -114,7 +127,31 @@ f.additionalLinks = ''
   <h3 id="ruby_align"><a href="#ruby_align">ruby-align</a></h3>
   <div id="ruby_align-data"></div>
 </section>
-  
+<script>
+drawResults(
+	'ruby_align', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'ruby-align-property/ruby-align-start-001.html',
+        'ruby-align-property/ruby-align-start-002.html',
+        'ruby-align-property/ruby-align-center-001.html',
+        'ruby-align-property/ruby-align-center-002.html',
+        'ruby-align-property/ruby-align-space-between-001.html',
+        'ruby-align-property/ruby-align-space-between-002.html',
+        'ruby-align-property/ruby-align-space-between-003.html',
+        'ruby-align-property/ruby-align-space-between-004.html',
+        'ruby-align-property/ruby-align-space-between-006.html',
+        'ruby-align-property/ruby-align-space-between-007.html',
+        'ruby-align-property/ruby-align-space-around-001.html',
+        'ruby-align-property/ruby-align-space-around-002.html',
+        'ruby-align-property/ruby-align-space-around-003.html',
+        'ruby-align-property/ruby-align-space-around-004.html',
+        'ruby-align-property/ruby-align-space-around-006.html',
+        'ruby-align-property/ruby-align-space-around-007.html',
+        ]
+     )
+</script>
 <!-- ·········································································· -->
 
 
@@ -128,7 +165,20 @@ f.additionalLinks = ''
   </div>
   <div id="ruby_merge-data"></div>
 </section>
-  
+<script>
+drawResults(
+    'ruby_merge', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'collapsed-ruby/ruby-merge-separate-001.html',
+        'collapsed-ruby/ruby-merge-collapse-001.html',
+        'collapsed-ruby/ruby-merge-collapse-002.html',
+        'collapsed-ruby/ruby-merge-auto-001.html',
+        'collapsed-ruby/ruby-merge-auto-002.html',
+        ]
+     )
+</script>
 <!-- ·········································································· -->
 
 
@@ -136,7 +186,17 @@ f.additionalLinks = ''
   <h3 id="ruby_autohide"><a href="#ruby_autohide">Ruby autohide</a></h3>
   <div id="ruby_autohide-data"></div>
 </section>
-  
+<script>
+drawResults(
+    'ruby_autohide', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'ruby-model/ruby-autohide-001.html',
+        ]
+     )
+</script>
+
 </section>
 
 
@@ -154,7 +214,21 @@ f.additionalLinks = ''
     </div>
   <div id="ruby_position_v-data"></div>
 </section>
-  
+<script>
+drawResults(
+    'ruby_position_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'defaults/vertical-support-001.html',
+        'rubypos/ruby-position-over-101.html',
+        'rubypos/ruby-position-under-101.html',
+        'rubypos/ruby-position-intercharacter-101.html',
+        'rubypos/ruby-position-intercharacter-102.html',
+        'rubypos/ruby-position-intercharacter-103.html',
+        ]
+     )
+</script>
 <!-- ·········································································· -->
 
 
@@ -169,7 +243,32 @@ f.additionalLinks = ''
   </div>
   <div id="ruby_align_v-data"></div>
 </section>
-  
+<script>
+drawResults(
+    'ruby_align_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'defaults/vertical-support-001.html',
+        'ruby-align-property/ruby-align-start-101.html',
+        'ruby-align-property/ruby-align-start-102.html',
+        'ruby-align-property/ruby-align-center-101.html',
+        'ruby-align-property/ruby-align-center-102.html',
+        'ruby-align-property/ruby-align-space-between-101.html',
+        'ruby-align-property/ruby-align-space-between-102.html',
+        'ruby-align-property/ruby-align-space-between-103.html',
+        'ruby-align-property/ruby-align-space-between-104.html',
+        'ruby-align-property/ruby-align-space-between-106.html',
+        'ruby-align-property/ruby-align-space-between-107.html',
+        'ruby-align-property/ruby-align-space-around-101.html',
+        'ruby-align-property/ruby-align-space-around-102.html',
+        'ruby-align-property/ruby-align-space-around-103.html',
+        'ruby-align-property/ruby-align-space-around-104.html',
+        'ruby-align-property/ruby-align-space-around-106.html',
+        'ruby-align-property/ruby-align-space-around-107.html',
+        ]
+     )
+</script>
 <!-- ·········································································· -->
 
 
@@ -184,7 +283,21 @@ f.additionalLinks = ''
   </div>
   <div id="ruby_merge_v-data"></div>
 </section>
-  
+<script>
+drawResults(
+    'ruby_merge_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'defaults/vertical-support-001.html',
+        'collapsed-ruby/ruby-merge-separate-101.html',
+        'collapsed-ruby/ruby-merge-collapse-101.html',
+        'collapsed-ruby/ruby-merge-collapse-102.html',
+        'collapsed-ruby/ruby-merge-auto-101.html',
+        'collapsed-ruby/ruby-merge-auto-102.html',
+        ]
+     )
+</script>
   
 <!-- ·········································································· -->
 
@@ -193,8 +306,16 @@ f.additionalLinks = ''
   <h3 id="ruby_autohide_v"><a href="#ruby_autohide_v">Ruby autohide</a></h3>
   <div id="ruby_autohide_v-data"></div>
 </section>
-
-
+<script>
+drawResults(
+    'ruby_autohide_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'ruby-model/ruby-autohide-101.html',
+        ]
+     )
+</script>
 </section>
 
 <!-- ·········································································· -->
@@ -213,7 +334,17 @@ f.additionalLinks = ''
   <h3 id="ruby_position_prop"><a href="#ruby_position_prop">ruby-position</a></h3>
   <div id="ruby_position_prop-data"></div>
 </section>
-  
+<script>
+drawResults(
+    'ruby_position_prop', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'prefix/ruby-position-over-001.html',
+        'prefix/ruby-position-under-001.html',
+        ]
+     )
+</script>
 <!-- ·········································································· -->
 
 
@@ -223,7 +354,29 @@ f.additionalLinks = ''
   <h3 id="ruby_align_prop"><a href="#ruby_align_prop">ruby-align</a></h3>
   <div id="ruby_align_prop-data"></div>
 </section>
-  
+<script>
+drawResults(
+    'ruby_align_prop', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'prefix/ruby-align-start-001.html',
+        'prefix/ruby-align-start-002.html',
+        'prefix/ruby-align-space-between-001.html',
+        'prefix/ruby-align-space-between-002.html',
+        'prefix/ruby-align-space-between-003.html',
+        'prefix/ruby-align-space-between-004.html',
+        'prefix/ruby-align-space-between-006.html',
+        'prefix/ruby-align-space-between-007.html',
+        'prefix/ruby-align-space-around-001.html',
+        'prefix/ruby-align-space-around-002.html',
+        'prefix/ruby-align-space-around-003.html',
+        'prefix/ruby-align-space-around-004.html',
+        'prefix/ruby-align-space-around-006.html',
+        'prefix/ruby-align-space-around-007.html',
+        ]
+     )
+</script>
 <!-- ·········································································· -->
 
 
@@ -239,7 +392,20 @@ f.additionalLinks = ''
   </div>
   <div id="ruby_merge_prop-data"></div>
 </section>
-  
+<script>
+drawResults(
+    'ruby_merge_prop', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'prefix/ruby-merge-separate-001.html',
+        'prefix/ruby-merge-collapse-001.html',
+        'prefix/ruby-merge-collapse-002.html',
+        'prefix/ruby-merge-auto-001.html',
+        'prefix/ruby-merge-auto-002.html',
+        ]
+     )
+</script>
 <!-- ·········································································· -->
 
 
@@ -247,7 +413,16 @@ f.additionalLinks = ''
   <h3 id="ruby_autohide_prop"><a href="#ruby_autohide_prop">Ruby autohide</a></h3>
   <div id="ruby_autohide_prop-data"></div>
 </section>
-
+<script>
+drawResults(
+    'ruby_autohide_prop', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'prefix/ruby-autohide-001.html',
+        ]
+     )
+</script>
 </section>
 
   <!-- ·········································································· -->
@@ -277,7 +452,18 @@ f.additionalLinks = ''
     <li><strong>ruby-position-intercharacter-101/103</strong>, Edge 12: The zhuyin characters appear to the right of the base characters due to the vertical orientation of the text, but they don't fit within a single base character height.</li>
   </ol>
 </section>
-  
+<script>
+drawResults(
+    'ruby_position_v_prop', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'defaults/vertical-support-prop-001.html',
+        'prefix/ruby-position-over-101.html',
+        'prefix/ruby-position-under-101.html',
+        ]
+     )
+</script>
 <!-- ·········································································· -->
 <section>
   <h3 id="ruby_align_v_prop"><a href="#ruby_align_v_prop">ruby-align (vertical text)</a></h3>
@@ -289,7 +475,30 @@ f.additionalLinks = ''
   </div>
   <div id="ruby_align_v_prop-data"></div>
 </section>
-  
+<script>
+drawResults(
+    'ruby_align_v_prop', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'defaults/vertical-support-prop-001.html',
+        'prefix/ruby-align-start-101.html',
+        'prefix/ruby-align-start-102.html',
+        'prefix/ruby-align-space-between-101.html',
+        'prefix/ruby-align-space-between-102.html',
+        'prefix/ruby-align-space-between-103.html',
+        'prefix/ruby-align-space-between-104.html',
+        'prefix/ruby-align-space-between-106.html',
+        'prefix/ruby-align-space-between-107.html',
+        'prefix/ruby-align-space-around-101.html',
+        'prefix/ruby-align-space-around-102.html',
+        'prefix/ruby-align-space-around-103.html',
+        'prefix/ruby-align-space-around-104.html',
+        'prefix/ruby-align-space-around-106.html',
+        'prefix/ruby-align-space-around-107.html',
+        ]
+     )
+</script>
 <!-- ·········································································· -->
 
 
@@ -304,284 +513,11 @@ f.additionalLinks = ''
   </div>
   <div id="ruby_merge_v_prop-data"></div>
 </section>
-  
-  
-<!-- ·········································································· -->
-
-
-<section>
-  <h3 id="ruby_autohide_prop_v"><a href="#ruby_autohide_prop">Ruby autohide</a></h3>
-  <div id="ruby_autohide_prop_v-data"></div>
-</section>
-
-</section>
-
-
- <!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
-
-drawResults(
-	'ruby_position', // sectionid 
-	'css-ruby', // base
-	'css-ruby', // batch
-	'4.1', // specsection
-	'https://drafts.csswg.org/css-ruby-1/#rubypos', // uri 
-	'css3-ruby', // related 
-	 [
-		'rubypos/ruby-position-over-001.html',
-		'rubypos/ruby-position-under-001.html',
-		'rubypos/ruby-position-intercharacter-001.html',
-		'rubypos/ruby-position-intercharacter-002.html',
-		'rubypos/ruby-position-intercharacter-003.html',
-		]
-	 )
-
-drawResults(
-	'ruby_align', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.3', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#ruby-align-property', // uri 
-    'css3-ruby', // related 
-     [
-        'ruby-align-property/ruby-align-start-001.html',
-        'ruby-align-property/ruby-align-start-002.html',
-        'ruby-align-property/ruby-align-center-001.html',
-        'ruby-align-property/ruby-align-center-002.html',
-        'ruby-align-property/ruby-align-space-between-001.html',
-        'ruby-align-property/ruby-align-space-between-002.html',
-        'ruby-align-property/ruby-align-space-between-003.html',
-        'ruby-align-property/ruby-align-space-between-004.html',
-        'ruby-align-property/ruby-align-space-between-005.html',
-        'ruby-align-property/ruby-align-space-around-001.html',
-        'ruby-align-property/ruby-align-space-around-002.html',
-        'ruby-align-property/ruby-align-space-around-003.html',
-        'ruby-align-property/ruby-align-space-around-004.html',
-        'ruby-align-property/ruby-align-space-around-005.html',
-        ]
-     )
-
-drawResults(
-    'ruby_merge', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.2', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#collapsed-ruby', // uri 
-    'css3-ruby', // related 
-     [
-        'collapsed-ruby/ruby-merge-separate-001.html',
-        'collapsed-ruby/ruby-merge-collapse-001.html',
-        'collapsed-ruby/ruby-merge-collapse-002.html',
-        'collapsed-ruby/ruby-merge-auto-001.html',
-        'collapsed-ruby/ruby-merge-auto-002.html',
-        ]
-     )
-
-
-drawResults(
-    'ruby_autohide', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '2.4', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#autohide', // uri 
-    'css3-ruby', // related 
-     [
-        'ruby-model/ruby-autohide-001.html',
-        ]
-     )
-
-
-drawResults(
-    'ruby_position_v', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.1', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#rubypos', // uri 
-    'css3-ruby', // related 
-     [
-        'defaults/vertical-support-001.html',
-        'rubypos/ruby-position-over-101.html',
-        'rubypos/ruby-position-under-101.html',
-        'rubypos/ruby-position-intercharacter-101.html',
-        'rubypos/ruby-position-intercharacter-102.html',
-        'rubypos/ruby-position-intercharacter-103.html',
-        ]
-     )
-
-drawResults(
-    'ruby_align_v', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.3', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#ruby-align-property', // uri 
-    'css3-ruby', // related 
-     [
-        'defaults/vertical-support-001.html',
-        'ruby-align-property/ruby-align-start-101.html',
-        'ruby-align-property/ruby-align-start-102.html',
-        'ruby-align-property/ruby-align-center-101.html',
-        'ruby-align-property/ruby-align-center-102.html',
-        'ruby-align-property/ruby-align-space-between-101.html',
-        'ruby-align-property/ruby-align-space-between-102.html',
-        'ruby-align-property/ruby-align-space-between-103.html',
-        'ruby-align-property/ruby-align-space-between-104.html',
-        'ruby-align-property/ruby-align-space-between-105.html',
-        'ruby-align-property/ruby-align-space-around-101.html',
-        'ruby-align-property/ruby-align-space-around-102.html',
-        'ruby-align-property/ruby-align-space-around-103.html',
-        'ruby-align-property/ruby-align-space-around-104.html',
-        'ruby-align-property/ruby-align-space-around-105.html',
-        ]
-     )
-
-drawResults(
-    'ruby_merge_v', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.2', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#collapsed-ruby', // uri 
-    'css3-ruby', // related 
-     [
-        'defaults/vertical-support-001.html',
-        'collapsed-ruby/ruby-merge-separate-101.html',
-        'collapsed-ruby/ruby-merge-collapse-101.html',
-        'collapsed-ruby/ruby-merge-collapse-102.html',
-        'collapsed-ruby/ruby-merge-auto-101.html',
-        'collapsed-ruby/ruby-merge-auto-102.html',
-        ]
-     )
-
-drawResults(
-    'ruby_autohide_v', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '2.4', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#autohide', // uri 
-    'css3-ruby', // related 
-     [
-        'ruby-model/ruby-autohide-101.html',
-        ]
-     )
-
-drawResults(
-    'ruby_position_prop', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.1', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#rubypos', // uri 
-    'css3-ruby', // related 
-     [
-        'prefix/ruby-position-over-001.html',
-        'prefix/ruby-position-under-001.html',
-        'prefix/ruby-position-intercharacter-001.html',
-        'prefix/ruby-position-intercharacter-002.html',
-        'prefix/ruby-position-intercharacter-003.html',
-        ]
-     )
-
-drawResults(
-    'ruby_align_prop', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.3', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#ruby-align-property', // uri 
-    'css3-ruby', // related 
-     [
-        'prefix/ruby-align-start-001.html',
-        'prefix/ruby-align-start-002.html',
-        'prefix/ruby-align-center-001.html',
-        'prefix/ruby-align-center-002.html',
-        'prefix/ruby-align-space-between-001.html',
-        'prefix/ruby-align-space-between-002.html',
-        'prefix/ruby-align-space-between-003.html',
-        'prefix/ruby-align-space-between-004.html',
-        'prefix/ruby-align-space-around-001.html',
-        'prefix/ruby-align-space-around-002.html',
-        'prefix/ruby-align-space-around-003.html',
-        'prefix/ruby-align-space-around-004.html',
-        ]
-     )
-
-
-drawResults(
-    'ruby_merge_prop', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.2', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#collapsed-ruby', // uri 
-    'css3-ruby', // related 
-     [
-        'prefix/ruby-merge-separate-001.html',
-        'prefix/ruby-merge-collapse-001.html',
-        'prefix/ruby-merge-collapse-002.html',
-        'prefix/ruby-merge-auto-001.html',
-        'prefix/ruby-merge-auto-002.html',
-        ]
-     )
-
-drawResults(
-    'ruby_autohide_prop', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '2.4', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#autohide', // uri 
-    'css3-ruby', // related 
-     [
-        'prefix/ruby-autohide-001.html',
-        ]
-     )
-
-drawResults(
-    'ruby_position_v_prop', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.1', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#rubypos', // uri 
-    'css3-ruby', // related 
-     [
-        'defaults/vertical-support-prop-001.html',
-        'prefix/ruby-position-over-101.html',
-        'prefix/ruby-position-under-101.html',
-        'prefix/ruby-position-intercharacter-101.html',
-        'prefix/ruby-position-intercharacter-102.html',
-        'prefix/ruby-position-intercharacter-103.html',
-        ]
-     )
-
-drawResults(
-    'ruby_align_v_prop', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-    '4.3', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#ruby-align-property', // uri 
-    'css3-ruby', // related 
-     [
-        'defaults/vertical-support-prop-001.html',
-        'prefix/ruby-align-start-101.html',
-        'prefix/ruby-align-start-102.html',
-        'prefix/ruby-align-center-101.html',
-        'prefix/ruby-align-center-102.html',
-        'prefix/ruby-align-space-between-101.html',
-        'prefix/ruby-align-space-between-102.html',
-        'prefix/ruby-align-space-between-103.html',
-        'prefix/ruby-align-space-between-104.html',
-        'prefix/ruby-align-space-around-101.html',
-        'prefix/ruby-align-space-around-102.html',
-        'prefix/ruby-align-space-around-103.html',
-        'prefix/ruby-align-space-around-104.html',
-        ]
-     )
-
-
+<script>
 drawResults(
     'ruby_merge_v_prop', // sectionid 
 	'css-ruby', // base
     'css-ruby', // batch
-    '4.2', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#collapsed-ruby', // uri 
-    'css3-ruby', // related 
      [
         'defaults/vertical-support-prop-001.html',
         'prefix/ruby-merge-separate-101.html',
@@ -591,21 +527,28 @@ drawResults(
         'prefix/ruby-merge-auto-102.html',
         ]
      )
+</script>
+  
+<!-- ·········································································· -->
 
+
+<section>
+  <h3 id="ruby_autohide_prop_v"><a href="#ruby_autohide_prop">Ruby autohide</a></h3>
+  <div id="ruby_autohide_prop_v-data"></div>
+</section>
+<script>
 drawResults(
-    'ruby_autohide_prop', // sectionid 
+    'ruby_autohide_prop_v', // sectionid 
 	'css-ruby', // base
     'css-ruby', // batch
-    '2.4', // specsection
-    'https://drafts.csswg.org/css-ruby-1/#autohide', // uri 
-    'css3-ruby', // related 
      [
         'prefix/ruby-autohide-101.html',
         ]
      )
-
-
 </script>
+</section>
+
+
 
 
 <section>
