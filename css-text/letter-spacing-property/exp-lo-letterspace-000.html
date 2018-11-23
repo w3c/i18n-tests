@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Lao letter-spacing</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<meta name="assert" content="[exploratory] Letter-spacing (a) is applied to Lao text, and (b) doesn't break text units inappropriately.">
+<link rel="help" href="https://www.w3.org/TR/2018/WD-css-text-3-20180920/#letter-spacing-property">
+
+<style>
+.test {
+letter-spacing: 1em;
+text-justify: none;
+text-align: start;
+}
+
+/* the CSS below is not part of the test */
+.test {
+margin: 40px 5%;
+width: 90%;
+font-size: 36px;
+border: 1px solid orange;
+min-height: 2em;
+}
+</style>
+<script>
+function setLetterSpacing (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.letterSpacing = value }
+}
+function setFont (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.fontFamily = value }
+}
+</script>
+</head>
+<body>
+<div>Test passes if  the text is spaced (or not) as you would expect [exploratory test].</div>
+<div id="advice"> Use the slider to adjust the width of the box.<br/>
+<input id="fontSizeSlider" min="10" max="90" step=".25" value="90" oninput="document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*this.value); tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.width = this.value+'%';}" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">90</span>px</div>
+<script>document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*90)</script>
+
+<p>Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="document.getElementById('sizeOfFont').textContent = this.value; tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.fontSize = this.value+'px';}" style="width:40%; margin-left: 5%;" type="range"/> <span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>Change the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/></p>
+
+
+
+<div class="test" lang="lo">ບຸກຄົນແຕ່ລະຄົນມີສິດທີ່ຈະຈາກປະເທດໃດປະເທດໜື່ງໄປ ນັບທັງປະເທດຂອງຕົນດ້ວຍ ແລະ ກັບຄືນມາໃນປະເທດຂອງຕົນໄດ້.</div>
+
+
+
+
+<div>Add your own test: <input id="in" type="text" placeholder="Add Lao text here."/> <button onClick="document.getElementById('custom').textContent = document.getElementById('in').value">Go</button></div>
+<div id="custom" class="test" lang="lo"></div>
+
+<p>Default setting is <code>letter-spacing: 1em; text-align: start; text-justify: none</code></p>
+<p>Set <code>letter-spacing</code> to
+<label><input type="text" name="letterSpacingValue" style="width: 3em;" onChange="setLetterSpacing(this.value)" />
+(specify em, px, etc)</label></p>
+</body>
+</html>

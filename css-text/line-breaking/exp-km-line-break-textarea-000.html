@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Khmer line breaks in textarea</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<meta name="assert" content="[exploratory] Khmer lines break at word boundaries inside a textarea field.">
+<link rel="help" href="https://www.w3.org/TR/2018/WD-css-text-3-20180920/#line-breaking">
+<style>
+/* the CSS below is not part of the test */
+textarea { width: 90%; height: 4em; margin: 2em 5%; border: 1px solid orange; font-size: 2.5em; }
+</style>
+</head>
+<body>
+<p>Test passes if the text breaks at word boundaries.</p>
+<div id="advice"> Use the slider to adjust the width of the box and observe break points.<br/>
+<input id="fontSizeSlider" min="10" max="90" step=".25" value="90" oninput="document.getElementById('sizeIndicator').textContent = this.value; tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.width = this.value+'%';}" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">90</span>%</div>
+
+
+<textarea class="test" id="test" lang="jv-java">មនុស្សគ្រប់រូបមានសិទ្ធិចាកចេញពីប្រទេសណាមួយ រួមទាំងប្រទេសរបស់ខ្លួនផង និងមាន សិទ្ធិវិលត្រឡប់មកប្រទេសរបស់ខ្លួនវិញ។</textarea>
+
+<div class="question">Add your own test: <input id="in" type="text" placeholder="Add Khmer text here."/> <button onClick="document.getElementById('out').textContent = document.getElementById('in').value">Go</button></div>
+<textarea id="out" class="test"></textarea>
+
+</body>
+</html>

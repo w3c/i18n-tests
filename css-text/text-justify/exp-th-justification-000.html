@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Thai justification</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<meta name="assert" content="[exploratory] Thai text behaves as you would expect when fully-justified.">
+<link rel="help" href="https://drafts.csswg.org/css-text/#text-justify-property">
+
+<style>
+.test {
+text-align: justify;
+}
+
+/* the CSS below is not part of the test */
+.test {
+margin: 40px 5%;
+width: 90%;
+font-size: 36px;
+border: 1px solid orange;
+min-height: 2em;
+}
+</style>
+<script>
+function setTextJustify (value) {
+document.getElementById('test').style.textJustify = value
+document.getElementById('custom').style.textJustify = value
+}
+function setFont (value) {
+document.getElementById('test').style.fontFamily = value
+document.getElementById('custom').style.fontFamily = value
+}
+</script>
+</head>
+<body>
+<div>Test passes if the text justifies as you would expect [exploratory test].</div>
+<div id="advice"> Use the slider to adjust the width of the box.<br/>
+<input id="fontSizeSlider" min="10" max="90" step=".25" value="90" oninput="document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*this.value); tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.width = this.value+'%';}" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">90</span>px</div>
+<script>document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*90)</script>
+
+<p>Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="document.getElementById('sizeOfFont').textContent = this.value; tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.fontSize = this.value+'px';}" style="width:40%; margin-left: 5%;" type="range"/> <span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>Change the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/></p>
+
+
+
+<div class="test" id="test" lang="th">2. ทุกคนมีสิทธิที่จะออกจากประเทศใด ๆ ไป รวมทั้งประเทศของตนเองด้วย และที่จะกลับยังประเทศตน</div>
+
+
+
+<div>Add your own test: <input id="in" type="text" placeholder="Add Thai text here."/> <button onClick="document.getElementById('custom').textContent = document.getElementById('in').value">Go</button></div>
+<div id="custom" class="test" lang="th"></div>
+
+<p>Default setting is <code>text-align: justify</code></p>
+<p>Set <code>text-justify</code> to
+<label onClick="setTextJustify('none')"><input type="radio" name="textJustify"/><code>none</code></label>
+<label onClick="setTextJustify('auto')"><input type="radio" checked name="textJustify"/><code>auto</code></label>
+<label onClick="setTextJustify('inter-character')"><input type="radio" name="textJustify"/><code>inter-character</code></label>
+<label onClick="setTextJustify('distribute')"><input type="radio" name="textJustify"/><code>distribute</code></label>
+<label onClick="setTextJustify('inter-word')"><input type="radio" name="textJustify"/><code>inter-word</code></label>
+</p>
+</body>
+</html>

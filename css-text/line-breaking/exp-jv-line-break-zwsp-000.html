@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Javanese line break with ZWSP</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<meta name="assert" content="[exploratory] Javanese lines break at ZWSP.">
+<link rel="help" href="https://www.w3.org/TR/2018/WD-css-text-3-20180920/#line-breaking">
+<style>
+/* the CSS below is not part of the test */
+.test {
+margin: 2em 5%;
+width: 90%;
+font-size: 36px;
+border: 1px solid orange;
+}
+</style>
+</head>
+<body>
+<p>Test passes if the text breaks where ZWSP is inserted between orthographic syllable boundaries.</p>
+<div id="advice"> Use the slider to adjust the width of the box and observe break points.<br/>
+<input id="fontSizeSlider" min="10" max="90" step=".25" value="90" oninput="document.getElementById('sizeIndicator').textContent = this.value; document.getElementById('test').style.width = this.value+'%';" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">90</span>%</div>
+
+
+<div class="test" id="test" lang="jv-java">꧋ꦱ​ꦧꦼ​ꦤ꧀ꦲꦸ​ꦮꦺꦴꦁ​ꦏ​ꦭ​ꦲꦶ​ꦫ​ꦏꦺ​ꦏ​ꦤ꧀ꦛꦶ​ꦩꦂ​ꦢꦶ​ꦏ​ꦭ​ꦤ꧀ꦢꦂ​ꦧꦺ​ꦩꦂ​ꦠ​ꦧ​ꦠ꧀ꦭ​ꦤ꧀ꦲ​ꦏ꧀ꦲ​ꦏ꧀ꦏꦁ​ꦥ​ꦝ꧉</div>
+
+
+</body>
+</html>
