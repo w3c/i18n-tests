@@ -17,7 +17,7 @@ f.searchString = 'results-custom-counter-styles' // blog search string - usually
 f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2015-08-24', time:'10:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2016-04-11', time:'19:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="custom-counter-styles-data/data.js"></script>
-<script src="custom-counter-styles-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/custom-counter-styles-data.js"></script>
+<script src="../batches/custom-counter-styles.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -239,9 +239,6 @@ drawResults(
 	'arabic', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#arabic-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-001.html',
 						'suffixes/list-style-type-001.html',
@@ -258,9 +255,6 @@ drawResults(
 	'armenian', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'3', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#armenian-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-110.html',
 						'suffixes/list-style-type-110.html',
@@ -278,9 +272,6 @@ drawResults(
 	'bengali', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'4', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#bengali-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-010.html',
 						'suffixes/list-style-type-010.html',
@@ -293,9 +284,6 @@ drawResults(
 	'cyrillic', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'5', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#cyrillic-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-031.html',
 						'suffixes/list-style-type-031.html',
@@ -337,9 +325,6 @@ drawResults(
 	'devanagari', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'6', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#devanagari-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-009.html',
 						'suffixes/list-style-type-009.html',
@@ -354,9 +339,6 @@ drawResults(
 	'ethiopic', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'7', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#ethiopic-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-059.html',
 						'suffixes/list-style-type-059.html',
@@ -409,9 +391,6 @@ drawResults(
 	'georgian', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'8', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#georgian-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-114.html',
 						'suffixes/list-style-type-114.html',
@@ -423,9 +402,6 @@ drawResults(
 	'greek', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'9', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#greek-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-030.html',
 						'suffixes/list-style-type-030.html',
@@ -447,9 +423,6 @@ drawResults(
 	'gujarati', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'10', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#gujarati-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-012.html',
 						'suffixes/list-style-type-012.html',
@@ -460,9 +433,6 @@ drawResults(
 	'gurmukhi', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'11', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#gurmukhi-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-014.html',
 						'suffixes/list-style-type-014.html',
@@ -473,9 +443,6 @@ drawResults(
 	'hebrew', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'12', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#hebrew-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-116.html',
 						'suffixes/list-style-type-116.html',
@@ -487,9 +454,6 @@ drawResults(
 	'chinese', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'13', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#chinese-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-024.html',
 						'suffixes/list-style-type-024.html',
@@ -508,14 +472,10 @@ drawResults(
 		]
 	 )
 
-
 drawResults(
 	'kana', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'14', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#kana-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-049.html',
 						'suffixes/list-style-type-049.html',
@@ -532,9 +492,6 @@ drawResults(
 	'kannada', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'15', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#kannada-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-015.html',
 						'suffixes/list-style-type-015.html',
@@ -545,9 +502,6 @@ drawResults(
 	'khmer', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'16', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#khmer-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-005.html',
 						'suffixes/list-style-type-005.html',
@@ -564,9 +518,6 @@ drawResults(
 	'korean', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'17', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#korean-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-121.html',
 						'suffixes/list-style-type-121.html',
@@ -589,9 +540,6 @@ drawResults(
 	'lao', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'18', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#lao-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-006.html',
 						'suffixes/list-style-type-006.html',
@@ -602,9 +550,6 @@ drawResults(
 	'latin', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'19', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#latin-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-025.html',
 						'suffixes/list-style-type-025.html',
@@ -627,9 +572,6 @@ drawResults(
 	'lepcha', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'20', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#lepcha-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-016.html',
 						'suffixes/list-style-type-016.html',
@@ -640,9 +582,6 @@ drawResults(
 	'malayalam', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'21', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#malayalam-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-017.html',
 						'suffixes/list-style-type-017.html',
@@ -653,9 +592,6 @@ drawResults(
 	'mongolian', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'22', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#mongolian-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-023.html',
 						'suffixes/list-style-type-023.html',
@@ -666,9 +602,6 @@ drawResults(
 	'myanmar', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'23', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#myanmar-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-007.html',
 						'suffixes/list-style-type-007.html',
@@ -681,9 +614,6 @@ drawResults(
 	'oriya', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'24', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#oriya-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-019.html',
 						'suffixes/list-style-type-019.html',
@@ -694,9 +624,6 @@ drawResults(
 	'tamil', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'25', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#tamil-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-020.html',
 						'suffixes/list-style-type-020.html',
@@ -710,9 +637,6 @@ drawResults(
 	'telugu', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'26', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#telugu-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-021.html',
 						'suffixes/list-style-type-021.html',
@@ -723,9 +647,6 @@ drawResults(
 	'thai', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'27', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#thai-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-003.html',
 						'suffixes/list-style-type-003.html',
@@ -738,9 +659,6 @@ drawResults(
 	'tibetan', // sectionid 
 	'custom-counter-styles', // base
 	'custom-counter-styles', // batch
-	'28', // specsection
-	'http://www.w3.org/TR/predefined-counter-styles/#tibetan-styles', // uri 
-	'predefined-counter-styles', // related 
 	 [
 						'list-style-type-022.html',
 						'suffixes/list-style-type-022.html',
