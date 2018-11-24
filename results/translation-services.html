@@ -17,7 +17,7 @@ f.searchString = 'results-translation-services' // blog search string - usually 
 f.firstPubDate = '2012-12-22' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2014-02-18', time:'07:26'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2016-05-31', time:'12:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="translation-services-data/data.js"></script>
-<script src="translation-services-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/translation-services-data.js"></script>
+<script src="../batches/translation-services.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>

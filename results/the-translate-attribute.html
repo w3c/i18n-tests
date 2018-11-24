@@ -17,7 +17,7 @@ f.searchString = 'results-the-translate-attribute' // blog search string - usual
 f.firstPubDate = '2012-12-22' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2015-08-12', time:'10:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2016-05-31', time:'14:45'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="the-translate-attribute-data/data.js"></script>
-<script src="the-translate-attribute-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/the-translate-attribute-data.js"></script>
+<script src="../batches/the-translate-attribute.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -90,22 +90,11 @@ f.additionalLinks = ''
   <h2 id="detect"><a href="#detect">Detecting translate mode</a></h2>
   <div id="detect-data"></div>
 </section>
-
-
-
-
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script> 
 drawResults(
 	'detect', // sectionid 
 	'html/dom/elements/global-attributes/the-translate-attribute', // base
 	'the-translate-attribute', // batch
-	'3.2.5.4', // specsection
-	'http://www.w3.org/TR/html5/dom.html#the-translate-attribute', // uri 
-	'html5-translate', // related 
 	 [
 						'the-translate-attribute-007.html',
 						'the-translate-attribute-008.html',
@@ -115,10 +104,6 @@ drawResults(
 						'the-translate-attribute-012.html',
 		]
 	 )
-
-
-
-
 </script>
 
 
