@@ -17,7 +17,7 @@ f.searchString = 'results-white-space' // blog search string - usually the filen
 f.firstPubDate = '2015-03-02' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-03', time:'10:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-03', time:'10:07'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="white-space-data/data.js"></script>
-<script src="white-space-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/white-space-data.js"></script>
+<script src="../batches/white-space.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -92,32 +92,11 @@ CSS3 Text, white-space</h1>
   <h3 id="segment"><a href="#segment">Segment break transformation</a></h3>
   <div id="segment-data"></div>
 </section>
-
-<section>
-  <h3 id="collapse"><a href="#collapse">White-space collapse</a></h3>
-  <div id="collapse-data"></div>
-<section class="notes">
-<p class="notesheader">Notes</p>
-<ol>
-<li> white-space-collapse-002.html, IE11: All tests pass except those for RLI. This is presumably because RLI is not yet recognized by IE. </li>
-</ol>
-</section>
-</section>
-</section>
-
-
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script>
 drawResults(
 	'segment', // sectionid 
 	'css-text', // base
 	'white-space', // batch
-	'4.1.1', // specsection
-	'http://dev.w3.org/csswg/css-text/#white-space-phase-1', // uri 
-	'css3-text', // related 
 	 [
         'white-space/seg-break-transformation-000.html', 
         'white-space/seg-break-transformation-001.html', 
@@ -138,24 +117,36 @@ drawResults(
         'white-space/seg-break-transformation-017.html'
 		]
 	 )
+</script>
 
+
+
+<section>
+  <h3 id="collapse"><a href="#collapse">White-space collapse</a></h3>
+  <div id="collapse-data"></div>
+<section class="notes">
+<p class="notesheader">Notes</p>
+<ol>
+<li> white-space-collapse-002.html, IE11: All tests pass except those for RLI. This is presumably because RLI is not yet recognized by IE. </li>
+</ol>
+</section>
+</section>
+<script>
 drawResults(
 	'collapse', // sectionid 
 	'css-text', // base
 	'white-space', // batch
-	'4.1.1', // specsection
-	'http://dev.w3.org/csswg/css-text/#white-space-phase-1', // uri 
-	'css3-text', // related 
 	 [
         'white-space/white-space-collapse-000.html', 
         'white-space/white-space-collapse-001.html', 
         'white-space/white-space-collapse-002.html', 
 		]
 	 )
-
-
-
 </script>
+</section>
+
+
+
 
 
 
