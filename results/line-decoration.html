@@ -17,7 +17,7 @@ f.searchString = 'results-css-ruby' // blog search string - usually the filename
 f.firstPubDate = '2017-03-30' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2017-04-10', time:'20:43'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2017-04-10', time:'20:43'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="line-decoration-data/data.js"></script>
-<script src="line-decoration-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/line-decoration-data.js"></script>
+<script src="../batches/line-decoration.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -203,9 +203,6 @@ drawResults(
 	'text_dec_hor', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-001.html',
 		'text-decoration-002.html',
@@ -222,9 +219,6 @@ drawResults(
 	'text_dec_rl', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-041.html',
 		'text-decoration-040a.html',
@@ -250,9 +244,6 @@ drawResults(
 	'text_dec_lr', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-080.html',
 		'text-decoration-081.html',
@@ -266,9 +257,6 @@ drawResults(
 	'text_dec_srl', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-090.html',
 		'text-decoration-091.html',
@@ -284,9 +272,6 @@ drawResults(
 	'text_dec_slr', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-095.html',
 		'text-decoration-096.html',
@@ -304,9 +289,6 @@ drawResults(
 	'text_dec_line_hor', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-line-001.html',
 		'text-decoration-line-002.html',
@@ -323,9 +305,6 @@ drawResults(
 	'text_dec_line_rl', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-line-041.html',
 		'text-decoration-line-040a.html',
@@ -351,9 +330,6 @@ drawResults(
 	'text_dec_line_lr', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-line-080.html',
 		'text-decoration-line-081.html',
@@ -367,9 +343,6 @@ drawResults(
 	'text_dec_line_srl', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-line-090.html',
 		'text-decoration-line-091.html',
@@ -385,9 +358,6 @@ drawResults(
 	'text_dec_line_slr', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-line-095.html',
 		'text-decoration-line-096.html',
@@ -407,9 +377,6 @@ drawResults(
 	'text_dec_style', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.3', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-style-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-style-009.html',
 		'text-decoration-style-010.html',
@@ -431,9 +398,6 @@ drawResults(
 	'text_dec_skip', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.5', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-decoration-skip-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-decoration-skip-015.html',
 		'text-decoration-skip-015a.html',
@@ -455,9 +419,6 @@ drawResults(
 	'text_und_pos', // sectionid 
 	'css-text-decor/line-decoration', // base
 	'line-decoration', // batch
-	'2.6', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-underline-position-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-underline-position-019.html',
 		'text-underline-position-020.html',
