@@ -18,7 +18,7 @@ f.searchString = 'results-first-letter' // blog search string - usually the file
 f.firstPubDate = '2014-02-14' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-04', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-04', time:'06:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="first-letter-data/data.js"></script>
-<script src="first-letter-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/first-letter-data.js"></script>
+<script src="../batches/first-letter.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -89,7 +89,19 @@ Selectors, first-letter</h1>
   <h2 id="latin"><a href="#latin">Latin text</a></h2>
   <div id="latin-data"></div>
 </section>
-
+<script>
+drawResults(
+	'latin', // sectionid 
+	'selectors/pseudo-elements/first-letter', // base
+	'first-letter', // batch
+	 [
+        'css3-selectors-first-letter-001.html',
+        'css3-selectors-first-letter-002.html',
+        'css3-selectors-first-letter-003.html',
+        'css3-selectors-first-letter-004.html',
+		]
+	 )
+</script>
 
 
 
@@ -111,33 +123,11 @@ Selectors, first-letter</h1>
   </ol>
 </section>
 </section>
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
-drawResults(
-	'latin', // sectionid 
-	'selectors/pseudo-elements/first-letter', // base
-	'first-letter', // batch
-	'7.2', // specsection
-	'http://www.w3.org/TR/css3-selectors/#first-letter', // uri 
-	'selectors', // related 
-	 [
-        'css3-selectors-first-letter-001.html',
-        'css3-selectors-first-letter-002.html',
-        'css3-selectors-first-letter-003.html',
-        'css3-selectors-first-letter-004.html',
-		]
-	 )
-
+<script> 
 drawResults(
 	'devanagari', // sectionid 
 	'selectors/pseudo-elements/first-letter', // base
 	'first-letter', // batch
-	'7.2', // specsection
-	'http://www.w3.org/TR/css3-selectors/#first-letter', // uri 
-	'selectors', // related 
 	 [
         'css3-selectors-first-letter-010.html',
         'css3-selectors-first-letter-011.html',
@@ -146,9 +136,6 @@ drawResults(
         'css3-selectors-first-letter-015.html',
 		]
 	 )
-
-
-
 </script>
 
 

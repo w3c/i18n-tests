@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-REPLACEMENTS
-CSS Text, language selectors 
-lang-selectors
-BASE
-BATCH
-RELATED
-Change dates
--->
-
 <head>
 <meta charset="utf-8" />
 <title>CSS Text, language selectors: Summarized test results</title>
@@ -28,7 +18,7 @@ f.searchString = 'results-lang-selectors' // blog search string - usually the fi
 f.firstPubDate = '2009-04-16' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-04', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-04', time:'06:37'} // date and time of latest edits to this document/translation
@@ -51,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="lang-selectors-data/data.js"></script>
-<script src="lang-selectors-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/lang-selectors-data.js"></script>
+<script src="../batches/lang-selectors.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -118,9 +108,6 @@ drawResults(
 	'colonlang', // sectionid 
 	'selectors/simple-selectors', // base
 	'lang-selectors', // batch
-	'6.6.3', // specsection
-	'http://www.w3.org/TR/selectors/#lang-pseudo', // uri 
-	'selectors', // related 
 	 [
         'pseudo-classes/css3-selectors-lang-001.html',
         'pseudo-classes/css3-selectors-lang-002.html',
@@ -143,9 +130,6 @@ drawResults(
 	'langbar', // sectionid 
 	'selectors/simple-selectors', // base
 	'lang-selectors', // batch
-	'6.3', // specsection
-	'http://www.w3.org/TR/selectors/#attribute-selectors', // uri 
-	'selectors', // related 
 	 [
         'attribute-selectors/css3-selectors-lang-021.html',
         'attribute-selectors/css3-selectors-lang-022.html',
@@ -168,9 +152,6 @@ drawResults(
 	'langequals', // sectionid 
 	'selectors/simple-selectors', // base
 	'lang-selectors', // batch
-	'6.3', // specsection
-	'http://www.w3.org/TR/selectors/#attribute-selectors', // uri 
-	'selectors', // related 
 	 [
         'attribute-selectors/css3-selectors-lang-041.html',
         'attribute-selectors/css3-selectors-lang-042.html',

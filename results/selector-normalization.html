@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-REPLACEMENTS
-Selectors, selector normalization 
-selector-normalization
-BASE
-BATCH
-RELATED
-Change dates
--->
-
 <head>
 <meta charset="utf-8" />
 <title>Selectors, selector normalization: Summarized test results</title>
@@ -28,7 +18,7 @@ f.searchString = 'results-selector-normalization' // blog search string - usuall
 f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-03', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-03', time:'06:37'} // date and time of latest edits to this document/translation
@@ -51,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="selector-normalization-data/data.js"></script>
-<script src="selector-normalization-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/selector-normalization-data.js"></script>
+<script src="../batches/selector-normalization.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -107,36 +97,30 @@ Selectors, selector normalization</h1>
   </ol>
   </section>
 </section>
-
-<section>
-  <h2 id="classname"><a href="#classname">Matching selector to class name</a></h2>
-  <div id="classname-data"></div>
-</section>
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script>
 drawResults(
 	'control', // sectionid 
 	'selectors/selectors', // base
 	'selector-normalization', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css3-selectors/#selectors', // uri 
-	'selectors', // related 
 	 [
         'selectors-normalization-001.html',
         'selectors-normalization-002.html',
 		]
 	 )
+</script>
 
+
+
+
+<section>
+  <h2 id="classname"><a href="#classname">Matching selector to class name</a></h2>
+  <div id="classname-data"></div>
+</section>
+<script>
 drawResults(
 	'classname', // sectionid 
 	'selectors/selectors', // base
 	'selector-normalization', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css3-selectors/#selectors', // uri 
-	'selectors', // related 
 	 [
         'selectors-normalization-003.html',
         'selectors-normalization-004.html',
@@ -146,9 +130,6 @@ drawResults(
         'selectors-normalization-008.html',
 		]
 	 )
-
-
-
 </script>
 
 
