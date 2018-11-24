@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-REPLACEMENTS
-HTML5, dir basics 
-the-dir-attribute
-BASE
-BATCH
-RELATED
-Change dates
--->
-
 <head>
 <meta charset="utf-8" />
 <title>HTML5, dir basics: Summarized test results</title>
@@ -28,7 +18,7 @@ f.searchString = 'results-the-dir-attribute' // blog search string - usually the
 f.firstPubDate = '2009-04-16' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-05', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-05', time:'06:37'} // date and time of latest edits to this document/translation
@@ -51,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="the-dir-attribute-data/data.js"></script>
-<script src="the-dir-attribute-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/the-dir-attribute-data.js"></script>
+<script src="../batches/the-dir-attribute.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -118,9 +108,6 @@ drawResults(
 	'basic', // sectionid 
 	'html/dom/elements/global-attributes/the-dir-attribute', // base
 	'the-dir-attribute', // batch
-	'3.2.5.6', // specsection
-	'http://www.w3.org/TR/html5/Overview.html#the-dir-attribute', // uri 
-	'html5-text-direction', // related 
 	 [
         'the-dir-attribute-001.html',
         'the-dir-attribute-002.html',
@@ -135,9 +122,6 @@ drawResults(
 	'inheritance', // sectionid 
 	'html/dom/elements/global-attributes/the-dir-attribute', // base
 	'the-dir-attribute', // batch
-	'3.2.5.6', // specsection
-	'http://www.w3.org/TR/html5/Overview.html#the-dir-attribute', // uri 
-	'html5-text-direction', // related 
 	 [
         'the-dir-attribute-007.html',
         'the-dir-attribute-008.html',
@@ -149,9 +133,6 @@ drawResults(
 	'default', // sectionid 
 	'html/dom/elements/global-attributes/the-dir-attribute', // base
 	'the-dir-attribute', // batch
-	'3.2.5.6', // specsection
-	'http://www.w3.org/TR/html5/Overview.html#the-dir-attribute', // uri 
-	'html5-text-direction', // related 
 	 [
         'the-dir-attribute-010.html',
         'the-dir-attribute-011.html',

@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-REPLACEMENTS
-HTML5, dirname 
-the-dirname-attribute
-BASE
-BATCH
-RELATED
-Change dates
--->
-
 <head>
 <meta charset="utf-8" />
 <title>HTML5, dirname: Summarized test results</title>
@@ -28,7 +18,7 @@ f.searchString = 'results-the-dirname-attribute' // blog search string - usually
 f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-03', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-03', time:'06:37'} // date and time of latest edits to this document/translation
@@ -51,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="the-dirname-attribute-data/data.js"></script>
-<script src="the-dirname-attribute-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/the-dirname-attribute-data.js"></script>
+<script src="../batches/the-dirname-attribute.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -98,18 +88,11 @@ HTML5, dirname</h1>
   <h2 id="support"><a href="#support">Results</a></h2>
   <div id="support-data"></div>
 </section>
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script> 
 drawResults(
 	'support', // sectionid 
 	'html/semantics/forms/attributes-common-to-form-controls', // base
 	'the-dirname-attribute', // batch
-	'4.10.19.2', // specsection
-	'http://www.w3.org/TR/html5/forms.html#submitting-element-directionality:-the-dirname-attribute', // uri 
-	'html5-text-direction', // related 
 	 [
         'the-dirname-attribute-001.html',
         'the-dirname-attribute-002.html',
@@ -121,9 +104,6 @@ drawResults(
         'the-dirname-attribute-008.html',
 		]
 	 )
-
-
-
 </script>
 
 

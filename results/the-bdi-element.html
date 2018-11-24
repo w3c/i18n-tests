@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-REPLACEMENTS
-HTML5, bdi 
-the-bdi-element
-BASE
-BATCH
-RELATED
-Change dates
--->
-
 <head>
 <meta charset="utf-8" />
 <title>HTML5, bdi: Summarized test results</title>
@@ -28,7 +18,7 @@ f.searchString = 'results-the-bdi-element' // blog search string - usually the f
 f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-03', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-03', time:'06:37'} // date and time of latest edits to this document/translation
@@ -51,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="the-bdi-element-data/data.js"></script>
-<script src="the-bdi-element-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/the-bdi-element-data.js"></script>
+<script src="../batches/the-bdi-element.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -98,36 +88,31 @@ HTML5, bdi</h1>
   <h2 id="bdi_basic"><a href="#bdi_basic">Basic tests</a></h2>
   <div id="bdi_basic-data"></div>
 </section>
-
-<section>
-  <h2 id="bdi_other"><a href="#bdi_other">Other tests</a></h2>
-  <div id="bdi_other-data"></div>
-</section>
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script>
 drawResults(
 	'bdi_basic', // sectionid 
 	'html/semantics/text-level-semantics/the-bdi-element', // base
 	'the-bdi-element', // batch
-	'4.5.26', // specsection
-	'http://www.w3.org/TR/html5/Overview.html#the-bdi-element', // uri 
-	'html5-text-direction', // related 
 	 [
         'the-bdi-element-080.html',
         'the-bdi-element-081.html',
 		]
 	 )
+</script>
 
+
+
+
+
+<section>
+  <h2 id="bdi_other"><a href="#bdi_other">Other tests</a></h2>
+  <div id="bdi_other-data"></div>
+</section>
+<script> 
 drawResults(
 	'bdi_other', // sectionid 
 	'html/semantics/text-level-semantics/the-bdi-element', // base
 	'the-bdi-element', // batch
-	'4.5.26', // specsection
-	'http://www.w3.org/TR/html5/Overview.html#the-bdi-element', // uri 
-	'html5-text-direction', // related 
 	 [
         'the-bdi-element-082.html',
         'the-bdi-element-083.html',
@@ -146,8 +131,6 @@ drawResults(
         'the-bdi-element-096.html',
 		]
 	 )
-
-
 </script>
 
 

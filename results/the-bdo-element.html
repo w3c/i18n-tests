@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-REPLACEMENTS
-HTML5, bdo 
-the-bdo-element
-BASE
-BATCH
-RELATED
-Change dates
--->
-
 <head>
 <meta charset="utf-8" />
 <title>HTML5, bdo: Summarized test results</title>
@@ -28,7 +18,7 @@ f.searchString = 'results-the-bdo-element' // blog search string - usually the f
 f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-03', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-03', time:'06:37'} // date and time of latest edits to this document/translation
@@ -51,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="the-bdo-element-data/data.js"></script>
-<script src="the-bdo-element-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/the-bdo-element-data.js"></script>
+<script src="../batches/the-bdo-element.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -92,24 +82,16 @@ HTML5, bdo</h1>
 <!-- ·········································································· -->
 <br style="clear:both;"/>
 
-<!-- SECTION CONTAINERS GO HERE -->
 
 <section>
   <h2 id="bdo"><a href="#bdo">Basic direction overrides</a></h2>
   <div id="bdo-data"></div>
 </section>
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script>
 drawResults(
 	'bdo', // sectionid 
 	'html/semantics/text-level-semantics/the-bdo-element', // base
 	'the-bdo-element', // batch
-	'4.5.27', // specsection
-	'http://www.w3.org/TR/html5/text-level-semantics.html#the-bdo-element', // uri 
-	'html5-text-direction', // related 
 	 [
         'the-bdo-element-001.html',
         'the-bdo-element-002.html',
@@ -117,8 +99,6 @@ drawResults(
         'the-bdo-element-004.html',
 		]
 	 )
-
-
 </script>
 
 

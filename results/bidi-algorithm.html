@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <title>Bidi algorithm: Summarized test results</title>
 <meta name="description" content="Summary of results of CSS3 Text module tests" />
-<script type="text/javascript">
+<script>
 var f = { }
 
 // AUTHORS should fill in these assignments:
-f.directory = 'tests/repo/results'+'/' // the path to this file, not including /International or the file name
+f.directory = '/results'+'/' // the path to this file, not including /i18n-tests or the file name
 f.filename = 'bidi-algorithm' // the file name WITHOUT extensions
 f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
 f.previousauthors = '' // as above
@@ -17,10 +17,10 @@ f.searchString = 'results-bidi-algorithm' // blog search string - usually the fi
 f.firstPubDate = '2015-03-02' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2015-03-02', time:'15:20'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2017-06-14', time:'14:00'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2018-11-20', time:'16:20'} // date and time of latest edits to this document/translation
 f.contributors = '' // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 f.sources = '' // describes sources of information
@@ -32,18 +32,17 @@ f.breadcrumb = 'tests'
 
 f.additionalLinks = ''
 </script>
-<script type="text/javascript" src="bidi-algorithm-data/translation.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
-<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<script src="bidi-algorithm-data/translation.js"> </script>
+<script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="bidi-algorithm-data/data.js"></script>
-<script src="bidi-algorithm-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/bidi-algorithm-data.js"></script>
+<script src="../batches/bidi-algorithm.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -57,8 +56,8 @@ f.additionalLinks = ''
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p>
+    <!--p><span id="intendedAudience" class="leadin">Intended audience:</span> 
+    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p-->
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
@@ -96,6 +95,25 @@ f.additionalLinks = ''
   <h3 id="following_number"><a href="#following_number">Isolation from following number</a></h3>
   <div id="following_number-data"></div>
 </section>
+<script>
+drawResults(
+	'following_number', // sectionid 
+	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
+	'bidi-algorithm', // batch
+	 [
+		'rli-lri-fsi-pdi-001a.html',
+		'rli-lri-fsi-pdi-001b.html',
+		'rli-lri-fsi-pdi-001c.html',
+		'rli-lri-fsi-pdi-002a.html',
+		'rli-lri-fsi-pdi-002b.html',
+		'rli-lri-fsi-pdi-002c.html',
+		'rli-lri-fsi-pdi-003a.html',
+		'rli-lri-fsi-pdi-003b.html',
+		'rli-lri-fsi-pdi-003c.html',
+		]
+	 )
+</script>
+
 
 <section>
   <h3 id="preceding_number"><a href="#preceding_number">Isolation from preceding number</a></h3>
@@ -173,34 +191,11 @@ f.additionalLinks = ''
 
 <script> 	// DRAW THE TABLES
   
-drawResults(
-	'following_number', // sectionid 
-	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
-	'bidi-algorithm', // batch
-	'3.2.6', // specsection
-	'http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm', // uri 
-	'html5-text-direction', // related 
-	 [
-		'rli-lri-fsi-pdi-001a.html',
-		'rli-lri-fsi-pdi-001b.html',
-		'rli-lri-fsi-pdi-001c.html',
-		'rli-lri-fsi-pdi-002a.html',
-		'rli-lri-fsi-pdi-002b.html',
-		'rli-lri-fsi-pdi-002c.html',
-		'rli-lri-fsi-pdi-003a.html',
-		'rli-lri-fsi-pdi-003b.html',
-		'rli-lri-fsi-pdi-003c.html',
-		]
-	 )
-
 
 drawResults(
 	'preceding_number', // sectionid 
 	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
 	'bidi-algorithm', // batch
-	'3.2.6', // specsection
-	'http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm', // uri 
-	'html5-text-direction', // related 
 	 [
 		'rli-lri-fsi-pdi-004a.html',
 		'rli-lri-fsi-pdi-004b.html',
@@ -213,9 +208,6 @@ drawResults(
 	'following_text', // sectionid 
 	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
 	'bidi-algorithm', // batch
-	'3.2.6', // specsection
-	'http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm', // uri 
-	'html5-text-direction', // related 
 	 [
 		'rli-lri-fsi-pdi-005a.html',
 		'rli-lri-fsi-pdi-005b.html',
@@ -234,9 +226,6 @@ drawResults(
 	'preceding_text', // sectionid 
 	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
 	'bidi-algorithm', // batch
-	'3.2.6', // specsection
-	'http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm', // uri 
-	'html5-text-direction', // related 
 	 [
 		'rli-lri-fsi-pdi-008a.html',
 		'rli-lri-fsi-pdi-008b.html',
@@ -249,9 +238,6 @@ drawResults(
 	'surrounding_text', // sectionid 
 	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
 	'bidi-algorithm', // batch
-	'3.2.6', // specsection
-	'http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm', // uri 
-	'html5-text-direction', // related 
 	 [
 		'rli-lri-fsi-pdi-009a.html',
 		'rli-lri-fsi-pdi-009b.html',
@@ -267,9 +253,6 @@ drawResults(
 	'balanced_brackets', // sectionid 
 	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
 	'bidi-algorithm', // batch
-	'3.2.6', // specsection
-	'http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm', // uri 
-	'html5-text-direction', // related 
 	 [
 		'brackets-001.html',
 		'brackets-002.html',
@@ -282,9 +265,6 @@ drawResults(
 	'unbalanced_brackets', // sectionid 
 	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
 	'bidi-algorithm', // batch
-	'3.2.6', // specsection
-	'http://www.w3.org/TR/html5/dom.html#requirements-relating-to-the-bidirectional-algorithm', // uri 
-	'html5-text-direction', // related 
 	 [
 		'brackets-010.html',
 		]
@@ -315,10 +295,10 @@ drawResults(
 	</ul>
 </section>
 
-<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
-<script type="text/javascript">completePage()</script>
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
 
-<script type="text/javascript">  
+<script>  
 generateStuffInPage();
 </script>
 </body>
