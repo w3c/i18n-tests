@@ -17,7 +17,7 @@ f.searchString = 'results-text-transform' // blog search string - usually the fi
 f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2015-08-24', time:'10:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2016-12-16', time:'19:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="text-transform-data/data.js"></script>
-<script src="text-transform-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/text-transform-data.js"></script>
+<script src="../batches/text-transform.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -322,9 +322,6 @@ drawResults(
 	'latin_ul', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-001.html',
 		'text-transform/text-transform-upperlower-002.html',
@@ -347,9 +344,6 @@ drawResults(
 	'greek_coptic_ul', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-014.html',
 		'text-transform/text-transform-upperlower-015.html',
@@ -363,9 +357,6 @@ drawResults(
 	'cyrillic_ul', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-018.html',
 		'text-transform/text-transform-upperlower-019.html',
@@ -381,9 +372,6 @@ drawResults(
 	'armenian_ul', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-022.html',
 		'text-transform/text-transform-upperlower-023.html',
@@ -395,9 +383,6 @@ drawResults(
 	'cherokee_ul', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-044.html',
 		'text-transform/text-transform-upperlower-045.html',
@@ -409,9 +394,6 @@ drawResults(
 	'deseret_ul', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-028.html',
 		'text-transform/text-transform-upperlower-029.html',
@@ -423,9 +405,6 @@ drawResults(
 	'georgian_ul', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-030.html',
 		'text-transform/text-transform-upperlower-031.html',
@@ -437,9 +416,6 @@ drawResults(
 	'numforms_ul', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-024.html',
 		'text-transform/text-transform-upperlower-025.html',
@@ -451,9 +427,6 @@ drawResults(
 	'alphanum_ul', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-026.html',
 		'text-transform/text-transform-upperlower-027.html',
@@ -467,9 +440,6 @@ drawResults(
 	'fullwidth', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-fullwidth-001.html',
 		'text-transform/text-transform-fullwidth-002.html',
@@ -487,9 +457,6 @@ drawResults(
 	'latin_cap', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-001.html',
 		'text-transform/text-transform-capitalize-003.html',
@@ -505,9 +472,6 @@ drawResults(
 	'greek_coptic_cap', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-014.html',
 		'text-transform/text-transform-capitalize-016.html',
@@ -519,9 +483,6 @@ drawResults(
 	'cyrillic_cap', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-018.html',
 		'text-transform/text-transform-capitalize-020.html',
@@ -533,9 +494,6 @@ drawResults(
 	'armenian_cap', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-022.html',
 		]
@@ -546,9 +504,6 @@ drawResults(
 	'cherokee_cap', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-029.html',
 		]
@@ -559,9 +514,6 @@ drawResults(
 	'deseret_cap', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-028.html',
 		]
@@ -572,9 +524,6 @@ drawResults(
 	'georgian_cap', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-030.html',
 		]
@@ -585,9 +534,6 @@ drawResults(
 	'numforms_cap', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-024.html',
 		]
@@ -598,9 +544,6 @@ drawResults(
 	'alphanum_cap', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-026.html',
 		]
@@ -611,9 +554,6 @@ drawResults(
 	'initial_punc', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-capitalize-031.html',
 		]
@@ -629,9 +569,6 @@ drawResults(
 	'latin_sc', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-032.html',
 		'text-transform/text-transform-upperlower-033.html',
@@ -643,9 +580,6 @@ drawResults(
 	'greek_coptic_sc', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-035.html',
 		'text-transform/text-transform-upperlower-038.html',
@@ -657,9 +591,6 @@ drawResults(
 	'armenian_sc', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-034.html',
 		]
@@ -670,9 +601,6 @@ drawResults(
 	'turkish_sc', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-upperlower-040.html',
 		'text-transform/text-transform-upperlower-041.html',
@@ -689,9 +617,6 @@ drawResults(
 	'dutch_tailoring', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-tailoring-001.html',
 		]
@@ -701,9 +626,6 @@ drawResults(
 	'greek_tailoring', // sectionid 
 	'css-text', // base
 	'text-transform', // batch
-	'2.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#text-transform', // uri 
-	'css3-text', // related 
 	 [
 		'text-transform/text-transform-tailoring-002.html',
 		'text-transform/text-transform-tailoring-002a.html',
