@@ -17,7 +17,8 @@ f.searchString = 'results-emphasis-marks' // blog search string - usually the fi
 f.firstPubDate = '2017-03-30' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2017-03-30', time:'10:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
+
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2017-03-30', time:'10:07'} // date and time of latest edits to this document/translation
@@ -41,9 +42,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="emphasis-marks-data/data.js"></script>
-<script src="emphasis-marks-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/emphasis-marks-data.js"></script>
+<script src="../batches/emphasis-marks.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -135,9 +136,6 @@ drawResults(
 	'text_emph', // sectionid 
 	'css-text-decor/emphasis-marks', // base
 	'emphasis-marks', // batch
-	'3.3', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-emphasis-001.html',
 		'text-emphasis-002.html',
@@ -166,9 +164,6 @@ drawResults(
 	'text_emph_v', // sectionid 
 	'css-text-decor/emphasis-marks', // base
 	'emphasis-marks', // batch
-	'3.3', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-emphasis-tbrl-001.html',
 		'text-emphasis-tbrl-002.html',
@@ -198,9 +193,6 @@ drawResults(
 	'text_emph_style', // sectionid 
 	'css-text-decor/emphasis-marks', // base
 	'emphasis-marks', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-style-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-emphasis-style-001.html',
 		'text-emphasis-style-002.html',
@@ -229,9 +221,6 @@ drawResults(
 	'text_emph_style_v', // sectionid 
 	'css-text-decor/emphasis-marks', // base
 	'emphasis-marks', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-style-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-emphasis-style-tbrl-001.html',
 		'text-emphasis-style-tbrl-002.html',
@@ -260,9 +249,6 @@ drawResults(
 	'text_emph_posn', // sectionid 
 	'css-text-decor/emphasis-marks', // base
 	'emphasis-marks', // batch
-	'3.4', // specsection
-	'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property', // uri 
-	'css3-text-decor', // related 
 	 [
 		'text-emphasis-position-001.html',
 		'text-emphasis-position-002.html',
