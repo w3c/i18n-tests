@@ -17,7 +17,7 @@ f.searchString = 'results-ruby-html' // blog search string - usually the filenam
 f.firstPubDate = '2015-05-22' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2015-05-22', time:'19:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2015-05-22', time:'19:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="ruby-html-data/data.js"></script>
-<script src="ruby-html-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/ruby-html-data.js"></script>
+<script src="../batches/ruby-html.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -138,9 +138,6 @@ drawResults(
     'styling', // sectionid 
 	'html/semantics/text-level-semantics/the-ruby-element', // base
     'ruby-html', // batch
-    '4.5.21', // specsection
-    'http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element', // uri 
-    'html', // related 
      [
         'ruby-styling-001.html',
         //'ruby-styling-002.html',
@@ -160,9 +157,6 @@ drawResults(
     'position', // sectionid 
 	'html/semantics/text-level-semantics/the-ruby-element', // base
     'ruby-html', // batch
-    '4.5.21', // specsection
-    'http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element', // uri 
-    'html', // related 
      [
         'ruby-position-001.html',
         'ruby-position-002.html',
@@ -176,9 +170,6 @@ drawResults(
     'double', // sectionid 
 	'html/semantics/text-level-semantics/the-ruby-element', // base
     'ruby-html', // batch
-    '4.5.21', // specsection
-    'http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element', // uri 
-    'html', // related 
      [
         'ruby-double-001.html',
         'ruby-double-002.html',
@@ -195,9 +186,6 @@ drawResults(
     'gaps', // sectionid 
 	'html/semantics/text-level-semantics/the-ruby-element', // base
     'ruby-html', // batch
-    '4.5.21', // specsection
-    'http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element', // uri 
-    'html', // related 
      [
         'ruby-gaps-001.html',
         'ruby-gaps-002.html',
