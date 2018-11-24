@@ -44,9 +44,9 @@ $template = str_replace('<!-- List of tests here -->', $testNameString, $templat
 $output = "var testresults = {\n}";
 
 // create .var file content
-$varoutput = "URI: ".$_GET['fnameShadow_results']."\n\n";
-$varoutput .= "Content-language: en\nContent-type: text/html\nURI: ".$_GET['fnameShadow_results'].".en.html\n\n";
-$varoutput .= "Content-type: text/html\nURI: ".$_GET['fnameShadow_results'].".en.html\n";
+//$varoutput = "URI: ".$_GET['fnameShadow_results']."\n\n";
+//$varoutput .= "Content-language: en\nContent-type: text/html\nURI: ".$_GET['fnameShadow_results'].".en.html\n\n";
+//$varoutput .= "Content-type: text/html\nURI: ".$_GET['fnameShadow_results'].".en.html\n";
 
 // create translations.js file content
 $vartrans = "var trans = { }\n\n";
@@ -68,13 +68,13 @@ else {
 	$numbytes = file_put_contents( '../results/'.$_GET['fnameShadow_results'].'-data/translation.js', "$vartrans");
 	chmod("../results/".$_GET['fnameShadow_results'].'-data/translation.js', 0777);
 
-	$numbytes = file_put_contents( '../results/'.$_GET['fnameShadow_results'].'.var', "$varoutput");
-	chmod("../results/".$_GET['fnameShadow_results'].'.var', 0777);
+	//$numbytes = file_put_contents( '../results/'.$_GET['fnameShadow_results'].'.var', "$varoutput");
+	//chmod("../results/".$_GET['fnameShadow_results'].'.var', 0777);
 
-	$numbytes = file_put_contents( '../results/'.$_GET['fnameShadow_results'].'.en.html', "$template");
-	chmod("../results/".$_GET['fnameShadow_results'].'.en.html', 0777);
+	$numbytes = file_put_contents( '../results/'.$_GET['fnameShadow_results'].'.html', "$template");
+	chmod("../results/".$_GET['fnameShadow_results'].'.html', 0777);
 
-	$mainFilesMsg = "Created results and .var page.";
+	$mainFilesMsg = "Created results page and -data directory.";
     }
 
 // give feedback
