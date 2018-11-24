@@ -17,7 +17,7 @@ f.searchString = 'results-writing-modes-bidi' // blog search string - usually th
 f.firstPubDate = '2015-03-25' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2017-05-05', time:'06:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2017-05-05', time:'06:07'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="writing-modes-bidi-data/data.js"></script>
-<script src="writing-modes-bidi-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/writing-modes-bidi-data.js"></script>
+<script src="../batches/writing-modes-bidi.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -183,9 +183,6 @@ drawResults(
 	'embed', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'bidi-embed-001.html',
 		'bidi-embed-002.html',
@@ -206,9 +203,6 @@ drawResults(
 	'isolate', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'bidi-isolate-001.html',
 		'bidi-isolate-002.html',
@@ -229,9 +223,6 @@ drawResults(
 	'normal', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'bidi-normal-001.html',
 		'bidi-normal-002.html',
@@ -252,9 +243,6 @@ drawResults(
 	'unset', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'bidi-unset-001.html',
 		'bidi-unset-002.html',
@@ -274,9 +262,6 @@ drawResults(
 	'bidi_override', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'bidi-override-001.html',
 		'bidi-override-002.html',
@@ -298,9 +283,6 @@ drawResults(
 	'isolate_override', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'bidi-isolate-override-001.html',
 		'bidi-isolate-override-002.html',
@@ -322,9 +304,6 @@ drawResults(
 	'plaintext', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'bidi-plaintext-001.html',
 		'bidi-plaintext-003.html',
@@ -343,9 +322,6 @@ drawResults(
 	'block_embed', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'block-embed-001.html',
 		'block-embed-002.html',
@@ -358,9 +334,6 @@ drawResults(
 	'block_override', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'block-override-001.html',
 		'block-override-002.html',
@@ -374,9 +347,6 @@ drawResults(
 	'block_override_isolate', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'block-override-isolate-001.html',
 		'block-override-isolate-002.html',
@@ -390,9 +360,6 @@ drawResults(
 	'block_plaintext', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'block-plaintext-001.html',
 		'block-plaintext-002.html',
@@ -408,9 +375,6 @@ drawResults(
 	'bidi_table', // sectionid 
 	'css-writing-modes/text-direction', // base
 	'writing-modes-bidi', // batch
-	'2', // specsection
-	'http://www.w3.org/TR/css-writing-modes-3/#text-direction', // uri 
-	'css3-writing-modes', // related 
 	 [
 		'bidi-table-001.html',
 		]

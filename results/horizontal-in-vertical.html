@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-REPLACEMENTS
-TITLE 
-horizontal-in-vertical
-BASE
-BATCH
-RELATED
-Change dates
--->
-
 <head>
 <meta charset="utf-8" />
 <title>Writing modes: horizontal in vertical: Summarized test results</title>
@@ -28,7 +18,7 @@ f.searchString = 'results-horizontal-in-vertical' // blog search string - usuall
 f.firstPubDate = '2018-03-04' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-04', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-04', time:'06:37'} // date and time of latest edits to this document/translation
@@ -51,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="horizontal-in-vertical-data/data.js"></script>
-<script src="horizontal-in-vertical-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/horizontal-in-vertical-data.js"></script>
+<script src="../batches/horizontal-in-vertical.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -99,36 +89,30 @@ Writing modes: horizontal in vertical</h1>
   <h2 id="text_orientation"><a href="#text_orientation">text-orientation</a></h2>
   <div id="text_orientation-data"></div>
 </section>
-
-<section>
-  <h2 id="text_combine_upright"><a href="#text_combine_upright">text-combine-upright</a></h2>
-  <div id="text_combine_upright-data"></div>
-</section>
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script>
 drawResults(
 	'text_orientation', // sectionid 
 	'css-writing-modes', // base
 	'horizontal-in-vertical', // batch
-	'5.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#text-orientation', // uri 
-	'css-writing-modes', // related 
 	 [
 		'text-orientation/text-orientation-upright-001.html',
 		'text-orientation/text-orientation-upright-002.html',
 		]
 	 )
+</script>
 
+
+
+
+<section>
+  <h2 id="text_combine_upright"><a href="#text_combine_upright">text-combine-upright</a></h2>
+  <div id="text_combine_upright-data"></div>
+</section>
+<script> 
 drawResults(
 	'text_combine_upright', // sectionid 
 	'css-writing-modes', // base
 	'horizontal-in-vertical', // batch
-	'9.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#text-combine-upright', // uri 
-	'css-writing-modes', // related 
 	 [
 		'text-combine-upright/text-combine-upright-all-001.html',
 		'text-combine-upright/text-combine-upright-all-002.html',
@@ -137,8 +121,6 @@ drawResults(
 		'text-combine-upright/text-combine-upright-digits-004.html',
 		]
 	 )
-
-
 </script>
 
 

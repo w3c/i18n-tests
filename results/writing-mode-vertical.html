@@ -17,7 +17,7 @@ f.searchString = 'results-writing-mode-vertical' // blog search string - usually
 f.firstPubDate = '2015-08-17' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2016-12-02', time:'12:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2016-12-02', time:'12:07'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="writing-mode-vertical-data/data.js"></script>
-<script src="writing-mode-vertical-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/writing-mode-vertical-data.js"></script>
+<script src="../batches/writing-mode-vertical.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -253,9 +253,6 @@ drawResults(
 	'rl_basics', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vrl-001.html',
 						'writing-mode-vrl-002.html',
@@ -267,9 +264,6 @@ drawResults(
 	'rl_glyphs', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vrl-005.html',
 						'writing-mode-vrl-007.html',
@@ -283,9 +277,6 @@ drawResults(
 	'rl_wrap', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vrl-012.html',
 						'writing-mode-vrl-014.html',
@@ -296,9 +287,6 @@ drawResults(
 	'rl_image', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vrl-015.html',
 		]
@@ -308,9 +296,6 @@ drawResults(
 	'rl_forms', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vrl-forms-001.html',
 						'writing-mode-vrl-forms-002.html',
@@ -325,9 +310,6 @@ drawResults(
 	'rl_tables', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vrl-table-001.html',
 						'writing-mode-vrl-table-002.html',
@@ -343,9 +325,6 @@ drawResults(
 	'lr_basics', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vlr-001.html',
 						'writing-mode-vlr-002.html',
@@ -357,9 +336,6 @@ drawResults(
 	'lr_glyphs', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vlr-005.html',
 						'writing-mode-vlr-006.html',
@@ -374,9 +350,6 @@ drawResults(
 	'lr_wrap', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vlr-012.html',
 						'writing-mode-vlr-014.html',
@@ -387,9 +360,6 @@ drawResults(
 	'lr_image', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vlr-015.html',
 		]
@@ -399,9 +369,6 @@ drawResults(
 	'lr_forms', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vlr-forms-001.html',
 						'writing-mode-vlr-forms-002.html',
@@ -416,9 +383,6 @@ drawResults(
 	'lr_tables', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'writing-mode-vlr-table-001.html',
 						'writing-mode-vlr-table-002.html',
@@ -435,9 +399,6 @@ drawResults(
 	'prop_rl_basics', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vrl-001-prop.html',
 						'proprietary/writing-mode-vrl-002-prop.html',
@@ -449,9 +410,6 @@ drawResults(
 	'prop_rl_glyphs', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vrl-005-prop.html',
 						'proprietary/writing-mode-vrl-007-prop.html',
@@ -465,9 +423,6 @@ drawResults(
 	'prop_rl_wrap', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vrl-012-prop.html',
 						'proprietary/writing-mode-vrl-014-prop.html',
@@ -478,9 +433,6 @@ drawResults(
 	'prop_rl_image', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vrl-015-prop.html',
 		]
@@ -490,9 +442,6 @@ drawResults(
 	'prop_rl_forms', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vrl-forms-001-prop.html',
 						'proprietary/writing-mode-vrl-forms-002-prop.html',
@@ -507,9 +456,6 @@ drawResults(
 	'prop_rl_tables', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vrl-table-001-prop.html',
 						'proprietary/writing-mode-vrl-table-002-prop.html',
@@ -527,9 +473,6 @@ drawResults(
 	'prop_lr_basics', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vlr-001-prop.html',
 						'proprietary/writing-mode-vlr-002-prop.html',
@@ -541,9 +484,6 @@ drawResults(
 	'prop_lr_glyphs', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vlr-005-prop.html',
 						'proprietary/writing-mode-vlr-006-prop.html',
@@ -558,9 +498,6 @@ drawResults(
 	'prop_lr_wrap', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vlr-012-prop.html',
 						'proprietary/writing-mode-vlr-014-prop.html',
@@ -571,9 +508,6 @@ drawResults(
 	'prop_lr_image', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vlr-015-prop.html',
 		]
@@ -583,9 +517,6 @@ drawResults(
 	'prop_lr_forms', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vlr-forms-001-prop.html',
 						'proprietary/writing-mode-vlr-forms-002-prop.html',
@@ -600,9 +531,6 @@ drawResults(
 	'prop_lr_tables', // sectionid 
 	'css-writing-modes/writing-mode', // base
 	'writing-mode', // batch
-	'3.1', // specsection
-	'https://drafts.csswg.org/css-writing-modes-3/#block-flow', // uri 
-	'css3-writing-modes', // related 
 	 [
 						'proprietary/writing-mode-vlr-table-001-prop.html',
 						'proprietary/writing-mode-vlr-table-002-prop.html',
