@@ -18,7 +18,7 @@ f.searchString = 'results-hyphens' // blog search string - usually the filename 
 f.firstPubDate = '2015-03-05' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-03', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-03', time:'06:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="hyphens-data/data.js"></script>
-<script src="hyphens-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/hyphens-data.js"></script>
+<script src="../batches/hyphens.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -192,9 +192,6 @@ drawResults(
 	'auto', // sectionid 
 	'css-text/hyphens', // base
 	'hyphens', // batch
-	'6.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#hyphens-property', // uri 
-	'css-text', // related 
 	 [
         'hyphens-auto-001.html',
         'hyphens-auto-002.html',
@@ -209,9 +206,6 @@ drawResults(
 	'prefauto', // sectionid 
 	'css-text/hyphens', // base
 	'hyphens', // batch
-	'6.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#hyphens-property', // uri 
-	'css-text', // related 
 	 [
         'prefixed/hyphens-auto-001.html',
         'prefixed/hyphens-auto-002.html',
@@ -226,9 +220,6 @@ drawResults(
 	'manual', // sectionid 
 	'css-text/hyphens', // base
 	'hyphens', // batch
-	'6.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#hyphens-property', // uri 
-	'css-text', // related 
 	 [
         'hyphens-manual-001.html',
         'hyphens-manual-002.html',
@@ -241,9 +232,6 @@ drawResults(
 	'prefmanual', // sectionid 
 	'css-text/hyphens', // base
 	'hyphens', // batch
-	'6.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#hyphens-property', // uri 
-	'css-text', // related 
 	 [
         'prefixed/hyphens-manual-001.html',
         'prefixed/hyphens-manual-002.html',
@@ -256,9 +244,6 @@ drawResults(
 	'none', // sectionid 
 	'css-text/hyphens', // base
 	'hyphens', // batch
-	'6.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#hyphens-property', // uri 
-	'css-text', // related 
 	 [
         'hyphens-none-001.html',
         'hyphens-none-002.html',
@@ -269,9 +254,6 @@ drawResults(
 	'prefnone', // sectionid 
 	'css-text/hyphens', // base
 	'hyphens', // batch
-	'6.1', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#hyphens-property', // uri 
-	'css-text', // related 
 	 [
         'prefixed/hyphens-none-001.html',
         'prefixed/hyphens-none-002.html',
