@@ -18,7 +18,7 @@ f.searchString = 'results-line-breaking' // blog search string - usually the fil
 f.firstPubDate = '2018-03-17' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-17', time:'07:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-17', time:'07:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="line-breaking-data/data.js"></script>
+<script src="../batches/line-breaking-data.js"></script>
 <script src="../batches/line-breaking.json"></script>
-<script src="results-functions-j.js"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -91,27 +91,11 @@ f.additionalLinks = ''
 <p>In all these tests, one would expect a line to break after the character being tested.</p>
   <div id="ba-data"></div>
 </section>
-
-
-
-<section>
-<h2 id="opclns"><a href="#opclns">Other punctuation</a></h2>
-<p>These tests look at what should or shouldn't appear at the start or end of a line.</p>
-  <div id="opclns-data"></div>
-</section>
-
-
-
-
 <script>
-
 drawResults(
 	'ba', // sectionid 
 	'css-text/line-breaking', // base
 	'line-breaking', // batch
-	'5', // specsection
-	'https://drafts.csswg.org/css-text-3/#line-breaking', // uri 
-	'css-text', // related 
 	 [
     'css-text-line-break-ba-space.html',
     'css-text-line-break-ba-hyphens.html',
@@ -120,22 +104,25 @@ drawResults(
     'css-text-line-break-ba-other.html',
     ]
 	 )
+</script>
 
 
+<section>
+<h2 id="opclns"><a href="#opclns">Other punctuation</a></h2>
+<p>These tests look at what should or shouldn't appear at the start or end of a line.</p>
+  <div id="opclns-data"></div>
+</section>
+<script>
 drawResults(
 	'opclns', // sectionid 
 	'css-text/line-breaking', // base
 	'line-breaking', // batch
-	'5', // specsection
-	'https://drafts.csswg.org/css-text-3/#line-breaking', // uri 
-	'css-text', // related 
 	 [
     'css-text-line-break-op.html',
     'css-text-line-break-cl.html',
     'css-text-line-break-ns.html',
     ]
 	 )
-
 </script>
 
 

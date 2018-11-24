@@ -17,7 +17,7 @@ f.searchString = 'results-line-breaks-glwj' // blog search string - usually the 
 f.firstPubDate = '2012-08-24' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2017-07-03', time:'10:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2017-07-03', time:'10:07'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="line-breaks-ba-data/data.js"></script>
-<script src="line-breaks-ba-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/line-breaks-data.js"></script>
+<script src="../batches/line-breaks.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -85,47 +85,27 @@ f.additionalLinks = ''
 <h2 id="sp"><a href="#sp">SP, ZW: Non-tailorable spaces</a></h2>
   <div id="sp-data"></div>
 </section>
-
-
-<section>
-<h2 id="gl"><a href="#gl">GL: Non-breaking ("Glue")</a></h2>
-  <div id="gl-data"></div>
-</section>
-
-
-<section>
-<h2 id="wj"><a href="#wj">WJ: Word joiner</a></h2>
-  <div id="wj-data"></div>
-</section>
-
-
-
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script>
 drawResults(
 	'sp', // sectionid 
 	'css-text/line-break-details', // base
 	'line-break-details', // batch
-	'5.1', // specsection
-	'http://dev.w3.org/csswg/css-text/#line-break-details', // uri 
-	'css3-text', // related 
 	 [
 		'css3-text-line-break-baspglwj-001.html',
 		'css3-text-line-break-baspglwj-002.html',
 		]
 	 )
+</script>
 
-
+<section>
+<h2 id="gl"><a href="#gl">GL: Non-breaking ("Glue")</a></h2>
+  <div id="gl-data"></div>
+</section>
+<script>
 drawResults(
 	'gl', // sectionid 
 	'css-text/line-break-details', // base
 	'line-break-details', // batch
-	'5.1', // specsection
-	'http://dev.w3.org/csswg/css-text/#line-break-details', // uri 
-	'css3-text', // related 
 	 [
 		'css3-text-line-break-baspglwj-120.html',
 		'css3-text-line-break-baspglwj-121.html',
@@ -138,25 +118,27 @@ drawResults(
 		'css3-text-line-break-baspglwj-128.html',
 		]
 	 )
+</script>
 
 
+<section>
+<h2 id="wj"><a href="#wj">WJ: Word joiner</a></h2>
+  <div id="wj-data"></div>
+</section>
+<script>
 drawResults(
 	'wj', // sectionid 
 	'css-text/line-break-details', // base
 	'line-break-details', // batch
-	'5.1', // specsection
-	'http://dev.w3.org/csswg/css-text/#line-break-details', // uri 
-	'css3-text', // related 
 	 [
 		'css3-text-line-break-baspglwj-130.html',
 		'css3-text-line-break-baspglwj-131.html',
 		]
 	 )
-
-
-
-
 </script>
+
+
+
 
 
 

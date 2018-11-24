@@ -18,7 +18,7 @@ f.searchString = 'results-word-break' // blog search string - usually the filena
 f.firstPubDate = '2015-03-04' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-05', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-05', time:'06:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="word-break-data/data.js"></script>
+<script src="../batches/word-break-data.js"></script>
 <script src="../batches/word-break.json"></script>
-<script src="results-functions-j.js"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -91,37 +91,11 @@ CSS3 Text, word-break</h1>
   <p>Some specific behaviors for CJK script, in particular, are covered by  <a href="/International/tests/#css3-text-line-breaks">line&nbsp;break tests</a> elsewhere. See the <a href="#breakall">word-break: break-all</a> section for tests related to typographic units that are only exposed when partial words are wrapped, such as indic conjuncts.</p>
 <div id="normal-data"></div>
 </section>
-
-<section>
-  <h2 id="breakall"><a href="#breakall">word-break: break-all</a></h2>
-  <div id="breakall-data"></div>
-<section class="notes">
-<p class="notesheader">Notes</p>
-<ol>
-<li> <strong>word-break-break-all-008</strong>: This test is exploratory because indic conjuncts containing more than one consonant are not covered by the extended grapheme cluster definition, and therefore constitute more than one typographic unit, per the definition in the CSS spec. Nevertheless, people using indic scripts expect the user agent to keep the orthographic syllable as a single unit. </li>
-</ol>
-</section>
-</section>
-
- <section>
-  <h2 id="keepall"><a href="#keepall">word-break: keep-all</a></h2>
-  <div id="keepall-data"></div>
-</section>
-
-
-
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script>
 drawResults(
 	'normal', // sectionid 
 	'css-text/word-break', // base
 	'word-break', // batch
-	'5.2', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#word-break-property', // uri 
-	'css-text', // related 
 	 [
         'word-break-normal-en-000.html',
         'word-break-normal-hi-000.html',
@@ -143,14 +117,25 @@ drawResults(
         'word-break-normal-zwj-001.html'
 		]
 	 )
+</script>
 
+
+
+<section>
+  <h2 id="breakall"><a href="#breakall">word-break: break-all</a></h2>
+  <div id="breakall-data"></div>
+<section class="notes">
+<p class="notesheader">Notes</p>
+<ol>
+<li> <strong>word-break-break-all-008</strong>: This test is exploratory because indic conjuncts containing more than one consonant are not covered by the extended grapheme cluster definition, and therefore constitute more than one typographic unit, per the definition in the CSS spec. Nevertheless, people using indic scripts expect the user agent to keep the orthographic syllable as a single unit. </li>
+</ol>
+</section>
+</section>
+<script>
 drawResults(
 	'breakall', // sectionid 
 	'css-text/word-break', // base
 	'word-break', // batch
-	'5.2', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#word-break-property', // uri 
-	'css-text', // related 
 	 [
         'word-break-break-all-000.html',
         'word-break-break-all-001.html',
@@ -164,14 +149,19 @@ drawResults(
         'word-break-break-all-ar-001.html',
 		]
 	 )
+</script>
 
+
+
+ <section>
+  <h2 id="keepall"><a href="#keepall">word-break: keep-all</a></h2>
+  <div id="keepall-data"></div>
+</section>
+<script>
 drawResults(
 	'keepall', // sectionid 
 	'css-text/word-break', // base
 	'word-break', // batch
-	'5.2', // specsection
-	'http://dev.w3.org/csswg/css-text-3/#word-break-property', // uri 
-	'css-text', // related 
 	 [
         'word-break-keep-all-000.html',
         'word-break-keep-all-ko-000.html',
@@ -181,10 +171,13 @@ drawResults(
         'word-break-keep-all-th-001.html'
 		]
 	)
-
-
-
 </script>
+
+
+
+
+
+
 
 
 
