@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>HTML Arabic font assignment</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org"/>
+<meta name="assert" content="[exploratory] When no font-family is applied using styling, arabic text labelled with different lang attributes will be displayed using different fonts."/>
+<link rel="help" href="https://drafts.csswg.org/css-fonts-4/#font-style-matching">
+<style type="text/css">
+ /* the following styles are not part of the test */
+.test { font-size:300%; border: 1px solid orange; margin: 10px; padding-left: 5px; }
+</style>
+</head>
+<body>
+<p class="instructions" dir="ltr">Test passes if the arabic text below uses different glyphs.</p>
+<div class="test">نشاط التدويل no language</div>
+<div class="test" lang="ar">نشاط التدويل ar</div>
+<div class="test" lang="fa">نشاط التدويل fa</div>
+<div class="test" lang="ur">نشاط التدويل ur</div>
+<div class="test" lang="ug">نشاط التدويل ug</div>
+<!--Notes:
+This behaviour is not specified in the HTML or CSS specifications. Typically the result of this test is affected by different default font settings in the browser's font preferences for Simplified Chinese, Traditional Chinese, Japanese, and Korean. (Some user agents also allow for a distinction between Traditional Chinese for Taiwan and Hong Kong.) This test assumes that these settings, when accessible, have not all been set to the same font.
+It is also instructive to compare the 'no language' line across browsers to note what that particular browser uses by default, since this can also vary.
+-->
+</body>
+</html>

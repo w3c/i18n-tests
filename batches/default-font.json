@@ -1,0 +1,6 @@
+tests = []
+tests[0]=["default-font-001.html","HTML CJK font assignment","",'https://drafts.csswg.org/css-fonts-4/#font-style-matching',"[exploratory] [exploratory] When no font-family is applied using styling, east asian text labelled with different lang attributes will be displayed using different fonts"] 
+
+tests[1]=["default-font-002.html","HTML Arabic font assignment","",'https://drafts.csswg.org/css-fonts-4/#font-style-matching',"[exploratory] When no font-family is applied using styling, arabic text labelled with different lang attributes will be displayed using different fonts."] 
+
+tests[2]=['../../testend','','','','']
