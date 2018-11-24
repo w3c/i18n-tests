@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-REPLACEMENTS
-HTML5, Bidirectional text rendering 
-bidi-text-rendering
-BASE
-BATCH
-RELATED
-Change dates
--->
-
 <head>
 <meta charset="utf-8" />
 <title>HTML5, Bidirectional text rendering: Summarized test results</title>
@@ -28,7 +18,7 @@ f.searchString = 'results-bidi-text-rendering' // blog search string - usually t
 f.firstPubDate = '2012-02-06' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2018-03-05', time:'06:37'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2018-03-05', time:'06:37'} // date and time of latest edits to this document/translation
@@ -51,9 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="bidi-text-rendering-data/data.js"></script>
-<script src="bidi-text-rendering-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/bidi-text-rendering-data.js"></script>
+<script src="../batches/bidi-text-rendering.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -148,9 +138,6 @@ drawResults(
 	'dirauto_input_basic', // sectionid 
 	'html/rendering/non-replaced-elements/bidirectional-text', // base
 	'bidi-text-rendering', // batch
-	'10.3.5', // specsection
-	'http://www.w3.org/TR/html5/rendering.html#bidi-rendering', // uri 
-	'html5-text-direction', // related 
 	 [
         'bidi-rendering-input-020.html',
         'bidi-rendering-input-021.html',
@@ -164,9 +151,6 @@ drawResults(
 	'dirauto_input', // sectionid 
 	'html/rendering/non-replaced-elements/bidirectional-text', // base
 	'bidi-text-rendering', // batch
-	'10.3.5', // specsection
-	'http://www.w3.org/TR/html5/rendering.html#bidi-rendering', // uri 
-	'html5-text-direction', // related 
 	 [
         'bidi-rendering-input-030.html',
         'bidi-rendering-input-031.html',
@@ -182,9 +166,6 @@ drawResults(
 	'dirauto_input_scripted', // sectionid 
 	'html/rendering/non-replaced-elements/bidirectional-text', // base
 	'bidi-text-rendering', // batch
-	'10.3.5', // specsection
-	'http://www.w3.org/TR/html5/rendering.html#bidi-rendering', // uri 
-	'html5-text-direction', // related 
 	 [
         'bidi-rendering-input-037.html',
         'bidi-rendering-input-038.html',
@@ -202,9 +183,6 @@ drawResults(
 	'pre', // sectionid 
 	'html/rendering/non-replaced-elements/bidirectional-text', // base
 	'bidi-text-rendering', // batch
-	'10.3.5', // specsection
-	'http://www.w3.org/TR/html5/rendering.html#bidi-rendering', // uri 
-	'html5-text-direction', // related 
 	 [
         'bidi-rendering-pre-110.html',
         'bidi-rendering-pre-111.html',
@@ -218,9 +196,6 @@ drawResults(
 	'textarea', // sectionid 
 	'html/rendering/non-replaced-elements/bidirectional-text', // base
 	'bidi-text-rendering', // batch
-	'10.3.5', // specsection
-	'http://www.w3.org/TR/html5/rendering.html#bidi-rendering', // uri 
-	'html5-text-direction', // related 
 	 [
         'bidi-rendering-textarea-100.html',
         'bidi-rendering-textarea-101.html',
@@ -236,9 +211,6 @@ drawResults(
 	'br', // sectionid 
 	'html/rendering/non-replaced-elements/bidirectional-text', // base
 	'bidi-text-rendering', // batch
-	'10.3.5', // specsection
-	'http://www.w3.org/TR/html5/rendering.html#bidi-rendering', // uri 
-	'html5-text-direction', // related 
 	 [
         'bidi-rendering-br-001.html',
         'bidi-rendering-br-002.html',
