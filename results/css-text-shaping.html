@@ -17,7 +17,7 @@ f.searchString = 'results-css-text-shaping' // blog search string - usually the 
 f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2015-08-24', time:'10:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
 f.thisVersion = { date:'2016-04-11', time:'19:37'} // date and time of latest edits to this document/translation
@@ -41,9 +41,9 @@ f.additionalLinks = ''
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
-<script src="css-text-shaping-data/data.js"></script>
-<script src="css-text-shaping-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<script src="../batches/css-text-shaping-data.js"></script>
+<script src="../batches/css-text-shaping.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -96,43 +96,11 @@ f.additionalLinks = ''
   </div>
   <div id="basic-data"></div>
 </section>
-
-<section>
-  <h2 id="ligature"><a href="#ligature">Ligated form</a></h2>  
-  <div class="dependencies">
-    <p class="notesheader">Dependencies</p>
-    <ol>
-      <li><strong>shaping_lig-012</strong>  only works if the the browser support <code class="kw" translate="no">bdi</code> and <code class="kw" translate="no">dir=auto</code>.</li>
-    </ol>
-  </div>
-
-  <div id="ligature-data"></div>
-</section>
-
- <section>
-  <h2 id="diacritics"><a href="#diacritics">Intervening diacritics</a></h2>
-  <div id="diacritics-data"></div>
-  <!--section class="notes">
-  <p class="notesheader">Notes</p>
-  <ol>
-  <li><strong>shaping_cchar-012</strong>: This is a slightly difficult test to create in a generic fashion, since one has to assume that a hyphenation resource is available for the language of the text, and you don't know which words are identified by that resource for hyphenation, or what the rules are. Hopefully the selection of words chosen in this test, and the choice of English, will produce at least some hyphenation. </li>
-  </ol>
-  </section-->
-</section>
-
-
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+<script>
 drawResults(
 	'basic', // sectionid 
 	'css-text/shaping', // base
 	'css-text-shaping', // batch
-	'8.3', // specsection
-	'https://drafts.csswg.org/css-text/#boundary-shaping', // uri 
-	'css3-text', // related 
 	 [
 		'shaping-000.html',
 		'shaping-001.html',
@@ -149,14 +117,26 @@ drawResults(
 		'shaping-012.html',
 		]
 	 )
+</script>
 
+
+
+<section>
+  <h2 id="ligature"><a href="#ligature">Ligated form</a></h2>  
+  <div class="dependencies">
+    <p class="notesheader">Dependencies</p>
+    <ol>
+      <li><strong>shaping_lig-012</strong>  only works if the the browser support <code class="kw" translate="no">bdi</code> and <code class="kw" translate="no">dir=auto</code>.</li>
+    </ol>
+  </div>
+
+  <div id="ligature-data"></div>
+</section>
+<script>
 drawResults(
 	'ligature', // sectionid 
 	'css-text/shaping', // base
 	'css-text-shaping', // batch
-	'8.3', // specsection
-	'https://drafts.csswg.org/css-text/#boundary-shaping', // uri 
-	'css3-text', // related 
 	 [
 		'shaping_lig-000.html',
 		'shaping_lig-001.html',
@@ -173,15 +153,25 @@ drawResults(
 		'shaping_lig-012.html',
 		]
 	 )
+</script>
 
 
+
+ <section>
+  <h2 id="diacritics"><a href="#diacritics">Intervening diacritics</a></h2>
+  <div id="diacritics-data"></div>
+  <!--section class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+  <li><strong>shaping_cchar-012</strong>: This is a slightly difficult test to create in a generic fashion, since one has to assume that a hyphenation resource is available for the language of the text, and you don't know which words are identified by that resource for hyphenation, or what the rules are. Hopefully the selection of words chosen in this test, and the choice of English, will produce at least some hyphenation. </li>
+  </ol>
+  </section-->
+</section>
+<script>
 drawResults(
 	'diacritics', // sectionid 
 	'css-text/shaping', // base
 	'css-text-shaping', // batch
-	'8.3', // specsection
-	'https://drafts.csswg.org/css-text/#boundary-shaping', // uri 
-	'css3-text', // related 
 	 [
 		'shaping_cchar-000.html',
 		'shaping_cchar-001.html',
@@ -197,10 +187,12 @@ drawResults(
 		'shaping_cchar-011.html',
 		]
 	 )
-
-
-
 </script>
+
+
+
+
+
 
 
 
