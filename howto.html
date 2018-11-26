@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>How to run the tests</title>
+<style type="text/css">
+body { line-height: 1.4em; font-family:Verdana, Geneva, sans-serif; }
+.kw { color:brown; }
+</style>
+</head>
+
+<body>
+
+<h1>How to run the tests</h1>
+
+<p>This page tells you how to score the i18n tests and send in the results so that they can be added to the results summary pages.</p>
+
+
+<p>Follow the steps below:</p>
+<ol>
+  <li><p><strong>Click on the button <code class="kw">Score</code>.</strong><br/>You will see a new <code class="kw">Show results</code> button appear. You can ignore this for now. You should also find the following buttons at the top of the page: <code class="kw">Pass</code>, <code class="kw">Fail</code>, <code class="kw">Partial</code>, <code class="kw">Skip</code>, and a pulldown selector.</p></li>
+<li>
+  <p><strong>Select a browser using the pulldown selector.</strong><br>
+    You should select the name of the browser on which you are currently running the tests. If you select, say, Firefox, this will be appropriate for any version of the Firefox browser and on any platform. Those details will be captured by the test runner. That said, we prefer to limit testing to recent versions of a browser (but only released versions, not nightlies). Note that we have separate entries for browsers such as Chrome and Opera, even though they use the same engine, since there are often differences in feature support. <br>
+    If you don't see the name of the browser you want to test, select Other, but be sure to let us know what browser this is when sending in your results (see below). Note that we have limited space, so we only want to test browsers with high distribution levels or special relevance to a particular international market (see something like
+    <a href="http://gs.statcounter.com/#desktop+mobile+tablet-browser-ww-monthly-201308-201408">StatCounter</a> for ideas).</p></li>
+<li>
+  <p><strong>Once you are looking at the test or the first of the tests you want to score, click on <code class="kw">Pass</code>, <code class="kw">Fail</code>, <code class="kw">Partial</code> or <code class="kw">Skip</code> to record the outcome of the test.</strong><br>
+    Partial is used where the test is composed of smaller items, and only some of those fail (eg. testing for all the codes in a codepage).<br>
+The test runner will automatically move to the next test in its list when you click on one of those buttons. (You can go to specific tests using the pull-down selector at the top right of the page.)  </p>
+</li>
+<li>
+  <p><strong>Once you have provided results for all the tests you want to, click on the <code class="kw">Show results</code> button at the bottom of the page.</strong><br>
+    A text box will open below the button, containing a summary of the results. It is already highlighted to make copying easier.</p>
+</li>
+<li>
+  <p><strong>Take a copy of the results and mail them to Richard Ishida (ishida@w3.org).</strong><br>
+    Richard will integrate the results into the appropriate results page.<br>
+    If you selected <code class="kw">Other</code> from the browser selector, please indicate in the email what browser this is for. (If it is a new browser, Richard will need to add some details to the test results code.) Note that if you are planning to test a new browser it may be best to contact Richard before scoring the tests, just in case.  </p>
+</li>
+</ol>
+</body>
+</html>
