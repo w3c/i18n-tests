@@ -1,0 +1,6 @@
+tests = []
+tests[0]=["double-click-ar-001.html","arabic double-click","",'https://en.wikipedia.org/wiki/Double-click#On_text',"[exploratory] Double-clicking inside a word highlights all ordinary letters between spaces, whether joining or not."] 
+
+tests[1]=["double-click-ar-002.html","arabic double-click ZWNJ","",'https://en.wikipedia.org/wiki/Double-click#On_text',"[exploratory] Double-clicking inside a word highlights a whole word, even if it contains ZWNJ."] 
+
+tests[2]=['../../testend','','','','']

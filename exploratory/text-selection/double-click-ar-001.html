@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>arabic double-click</title>
+<meta name="assert" content="[exploratory] Double-clicking inside a word highlights all ordinary letters between spaces, whether joining or not.">
+<link rel="help" href="https://en.wikipedia.org/wiki/Double-click#On_text">
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<style>
+/* the CSS below is not part of the test */
+.test {
+margin: .5em 5%;
+font-size: 5em;
+}
+</style>
+</head>
+<body>
+<div>Double-click on the middle word. Test passes if all the letters between the spaces are highlighted.</div>
+
+<div class="test" id="test" lang="ar">الحرية والعدل والسلام</div>
+
+</body>
+</html>
