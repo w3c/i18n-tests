@@ -1,2 +1,15 @@
 double-click-ar-001.html
 double-click-ar-002.html
+
+double-click-bn-000.html
+danda-bn-001.html
+danda-bn-002.html
+
+double-click-hi-000.html
+danda-hi-001.html
+danda-hi-002.html
+
+double-click-ta-000.html
+danda-ta-001.html
+danda-ta-002.html
+
