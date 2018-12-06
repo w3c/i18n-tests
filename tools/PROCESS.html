@@ -22,14 +22,13 @@ form { border: 1px solid #F67070; padding: 10px; }
 <p>The <code>batch</code> file contains a list of test names, including the file extension. They may also include part or all of the directory path (see  <em>Examples,</em> below).</p>
 <p><input id="batchname" type="text" placeholder="Add the batch name here (without -batch)" /></p>
 
-<p>The <code>base</code> is the path from the <code>repo</code> directory to the point where the entries in the batch file complete the path to the tests. </p>
-
+<p>If you have a test name in a batch file, the <code>base</code> is the missing part of path  from the top of the repository (minus the trailing slash). See the examples, just below the input field.</p>
 <p><input id="base" name="base" type="text" placeholder="Add the base here."></p>
 <details id="baseExample" style="font-size: 80%; padding: 1em; cursor: pointer;">
 <summary>Examples</summary>
 <p>For example, given a file at <code>i18n-tests/css-text/text-transform/text-transform-capitalize-009.html</code>, the batch may contain the file name <code>text-transform-capitalize-009.html</code> and the base would be <code>css-text/text-transform</code>.</p>
 <p>Alternatively, you could put more (or all) of the base into the filename in the batch file, such as a base of <code>css-text</code> and filenames such as <code>text-transform/text-transform-capitalize-009.html</code>. This is particularly useful when the tests in a batch are spread over more than one directory.</p>
-<p>If you put all of the base into the filenames, use <code>.</code> for the base.</p>
+<p>If you put all of the path into the filenames, use <code>.</code> for the base.</p>
 </details>
 
 
