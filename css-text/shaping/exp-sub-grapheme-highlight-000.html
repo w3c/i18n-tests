@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Single character styling</title>
+<meta name="assert" content="[exploratory] A colour change is applied for any single character surrounded by a span.">
+<link rel="help" href="https://drafts.csswg.org/css-text/#boundary-shaping">
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<style>
+/* the CSS below is not part of the test */
+.test {
+margin: .5em 5%;
+font-size: 100px;
+}
+#out span { color: darkorange; }
+.codepoint { font-size: 20px; text-align: center;}
+#out { font-size: 100px; display: flex; flex-direction: row; flex-wrap: wrap; }
+.container { display: flex; flex-direction: column; padding: .25em; }
+</style>
+<script>
+function highlightCPX (str, posn) {
+str = str.trim()
+str = str.replace(/\s+/g,' ')
+var sequences = str.split(' ')
+var out = ''
+for (let i=0;i<sequences.length;i++) {
+                console.log(sequences[i].length, posn)
+    var tooShort = false
+    if (posn > sequences[i].length) tooShort = true
+    if (! tooShort) {
+        var start=parseInt(posn)-1
+        var end = parseInt(posn)
+        var char = sequences[i].substring(start, end)
+        var hex = char.codePointAt(0).toString(16).toUpperCase()
+        while (hex.length<4) hex = '0'+hex
+        out += '<div class="container"><div>'+sequences[i].substring(0, start)+'<span>'+char+'</span>'+sequences[i].substring(end)+'</div><div class="codepoint">U+'+hex+'</div>'
+        }
+    else out += '<div class="container"><div>'+sequences[i]+'</div><div class="codepoint">n/a</div>'
+    out += '</div>'
+    }
+//console.log(str.substring(0, start)+'<span>'+str.substring(start, end)+'</span>'+str.substring(end))
+return out.trim()
+}
+
+
+function listChars (str, posn) { 
+    var out = ''
+    if (posn>str.length) posn = -1
+    else posn = posn-1
+    for (i=0;i<str.length;i++) {
+        var hex = str[i].codePointAt(0).toString(16).toUpperCase()
+        while (hex.length<4) hex = '0'+hex
+        if (i==posn) out += '<span class="theCP">'+'&#x'+hex+'; U+'+hex+'</span><br/>'
+        else out += '&#x'+hex+'; U+'+hex+'<br/>'
+        }
+    return out
+    }
+
+function highlightCP (str, posn) {
+str = str.trim()
+str = str.replace(/\s+/g,' ')
+var sequences = str.split(' ')
+var out = ''
+for (let i=0;i<sequences.length;i++) {
+                                                                                console.log(sequences[i].length, posn)
+    var tooShort = false
+    if (posn > sequences[i].length) tooShort = true
+    
+    if (! tooShort) {
+        var start=parseInt(posn)-1
+        var end = parseInt(posn)
+        var char = sequences[i].substring(start, end)
+        //var hex = char.codePointAt(0).toString(16).toUpperCase()
+        //while (hex.length<4) hex = '0'+hex
+        out += '<div class="container"><div>'+sequences[i].substring(0, start)+'<span>'+char+'</span>'+sequences[i].substring(end)+'</div><div class="codepoint">'+listChars(sequences[i], posn)+'</div>'
+        }
+    else out += '<div class="container"><div>'+sequences[i]+'</div><div class="codepoint">n/a</div>'
+    out += '</div>'
+    }
+//console.log(str.substring(0, start)+'<span>'+str.substring(start, end)+'</span>'+str.substring(end))
+return out.trim()
+}
+
+</script>
+</head>
+<body>
+<div>Test passes if the chosen character (only) is coloured orange.</div>
+
+<p>Add here any number of character sequences (1-5 code points long), separated by spaces (some examples are provided below): <input type="text" id="in" onchange="document.getElementById('out').innerHTML = highlightCP(document.getElementById('in').value, document.getElementById('posn').value);"/></p>
+<p>Then choose which code point should be highlighted in each sequence: <select id="posn" onchange="document.getElementById('out').innerHTML = highlightCP(document.getElementById('in').value, document.getElementById('posn').value);">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	</select></p>
+    
+<p>Behaviour may be font-dependent. Use this field to change the font: <input type="text" onChange="document.getElementById('out').style.fontFamily=this.value"></p>
+
+<p><button onclick="document.getElementById('out').innerHTML = highlightCP(document.getElementById('in').value, document.getElementById('posn').value);">Test!</button></p>
+
+<p id="out"></p>
+
+
+<p style="margin-top:3em;">Example inputs (click to paste the stuff after the colon into the input field above):</p>
+<p>Devanagari: <span style="cursor:pointer;" onclick="console.log('heel');document.getElementById('in').value=this.textContent">की कु कि क्क र्क क्र क्की क़</span></p>
+<p>Tamil: <span style="cursor:pointer;" onclick="console.log('heel');document.getElementById('in').value=this.textContent">கா கி கு கெ கௌ &#x0B95;&#x0BC6;&#x0BD7; க்க க்ஷ</span></p>
+<p>Arabic: <span dir="rtl" style="cursor:pointer;" onclick="console.log('heel');document.getElementById('in').value=this.textContent">تَ تَّ تِّ تّ تمب تمَب لاح لإح لحم</span></p>
+<p>Decomposed & precomposed vietnamese: <span style="cursor:pointer;" onclick="console.log('heel');document.getElementById('in').value=this.textContent">à ằ ẫ à ằ ẫ</span></p>
+<p>Khmer: <span style="cursor:pointer;" onclick="console.log('heel');document.getElementById('in').value=this.textContent">ក័ កា កាំ កុំ កេ កឿ ក្ក ក្កី ខ្លួ</span></p>
+<p>Tibetan: <span style="cursor:pointer;" onclick="console.log('heel');document.getElementById('in').value=this.textContent">སྐྱེ་ ་ཡུལ་ ཕྱིར་ རྒྱུད་ རྣ</span></p>
+<p>Javanese: <span style="cursor:pointer;" onclick="console.log('heel');document.getElementById('in').value=this.textContent">ꦏꦤ꧀ꦛꦶ ꦏ꦳꧀ꦗ ꦏ꧀ꦗ꦳ ꦏ꧀ꦏꦁꦥ ꦔꦤ꧀ꦢꦶꦏ</span></p>
+</body>
+</html>
