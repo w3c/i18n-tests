@@ -10,7 +10,7 @@
 <style type="text/css">
 @font-face {
 	font-family: 'csstest_noto';
-	src: url('../../fonts/NotoNaskhArabic-Regular.woff2') format('woff2');
+	src: url('../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 	}
@@ -20,6 +20,8 @@
 </head>
 <body>
 <p class="instructions">Test passes if the three Arabic characters DON'T join.</p>
+<p><small>Skip if markup alone breaks the join (test shaping-000)</small><br/>
+<small>Skip this test if bdi and dir=auto don't produce isolation in this browser.</small></p>
 <div class="test" lang="ar">ع<bdi>ع</bdi>ع</div>
 <div class="test" lang="ar">ع<span dir="auto">ع</span>ع</div>
 <!-- Notes:

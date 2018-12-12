@@ -2,29 +2,28 @@
 <html  lang="en" >
 <head>
 <meta charset="utf-8">
-<title>shaping: margin &gt; 0</title>
-<meta name="assert" content="Shaping SHOULD be broken across inline box boundaries when marginis set to a non-zero value.">
+<title>n'ko, font-style</title>
+<meta name="assert" content="Shaping should not be broken across inline box boundaries for changes to font-style in N'Ko.">
 <link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
 <link rel="help" href="https://drafts.csswg.org/css-text/#boundary-shaping">
 <meta name="flags" content="font" />
 <style type="text/css">
 @font-face {
 	font-family: 'csstest_noto';
-	src: url('../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff2');
+	src: url('../../fonts/noto/NotoSansNko-regular-webfont.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 	}
 .test { border: 1px solid #02D7F6;  margin: 20px;  padding: 10px; width: 3em; font-size: 172px; font-family: "csstest_noto"; }
 /* the CSS above is not part of the test */
-.styled { margin: 0.5em; }
+.styled { font-style:italic; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the three Arabic characters DON'T join.</p>
-<small>Skip if markup alone breaks the join (test shaping_lig-000)</small>
-<div class="test" lang="ar">ع<span class="styled">ل</span>ا</div>
+<p class="instructions">Test passes if the three N'Ko characters join.</p>
+<div class="test" lang="nqo">ߞ<span class="styled">ߞ</span>ߞ</div>
 <!-- Notes:
-This test uses the Noto Naskh Arabic font to control variables related to font choice.
+This test uses the Noto Sans N'Ko font to control variables related to font choice.
 -->
 </body>
 </html>

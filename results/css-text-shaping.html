@@ -51,14 +51,14 @@ f.additionalLinks = ''
   <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
   
   <h1>Summarized test results: <br>
-  CSS3 Text, Boundary shaping</h1>
+  CSS3 Text, Cursive joining</h1>
 </header>
 
 
 <section>
   <div id="audience">
     <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers shape Arabic cursive text as described in the CSS Text module.</p>
+    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers shape Arabic and other cursive text as described in the CSS Text module.</p>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
@@ -88,29 +88,84 @@ f.additionalLinks = ''
 
 <section>
   <h2 id="basic"><a href="#basic">Basic tests</a></h2>
-  <div class="dependencies">
-    <p class="notesheader">Dependencies</p>
-    <ol>
-      <li><strong>shaping-012</strong>  only works if the the browser support <code class="kw" translate="no">bdi</code> and <code class="kw" translate="no">dir=auto</code>.</li>
-    </ol>
-  </div>
+  <p>Tests in this section check whether joining is broken or not for simple cases concerning ordinary adjacent letters when one letter is in markup to which styling may apply. Most of the tests use Arabic.</p>
   <div id="basic-data"></div>
+
+ <section>
+ <h3 id="basic_markup"><a href="#basic_markup">Just markup</a></h3>
+  <p>This test puts markup around a letter, but applies no styling change, so joins must not be broken.</p>
+  <div id="basic_markup-data"></div>
 </section>
 <script>
 drawResults(
-	'basic', // sectionid 
+	'basic_markup', // sectionid 
 	'css-text/shaping', // base
 	'css-text-shaping', // batch
 	 [
 		'shaping-000.html',
-		'shaping-001.html',
-		'shaping-002.html',
-		'shaping-003.html',
+		]
+	 )
+</script>
+
+ <section>
+ <h3 id="basic_mustnot"><a href="#basic_mustnot">Style doesn't affect letters</a></h3>
+  <p>These tests create no effective change in the formatting for the affected letters, so joins must not be broken.</p>
+  <div id="basic_mustnot-data"></div>
+</section>
+<script>
+drawResults(
+	'basic_mustnot', // sectionid 
+	'css-text/shaping', // base
+	'css-text-shaping', // batch
+	 [
+		'shaping-015.html',
+		'shaping-016.html',
+		'shaping-007.html',
 		'shaping-004.html',
 		'shaping-005.html',
 		'shaping-006.html',
-		'shaping-007.html',
+		]
+	 )
+</script>
+
+ <section>
+ <h3 id="basic_shouldnot"><a href="#basic_shouldnot">Acceptable style change</a></h3>
+  <p>These tests do create a change in the formatting, but joining should not be broken.</p>
+  <div id="basic_shouldnot-data"></div>
+</section>
+<script>
+drawResults(
+	'basic_shouldnot', // sectionid 
+	'css-text/shaping', // base
+	'css-text-shaping', // batch
+	 [
+		'shaping-001.html',
+		'shaping-002.html',
+		'shaping-003.html',
 		'shaping-008.html',
+		'shaping-017.html',
+		'shaping-018.html',
+		]
+	 )
+</script>
+
+<section>
+ <h3 id="basic_must"><a href="#basic_must">Breaking boundaries</a></h3>
+  <p>These tests are for features that must break the joining behaviour.</p>
+ <div class="dependencies">
+    <p class="notesheader">Dependencies</p>
+    <ol>
+      <li><strong>shaping-012</strong>  only works if the the browser supports <code class="kw" translate="no">bdi</code> and <code class="kw" translate="no">dir=auto</code>.</li>
+    </ol>
+  </div>
+  <div id="basic_must-data"></div>
+</section>
+<script>
+drawResults(
+	'basic_must', // sectionid 
+	'css-text/shaping', // base
+	'css-text-shaping', // batch
+	 [
 		'shaping-009.html',
 		'shaping-010.html',
 		'shaping-011.html',
@@ -118,47 +173,38 @@ drawResults(
 		]
 	 )
 </script>
+</section>
+
 
 
 
 <section>
-  <h2 id="ligature"><a href="#ligature">Ligated form</a></h2>  
-  <div class="dependencies">
-    <p class="notesheader">Dependencies</p>
-    <ol>
-      <li><strong>shaping_lig-012</strong>  only works if the the browser support <code class="kw" translate="no">bdi</code> and <code class="kw" translate="no">dir=auto</code>.</li>
-    </ol>
-  </div>
-
-  <div id="ligature-data"></div>
+ <h2 id="basic_other"><a href="#basic_other">Other languages</a></h2>
+  <p>In this section we run basic tests against languages that use other cursive writing systems, as a quick check that the same results apply.</p>
+  <div id="basic_other-data"></div>
 </section>
 <script>
 drawResults(
-	'ligature', // sectionid 
+	'basic_other', // sectionid 
 	'css-text/shaping', // base
 	'css-text-shaping', // batch
 	 [
-		'shaping_lig-000.html',
-		'shaping_lig-001.html',
-		'shaping_lig-002.html',
-		'shaping_lig-003.html',
-		'shaping_lig-004.html',
-		'shaping_lig-005.html',
-		'shaping_lig-006.html',
-		'shaping_lig-007.html',
-		'shaping_lig-008.html',
-		'shaping_lig-009.html',
-		'shaping_lig-010.html',
-		'shaping_lig-011.html',
-		'shaping_lig-012.html',
+		'shaping-020.html',
+		'shaping-021.html',
+		'shaping-022.html',
+		'shaping-023.html',
+		'shaping-024.html',
+		'shaping-025.html',
 		]
 	 )
 </script>
+</section>
 
 
 
  <section>
   <h2 id="diacritics"><a href="#diacritics">Intervening diacritics</a></h2>
+<p>This section runs the same tests as before, but the <code class="kw" translate="no">span</code> element is around a diacritic that appears between the to joining letters. Since styling of the diacritic doesn't affect the joining letters, the same behaviour should apply as for the tests in the previous section.</p>
   <div id="diacritics-data"></div>
   <!--section class="notes">
   <p class="notesheader">Notes</p>
@@ -185,6 +231,34 @@ drawResults(
 		'shaping_cchar-009.html',
 		'shaping_cchar-010.html',
 		'shaping_cchar-011.html',
+		]
+	 )
+</script>
+
+
+
+<section>
+  <h2 id="ligature"><a href="#ligature">Ligated form</a></h2>
+<p>These tests are exploratory. They look at the behaviour produced when the letter with markup around it is displayed as part of a ligated sequence. In theory, this is what the spec refers to as a situation where it is impossible to join across boundaries. We would expect all the tests to break the join.</p>  
+  <div class="dependencies">
+  <p class="notesheader">Dependencies</p>
+    <ol>
+      <li><strong>shaping_lig-012</strong>  only works if the the browser support <code class="kw" translate="no">bdi</code> and <code class="kw" translate="no">dir=auto</code>.</li>
+    </ol>
+  </div>
+
+  <div id="ligature-data"></div>
+</section>
+<script>
+drawResults(
+	'ligature', // sectionid 
+	'css-text/shaping', // base
+	'css-text-shaping', // batch
+	 [
+		'shaping_lig-001.html',
+		'shaping_lig-002.html',
+		'shaping_lig-003.html',
+		'shaping_lig-008.html',
 		]
 	 )
 </script>
