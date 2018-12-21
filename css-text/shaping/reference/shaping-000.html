@@ -7,11 +7,10 @@
 <link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
 <link rel="help" href="https://drafts.csswg.org/css-text/#boundary-shaping">
 <meta name="flags" content="font" />
-<link rel="match" href="./reference/shaping-000.html">
 <style type="text/css">
 @font-face {
 	font-family: 'csstest_noto';
-	src: url('../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff2');
+	src: url('../../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 	}
@@ -21,7 +20,7 @@
 </head>
 <body>
 <p class="instructions">Test passes if the three Arabic characters join.</p>
-<div class="test" lang="ar">ع<span>ع</span>ع</div>
+<div class="ref" lang="ar">ع‍<span>‍ع‍</span>‍ع</div>
 <!-- Notes:
 This test uses the Noto Naskh Arabic font to control variables related to font choice.
 -->
