@@ -42,7 +42,7 @@ f.additionalLinks = ''
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <link rel="stylesheet" href="results.css" type="text/css" />
 <script src="../batches/line-breaks-data.js"></script>
-<script src="../batches/line-breaks.json"></script>
+<script src="../batches/line-break-details.json"></script>
 <script src="results-functions-k.js"></script>
 </head>
 
@@ -65,6 +65,7 @@ f.additionalLinks = ''
 
 			<section> 
                 <p>These tests check the default behavior of characters against the expectations in the Unicode Standard Annex #14 (Unicode Line Breaking Algorithm), version 6.1.0. The two-letter abbreviations are conventions for property names in the Unicode Standard. Non-tailorable characters have normative behavior in the Unicode Standard that applies in all normal circumstances. For more information about expected line break behavior and line break classes, see <a href="http://www.unicode.org/reports/tr14/">Unicode Standard Annex #14 Line Breaking Properties</a>. </p>
+<p>The CSS Text specification requires that these characters behave as described here.</p>
               <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
 <p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
 <p><strong>Key:</strong></p>
@@ -83,6 +84,7 @@ f.additionalLinks = ''
 
 <section>
 <h2 id="sp"><a href="#sp">SP, ZW: Non-tailorable spaces</a></h2>
+<p>These tests check that the two characters SPACE and ZERO-WIDTH SPACE  always provide a break opportunity.</p>
   <div id="sp-data"></div>
 </section>
 <script>
@@ -99,6 +101,7 @@ drawResults(
 
 <section>
 <h2 id="gl"><a href="#gl">GL: Non-breaking ("Glue")</a></h2>
+<p>Characters with the GL property are designed to prevent line-breaking on either side of them. These tests check that that is the case for each of the GL characters.</p>
   <div id="gl-data"></div>
 </section>
 <script>
@@ -123,6 +126,7 @@ drawResults(
 
 <section>
 <h2 id="wj"><a href="#wj">WJ: Word joiner</a></h2>
+<p>Characters with the WJ property are likewise designed to prevent line-breaking on either side of them. These tests check that that's the case for the two characters with that property.</p>
   <div id="wj-data"></div>
 </section>
 <script>
