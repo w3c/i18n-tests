@@ -43,7 +43,7 @@ return out.trim()
 }
 
 
-function listChars (str, posn) { 
+function listChars (str, posn) {
     var out = ''
     if (posn>str.length) posn = -1
     else posn = posn-1
@@ -65,7 +65,7 @@ for (let i=0;i<sequences.length;i++) {
                                                                                 console.log(sequences[i].length, posn)
     var tooShort = false
     if (posn > sequences[i].length) tooShort = true
-    
+
     if (! tooShort) {
         var start=parseInt(posn)-1
         var end = parseInt(posn)
@@ -88,13 +88,13 @@ return out.trim()
 
 <p>Add here any number of character sequences (1-5 code points long), separated by spaces (some examples are provided below): <input type="text" id="in" onchange="document.getElementById('out').innerHTML = highlightCP(document.getElementById('in').value, document.getElementById('posn').value);"/></p>
 <p>Then choose which code point should be highlighted in each sequence: <select id="posn" onchange="document.getElementById('out').innerHTML = highlightCP(document.getElementById('in').value, document.getElementById('posn').value);">
-	<option value="1">1</option>
-	<option value="2">2</option>
-	<option value="3">3</option>
-	<option value="4">4</option>
-	<option value="5">5</option>
-	</select></p>
-    
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    </select></p>
+
 <p>Behaviour may be font-dependent. Use this field to change the font: <input type="text" onChange="document.getElementById('out').style.fontFamily=this.value"></p>
 
 <p><button onclick="document.getElementById('out').innerHTML = highlightCP(document.getElementById('in').value, document.getElementById('posn').value);">Test!</button></p>
