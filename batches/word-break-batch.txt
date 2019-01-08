@@ -29,9 +29,10 @@ word-break-break-all-008.html
 word-break-break-all-ar-001.html
 
 word-break-keep-all-000.html
+word-break-keep-all-001.html
+word-break-keep-all-ja-001.html
 word-break-keep-all-ko-000.html
 word-break-keep-all-ko-001.html
-word-break-keep-all-ja-001.html
 word-break-keep-all-km-001.html
 word-break-keep-all-th-001.html
 
