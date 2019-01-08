@@ -65,3 +65,8 @@ q { font-size: 95%; font-style: italic; }
 .detailedresults .uncertain { background-color: #FC6; }
 .detailedresults .fail { background-color: #F66; }
 .detailedresults .pass { background-color: #8F8; }
+
+.pageInstructions {
+    line-height: 1.4;
+    font-size: 80%;
+    }
