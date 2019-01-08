@@ -1,4 +1,4 @@
-function createTests (charlist, body, allowed) {
+function createTests (charlist, body, lang, allowed) {
 
 var lines = charlist.split('\n')
 var out = '<div id="log"></div>\n'
@@ -15,9 +15,9 @@ for (var i=0;i<lines.length;i++) {
 	var name = lines[i].substr(firstSpace)
 	// make a test
 	out +=  '<div class="wrapper"><div>'+hex+' '+name+'</div>' +
-	'<div class="test" id="test'+i+'" lang="ja">文文文文文文&#x'+hex+';字<span id="testSpan'+i+'">字</span></div>' 
-	if (allowed) out +=  '<div class="ref" id="ref'+i+'" lang="ja">文文文文文文<br/>&#x'+hex+';字<span id="refSpan'+i+'">字</span></div>'
-	else out +=  '<div class="ref" id="ref'+i+'" lang="ja">文文文文文<br/>文&#x'+hex+';字<span id="refSpan'+i+'">字</span></div>'
+	'<div class="test" id="test'+i+'" lang="'+lang+'">文文文文文文&#x'+hex+';字<span id="testSpan'+i+'">字</span></div>' 
+	if (allowed) out +=  '<div class="ref" id="ref'+i+'" lang="'+lang+'">文文文文文文<br/>&#x'+hex+';字<span id="refSpan'+i+'">字</span></div>'
+	else out +=  '<div class="ref" id="ref'+i+'" lang="'+lang+'">文文文文文<br/>文&#x'+hex+';字<span id="refSpan'+i+'">字</span></div>'
 	out +=  '</div>'
 	}
 // create a section to list failures
