@@ -57,8 +57,20 @@ f.additionalLinks = ''
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know how well browsers support the line breaking properties of Unicode characters.</p>
+<div class="pageInstructions">
+<p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. To see detailed results   click on a row and look just above the table. </p>
+<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p-->
+<table class="results" style="margin-right: 32%;">
+<tbody>
+<tr>
+<th style="min-width:8em; padding: .5em">Key:</th>
+<td class="pass" style="min-width:8em; padding: .5em">pass</td>
+<td class="fail" style="min-width:8em; padding: .5em">fail</td>
+<td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+</tr>
+</tbody>
+</table>
+</div>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
@@ -66,18 +78,6 @@ f.additionalLinks = ''
 			<section> 
                 <p>These tests check the default behavior of characters against the expectations in the Unicode Standard Annex #14 (Unicode Line Breaking Algorithm), version 6.1.0. The two-letter abbreviations are conventions for property names in the Unicode Standard. Non-tailorable characters have normative behavior in the Unicode Standard that applies in all normal circumstances. For more information about expected line break behavior and line break classes, see <a href="http://www.unicode.org/reports/tr14/">Unicode Standard Annex #14 Line Breaking Properties</a>. </p>
 <p>The CSS Text specification requires that these characters behave as described here.</p>
-              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
-<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
-      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
-      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
-    </tr>
-  </tbody>
-</table>
 			</section>
 		</section>
 		
