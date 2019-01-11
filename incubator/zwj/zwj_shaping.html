@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Exploratory Test: zwj and text-shaping</title>
+<link rel="author" title="r12a">
+<link rel="help" href="https://drafts.csswg.org/css-text-3/#text-encoding">
+<link rel="help" href="https://www.unicode.org/versions/Unicode11.0.0/ch23.pdf">
+<link rel="help" href="https://www.unicode.org/versions/Unicode11.0.0/ch09.pdf">
+<link rel="help" href="https://www.w3.org/TR/alreq/#h_joining_enforcement">
+<meta name="assert" content="Fonts should produce the expected glyphs for arabic characters next to a ZERO WIDTH JOINER character.">
+<style>
+@font-face {
+    font-family: 'webfont';
+    src: url('../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff');
+    }
+#wrapper { position: relative; }
+.test { color: black; font-family: webfont; }
+.test, .ref { font-size: 2em;width: 185px; padding: 0; border: 1px solid orange; line-height: 1em; }
+td { padding: 0 .5em; border: 0; }
+.container { display: flex;  justify-content: space-around; }
+</style>
+
+<p>Test passes if the joining forms look correct.</p>
+
+<p>WITH DIR=RTL</p>
+
+<p>Ordinary text with just spaces between</p>
+<div class="test" dir="rtl">  &#x0639;  &#x0639;&zwj; &zwj;&#x0639;&zwj;  &zwj;&#x0639;</div>
+
+<p>Ordinary text with LRM between</p>
+<div class="test" dir="rtl">  &#x0639;  &lrm; &#x0639;&zwj; &lrm; &zwj;&#x0639;&zwj; &lrm; &zwj;&#x0639;</div>
+
+<p>Spans</p>
+<div class="test" dir="rtl"> <span>&#x0639;</span>  <span>&#x0639;&zwj;</span>  <span>&zwj;&#x0639;&zwj;</span>  <span>&zwj;&#x0639;</div>
+
+<p>bdi</p>
+<div class="test" dir="rtl"><bdi>&#x0639;</bdi>  <bdi>&#x0639;&zwj;</bdi>  <bdi>&zwj;&#x0639;&zwj;</bdi>  <bdi>&zwj;&#x0639;</div>
+
+<p>Table cells</p>
+<div class="test">
+<table dir="rtl">
+<tr><td>&#x200D;&#x0639;</td><td>&#x200D;&#x0639;&#x200D;</td><td>&#x0639;&#x200D;</td><td>ع</td></tr>
+</table>
+</div>
+
+<p>Flex box</p>
+<div class="test" dir="rtl">
+<div class="container"><div>&#x200D;&#x0639;</div><div>&#x200D;&#x0639;&#x200D;</div><div>&#x0639;&#x200D;</div><div>ع</div></div>
+</div>
+
+
+<p>WITHOUT DIR=RTL</p>
+
+<p>Ordinary text with just spaces between</p>
+<div class="test">  &#x0639;  &#x0639;&zwj; &zwj;&#x0639;&zwj;  &zwj;&#x0639;</div>
+
+<p>Ordinary text with LRM between</p>
+<div class="test">  &#x0639;  &lrm; &#x0639;&zwj; &lrm; &zwj;&#x0639;&zwj; &lrm; &zwj;&#x0639;</div>
+
+<p>Spans</p>
+<div class="test"> <span>&#x0639;</span>  <span>&#x0639;&zwj;</span>  <span>&zwj;&#x0639;&zwj;</span>  <span>&zwj;&#x0639;</div>
+
+<p>bdi</p>
+<div class="test"><bdi>&#x0639;</bdi>  <bdi>&#x0639;&zwj;</bdi>  <bdi>&zwj;&#x0639;&zwj;</bdi>  <bdi>&zwj;&#x0639;</div>
+
+<p>Table cells</p>
+<div class="test">
+<table>
+<tr><td>&#x200D;&#x0639;</td><td>&#x200D;&#x0639;&#x200D;</td><td>&#x0639;&#x200D;</td><td>ع</td></tr>
+</table>
+</div>
+
+<p>Flex box</p>
+<div class="test">
+<div class="container"><div>&#x200D;&#x0639;</div><div>&#x200D;&#x0639;&#x200D;</div><div>&#x0639;&#x200D;</div><div>ع</div></div>
+</div>
+
