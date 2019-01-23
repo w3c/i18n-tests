@@ -18,7 +18,7 @@
 <body>
 <p class="instructions">Test passes if the three Arabic characters DON'T join.</p>
 <small>Skip if markup alone breaks the join (test shaping_lig-000)</small>
-<div class="test" lang="ar">ع‌<span class="styled">‌ل‌</span>‌ا</div>
+<div class="test" lang="ar">ع&zwnj;<span class="styled">&zwnj;ل&zwnj;</span>&zwnj;ا</div>
 <!-- Notes:
 This test uses the Noto Naskh Arabic font to control variables related to font choice.
 -->
