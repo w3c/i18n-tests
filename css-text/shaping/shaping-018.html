@@ -22,8 +22,8 @@
 <body>
 <p class="instructions">Test passes if both boxes look the same.</p>
 <small>Skip if markup alone breaks the join (test shaping-000)</small>
-<div class="test" lang="ar">ع<b>ع</b>ع</div>
-<div class="ref" lang="ar">ع‍<span class="styled">‍ع‍</span>‍ع</div>
+<div class="test" lang="ar" dir="rtl">ع<b>ع</b>ع</div>
+<div class="ref" lang="ar" dir="rtl">ع‍<span class="styled">‍ع‍</span>‍ع</div>
 <!-- Notes:
 This test uses the Noto Naskh Arabic font to control variables related to font choice.
 It also assumes that the default rendering for the b element is bold.
