@@ -57,79 +57,225 @@ CSS3 Text, word-break</h1>
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, XHTML/HTML coders (using editors or scripting), script developers (PHP, JSP, etc.), CSS coders, Web project managers, and anyone who wants to know whether the CSS property word-break works as specified.</p>
+<div class="pageInstructions">
+<p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. To see detailed results   click on a row and look just above the table. </p>
+<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p-->
+<table class="results" style="margin-right: 32%;">
+<tbody>
+<tr>
+<th style="min-width:8em; padding: .5em">Key:</th>
+<td class="pass" style="min-width:8em; padding: .5em">pass</td>
+<td class="fail" style="min-width:8em; padding: .5em">fail</td>
+<td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+</tr>
+</tbody>
+</table>
+</div>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
 
 			<section> 
-                <p>These tests check whether user agents correctly apply <code class="kw" translate="no">word-break</code> to various writing systems per the CSS-text-3 spec. </p>
-<p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
-<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.  Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
-      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
-      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
-    </tr>
-  </tbody>
-</table>
+                <p>These tests check whether user agents correctly apply <code class="kw" translate="no">word-break</code> to various writing systems per the CSS-text-3 spec. Since the CSS spec relies on the browser to implement fine details on a language-by-language basis,  the tests listed here  check only  unarguable expectations of behaviour, in very simplistic arrangements. They focus on the interaction between letters and spaces, and do not tackle the impact of punctuation marks.</p>
 			</section>
 		</section>
 
 <!-- ·········································································· -->
-<br style="clear:both;"/>
 
 <!-- SECTION CONTAINERS GO HERE -->
 
 <section>
   <h2 id="normal"><a href="#normal">word-break: normal</a></h2>
   <p>For <code class="kw" translate="no">word-break:normal</code> the CSS spec mostly just says that the 'customary rules' should be applied, without further detail. More detailed rules may be added to the spec as the information becomes available (initiatives such as the layout requirements and digital publishing work may provide such details, amongst others). For the time being, these tests check browser behavior for just the obvious characteristics pertaining to several major writing systems. As more information becomes available, additional tests may be added.</p>
-  <p>Some specific behaviors for CJK script, in particular, are covered by  <a href="/International/tests/#css3-text-line-breaks">line&nbsp;break tests</a> elsewhere. See the <a href="#breakall">word-break: break-all</a> section for tests related to typographic units that are only exposed when partial words are wrapped, such as indic conjuncts.</p>
-<div id="normal-data"></div>
-</section>
-<script>
-drawResults(
-	'normal', // sectionid 
-	'css-text/word-break', // base
-	'word-break', // batch
-	 [
-        'word-break-normal-en-000.html',
-        'word-break-normal-hi-000.html',
-        'word-break-normal-ar-000.html',
-        'word-break-normal-bo-000.html',
+  <p>Some specific behaviors for CJK script, in particular, are covered by  <a href="https://www.w3.org/International/tests/#css3-text-line-breaks">line&nbsp;break tests</a> elsewhere. See the <a href="#breakall">word-break: break-all</a> section for tests related to typographic units that are only exposed when partial words are wrapped, such as indic conjuncts.</p>
+  
+  <section>
+  <h3 id="normal_word"><a href="#normal_word">Scripts that wrap space-separated words</a></h3>
+  <p>These scripts separate words with spaces and in simple scenarios wrap whole words to the next line  when part of a word exceeds the length of a line.</p>
+  <div id="normal_word-data"></div>
+  </section>
+    <script>
+    drawResults(
+        'normal_word', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
+            'word-break-normal-en-000.html',
+            'word-break-normal-hi-000.html',
+            'word-break-normal-ar-000.html',
+            ]
+         )
+    </script>
+  
+  <section>
+  <h3 id="normal_character"><a href="#normal_character">Scripts that wrap characters</a></h3>
+  <p>These scripts don't separate words in text and in simple scenarios wrap characters one-by-one to the next line  when part of a word exceeds the length of a line. <a href="line-breaks-jazh">Tests elsewhere</a> examine less basic behaviour for Chinese and Japanese.</p>
+  <div id="normal_character-data"></div>
+  </section>
+    <script>
+    drawResults(
+        'normal_character', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
         'word-break-normal-ja-000.html',
         'word-break-normal-ja-001.html',
         'word-break-normal-ja-002.html',
         'word-break-normal-ja-004.html',
         'word-break-normal-zh-000.html',
+            ]
+         )
+    </script>
+  
+  <section>
+  <h3 id="normal_korean"><a href="#normal_korean">Korean</a></h3>
+  <p><strong>This test is exploratory.</strong> Simple Korean text can wrap characters or words when part of a word exceeds the length of a line, according to preference. The more common approach is to wrap between any two consecutive Hangul/Hanja, so this test checks whether this is what a browser does.</p>
+  <div id="normal_korean-data"></div>
+  </section>
+    <script>
+    drawResults(
+        'normal_korean', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
         'word-break-normal-ko-000.html',
+            ]
+         )
+    </script>
+  
+  <section>
+  <h3 id="normal_seasia"><a href="#normal_seasia">Scripts that wrap words without spaces</a></h3>
+  <p>These scripts don't separate words in text but nevertheless in simple scenarios wrap whole words to the next line when part of a word exceeds the length of a line.</p>
+  <div id="normal_seasia-data"></div>
+  </section>
+<script>
+    drawResults(
+        'normal_seasia', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
         'word-break-normal-km-000.html',
         'word-break-normal-lo-000.html',
         'word-break-normal-my-000.html',
         'word-break-normal-tdd-000.html',
         'word-break-normal-th-000.html',
+            ]
+         )
+    </script>
+  
+  <section>
+  <h3 id="normal_syllable"><a href="#normal_syllable">Scripts that wrap by syllable</a></h3>
+  <p>These scripts don't separate words in text but typically wrap an orthographic syllable to the next line when part of a word exceeds the length of a line.</p>
+  <div id="normal_syllable-data"></div>
+  </section>
+    <script>
+    drawResults(
+        'normal_syllable', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
+        'word-break-normal-bo-000.html',
         'word-break-normal-jv-000.html',
         'word-break-normal-jv-001.html',
+            ]
+         )
+    </script>
+  
+<div id="normal-data"></div>
+</section>
+<!--script>
+drawResults(
+	'normal', // sectionid 
+	'css-text/word-break', // base
+	'word-break', // batch
+	 [
         'word-break-normal-zwj-001.html'
 		]
 	 )
-</script>
+</script-->
 
 
 
 <section>
   <h2 id="breakall"><a href="#breakall">word-break: break-all</a></h2>
-  <div id="breakall-data"></div>
-<section class="notes">
-<p class="notesheader">Notes</p>
-<ol>
-<li> <strong>word-break-break-all-008</strong>: This test is exploratory because indic conjuncts containing more than one consonant are not covered by the extended grapheme cluster definition, and therefore constitute more than one typographic unit, per the definition in the CSS spec. Nevertheless, people using indic scripts expect the user agent to keep the orthographic syllable as a single unit. </li>
-</ol>
-</section>
+  <p>When it exceeds the line length, <code class="kw" translate="no">word-break: break-all</code> splits text  between <a class="termref" href="https://drafts.csswg.org/css-text-3/#typographic-letter-unit">typographic letter units</a>, regardless of word boundaries.</p>
+    
+  <section>
+  <h3 id="breakall_simple"><a href="#breakall_simple">Simple cases</a></h3>
+  <p>These tests deal with text where a typographic letter unit is equivalent to a single code point. Note that the expected behaviour for Korean is unambiguous here for text encoded using syllabic code points.</p>
+  <div id="breakall_simple-data"></div>
+  </section>
+    <script>
+    drawResults(
+        'breakall_simple', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
+        'word-break-break-all-000.html',
+        'word-break-break-all-001.html',
+        'word-break-break-all-002.html',
+        'word-break-break-all-003.html',
+        'word-break-break-all-004.html',
+            ]
+         )
+    </script>
+    
+  <section>
+  <h3 id="breakall_grapheme"><a href="#breakall_grapheme">Grapheme clusters</a></h3>
+  <p>Where the line length is exceeded by a code point that is part of a <a class="termref" href="https://www.w3.org/International/articles/definitions-characters/index.en#characters">grapheme cluster</a>, <code class="kw" translate="no">break-all</code> should wrap the whole grapheme cluster to the next line, since typographic letter units include grapheme clusters.</p>
+  <div id="breakall_grapheme-data"></div>
+  </section>
+    <script>
+    drawResults(
+        'breakall_grapheme', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
+        'word-break-break-all-005.html',
+        'word-break-break-all-006.html',
+        'word-break-break-all-007.html',
+            ]
+         )
+    </script>
+    
+  <section>
+  <h3 id="breakall_syllables"><a href="#breakall_syllables">Syllabic clusters</a></h3>
+  <p><strong>This test is exploratory.</strong> In some cases, a user-perceived character encompasses more than one grapheme cluster. Conjunct clusters in northern Indic scripts are a prime example. </p>
+<p>This test is exploratory because indic conjuncts containing more than one consonant are not covered by the extended grapheme cluster definition, and therefore constitute more than one typographic unit, per the definition in the CSS spec. Nevertheless, people using relevant indic scripts expect the user agent to keep the orthographic syllable as a single unit. The test checks whether such a sequence is wrapped to the next line as a unit.</p>
+  <div id="breakall_syllables-data"></div>
+  </section>
+    <script>
+    drawResults(
+        'breakall_syllables', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
+        'word-break-break-all-008.html',
+            ]
+         )
+    </script>
+    
+  <section>
+  <h3 id="breakall_arabic"><a href="#breakall_arabic">Cursive joining</a></h3>
+  <p>The CSS spec says that when shaping scripts such as Arabic are allowed to break within words due to <code class="kw" translate="no">break-all</code>, the characters must still be shaped as if the word were not broken.</p>
+  <div id="breakall_arabic-data"></div>
+  </section>
+<script>
+    drawResults(
+        'breakall_arabic', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
+        'word-break-break-all-ar-001.html',
+            ]
+         )
+    </script>
+  
+
+  
+  
+  
+<!--div id="breakall-data"></div>
 </section>
 <script>
 drawResults(
@@ -137,25 +283,56 @@ drawResults(
 	'css-text/word-break', // base
 	'word-break', // batch
 	 [
-        'word-break-break-all-000.html',
-        'word-break-break-all-001.html',
-        'word-break-break-all-002.html',
-        'word-break-break-all-003.html',
-        'word-break-break-all-004.html',
-        'word-break-break-all-005.html',
-        'word-break-break-all-006.html',
-        'word-break-break-all-007.html',
-        'word-break-break-all-008.html',
         'word-break-break-all-ar-001.html',
 		]
 	 )
-</script>
+</script-->
 
 
 
  <section>
   <h2 id="keepall"><a href="#keepall">word-break: keep-all</a></h2>
-  <div id="keepall-data"></div>
+<p>When it exceeds the line length, <code class="kw" translate="no">word-break: keep-all</code> splits text at 'word' boundaries, regardless of normal behaviour.</p>
+    
+  <section>
+  <h3 id="keepall_basic"><a href="#keepall_basic">Basic tests</a></h3>
+  <p>The basic use of <code class="kw" translate="no">keep-all</code> is to prevent break opportunities within 'words' – which, when dealing with sequences of ordinary letters surrounded by spaces, means that breaks only occur after the spaces. This is particularly relevant for CJK scripts.</p>
+<div id="keepall_basic-data"></div>
+  </section>
+<script>
+    drawResults(
+        'keepall_basic', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
+        'word-break-keep-all-000.html',
+        'word-break-keep-all-001.html',
+        'word-break-keep-all-ja-001.html',
+        'word-break-keep-all-ko-001.html',
+            ]
+         )
+    </script>
+    
+  <section>
+  <h3 id="keepall_dictionary"><a href="#keepall_dictionary">Dictionary-based breaking</a></h3>
+  <p><code class="kw" translate="no">keep-all</code>  prevents break opportunities within sequences of letters, except where opportunities exist due to dictionary-based breaking (such as in Khmer and Thai). These tests check whether an unbroken sequence of text in such languages are broken at word boundaries by the browser when <code class="kw" translate="no">keep-all</code> is set.</p>
+<div id="keepall_dictionary-data"></div>
+  </section>
+<script>
+    drawResults(
+        'keepall_dictionary', // sectionid 
+        'css-text/word-break', // base
+        'word-break', // batch
+         [
+        'word-break-keep-all-km-001.html',
+        'word-break-keep-all-th-001.html'
+            ]
+         )
+    </script>
+
+
+
+<!--div id="keepall-data"></div>
 </section>
 <script>
 drawResults(
@@ -163,15 +340,10 @@ drawResults(
 	'css-text/word-break', // base
 	'word-break', // batch
 	 [
-        'word-break-keep-all-000.html',
         'word-break-keep-all-ko-000.html',
-        'word-break-keep-all-ko-001.html',
-        'word-break-keep-all-ja-001.html',
-        'word-break-keep-all-km-001.html',
-        'word-break-keep-all-th-001.html'
 		]
 	)
-</script>
+</script-->
 
 
 

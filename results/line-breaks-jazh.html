@@ -57,28 +57,29 @@ f.additionalLinks = ''
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p>
-    <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
+<div class="pageInstructions">
+<p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. To see detailed results   click on a row and look just above the table. </p>
+<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p-->
+<table class="results" style="margin-right: 32%;">
+<tbody>
+<tr>
+<th style="min-width:8em; padding: .5em">Key:</th>
+<td class="pass" style="min-width:8em; padding: .5em">pass</td>
+<td class="fail" style="min-width:8em; padding: .5em">fail</td>
+<td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
 
 			<section> 
-                <p>These tests check whether browsers support language-specific properties of the line-break property as described in CSS Text. The content of each test is labelled as either Japanese (<code>lang=&quot;ja&quot;</code>) or Chinese (<code>lang=&quot;zh&quot;</code>). </p>
-                <p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. </p>
-<p>To see metadata for test results  click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
-<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.  Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
-      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
-      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
-    </tr>
-  </tbody>
-</table>
-			</section>
+                <p>These tests check whether browsers support language-specific properties of the <code class="kw" translate="no">line-break</code> property as described in <a href="https://drafts.csswg.org/css-text-3/#line-break-property">rules listed in the CSS Text spec</a>.</p>
+<p>The <code class="kw" translate="no">line-break</code> property specifies the strictness of line-breaking rules applied within an element: especially how wrapping interacts with punctuation and symbols. Values include <code class="kw" translate="no">loose</code>, <code class="kw" translate="no">normal</code>, and <code class="kw" translate="no">strict</code>. The tests on this page look specifically at the impact of these values for text labelled as either Japanese or Chinese.</p>
+<p>Essentially, all these tests are about whether a break opportunity can appear immediately before a given character, or whether the character sticks to the previous character when wrapped to the next line. The answer depends on the type of character and the CSS values applied.</p>
+</section>
 		</section>
 
 <!-- ·········································································· -->
@@ -88,17 +89,20 @@ f.additionalLinks = ''
 
 <section>
   <h2 id="cj"><a href="#cj">Conditional Japanese Starters (CJ)</a></h2>
+<p>Characters with the Unicode Line Break property CJ include Japanese small kana and the Katakana-Hiragana prolonged sound mark. In strict mode, break opportunities before these characters are forbidden. In other modes, they are allowed.</p>
   <div id="cj-data"></div>
 </section>
 
 
 
 <section>
-  <h2 id="ja"><a href="#ja">Japanese</a></h2>
+<h2 id="ja"><a href="#ja">Japanese</a></h2>
+<p>The CSS spec contains Japanese-specific rules for break opportunities before hyphens, iteration marks, inseparable characters, centred punctuation, and characters with the property PO (Punctuation, Other) with an East Asian width of A, F, or W.</p>
 
 
 <section>
-  <h3 id="ja_strict"><a href="#ja_strict">Strict</a></h3>
+<h3 id="ja_strict"><a href="#ja_strict">Strict</a></h3>
+<p>In strict mode, break opportunities are forbidden before all the above mentioned types of character.</p>
   <div id="ja_strict-data"></div>
 </section>
 
@@ -106,6 +110,7 @@ f.additionalLinks = ''
 
 <section>
   <h3 id="ja_normal"><a href="#ja_normal">Normal</a></h3>
+<p>In normal mode, break opportunities are allowed before hyphens, but forbidden before all the other types of character mentioned above.</p>
   <div id="ja_normal-data"></div>
 </section>
 
@@ -113,16 +118,19 @@ f.additionalLinks = ''
 
 <section>
   <h3 id="ja_loose"><a href="#ja_loose">Loose</a></h3>
+<p>In loose mode, break opportunities are allowed before all the above mentioned types of character.</p>
   <div id="ja_loose-data"></div>
 </section>
 </section>
 
 
 <section>
-  <h2 id="zh"><a href="#zh">Chinese</a></h2>
+<h2 id="zh"><a href="#zh">Chinese</a></h2>
+<p>The CSS spec contains Chinese-specific rules for break opportunities before hyphens, iteration marks, inseparable characters, centred punctuation, and characters with the property PO (Punctuation, Other) with an East Asian width of A, F, or W.</p>
 
 <section>
-  <h3 id="zh_strict"><a href="#zh_strict">Strict</a></h3>
+<h3 id="zh_strict"><a href="#zh_strict">Strict</a></h3>
+<p>In strict mode, break opportunities are forbidden before all the above mentioned types of character.</p>
   <div id="zh_strict-data"></div>
 </section>
 
@@ -130,6 +138,7 @@ f.additionalLinks = ''
 
 <section>
   <h3 id="zh_normal"><a href="#zh_normal">Normal</a></h3>
+<p>In normal mode, break opportunities are allowed before hyphens, but forbidden before all the other types of character mentioned above.</p>
   <div id="zh_normal-data"></div>
 </section>
 
@@ -137,6 +146,7 @@ f.additionalLinks = ''
 
 <section>
   <h3 id="zh_loose"><a href="#zh_loose">Loose</a></h3>
+<p>In loose mode, break opportunities are allowed before all the above mentioned types of character.</p>
   <div id="zh_loose-data"></div>
 </section>
 </section>

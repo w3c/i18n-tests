@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'mplus-1p-regular';
+    src: url('../../../fonts/CSSTest/mplus-1p-regular.woff') format('woff');
+    }
+#wrapper { position: relative; }
+.test { color: black; }
+.test, .ref { font-size: 30px; font-family: mplus-1p-regular, sans-serif; width: 185px; padding: 0; border: 1px solid orange; line-height: 1em; }
+.ref { color: lightgray; border-color: white; margin-bottom: 1em; }

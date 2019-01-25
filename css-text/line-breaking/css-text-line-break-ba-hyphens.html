@@ -7,9 +7,10 @@
 <link rel="help" href="https://drafts.csswg.org/css-text-3/#line-breaking">
 <script src="../../resources/testharness.js"></script>
 <script src="../../resources/testharnessreport.js"></script>
-<meta name="assert" content="[Exploratory] The browser will break a line of text after each of the BA breaking hyphen characters.">
+<script src="unbreakable.js"></script>
+<meta name="assert" content="[Exploratory] The browser can break a line of text after a BA breaking hyphen character.">
 <style type="text/css">
-.breakable { font-size: 25px; width: 800px; line-height: 30px; }
+.breakable { font-size: 25px; width: 800px; line-height: 30px; color: darkorange; }
 </style>
 <script>
 var charlist = `2010 HYPHEN
@@ -21,27 +22,7 @@ var charlist = `2010 HYPHEN
 </head>
 <body>
 <script>
-var lines = charlist.split('\n')
-var out = '<div id="log"></div>\n'
-for (var i=0;i<lines.length;i++) {
-    // get the data
-    var firstSpace = lines[i].indexOf(' ')
-    var hex = lines[i].substr(0,firstSpace)
-    var name = lines[i].substr(firstSpace)
-    // make a test
-    out +=  '<div><div>'+hex+'</div><div id="test'+i+'" class="breakable">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&#x'+hex+';bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div></div>'
-    }
-document.querySelector('body').innerHTML = out
-// run the test framework
- for (i=0;i<lines.length;i++) {
-   test(function() {
-        assert_true(document.getElementById('test'+i).offsetHeight > 35);
-        }, lines[i]+' should allow a line break after');
-   }
-// hide successful tests
-for (i=0;i<lines.length;i++) {
-    if (document.getElementById('test'+i).offsetHeight > 35) document.getElementById('test'+i).parentNode.style.display = 'none'
-    }
+createTests(charlist, document.querySelector('body'))
 </script>
 <!--Notes:
 This list is based on property assignments for Unicode version 10.

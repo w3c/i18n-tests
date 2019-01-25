@@ -57,38 +57,37 @@ f.additionalLinks = ''
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know how well browsers support the line breaking properties of Unicode characters.</p>
+<div class="pageInstructions">
+<p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. To see detailed results   click on a row and look just above the table. </p>
+<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p-->
+<table class="results" style="margin-right: 32%;">
+<tbody>
+<tr>
+<th style="min-width:8em; padding: .5em">Key:</th>
+<td class="pass" style="min-width:8em; padding: .5em">pass</td>
+<td class="fail" style="min-width:8em; padding: .5em">fail</td>
+<td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+</tr>
+</tbody>
+</table>
+</div>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
 
 			<section> 
-                <p>These tests check the default line-breaking behavior of characters against the expectations in the Unicode Standard, version 10. With a very few exceptions, the CSS3 Text specification leaves it up to the browser to decide how these characters should behave. In many cases, the behaviour may depend on context. These tests explore how the browsers handle the various line break related characters by default.</p>
-<p>To see details about which characters are tested and which fail, click on the link in the left column to view the test.</p>
+                <p><strong>These tests are all exploratory.</strong> They explore the default line-breaking behavior of characters against the expectations in the Unicode Standard, version 10. With a very few exceptions, the CSS3 Text specification leaves it up to the browser to decide how these characters should behave. In many cases, the behaviour may depend on context. These tests check how the browsers handle the various line break related characters by default.</p>
 <p> The two-letter abbreviations are conventions for property names in the Unicode Standard. For more information about expected line break behavior and line break classes, see <a href="http://www.unicode.org/reports/tr14/">Unicode Standard Annex #14 Line Breaking Properties</a>. </p>
-              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
-      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
-      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
-    </tr>
-  </tbody>
-</table>
-			</section>
+</section>
 		</section>
 
 <!-- ·········································································· -->
-<br style="clear:both;"/>
 
 <!-- SECTION CONTAINERS GO HERE -->
 
 <section>
   <h2 id="ba"><a href="#ba">Break after (BA)</a></h2>
-<p>In all these tests, one would expect a line to break after the character being tested.</p>
+<p><strong>These tests are  exploratory.</strong> In all these tests, one would expect a line to break after the character being tested, because they have the BA (Break After) property.</p>
   <div id="ba-data"></div>
 </section>
 <script>
@@ -109,7 +108,7 @@ drawResults(
 
 <section>
 <h2 id="opclns"><a href="#opclns">Other punctuation</a></h2>
-<p>These tests look at what should or shouldn't appear at the start or end of a line.</p>
+<p><strong>These tests are  exploratory.</strong> Characters with the OP (Open Parenthesis) property should not appear as the last character on a line. Characters with the CL (Close Parenthesis) and NS (Non-Starter) properties should not appear at the start of a line, and should therefore move to the next line with the character that precedes them rather than appear at the end of a line.</p>
   <div id="opclns-data"></div>
 </section>
 <script>
