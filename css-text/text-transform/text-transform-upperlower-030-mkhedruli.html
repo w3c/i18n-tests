@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: Mkhedruli to mtavruli</title>
+<meta name="assert" content="text-transform:uppercase converts mkedruli characters to mtavruli.">
+<link rel='author' title='r12a' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#text-transform'>
+<link rel="match" href="reference/text-transform-upperlower-030-mkedruli-ref.html">
+<meta name='flags' content='font'>
+<style type='text/css'>
+@font-face {
+	font-family: 'webfont';
+	src: url('../../fonts/other/bpg_2017_dejavusans-webfont.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 200%; line-height: 2.5em; font-family: webfont; }
+.test span, .ref span { margin-right: 0; white-space: nowrap; }
+.ref span { color: red; }  .ref { z-index: -100; }
+span { display: inline-block; min-width: 2em; }
+.ref, .test { position:absolute; top:0; }
+
+/* the CSS above is not part of the test */
+.test { text-transform: uppercase; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red characters (ignore any red 'glow').<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+
+<div style="position:relative">
+
+
+<div class="test"><span title="ა">ა</span><span title="ბ">ბ</span><span title="გ">გ</span><span title="დ">დ</span><span title="ე">ე</span><span title="ვ">ვ</span><span title="ზ">ზ</span><span title="თ">თ</span><span title="ი">ი</span><span title="კ">კ</span><span title="ლ">ლ</span><span title="მ">მ</span><span title="ნ">ნ</span><span title="ო">ო</span><span title="პ">პ</span><span title="ჟ">ჟ</span><span title="რ">რ</span><span title="ს">ს</span><span title="ტ">ტ</span><span title="უ">უ</span><span title="ფ">ფ</span><span title="ქ">ქ</span><span title="ღ">ღ</span><span title="ყ">ყ</span><span title="შ">შ</span><span title="ჩ">ჩ</span><span title="ც">ც</span><span title="ძ">ძ</span><span title="წ">წ</span><span title="ჭ">ჭ</span><span title="ხ">ხ</span><span title="ჯ">ჯ</span><span title="ჰ">ჰ</span><span title="ჱ">ჱ</span><span title="ჲ">ჲ</span><span title="ჳ">ჳ</span><span title="ჴ">ჴ</span><span title="ჵ">ჵ</span>
+</div>
+
+<div class="ref"><span title="Ა">Ა</span><span title="Ბ">Ბ</span><span title="Გ">Გ</span><span title="Დ">Დ</span><span title="Ე">Ე</span><span title="Ვ">Ვ</span><span title="Ზ">Ზ</span><span title="Თ">Თ</span><span title="Ი">Ი</span><span title="Კ">Კ</span><span title="Ლ">Ლ</span><span title="Მ">Მ</span><span title="Ნ">Ნ</span><span title="Ო">Ო</span><span title="Პ">Პ</span><span title="Ჟ">Ჟ</span><span title="Რ">Რ</span><span title="Ს">Ს</span><span title="Ტ">Ტ</span><span title="Უ">Უ</span><span title="Ფ">Ფ</span><span title="Ქ">Ქ</span><span title="Ღ">Ღ</span><span title="Ყ">Ყ</span><span title="Შ">Შ</span><span title="Ჩ">Ჩ</span><span title="Ც">Ც</span><span title="Ძ">Ძ</span><span title="Წ">Წ</span><span title="Ჭ">Ჭ</span><span title="Ხ">Ხ</span><span title="Ჯ">Ჯ</span><span title="Ჰ">Ჰ</span><span title="Ჱ">Ჱ</span><span title="Ჲ">Ჲ</span><span title="Ჳ">Ჳ</span><span title="Ჴ">Ჴ</span><span title="Ჵ">Ჵ</span>
+</div>
+</div>
+
+<!--Notes:
+Tip: To identify the characters where differences occur, in order to report problem characters,either mouse over to reveal a tooltip, or copy and paste the sequence into a tool such as <a href='http://r12a.github.io/uniview/' target='_blank'>UniView</a> or the <a href='http://r12a.github.io/apps/conversion/' target='_blank'>Unicode Conversion Tool</a>.
+-->
+</body>
+</html>
