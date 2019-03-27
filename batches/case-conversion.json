@@ -1,0 +1,35 @@
+tests = []
+tests[0]=["greek/text-transform-lc-el-consonants.html","CSS3 Text, text transform: lowercase, modern Greek consonants","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[1]=["greek/text-transform-lc-el-final-sigma.html","CSS3 Text, text transform: lowercase, Greek final sigma","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[2]=["greek/text-transform-lc-el-monotonic-vowels.html","CSS3 Text, text transform: lowercase, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[3]=["greek/text-transform-uc-el-consonants.html","CSS3 Text, text transform: uppercase, modern Greek consonants","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[4]=["greek/text-transform-uc-el-final-sigma.html","CSS3 Text, text transform: uppercase, Greek final sigma","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[5]=["greek/text-transform-uc-el-monotonic-vowels.html","CSS3 Text, text transform: uppercase, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[6]=["greek/text-transform-uc-el-monotonic-vowels-exp.html","CSS3 Text, text transform: uppercase, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[7]=["greek/text-transform-uc-el-monotonic-vowels-diphthongs.html","CSS3 Text, text transform: uppercase, Greek diphthong with tonos","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[8]=["greek/text-transform-uc-el-monotonic-vowels-disjunctive-eta.html","CSS3 Text, text transform: uppercase, Greek diphthong with tonos","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[9]=["greek/text-transform-cap-el-consonants.html","CSS3 Text, text transform:capitalize, modern Greek consonants","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[10]=["greek/text-transform-cap-el-monotonic-vowels.html","CSS3 Text, text transform: capitalize, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+
+
+tests[11]=['../../testend','','','','']

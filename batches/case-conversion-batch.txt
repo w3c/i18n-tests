@@ -1,0 +1,14 @@
+
+greek/text-transform-lc-el-consonants.html
+greek/text-transform-lc-el-final-sigma.html
+greek/text-transform-lc-el-monotonic-vowels.html
+
+greek/text-transform-uc-el-consonants.html
+greek/text-transform-uc-el-final-sigma.html
+greek/text-transform-uc-el-monotonic-vowels.html
+greek/text-transform-uc-el-monotonic-vowels-exp.html
+greek/text-transform-uc-el-monotonic-vowels-diphthongs.html
+greek/text-transform-uc-el-monotonic-vowels-disjunctive-eta.html
+
+greek/text-transform-cap-el-consonants.html
+greek/text-transform-cap-el-monotonic-vowels.html
