@@ -1,4 +1,3 @@
-
 greek/text-transform-lc-el-consonants.html
 greek/text-transform-lc-el-final-sigma.html
 greek/text-transform-lc-el-monotonic-vowels.html
