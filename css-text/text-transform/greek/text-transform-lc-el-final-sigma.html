@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: lowercase, Greek final sigma</title>
+<meta name="assert" id="assert" content="text-transform:lowercase converts uppercase Greek sigma to U+03C3 GREEK SMALL LETTER SIGMA when word medial and U+03C2 GREEK SMALL LETTER FINAL SIGMA when word final.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://dev.w3.org/csswg/css-text-3/#text-transform-property">
+<link rel="match" href="reference/text-transform-lowerlower-035-ref.html">
+<style type="text/css">
+@font-face {
+	font-family: 'webfont';
+	src: url('../../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 500%; line-height: 1.2em; font-family: 'Gentium Plus', 'Noto Serif', 'Noto Sans', webfont, sans-serif; }
+.test span, .ref span { margin-right: 0; white-space: nowrap; }
+.test span { color: red; }  .test { z-index: -100; }
+span { display: inline-block; min-width: 1em; }
+.ref, .test { position:absolute; top:0; }
+#info { position:fixed;bottom:0;color:#bbb; }
+
+/* the CSS above is not part of the test */
+.test span { text-transform: lowercase; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+
+<div style="position:relative" lang="el">
+<div class="test">ΟΔΥΣΣΕΥΣ <span>ΟΔΥΣΣΕΥΣ</span></div>
+
+<div class="ref">ΟΔΥΣΣΕΥΣ <span>οδυσσευς</span></div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<p class="notes">The test contains 2 instances of an uppercase monotonic word; text-transform:lowercase is applied to the right-hand word in the pair. The word used contains both U+03C3 GREEK SMALL LETTER SIGMA and U+03C2 GREEK SMALL LETTER FINAL SIGMA. The red test data is overlaid by black reference results.</p>
+</div>
+</body>
+</html> 

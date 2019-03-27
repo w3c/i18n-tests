@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: lowercase, monotonic Greek vowels</title>
+<meta name="assert" id="assert" content="When the language of the text is set to el (Greek), text-transform:lowercase produces the expected lowercase monotonic Greek vowels when converting from titlecase.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://dev.w3.org/csswg/css-text-3/#text-transform-property">
+<link rel="match" href="reference/text-transform-upperlower-035-ref.html">
+<style type="text/css">
+@font-face {
+	font-family: 'webfont';
+	src: url('../../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 500%; line-height: 1.2em; font-family: 'Gentium Plus', 'Noto Serif', 'Noto Sans', webfont, sans-serif; }
+.test span, .ref span { margin-right: 0; white-space: nowrap; }
+.test span { color: red; }  .test { z-index: -100; }
+span { display: inline-block; min-width: 1em; }
+.ref, .test { position:absolute; top:0; }
+#info { position:fixed;bottom:0;color:#bbb; }
+
+/* the CSS above is not part of the test */
+.test span { text-transform: lowercase; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+
+<div style="position:relative" lang="el">
+<div class="test">Α<span>Α</span> Ε<span>Ε</span> Η<span>Η</span> Ι<span>Ι</span> Ο<span>Ο</span> Υ<span>Υ</span> Ω<span>Ω</span><br/>
+Ά<span>Ά</span> Έ<span>Έ</span> Ή<span>Ή</span> Ό<span>Ό</span> Ί<span>Ί</span> Ύ<span>Ύ</span> Ώ<span>Ώ</span></div>
+
+<div class="ref">Α<span>α</span> Ε<span>ε</span> Η<span>η</span> Ι<span>ι</span> Ο<span>ο</span> Υ<span>υ</span> Ω<span>ω</span><br/>
+Ά<span>ά</span> Έ<span>έ</span> Ή<span>ή</span> Ό<span>ό</span> Ί<span>ί</span> Ύ<span>ύ</span> Ώ<span>ώ</span></div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<p class="notes">The need for contextual information to establish where accents belong when converting from all-caps uppercase to lowercase makes it unlikely that text-transform:lowercase is able to do that job correctly. Therefore we test here whether capital Greek letters that would appear in titlecased text convert to their lowercase correlates. This should be straightforward.</p>
+<p class="notes">It is also assumed that iota and upsilon never appear in titlecase position with dialytika together, so there are no tests for that.</p>
+<p class="notes">The test contains pairs of uppercase monotonic characters; text-transform:lowercase is applied to the right-hand character in each pair. The red test data is overlaid by black reference results.</p>
+</div>
+</body>
+</html> 

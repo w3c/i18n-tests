@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: uppercase, modern Greek consonants</title>
+<meta name="assert" id="assert" content="text-transform:uppercase produces the expected result when converting lowercase Greek consonants to uppercase.">
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#text-transform-property'>
+<link rel="match" href="reference/text-transform-upperlower-035-ref.html">
+<style type='text/css'>
+@font-face {
+	font-family: 'webfont';
+	src: url('../../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 500%; line-height: 1.2em; font-family: 'Gentium Plus', 'Noto Serif', 'Noto Sans', webfont, sans-serif; }
+.test span, .ref span { margin-right: 0; white-space: nowrap; }
+.test span { color: red; }  .test { z-index: -100; }
+span { display: inline-block; min-width: 1em; }
+.ref, .test { position:absolute; top:0; }
+#info { position:fixed;bottom:0;color:#bbb; }
+
+/* the CSS above is not part of the test */
+.test span { text-transform: uppercase; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+
+<div style="position:relative" lang="el">
+
+<div class="test">β<span>β</span> γ<span>γ</span> δ<span>δ</span> ζ<span>ζ</span> η<span>η</span> θ<span>θ</span> κ<span>κ</span> λ<span>λ</span> μ<span>μ</span> ν<span>ν</span> ξ<span>ξ</span> π<span>π</span> ρ<span>ρ</span> σ<span>σ</span> τ<span>τ</span> φ<span>φ</span> χ<span>χ</span> ψ<span>ψ</span></div>
+
+<div class="ref">β<span>Β</span>  γ<span>Γ</span>  δ<span>Δ</span> ζ<span>Ζ</span> η<span>Η</span> θ<span>Θ</span> κ<span>Κ</span> λ<span>Λ</span> μ<span>Μ</span> ν<span>Ν</span> ξ<span>Ξ</span> π<span>Π</span> ρ<span>Ρ</span> σ<span>Σ</span> τ<span>Τ</span> φ<span>Φ</span> χ<span>Χ</span> ψ<span>Ψ</span></div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<p class="notes">The test contains pairs of lowercase characters; text-transform:uppercase is applied to the right-hand character in each pair. The red test data is overlaid by black reference results.</p>
+</div>
+</body>
+</html> 
