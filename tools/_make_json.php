@@ -85,11 +85,11 @@ function getData ($t, $file, $base) {
 		
 		// get assertion
 		//preg_match("/<meta[\s]+name=['|\"]assert['|\"][\s]+content=['|\"]([^\"]*)['|\"]>/i", $filestring, $titletag);
-		$success = preg_match("/<meta[\s]+name=['|\"]assert['|\"][\s]+content='([^\']*)'[\s]*[\/]?>/i", $filestring, $titletag);
-		if ($success == 0) { $success = preg_match("/<meta[\s]+name=['|\"]assert['|\"][\s]+content=\"([^\"]*)\"[\s]*[\/]?>/i", $filestring, $titletag); }
-		if ($success) { $foundItem = str_replace("\n",' ', "\"".htmlspecialchars($titletag[1], ENT_QUOTES)."\"]\n"); $output .= $foundItem; }
+		$success = preg_match("/<meta[\s]+name=['|\"]assert['|\"][\s]+(id=['|\"]assert['|\"][\s])?content='([^\']*)'[\s]*[\/]?>/i", $filestring, $titletag);
+		if ($success == 0) { $success = preg_match("/<meta[\s]+name=['|\"]assert['|\"][\s]+(id=['|\"]assert['|\"][\s])?content=\"([^\"]*)\"[\s]*[\/]?>/i", $filestring, $titletag); }
+		if ($success) { $foundItem = str_replace("\n",' ', "\"".htmlspecialchars($titletag[2], ENT_QUOTES)."\"]\n"); $output .= $foundItem; }
 		else { $output .= "\"\"]\n"; }
-
+		
 		}
 	else { print "Could not open ".$file."\n"; }
 	return $output;
