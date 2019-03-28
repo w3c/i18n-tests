@@ -88,7 +88,7 @@ f.additionalLinks = ''
 
 
 <section>
-<h2 id="greek"><a href="#upperlower">Greek</a></h2>
+<h2 id="greek"><a href="#greek">Greek</a></h2>
 
 
 <section>
@@ -100,7 +100,7 @@ f.additionalLinks = ''
 <script>
 drawResults(
 	'el_uppercase', // sectionid 
-	'css-text', // base
+	'css-text/text-transform', // base
 	'case-conversion', // batch
 	 [
 		'greek/text-transform-uc-el-consonants.html',
@@ -118,7 +118,7 @@ drawResults(
 <script>
 drawResults(
 	'el_uppercase_exp', // sectionid 
-	'css-text', // base
+	'css-text/text-transform', // base
 	'case-conversion', // batch
 	 [
 		'greek/text-transform-uc-el-monotonic-vowels-exp.html',
@@ -139,7 +139,7 @@ drawResults(
 <script>
 drawResults(
 	'el_capitalize', // sectionid 
-	'css-text', // base
+	'css-text/text-transform', // base
 	'case-conversion', // batch
 	 [
 		'greek/text-transform-cap-el-consonants.html',
@@ -162,12 +162,64 @@ drawResults(
 <script>
 drawResults(
 	'el_lowercase', // sectionid 
-	'css-text', // base
+	'css-text/text-transform', // base
 	'case-conversion', // batch
 	 [
 		'greek/text-transform-lc-el-consonants.html',
 		'greek/text-transform-lc-el-final-sigma.html',
 		'greek/text-transform-lc-el-monotonic-vowels.html',
+		]
+	 )
+</script>
+</section>
+
+</section>
+
+
+
+
+<section>
+<h2 id="mkedruli"><a href="#mkedruli">Georgian mkhedruli/mtavruli</a></h2>
+
+<p>Modern Georgian doesn't use titlecase, so there are no tests here for <code class="kw" translate="no">text-transform:capitalize</code>. This section tests the modern mkedruli/mtavruli pairing. For the archaic khutsuri (nuskhuri/asomtavruli) pairs, see the next section.</p>
+
+<section>
+  <h3 id="geor_uppercase"><a href="#geor_uppercase">Uppercase</a></h3>
+<p>These tests check whether mkedruli characters are converted to mtavruli characters (new in Unicode v11) when <code class="kw" translate="no">text-transform:uppercase</code> is applied to the former.</p>
+<div id="geor_uppercase-data"></div>
+
+<script>
+drawResults(
+	'geor_uppercase', // sectionid 
+	'css-text/text-transform', // base
+	'case-conversion', // batch
+	 [
+		'georgian/text-transform-uc-geor-ka-mkhedruli.html',
+		'georgian/text-transform-uc-geor-other-mkhedruli.html',
+		'georgian/text-transform-uc-geor-archaic-mkhedruli.html'
+		]
+	 )
+</script>
+</section>
+
+
+
+
+
+<section>
+  <h3 id="geor_lowercase"><a href="#geor_lowercase">Lowercase</a></h3>
+<p>These tests check whether mtavruli characters (new in Unicode v11)  are converted to mkedruli characters when <code class="kw" translate="no">text-transform:uppercase</code> is applied to the former.</p>
+<div id="geor_lowercase-data"></div>
+
+<script>
+drawResults(
+	'geor_lowercase', // sectionid 
+	'css-text/text-transform', // base
+	'case-conversion', // batch
+	 [
+		'georgian/text-transform-lc-geor-ka-mkhedruli.html',
+		'georgian/text-transform-lc-geor-other-mkhedruli.html',
+		'georgian/text-transform-lc-geor-archaic-mkhedruli.html'
 		]
 	 )
 </script>
@@ -179,6 +231,56 @@ drawResults(
 
 
 
+<section>
+<h2 id="khutsuri"><a href="#khutsuri">Georgian khutsuri</a></h2>
+
+<p>This section tests the archaic nuskhuri/asomtavruli pairing of the Georgian script. For the modern mkedruli/mtavruli pairs, see the previous section.</p>
+
+<section>
+  <h3 id="khutsuri_uppercase"><a href="#khutsuri_uppercase">Uppercase</a></h3>
+<p>These tests check whether nuskhuri characters are converted to asomtavruli characters when <code class="kw" translate="no">text-transform:uppercase</code> is applied to the former.</p>
+<div id="khutsuri_uppercase-data"></div>
+
+<script>
+drawResults(
+	'khutsuri_uppercase', // sectionid 
+	'css-text/text-transform', // base
+	'case-conversion', // batch
+	 [
+		'georgian/text-transform-uc-geor-ka-khutsuri.html',
+		'georgian/text-transform-uc-geor-other-khutsuri.html',
+		'georgian/text-transform-uc-geor-archaic-khutsuri.html'
+		]
+	 )
+</script>
+</section>
+
+
+
+
+
+<section>
+  <h3 id="khutsuri_lowercase"><a href="#khutsuri_lowercase">Lowercase</a></h3>
+<p>These tests check whether asomtavruli characters  are converted to nuskhuri characters when <code class="kw" translate="no">text-transform:uppercase</code> is applied to the former.</p>
+<div id="khutsuri_lowercase-data"></div>
+
+<script>
+drawResults(
+	'khutsuri_lowercase', // sectionid 
+	'css-text/text-transform', // base
+	'case-conversion', // batch
+	 [
+		'georgian/text-transform-lc-geor-ka-khutsuri.html',
+		'georgian/text-transform-lc-geor-other-khutsuri.html',
+		'georgian/text-transform-lc-geor-archaic-khutsuri.html'
+		]
+	 )
+</script>
+</section>
+
+
+
+</section>
  <!--section>
   <h2 id="title3_id"><a href="#title3_id">TITLE3</a></h2>
   <div class="dependencies">
