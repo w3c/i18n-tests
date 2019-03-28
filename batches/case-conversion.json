@@ -21,4 +21,28 @@ tests[9]=["greek/text-transform-cap-el-consonants.html","CSS3 Text, text transfo
 
 tests[10]=["greek/text-transform-cap-el-monotonic-vowels.html","CSS3 Text, text transform: capitalize, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:capitalize produces titlecased vowels for the first character in a short lowercase monotonic Greek word."] 
 
-tests[11]=['../../testend','','','','']
+tests[11]=["georgian/text-transform-uc-geor-ka-mkhedruli.html","CSS3 Text, text transform: uppercase, mkhedruli to mtavruli","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:uppercase produces mtavruli consonants for characters regularly used for the Georgian language."] 
+
+tests[12]=["georgian/text-transform-uc-geor-other-mkhedruli.html","CSS3 Text, text transform: uppercase, other mkhedruli to mtavruli","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:uppercase produces mtavruli consonants for characters used in languages other than Georgian."] 
+
+tests[13]=["georgian/text-transform-uc-geor-archaic-mkhedruli.html","CSS3 Text, text transform: uppercase, archaic mkhedruli to mtavruli","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:uppercase produces mtavruli consonants for archaic Georgian-script characters."] 
+
+tests[14]=["georgian/text-transform-lc-geor-ka-mkhedruli.html","CSS3 Text, text transform: lowercase, mtavruli to mkhedruli","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase produces mkhedruli consonants from mtavruli for characters regularly used for the Georgian language."] 
+
+tests[15]=["georgian/text-transform-lc-geor-other-mkhedruli.html","CSS3 Text, text transform: lowercase, other mtavruli to mkhedruli","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase produces mkhedruli consonants from mtavruli for characters used in languages other than Georgian."] 
+
+tests[16]=["georgian/text-transform-lc-geor-archaic-mkhedruli.html","CSS3 Text, text transform: lowercase, archaic mtavruli to mkhedruli","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase produces mkhedruli consonants from mtavruli for archaic Georgian-script characters."] 
+
+tests[17]=["georgian/text-transform-uc-geor-ka-khutsuri.html","CSS3 Text, text transform: uppercase, khutsuri","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:uppercase produces asomtavruli consonants from nuskhuri characters regularly used for the Georgian language."] 
+
+tests[18]=["georgian/text-transform-uc-geor-other-khutsuri.html","CSS3 Text, text transform: uppercase, other khutsuri","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:uppercase produces asomtavruli consonants from nuskhuri for characters used in languages other than Georgian."] 
+
+tests[19]=["georgian/text-transform-uc-geor-archaic-khutsuri.html","CSS3 Text, text transform: uppercase, archaic khutsuri","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:uppercase produces asomtavruli consonants from nuskhuri for archaic Georgian-script characters."] 
+
+tests[20]=["georgian/text-transform-lc-geor-ka-khutsuri.html","CSS3 Text, text transform: lowercase, khutsuri","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase produces nuskhuri consonants from asomtavruli for characters regularly used for the Georgian language."] 
+
+tests[21]=["georgian/text-transform-lc-geor-other-khutsuri.html","CSS3 Text, text transform: lowercase, other khutsuri","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase produces nuskhuri consonants from asomtavruli for characters used in languages other than Georgian."] 
+
+tests[22]=["georgian/text-transform-lc-geor-archaic-khutsuri.html","CSS3 Text, text transform: lowercase, archaic khutsuri","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase produces nuskhuri consonants from asomtavruli for archaic Georgian-script characters."] 
+
+tests[23]=['../../testend','','','','']

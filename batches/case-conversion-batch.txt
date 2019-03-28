@@ -11,3 +11,22 @@ greek/text-transform-uc-el-monotonic-vowels-disjunctive-eta.html
 
 greek/text-transform-cap-el-consonants.html
 greek/text-transform-cap-el-monotonic-vowels.html
+
+
+
+
+georgian/text-transform-uc-geor-ka-mkhedruli.html
+georgian/text-transform-uc-geor-other-mkhedruli.html
+georgian/text-transform-uc-geor-archaic-mkhedruli.html
+
+georgian/text-transform-lc-geor-ka-mkhedruli.html
+georgian/text-transform-lc-geor-other-mkhedruli.html
+georgian/text-transform-lc-geor-archaic-mkhedruli.html
+
+georgian/text-transform-uc-geor-ka-khutsuri.html
+georgian/text-transform-uc-geor-other-khutsuri.html
+georgian/text-transform-uc-geor-archaic-khutsuri.html
+
+georgian/text-transform-lc-geor-ka-khutsuri.html
+georgian/text-transform-lc-geor-other-khutsuri.html
+georgian/text-transform-lc-geor-archaic-khutsuri.html
