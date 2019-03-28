@@ -30,3 +30,5 @@ georgian/text-transform-uc-geor-archaic-khutsuri.html
 georgian/text-transform-lc-geor-ka-khutsuri.html
 georgian/text-transform-lc-geor-other-khutsuri.html
 georgian/text-transform-lc-geor-archaic-khutsuri.html
+
+georgian/text-transform-cap-geor-ka-nuskhuri.html

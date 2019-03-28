@@ -241,6 +241,9 @@ drawResults(
 <p>These tests check whether nuskhuri characters are converted to asomtavruli characters when <code class="kw" translate="no">text-transform:uppercase</code> is applied to the former.</p>
 <div id="khutsuri_uppercase-data"></div>
 
+
+
+
 <script>
 drawResults(
 	'khutsuri_uppercase', // sectionid 
@@ -273,6 +276,27 @@ drawResults(
 		'georgian/text-transform-lc-geor-ka-khutsuri.html',
 		'georgian/text-transform-lc-geor-other-khutsuri.html',
 		'georgian/text-transform-lc-geor-archaic-khutsuri.html'
+		]
+	 )
+</script>
+</section>
+
+
+
+
+
+<section>
+  <h3 id="khutsuri_capitalize"><a href="#khutsuri_capitalize">Capitalize</a></h3>
+<p>Unlike modern Georgian, khutsuri alphabets do sometimes capitalise just the first letter in a word by using asomtavruli characters for the capital and nuskhuri for the lowercase. These tests check whether  nuskhuri characters  are converted to  asomtavruli characters when <code class="kw" translate="no">text-transform:capitalize</code> is applied to short nuskhuri words.</p>
+<div id="khutsuri_capitalize-data"></div>
+
+<script>
+drawResults(
+	'khutsuri_capitalize', // sectionid 
+	'css-text/text-transform', // base
+	'case-conversion', // batch
+	 [
+		'georgian/text-transform-cap-geor-ka-nuskhuri.html'
 		]
 	 )
 </script>
