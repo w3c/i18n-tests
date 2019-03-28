@@ -6,7 +6,7 @@
 <body>
 <?php
 
-$base = '/Users/ishida/Sites/git/i18n-tests/'.$_GET['base'].'/';
+$base = '/Users/ishida/Sites/i18n-tests/'.$_GET['base'].'/';
 echo '<p style="color:#aaa;">Base: '.$base."</p>";
 
 $prefix = '';
