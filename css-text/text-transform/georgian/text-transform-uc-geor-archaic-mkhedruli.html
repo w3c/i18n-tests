@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: uppercase, archaic mkhedruli to mtavruli</title>
+<meta name="assert" id="assert" content="text-transform:uppercase produces mtavruli consonants for archaic Georgian-script characters.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://dev.w3.org/csswg/css-text-3/#text-transform-property">
+<style type="text/css">
+@font-face {
+	font-family: 'webfont';
+	src: url('../../../fonts/other/bpg_2017_dejavusans-webfont.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 500%; line-height: 1.2em; font-family: webfont, sans-serif; }
+.test span, .ref span { margin-right: 0; white-space: nowrap; }
+.test span { color: red; }  .test { z-index: -100; }
+span { display: inline-block; min-width: 1.5em; }
+.ref, .test { position:absolute; top:0; }
+#info { position:fixed;bottom:0;color:#bbb; }
+
+/* the CSS above is not part of the test */
+.test span { text-transform: uppercase; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+
+<div style="position:relative" lang="ka">
+
+<div class="test">ჵ<span>ჵ</span> ჹ<span>ჹ</span> ჺ<span>ჺ</span> ჽ<span>ჽ</span> ჾ<span>ჾ</span> ჿ<span>ჿ</span> </div>
+
+
+<div class="ref">ჵ<span>Ჵ</span> ჹ<span>Ჹ</span> ჺ<span>Ჺ</span> ჽ<span>Ჽ</span> ჾ<span>Ჾ</span> ჿ<span>Ჿ</span> </div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<p class="notes">This test covers archaic Georgian characters used for languages such as Abkhaz, Ossetian, etc.</p>
+<p>The test contains pairs of mkedruli characters; text-transform:uppercase is applied to the right-hand character in each pair. The red test data is overlaid by black reference results.</p>
+</div>
+</body>
+</html> 

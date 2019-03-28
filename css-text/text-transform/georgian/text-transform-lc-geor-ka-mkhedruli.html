@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: lowercase, mtavruli to mkhedruli</title>
+<meta name="assert" id="assert" content="text-transform:lowercase produces mkhedruli consonants from mtavruli for characters regularly used for the Georgian language.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://dev.w3.org/csswg/css-text-3/#text-transform-property">
+<style type="text/css">
+@font-face {
+	font-family: 'webfont';
+	src: url('../../../fonts/other/bpg_2017_dejavusans-webfont.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 500%; line-height: 1.2em; font-family: webfont, sans-serif; }
+.test span, .ref span { margin-right: 0; white-space: nowrap; }
+.test span { color: red; }  .test { z-index: -100; }
+span { display: inline-block; min-width: 1.5em; }
+.ref, .test { position:absolute; top:0; }
+#info { position:fixed;bottom:0;color:#bbb; }
+
+/* the CSS above is not part of the test */
+.test span { text-transform: lowercase; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+
+<div style="position:relative" lang="ka">
+
+<div class="test">Ა<span>Ა</span> Ბ<span>Ბ</span> Გ<span>Გ</span> Დ<span>Დ</span> Ე<span>Ე</span> Ვ<span>Ვ</span> Ზ<span>Ზ</span> Თ<span>Თ</span> Ი<span>Ი</span> Კ<span>Კ</span> Ლ<span>Ლ</span> Მ<span>Მ</span> Ნ<span>Ნ</span> Ო<span>Ო</span> Პ<span>Პ</span> Ჟ<span>Ჟ</span> Რ<span>Რ</span> Ს<span>Ს</span> Ტ<span>Ტ</span> Უ<span>Უ</span> Ფ<span>Ფ</span> Ქ<span>Ქ</span> Ღ<span>Ღ</span> Ყ<span>Ყ</span> Შ<span>Შ</span> Ჩ<span>Ჩ</span> Ც<span>Ც</span> Ძ<span>Ძ</span> Წ<span>Წ</span> Ჭ<span>Ჭ</span> Ხ<span>Ხ</span> Ჯ<span>Ჯ</span> Ჰ<span>Ჰ</span></div>
+
+
+<div class="ref">Ა<span>ა</span> Ბ<span>ბ</span> Გ<span>გ</span> Დ<span>დ</span> Ე<span>ე</span> Ვ<span>ვ</span> Ზ<span>ზ</span> Თ<span>თ</span> Ი<span>ი</span> Კ<span>კ</span> Ლ<span>ლ</span> Მ<span>მ</span> Ნ<span>ნ</span> Ო<span>ო</span> Პ<span>პ</span> Ჟ<span>ჟ</span> Რ<span>რ</span> Ს<span>ს</span> Ტ<span>ტ</span> Უ<span>უ</span> Ფ<span>ფ</span> Ქ<span>ქ</span> Ღ<span>ღ</span> Ყ<span>ყ</span> Შ<span>შ</span> Ჩ<span>ჩ</span> Ც<span>ც</span> Ძ<span>ძ</span> Წ<span>წ</span> Ჭ<span>ჭ</span> Ხ<span>ხ</span> Ჯ<span>ჯ</span> Ჰ<span>ჰ</span></div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<p class="notes">This test covers characters in regular use for Georgian today.</p>
+<p>The test contains pairs of mtavruli characters; text-transform:lowercase is applied to the right-hand character in each pair. The red test data is overlaid by black reference results.</p>
+</div>
+</body>
+</html> 

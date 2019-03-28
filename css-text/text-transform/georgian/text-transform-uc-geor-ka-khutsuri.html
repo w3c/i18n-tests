@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform: uppercase, khutsuri</title>
+<meta name="assert" id="assert" content="text-transform:uppercase produces asomtavruli consonants from nuskhuri characters regularly used for the Georgian language.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://dev.w3.org/csswg/css-text-3/#text-transform-property">
+<style type="text/css">
+@font-face {
+	font-family: 'webfont';
+	src: url('../../../fonts/other/bpg_2017_dejavusans-webfont.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 500%; line-height: 1.2em; font-family: webfont, sans-serif; }
+.test span, .ref span { margin-right: 0; white-space: nowrap; }
+.test span { color: red; }  .test { z-index: -100; }
+span { display: inline-block; min-width: 1.5em; }
+.ref, .test { position:absolute; top:0; }
+#info { position:fixed;bottom:0;color:#bbb; }
+
+/* the CSS above is not part of the test */
+.test span { text-transform: uppercase; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+
+<div style="position:relative" lang="ka">
+
+<div class="test">ⴀ<span>ⴀ</span> ⴁ<span>ⴁ</span> ⴂ<span>ⴂ</span> ⴃ<span>ⴃ</span> ⴄ<span>ⴄ</span> ⴅ<span>ⴅ</span> ⴆ<span>ⴆ</span> ⴇ<span>ⴇ</span> ⴈ<span>ⴈ</span> ⴉ<span>ⴉ</span> ⴊ<span>ⴊ</span> ⴋ<span>ⴋ</span> ⴌ<span>ⴌ</span> ⴍ<span>ⴍ</span> ⴎ<span>ⴎ</span> ⴏ<span>ⴏ</span> ⴐ<span>ⴐ</span> ⴑ<span>ⴑ</span> ⴒ<span>ⴒ</span> ⴓ<span>ⴓ</span> ⴔ<span>ⴔ</span> ⴕ<span>ⴕ</span> ⴖ<span>ⴖ</span> ⴗ<span>ⴗ</span> ⴘ<span>ⴘ</span> ⴙ<span>ⴙ</span> ⴚ<span>ⴚ</span> ⴛ<span>ⴛ</span> ⴜ<span>ⴜ</span> ⴝ<span>ⴝ</span> ⴞ<span>ⴞ</span> ⴟ<span>ⴟ</span> ⴠ<span>ⴠ</span> </div>
+
+
+<div class="ref">ⴀ<span>Ⴀ</span> ⴁ<span>Ⴁ</span> ⴂ<span>Ⴂ</span> ⴃ<span>Ⴃ</span> ⴄ<span>Ⴄ</span> ⴅ<span>Ⴅ</span> ⴆ<span>Ⴆ</span> ⴇ<span>Ⴇ</span> ⴈ<span>Ⴈ</span> ⴉ<span>Ⴉ</span> ⴊ<span>Ⴊ</span> ⴋ<span>Ⴋ</span> ⴌ<span>Ⴌ</span> ⴍ<span>Ⴍ</span> ⴎ<span>Ⴎ</span> ⴏ<span>Ⴏ</span> ⴐ<span>Ⴐ</span> ⴑ<span>Ⴑ</span> ⴒ<span>Ⴒ</span> ⴓ<span>Ⴓ</span> ⴔ<span>Ⴔ</span> ⴕ<span>Ⴕ</span> ⴖ<span>Ⴖ</span> ⴗ<span>Ⴗ</span> ⴘ<span>Ⴘ</span> ⴙ<span>Ⴙ</span> ⴚ<span>Ⴚ</span> ⴛ<span>Ⴛ</span> ⴜ<span>Ⴜ</span> ⴝ<span>Ⴝ</span> ⴞ<span>Ⴞ</span> ⴟ<span>Ⴟ</span> ⴠ<span>Ⴠ</span> </div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<p class="notes">This test covers characters in regular use for Georgian today.</p>
+<p>The test contains pairs of nuskhuri characters; text-transform:uppercase is applied to the right-hand character in each pair. The red test data is overlaid by black reference results.</p>
+</div>
+</body>
+</html> 
