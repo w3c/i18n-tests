@@ -1,35 +1,24 @@
 tests = []
-tests[0]=["greek/text-transform-lc-el-consonants.html","CSS3 Text, text transform: lowercase, modern Greek consonants","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+tests[0]=["greek/text-transform-lc-el-consonants.html","CSS3 Text, text transform: lowercase, modern Greek consonants","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase produces the expected result when converting uppercase Greek consonants to lowercase."] 
 
+tests[1]=["greek/text-transform-lc-el-final-sigma.html","CSS3 Text, text transform: lowercase, Greek final sigma","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase converts uppercase Greek sigma to U+03C3 GREEK SMALL LETTER SIGMA when word medial and U+03C2 GREEK SMALL LETTER FINAL SIGMA when word final."] 
 
-tests[1]=["greek/text-transform-lc-el-final-sigma.html","CSS3 Text, text transform: lowercase, Greek final sigma","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+tests[2]=["greek/text-transform-lc-el-monotonic-vowels.html","CSS3 Text, text transform: lowercase, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"When the language of the text is set to el (Greek), text-transform:lowercase produces the expected lowercase monotonic Greek vowels when converting from titlecase."] 
 
+tests[3]=["greek/text-transform-uc-el-consonants.html","CSS3 Text, text transform: uppercase, modern Greek consonants","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:uppercase produces the expected result when converting lowercase Greek consonants to uppercase."] 
 
-tests[2]=["greek/text-transform-lc-el-monotonic-vowels.html","CSS3 Text, text transform: lowercase, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+tests[4]=["greek/text-transform-uc-el-final-sigma.html","CSS3 Text, text transform: uppercase, Greek final sigma","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:uppercase converts lowercase Greek sigma to uppercase sigma whether the word medial or word final variant is used."] 
 
+tests[5]=["greek/text-transform-uc-el-monotonic-vowels.html","CSS3 Text, text transform: uppercase, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"When the language of the text is set to el (Greek), text-transform:uppercase produces the expected &#039;all-caps&#039; conversion when converting lowercase monotonic Greek vowels to uppercase, including dropping the tonos but keeping the dialytika."] 
 
-tests[3]=["greek/text-transform-uc-el-consonants.html","CSS3 Text, text transform: uppercase, modern Greek consonants","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+tests[6]=["greek/text-transform-uc-el-monotonic-vowels-exp.html","CSS3 Text, text transform: uppercase, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"[Exploratory] When the language of the text is NOT set to el (Greek), text-transform:uppercase still behaves as expected."] 
 
+tests[7]=["greek/text-transform-uc-el-monotonic-vowels-diphthongs.html","CSS3 Text, text transform: uppercase, Greek diphthong with tonos","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"When the language of the text is set to el (Greek), text-transform:uppercase converts lowercase Greek diphthongs with tonos over the first vowel so that they lose the tonos but gain a dialytika over the second vowel in the diphthong."] 
 
-tests[4]=["greek/text-transform-uc-el-final-sigma.html","CSS3 Text, text transform: uppercase, Greek final sigma","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
+tests[8]=["greek/text-transform-uc-el-monotonic-vowels-disjunctive-eta.html","CSS3 Text, text transform: uppercase, Greek diphthong with tonos","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"When the language of the text is set to el (Greek), text-transform:uppercase converts lowercase Greek so that it does not drop the tonos on the disjunctive eta."] 
 
+tests[9]=["greek/text-transform-cap-el-consonants.html","CSS3 Text, text transform:capitalize, modern Greek consonants","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:capitalize produces titlecased consonants on for the first character in a word when applied to lowercase Greek words."] 
 
-tests[5]=["greek/text-transform-uc-el-monotonic-vowels.html","CSS3 Text, text transform: uppercase, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
-
-
-tests[6]=["greek/text-transform-uc-el-monotonic-vowels-exp.html","CSS3 Text, text transform: uppercase, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
-
-
-tests[7]=["greek/text-transform-uc-el-monotonic-vowels-diphthongs.html","CSS3 Text, text transform: uppercase, Greek diphthong with tonos","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
-
-
-tests[8]=["greek/text-transform-uc-el-monotonic-vowels-disjunctive-eta.html","CSS3 Text, text transform: uppercase, Greek diphthong with tonos","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
-
-
-tests[9]=["greek/text-transform-cap-el-consonants.html","CSS3 Text, text transform:capitalize, modern Greek consonants","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
-
-
-tests[10]=["greek/text-transform-cap-el-monotonic-vowels.html","CSS3 Text, text transform: capitalize, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',""]
-
+tests[10]=["greek/text-transform-cap-el-monotonic-vowels.html","CSS3 Text, text transform: capitalize, monotonic Greek vowels","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:capitalize produces titlecased vowels for the first character in a short lowercase monotonic Greek word."] 
 
 tests[11]=['../../testend','','','','']
