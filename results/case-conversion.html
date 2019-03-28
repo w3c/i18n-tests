@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<title>Case conversion: Summarized test results</title>
+<meta name="description" content="Summary of results of CSS Text module tests" />
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'results'+'/' // the path to this file, not including i18n-tests or the file name
+f.filename = 'case-conversion' // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
+f.previousauthors = '' // as above
+f.modifiers = '' // people making substantive changes, and their affiliation
+f.searchString = 'results-case-conversion' // blog search string - usually the filename without extensions
+f.firstPubDate = '2019-03-27' // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2019-03-27', time:'14:41'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2019-03-27', time:'14:41'} // date and time of latest edits to this document/translation
+f.contributors = '' // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+f.sources = '' // describes sources of information
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'name, org' // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = 'tests'
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="case-conversion-data/translation.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<link rel="stylesheet" href="results.css" type="text/css" />
+<script src="../batches/case-conversion-data.js"></script>
+<script src="../batches/case-conversion.json"></script>
+<script src="results-functions-k.js"></script>
+</head>
+
+<body>
+<header>
+  <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+  
+  <h1>Summarized test results: <br>
+  Case conversion</h1>
+</header>
+
+
+<section>
+  <div id="audience">
+    <!--p><span id="intendedAudience" class="leadin">Intended audience:</span> 
+    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p-->
+    <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
+    </div>
+    
+
+<section> 
+<p>These tests check how user agents apply the property <code class="kw" translate="no">text-transform</code> per the CSS-text spec.</p>
+<p><strong>To see the test, click on the link in the left-most column.</strong> To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
+<p>Where the instructions tell you to look for red characters, character strokes should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
+<p><strong>Key:</strong></p>
+<table class="results" style="margin-right: 32%;">
+  <tbody>
+    <tr>
+      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
+      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
+      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+    </tr>
+  </tbody>
+</table>
+			</section>
+		</section>
+
+<!-- ·········································································· -->
+<br style="clear:both;"/>
+
+<!-- List of tests here -->
+
+
+
+<section>
+<h2 id="greek"><a href="#upperlower">Greek</a></h2>
+
+
+<section>
+  <h3 id="el_uppercase"><a href="#el_uppercase">Uppercase</a></h3>
+<p>Modern, monotonic Greek has two diacritics: tonos, and dialytika. When Greek text is fully uppercased (ie. like ALL-CAPS), the general rule is that tonos is not represented, but the dialytika is.</p>
+<p>This behaviour is different from what is expected for titlecased text (ie. where just the first letter of one or more words is in uppercase), and requires additional processing in addition to the basic case mappings provided by Unicode. In a couple of cases it involves application of Unicode's special-casing rules.  There are also a couple of deviations from the basic rule, which are tested below.</p>
+  <div id="el_uppercase-data"></div>
+
+<script>
+drawResults(
+	'el_uppercase', // sectionid 
+	'css-text', // base
+	'case-conversion', // batch
+	 [
+		'greek/text-transform-uc-el-consonants.html',
+		'greek/text-transform-uc-el-final-sigma.html',
+		'greek/text-transform-uc-el-monotonic-vowels.html',
+		'greek/text-transform-uc-el-monotonic-vowels-diphthongs.html',
+		'greek/text-transform-uc-el-monotonic-vowels-disjunctive-eta.html',
+		]
+	 )
+</script>
+
+<p>This exploratory test checks whether it is important to specify the language of the content as Greek in order for the conversion to work as expected.</p>
+  <div id="el_uppercase_exp-data"></div>
+
+<script>
+drawResults(
+	'el_uppercase_exp', // sectionid 
+	'css-text', // base
+	'case-conversion', // batch
+	 [
+		'greek/text-transform-uc-el-monotonic-vowels-exp.html',
+		]
+	 )
+</script>
+</section>
+
+
+
+
+
+<section>
+<h3 id="el_capitalize"><a href="#el_capitalize">Capitalize</a></h3>
+<p>These tests check whether <code class="kw" translate="no">text-transform: capitalize</code> correctly uppercases the first letter in a word. Greek retains all accents in this case.</p>
+  <div id="el_capitalize-data"></div>
+
+<script>
+drawResults(
+	'el_capitalize', // sectionid 
+	'css-text', // base
+	'case-conversion', // batch
+	 [
+		'greek/text-transform-cap-el-consonants.html',
+		'greek/text-transform-cap-el-monotonic-vowels.html'
+		]
+	 )
+</script>
+</section>
+
+
+
+
+
+<section>
+  <h3 id="el_lowercase"><a href="#el_lowercase">Lowercase</a></h3>
+<p>Automatically converting from ALL-CAPS Greek to lowercase is very difficult, since there are no indications about where the tonos accent needs to appear.</p>
+<p>These tests therefore focus on converting titlecase (capitalized) text to lowercase.</p>
+  <div id="el_lowercase-data"></div>
+
+<script>
+drawResults(
+	'el_lowercase', // sectionid 
+	'css-text', // base
+	'case-conversion', // batch
+	 [
+		'greek/text-transform-lc-el-consonants.html',
+		'greek/text-transform-lc-el-final-sigma.html',
+		'greek/text-transform-lc-el-monotonic-vowels.html',
+		]
+	 )
+</script>
+</section>
+
+
+
+</section>
+
+
+
+ <!--section>
+  <h2 id="title3_id"><a href="#title3_id">TITLE3</a></h2>
+  <div class="dependencies">
+    <p class="notesheader">Dependencies</p>
+    <ol>
+      <li><strong>ruby-merge-collapse-002</strong> and <strong>ruby-merge-auto-002</strong> are only significant if the test immediately previous passes. This is because they are testing whether the association of annotation to base text is preserved across line breaks even though the placement would otherwise obscure the relationships.</li>
+    </ol>
+  </div>
+  <div id="title3_id-data"></div>
+  <section class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+  <li><strong>hyphens-auto-001</strong>: This is a slightly difficult test to create in a generic fashion, since one has to assume that a hyphenation resource is available for the language of the text, and you don't know which words are identified by that resource for hyphenation, or what the rules are. Hopefully the selection of words chosen in this test, and the choice of English, will produce at least some hyphenation. </li>
+  </ol>
+  </section>
+</section>
+<script>
+drawResults(
+	'title3_id', // sectionid 
+	'SUB§BASE', // base
+	'case-conversion', // batch
+	 [
+		'TESTFILENAME',
+		]
+	)
+</script-->
+
+
+
+
+
+
+
+
+
+
+
+<section>
+<h2 id="endlinks"><a href="#endlinks">Links</a></h2>
+<aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
+
+<ul id="full-links">
+    <li><a href="http://www.w3.org/International/tests/">i18n test suite home</a></li>
+    <li><a href="http://www.w3.org/International/tests/">Related tests</a></li>
+	</ul>
+</section>
+
+<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script type="text/javascript">completePage()</script>
+
+<script type="text/javascript">  
+generateStuffInPage();
+</script>
+</body>
+</html>
