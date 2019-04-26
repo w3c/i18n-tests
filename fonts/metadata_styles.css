@@ -1,0 +1,9 @@
+#info { position:fixed;bottom:0;color:#bbb;font-size:90%; }
+#info li {
+    margin: 0;
+    padding: 0;
+}
+#info ul {
+    margin: 0;
+    padding: 1em;
+}
