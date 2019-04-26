@@ -3,27 +3,35 @@
 <head>
 <meta charset="utf-8">
 <title>exploring ligatures: font-style</title>
-<meta name="assert" content="[exploratory] Styling part of a ligature for font-style will break joining behaviour across inline box boundaries, or apply the styling to the glyph corresponding to the middle letter, or apply the styling to the whole ligature.">
-<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<meta name="assert" id="assert" content="[exploratory] Styling part of a ligature for font-style will break joining behaviour across inline box boundaries, or apply the styling to the glyph corresponding to the middle letter, or apply the styling to the whole ligature.">
 <link rel="help" href="https://drafts.csswg.org/css-text/#boundary-shaping">
-<style type="text/css">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>
 @font-face {
     font-family: 'csstest_noto';
     src: url('../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
     }
-.test, .ref { border: 1px solid #02D7F6;  margin: 20px;  padding: 10px; width: 3em; font-size: 120px; font-family: "csstest_noto"; }
+.test, .ref { border: 1px solid #02D7F6;  margin: 20px;  padding: 10px; width: 3em; font-size: 110px; font-family: "csstest_noto"; }
 /* the CSS above is not part of the test */
+
 .styled { font-style: italic; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the three Arabic characters don't join, or styling is applied to the glyph corresponding to the middle letter, or the styling is applied to the whole ligature.</p>
-<small>Skip if markup alone breaks the join (test shaping-000)</small>
+<p class="instructions"><em>Skip if the two sequences to the right have different shapes: <span lang="ar" dir="rtl">ع<span>ع</span>ع</span> <span lang="ar" dir="rtl">ععع</span>.</em><br>Test passes if the three Arabic characters don't join, or styling is applied to the glyph corresponding to the middle letter, or the styling is applied to the whole ligature.</p>
+
+
 <div class="test" lang="ar" dir="rtl">ع<span class="styled">ل</span>ا</div>
-<!-- Notes:
-This test uses the Noto Naskh Arabic font to control variables related to font choice.
--->
+
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li>The middle character in the box is surrounded by a span element to which the CSS style "font-style: italic" is applied.</li>
+<li>The 'skip' directive compares a sequence separated by unstyled span markup to one without. If the displayed results are different this test will always fail, regardless of the styling, and should be skipped.</li>
+<li>The test uses a Noto Naskh Arabic webfont to control variables related to font choice.</li>
+</ul>
+</div>
 </body>
 </html>

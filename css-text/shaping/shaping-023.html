@@ -3,28 +3,38 @@
 <head>
 <meta charset="utf-8">
 <title>mongolian, colour</title>
-<meta name="assert" content="Shaping should not be broken across inline box boundaries for changes to colour in Mongolian.">
-<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<meta name="assert" id="assert" content="Shaping is not broken across inline box boundaries for changes to colour in Mongolian.">
 <link rel="help" href="https://drafts.csswg.org/css-text/#boundary-shaping">
-<style type="text/css">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>
 @font-face {
     font-family: 'csstest_noto';
     src: url('../../fonts/noto/NotoSansMongolian-regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
     }
-.test, .ref { border: 1px solid #02D7F6;  margin: 20px;  padding: 10px; width: 3em; font-size: 120px; font-family: "csstest_noto"; writing-mode: vertical-lr; }
+.test, .ref { border: 1px solid #02D7F6;  margin: 20px;  padding: 10px; width: 2em; font-size: 110px; font-family: "csstest_noto"; writing-mode: vertical-lr; float: left; }
+:lang(mn) { font-family: csstest_noto; }
 /* the CSS above is not part of the test */
+
 .styled { color:blue; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the three Mongolian characters join in the right-hand line.</p>
-<small>Skip the test if the line on the left isn't arranged vertically and joined up.</small>
-<div class="test" lang="mn" dir="rtl">ᠨᠨᠨ<br/>ᠨ<span class="styled">ᠨ</span>ᠨ</div>
-<!-- Notes:
-This test uses the Noto Sans Mongolian font to control variables related to font choice.
-The test is manual because Safari (and possibly other browsers) don't support joining for vertical Mongolian anyway, so ref tests wouldn't test the correct thing.
--->
+<p class="instructions"><em>Skip if the two sequences to the right have different shapes: 1. <span lang="mn">ᠨᠨ<span>ᠨ</span>ᠨᠨ</span> 2. <span lang="mn">ᠨᠨᠨᠨᠨ</span>.</em><br><em>Skip if the text in the right-hand box is not joined up.</em><br>Test passes if the 3 Mongolian characters in each box join, making the two boxes identical.</p>
+
+
+<div class="test" lang="mn" dir="rtl">ᠨ<span class="styled">ᠨ</span>ᠨ</div>
+<div class="ref" lang="mn" dir="rtl">ᠨ&zwj;<span class="styled">&zwj;ᠨ&zwj;</span>&zwj;ᠨ</div>
+
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li>The middle character of the left-hand box is surrounded by a span element to which the CSS "color:blue" is applied. The right-hand box uses ZWJ between characters and markup to show the expected outcome.</li>
+<li>The first 'skip' directive compares a sequence separated by unstyled span markup to one without. If the displayed results are different this test will always fail, regardless of the styling, and should be skipped.</li>
+<li>The second 'skip' test checks that the browser is capable of joining Mongolian characters in vertical alignment (Safari is not).</li>
+<li>The test uses a Noto Sans Mongolian webfont to control variables related to font choice.</li>
+</ul>
+</div>
 </body>
 </html>
