@@ -3,32 +3,36 @@
 <head>
 <meta charset="utf-8">
 <title>shaping: border 0</title>
-<meta name="assert" content="Shaping should not be broken across inline box boundaries when border is set to 0.">
-<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<meta name="assert" id="assert" content="Shaping is not broken across inline box boundaries when border is set to 0.">
 <link rel="help" href="https://drafts.csswg.org/css-text/#boundary-shaping">
-<link rel="match" href="reference/shaping-006-ref.html">
-<style type="text/css">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>
 @font-face {
     font-family: 'csstest_noto';
     src: url('../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
     }
-.test, .ref { border: 1px solid #02D7F6;  margin: 20px;  padding: 10px; width: 3em; font-size: 120px; font-family: "csstest_noto"; }
+.test, .ref { border: 1px solid #02D7F6;  margin: 20px;  padding: 10px; width: 3em; font-size: 110px; font-family: "csstest_noto"; }
 /* the CSS above is not part of the test */
-.margin { margin:0; }
-.padding { padding:0; }
+
 .border { border:0; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the three Arabic characters join.</p>
-<small>Skip if markup alone breaks the join (test shaping-000)</small>
+<p class="instructions"><em>Skip if the two sequences to the right have different shapes: <span lang="ar" dir="rtl">ع<span>ع</span>ع</span> <span lang="ar" dir="rtl">ععع</span>.</em><br>Test passes if the three Arabic characters join, making the two boxes identical.</p>
+
 
 <div class="test" lang="ar" dir="rtl">ع<span class="border">ع</span>ع</div>
 <div class="ref" lang="ar" dir="rtl">ع&zwj;<span class="border">&zwj;ع&zwj;</span>&zwj;ع</div>
-<!-- Notes:
-This test uses the Noto Naskh Arabic font to control variables related to font choice.
--->
+
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li>The middle character of the top box is surrounded by a span element to which the CSS "border:0" is applied. The lower box uses ZWJ between characters and markup to show the expected outcome.</li>
+<li>The 'skip' directive compares a sequence separated by unstyled span markup to one without. If the displayed results are different this test will always fail, regardless of the styling, and should be skipped.</li>
+<li>The test uses a Noto Naskh Arabic webfont to control variables related to font choice.</li>
+</ul>
+</div>
 </body>
 </html>
