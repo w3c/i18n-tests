@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>arabic hyphenation: hyphen</title>
+<meta name="assert" id="assert" content="Uighur text produces a hyphen glyph during hyphenation.">
+<link rel="help" href="https://drafts.csswg.org/css-text-3/#word-break-shaping">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>
+  @font-face {
+    font-family: 'csstest_noto';
+    src: url('../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff2');
+  }
+/* the CSS below is not part of the test */
+.test, .ref { font-size: 100px; line-height: 2.5em; font-family: csstest_noto; line-height: 1; }
+.test { color: forestgreen; z-index: -100; }
+.ref, .test { position:absolute; top:0; right:0; }
+.ref, .test { hyphens: manual; }
+</style>
+</head>
+<body>
+<p class="instructions"><em>Skip if the word to the right isn't hyphenated: <span style="hyphens:manual; display:inline-block;" id="control">hyphen&shy;ation</span></em><br>
+Test passes if you see a green hyphen character at the end of the first line.</p>
+
+<div style="position:relative">
+<div class="test" id="test" dir="rtl" lang="ug">كېتى&shy;شكە</div>
+<div class="ref" dir="rtl" lang="ug">كېتى&#x200D;<br/>&#x200D;شكە</div>
+</div>
+
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li>We can't predict the shape of the hyphen itself, so the ref text contains no hyphen.</li>
+<li><code>hyphens</code> is set to <code>manual</code> and black reference text is positioned exactly over green test text. The width of the test box is shrunk by 10px using scripting. The test text contains <code>&amp;shy;</code>. This should force the test text to wrap so that we can check that the browser produces a hyphen-like glyph at the end of the first line.</li>
+<li>The 'skip' directive checks that <code>hyphens:manual</code> is supported by applying it to the word hyphen&amp;shy;ation. If it is not supported, the test is invalid.</li>
+</ul>
+</div>
+<script>
+var width=document.getElementById('control').offsetWidth
+console.log(width, (parseInt(width)-10)+'px')
+document.getElementById('control').style.width = (parseInt(width)-10)+'px'
+console.log(document.getElementById('control').style.width)
+width=document.getElementById('test').offsetWidth
+document.getElementById('test').style.width = (parseInt(width)-10)+'px'
+</script>
+</body>
+</html>

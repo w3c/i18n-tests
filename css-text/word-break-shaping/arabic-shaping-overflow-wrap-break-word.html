@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>arabic shaping: overflow-wrap:break-word</title>
+<meta name="assert" id="assert" content="Arabic characters retain shaped forms across line boundaries when a word is broken by overflow-wrap:break-word.">
+<link rel="help" href="https://drafts.csswg.org/css-text-3/#word-break-shaping">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>
+  @font-face {
+    font-family: 'csstest_noto';
+    src: url('../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff2');
+  }
+.test, .ref { font-size: 100px; line-height: 2.5em; font-family: csstest_noto; line-height: 1; }
+.ref { color: red; }  .ref { z-index: -100; }
+.ref, .test { position:absolute; top:0; right:30px; }
+/* the CSS below is not part of the test */
+
+.ref, .test { overflow-wrap: break-word; }
+</style>
+</head>
+<body>
+<p class="instructions"><em>Skip if the word to the right isn't broken across 2 lines: <span style="overflow-wrap: anywhere; display:inline-block;" id="control">linebreak</span></em><br>
+Test passes if you don't clearly see any red strokes.</p>
+
+<div style="position:relative">
+<div class="test" id="test" dir="rtl" lang="ar">الشبكة</div>
+<div class="ref" dir="rtl" lang="ar">الش&#x200D;<br/>&#x200D;بكة</div>
+</div>
+
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li><code>overflow-wrap</code> is set to <code>break-word</code> and the test is positioned exactly over red reference text. The width of the test box is shrunk using scripting. This should force the test text to wrap so that we can check that the characters at the end of the first line and beginning of the second both retain medial shapes.</li>
+<li>The 'skip' directive checks that <code>overflow-wrap:anywhere</code> is supported by applying it to the word linebreak. If it is not supported, the test is invalid.</li>
+</ul>
+</div>
+<script>
+var width=document.getElementById('control').offsetWidth
+document.getElementById('control').style.width = (parseInt(width)-10)+'px'
+width=document.getElementById('test').offsetWidth
+document.getElementById('test').style.width = (parseInt(width)-100)+'px'
+</script>
+</body>
+</html>
