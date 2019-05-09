@@ -1,7 +1,7 @@
 tests = []
 tests[0]=["text-orientation/text-orientation-upright-001.html","text-orientation:upright, embedded rl","","","text-orientation:upright will display latin text upright in a line of vertical-rl text."] 
 
-tests[1]=["text-orientation/text-orientation-upright-002.html","text-orientation:upright, embedded rl","","","text-orientation:upright will display latin text upright in a line of vertical-rl text."] 
+tests[1]=["text-orientation/text-orientation-upright-002.html","text-orientation:upright, embedded lr","","","text-orientation:upright will display latin text upright in a line of vertical-lr text."] 
 
 tests[2]=["text-combine-upright/text-combine-upright-all-001.html","text-combine-upright:all (up to 2 chars)","","","text-combine-upright:digits will display two-character numbers and text horizontally."] 
 
