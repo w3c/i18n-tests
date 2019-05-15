@@ -1,0 +1,15 @@
+first-letter-basic.html
+first-letter-1cchar.html
+first-letter-2cchars.html
+
+first-letter-ij.html
+
+first-letter-deva-1consonant.html
+first-letter-deva-1cchar.html
+first-letter-deva-2cchars.html
+
+first-letter-deva-conjunct.html
+first-letter-deva-syllable.html
+
+exp-first-letter-deva-syllable.html
+
