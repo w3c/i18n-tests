@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Pseudo: latin, letter + diacritic</title>
+<meta name="assert" id="assert" content=":first-letter will select a letter + a following combining character at the start of a line.">
+<link rel="help" href="https://drafts.csswg.org/css-pseudo-4/#first-letter-pseudo">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>
+@font-face {
+font-family: 'webfont';
+src: url('../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+.test, .ref { font-family: webfont, serif; font-size: 48px; margin-left: 1em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
+.ref span { font-size: 3em;  }
+.instructions:first-letter { color: #00ff00; }
+/* the CSS above is not part of the test */
+
+.test p:first-letter { font-size: 3em; }
+</style>
+</head>
+<body>
+<p class="instructions"><em>Skip if the 's' at the start of this line is not green.</em><br>Test passes if you see no clear red strokes.</p>
+
+
+<div style="position:relative;">
+<div class="test">
+<p>e&#x0301;le&#x0301;mentaire</p>
+</div>
+<div class="ref">
+<p><span>e&#x0301;</span>le&#x0301;mentaire</p>
+</div>
+</div>
+
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li>The test applies <code>p:first-letter { font-size: 3em; }</code>. The black test is overlaid on a red reference text.</li>
+<li>The first grapheme cluster is decomposed.</li>
+<li>The 'skip' directive checks whether :first-letter works in the simplest case. If not, this test is not needed.</li>
+<li>The test uses a Gentium Plus webfont to control variables related to font choice.</li>
+</ul>
+</div>
+</body>
+</html>
