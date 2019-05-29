@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <title>The dir attribute: BDI: neutral when wrapped</title>
 <link rel='author' title='HTML5 bidi test WG' href='mailto:public-i18n-bidi@w3.org'>
-<link rel='help' href='http://www.w3.org/TR/html5/dom.html#the-dir-attribute'>
+<link rel='help' href='https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute'>
 <link rel='help' href='http://www.w3.org/TR/html5/text-level-semantics.html#the-bdi-element'>
 <link rel="match" href="reference/the-dir-attribute-093-ref.html">
 <meta name="assert" content="For the purposes of applying the bidirectional algorithm to the paragraph-level       container that a bdi element finds itself within, the bdi element must be treated       like a U+FFFC OBJECT REPLACEMENT CHARACTER.     Obviously, this should hold even if the BDI's content is wrapped over more than one line.       A single character (U+FFFC or otherwise) obviously never gets wrapped over more than one       line, but we still expect the part of the content preceding the BDI, if any, that is       displayed on the same line as some part of the BDI to be ordered the same as it would be       if that part of the BDI were replaced with U+FFFC. Similarly, we expect the part of the       content following the BDI, if any, that is displayed on the same line as some part of the       BDI to be ordered the same as it would be if that part of the BDI were replaced with U+FFFC.">
