@@ -139,16 +139,16 @@ tests[68]=["text-transform/text-transform-capitalize-030.html","CSS3 Text, text 
 
 tests[69]=["text-transform/text-transform-capitalize-031.html","CSS3 Text, text transform: capitalize, initial punctuation","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"text-transform: uppercase ignores characters that are not typographic letter units and capitalizes the first typographic letter unit in a word."] 
 
-tests[70]=["text-transform/text-transform-tailoring-001.html","CSS3 Text, text transform: capitalize, Dutch IJ","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the brower tailors text-transform: capitalize to put both I and J in titlecase at the start of a word when the language is Dutch."] 
+tests[70]=["text-transform/text-transform-tailoring-001.html","CSS3 Text, text transform: capitalize, Dutch IJ","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the browser tailors text-transform: capitalize to put both I and J in titlecase at the start of a word when the language is Dutch."] 
 
-tests[71]=["text-transform/text-transform-tailoring-002.html","CSS3 Text, text transform: uppercase, Greek tonos","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the brower tailors text-transform: uppercase such that Greek words that are all uppercase lose tonos."] 
+tests[71]=["text-transform/text-transform-tailoring-002.html","CSS3 Text, text transform: uppercase, Greek tonos","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the browser tailors text-transform: uppercase such that Greek words that are all uppercase lose tonos."] 
 
-tests[72]=["text-transform/text-transform-tailoring-002a.html","CSS3 Text, text transform: uppercase, Greek dialytika","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the brower tailors text-transform: uppercase such that Greek words that are all uppercase lose tonos, but not dialytika."] 
+tests[72]=["text-transform/text-transform-tailoring-002a.html","CSS3 Text, text transform: uppercase, Greek dialytika","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the browser tailors text-transform: uppercase such that Greek words that are all uppercase lose tonos, but not dialytika."] 
 
-tests[73]=["text-transform/text-transform-tailoring-003.html","CSS3 Text, text transform: uppercase, more Greek accents","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the brower tailors text-transform: uppercase such that Greek words that are all uppercase convert tonos plus dialytika to just dialytika, and convert diphthongs with tonos on the first character to a dialytika on the second character."] 
+tests[73]=["text-transform/text-transform-tailoring-003.html","CSS3 Text, text transform: uppercase, more Greek accents","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the browser tailors text-transform: uppercase such that Greek words that are all uppercase convert tonos plus dialytika to just dialytika, and convert diphthongs with tonos on the first character to a dialytika on the second character."] 
 
-tests[74]=["text-transform/text-transform-tailoring-005.html","CSS3 Text, text transform: uppercase, Greek disjunctive eta","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the brower tailors text-transform: uppercase such that a disjunctive eta in a Greek sentence keeps its tonos diacritic."] 
+tests[74]=["text-transform/text-transform-tailoring-005.html","CSS3 Text, text transform: uppercase, Greek disjunctive eta","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the browser tailors text-transform: uppercase such that a disjunctive eta in a Greek sentence keeps its tonos diacritic."] 
 
-tests[75]=["text-transform/text-transform-tailoring-004.html","CSS3 Text, text transform: capitalize, Greek initial stress","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the brower tailors text-transform: capitalize such that a stressed vowel that is the first syllable of a Greek sentence keeps its tonos diacritic."] 
+tests[75]=["text-transform/text-transform-tailoring-004.html","CSS3 Text, text transform: capitalize, Greek initial stress","",'http://dev.w3.org/csswg/css-text-3/#text-transform',"[Exploratory] the browser tailors text-transform: capitalize such that a stressed vowel that is the first syllable of a Greek sentence keeps its tonos diacritic."] 
 
 tests[76]=['../testend','','','','']
