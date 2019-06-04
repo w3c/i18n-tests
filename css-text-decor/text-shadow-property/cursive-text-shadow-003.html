@@ -3,31 +3,29 @@
 <head>
 <meta charset="utf-8">
 <title>mongolian text-shadow</title>
-<link rel="author" title="r12a" href="mailto:ishida@w3.org">
-<meta name="assert" content="[exploratory] text-shadow on cursive Mongolian text doesn't break the joins">
+<meta name="assert" id="assert" content="[exploratory] text-shadow on cursive Mongolian text doesn't break the joins">
 <link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#text-shadow-property">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
 <style>
 @font-face {
-	font-family: 'csstest_noto';
+	font-family: 'webfont';
 	src: url('../../fonts/noto/notoSansMongolian-regular.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 	}
-
+.test { font-family: webfont; margin: .5em 5%; font-size: 6em; writing-mode: vertical-lr; }
+/* the CSS above is not part of the test */
 
 #test { text-shadow: -6px 4px 2px pink; }
-
-/* the CSS below is not part of the test */
-.test, .ref {
-margin: .5em 5%;
-font-size: 8em;
-font-family: "csstest_noto";
-writing-mode: vertical-lr;
-}
 </style>
 </head>
 <body>
-<div>Test passes if there are no pink lines between joined characters.</div>
+<div>
+<em>Skip if <span style="text-shadow: 2px 2px 2px green;" id="control">this text</span> has no shadow.</em><br>
+<em>Skip if Mongolian text below is not joined up (apart from the final suffix).</em><br>
+Test passes if there are no pink lines between joined characters.
+</div>
 
 <div class="test" id="test" lang="mn">ᠦᠰᠦᠭ ᠦᠨ</div>
 
@@ -59,6 +57,16 @@ writing-mode: vertical-lr;
 <option value="serif">serif</option>
 </optgroup>
 </select>
- </div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li><code>text-shadow</code> is set to <code>-6px 4px 2px pink</code>.</li>
+<li>The first 'skip' directive checks that <code>text-shadow</code> is supported. If  not, the test is invalid.</li>
+<li>The second 'skip' directive checks that the Mongolian text is joined up. If not, the test is invalid.</li>
+<li>The default test uses the Noto Sans Mongolian webfont, but the font change control allows you to test whether particular fonts make a difference to the outcome.</li>
+</ul>
+</div>
 </body>
 </html>

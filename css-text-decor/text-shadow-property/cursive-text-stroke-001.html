@@ -3,22 +3,28 @@
 <head>
 <meta charset="utf-8">
 <title>arabic text-stroke</title>
-<link rel="author" title="r12a" href="mailto:ishida@w3.org">
-<meta name="assert" content="[exploratory] -webkit-text-stroke on cursive Arabic text doesn't break the joins">
+<meta name="assert" id="assert" content="[exploratory] -webkit-text-stroke on cursive Arabic text doesn't break the joins">
 <link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#line-decoration">
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
 <style>
-#test { -webkit-text-stroke: 4px pink; }
+@font-face {
+	font-family: 'webfont';
+	src: url('../../fonts/noto/notoNaskhArabic-regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test { font-family: webfont; margin: .5em 5%; font-size: 8em; }
+/* the CSS above is not part of the test */
 
-/* the CSS below is not part of the test */
-.test, .ref {
-margin: .5em 5%;
-font-size: 8em;
-}
-#assertion, #advice { font-style: italic; color: #666; }
+#test { -webkit-text-stroke: 4px pink; }
 </style>
 </head>
 <body>
-<div>Test passes if there are no pink lines between joined characters.</div>
+<div>
+<em>Skip if <span style="-webkit-text-stroke: 2px green;" id="control">this text</span> has no green stroke.</em><br>
+Test passes if there are no pink lines between joined characters.
+</div>
 
 <div class="test" id="test" lang="ar">نشاط التدويل</div>
 
@@ -88,6 +94,15 @@ font-size: 8em;
 <option value="serif">serif</option>
 </optgroup>
 </select>
- </div>
- </body>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li>The proprietary <code>-webkit-text-stroke</code> is set to <code>4px pink</code>. The standard <code>text-stroke</code> property is not supported by browsers.</li>
+<li>The 'skip' directive checks that <code>-webkit-text-stroke</code> is supported. If  not, the test is invalid.</li>
+<li>The default test uses the Noto Naskh Arabic webfont, but the font change control allows you to test whether particular fonts make a difference to the outcome.</li>
+</ul>
+</div>
+</body>
 </html>
