@@ -3,21 +3,28 @@
 <head>
 <meta charset="utf-8">
 <title>arabic opaque text</title>
-<link rel="author" title="r12a" href="mailto:ishida@w3.org">
-<meta name="assert" content="[exploratory] When opacity is applied to cursive text in arabic the joins are not visible.">
+<meta name="assert" id="assert" content="[exploratory] When opacity is applied to cursive text in arabic the joins are not visible.">
 <link rel="help" href="https://drafts.csswg.org/css-color-3/#transparency">
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
 <style>
-#test {  color: rgba(0, 0, 0, 0.5); }
+@font-face {
+	font-family: 'webfont';
+	src: url('../../fonts/noto/NotoNaskhArabic-regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test { font-family: webfont; margin: .5em 5%; font-size: 8em; }
+/* the CSS above is not part of the test */
 
-/* the CSS below is not part of the test */
-.test {
-margin: .5em 5%;
-font-size: 8em;
-}
+#test {  color: rgba(0, 0, 0, 0.5); }
 </style>
 </head>
 <body>
+<div>
+<em>Skip if <span style="color: rgba(0, 0, 0, 0.5)" id="control">this text</span> is not grey.</em><br>
 <div>Test passes if there are no dark overlaps between joined characters.</div>
+</div>
 
 <div class="test" id="test" lang="ar">نشاط التدويل</div>
 
@@ -90,6 +97,15 @@ font-size: 8em;
 <option value="serif">serif</option>
 </optgroup>
 </select>
- </div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li><code>color</code> is set to <code>rgba(0, 0, 0, 0.5)</code>.</li>
+<li>The 'skip' directive checks that <code>color</code> opacity is supported. If not, the test is invalid.</li>
+<li>The default test uses the Noto Naskh Arabic webfont, but the font change control allows you to test whether particular fonts make a difference to the outcome.</li>
+</ul>
+</div>
 </body>
 </html>
