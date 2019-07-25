@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Accesskey: exploratory test</title>
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://w3c.github.io/html/editing.html#the-accesskey-attribute">
+<style>
+button { font-size: 200%; background-color: white; padding: 1em; }
+</style>
+</head>
+<body>
+
+<p class="instructions">Click on the test page to ensure it has focus, then in combination with <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">the appropriate platform-specific modifier keys</a>, press on the key indicated below.</p>
+<p class="instructions"><br/>
+Test passes if the background of the button turns green.</p>
+
+<p>Set the accesskey value to: <input type="text" id="akey" onInput="document.getElementById('litmus').accessKey = this.value; document.getElementById('litmus').textContent = 'Press required combination+'+this.value;"/></p>
+
+
+<div class="test">
+<p>
+<button id="litmus" onfocus="this.style.backgroundColor='#00FF00'" onblur="this.style.backgroundColor='white'" accesskey="a">Press required combination+'a'.</button></p>
+</div>
+
+</body>
+</html>
