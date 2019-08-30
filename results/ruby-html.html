@@ -57,117 +57,208 @@ f.additionalLinks = ''
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers (PHP, JSP, etc.),  Web project managers, and anyone who wants to know how browsers render ruby text.</p>
+	<div class="pageInstructions">
+	<p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. To see detailed results   click on a row and look just above the table. </p>
+	<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p-->
+	<table class="results" style="margin-right: 32%;">
+	<tbody>
+	<tr>
+	<th style="min-width:8em; padding: .5em">Key:</th>
+	<td class="pass" style="min-width:8em; padding: .5em">pass</td>
+	<td class="fail" style="min-width:8em; padding: .5em">fail</td>
+	<td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
 
-<section> 
-	<p>These tests check whether user agents support styling and basic default positioning of markup based on ruby markup, including the elements <code class="kw" translate="no">ruby</code>, <code class="kw" translate="no">rb</code>, <code class="kw" translate="no">rt</code>, and <code class="kw" translate="no">rtc</code>.&nbsp; They do not test&nbsp;the features of the CSS Ruby module, just whether the structure of the ruby markup is recognised by the browsers, and whether those minimal features needed to position the ruby text are available without CSS styling.</p>
-	<p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser tested. The tables only show the results of the latest test. The detailed results may show additional tests on earlier versions of the same browser.</p>
-<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
-      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
-      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
-    </tr>
-  </tbody>
-</table>
-
-			</section>
-		</section>
-		
-
-<section>
-<h2 id="results"><a href="#results">Results</a></h2>
-<p>Note that these test results are for released versions of the browsers tested. Versions that are still in development may provide better support for these features.</p>
-<br style="clear:both;"/>
-
-
-<!-- SECTION CONTAINERS GO HERE -->
-
-
-
-<section>
-  <h3 id="styling"><a href="#styling">Ruby markup styling</a></h3>
-  <div id="styling-data"></div>
-</section>
-    <!-- ··············································· -->
-
-
-<section>
-  <h3 id="position"><a href="#position">Single-sided ruby position</a></h3>
-  <div id="position-data"></div>
-</section>
-  
-<!-- ·········································································· -->
-
-
-<section>
-  <h3 id="double"><a href="#double">Double-sided ruby</a></h3>
-  <div id="double-data"></div>
-  <section class="notes">
-  <p class="notesheader">Notes</p>
-  <ol>
-  <li><strong>ruby-double-005</strong>, Firefox 38.0.1: The numbers did not extend across all the base characters – just the first one. </li>
-  <li><strong>ruby-double-007</strong>, Firefox 38.0.1: The horizontal alignment of the ruby text was correct, but the two ruby texts overlap.</li>
-  </ol>
-  </section>
-</section>
-   
-<!-- ·········································································· -->
-
-
-<section>
-<h3 id="gaps"><a href="#gaps">Ruby annotation gaps</a></h3>
-  <div id="gaps-data"></div>
-</section>
- 
+	<p>These tests check whether user agents support styling and basic default positioning of markup based on ruby markup, including the elements <code class="kw" translate="no">ruby</code>, <code class="kw" translate="no">rb</code>, <code class="kw" translate="no">rt</code>, and <code class="kw" translate="no">rtc</code>.&nbsp; </p>
+<p>Tests are provided for the range of ruby-related elements specified in the <a href="https://www.w3.org/TR/html53/textlevel-semantics.html#the-ruby-element">W3C HTML 5.3</a> specification. The <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element">WhatWG HTML</a> specification omits the <code class="kw" translate="no">rb</code> and <code class="kw" translate="no">rtc</code> elements.</p>
+<p>They do not test&nbsp;the features of the CSS Ruby module, just whether the structure of the ruby markup is recognised by the browsers, and whether those minimal features needed to position the ruby text are available without CSS styling.</p>
 </section>
 
 
 
 
-<script> 	// DRAW THE TABLES
 
+<section>
+  <h2 id="styling"><a href="#styling">Styling</a></h2>
+	<p>These tests check that the browser is able to identify and style the various elements that make up the ruby content. Where there are multiple tests, each test uses a different approach to markup, eg. both start and end tags, or just start tags.</p>
+<p>Needless to say, markup styles that omit the <code class="kw" translate="no">rb</code> element tags don't allow the <code class="kw" translate="no">rb</code> content to be styled.</p>  
+
+
+
+<section>
+  <h3 id="rb_styling_interleaved"><a href="#rb_styling_interleaved">rb, interleaved</a></h3>
+	<p>Is the <code class="kw" translate="no">rb</code> element  detected and styled, for <a href="https://www.w3.org/International/articles/ruby/markup.en#inter">interleaved</a> ruby elements?</p>
+  <div id="rb_styling_interleaved-data"></div>
+</section>
+<script>
 drawResults(
-    'styling', // sectionid 
+    'rb_styling_interleaved', // sectionid 
 	'html/semantics/text-level-semantics/the-ruby-element', // base
     'ruby-html', // batch
      [
         'ruby-styling-001.html',
-        //'ruby-styling-002.html',
         'ruby-styling-003.html',
+        ]
+     )
+</script>
+
+
+
+
+<section>
+  <h3 id="rb_styling_tabular"><a href="#rb_styling_tabular">rb, tabular</a></h3>
+	<p>Is the <code class="kw" translate="no">rb</code> element  detected and styled, for <a href="https://www.w3.org/International/articles/ruby/markup.en#tabular">tabular</a> ruby elements?</p>
+  <div id="rb_styling_tabular-data"></div>
+</section>
+<script>
+drawResults(
+    'rb_styling_tabular', // sectionid 
+	'html/semantics/text-level-semantics/the-ruby-element', // base
+    'ruby-html', // batch
+     [
         'ruby-styling-004.html',
         'ruby-styling-005.html',
+        ]
+     )
+</script>
+
+
+
+
+<section>
+  <h3 id="rt_styling_interleaved"><a href="#rt_styling_interleaved">rt, interleaved</a></h3>
+	<p>Is the <code class="kw" translate="no">rt</code> element  detected and styled, for <a href="https://www.w3.org/International/articles/ruby/markup.en#inter">interleaved</a> ruby elements?</p>
+  <div id="rt_styling_interleaved-data"></div>
+</section>
+<script>
+drawResults(
+    'rt_styling_interleaved', // sectionid 
+	'html/semantics/text-level-semantics/the-ruby-element', // base
+    'ruby-html', // batch
+     [
         'ruby-styling-006.html',
         'ruby-styling-007.html',
+        ]
+     )
+</script>
+
+
+
+<section>
+  <h3 id="rt_styling_tabular"><a href="#rt_styling_tabular">rt, tabular</a></h3>
+	<p>Is the <code class="kw" translate="no">rt</code> element  detected and styled, for <a href="https://www.w3.org/International/articles/ruby/markup.en#tabular">tabular</a> ruby elements?</p>
+  <div id="rt_styling_tabular-data"></div>
+</section>
+<script>
+drawResults(
+    'rt_styling_tabular', // sectionid 
+	'html/semantics/text-level-semantics/the-ruby-element', // base
+    'ruby-html', // batch
+     [
         'ruby-styling-008.html',
         'ruby-styling-009.html',
+        ]
+     )
+</script>
+
+
+
+<section>
+<h3 id="span_styling"><a href="#span_styling">span</a></h3>
+	<p>Can the <code class="kw" translate="no">span</code> element  be used to style a portion of the <code class="kw" translate="no">rb</code> or <code class="kw" translate="no">rt</code> text?</p>
+<div id="span_styling-data"></div>
+</section>
+<script>
+drawResults(
+    'span_styling', // sectionid 
+	'html/semantics/text-level-semantics/the-ruby-element', // base
+    'ruby-html', // batch
+     [
         'ruby-styling-010.html',
         'ruby-styling-011.html',
         ]
      )
+</script>
 
+</section>
+
+
+
+
+<section>
+  <h2 id="position"><a href="#position">Single-sided ruby position</a></h2>
+	<p><strong>These tests are  exploratory.</strong> The HTML spec doesn't actually indicate how ruby bases and annotations should be positioned relative to each other, it is concerned with associating the right base with the right annotation(s). Expected positioning is not  specified in the part of the spec that describes the ruby elements, nor in the Rendering section of the spec. However, one can reasonably expect that in simple cases annotations are positioned above bases, by default. That is what these tests set out to explore.</p>
+  <div id="position-data"></div>
+
+
+
+<section>
+  <h3 id="position_single_interleaved"><a href="#position_single_interleaved">Interleaved</a></h3>
+	<p><strong>These tests are  exploratory.</strong> Does the browser stack annotations above bases, by default, for  <a href="https://www.w3.org/International/articles/ruby/markup.en#inter">interleaved</a> ruby elements?</p>
+  <div id="position_single_interleaved-data"></div>
+</section>
+<script>
 drawResults(
-    'position', // sectionid 
+    'position_single_interleaved', // sectionid 
 	'html/semantics/text-level-semantics/the-ruby-element', // base
     'ruby-html', // batch
      [
         'ruby-position-001.html',
         'ruby-position-002.html',
         'ruby-position-003.html',
+        ]
+     )
+</script>
+
+
+
+<section>
+  <h3 id="position_single_tabular"><a href="#position_single_tabular">Tabular</a></h3>
+	<p><strong>These tests are  exploratory.</strong> Does the browser stack annotations above bases, by default, for <a href="https://www.w3.org/International/articles/ruby/markup.en#tabular">tabular</a> ruby elements?</p>
+  <div id="position_single_tabular-data"></div>
+</section>
+<script>
+drawResults(
+    'position_single_tabular', // sectionid 
+	'html/semantics/text-level-semantics/the-ruby-element', // base
+    'ruby-html', // batch
+     [
         'ruby-position-004.html',
         'ruby-position-005.html',
         ]
      )
+</script>
+</section>
 
+
+
+
+<section>
+<h2 id="double"><a href="#double">Double-sided ruby</a></h2>
+<p><strong>These tests are  exploratory.</strong> As for the previous section, the HTML spec doesn't actually indicate how ruby bases with multiple annotations should be positioned relative to each other. However, one can reasonably expect that  annotations are vertically stacked above bases, by default. That is what these tests set out to explore. (CSS would need to be used to position multiple annotations one over and one below.)</p>
+
+
+
+<section>
+  <h3 id="position_double_rtc"><a href="#position_double_rtc">Tabular, using RTC</a></h3>
+	<p><strong>These tests are  exploratory.</strong> Do various combinations of markup with <code class="kw" translate="no">rtc</code> elements, sometimes mixing mono- and group-ruby, in the <a href="https://www.w3.org/International/articles/ruby/markup.en#tabular">tabular</a> model produce reasonable results by default?</p>
+  <div id="position_double_rtc-data"></div>
+  <section class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+  <li><strong>ruby-double-005</strong>, Firefox 38.0.1: The numbers did not extend across all the base characters – just the first one. </li>
+  </ol>
+  </section>
+</section>
+<script>
 drawResults(
-    'double', // sectionid 
+    'position_double_rtc', // sectionid 
 	'html/semantics/text-level-semantics/the-ruby-element', // base
     'ruby-html', // batch
      [
@@ -177,23 +268,83 @@ drawResults(
         'ruby-double-004.html',
         'ruby-double-005.html',
         'ruby-double-006.html',
-        'ruby-double-007.html',
         'ruby-double-008.html',
         ]
      )
+</script>
 
+
+
+<section>
+  <h3 id="position_double_nested"><a href="#position_double_nested">Nested</a></h3>
+	<p><strong>These tests are  exploratory.</strong> Do nested <code class="kw" translate="no">ruby</code> elements produce reasonable results by default?</p>
+  <div id="position_double_nested-data"></div>
+  <section class="notes">
+  <p class="notesheader">Notes</p>
+  <ol>
+  <li><strong>ruby-double-007</strong>, Firefox 38.0.1: The horizontal alignment of the ruby text was correct, but the two ruby texts overlap.</li>
+  </ol>
+  </section>
+</section>
+<script>
 drawResults(
-    'gaps', // sectionid 
+    'position_double_nested', // sectionid 
+	'html/semantics/text-level-semantics/the-ruby-element', // base
+    'ruby-html', // batch
+     [
+        'ruby-double-007.html',
+        ]
+     )
+</script>
+
+
+
+
+
+<section>
+<h2 id="gaps"><a href="#gaps">Ruby annotation gaps</a></h2>
+
+
+
+<section>
+  <h3 id="gaps_explicit"><a href="#gaps_explicit">Interleaved</a></h3>
+	<p> If a blank <code class="kw" translate="no">rt</code> element is used in interleaved markup, does the browser leave a gap above the relevant base?</p>
+<div id="gaps_explicit-data"></div>
+</section>
+<script>
+drawResults(
+    'gaps_explicit', // sectionid 
 	'html/semantics/text-level-semantics/the-ruby-element', // base
     'ruby-html', // batch
      [
         'ruby-gaps-001.html',
-        'ruby-gaps-002.html',
         ]
      )
-
-
 </script>
+
+
+
+<section>
+  <h3 id="gaps_identical"><a href="#gaps_identical">Tabular</a></h3>
+<p> If a blank <code class="kw" translate="no">rt</code> element is used in tabular markup, does the browser leave a gap above the relevant base?</p>
+<div id="gaps_identical-data"></div>
+</section>
+<script>
+drawResults(
+    'gaps_identical', // sectionid 
+	'html/semantics/text-level-semantics/the-ruby-element', // base
+    'ruby-html', // batch
+     [
+        'ruby-gaps-002.html',
+
+        ]
+     )
+</script>
+
+</section>
+
+
+
 
 <section>
 <h2 id="endlinks"><a href="#endlinks">Links</a></h2>
