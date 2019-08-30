@@ -57,8 +57,20 @@ f.additionalLinks = ''
 
 <section>
   <div id="audience">
-    <!--p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p-->
+	<div class="pageInstructions">
+	<p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. To see detailed results   click on a row and look just above the table. </p>
+	<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p-->
+	<table class="results" style="margin-right: 32%;">
+	<tbody>
+	<tr>
+	<th style="min-width:8em; padding: .5em">Key:</th>
+	<td class="pass" style="min-width:8em; padding: .5em">pass</td>
+	<td class="fail" style="min-width:8em; padding: .5em">fail</td>
+	<td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
@@ -66,20 +78,9 @@ f.additionalLinks = ''
 <section> 
 <p>These tests check whether user agents correctly apply the properties defined in the CSS-ruby-1 spec. These are simple, user-oriented tests, designed to check basic functionality, rather than test all edge cases and implementation details.</p>
 <p>Note that some tests pass because the browser displays the annotations in the same way by default, rather than necessarily because of the application of a CSS property. No special action is taken in these cases, since the result is the same for the user, however there are some exploratory tests below that enable you to see what the default rendering looks like.</p>
-<p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
-<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.  Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
-      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
-      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
-    </tr>
-  </tbody>
-</table>
-			</section>
-		</section>
+<p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
+	</section>
+</section>
 
 <!-- ·········································································· -->
 <br style="clear:both;"/>
@@ -88,6 +89,7 @@ f.additionalLinks = ''
 
 
 
+<p><strong>These tests are  exploratory.</strong> In all these tests, one would expect a line to break after the character being tested, because they have the BA (Break After) property.</p>
 <section>
   <h2 id="title1"><a href="#title1">TITLE1</a></h2>
   <div id="title1-data"></div>
