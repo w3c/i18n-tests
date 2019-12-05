@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Generic exploratory line break test</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<meta name="assert" content="[exploratory] Japanese text lines break as expected at the end of a line.">
+<link rel="help" href="https://www.w3.org/TR/2018/WD-css-text-3-20180920/#line-breaking">
+
+<style>
+/* the CSS below is not part of the test */
+.test {
+margin: 40px 5%;
+width: 90%;
+font-size: 36px;
+border: 1px solid orange;
+height: 3em;
+overflow: hidden;
+}
+#in {
+	width: 80%;
+	height: 3em;
+	font-size: 36px;
+	}
+#go {
+	padding: 10px;
+	margin: 0;
+	border-radius: .25em;
+	font-size: 36px;
+	background-color: aquamarine;
+	}
+</style>
+<script>
+function setLineBreak (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.lineBreak = value }
+}
+function setWordBreak (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.wordBreak = value }
+}
+function setLanguage (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].lang = value }
+}
+function setFont (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.fontFamily = value }
+}
+
+function setText (value) { console.log('hello')
+document.getElementById('normal').textContent = document.getElementById('in').value
+document.getElementById('textarea').value = document.getElementById('in').value
+}
+</script>
+</head>
+<body>
+<div>Test passes if  the text is spaced (or not) as you would expect [exploratory test].</div>
+<div id="advice">Use the slider to adjust the width of the box.<br/>
+<input id="fontSizeSlider" min="10" max="90" step=".25" value="90" oninput="document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*this.value); tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.width = this.value+'%';}" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">90</span>px</div>
+<script>document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*90)</script>
+
+<p>Set the language <input id="language" type="text" onChange="setLanguage(this.value)"/><br/>
+Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="document.getElementById('sizeOfFont').textContent = this.value; tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.fontSize = this.value+'px';}" style="width:40%; margin-left: 5%;" type="range"/> <span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>
+Change the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/></p>
+
+<div style="vertical-align: top;"><textarea id="in" type="text" placeholder="Add text to be tested text here and click on GO."></textarea> 
+<button onClick="setText(document.getElementById('in').value)" id="go">Go</button></div>
+
+
+<div class="test" id="normal"></div>
+
+<textarea class="test" id="textarea"></textarea>
+
+<p>Default has no styling.<code></code></p>
+<p>Set <code>line-break</code> to
+<label onClick="setLineBreak('auto')"><input type="radio" checked name="lbtest"/><code>auto</code></label>
+<label onClick="setLineBreak('normal')"><input type="radio" name="lbtest"/><code>normal</code></label>
+<label onClick="setLineBreak('loose')"><input type="radio" name="lbtest"/><code>loose</code></label>
+<label onClick="setLineBreak('strict')"><input type="radio" name="lbtest"/><code>strict</code></label>
+<label onClick="setLineBreak('anywhere')"><input type="radio" name="lbtest"/><code>anywhere</code></label>
+</p>
+<p>Set <code>word-break</code> to
+<label onClick="setWordBreak('normal')"><input type="radio" checked name="wbtest"/><code>normal</code></label>
+<label onClick="setWordBreak('keep-all')"><input type="radio" name="wbtest"/><code>keep-all</code></label>
+<label onClick="setWordBreak('break-all')"><input type="radio" name="wbtest"/><code>break-all</code></label>
+</p>
+</body>
+</html>
