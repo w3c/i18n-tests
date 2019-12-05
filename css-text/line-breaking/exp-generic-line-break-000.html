@@ -55,14 +55,17 @@ document.getElementById('textarea').value = document.getElementById('in').value
 </script>
 </head>
 <body>
-<div>Test passes if  the text is spaced (or not) as you would expect [exploratory test].</div>
+<h1>Exploratory test rig for line-break &amp; word-break</h1>
+<p id="advice">Set the language <input id="language" type="text" onChange="setLanguage(this.value)"/><br/>
+Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="document.getElementById('sizeOfFont').textContent = this.value; tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.fontSize = this.value+'px';}" style="width:40%; margin-left: 5%;" type="range"/> <span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>
+Change the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/></p>
+
 <div id="advice">Use the slider to adjust the width of the box.<br/>
 <input id="fontSizeSlider" min="10" max="90" step=".25" value="90" oninput="document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*this.value); tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.width = this.value+'%';}" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">90</span>px</div>
 <script>document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*90)</script>
 
-<p>Set the language <input id="language" type="text" onChange="setLanguage(this.value)"/><br/>
-Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="document.getElementById('sizeOfFont').textContent = this.value; tests = document.querySelectorAll('.test'); for (let i=0;i<tests.length;i++) { tests[i].style.fontSize = this.value+'px';}" style="width:40%; margin-left: 5%;" type="range"/> <span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>
-Change the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/></p>
+<div><strong>Test passes if</strong>  the text is spaced (or not) as you would expect [exploratory test].</div>
+
 
 <div style="vertical-align: top;"><textarea id="in" type="text" placeholder="Add text to be tested text here and click on GO."></textarea> 
 <button onClick="setText(document.getElementById('in').value)" id="go">Go</button></div>
