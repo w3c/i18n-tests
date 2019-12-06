@@ -45,7 +45,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <script>document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*90)</script>
 
 <!-- INPUT AREA -->
-<div><textarea id="in" type="text" placeholder="Add text to be tested text here and click on GO." style="vertical-align: top;"></textarea> 
+<div><textarea id="in" type="text" placeholder="Add text to be tested text here and click on GO." style="vertical-align: top;" dir="auto"></textarea> 
 <button onClick="setText(document.getElementById('in').value)" id="go" style="vertical-align: top;">Go</button></div>
 
 <!-- INSTRUCTIONS -->
@@ -53,7 +53,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 
 <!-- TESTS -->
-<div id="test" class="test"></div>
+<div id="test" class="test" dir="auto"></div>
 
 <p style="clear: both;"><button onClick="deleteCP()">Delete 1 code point</button></p>
 

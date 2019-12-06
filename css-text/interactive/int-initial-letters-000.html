@@ -2,7 +2,7 @@
 <html  lang="en" >
 <head>
 <meta charset="utf-8">
-<title>Interactive test: hyphens</title>
+<title>Interactive test: initial-letter</title>
 <link rel="help" href="https://drafts.csswg.org/css-inline-3/#sizing-drop-initials">
 <link rel="author" title="r12a" href="mailto:ishida@w3.org">
 
@@ -59,7 +59,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 
 <!-- INPUT AREA -->
-<div><textarea id="in" type="text" placeholder="Add text to be tested text here and click on GO." style="vertical-align: top;"></textarea> 
+<div><textarea id="in" type="text" placeholder="Add text to be tested text here and click on GO." style="vertical-align: top;" dir="auto"></textarea> 
 <button onClick="setText(document.getElementById('in').value)" id="go" style="vertical-align: top;">Go</button></div>
 
 <!-- INSTRUCTIONS -->
@@ -67,7 +67,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 
 <!-- TESTS -->
-<div id="test" class="test"></div>
+<div id="test" class="test" dir="auto"></div>
 
 
 <!-- CONTROLS -->
