@@ -7,3 +7,24 @@
     margin: 0;
     padding: 1em;
 }
+
+
+
+/* exploratory tests */
+
+#in {
+	width: 80%;
+	height: 3em;
+	font-size: 32px;
+	}
+#go {
+	padding: 10px;
+	margin: 0;
+	border-radius: .25em;
+	font-size: 36px;
+	background-color: aquamarine;
+	}
+#language { width: 5em; }
+#fontSize { width: 20em; }
+#fontFamily { width: 20em; }
+.advice { font-style: italic; }
