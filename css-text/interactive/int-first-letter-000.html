@@ -40,7 +40,7 @@ Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" o
 Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setLanguage(document.getElementById('fontFamily').value)">Apply</button>
 </p>
 
-<div class="advice">Use the slider to adjust the width of the box.<br/>
+<div class="advice">Adjust the width of the test box.<br/>
 <input id="fontSizeSlider" min="10" max="90" step=".25" value="90" oninput="setBoxWidth(this.value)" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">90</span>px</div>
 <script>document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*90)</script>
 
