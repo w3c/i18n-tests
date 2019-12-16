@@ -1,60 +1,59 @@
 <!DOCTYPE html>
-<!-- saved from url=(0083)https://w3c.github.io/i18n-tests/css-text/text-spacing-property/trim-start-000.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <title>CSS Test: text-spacing:space-start</title>
+<meta name="flags" content="font">
 <meta name="assert" id="assert" content="text-spacing:space-start sets fullwidth opening punctuation with full-width glyphs (flush) at the start of each line.">
 <link rel="author" title="Jun Tajima" href="mailto:tajima@sanyosha.co.jp">
 <link rel="help" title="CSS Text Level 4: 10.2. Character Class Spacing: the text-spacing property" href="https://www.w3.org/TR/css-text-4/#text-spacing-property">
-<link rel="stylesheet" href="./CSS Test_ text-spacing_space-start_files/metadata_styles.css">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css">
 <style>
 @font-face {
-font-family: 'webfont';
-src: url('../../fonts/mplus-1p-regular.woff') format('woff2');
-font-weight: normal;
-font-style: normal;
+    font-family: 'webfont';
+    src: url('../../fonts/mplus-1p-regular.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-#parent {
+.ref, .test {
 	font: 3em/1em webfont;
-	position: relative;
+    position: absolute;
 	width: 9em;
 	height: 1em;
 }
-#reference1 {
-color: red;
-position: absolute;
-top: 0;
-z-index: -1;
+.ref {
+    color: red;
+    top: 0;
+    z-index: -1;
 }
-.tableblock {
+.ref table {
 	border-collapse: collapse;
 	width:100%;
 }
-.tableblock td {
+.ref td {
 	margin:0;
 	padding:0;
 }
 /* the CSS above is not part of the test */
 
-#test1
-{ text-spacing:space-start; }
+.test { text-spacing: space-start; }
 </style>
 </head>
 <body>
-<p>Test passes if there is no red visible on the page.</p>
-<div id="parent">
-<div id="reference1">
+<p class="instructions">Test passes if there is no red visible on the page.</p>
+<div style="position: relative;" lang="ja">
+<div class="test">「行頭カギ二分下げ</div>
+<div class="ref">
 <table class="tableblock">
 <tr><td style="width:1.0em;text-align:right">「</td><td style="width:8.0em">行頭カギ二分下げ</td></tr>
 </table>
 </div>
-<div id="test1">「行頭カギ二分下げ</div>
 </div>
 
 
 <div id="info">
-<p id="assertion">Assertion: text-spacing:space-start sets fullwidth opening punctuation with full-width glyphs (flush) at the start of each line.</p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
 <li><code>text-spacing</code> is set to <code>space-start</code>. The 「 character should be a full-width size. The red reference text should be completely covered by the black test text.</li>
 </ul>
