@@ -9,35 +9,33 @@
 <link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
 <style>
 @font-face {
-font-family: 'webfont';
-src: url('../../fonts/mplus-1p-regular.woff') format('woff2');
-font-weight: normal;
-font-style: normal;
+    font-family: 'webfont';
+    src: url('../../fonts/mplus-1p-regular.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-#parent {
+.ref, .test {
 	font: 3em/1em webfont;
-	position: relative;
+    position: absolute;
 	width: 400px;
 }
-#reference1 {
-color: red;
-position: absolute;
-top: 0;
-z-index: -1;
-margin-left:-0.5em;
+.ref {
+    color: red;
+    top: 0;
+    z-index: -1;
+    margin-left:-0.5em;
 }
 /* the CSS above is not part of the test */
 
-#test1
-{ text-spacing:trim-start; }
+.test { text-spacing: trim-start; }
 </style>
 </head>
 <body>
-<p>Test passes if there is no red visible on the page.</p>
-<div id="parent">
-<div id="reference1">「行頭カギ天付き</div>
-<div id="test1">「行頭カギ天付き</div>
+<p class="instructions">Test passes if there is no red visible on the page.</p>
+<div style="position: relative;" lang="ja">
+<div class="ref">「行頭カギ天付き</div>
+<div class="test">「行頭カギ天付き</div>
 </div>
 
 
