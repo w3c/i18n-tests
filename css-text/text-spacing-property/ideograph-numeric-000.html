@@ -27,13 +27,9 @@ div.test, div.ref {
     top: 0;
     z-index: -1;
 }
-.ref table {
-	border-collapse: collapse;
-	width: 100%;
-}
-.ref td {
-	margin: 0;
-	padding: 0;
+span.space {
+    display: inline-block;
+    width: 0.25em;
 }
 /* the CSS above is not part of the test */
 
@@ -42,13 +38,9 @@ div.test, div.ref {
 </head>
 <body>
 <p class="instructions">Test passes if there is no red visible on the page.</p>
-<div style="position: relative;">
+<div style="position: relative;" lang="ja">
 <div class="test">あいう123えお</div>
-<div class="ref">
-<table>
-<tr><td style="width:3em;">あいう</td><td style="width:0.25em;"></td><td>123</td><td style="width:0.25em"></td><td style="width:2em">えお</td></tr>
-</table>
-</div>
+<div class="ref">あいう<span class="space"></span>123<span class="space">えお</div>
 </div>
 
 

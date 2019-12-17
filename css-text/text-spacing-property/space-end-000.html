@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>CSS Test: text-spacing:space-end</title>
+<title>CSS Test: text-spacing: space-end</title>
 <meta name="flags" content="font">
 <meta name="assert" id="assert" content="text-spacing:space-end sets fullwidth closing punctuation with full-width glyphs (spaced) at the end of each line.">
 <link rel="author" title="Hiroshi Takase" href="mailto:takase@est.co.jp">
@@ -18,14 +18,16 @@
 
 div.test, div.ref {
     font: 3em/1em webfont;
-    width: 9em;
-    height: 3em;
     position: absolute;
     top: 0;
 }
 .ref {
     color: red;
     z-index: -1;
+}
+span.fullwidth {
+    display: inline-block;
+    width: 1em;
 }
 /* the CSS above is not part of the test */
 
@@ -36,12 +38,8 @@ div.test, div.ref {
 <p class="instructions">Test passes if there is no red visible on the page.</p>
 
 <div style="position: relative;" lang="ja">
-<div class="ref">
-行末カギ全角取り<span style="display:inline-block;width:1em">」</span>
-</div>
-<div class="test">
-行末カギ全角取り」
-</div>
+<div class="ref">行末カギ全角取り<span class="fullwidth">」</span></div>
+<div class="test">行末カギ全角取り」</div>
 </div>
 
 <div id="info">

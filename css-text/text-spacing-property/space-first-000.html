@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>CSS Test: text-spacing:space-first</title>
+<title>CSS Test: text-spacing: space-first</title>
 <meta name="flags" content="font">
 <meta name="assert" id="assert" content="text-spacing:space-first sets fullwidth opening punctuation with full-width glyphs (flush) at the start of each line.">
 <link rel="author" title="Jun Tajima" href="mailto:tajima@sanyosha.co.jp">
@@ -19,7 +19,6 @@
 div.test, div.ref {
 	font: 3em/1em webfont;
 	width: 9.5em;
-	height: 1em;
     position: absolute;
 }
 .ref {
@@ -27,31 +26,23 @@ div.test, div.ref {
     top: 0;
     z-index: -1;
 }
-.ref table {
-	border-collapse: collapse;
-	width:100%;
+.ref span {
+    display: inline-block;
+    text-align: right;
 }
-.ref td {
-	margin:0;
-	padding:0;
-}
+span.fullwidth { width: 1em; }
+span.fphwidth { width: 1.5em; }
 /* the CSS above is not part of the test */
 
-.test { text-spacing:space-first; margin-left: 0.5em; }
+.test { text-spacing: space-first; margin-left: 0.5em; }
 </style>
 </head>
 <body>
 <p class="instructions">Test passes if there is no red visible on the page.</p>
+
 <div style="position: relative;" lang="ja">
 <div class="test">「行頭カギ二分下げ「折り返し天付き</div>
-<div class="ref">
-<table>
-<tr><td style="width:1.5em;text-align:right">「</td><td style="width:8.0em">行頭カギ二分下げ</td></tr>
-</table>
-<table>
-<tr><td style="width:1.0em;text-align:right">「</td><td style="width:8.0em">折り返し天付き</td></tr>
-</table>
-</div>
+<div class="ref"><span class="fphwidth">「</span>行頭カギ二分下げ<br><span class="fullwidth">「</span>折り返し天付き</div>
 </div>
 
 
@@ -61,6 +52,5 @@ div.test, div.ref {
 <li><code>text-spacing</code> is set to <code>space-first</code>. The 「 character should be a full-width size. The red reference text should be completely covered by the black test text.</li>
 </ul>
 </div>
-
 
 </body></html>

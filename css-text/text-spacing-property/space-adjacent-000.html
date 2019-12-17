@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>CSS Test: text-spacing:space-adjacent</title>
+<title>CSS Test: text-spacing: space-adjacent</title>
 <meta name="assert" id="assert" content="Fullwidth opening or closing punctuation has full-width glyphs when not at the start or end of the line.">
 <link rel="author" title="Jun Tajima" href="mailto:tajima@sanyosha.co.jp">
 <link rel="help" title="CSS Text Level 4: 10.2. Character Class Spacing: the text-spacing property" href="https://www.w3.org/TR/css-text-4/#text-spacing-property">
@@ -17,8 +17,6 @@
 
 div.test, div.ref {
 	font: 3em/1em webfont;
-	width: 12em;
-	height: 1em;
 }
 .ref {
     color: red;
@@ -26,13 +24,9 @@ div.test, div.ref {
     top: 0;
     z-index: -1;
 }
-.ref table {
-	border-collapse: collapse;
-	width: 100%;
-}
-.ref td {
-	margin: 0;
-	padding: 0;
+span.fullwidth {
+    display: inline-block;
+    width: 1em;
 }
 /* the CSS above is not part of the test */
 
@@ -43,11 +37,7 @@ div.test, div.ref {
 <p class="instructions">Test passes if there is no red visible on the page.</p>
 <div style="position: relative;" lang="ja">
 <div class="test">行中記号類」、「全角取り</div>
-<div class="ref">
-<table>
-<tr><td style="width:5em;">行中記号類</td><td style="width:1em;">」</td><td style="width:1em;">、</td><td style="width:1em;text-align:right">「</td><td style="width:4.0em">全角取り</td></tr>
-</table>
-</div>
+<div class="ref">行中記号類<span class="fullwidth">」</span><span class="fullwidth">、</span><span class="fullwidth">「</span>全角取り</div>
 </div>
 
 
@@ -58,6 +48,5 @@ div.test, div.ref {
 <li>When <code>space-adjacent</code> for <code>text-spacing</code> is working, these punctuations are set to fullwidth.</li>
 </ul>
 </div>
-
 
 </body></html>

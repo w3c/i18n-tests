@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>CSS Test: text-spacing:trim-end</title>
+<title>CSS Test: text-spacing: trim-end</title>
 <meta name="flags" content="font">
 <meta name="assert" id="assert" content="text-spacing:trim-end sets fullwidth closing punctuation with half-width glyphs (flush) at the end of each line.">
 <link rel="author" title="Hiroshi Takase" href="mailto:takase@est.co.jp">
@@ -20,7 +20,6 @@
     font: 3em/1em webfont;
     position: absolute;
     width: 8.55em;
-    height: 3em;
     top: 0;
 }
 .ref {
@@ -37,9 +36,7 @@
 
 <div style="position: relative" lang="ja">
 <div class="test">行末カギ「ベタ組」</div>
-<div class="ref">
-行末カギ「ベタ組<span style="display:inline-block;width:0.5em;margin-right:-0.5em">」</span>
-</div>
+<div class="ref">行末カギ「ベタ組<span style="display:inline-block;width:0.5em;margin-right:-0.5em">」</span></div>
 </div>
 
 <div id="info">

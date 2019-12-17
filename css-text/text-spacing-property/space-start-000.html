@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>CSS Test: text-spacing:space-start</title>
+<title>CSS Test: text-spacing: space-start</title>
 <meta name="flags" content="font">
 <meta name="assert" id="assert" content="text-spacing:space-start sets fullwidth opening punctuation with full-width glyphs (flush) at the start of each line.">
 <link rel="author" title="Jun Tajima" href="mailto:tajima@sanyosha.co.jp">
@@ -20,21 +20,17 @@
 	font: 3em/1em webfont;
     position: absolute;
 	width: 9em;
-	height: 1em;
 }
 .ref {
     color: red;
     top: 0;
     z-index: -1;
 }
-.ref table {
-	border-collapse: collapse;
-	width:100%;
+.ref span {
+    display: inline-block;
+    text-align: right;
 }
-.ref td {
-	margin:0;
-	padding:0;
-}
+span.fullwidth { width: 1em; }
 /* the CSS above is not part of the test */
 
 .test { text-spacing: space-start; }
@@ -44,11 +40,7 @@
 <p class="instructions">Test passes if there is no red visible on the page.</p>
 <div style="position: relative;" lang="ja">
 <div class="test">「行頭カギ二分下げ</div>
-<div class="ref">
-<table class="tableblock">
-<tr><td style="width:1.0em;text-align:right">「</td><td style="width:8.0em">行頭カギ二分下げ</td></tr>
-</table>
-</div>
+<div class="ref"><span class="fullwidth">「</span>行頭カギ二分下げ</div>
 </div>
 
 
