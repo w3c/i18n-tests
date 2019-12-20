@@ -35,9 +35,9 @@
 }
 .ref span {
     display: inline-block;
+    width: 1em;
 }
-span.halfwidth { width: 0.5em; }
-span.fullwidth { width: 1em; }
+span.halfshift { margin-left: -0.5em; }
 span.right { text-align: right; }
 /* the CSS above is not part of the test */
 
@@ -48,7 +48,7 @@ span.right { text-align: right; }
 <p>Test passes if there is no red visible on the page.</p>
 <div style="position: relative;" lang="ja">
 <div class="test">行中記号類。」「二分扱い</div>
-<div class="ref">行中記号類<span class="halfwidth">｡</span><span class="fullwidth">｣</span><span class="halfwidth right">｢</span>二分扱い</div>
+<div class="ref">行中記号類<span>。</span><span class="halfshift">」</span><span class="halfshift">「</span>二分扱い</div>
 </div>
 
 
