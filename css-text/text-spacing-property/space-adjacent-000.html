@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>CSS Test: text-spacing: space-adjacent</title>
-<meta name="assert" id="assert" content="Fullwidth opening or closing punctuation has full-width glyphs when not at the start or end of the line.">
+<meta name="assert" id="assert" content="text-spacing:space-adjacent sets fullwidth opening punctuation with full-width glyphs when not at the start of the line, and fullwidth closing punctuation with full-width glyphs when not at the end of the line.">
 <link rel="author" title="Jun Tajima" href="mailto:tajima@sanyosha.co.jp">
 <link rel="help" title="CSS Text Level 4: 10.2. Character Class Spacing: the text-spacing property" href="https://www.w3.org/TR/css-text-4/#text-spacing-property">
 <link rel="stylesheet" href="../../fonts/metadata_styles.css">
@@ -45,7 +45,7 @@ span.fullwidth {
 <p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
 <li>Both fullwidth opening and closing punctuation are in the middle of the line, and set to 1em in the reference.</li>
-<li>When <code>space-adjacent</code> for <code>text-spacing</code> is working, these punctuations are set to fullwidth.</li>
+<li>When <code>space-adjacent</code> for <code>text-spacing</code> is working, these punctuations are set to fullwidth, so should cover the red reference text completely.</li>
 </ul>
 </div>
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>CSS Text: text-spacing: ideograph-alpha</title>
 <meta name="flags" content="font">
-<meta name="assert" id="assert" content="The browser can handle text-spacing as ideograph-alpha properly.">
+<meta name="assert" id="assert" content="text-spacing:ideograp-alpha creates 1/4em extra spacing between runs of ideographs and non-ideographic letters.">
 <link rel="author" title="Jun Tajima" href="mailto:tajima@sanyosha.co.jp">
 <link rel="help" title="CSS Text Level 4: 10.2. Character Class Spacing: the text-spacing property" href="https://www.w3.org/TR/css-text-4/#text-spacing-property">
 <link rel="stylesheet" href="../../fonts/metadata_styles.css">
@@ -44,7 +44,7 @@ span.space {
 <div id="info">
 <p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
-<li>Black characters are applied <code>ideograph-alpha</code> for <code>text-spacing</code>. Red characters have 0.25em extra spacing between runs of ideographs and non-ideographic letters.</li>
+<li>Black characters are applied <code>ideograph-alpha</code> for <code>text-spacing</code>. Red characters have 0.25em extra spacing between runs of ideographs and non-ideographic letters, so should be completely covered by the black test text.</li>
 </ul>
 </div>
 

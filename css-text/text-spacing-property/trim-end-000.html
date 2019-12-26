@@ -42,7 +42,8 @@
 <div id="info">
 <p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
-<li>When <code>text-spacing</code> is set to <code>trim-end</code>, the 」character should be a half-width size. The red reference text should be completely covered by the black test text.</li>
+<li>When <code>text-spacing</code> is set to <code>trim-end</code>, the 」character should be a half-width size, the test text should fit within the width of the box set to 0.45 em shorter than all in full-width.</li>
+<li>The red reference text has -0.5 em margin to trim the blank half of the glyph, and should be completely covered by the black test text.</li>
 </ul>
 </div>
 

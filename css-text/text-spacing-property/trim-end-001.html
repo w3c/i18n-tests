@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>CSS Test: text-spacing: allow-end</title>
+<title>CSS Test: text-spacing: trim-end</title>
 <meta name="flags" content="font">
-<meta name="assert" id="assert" content="text-spacing:allow-end sets fullwidth closing punctuation with half-width glyphs (flush) at the end of each line if it does not otherwise fit prior to justification; otherwise set the punctuation with full-width glyphs.">
+<meta name="assert" id="assert" content="text-spacing:trim-end sets fullwidth closing punctuation with half-width glyphs (flush) at the end of each line.">
 <link rel="author" title="Hiroshi Takase" href="mailto:takase@est.co.jp">
 <link rel="help" title="CSS Text Level 4: 10.2. Character Class Spacing: the text-spacing property" href="https://www.w3.org/TR/css-text-4/#text-spacing-property">
 <link rel="stylesheet" href="../../fonts/metadata_styles.css">
@@ -16,37 +16,37 @@
     font-style: normal;
 }
 
-div.ref, div.test {
-    font: 3em/1em webfont;
-    width: 8.55em;
-    height: 3em;
-}
 .ref, .test {
+    font: 3em/1em webfont;
     position: absolute;
     top: 0;
 }
-.ref {
+.ref, .ref > span {
+    background-color: black;
+}
+.test {
     color: red;
+    background-color: red;
     z-index: -1;
 }
 /* the CSS above is not part of the test */
 
-.test { text-spacing: allow-end; }
+.test { text-spacing: trim-end; }
 </style>
 </head>
 <body>
 <p class="instructions">Test passes if there is no red visible on the page.</p>
 
-<div style="position: relative;" lang="ja">
+<div style="position: relative" lang="ja">
+<div class="test">行末カギ「ベタ組」</div>
 <div class="ref">行末カギ「ベタ組<span style="display:inline-block;width:0.5em;margin-right:-0.5em">」</span></div>
-<div class="test" lang="ja">行末カギ「ベタ組」</div>
 </div>
 
 <div id="info">
 <p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
-<li><code>text-spacing</code> is set to <code>allow-end</code>. The total width of text is set to 0.45 em shorter than all in full-width, the 」character at the end of line should be a half-width size.</li>
-<li>The red reference text has -0.5 em margin to trim the blank half of the glyph, and should be completely covered by the black test text.</li>
+<li>When <code>text-spacing</code> is set to <code>trim-end</code>, the 」 character should be a half-width size at the end of each line. The red test text should be 0.5 em shorter than all in full-width.</li>
+<li>The black ref text has -0.5 em margin to trim the blank half of the glyph, and should cover the red test text completely, when the glyph at the end of the line set with half-width glyph.</li>
 </ul>
 </div>
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>CSS Test: text-spacing: trim-adjacent</title>
 <meta name="flags" content="font">
-<meta name="assert" id="assert" content="Collapse spacing between fullwidth punctuation glyphs when trim-adjacent is specified">
+<meta name="assert" id="assert" content="text-spacing:trim-adjacent collapses spacing between fullwidth punctuation glyphs">
 <link rel="author" title="Jun Tajima" href="mailto:tajima@sanyosha.co.jp">
 <link rel="help" title="CSS Text Level 4: 10.2. Character Class Spacing: the text-spacing property" href="https://www.w3.org/TR/css-text-4/#text-spacing-property">
 <link rel="stylesheet" href="../../fonts/metadata_styles.css">
@@ -56,7 +56,7 @@ span.right { text-align: right; }
 <p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
 <li>Spacing between two fullwidth punctuations are collapsed when <code>trim-adjacent</code> is set to <code>text-spacing</code>.</li>
-<li>Reference is built using halfwidth punctuation characters with calculated spacing width.</li>
+<li>Reference has -0.5 em margin to trim the blank half of the glyph, and should be completely covered by the black test text.</li>
 </ul>
 </div>
 
