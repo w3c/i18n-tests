@@ -74,7 +74,9 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <li>The default setting is manual. Adjust the width of the test boxes to check for hyphenation. The first box is HTML; the second is a textarea.</li>
 <li>You need to set the language for hyphens to work!</li>
 <li>See the <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-hyphens">test scripts</a>.</li>
+<li>Browser: <span id="version"></span></li>
 </ul>
 </div>
+<script>document.getElementById('version').innerHTML = navigator.userAgent</script>
 </body>
 </html>

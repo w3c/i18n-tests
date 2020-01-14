@@ -89,7 +89,9 @@ Options: <code>border-box? [ alphabetic | ideographic | hebrew | hanging ] | bor
 <li>Change the values in the controls to override the default settings. An empty input field will remove the property completely.</li>
 <li>See the <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-initial-letters">test scripts</a>.</li>
 <li>The [Delete 1 code point] button helps speed up some tests were you want to check a series of prepended characters, deleting them as you go. It removes the first character from the input box and refreshes the test.</li>
+<li>Browser: <span id="version"></span></li>
 </ul>
 </div>
+<script>document.getElementById('version').innerHTML = navigator.userAgent</script>
 </body>
 </html>

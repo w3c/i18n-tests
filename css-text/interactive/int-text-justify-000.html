@@ -75,7 +75,9 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <li>text-justify is not set by default (the CSS default for this property is auto). text-align:justify <em>is</em> set for both test boxes by default.</li>
 <li>See the <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-line-break-&-word-break" target="_blank">test script</a>.</li>
 <li>The top test box is HTML. The bottom one is a textarea.</li>
+<li>Browser: <span id="version"></span></li>
 </ul>
 </div>
+<script>document.getElementById('version').innerHTML = navigator.userAgent</script>
 </body>
 </html>
