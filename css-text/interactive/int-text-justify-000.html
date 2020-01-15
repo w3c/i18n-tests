@@ -27,6 +27,16 @@ tests = document.querySelectorAll('.test')
 for (let i=0;i<tests.length;i++) { tests[i].style.textJustify = value }
 }
 
+function setTextAlign (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.textAlign = value }
+}
+
+function setTextAlignLast (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.textAlignLast = value }
+}
+
 function setText (value) {
 document.getElementById('normal').textContent = document.getElementById('in').value
 document.getElementById('textarea').value = document.getElementById('in').value
@@ -61,18 +71,35 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 
 <!-- CONTROLS -->
-<p>Default has no styling.<code></code></p>
+<p>By default, <code>text-align</code> is set to <code>justify</code>, but <code>text-justify</code> is not set.</p>
+<p><code>text-align:</code>
+<label onClick="setTextAlign('start')"><input type="radio" name="tatest"/><code>start</code></label>
+<label onClick="setTextAlign('end')"><input type="radio" name="tatest"/><code>end</code></label>
+<label onClick="setTextAlign('left')"><input type="radio" name="tatest"/><code>left</code></label>
+<label onClick="setTextAlign('right')"><input type="radio" name="tatest"/><code>right</code></label>
+<label onClick="setTextAlign('justify')"><input type="radio" checked name="tatest"/><code>justify</code></label>
+<label onClick="setTextAlign('justify-all')"><input type="radio" name="tatest"/><code>justify-all</code></label>
+</p>
 <p><code>text-justify:</code>
-<label onClick="setTextJustify('auto')"><input type="radio" checked name="lbtest"/><code>auto</code></label>
-<label onClick="setTextJustify('normal')"><input type="radio" name="lbtest"/><code>none</code></label>
-<label onClick="setTextJustify('loose')"><input type="radio" name="lbtest"/><code>inter-word</code></label>
-<label onClick="setTextJustify('strict')"><input type="radio" name="lbtest"/><code>inter-character</code></label>
+<label onClick="setTextJustify('auto')"><input type="radio" checked name="tjtest"/><code>auto</code></label>
+<label onClick="setTextJustify('normal')"><input type="radio" name="tjtest"/><code>none</code></label>
+<label onClick="setTextJustify('loose')"><input type="radio" name="tjtest"/><code>inter-word</code></label>
+<label onClick="setTextJustify('strict')"><input type="radio" name="tjtest"/><code>inter-character</code></label>
+</p>
+<p><code>text-align-last:</code>
+<label onClick="setTextAlignLast('auto')"><input type="radio" checked name="taltest"/>
+<code>auto</code></label>
+<label onClick="setTextAlignLast('start')"><input type="radio" name="taltest"/><code>start</code></label>
+<label onClick="setTextAlignLast('end')"><input type="radio" name="taltest"/><code>end</code></label>
+<label onClick="setTextAlignLast('left')"><input type="radio" name="taltest"/><code>left</code></label>
+<label onClick="setTextAlignLast('right')"><input type="radio" name="taltest"/><code>right</code></label>
+<label onClick="setTextAlignLast('justify')"><input type="radio" name="taltest"/><code>justify</code></label>
 </p>
 
 <!-- INFO -->
 <div id="info" style="clear: both;">
 <ul class="notes">
-<li>text-justify is not set by default (the CSS default for this property is auto). text-align:justify <em>is</em> set for both test boxes by default.</li>
+<li>text-justify and text-align-last are not set by default (the CSS default for these properties is auto). text-align:justify <em>is</em> set for both test boxes by default.</li>
 <li>See the <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-line-break-&-word-break" target="_blank">test script</a>.</li>
 <li>The top test box is HTML. The bottom one is a textarea.</li>
 <li>Browser: <span id="version"></span></li>
