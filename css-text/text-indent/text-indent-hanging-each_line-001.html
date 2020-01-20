@@ -2,8 +2,9 @@
 <html lang="en" >
 <head>
 <meta charset="utf-8">
-<title>text-indent hanging</title>
-<meta name="assert" id="assert" content="All lines except the first line are indented">
+<title>CSS Text: text-indent: hanging</title>
+<meta name="flags" content="font">
+<meta name="assert" id="assert" content="text-indent: hanging makes all lines except the first line as indented">
 <link rel="help" href="https://drafts.csswg.org/css-text-3/#text-indent-property">
 <link rel="author" title="hiroshi takase" href="mailto:takase@est.co.jp">
 <link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
@@ -37,7 +38,7 @@
 </head>
 <body>
 
-<p>Test passes if there is no red visible on the page.</p>
+<p class="instructions">Test passes if there is no red visible on the page.</p>
 
 <div style="position:relative">
 <div id="test">
@@ -57,6 +58,13 @@ XXXX pppp XXXX pppp XXXX pppp XXXX
 XXXX pppp XXXX pppp XXXX pppp XXXX 
 </div>
 </div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li></li>
+</ul>
 </div>
 
 </body>
