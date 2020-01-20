@@ -81,7 +81,12 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <p class="advice">By default, <code>text-align</code> is set to <code>justify</code>, but <code>text-justify</code> is not set.</p>
 <p><code>list-style-type:</code>
 <select id="system" onchange="setListStyleType(this.value); return false;">
-        <optgroup label="Arabic script">
+        <optgroup label="Decimal">
+        <option value="decimal">decimal   (numeric)</option>
+        <option value="dotted-decimal">dotted-decimal  (fixed)</option>
+        <option value="circled-decimal">circled-decimal  (fixed)</option>
+        </optgroup>
+		<optgroup label="Arabic script">
         <option value="arabic-indic">arabic-indic   (numeric)</option>
         <option value="persian">persian   (numeric)</option>
         <option value="persian-abjad">persian-abjad    (fixed, 1-28)</option>
@@ -178,7 +183,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
        </optgroup>
         <optgroup label="Japanese script">
         <option value="hiragana">hiragana  (alphabetic)</option>
-        <option value="hiragana- iroha">hiragana- iroha  (alphabetic)</option>
+        <option value="hiragana-iroha">hiragana-iroha  (alphabetic)</option>
         <option value="katakana">katakana  (alphabetic)</option>
         <option value="katakana-iroha">katakana-iroha  (alphabetic)</option>
          <option value="circled-katakana">circled-katakana  (fixed)</option>
@@ -241,10 +246,6 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
         </optgroup>
         <optgroup label="Tibetan script">
         <option value="tibetan">tibetan  (numeric)</option>
-        </optgroup>
-        <optgroup label="Other">
-        <option value="dotted-decimal">dotted-decimal  (fixed)</option>
-        <option value="circled-decimal">circled-decimal  (fixed)</option>
         </optgroup>
       </select></p>
 <p class="advice">The following apply to the <code>::marker</code> pseudo-element.</p>
