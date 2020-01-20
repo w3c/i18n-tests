@@ -62,9 +62,9 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 <!-- CONTROLS -->
 <p style="clear: both;">Set <code>hyphens</code> to
-<label onClick="setHyphens('auto')"><input type="radio" checked name="setHyphens"/><code>manual</code></label>
-<label onClick="setHyphens('normal')"><input type="radio" name="setHyphens"/><code>auto</code></label>
-<label onClick="setHyphens('loose')"><input type="radio" name="setHyphens"/><code>none</code></label>
+<label onClick="setHyphens('manual')"><input type="radio" checked name="setHyphens"/><code>manual</code></label>
+<label onClick="setHyphens('auto')"><input type="radio" name="setHyphens"/><code>auto</code></label>
+<label onClick="setHyphens('none')"><input type="radio" name="setHyphens"/><code>none</code></label>
 </p>
 
 
@@ -73,7 +73,6 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <ul class="notes">
 <li>The default setting is manual. Adjust the width of the test boxes to check for hyphenation. The first box is HTML; the second is a textarea.</li>
 <li>You need to set the language for hyphens to work!</li>
-<li>See the <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-hyphens">test scripts</a>.</li>
 <li>Browser: <span id="version"></span></li>
 </ul>
 </div>
