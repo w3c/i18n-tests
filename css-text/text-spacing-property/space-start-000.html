@@ -48,6 +48,7 @@ span.fullwidth { width: 1em; }
 <p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
 <li><code>text-spacing</code> is set to <code>space-start</code>. The 「 character should be a full-width size. The red reference text should be completely covered by the black test text.</li>
+<li>Since fullwidth is a default behavior for glyhps at a code point used above, this test may success even when property is not implemented.</li>
 </ul>
 </div>
 
