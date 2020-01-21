@@ -27,4 +27,4 @@
 #language { width: 5em; }
 #fontSize { width: 20em; }
 #fontFamily { width: 20em; }
-.advice { font-style: italic; }
+.advice { font-style: italic; font-size: 90%; }
