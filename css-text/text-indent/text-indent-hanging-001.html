@@ -38,19 +38,14 @@
 <p class="instructions">Test passes if there is no red visible on the page.</p>
 
 <div style="position:relative">
-<div id="test">
-XXXX pppp XXXX pppp XXXX pppp XXXX pppp XXXX
-</div>
-
-<div id="ref">
-XXXX pppp XXXX pppp XXXX pppp XXXX pppp XXXX
-</div>
+<div id="test">XXXX pppp XXXX pppp XXXX pppp XXXX pppp XXXX</div>
+<div id="ref">XXXX pppp XXXX pppp XXXX pppp XXXX pppp XXXX</div>
 </div>
 
 <div id="info">
 <p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
-<li></li>
+<li><code>hanging</code> is set to <code>text-indent</code>. Each line with soft break should have indent with specified length.</li>
 </ul>
 </div>
 

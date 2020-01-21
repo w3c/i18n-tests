@@ -16,17 +16,17 @@
         font-style: normal;
     }
     #test, #ref {
-        #position:absolute; top:0;
+        position: absolute;
+        top: 0;
         font-family: webfont;
+        width: 20em;
     }
     #test {
-        width: 20em;
         white-space: pre-wrap;
         text-indent: 5em hanging each-line;
         color: green;
     }
     #ref {
-        width: 20em;
         color: red;
         z-index: -100;
     }
@@ -41,29 +41,20 @@
 <p class="instructions">Test passes if there is no red visible on the page.</p>
 
 <div style="position:relative">
-<div id="test">
-XXXX pppp XXXX pppp XXXX pppp XXXX 
-XXXX pppp XXXX pppp XXXX pppp XXXX 
-XXXX pppp XXXX pppp XXXX pppp XXXX 
-</div>
+<div id="test">XXXX pppp XXXX pppp XXXX pppp XXXX<br>XXXX pppp XXXX pppp XXXX pppp XXXX<br>XXXX pppp XXXX pppp XXXX pppp XXXX</div>
 
 <div id="ref">
-<div class="hi5">
-XXXX pppp XXXX pppp XXXX pppp XXXX 
-</div>
-<div class="hi5">
-XXXX pppp XXXX pppp XXXX pppp XXXX 
-</div>
-<div class="hi5">
-XXXX pppp XXXX pppp XXXX pppp XXXX 
-</div>
+<div class="hi5">XXXX pppp XXXX pppp XXXX pppp XXXX</div>
+<div class="hi5">XXXX pppp XXXX pppp XXXX pppp XXXX</div>
+<div class="hi5">XXXX pppp XXXX pppp XXXX pppp XXXX</div>
 </div>
 </div>
 
 <div id="info">
 <p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
-<li></li>
+<li><code>text-indent</code> is set to <code>each-line</code>. The total width of text is set to shorter than length of each line, each line or block is shown in two lines with text-indent at each line first position.</li>
+<li>This test depends on <code>hanging</code> of <code>text-indent</code>.</li>
 </ul>
 </div>
 
