@@ -25,13 +25,6 @@ document.getElementById('test').innerHTML = document.getElementById('in').value
 
 
 function setBoxWidth (value) {
-document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*value)
-tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) tests[i].style.width = value+'%'
-}
-
-
-function setBoxWidth (value) {
 document.getElementById('sizeIndicator').textContent = value
 tests = document.querySelectorAll('.test')
 for (let i=0;i<tests.length;i++) tests[i].style.width = value+'px'
@@ -39,10 +32,9 @@ for (let i=0;i<tests.length;i++) tests[i].style.width = value+'px'
 
 
 function setBoxHeight (value) {
-//document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*value)
 document.getElementById('sizeIndicator').textContent = Math.floor(value)
 tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) tests[i].style.height = (24/100*value)+'em'
+for (let i=0;i<tests.length;i++) tests[i].style.height = value+'px'
 }
 
 
