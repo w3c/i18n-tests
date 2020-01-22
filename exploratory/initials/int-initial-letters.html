@@ -13,7 +13,7 @@
 /* the CSS below is not part of the test */
 #test {
 margin: 40px 5%;
-width: 50%;
+width: 400px;
 font-size: 36px;
 border: 1px solid orange;
 height: 10em;
@@ -22,11 +22,11 @@ overflow: hidden;
 </style>
 <script src="../../fonts/interactive_functions.js"> </script>
 <script>
+
 function setInitialLetters () {
 var initialLetters = document.getElementById('initial_letters').value
 var webkitInitialLetters = document.getElementById('webkit_initial_letters').value
 var initialLettersAlign = document.getElementById('initial_letters_align').value
-
 var properties = ''
 if (initialLetters || webkitInitialLetters || initialLettersAlign) properties += '#test::first-letter { '
 if (initialLetters) properties += 'initial-letters: '+initialLetters+';'
@@ -34,14 +34,14 @@ if (webkitInitialLetters) properties += '-webkit-initial-letter: '+webkitInitial
 if (initialLettersAlign) properties += 'initial-letters-align: '+initialLettersAlign+';'
 if (initialLetters || webkitInitialLetters || initialLettersAlign) properties += ' }'
 document.getElementById('computedStyle').innerHTML = properties
-if (debug) alert(properties)
 }
+
 function deleteCP () {
 document.getElementById('in').value = document.getElementById('in').value.substr(1)
 setText(document.getElementById('in').value)
 }
 </script>
-<style id="computedStyle">#test::first-letter { -webkit-initial-letter: 2; color: green;}</style>
+<style id="computedStyle"></style>
 </head>
 
 
@@ -49,13 +49,14 @@ setText(document.getElementById('in').value)
 <h1>Interactive test: initial-letter</h1>
 <p class="advice">
 Set the language <input id="language" type="text" onChange="setLanguage(this.value)"/> <button onClick="setLanguage(document.getElementById('language').value)">Apply</button><br/>
+
 Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="setFontSize(this.value)" type="range"/> 
 <span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>
+
 Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setLanguage(document.getElementById('fontFamily').value)">Apply</button></p>
 
 <div class="advice">Use the slider to adjust the width of the box.<br/>
-<input id="fontSizeSlider" min="10" max="90" step=".25" value="90" oninput="setBoxWidth(this.value)" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">90</span>px</div>
-<script>document.getElementById('sizeIndicator').textContent = Math.floor(window.innerWidth/100*90)</script>
+<input id="boxWidth" min="10" max="1000" step="1" value="400" oninput="setBoxWidth(this.value)" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">400</span>px</div>
 
 
 <!-- INPUT AREA -->
@@ -73,25 +74,86 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <!-- CONTROLS -->
 <p style="clear: both;"><button onClick="deleteCP()">Delete 1 code point</button></p>
 
-<p><label><code>initial-letters:</code> <input id="initial_letters" type="text" value="2" onchange="setInitialLetters()"/> <button onClick="setInitialLetters()">Apply</button></label><br/>
+<p><label><code>initial-letters:</code>
+<input id="initial_letters" type="text" value="" onchange="setInitialLetters()"/> <button onClick="setInitialLetters()">Apply</button></label><br/>
+
 <label><code>-webkit-initial-letter:</code> 
-<input id="webkit_initial_letters" type="text" value="2" onchange="setInitialLetters()"/> <button onClick="setInitialLetters()">Apply</button></label><br/>Options: <code>normal | &lt;number&gt; &lt;integer&gt; | &lt;number&gt; && [ drop | raise ]?</code></p>
+<input id="webkit_initial_letters" type="text" value="" onchange="setInitialLetters()"/> <button onClick="setInitialLetters()">Apply</button></label><br/>
+<span class="advice">Options: normal | &lt;number&gt; &lt;integer&gt; | &lt;number&gt; && [ drop | raise ]?</span></p>
 
 
-<p><label><code>initial-letters-align:</code> <input id="initial_letters_align" type="text" value="" onchange="setInitialLetters()"/> <button onClick="setInitialLetters()">Apply</button></label><br/>
-Options: <code>border-box? [ alphabetic | ideographic | hebrew | hanging ] | border-box </code></p>
+<p><label><code>initial-letters-align:</code>
+<input id="initial_letters_align" type="text" value="" onchange="setInitialLetters()"/> <button onClick="setInitialLetters()">Apply</button></label><br/>
+<span class="advice">Options: border-box? [ alphabetic | ideographic | hebrew | hanging ] | border-box</span></p>
 
 
 <!-- INFO -->
 <div id="info" style="clear: both;">
 <ul class="notes">
-<li>Default is set to: <code>initial-letters:2, -webkit-initial-letter: 2;</code>. No value is set for initial-letters-align.</li>
 <li>Change the values in the controls to override the default settings. An empty input field will remove the property completely.</li>
-<li>See the <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-initial-letters">test scripts</a>.</li>
 <li>The [Delete 1 code point] button helps speed up some tests were you want to check a series of prepended characters, deleting them as you go. It removes the first character from the input box and refreshes the test.</li>
 <li>Browser: <span id="version"></span></li>
+<li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
 </ul>
 </div>
-<script>document.getElementById('version').innerHTML = navigator.userAgent</script>
+<script>
+document.getElementById('version').innerHTML = navigator.userAgent
+
+
+// check for parameters and take appropriate action
+parameters = location.search.split('&')
+parameters[0] = parameters[0].substring(1)
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'lang' && pairs[1]) setLanguage( pairs[1] )
+	if (pairs[0] == 'fontSize' && pairs[1]) {
+					setFontSize(pairs[1]) 
+					document.getElementById('fontSize').value = pairs[1] 
+					}
+	if (pairs[0] == 'fontFamily' && pairs[1]) {
+					setFont(pairs[1]) 
+					document.getElementById('fontFamily').value = pairs[1] 
+					}
+	if (pairs[0] == 'width' && pairs[1]) { 
+					setBoxWidth(pairs[1]) 
+					document.getElementById('boxWidth').value = pairs[1]
+					}
+					
+	if (pairs[0] == 'initialLetters' && pairs[1]) { 
+					document.getElementById('initial_letters').value = pairs[1]
+					}
+	if (pairs[0] == 'webkitInitialLetters' && pairs[1]) { 
+					document.getElementById('webkit_initial_letters').value = pairs[1]
+					}
+	if (pairs[0] == 'initialLettersAlign' && pairs[1]) { 
+					document.getElementById('initial_letters_align').value = pairs[1]
+					}
+	setInitialLetters()
+	
+	if (pairs[0] == 'text' && pairs[1]) { 
+					document.getElementById('in').value = decodeURIComponent(pairs[1])
+					setText(decodeURIComponent(pairs[1]))
+					}
+	}
+
+
+function snapParameters () {
+// take a snapshot of the settings of the page and make available as URL parameters
+// this can be picked up by the user to point to the current setup of the page
+
+out = "?"
+if (document.getElementById('language') && document.getElementById('language').value != '') out += 'lang='+document.getElementById('language').value
+if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+document.getElementById('fontSize').value
+if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+document.getElementById('fontFamily').value
+if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
+
+if (document.getElementById('initial_letters').value) out += '&initialLetters='+document.getElementById('initial_letters').value
+if (document.getElementById('webkit_initial_letters').value) out += '&webkitInitialLetters='+document.getElementById('webkit_initial_letters').value
+if (document.getElementById('initial_letters_align').value) out += '&initialLettersAlign='+document.getElementById('initial_letters_align').value
+
+out += '&text='+encodeURIComponent(document.getElementById('in').value)
+return out
+}
+</script>
 </body>
 </html>
