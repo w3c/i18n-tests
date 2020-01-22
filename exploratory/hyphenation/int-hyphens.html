@@ -71,10 +71,11 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 
 <!-- INFO -->
-<div id="info" style="clear: both;">
+<div id="info" style="clear: both; position: inherit;">
 <ul class="notes">
 <li>You need to set the language for hyphens to work!</li>
 <li>The initial setting is manual. Adjust the width of the test boxes to check for hyphenation. The first box is HTML; the second is a textarea.</li>
+<li>Spec links: <a href="https://drafts.csswg.org/css-text-3/#hyphens-property">hyphens</a></li>
 <li>Browser: <span id="version"></span></li>
 <li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
 </ul>
