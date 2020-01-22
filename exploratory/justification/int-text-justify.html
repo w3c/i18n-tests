@@ -154,9 +154,9 @@ function snapParameters () {
 // this can be picked up by the user to point to the current setup of the page
 
 out = "?"
-if (document.getElementById('language')) out += 'lang='+document.getElementById('language').value
-if (document.getElementById('fontSize')) out += '&fontSize='+document.getElementById('fontSize').value
-if (document.getElementById('fontFamily')) out += '&fontFamily='+document.getElementById('fontFamily').value
+if (document.getElementById('language') && document.getElementById('language').value != '') out += 'lang='+document.getElementById('language').value
+if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+document.getElementById('fontSize').value
+if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+document.getElementById('fontFamily').value
 if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
 out += '&textAlign='+document.querySelector('input[name="textAlign"]:checked').value
 out += '&textJustify='+document.querySelector('input[name="textJustify"]:checked').value
