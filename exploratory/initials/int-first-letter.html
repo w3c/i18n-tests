@@ -61,10 +61,11 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 
 <!-- INFO -->
-<div id="info" style="clear: both;">
+<div id="info" style="clear: both; position: inherit;">
 <ul class="notes">
 <li>CSS for the test box is: #test::first-letter { color:green; font-weight: bold; font-size: 2em; }.</li>
 <li>The [Delete 1 code point] button helps speed up some tests were you want to check a series of prepended characters, deleting them as you go. It removes the first character from the input box and refreshes the test.</li>
+<li>Spec links: <a href="https://drafts.csswg.org/selectors-3/#first-letter">::first-letter</a></li>
 <li>Browser: <span id="version"></span></li>
 <li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
 </ul>
