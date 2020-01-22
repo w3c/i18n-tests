@@ -99,10 +99,11 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 </p>
 
 <!-- INFO -->
-<div id="info" style="clear: both;">
+<div id="info" style="clear: both; position: inherit;">
 <ul class="notes">
 <li>text-align, text-justify and text-align-last are not set by default.</li>
 <li>The top test box is HTML. The bottom one is a textarea.</li>
+<li>Spec links: <a href="https://www.w3.org/TR/css-text-3/#text-align-property">text-align</a> <a href="https://www.w3.org/TR/css-text-3/#text-justify-property">text-justify</a> <a href="https://www.w3.org/TR/css-text-3/#text-align-last-property">text-align-last</a></li>
 <li>Browser: <span id="version"></span></li>
 <li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
 </ul>
