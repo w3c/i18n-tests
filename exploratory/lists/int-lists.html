@@ -305,6 +305,11 @@ parameters = location.search.split('&')
 parameters[0] = parameters[0].substring(1)
 for (var p=0;p<parameters.length;p++) {  
 	pairs = parameters[p].split('=');
+	if (pairs[0] == 'text' && pairs[1]) { 
+					document.getElementById('in').value = decodeURIComponent(pairs[1])
+					setText(decodeURIComponent(pairs[1]))
+					}
+
 	if (pairs[0] == 'lang' && pairs[1]) setLanguage( pairs[1] )
 	if (pairs[0] == 'fontSize' && pairs[1]) {
 					setFontSize(pairs[1]) 
@@ -338,11 +343,6 @@ for (var p=0;p<parameters.length;p++) {
 	if (pairs[0] == 'writingMode' && pairs[1]) {
 					setWritingMode(pairs[1]) 
 					document.getElementById('writingMode'+pairs[1]).checked = true 
-					}
-	
-	if (pairs[0] == 'text' && pairs[1]) { 
-					document.getElementById('in').value = decodeURIComponent(pairs[1])
-					setText(decodeURIComponent(pairs[1]))
 					}
 	}
 
