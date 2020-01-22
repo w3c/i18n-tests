@@ -7,6 +7,8 @@
 <link rel="author" title="r12a" href="mailto:ishida@w3.org">
 
 <link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style id="customSettings">
+</style>
 <style id="colorSettings">
 </style>
 <style id="uprightSettings">
@@ -38,6 +40,10 @@ for (let i=0;i<tests.length;i++) {
 	//tests[i].style.listStyleType = "decimal" 
 	tests[i].style.listStyleType = value 
 	}
+}
+
+function setCustomStyle (value) {
+document.getElementById('customSettings').innerHTML = value
 }
 
 function setColor (value) {
@@ -81,7 +87,13 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 
 <!-- CONTROLS -->
-<p class="advice">By default, <code>text-align</code> is set to <code>justify</code>, but <code>text-justify</code> is not set.</p>
+<p>Set custom counter style:<br/>
+<span class="advice">Code for custom styles can be found in the <a href="https://www.w3.org/TR/predefined-counter-styles/">Ready-made Counter Styles</a> document.</span><br/>
+<textarea id="custom" onChange="setCustomStyle(this.value)" style="width: 70%; height: 3em;"></textarea>  <button onClick="setCustomStyle(document.getElementById('custom').value)">Apply</button>
+</p>
+
+
+
 <p><code>list-style-type:</code>
 <select id="listStyleType" onchange="setListStyleType(this.value); return false;">
         <option value="">Choose a style</option>
@@ -253,7 +265,20 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
         </optgroup>
       </select></p>
 
-<p class="advice">The following apply to the <code>::marker</code> pseudo-element.</p>
+<p><code>writing-mode:</code>
+<label onClick="setWritingMode('horizontal-tb')"><input type="radio" checked value="horizontal-tb" id="writingModehorizontal-tb" name="writingMode"/>
+<code>horizontal-tb</code></label>
+<label onClick="setWritingMode('vertical-rl')"><input type="radio" value="vertical-rl" id="writingModevertical-rl" name="writingMode"/>
+<code>vertical-rl</code></label>
+<label onClick="setWritingMode('vertical-lr')"><input type="radio" value="vertical-lr" id="writingModevertical-lr" name="writingMode"/>
+<code>vertical-lr</code></label>
+<label onClick="setWritingMode('sideways-rl')"><input type="radio" value="sideways-rl" id="writingModesideways-rl" name="writingMode"/>
+<code>sideways-rl</code></label>
+<label onClick="setWritingMode('sideways-lr')"><input type="radio" value="sideways-lr" id="writingModesideways-lr" name="writingMode"/>
+<code>sideways-lr</code></label>
+</p>
+
+<p class="advice">The following 2 settings apply to the <code>::marker</code> pseudo-element.</p>
 <p><code>color:</code>
 <label onClick="setColor('inherit')"><input type="radio" checked value="inherit" id="colorinherit" name="color"/>
 <code>inherit</code></label>
@@ -270,20 +295,6 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <code>none</code></label>
 <label onClick="setTextCombineUpright('all')"><input type="radio" value="all" id="textCombineUprightall" name="textCombineUpright"/>
 <code>all</code></label>
-</p>
-
-<p class="advice">By default, <code>text-align</code> is set to <code>justify</code>, but <code>text-justify</code> is not set.</p>
-<p><code>writing-mode:</code>
-<label onClick="setWritingMode('horizontal-tb')"><input type="radio" checked value="horizontal-tb" id="writingModehorizontal-tb" name="writingMode"/>
-<code>horizontal-tb</code></label>
-<label onClick="setWritingMode('vertical-rl')"><input type="radio" value="vertical-rl" id="writingModevertical-rl" name="writingMode"/>
-<code>vertical-rl</code></label>
-<label onClick="setWritingMode('vertical-lr')"><input type="radio" value="vertical-lr" id="writingModevertical-lr" name="writingMode"/>
-<code>vertical-lr</code></label>
-<label onClick="setWritingMode('sideways-rl')"><input type="radio" value="sideways-rl" id="writingModesideways-rl" name="writingMode"/>
-<code>sideways-rl</code></label>
-<label onClick="setWritingMode('sideways-lr')"><input type="radio" value="sideways-lr" id="writingModesideways-lr" name="writingMode"/>
-<code>sideways-lr</code></label>
 </p>
 
 
@@ -307,6 +318,11 @@ for (var p=0;p<parameters.length;p++) {
 	if (pairs[0] == 'text' && pairs[1]) { 
 					document.getElementById('in').value = decodeURIComponent(pairs[1])
 					setText(decodeURIComponent(pairs[1]))
+					}
+
+	if (pairs[0] == 'custom' && pairs[1]) { 
+					document.getElementById('custom').value = decodeURIComponent(pairs[1])
+					setCustomStyle(decodeURIComponent(pairs[1]))
 					}
 
 	if (pairs[0] == 'lang' && pairs[1]) setLanguage( pairs[1] )
@@ -352,6 +368,8 @@ function snapParameters () {
 
 out = "?"
 out += 'text='+encodeURIComponent(document.getElementById('in').value)
+
+if (document.getElementById('custom') && document.getElementById('custom').value != '') out += '&custom='+encodeURIComponent(document.getElementById('custom').value)
 
 if (document.getElementById('language') && document.getElementById('language').value != '') out += '&lang='+document.getElementById('language').value
 if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+document.getElementById('fontSize').value
