@@ -34,7 +34,6 @@ for (let i=0;i<tests.length;i++) { tests[i].style.writingMode = value }
 
 function setListStyleType (value) { 
 tests = document.querySelectorAll('.test li')
-console.log(tests.length)
 for (let i=0;i<tests.length;i++) { 
 	//tests[i].style.listStyleType = "decimal" 
 	tests[i].style.listStyleType = value 
@@ -63,7 +62,7 @@ Set the language <input id="language" type="text" onChange="setLanguage(this.val
 Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="setFontSize(this.value)" type="range"/> 
 <span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>
 
-Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setLanguage(document.getElementById('fontFamily').value)">Apply</button>
+Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setFont(document.getElementById('fontFamily').value)">Apply</button>
 </p>
 
 <div class="advice">Adjust the height of the test box.<br/>
@@ -352,9 +351,9 @@ function snapParameters () {
 // this can be picked up by the user to point to the current setup of the page
 
 out = "?"
-out += '&text='+encodeURIComponent(document.getElementById('in').value)
+out += 'text='+encodeURIComponent(document.getElementById('in').value)
 
-if (document.getElementById('language') && document.getElementById('language').value != '') out += 'lang='+document.getElementById('language').value
+if (document.getElementById('language') && document.getElementById('language').value != '') out += '&lang='+document.getElementById('language').value
 if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+document.getElementById('fontSize').value
 if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+document.getElementById('fontFamily').value
 if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
