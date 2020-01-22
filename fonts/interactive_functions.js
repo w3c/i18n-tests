@@ -25,14 +25,14 @@ document.getElementById('test').innerHTML = document.getElementById('in').value
 
 
 function setBoxWidth (value) {
-document.getElementById('sizeIndicator').textContent = value
+document.getElementById('wSizeIndicator').textContent = value
 tests = document.querySelectorAll('.test')
 for (let i=0;i<tests.length;i++) tests[i].style.width = value+'px'
 }
 
 
 function setBoxHeight (value) {
-document.getElementById('sizeIndicator').textContent = Math.floor(value)
+document.getElementById('vSizeIndicator').textContent = Math.floor(value)
 tests = document.querySelectorAll('.test')
 for (let i=0;i<tests.length;i++) tests[i].style.height = value+'px'
 }
