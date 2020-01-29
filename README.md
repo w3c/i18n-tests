@@ -1,7 +1,23 @@
 # i18n-tests
-This repository contains most of the tests created for use with the W3C Internationalization test suite.  The majority test international features of W3C specifications, but there are others that just explore browser support for certain international features.
+This repository contains most of the tests created for use with the W3C Internationalization test suite and others that are more interactive in nature.  The majority test international features of W3C specifications, but there are others that just explore browser support for certain international features.
 
-The tests and the test framework have been moved here from the W3C server, so that they are more easily accessible. The test framework was converted from PHP to run using JavaScript. Tests that require server-side settings, however, remain on the W3C server (these include character encoding and language tests that rely on HTTP headers).
+There are two main types of test:
+1. standard tests written in HTML files that are accessed via the i18n test suite, and
+2. interactive tests, which are accessed via test script pages in the wiki of this repository.
+
+## Interactive tests
+
+Interactive tests allow you to quickly set up test scenarios with minimal formality. They are particularly useful for tests that have many permutations on a language-by-language basis, and can be easier to manage for people creating gap-analysis documents.
+
+The test pages themselves allow you to set various CSS properties or other aspects of the page, including the text to be tested, by interacting with form controls on the test page.  This allows for a great deal of flexibility in exploring features, and changes can be rapidly made to explore a range of scenarios. 
+
+You can then take a snapshot of the settings and add that as a URL to a wiki page in this repo as part of a test script. There are test scripts for each of the sections in the Language Enablement Index. Having created a test, it is very quick and simple to point back to it from the test script and report findings.
+
+Tests in a test script could be converted to standard tests at some point if resources become available to do the work.
+
+## Standard tests
+
+These tests and the test framework have been moved here from the W3C server, so that they are more easily accessible. The test framework was converted from PHP to run using JavaScript. Tests that require server-side settings, however, remain on the W3C server (these include character encoding and language tests that rely on HTTP headers).
 
 Links on the [main test page](https://www.w3.org/International/tests/) take you to pages that show results for a group of related tests. Click on the links in the left column of those pages to view a test in the test runner.
 
