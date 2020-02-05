@@ -47,10 +47,6 @@ else {
 	for (let i=0;i<tests.length;i++) { tests[i].style.textCombineUpright = value }
 	}
 }
-
-function setText (value) {
-document.getElementById('html').innerHTML = document.getElementById('in').value
-}
 </script>
 </head>
 <body>
@@ -77,7 +73,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 
 <!-- TESTS -->
-<div class="test" id="html" dir="auto"></div>
+<div class="test" id="test" dir="auto"></div>
 
 
 
