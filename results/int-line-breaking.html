@@ -48,7 +48,7 @@ table .assert {
     font-weight: normal;
 	}
 .results {
-	width: 80%;
+	width: 60%;
 	}
 </style>
 </head>
@@ -58,26 +58,28 @@ table .assert {
   <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
   
   <h1>Interactive test results: <br>
-  Line-breaking</h1>
+Line-breaking &amp; hyphenation</h1>
 </header>
 
 
 <section>
   <div id="audience">
 	<div class="pageInstructions">
-	<p>The tests are documented in a <a href="https://github.com/w3c/lines-and-paragraphs-tests/issues">GitHub repository</a>. To run the test, or to see any comments relating to the results, click on the link in the left-most column.</p>
-	<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p--></div>
+	<p>The tests are documented in a GitHub repository. To run the test, or to see any comments relating to the results, click on the link in the left-most column.</p>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
-    
+</div>
+   </section>
+   
+   
 
 <section> 
-<p>This page summarises results for interactive tests related to line-breaking &amp; hyphenation.</p>
-<p>For more information about Line-breaking, or to find other similar pages, see the <a href="https://w3c.github.io/typography#line-breaking">Language Enablement Index</a>.</p>
-</section>
+<p>This page summarises results for interactive tests related to line-breaking &amp; hyphenation. It complements the <a href="https://w3c.github.io/typography#line_breaking">Line-breaking</a> and <a href="https://w3c.github.io/typography#hyphenation">Hyphenation</a> sections of the <a href="https://w3c.github.io/typography">Language Enablement Index</a>.</p>
+<p>The tests themselves are linked to and described in a set of <a href="https://github.com/w3c/lines-and-paragraphs-tests/issues">GitHub issues</a>. Follow the links to the issue to run the test, or to see notes on the results (especially where the test only partially passes).</p>
+<p>If you are developing a gap-analysis document, these tests can be set up very quickly, and the results captured simply. You can easily add tests to this list. See the <a href="https://github.com/w3c/i18n-activity/wiki/Using-the-interactive-exploratory-tests">instructions</a> for further information. There is also a <a href="https://github.com/w3c/i18n-tests/wiki/List-of-interactive-tests-&-scripts">list of all tests and results</a> pages.</p>
 </section>
 
-<!-- ·········································································· -->
+
 
 
 
@@ -121,6 +123,21 @@ table .assert {
 <h3>Break anywhere</h3>
 
 <div class="insertionpoint" id="insert-ar_break_anywhere" data-h2="Arabic" data-h3="Break_anywhere"></div>
+</section>
+</section>
+
+
+
+
+
+
+<section id="bengali">
+<h2>Bengali</h2>
+
+<section id="bn_hyphenation">
+<h3>Hyphenation</h3>
+
+<div class="insertionpoint" id="insert-bn_hyphenation" data-h2="Bengali" data-h3="Hyphenation"></div>
 </section>
 </section>
 
@@ -198,6 +215,15 @@ table .assert {
 
 <div class="insertionpoint" id="insert-ta_break_anywhere" data-h2="Tamil" data-h3="Break_anywhere"></div>
 </section>
+
+
+
+
+<section id="ta_hyphenation">
+<h3>Hyphenation</h3>
+
+<div class="insertionpoint" id="insert-ta_hyphenation" data-h2="Tamil" data-h3="Hyphenation"></div>
+</section>
 </section>
 
 
@@ -243,17 +269,17 @@ table .assert {
 <aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
 
 <ul id="full-links">
+    <li><a href="http://w3c.github.io/typography#line_breaking">Line-breaking</a> in the Language Enablement Index.</li>
+    <li><a href="http://w3c.github.io/typography#hyphenation">Hyphenation</a> in the Language Enablement Index.</li>
     <li><a href="http://www.w3.org/International/tests/">i18n test suite home</a></li>
-    <li><a href="http://www.w3.org/International/tests/">Related tests</a></li>
 	</ul>
 </section>
 
 <footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
 <script>completePage()</script>
 
-<script>  
-generateStuffInPage();
-</script>
+
+
 <script>
 getAllData('lines-and-paragraphs-tests','doc:Line_breaking')
 </script>

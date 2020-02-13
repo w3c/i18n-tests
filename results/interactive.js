@@ -65,7 +65,6 @@ function buildDoc (repo, doc) {
 
 	var docSections = document.querySelectorAll('.insertionpoint')
 	for (i=0;i<docSections.length;i++) {
-		console.log(docSections[i].dataset.h2, docSections[i].id, docSections[i].dataset.h3, doc, repo)
 		buildSection(sections[docSections[i].dataset.h2], docSections[i].id, 'h3:'+docSections[i].dataset.h3, doc, repo)
 		}
 	}
