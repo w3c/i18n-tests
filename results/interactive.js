@@ -1,7 +1,7 @@
 var owner = 'w3c';
 
 var sections = {}
-var debug = false
+var debug = true
 
 var issues = []
 var maxpages = 5
@@ -60,17 +60,13 @@ function fetchIssues(page, repo) {
 function buildDoc (repo, doc) {
 	// incorporate the information in the database into the html document
 
-	//buildSection(sections.Arabic,'ar_default_line_breaking', 'h3:Default_line-breaking', doc, repo)
-	//buildSection(sections.Arabic,'ar_break_anywhere', 'h3:Break_anywhere', doc, repo)
-
 	var docSections = document.querySelectorAll('.insertionpoint')
-	for (i=0;i<docSections.length;i++) {
+	for (var i=0;i<docSections.length;i++) {
 		buildSection(sections[docSections[i].dataset.h2], docSections[i].id, 'h3:'+docSections[i].dataset.h3, doc, repo)
 		}
 	}
 
 
-//<div class="insertionpoint" id="insert-hi_break_anywhere" data-h2="Hindi" data-h3="Break_anywhere"></div>
 
 
 
@@ -106,55 +102,19 @@ function buildSection (theData, sectionId, subsection, doc, repo) {
 			if (labelSet.has('r:GeckoPass')) out += '<td class="pass">pass</td>'
 			else if (labelSet.has('r:GeckoFail')) out += '<td class="fail">fail</td>'
 			else if (labelSet.has('r:GeckoPartial')) out += '<td class="partial">partial</td>'
-			else if (labelSet.has('r:GeckoNA')) out += '<td class="na">n/a</td>'
+			else if (labelSet.has('r:GeckoNA')) out += '<td class="skipped">n/a</td>'
 			
 			if (labelSet.has('r:BlinkPass')) out += '<td class="pass">pass</td>'
 			else if (labelSet.has('r:BlinkFail')) out += '<td class="fail">fail</td>'
 			else if (labelSet.has('r:BlinkPartial')) out += '<td class="partial">partial</td>'
-			else if (labelSet.has('r:BlinkNA')) out += '<td class="na">n/a</td>'
+			else if (labelSet.has('r:BlinkNA')) out += '<td class="skipped">n/a</td>'
 			
 			if (labelSet.has('r:WebkitPass')) out += '<td class="pass">pass</td>'
 			else if (labelSet.has('r:WebkitFail')) out += '<td class="fail">fail</td>'
 			else if (labelSet.has('r:WebkitPartial')) out += '<td class="partial">partial</td>'
-			else if (labelSet.has('r:WebkitNA')) out += '<td class="na">n/a</td>'
+			else if (labelSet.has('r:WebkitNA')) out += '<td class="skipped">n/a</td>'
 			
 			out += '</tr>'
-
-		/*
-			out += '<section id="issue'+theData[i].number+'">\n'
-			out += '<h4><a target="_blank" href="https://github.com/w3c/'+repo+'/issues/'+theData[i].number+'">#'+theData[i].number+'</a> '+theData[i].title+'</h4>\n'
-			out += '<p>'
-
-			var body = theData[i].body
-
-			// make GH images into img element
-			function convertToImg(str, p1, p2, s) {
-				return '<img src="'+p2+'" alt="'+p1+'"/>'
-				}
-			var test = /!\[([^\]]+)\]\(([^\)]+)\)/g
-			body = body.replace(test, convertToImg)
-
-			// create html links
-			function convert(str, p1, p2, s) {
-				return '<a href="'+p2+'">'+p1+'</a>'
-				}
-			var test = /\[([^\]]+)\]\(([^\)]+)\)/g
-			body = body.replace(test, convert)
-
-			// create convert code segments links
-			function convertcode(str, p1, s) {
-				p1 = p1.replace(/</g,'&lt;')
-				p1 = p1.replace(/>/g,'&gt;')
-				return '<code translate="no">'+p1+'</code>'
-				}
-			test = /`([^`]+)`/g
-			body = body.replace(test, convertcode)
-
-			// split into paragraphs
-			out += body.replace(/\r\n\r\n/g,'</p><p>')
-			out += '</p>\n'
-			out += '</section>\n'
-			*/
 			}
 		}
 	out += '<tbody><table>'
