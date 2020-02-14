@@ -71,6 +71,9 @@ function buildDoc (repo, doc) {
 
 
 function buildSection (theData, sectionId, subsection, doc, repo) {
+
+	if (! theData) return
+	
 	var out = '<table class="results"><thead><tr><th>link</th><th>assertion</th><th>Gecko</th><th>Blink</th><th>Webkit</th></tr></thead><tbody>'
 	
 	for (var i=0;i<theData.length;i++) {
@@ -103,16 +106,24 @@ function buildSection (theData, sectionId, subsection, doc, repo) {
 			else if (labelSet.has('r:GeckoFail')) out += '<td class="fail">fail</td>'
 			else if (labelSet.has('r:GeckoPartial')) out += '<td class="partial">partial</td>'
 			else if (labelSet.has('r:GeckoNA')) out += '<td class="skipped">n/a</td>'
+			else if (labelSet.has('r:GeckoYes')) out += '<td class="yes">yes</td>'
+			else if (labelSet.has('r:GeckoNo')) out += '<td class="no">no</td>'
 			
 			if (labelSet.has('r:BlinkPass')) out += '<td class="pass">pass</td>'
 			else if (labelSet.has('r:BlinkFail')) out += '<td class="fail">fail</td>'
 			else if (labelSet.has('r:BlinkPartial')) out += '<td class="partial">partial</td>'
 			else if (labelSet.has('r:BlinkNA')) out += '<td class="skipped">n/a</td>'
+			else if (labelSet.has('r:BlinkYes')) out += '<td class="yes">yes</td>'
+			else if (labelSet.has('r:BlinkNo')) out += '<td class="no">no</td>'
 			
 			if (labelSet.has('r:WebkitPass')) out += '<td class="pass">pass</td>'
 			else if (labelSet.has('r:WebkitFail')) out += '<td class="fail">fail</td>'
 			else if (labelSet.has('r:WebkitPartial')) out += '<td class="partial">partial</td>'
 			else if (labelSet.has('r:WebkitNA')) out += '<td class="skipped">n/a</td>'
+			else if (labelSet.has('r:WebkitYes')) out += '<td class="yes">yes</td>'
+			else if (labelSet.has('r:WebkitNo')) out += '<td class="no">no</td>'
+
+			
 			
 			out += '</tr>'
 			}

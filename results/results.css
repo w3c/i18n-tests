@@ -38,6 +38,8 @@ p.notes { margin-left: 12%;  }
 .fail.uncertain { background-color: #FAA; color: black; }
 .results .pass { background-color: #8F8; font-size: 70%; text-align: center; cursor: pointer; }
 .pass.fail, .pass.uncertain { background-color: #BFB; color: black; }
+.results .yes { background-color:antiquewhite; font-size: 70%; text-align: center; cursor: pointer; }
+.results .no { background-color:antiquewhite; font-size: 70%; text-align: center; cursor: pointer; }
 
 
 h4 { margin-left: 7.5%; margin-right: 32%; display: block; }
