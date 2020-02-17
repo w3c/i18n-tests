@@ -24,13 +24,13 @@ function getStatus (score) {
 function generateStuffInPage () { 	
 	var tables, rows, testname, t, i, td, tr, th
 	//var ffp, fff, ffpl, ffscore, cp, cf, cpl, cscore, sp, sf, spl, sscore
-	var ffscore, fnscore, cscore, gcscore, sscore, wkscore, oscore, escore, iescore, ascore, cmscore, smscore, ucscore
+	var ffscore, fnscore, cscore, gcscore, sscore, wkscore, oscore, escore, ebscore, iescore, ascore, cmscore, smscore, ucscore
 	tables = document.querySelectorAll('table.results')  // find all the tables
 	for (t=0;t<tables.length;t++) {
 		rows = tables[t].querySelectorAll('tr')          // find all rows in each table
 		
 		// set the header flags
-		var ths = { ff:false, fn:false, c:false, gc:false, s:false, wk:false, o:false, e:false, ie:false, uc:false, a:false }
+		var ths = { ff:false, fn:false, c:false, gc:false, s:false, wk:false, o:false, e:false, eb:false, ie:false, uc:false, a:false }
 		
 		// establish which browsers have results
 		for (i= 1;i<rows.length;i++) {
@@ -43,9 +43,10 @@ function generateStuffInPage () {
 						case 'Nightly': ths.fn = true; break;
 						case 'Chrome': ths.c = true; break;
 						case 'Canary': ths.gc = true; break;
+						case 'EdgeBlink': ths.eb = true; break;
+						case 'Opera': ths.o = true; break;
 						case 'Safari': ths.s = true; break;
 						case 'Webkit': ths.wk = true; break;
-						case 'Opera': ths.o = true; break;
 						case 'Edge': ths.e = true; break;
 						case 'Internet Explorer': ths.ie = true; break;
 						case 'Android': ths.a = true; break;
@@ -65,7 +66,7 @@ function generateStuffInPage () {
 			if (testresults[testname]) {
 				//console.log(testresults[testname])
 				
-				ffscore = fnscore = cscore = gcscore = sscore = wkscore = oscore = escore = iescore = ascore = cmscore = smscore = ucscore = 0
+				ffscore = fnscore = cscore = gcscore = sscore = wkscore = oscore = escore = ebscore = iescore = ascore = cmscore = smscore = ucscore = 0
 				
 				// collect a score for this test + browser combination
 				// we do this separately because the order of the data doesn't match that of the columns
@@ -73,19 +74,20 @@ function generateStuffInPage () {
 				for (var r=0;r<testresults[testname].length;r++) {
 					var ctest = testresults[testname]
 					switch (ctest[r].browser) {
-						case 'Firefox': ffscore = ctest[r].status; break
-						case 'Nightly': fnscore = ctest[r].status; break
-						case 'Chrome': cscore = ctest[r].status; break 
-						case 'Canary': gcscore = ctest[r].status; break 
-						case 'Safari': sscore = ctest[r].status; break
-						case 'Webkit': wkscore = ctest[r].status; break
-						case 'Opera': oscore = ctest[r].status; break
-						case 'Edge': escore = ctest[r].status; break
-						case 'Internet Explorer': iescore = ctest[r].status; break
-						case 'Android': ascore = ctest[r].status; break
-						case 'ChromeMobile': cmscore = ctest[r].status; break
-						case 'SafariMobile': smscore = ctest[r].status; break
-						case 'UC Browser': ucscore = ctest[r].status; break
+						case 'Firefox': ffscore = ctest[r].status; ffnotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'Nightly': fnscore = ctest[r].status; fnnotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'Chrome': cscore = ctest[r].status; cnotes = ctest[r].notes?ctest[r].notes:''; break 
+						case 'Canary': gcscore = ctest[r].status; gcnotes = ctest[r].notes?ctest[r].notes:''; break 
+						case 'EdgeBlink': ebscore = ctest[r].status; ebnotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'Opera': oscore = ctest[r].status; onotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'Safari': sscore = ctest[r].status; snotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'Webkit': wkscore = ctest[r].status; wknotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'Edge': escore = ctest[r].status; enotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'Internet Explorer': iescore = ctest[r].status; ienotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'Android': ascore = ctest[r].status; asnotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'ChromeMobile': cmscore = ctest[r].status; cmnotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'SafariMobile': smscore = ctest[r].status; smnotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'UC Browser': ucscore = ctest[r].status; ucnotes = ctest[r].notes?ctest[r].notes:''; break
 						}
 					}
 
@@ -93,7 +95,7 @@ function generateStuffInPage () {
 				// also add event listener to open detailed result info
 				if (ths.ff) {
 					td = document.createElement('td')
-					td.title = 'Firefox'
+					td.title = 'Gecko Firefox '+ffnotes
 					if (ffscore) {
 						td.textContent = ffscore
 						td.className = ffscore
@@ -108,7 +110,7 @@ function generateStuffInPage () {
 					}
 				if (ths.fn) {
 					td = document.createElement('td')
-					td.title = 'Nightly'
+					td.title = 'Gecko Nightly '+fnnotes
 					if (fnscore) {
 						td.textContent = fnscore
 						td.className = fnscore
@@ -123,7 +125,7 @@ function generateStuffInPage () {
 					}
 				if (ths.c) {
 					td = document.createElement('td')
-					td.title = 'Chrome'
+					td.title = 'Blink Chrome '+cnotes
 					if (cscore) {
 						td.textContent = cscore
 						td.className = cscore
@@ -139,7 +141,7 @@ function generateStuffInPage () {
 					}
 				if (ths.gc) {
 					td = document.createElement('td')
-					td.title = 'Canary'
+					td.title = 'Blink Canary '+gcnotes
 					if (gcscore) {
 						td.textContent = gcscore
 						td.className = gcscore
@@ -152,9 +154,24 @@ function generateStuffInPage () {
 						}
 					rows[i].appendChild(td)
 					}
+				if (ths.eb) {
+					td = document.createElement('td')
+					td.title = 'Blink Edge '+ebnotes
+					if (ebscore) {
+						td.textContent = ebscore
+						td.className = ebscore
+						td.addEventListener('click', showResultDetail)
+						}
+					else {
+						td.textContent = '-'
+						td.style.backgroundColor = 'azure'
+						td.style.textAlign = 'center'
+						}
+					rows[i].appendChild(td)
+					}
 				if (ths.o) {
 					td = document.createElement('td')
-					td.title = 'Opera'
+					td.title = 'Blink Opera '+onotes
 					if (oscore) {
 						td.textContent = oscore
 						td.className = oscore
@@ -169,7 +186,7 @@ function generateStuffInPage () {
 					}
 				if (ths.s) {
 					td = document.createElement('td')
-					td.title = 'Safari'
+					td.title = 'Webkit Safari '+snotes
 					if (sscore) {
 						td.textContent = sscore
 						td.className = sscore
@@ -184,7 +201,7 @@ function generateStuffInPage () {
 					}
 				if (ths.wk) {
 					td = document.createElement('td')
-					td.title = 'WebKit'
+					td.title = 'WebKit '+wknotes
 					if (wkscore) {
 						td.textContent = wkscore
 						td.className = wkscore
@@ -199,7 +216,7 @@ function generateStuffInPage () {
 					}
 				if (ths.e) {
 					td = document.createElement('td')
-					td.title = 'Edge'
+					td.title = 'legacy Edge '+enotes
 					if (escore) {
 						td.textContent = escore
 						td.className = escore
@@ -214,7 +231,7 @@ function generateStuffInPage () {
 					}
 				if (ths.ie) {
 					td = document.createElement('td')
-					td.title = 'Internet Explorer'
+					td.title = 'Internet Explorer '+ienotes
 					if (iescore) {
 						td.textContent = iescore
 						td.addEventListener('click', showResultDetail)
@@ -229,7 +246,7 @@ function generateStuffInPage () {
 					}
 				if (ths.a) {
 					td = document.createElement('td')
-					td.title = 'Android'
+					td.title = 'Android '+anotes
 					if (ascore) {
 						td.textContent = ascore
 						td.className = ascore
@@ -244,7 +261,7 @@ function generateStuffInPage () {
 					}
 				if (ths.cm) {
 					td = document.createElement('td')
-					td.title = 'Chrome mobile'
+					td.title = 'Chrome mobile '+cmnotes
 					if (cmscore) {
 						td.textContent = cmscore
 						td.addEventListener('click', showResultDetail)
@@ -259,7 +276,7 @@ function generateStuffInPage () {
 					}
 				if (ths.sm) {
 					td = document.createElement('td')
-					td.title = 'Safari mobile'
+					td.title = 'Safari mobile '+smnotes
 					if (smscore) {
 						td.textContent = smscore
 						td.className = smscore
@@ -274,7 +291,7 @@ function generateStuffInPage () {
 					}
 				if (ths.uc) {
 					td = document.createElement('td')
-					td.title = 'UC Browser'
+					td.title = 'UC Browser '+ucnotes
 					if (ucscore) {
 						td.textContent = ucscore
 						td.className = ucscore
@@ -289,18 +306,19 @@ function generateStuffInPage () {
 					}
 				}
 			}
-		if (ths.ff) { th = document.createElement('th'); th.textContent = 'Firefox'; tables[t].querySelector('tr').appendChild(th) }
-		if (ths.fn) { th = document.createElement('th'); th.textContent = 'FNightly'; tables[t].querySelector('tr').appendChild(th) }
-		if (ths.c) { th = document.createElement('th'); th.textContent = 'Chrome'; tables[t].querySelector('tr').appendChild(th) }
-		if (ths.gc) { th = document.createElement('th'); th.textContent = 'Canary'; tables[t].querySelector('tr').appendChild(th) }
-		if (ths.o) { th = document.createElement('th'); th.textContent = 'Opera'; tables[t].querySelector('tr').appendChild(th) }
-		if (ths.s) { th = document.createElement('th'); th.textContent = 'Safari'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.ff) { th = document.createElement('th'); th.textContent = 'Gecko Firefox'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.fn) { th = document.createElement('th'); th.textContent = 'Gecko FNightly'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.c) { th = document.createElement('th'); th.textContent = 'Blink Chrome'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.gc) { th = document.createElement('th'); th.textContent = 'Blink Canary'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.eb) { th = document.createElement('th'); th.textContent = 'Blink Edge'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.o) { th = document.createElement('th'); th.textContent = 'Blink Opera'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.s) { th = document.createElement('th'); th.textContent = 'Webkit Safari'; tables[t].querySelector('tr').appendChild(th) }
 		if (ths.wk) { th = document.createElement('th'); th.textContent = 'WebKit'; tables[t].querySelector('tr').appendChild(th) }
-		if (ths.e) { th = document.createElement('th'); th.textContent = 'Edge'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.e) { th = document.createElement('th'); th.textContent = 'Legacy Edge'; tables[t].querySelector('tr').appendChild(th) }
 		if (ths.ie) { th = document.createElement('th'); th.textContent = 'IE'; tables[t].querySelector('tr').appendChild(th) }
 		if (ths.a) { th = document.createElement('th'); th.textContent = 'Android'; tables[t].querySelector('tr').appendChild(th) }
-		if (ths.cm) { th = document.createElement('th'); th.textContent = 'ChrMob'; tables[t].querySelector('tr').appendChild(th) }
-		if (ths.sm) { th = document.createElement('th'); th.textContent = 'SafMob'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.cm) { th = document.createElement('th'); th.textContent = 'Chrome Mobile'; tables[t].querySelector('tr').appendChild(th) }
+		if (ths.sm) { th = document.createElement('th'); th.textContent = 'Safari Mobile'; tables[t].querySelector('tr').appendChild(th) }
 		if (ths.uc) { th = document.createElement('th'); th.textContent = 'UC'; tables[t].querySelector('tr').appendChild(th) }
 		}
 	}
@@ -321,7 +339,9 @@ function showdetail (testname, sectionid) {
 			if (testresults[testname][f].status == 'pass') { html+= ' class="pass"'; }
 			else if (testresults[testname][f].status == 'partial') { html+= ' class="uncertain"'; }
 			else { html+= ' class="fail"'; }
-			html += '><td>'+testresults[testname][f].browser+'</td><td>'+testresults[testname][f].status+'</td><td>'+testresults[testname][f].ua+'</td><td>'+testresults[testname][f].date+'</td></tr>';
+			html += '><td>'+testresults[testname][f].browser+'</td><td>'+testresults[testname][f].status+'</td><td>'+testresults[testname][f].ua
+			if (testresults[testname][f].notes) html += '<br/>'+testresults[testname][f].notes
+			html += '</td><td>'+testresults[testname][f].date+'</td></tr>'
 			}
 		
 		document.getElementById(sectionid+'-detail').innerHTML='<p class="closeDetail" onclick="closedetail(\''+sectionid+'-detail\');">close</p><p class="detailTitle">'+testname+'</p><table class="detailedresults"><tbody>'+html+'</tbody></table>';
