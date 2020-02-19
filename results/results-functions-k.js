@@ -98,6 +98,7 @@ function generateStuffInPage () {
 					td.title = 'Gecko Firefox '+ffnotes
 					if (ffscore) {
 						td.textContent = ffscore
+						if (ffnotes !== '') td.textContent += ' *'
 						td.className = ffscore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -113,6 +114,7 @@ function generateStuffInPage () {
 					td.title = 'Gecko Nightly '+fnnotes
 					if (fnscore) {
 						td.textContent = fnscore
+						if (fnnotes !== '') td.textContent += ' *'
 						td.className = fnscore
 						td.addEventListener('click', showResultDetail)
 					}
@@ -128,6 +130,7 @@ function generateStuffInPage () {
 					td.title = 'Blink Chrome '+cnotes
 					if (cscore) {
 						td.textContent = cscore
+						if (cnotes !== '') td.textContent += ' *'
 						td.className = cscore
 						td.addEventListener('click', showResultDetail)
 						//td.className = getStatus(cscore)
@@ -144,6 +147,7 @@ function generateStuffInPage () {
 					td.title = 'Blink Canary '+gcnotes
 					if (gcscore) {
 						td.textContent = gcscore
+						if (gcnotes !== '') td.textContent += ' *'
 						td.className = gcscore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -159,6 +163,7 @@ function generateStuffInPage () {
 					td.title = 'Blink Edge '+ebnotes
 					if (ebscore) {
 						td.textContent = ebscore
+						if (ebnotes !== '') td.textContent += ' *'
 						td.className = ebscore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -174,6 +179,7 @@ function generateStuffInPage () {
 					td.title = 'Blink Opera '+onotes
 					if (oscore) {
 						td.textContent = oscore
+						if (onotes !== '') td.textContent += ' *'
 						td.className = oscore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -189,6 +195,7 @@ function generateStuffInPage () {
 					td.title = 'Webkit Safari '+snotes
 					if (sscore) {
 						td.textContent = sscore
+						if (snotes !== '') td.textContent += ' *'
 						td.className = sscore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -204,6 +211,7 @@ function generateStuffInPage () {
 					td.title = 'WebKit '+wknotes
 					if (wkscore) {
 						td.textContent = wkscore
+						if (wknotes !== '') td.textContent += ' *'
 						td.className = wkscore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -219,6 +227,7 @@ function generateStuffInPage () {
 					td.title = 'legacy Edge '+enotes
 					if (escore) {
 						td.textContent = escore
+						if (enotes !== '') td.textContent += ' *'
 						td.className = escore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -234,8 +243,9 @@ function generateStuffInPage () {
 					td.title = 'Internet Explorer '+ienotes
 					if (iescore) {
 						td.textContent = iescore
-						td.addEventListener('click', showResultDetail)
+						if (ienotes !== '') td.textContent += ' *'
 						td.className = iescore
+						td.addEventListener('click', showResultDetail)
 						}
 					else {
 						td.textContent = '-'
@@ -249,6 +259,7 @@ function generateStuffInPage () {
 					td.title = 'Android '+anotes
 					if (ascore) {
 						td.textContent = ascore
+						if (anotes !== '') td.textContent += ' *'
 						td.className = ascore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -264,8 +275,9 @@ function generateStuffInPage () {
 					td.title = 'Chrome mobile '+cmnotes
 					if (cmscore) {
 						td.textContent = cmscore
-						td.addEventListener('click', showResultDetail)
+						if (cmnotes !== '') td.textContent += ' *'
 						td.className = cmscore
+						td.addEventListener('click', showResultDetail)
 						}
 					else {
 						td.textContent = '-'
@@ -279,6 +291,7 @@ function generateStuffInPage () {
 					td.title = 'Safari mobile '+smnotes
 					if (smscore) {
 						td.textContent = smscore
+						if (smnotes !== '') td.textContent += ' *'
 						td.className = smscore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -294,6 +307,7 @@ function generateStuffInPage () {
 					td.title = 'UC Browser '+ucnotes
 					if (ucscore) {
 						td.textContent = ucscore
+						if (ucnotes !== '') td.textContent += ' *'
 						td.className = ucscore
 						td.addEventListener('click', showResultDetail)
 						}
@@ -338,9 +352,10 @@ function showdetail (testname, sectionid) {
 			//if (testresults[testname][f].status == 'pass') { html+= ' style="background-color: #8F8;"'; }
 			if (testresults[testname][f].status == 'pass') { html+= ' class="pass"'; }
 			else if (testresults[testname][f].status == 'partial') { html+= ' class="uncertain"'; }
+			else if (testresults[testname][f].status == 'skipped') { html+= ' class="skipped"'; }
 			else { html+= ' class="fail"'; }
 			html += '><td>'+testresults[testname][f].browser+'</td><td>'+testresults[testname][f].status+'</td><td>'+testresults[testname][f].ua
-			if (testresults[testname][f].notes) html += '<br/>'+testresults[testname][f].notes
+			if (testresults[testname][f].notes) html += '<span class="notesInDetail">'+testresults[testname][f].notes+'</span>'
 			html += '</td><td>'+testresults[testname][f].date+'</td></tr>'
 			}
 		
