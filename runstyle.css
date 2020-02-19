@@ -21,3 +21,4 @@ body { font-family:Arial, Helvetica, sans-serif; color: black; background-color:
 .pass { background-color: #8f8; }
 .fail { background-color: #f66; }
 .partial { background-color: #fc6; }
+.skipped { background-color: #ccc; }

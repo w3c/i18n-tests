@@ -44,7 +44,9 @@ function setTest (newptr, base) {
 	document.getElementById('assertion').innerHTML = tests[newptr][cAssert];
 	
 	if (testresults[tests[newptr][cTestname]]  && testresults[tests[newptr][cTestname]][0].status) document.getElementById('status').className = testresults[tests[newptr][cTestname]][0].status
+	else document.getElementById('status').className = ''
 	if (testresults[tests[newptr][cTestname]]  && testresults[tests[newptr][cTestname]][0].notes) document.getElementById('notes').value = testresults[tests[newptr][cTestname]][0].notes
+	else document.getElementById('notes').value = ''
 	
 
 	//document.getElementById('detailedresults').href = 'http://w3c-test.org/framework/details/'+base+'/'+tests[newptr][0];
@@ -71,7 +73,8 @@ function adddata (testname, result, notes) {
                 + currentdate.getSeconds();
 	
 	if (testresults[testname] ) {
-		testresults[testname][testresults[testname].length] = { browser: _browsertype, status: result, ua: navigator.userAgent, date: datetime, 'notes':notes }
+		//testresults[testname][testresults[testname].length] = { browser: _browsertype, status: result, ua: navigator.userAgent, date: datetime, 'notes':notes }
+		testresults[testname][0] = { browser: _browsertype, status: result, ua: navigator.userAgent, date: datetime, 'notes':notes }
 		}
 	else { 
 		testresults[testname] = new Array();
