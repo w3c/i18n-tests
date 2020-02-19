@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Interactive test: ruby</title>
+<link rel="help" href="https://www.w3.org/TR/2018/WD-css-text-3-20180920/#line-breaking">
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>
+
+/* the CSS below is not part of the test */
+.test {
+margin: 40px 5%;
+width: 400px;
+font-size: 36px;
+border: 1px solid orange;
+height: 400px;
+overflow: hidden;
+padding: 40px;
+}
+</style>
+<script src="../../fonts/interactive_functions.js"> </script>
+<script>
+function setTextJustify (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.textJustify = value }
+}
+
+function setRubyPosition (value) {
+tests = document.querySelectorAll('ruby')
+for (let i=0;i<tests.length;i++) { tests[i].style['-webkit'+'RubyPosition'] = '' }
+for (let i=0;i<tests.length;i++) { tests[i].style.rubyPosition = value }
+}
+
+function setWebkitRubyPosition (value) {
+tests = document.querySelectorAll('ruby')
+for (let i=0;i<tests.length;i++) { tests[i].style.rubyPosition = '' }
+for (let i=0;i<tests.length;i++) { tests[i].style['-webkit'+'RubyPosition'] = value }
+}
+
+function setRubyAlign (value) {
+tests = document.querySelectorAll('ruby')
+for (let i=0;i<tests.length;i++) { tests[i].style.rubyAlign = value }
+}
+
+function setRubyMerge (value) {
+tests = document.querySelectorAll('ruby')
+for (let i=0;i<tests.length;i++) { tests[i].style.rubyMerge = value }
+}
+
+function setWritingMode (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.writingMode = value }
+}
+
+</script>
+</head>
+<body>
+<h1>Interactive test: ruby</h1>
+
+<p class="advice">
+Set the language <input id="language" type="text" onChange="setLanguage(this.value)"/> <button onClick="setLanguage(document.getElementById('language').value)">Apply</button><br/>
+
+Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="setFontSize(this.value)" type="range"/> 
+<span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>
+
+Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setLanguage(document.getElementById('fontFamily').value)">Apply</button>
+</p>
+
+<div class="advice">Adjust the width of the test boxes.<br/>
+<input id="boxWidth" min="10" max="1000" step="1" value="400" oninput="setBoxWidth(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="wSizeIndicator" style="font-size:80%;">400</span>px</div>
+
+<div class="advice">Adjust the height of the test box.<br/>
+<input id="boxHeight" min="10" max="1000" step="1" value="400" oninput="setBoxHeight(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="vSizeIndicator" style="font-size:80%;">400</span>px</div>
+
+
+<!-- INPUT AREA -->
+<div><textarea id="in" dir="auto" type="text" placeholder="Add text to be tested text here and click on GO."></textarea> 
+<button onClick="setText(document.getElementById('in').value)" id="go" style="vertical-align: top;">Go</button></div>
+
+
+
+<!-- TESTS -->
+<div class="test" id="normal" dir="auto"></div>
+
+
+<!-- CONTROLS -->
+<p class="advice">None of the following are set in the file by default. Unless overridden in the URL parameters, the highlighted values show initial settings.</p>
+
+<p><code>ruby-position:</code>
+<label onClick="setRubyPosition('over')"><input type="radio" value="over" checked id="rubyPositionover" name="rubyPosition"/>
+<code>over</code></label>
+<label onClick="setRubyPosition('under')"><input type="radio" value="under" id="rubyPositionunder" name="rubyPosition"/>
+<code>under</code></label>
+<label onClick="setRubyPosition('inter-character')"><input type="radio" value="inter-character" id="rubyPositioninter-character" name="rubyPosition"/>
+<code>inter-character</code></label> 
+</p>
+
+<p class="proprietary"><code>[Proprietary]</code> <code>-webkit-ruby-position:</code>
+<label onClick="setWebkitRubyPosition('before')"><input type="radio" value="before" id="webkitRubyPositionbefore" name="webkitRubyPosition"/>
+<code>before</code></label>
+<label onClick="setWebkitRubyPosition('after')"><input type="radio" value="after" id="webkitRubyPositionafter" name="webkitRubyPosition"/>
+<code>after</code></label>
+</p>
+
+<p><code>ruby-align:</code>
+<label onClick="setRubyAlign('start')"><input type="radio" value="start" id="rubyAlignstart" name="rubyAlign"/>
+<code>start</code></label>
+<label onClick="setRubyAlign('center')"><input type="radio" value="center" id="rubyAligncenter" name="rubyAlign"/>
+<code>center</code></label>
+<label onClick="setRubyAlign('space-between')"><input type="radio" value="space-between" id="rubyAlignspace-between" name="rubyAlign"/>
+<code>space-between</code></label>
+<label onClick="setRubyAlign('space-around')"><input type="radio" value="space-around" checked id="rubyAlignspace-around" name="rubyAlign"/>
+<code>space-around</code></label><br>
+
+<span class="proprietary"><code>[Proprietary]</code> 
+<label onClick="setRubyAlign('distributed-letter')"><input type="radio" value="distributed-letter" id="rubyAligndistributed-letter" name="rubyAlign"/>
+<code>distributed-letter</code></label>
+<label onClick="setRubyAlign('distributed-space')"><input type="radio" value="distributed-space" id="rubyAligndistributed-space" name="rubyAlign"/>
+<code>distributed-space</code></label>
+</span>
+</p>
+
+<p><code>ruby-merge:</code>
+<label onClick="setRubyMerge('separate')"><input type="radio" value="separate" checked id="rubyMergeseparate" name="rubyMerge"/>
+<code>separate</code></label>
+<label onClick="setRubyMerge('collapse')"><input type="radio" value="collapse" id="rubyMergecollapse" name="rubyMerge"/>
+<code>collapse</code></label>
+<label onClick="setRubyMerge('auto')"><input type="radio" value="auto" id="rubyMergeauto" name="rubyMerge"/>
+<code>auto</code></label>
+</p>
+
+<p><code>writing-mode:</code>
+<label onClick="setWritingMode('horizontal-tb')"><input type="radio" checked value="horizontal-tb" id="writingModehorizontal-tb" name="writingMode"/>
+<code>horizontal-tb</code></label>
+<label onClick="setWritingMode('vertical-rl')"><input type="radio" value="vertical-rl" id="writingModevertical-rl" name="writingMode"/>
+<code>vertical-rl</code></label>
+<label onClick="setWritingMode('vertical-lr')"><input type="radio" value="vertical-lr" id="writingModevertical-lr" name="writingMode"/>
+<code>vertical-lr</code></label>
+<label onClick="setWritingMode('sideways-rl')"><input type="radio" value="sideways-rl" id="writingModesideways-rl" name="writingMode"/>
+<code>sideways-rl</code></label>
+<label onClick="setWritingMode('sideways-lr')"><input type="radio" value="sideways-lr" id="writingModesideways-lr" name="writingMode"/>
+<code>sideways-lr</code></label>
+</p>
+
+
+<!-- INFO -->
+<div id="info" style="clear: both; position: inherit;">
+<ul class="notes">
+<li>Spec links: <a href="https://drafts.csswg.org/css-ruby-1/#rubypos">ruby-position</a> 
+<a href="https://drafts.csswg.org/css-ruby-1/#ruby-align-property">ruby-align</a> 
+<a href="https://drafts.csswg.org/css-ruby-1/#collapsed-ruby">ruby-merge</a></li>
+<li>Browser: <span id="version"></span></li>
+<li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
+</ul>
+</div>
+<script>
+document.getElementById('version').innerHTML = navigator.userAgent
+
+
+// check for parameters and take appropriate action
+parameters = location.search.split('&')
+parameters[0] = parameters[0].substring(1)
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'lang' && pairs[1]) setLanguage( pairs[1] )
+	if (pairs[0] == 'fontSize' && pairs[1]) {
+					setFontSize(pairs[1]) 
+					document.getElementById('fontSize').value = pairs[1] 
+					}
+	if (pairs[0] == 'fontFamily' && pairs[1]) {
+					setFont(pairs[1]) 
+					document.getElementById('fontFamily').value = pairs[1] 
+					}
+	if (pairs[0] == 'width' && pairs[1]) { 
+					setBoxWidth(pairs[1]) 
+					document.getElementById('boxWidth').value = pairs[1]
+					}
+
+
+
+	if (pairs[0] == 'rubyPosition' && pairs[1]) { 
+					setRubyPosition(pairs[1]) 
+					document.getElementById('rubyPosition'+pairs[1]).checked = true 
+					}
+	if (pairs[0] == 'rubyAlign' && pairs[1]) {
+					setRubyAlign(pairs[1]) 
+					document.getElementById('rubyAlign'+pairs[1]).checked = true 
+					}
+	if (pairs[0] == 'rubyMerge' && pairs[1]) {
+					setRubyMerge(pairs[1]) 
+					document.getElementById('rubyMerge'+pairs[1]).checked = true 
+					}
+	if (pairs[0] == 'writingMode' && pairs[1]) {
+					setWritingMode(pairs[1]) 
+					document.getElementById('writingMode'+pairs[1]).checked = true 
+					}
+
+
+	if (pairs[0] == 'text' && pairs[1]) { 
+					document.getElementById('in').value = decodeURIComponent(pairs[1])
+					setText(decodeURIComponent(pairs[1]))
+					}
+	}
+
+
+function snapParameters () {
+// take a snapshot of the settings of the page and make available as URL parameters
+// this can be picked up by the user to point to the current setup of the page
+
+out = "https://w3c.github.io/i18n-tests/exploratory/inline_notes/int-ruby?"
+if (document.getElementById('language') && document.getElementById('language').value != '') out += 'lang='+document.getElementById('language').value
+if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+document.getElementById('fontSize').value
+if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+document.getElementById('fontFamily').value
+if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
+
+out += '&rubyPosition='+document.querySelector('input[name="rubyPosition"]:checked').value
+out += '&rubyAlign='+document.querySelector('input[name="rubyAlign"]:checked').value
+out += '&rubyMerge='+document.querySelector('input[name="rubyMerge"]:checked').value
+
+if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
+
+out += '&text='+encodeURIComponent(document.getElementById('in').value)
+return out
+}
+</script>
+</body>
+</html>
