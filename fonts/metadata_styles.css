@@ -15,7 +15,7 @@
 #in {
 	width: 80%;
 	height: 3em;
-	font-size: 32px;
+	font-size: 20px;
 	color: gray;
 	}
 #go {
@@ -29,3 +29,4 @@
 #fontSize { width: 20em; }
 #fontFamily { width: 20em; }
 .advice { font-style: italic; font-size: 90%; }
+.proprietary { color: gray; }
