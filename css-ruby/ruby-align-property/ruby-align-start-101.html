@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title>ruby-align: start, long base (v)</title>
-<meta name="assert" content="ruby-align: start will make ruby content aligned with the start edge of its box. Short ruby text will be flush left and set solid.">
+<meta name="assert" content="ruby-align: start will make ruby content aligned with the start edge of its box. Short ruby text will be flush with the top of the line and set solid.">
 <link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
-<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#rubypos">
-<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#rubypos">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#ruby-align-property">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#ruby-align-property">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
 <style type="text/css">/* this is not part of the test */
 .test { margin: 20px;  padding: 40px; font-size: 110px; }
 .test { -webkit-writing-mode: vertical-lr; writing-mode: tb-rl; writing-mode: vertical-rl; }
@@ -17,11 +19,15 @@ ruby { ruby-align: start; }
 </style>
 </head>
 <body>
-<p class="instructions">Skip if the text is not vertical.<br/>Test passes if the text is vertically set and the annotation is flush with the left edge of the base text, and set solid.</p>
+<p class="instructions"><em>Skip if the text is not vertical.</em><br/>Test passes if the annotation is flush with the top edge of the base text, and set solid.</p>
 <div class="test" lang="ja"><ruby><rb>浮世絵</rb><rt>うきよえ</rt></ruby></div>
-<div class="test" lang="zh"><ruby><rb>浮世絵</rb><rt>うきよえ</rt></ruby></div>
-<!-- Notes:
-In this test the annotation is shorter than the base text.
--->
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>In this test the annotation is shorter than the base text.</li>
+<li><code>ruby-align</code> is set to <code>start</code>. The markup is <code>lang=&quot;ja&quot;&gt;&lt;ruby&gt;&lt;rb&gt;BASE&lt;/rb&gt;&lt;rt&gt;annotation&lt;/rt&gt;&lt;/ruby&gt;</code>.</li>
+</ul>
+</div>
 </body>
 </html>

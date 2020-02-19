@@ -7,6 +7,8 @@
 <link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
 <link rel="help" href="http://www.w3.org/TR/css-ruby-1/#rubypos">
 <link rel="help" href="https://drafts.csswg.org/css-ruby-1/#rubypos">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
 <style type="text/css">
 .test { margin: 20px;  padding: 40px; font-size: 110px; }
 rt { color: blue; }
@@ -18,8 +20,13 @@ ruby { ruby-position: over; }
 <body>
 <p class="instructions">Test passes if the ruby text appears over the base.</p>
 <div class="test" lang="ja"><ruby>漢<rt>かん</rt>字<rt>じ</rt></ruby></div>
-<!-- Notes:
-The default position for HTML ruby is over, so it is difficult to ascertain whether this test is actually producing an effect. At least we can test that no harm is done.
--->
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li><code>ruby-position</code> is set to <code>over</code>. The markup model is <code>&lt;ruby&gt;B&lt;rt&gt;a&lt;/rt&gt;B&lt;rt&gt;a&lt;/rt&gt;&lt;/ruby&gt;</code>.</li>
+<li>The default position for HTML ruby is over, so it is difficult to ascertain whether this test is actually producing an effect. At least we can test that no harm is done.</li>
+</ul>
+</div>
 </body>
 </html>

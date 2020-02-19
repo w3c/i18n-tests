@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <title>ruby autohide (v)</title>
 <meta name="assert" content="If a ruby annotation has the exact same text content as its base, it is hidden.">
-<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
-<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#autohide">
-<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#autohide">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#ruby-align-property">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#ruby-align-property">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
 <style type="text/css">
 .test { margin: 40px;  padding: 10px; font-size: 110px; }
 rt { color: blue; }
@@ -16,9 +18,14 @@ rt { color: blue; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the text is vertical and there is no annotation alongside the second base character.</p>
+<p class="instructions"><em>Skip if the text is not vertical.</em><br>Test passes if the text is vertical and there is no annotation alongside the second base character.</p>
 <div class="test" lang="ja"><ruby>振<rt>ふ</rt>り<rt>り</rt>仮<rt>が</rt>名<rt>な</rt></ruby></div>
-<!-- Notes:
--->
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>No CSS properties are applied (other than to make the text vertical). The language is set to <code>ja</code>, and the markup model is BaBbBaBa, ie. the annotation for the second base character is the same as the base character.</li>
+</ul>
+</div>
 </body>
 </html>

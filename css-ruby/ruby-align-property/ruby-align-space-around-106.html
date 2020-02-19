@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <title>ruby-align:space-around, long annotation, one word latin base (v)</title>
 <meta name="assert" content="For a narrow-cell base containing no spaces that is shorter than its annotation, ruby-align:space-around will centre the base.">
-<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
-<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#rubypos">
-<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#rubypos">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#ruby-align-property">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#ruby-align-property">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
 <style type="text/css">/* this is not part of the test */
 .test { margin: 20px;  padding: 40px; font-size: 110px; }
 .test { -webkit-writing-mode: vertical-lr; writing-mode: tb-rl; writing-mode: vertical-rl; }
@@ -17,8 +19,15 @@ ruby { ruby-align: space-around; }
 </style>
 </head>
 <body>
-<p class="instructions">Test passes if the BASE is centred in the box.</p>
+<p class="instructions"><em>Skip if the text is not set vertically.</em><br>Test passes if the BASE is centred in the box.</p>
 <div class="test" lang="ja"><ruby><rb>UI</rb><rt>インターフェース</rt></ruby></div>
-<div class="test" lang="zh"><ruby><rb>UI</rb><rt>インターフェース</rt></ruby></div>
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li><code>ruby-align</code> is set to <code>space-around</code>.</li>
+<li>The <code>lang</code> attribute is set to <code>ja</code>, and the markup is one ruby pairing where the base is longer than the annotation, which is a single Latin word.</li>
+</ul>
+</div>
 </body>
 </html>

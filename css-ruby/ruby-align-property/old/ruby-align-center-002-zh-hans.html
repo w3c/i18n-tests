@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>ruby-align: center, long annotation (zh-hans)</title>
+<meta name="assert" content="ruby-align: center will centre base text shorter than the annotations within its box, and set it solid.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#rubypos">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#rubypos">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style type="text/css">/* this is not part of the test */
+.test { margin: 20px;  padding: 40px; font-size: 110px; }
+rt { color: blue; }
+</style>
+<style type="text/css">/* this is the test */
+ruby { ruby-align: center; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the base text is centered relative to the annotation text, and set solid.</p>
+<div class="test" lang="zh-hans"><ruby><rb>汉语</rb><rt>pǔtōnghuà</rt></ruby></div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.querySelector('meta[name=assert]').content</script>
+<ul class="notes">
+<li><code>ruby-position</code> is set to <code>center</code>.</li>
+<li>The markup is <code>lang=&quot;ja&quot;&gt;&lt;ruby&gt;&lt;rb&gt;昔話&lt;/rb&gt;&lt;rt&gt;むかしばなし&lt;/rt&gt;&lt;/ruby&gt;</code>.</li>
+<li>In this test the annotation is longer than the base text.</li>
+</ul>
+</div>
+</body>
+</html>
