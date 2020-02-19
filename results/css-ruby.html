@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>CSS3 Ruby: Summarized test results</title>
+<title>CSS Ruby: Summarized test results</title>
 <meta name="description" content="Summary of results of CSS3 Text module tests" />
-<script type="text/javascript">
+<script>
 var f = { }
 
 // AUTHORS should fill in these assignments:
@@ -15,12 +15,12 @@ f.previousauthors = '' // as above
 f.modifiers = '' // people making substantive changes, and their affiliation
 f.searchString = 'results-css-ruby' // blog search string - usually the filename without extensions
 f.firstPubDate = '2015-08-23' // date of the first publication of the document (after review)
-f.lastSubstUpdate = { date:'2015-08-24', time:'10:07'}  // date and time of latest substantive changes to this document
+f.lastSubstUpdate = { date:'2020-02-19', time:'10:07'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
 f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2016-04-11', time:'19:37'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2020-02-19', time:'19:37'} // date and time of latest edits to this document/translation
 f.contributors = '' // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 f.sources = '' // describes sources of information
@@ -32,15 +32,15 @@ f.breadcrumb = 'tests'
 
 f.additionalLinks = ''
 </script>
-<script type="text/javascript" src="css-ruby-data/translations.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
-<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
-<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
+<script src="css-ruby-data/translations.js"> </script>
+<script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" />
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<link rel="stylesheet" href="results.css" type="text/css" />
+<link rel="stylesheet" href="results.css" />
 <script src="../batches/css-ruby-data.js"></script>
 <script src="../batches/css-ruby.json"></script>
 <script src="results-functions-k.js"></script>
@@ -51,98 +51,274 @@ f.additionalLinks = ''
   <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
   
   <h1>Summarized test results: <br>
-  CSS3 Ruby</h1>
+  CSS Ruby</h1>
 </header>
 
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p>
+	<div class="pageInstructions">
+	<p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. To see detailed results   click on a row and look just above the table. </p>
+	<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p-->
+	<table class="results" style="margin-right: 32%;">
+	<tbody>
+	<tr>
+	<th style="min-width:8em; padding: .5em">Key:</th>
+	<td class="pass" style="min-width:8em; padding: .5em">pass</td>
+	<td class="fail" style="min-width:8em; padding: .5em">fail</td>
+	<td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
 
-			<section> 
-                <p>These tests check whether user agents correctly apply the properties defined in the CSS-ruby-1 spec. These are simple, user-oriented tests, designed to check basic functionality, rather than test all edge cases and implementation details.</p>
-                <p>Note that some tests pass because the browser displays the annotations in the same way by default, rather than necessarily because of the application of a CSS property. No special action is taken in these cases, since the result is the same for the user, however there are some exploratory tests below that enable you to see what the default rendering looks like.</p>
-              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row  and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. The tables only show the results of the latest test. The detailed results may show additional tests on earlier versions of the same browser.</p>
-<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em;">pass</td>
-      <td class="fail" style="min-width:8em;">fail</td>
-      <td class="uncertain" style="min-width:8em;">partially successful</td>
-    </tr>
-  </tbody>
-</table>
-			</section>
-		</section>
-		
+<section> 
+<p>These tests check whether user agents correctly apply the properties defined in the CSS-ruby spec. These are simple, user-oriented tests, designed to check basic functionality, rather than test all edge cases and implementation details.</p>
+<p>Note that some tests pass because the browser displays the annotations in the same way by default, rather than necessarily because of the application of a CSS property. No special action is taken in these cases, since the result is the same for the user, however there are some exploratory tests below that enable you to see what the default rendering looks like.</p>
+</section>
+</section>
+
+
+
 
 <section>
-<h2 id="results"><a href="#results">Results for horizontal text</a></h2>
-<p>Note that these test results are for released versions of the browsers tested. Versions that are still in development may provide better support for these features. The tests do not use any vendor prefixes. Tests that do show support for vendor prefixes are listed further down this page.</p>
+<h2 id="exploratory"><a href="#exploratory">Exploratory tests</a></h2>
 
-<section>
-  <h3 id="exploratory"><a href="#exploratory">Exploratory tests</a></h3>
-  <p>These two tests merely allow you to detect the default behaviour of the browser, in case you wish to compare it against what passes or fails in the other tests. </p>
-  <div style="margin-left:10%;">
-  <p><a href="/International/tests/repo/css-ruby/defaults/ruby-position-control-000.html" target="_blank">ruby-position default</a>  <span class="testName">ruby-position-control-000.html</span><br/>
-  <span class="exp" style="font-size:80%;">[Exploratory test] to determine whether and how the browser handles ruby by default.</span></p>
-  <p><a href="/International/tests/repo/css-ruby/defaults/ruby-align-control-000.html" target="_blank">ruby-align default	</a> <span class="testName">ruby-align-control-000.html</span><br/>
-  <span class="exp" style="font-size:80%;">[Exploratory test] to establish how the browser aligns ruby text by default.</span></p>
-  <p><a href="/International/tests/repo/css-ruby/defaults/ruby-position-intercharacter-000.html" target="_blank">zh-TW default size</a> <span class="testName">ruby-position-intercharacter-000.html</span><br/>
-  <span class="exp" style="font-size:80%;">[Exploratory test] to determine whether the browser applies special sizing for zh-TW language annotations.</span></p>
+<p>These two tests merely allow you to detect the default behaviour of the browser, in case you wish to compare it against what passes or fails in the other tests. </p>
+<div style="margin-left:10%;">
+<p><a href="/International/tests/repo/css-ruby/defaults/ruby-position-control-000.html" target="_blank">ruby-position default</a>  <span class="testName">ruby-position-control-000.html</span><br/>
+<span class="exp" style="font-size:80%;">[Exploratory test] to determine whether and how the browser handles ruby by default.</span></p>
+<p><a href="/International/tests/repo/css-ruby/defaults/ruby-align-control-000.html" target="_blank">ruby-align default	</a> <span class="testName">ruby-align-control-000.html</span><br/>
+<span class="exp" style="font-size:80%;">[Exploratory test] to establish how the browser aligns ruby text by default.</span></p>
+<p><a href="/International/tests/repo/css-ruby/defaults/ruby-position-intercharacter-000.html" target="_blank">zh-TW default size</a> <span class="testName">ruby-position-intercharacter-000.html</span><br/>
+<span class="exp" style="font-size:80%;">[Exploratory test] to determine whether the browser applies special sizing for zh-TW language annotations.</span></p>
 </div>
 </section>
-  
-<!-- ·········································································· -->
-<br style="clear:both;"/>
+
+
+
+
 
 <section>
-  <h3 id="ruby_position"><a href="#ruby_position">ruby-position</a></h3>
-  <div id="ruby_position-data"></div>
-</section>
+<h2 id="ruby_position"><a href="#ruby_position">ruby-position</a></h2>
+
+
+<section>
+<h3 id="ruby_position_basics"><a href="#ruby_position_basics">over/under</a></h3>
+<div id="ruby_position_basics-data"></div>
 <script>
 drawResults(
-	'ruby_position', // sectionid 
+	'ruby_position_basics', // sectionid 
 	'css-ruby', // base
 	'css-ruby', // batch
 	 [
 		'rubypos/ruby-position-over-001.html',
 		'rubypos/ruby-position-under-001.html',
+		]
+	 )
+</script>
+
+
+<div class="section_separator">Vertical text</div>
+
+<div id="ruby_position_basics_v-data"></div>
+<script>
+drawResults(
+	'ruby_position_basics_v', // sectionid 
+	'css-ruby', // base
+	'css-ruby', // batch
+	 [
+		'rubypos/ruby-position-over-101.html',
+		'rubypos/ruby-position-over-101-zh-hans.html',
+		'rubypos/ruby-position-under-101.html',
+		'rubypos/ruby-position-under-101-zh-hans.html',
+		]
+	 )
+</script>
+</section>
+
+
+
+<section>
+<h3 id="ruby_position_intercharacter"><a href="#ruby_position_intercharacter">inter-character</a></h3>
+<div id="ruby_position_intercharacter-data"></div>
+<script>
+drawResults(
+	'ruby_position_intercharacter', // sectionid 
+	'css-ruby', // base
+	'css-ruby', // batch
+	 [
 		'rubypos/ruby-position-intercharacter-001.html',
 		'rubypos/ruby-position-intercharacter-002.html',
 		'rubypos/ruby-position-intercharacter-003.html',
 		]
 	 )
 </script>
-<!-- ·········································································· -->
+
+
+<div class="section_separator">Vertical text</div>
+
+<div id="ruby_position_intercharacter_v-data"></div>
+<script>
+drawResults(
+	'ruby_position_intercharacter_v', // sectionid 
+	'css-ruby', // base
+	'css-ruby', // batch
+	 [
+		'rubypos/ruby-position-intercharacter-101.html',
+		'rubypos/ruby-position-intercharacter-102.html',
+		'rubypos/ruby-position-intercharacter-103.html',
+		]
+	 )
+</script>
+
+</section>
+</section>
+
+
+
+
 
 
 <section>
-  <h3 id="ruby_align"><a href="#ruby_align">ruby-align</a></h3>
-  <div id="ruby_align-data"></div>
-</section>
+<h2 id="ruby_align"><a href="#ruby_align">ruby-align</a></h2>
+<div id="ruby_align-data"></div>
+
+
+<section>
+<h3 id="ruby_align_start"><a href="#ruby_align_start">start</a></h3>
+
+<div id="ruby_align_start-data"></div>
 <script>
 drawResults(
-	'ruby_align', // sectionid 
+	'ruby_align_start', // sectionid 
 	'css-ruby', // base
     'css-ruby', // batch
      [
         'ruby-align-property/ruby-align-start-001.html',
+        'ruby-align-property/ruby-align-start-001-zh-hans.html',
         'ruby-align-property/ruby-align-start-002.html',
+        'ruby-align-property/ruby-align-start-002-zh-hans.html',
+        ]
+     )
+</script>
+
+<div class="section_separator">Vertical text</div>
+
+<div id="ruby_align_start_v-data"></div>
+<script>
+drawResults(
+	'ruby_align_start_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'ruby-align-property/ruby-align-start-101.html',
+        'ruby-align-property/ruby-align-start-101-zh-hans.html',
+        'ruby-align-property/ruby-align-start-102.html',
+        'ruby-align-property/ruby-align-start-102-zh-hans.html',
+        ]
+     )
+</script>
+</section>
+
+
+
+
+<section>
+<h3 id="ruby_align_center"><a href="#ruby_align_center">center</a></h3>
+
+<div id="ruby_align_center-data"></div>
+<script>
+drawResults(
+	'ruby_align_center', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
         'ruby-align-property/ruby-align-center-001.html',
+        'ruby-align-property/ruby-align-center-001-zh-hans.html',
         'ruby-align-property/ruby-align-center-002.html',
+        'ruby-align-property/ruby-align-center-002-zh-hans.html',
+        ]
+     )
+</script>
+
+<div class="section_separator">Vertical text</div>
+
+<div id="ruby_align_center_v-data"></div>
+<script>
+drawResults(
+	'ruby_align_center_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'ruby-align-property/ruby-align-center-101.html',
+        'ruby-align-property/ruby-align-center-101-zh-hans.html',
+        'ruby-align-property/ruby-align-center-102.html',
+        'ruby-align-property/ruby-align-center-102-zh-hans.html',
+        ]
+     )
+</script>
+</section>
+
+
+
+
+<section>
+<h3 id="ruby_align_space_between"><a href="#ruby_align_space_between">space-between</a></h3>
+
+<div id="ruby_align_space_between-data"></div>
+<script>
+drawResults(
+	'ruby_align_space_between', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
         'ruby-align-property/ruby-align-space-between-001.html',
         'ruby-align-property/ruby-align-space-between-002.html',
         'ruby-align-property/ruby-align-space-between-003.html',
         'ruby-align-property/ruby-align-space-between-004.html',
         'ruby-align-property/ruby-align-space-between-006.html',
         'ruby-align-property/ruby-align-space-between-007.html',
+        ]
+     )
+</script>
+
+<div class="section_separator">Vertical text</div>
+
+<div id="ruby_align_space_between_v-data"></div>
+<script>
+drawResults(
+	'ruby_align_space_between_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'ruby-align-property/ruby-align-space-between-101.html',
+        'ruby-align-property/ruby-align-space-between-102.html',
+        'ruby-align-property/ruby-align-space-between-103.html',
+        'ruby-align-property/ruby-align-space-between-104.html',
+        'ruby-align-property/ruby-align-space-between-106.html',
+        'ruby-align-property/ruby-align-space-between-107.html',
+        ]
+     )
+</script>
+</section>
+
+
+
+
+<section>
+<h3 id="ruby_align_space_around"><a href="#ruby_align_space_around">space-around</a></h3>
+
+<div id="ruby_align_space_around-data"></div>
+<script>
+drawResults(
+	'ruby_align_space_around', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
         'ruby-align-property/ruby-align-space-around-001.html',
         'ruby-align-property/ruby-align-space-around-002.html',
         'ruby-align-property/ruby-align-space-around-003.html',
@@ -152,11 +328,37 @@ drawResults(
         ]
      )
 </script>
-<!-- ·········································································· -->
+
+<div class="section_separator">Vertical text</div>
+
+<div id="ruby_align_space_around_v-data"></div>
+<script>
+drawResults(
+	'ruby_align_space_around_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'ruby-align-property/ruby-align-space-around-101.html',
+        'ruby-align-property/ruby-align-space-around-102.html',
+        'ruby-align-property/ruby-align-space-around-103.html',
+        'ruby-align-property/ruby-align-space-around-104.html',
+        'ruby-align-property/ruby-align-space-around-106.html',
+        'ruby-align-property/ruby-align-space-around-107.html',
+        ]
+     )
+</script>
+
+</section>
+</section>
+
+
+
+
+
 
 
 <section>
-  <h3 id="ruby_merge"><a href="#ruby_merge">ruby-merge</a></h3>
+  <h2 id="ruby_merge"><a href="#ruby_merge">ruby-merge</a></h2>
   <div class="dependencies">
     <p class="notesheader">Dependencies</p>
     <ol>
@@ -164,7 +366,6 @@ drawResults(
     </ol>
   </div>
   <div id="ruby_merge-data"></div>
-</section>
 <script>
 drawResults(
     'ruby_merge', // sectionid 
@@ -179,117 +380,18 @@ drawResults(
         ]
      )
 </script>
-<!-- ·········································································· -->
 
 
-<section>
-  <h3 id="ruby_autohide"><a href="#ruby_autohide">Ruby autohide</a></h3>
-  <div id="ruby_autohide-data"></div>
-</section>
+
+<div class="section_separator">Vertical text</div>
+
+<div id="ruby_merge_v-data"></div>
 <script>
 drawResults(
-    'ruby_autohide', // sectionid 
+	'ruby_merge_v', // sectionid 
 	'css-ruby', // base
     'css-ruby', // batch
      [
-        'ruby-model/ruby-autohide-001.html',
-        ]
-     )
-</script>
-
-</section>
-
-
-
-<section>
-<h2 id="vertical-results"><a href="#vertical-results">Results for vertical text</a></h2>
-
-<section>
-  <h3 id="ruby_position_v"><a href="#ruby_position_v">ruby-position (vertical text)</a></h3>
-    <div class="dependencies">
-      <p class="notesheader">Dependencies</p>
-      <ol>
-        <li>All these tests will fail if the top test (<strong>defaults/vertical-support-001.html</strong>) fails, since that means that the browser doesn't support vertical text. </li>
-      </ol>
-    </div>
-  <div id="ruby_position_v-data"></div>
-</section>
-<script>
-drawResults(
-    'ruby_position_v', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-     [
-        'defaults/vertical-support-001.html',
-        'rubypos/ruby-position-over-101.html',
-        'rubypos/ruby-position-under-101.html',
-        'rubypos/ruby-position-intercharacter-101.html',
-        'rubypos/ruby-position-intercharacter-102.html',
-        'rubypos/ruby-position-intercharacter-103.html',
-        ]
-     )
-</script>
-<!-- ·········································································· -->
-
-
-
-<section>
-  <h3 id="ruby_align_v"><a href="#ruby_align_v">ruby-align (vertical text)</a></h3>
-  <div class="dependencies">
-    <p class="notesheader">Dependencies</p>
-    <ol>
-      <li>All these tests will fail if the top test (<strong>defaults/vertical-support-001.html</strong>) fails, since that means that the browser doesn't support vertical text. </li>
-    </ol>
-  </div>
-  <div id="ruby_align_v-data"></div>
-</section>
-<script>
-drawResults(
-    'ruby_align_v', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-     [
-        'defaults/vertical-support-001.html',
-        'ruby-align-property/ruby-align-start-101.html',
-        'ruby-align-property/ruby-align-start-102.html',
-        'ruby-align-property/ruby-align-center-101.html',
-        'ruby-align-property/ruby-align-center-102.html',
-        'ruby-align-property/ruby-align-space-between-101.html',
-        'ruby-align-property/ruby-align-space-between-102.html',
-        'ruby-align-property/ruby-align-space-between-103.html',
-        'ruby-align-property/ruby-align-space-between-104.html',
-        'ruby-align-property/ruby-align-space-between-106.html',
-        'ruby-align-property/ruby-align-space-between-107.html',
-        'ruby-align-property/ruby-align-space-around-101.html',
-        'ruby-align-property/ruby-align-space-around-102.html',
-        'ruby-align-property/ruby-align-space-around-103.html',
-        'ruby-align-property/ruby-align-space-around-104.html',
-        'ruby-align-property/ruby-align-space-around-106.html',
-        'ruby-align-property/ruby-align-space-around-107.html',
-        ]
-     )
-</script>
-<!-- ·········································································· -->
-
-
-<section>
-  <h3 id="ruby_merge_v"><a href="#ruby_merge_v">ruby-merge (vertical text)</a></h3>
-  <div class="dependencies">
-    <p class="notesheader">Dependencies</p>
-    <ol>
-      <li>All these tests will fail if the top test (<strong>defaults/vertical-support-001.html</strong>) fails, since that means that the browser doesn't support vertical text. </li>
-      <li><strong>ruby-merge-collapse-102</strong> and <strong>ruby-merge-auto-102</strong> are only significant if the test immediately previous passes. This is because they are testing whether the association of annotation to base text is preserved across line breaks even though the placement would otherwise obscure the relationships.</li>
-    </ol>
-  </div>
-  <div id="ruby_merge_v-data"></div>
-</section>
-<script>
-drawResults(
-    'ruby_merge_v', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-     [
-        'defaults/vertical-support-001.html',
         'collapsed-ruby/ruby-merge-separate-101.html',
         'collapsed-ruby/ruby-merge-collapse-101.html',
         'collapsed-ruby/ruby-merge-collapse-102.html',
@@ -298,42 +400,51 @@ drawResults(
         ]
      )
 </script>
-  
-<!-- ·········································································· -->
+</section>
+
+
+
+
 
 
 <section>
-  <h3 id="ruby_autohide_v"><a href="#ruby_autohide_v">Ruby autohide</a></h3>
-  <div id="ruby_autohide_v-data"></div>
-</section>
+  <h2 id="ruby_autohide"><a href="#ruby_autohide">Ruby autohide</a></h2>
+  <div id="ruby_autohide-data"></div>
 <script>
 drawResults(
-    'ruby_autohide_v', // sectionid 
+    'ruby_autohide', // sectionid 
 	'css-ruby', // base
     'css-ruby', // batch
      [
+        'ruby-model/ruby-autohide-001.html',
         'ruby-model/ruby-autohide-101.html',
         ]
      )
 </script>
 </section>
 
-<!-- ·········································································· -->
+
+
+
+
+
+
+
+
 
 <section>
-<h2 id="prefix-results"><a href="#prefix-results">Results for prefixed, horizontal</a></h2>
+<h2 id="prefix-results"><a href="#prefix-results">Results for Proprietary syntax</a></h2>
 <p>These test results based on CSS that has the following adaptations:</p>
 <ol>
     <li><code class="kw" translate="no">-webkit-ruby-position </code>is used with values set to either <code class="kw" translate="no">before</code> or <code class="kw" translate="no">after</code></li>
     <li><code class="kw" translate="no">-webkit-writing-modes </code>and <code class="kw" translate="no">writing-modes:tb-rl</code> are used for tests with vertical text.</li>
     <li><code class="kw" translate="no">distributed-letter</code> used in addition to <code class="kw" translate="no">space-between</code>, and <code class="kw" translate="no">distributed-space</code> used in addition to <code class="kw" translate="no">space-around</code> for <code class="kw" translate="no">ruby-align</code>.</li>
-    </ol>
+</ol>
 
 
 <section>
-  <h3 id="ruby_position_prop"><a href="#ruby_position_prop">ruby-position</a></h3>
-  <div id="ruby_position_prop-data"></div>
-</section>
+<h3 id="ruby_position_prop"><a href="#ruby_position_prop">ruby-position</a></h3>
+<div id="ruby_position_prop-data"></div>
 <script>
 drawResults(
     'ruby_position_prop', // sectionid 
@@ -345,15 +456,33 @@ drawResults(
         ]
      )
 </script>
+
+
+<section>
+<h4 id="ruby_position_prop_v"><a href="#ruby_position_prop_v">Vertical text</a></h4>
+<div id="ruby_position_prop_v-data"></div>
+<script>
+drawResults(
+    'ruby_position_prop_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
+        'prefix/ruby-position-over-101.html',
+        'prefix/ruby-position-under-101.html',
+        ]
+     )
+</script>
+</section>
+
+</section>
 <!-- ·········································································· -->
 
 
 
 
 <section>
-  <h3 id="ruby_align_prop"><a href="#ruby_align_prop">ruby-align</a></h3>
-  <div id="ruby_align_prop-data"></div>
-</section>
+<h3 id="ruby_align_prop"><a href="#ruby_align_prop">ruby-align</a></h3>
+<div id="ruby_align_prop-data"></div>
 <script>
 drawResults(
     'ruby_align_prop', // sectionid 
@@ -377,111 +506,17 @@ drawResults(
         ]
      )
 </script>
-<!-- ·········································································· -->
-
-
 
 
 <section>
-  <h3 id="ruby_merge_prop"><a href="#ruby_merge_prop">ruby-merge</a></h3>
-  <div class="dependencies">
-    <p class="notesheader">Dependencies</p>
-    <ol>
-      <li><strong>ruby-merge-collapse-002</strong> and <strong>ruby-merge-auto-002</strong> are only significant if the test immediately previous passes. This is because they are testing whether the association of annotation to base text is preserved across line breaks even though the placement would otherwise obscure the relationships.</li>
-    </ol>
-  </div>
-  <div id="ruby_merge_prop-data"></div>
-</section>
+<h4 id="ruby_align_prop_v"><a href="#ruby_align_prop">Vertical text</a></h4>
+<div id="ruby_align_prop_v-data"></div>
 <script>
 drawResults(
-    'ruby_merge_prop', // sectionid 
+    'ruby_align_prop_v', // sectionid 
 	'css-ruby', // base
     'css-ruby', // batch
      [
-        'prefix/ruby-merge-separate-001.html',
-        'prefix/ruby-merge-collapse-001.html',
-        'prefix/ruby-merge-collapse-002.html',
-        'prefix/ruby-merge-auto-001.html',
-        'prefix/ruby-merge-auto-002.html',
-        ]
-     )
-</script>
-<!-- ·········································································· -->
-
-
-<section>
-  <h3 id="ruby_autohide_prop"><a href="#ruby_autohide_prop">Ruby autohide</a></h3>
-  <div id="ruby_autohide_prop-data"></div>
-</section>
-<script>
-drawResults(
-    'ruby_autohide_prop', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-     [
-        'prefix/ruby-autohide-001.html',
-        ]
-     )
-</script>
-</section>
-
-  <!-- ·········································································· -->
-
-<section>
-<h2 id="prefixv-results"><a href="#prefixv-results">Results for prefixed, vertical</a></h2>
-<p>These test results based on CSS that has the following adaptations:</p>
-<ol>
-    <li><code class="kw" translate="no">-webkit-ruby-position </code>is used with values set to either <code class="kw" translate="no">before</code> or <code class="kw" translate="no">after</code></li>
-    <li><code class="kw" translate="no">-webkit-writing-modes </code>and <code class="kw" translate="no">writing-modes:tb-rl</code> are used for tests with vertical text.</li>
-    <li><code class="kw" translate="no">distributed-letter</code> used in addition to <code class="kw" translate="no">space-between</code>, and <code class="kw" translate="no">distributed-space</code> used in addition to <code class="kw" translate="no">space-around</code> for <code class="kw" translate="no">ruby-align</code>.</li>
-    </ol>
-
-<section>
-  <h3 id="ruby_position_v_prop"><a href="#ruby_position_v_prop">ruby-position (vertical text)</a></h3>
-  <div class="dependencies">
-    <p class="notesheader">Dependencies</p>
-    <ol>
-      <li>All these tests will fail if the top test (<strong>defaults/vertical-support-001.html</strong>) fails, since that means that the browser doesn't support vertical text. </li>
-    </ol>
-  </div>
-  <div id="ruby_position_v_prop-data"></div>
-      </section>
-<section class="notes">
-  <p class="notesheader">Notes</p>
-  <ol>
-    <li><strong>ruby-position-intercharacter-101/103</strong>, Edge 12: The zhuyin characters appear to the right of the base characters due to the vertical orientation of the text, but they don't fit within a single base character height.</li>
-  </ol>
-</section>
-<script>
-drawResults(
-    'ruby_position_v_prop', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-     [
-        'defaults/vertical-support-prop-001.html',
-        'prefix/ruby-position-over-101.html',
-        'prefix/ruby-position-under-101.html',
-        ]
-     )
-</script>
-<!-- ·········································································· -->
-<section>
-  <h3 id="ruby_align_v_prop"><a href="#ruby_align_v_prop">ruby-align (vertical text)</a></h3>
-  <div class="dependencies">
-    <p class="notesheader">Dependencies</p>
-    <ol>
-      <li>All these tests will fail if the top test (<strong>defaults/vertical-support-001.html</strong>) fails, since that means that the browser doesn't support vertical text. </li>
-    </ol>
-  </div>
-  <div id="ruby_align_v_prop-data"></div>
-</section>
-<script>
-drawResults(
-    'ruby_align_v_prop', // sectionid 
-	'css-ruby', // base
-    'css-ruby', // batch
-     [
-        'defaults/vertical-support-prop-001.html',
         'prefix/ruby-align-start-101.html',
         'prefix/ruby-align-start-102.html',
         'prefix/ruby-align-space-between-101.html',
@@ -499,27 +534,48 @@ drawResults(
         ]
      )
 </script>
+</section>
+
+</section>
 <!-- ·········································································· -->
 
 
+
+
 <section>
-  <h3 id="ruby_merge_v_prop"><a href="#ruby_merge_v_prop">ruby-merge (vertical text)</a></h3>
+  <h3 id="ruby_merge_prop"><a href="#ruby_merge_prop">ruby-merge</a></h3>
   <div class="dependencies">
     <p class="notesheader">Dependencies</p>
     <ol>
-      <li>All these tests will fail if the top test (<strong>defaults/vertical-support-001.html</strong>) fails, since that means that the browser doesn't support vertical text. </li>
-      <li><strong>ruby-merge-collapse-102</strong> and <strong>ruby-merge-auto-102</strong> are only significant if the test immediately previous passes. This is because they are testing whether the association of annotation to base text is preserved across line breaks even though the placement would otherwise obscure the relationships.</li>
+      <li><strong>ruby-merge-collapse-002</strong> and <strong>ruby-merge-auto-002</strong> are only significant if the test immediately previous passes. This is because they are testing whether the association of annotation to base text is preserved across line breaks even though the placement would otherwise obscure the relationships.</li>
     </ol>
   </div>
-  <div id="ruby_merge_v_prop-data"></div>
-</section>
+  <div id="ruby_merge_prop-data"></div>
 <script>
 drawResults(
-    'ruby_merge_v_prop', // sectionid 
+    'ruby_merge_prop', // sectionid 
 	'css-ruby', // base
     'css-ruby', // batch
      [
-        'defaults/vertical-support-prop-001.html',
+        'prefix/ruby-merge-separate-001.html',
+        'prefix/ruby-merge-collapse-001.html',
+        'prefix/ruby-merge-collapse-002.html',
+        'prefix/ruby-merge-auto-001.html',
+        'prefix/ruby-merge-auto-002.html',
+        ]
+     )
+</script>
+
+
+<section>
+<h4 id="ruby_merge_prop_v"><a href="#ruby_merge_prop_v">Vertical text</a></h4>
+<div id="ruby_merge_prop_v-data"></div>
+<script>
+drawResults(
+    'ruby_merge_prop_v', // sectionid 
+	'css-ruby', // base
+    'css-ruby', // batch
+     [
         'prefix/ruby-merge-separate-101.html',
         'prefix/ruby-merge-collapse-101.html',
         'prefix/ruby-merge-collapse-102.html',
@@ -528,28 +584,34 @@ drawResults(
         ]
      )
 </script>
-  
+</section>
+
+</section>
 <!-- ·········································································· -->
 
 
 <section>
-  <h3 id="ruby_autohide_prop_v"><a href="#ruby_autohide_prop">Ruby autohide</a></h3>
-  <div id="ruby_autohide_prop_v-data"></div>
-</section>
+<h3 id="ruby_autohide_prop"><a href="#ruby_autohide_prop">Ruby autohide</a></h3>
+<div id="ruby_autohide_prop-data"></div>
 <script>
 drawResults(
-    'ruby_autohide_prop_v', // sectionid 
+    'ruby_autohide_prop', // sectionid 
 	'css-ruby', // base
     'css-ruby', // batch
      [
+        'prefix/ruby-autohide-001.html',
         'prefix/ruby-autohide-101.html',
         ]
      )
 </script>
 </section>
+</section>
 
-
-
+  <!-- ·········································································· -->
+  
+  
+  
+  
 
 <section>
 <h2 id="endlinks"><a href="#endlinks">Links</a></h2>
@@ -565,10 +627,10 @@ drawResults(
 	</ul>
 </section>
 
-<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
-<script type="text/javascript">completePage()</script>
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
 
-<script type="text/javascript">  
+<script>  
 generateStuffInPage();
 </script>
 </body>
