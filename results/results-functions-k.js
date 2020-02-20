@@ -43,7 +43,7 @@ function generateStuffInPage () {
 						case 'Nightly': ths.fn = true; break;
 						case 'Chrome': ths.c = true; break;
 						case 'Canary': ths.gc = true; break;
-						case 'EdgeBlink': ths.eb = true; break;
+						case 'BlinkEdge': ths.eb = true; break;
 						case 'Opera': ths.o = true; break;
 						case 'Safari': ths.s = true; break;
 						case 'Webkit': ths.wk = true; break;
@@ -78,7 +78,7 @@ function generateStuffInPage () {
 						case 'Nightly': fnscore = ctest[r].status; fnnotes = ctest[r].notes?ctest[r].notes:''; break
 						case 'Chrome': cscore = ctest[r].status; cnotes = ctest[r].notes?ctest[r].notes:''; break 
 						case 'Canary': gcscore = ctest[r].status; gcnotes = ctest[r].notes?ctest[r].notes:''; break 
-						case 'EdgeBlink': ebscore = ctest[r].status; ebnotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'BlinkEdge': ebscore = ctest[r].status; ebnotes = ctest[r].notes?ctest[r].notes:''; break
 						case 'Opera': oscore = ctest[r].status; onotes = ctest[r].notes?ctest[r].notes:''; break
 						case 'Safari': sscore = ctest[r].status; snotes = ctest[r].notes?ctest[r].notes:''; break
 						case 'Webkit': wkscore = ctest[r].status; wknotes = ctest[r].notes?ctest[r].notes:''; break
