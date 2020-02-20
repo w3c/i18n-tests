@@ -85,17 +85,13 @@ f.additionalLinks = ''
 
 
 <section>
-<h2 id="exploratory"><a href="#exploratory">Exploratory tests</a></h2>
+<h2 id="exploratory"><a href="#exploratory">Defaults</a></h2>
 
-<p>These two tests merely allow you to detect the default behaviour of the browser, in case you wish to compare it against what passes or fails in the other tests. </p>
-<div style="margin-left:10%;">
-<p><a href="/International/tests/repo/css-ruby/defaults/ruby-position-control-000.html" target="_blank">ruby-position default</a>  <span class="testName">ruby-position-control-000.html</span><br/>
-<span class="exp" style="font-size:80%;">[Exploratory test] to determine whether and how the browser handles ruby by default.</span></p>
-<p><a href="/International/tests/repo/css-ruby/defaults/ruby-align-control-000.html" target="_blank">ruby-align default	</a> <span class="testName">ruby-align-control-000.html</span><br/>
-<span class="exp" style="font-size:80%;">[Exploratory test] to establish how the browser aligns ruby text by default.</span></p>
-<p><a href="/International/tests/repo/css-ruby/defaults/ruby-position-intercharacter-000.html" target="_blank">zh-TW default size</a> <span class="testName">ruby-position-intercharacter-000.html</span><br/>
-<span class="exp" style="font-size:80%;">[Exploratory test] to determine whether the browser applies special sizing for zh-TW language annotations.</span></p>
-</div>
+<p>The following information describes the default behaviour of the browser, in case you wish to compare it against what passes or fails in the other tests. </p>
+<ul>
+<li>All browsers align ruby text as <code class="kw" translate="no">space-around</code> by default when the language is Japanese and the ruby text is hiragana. See <a href="https://github.com/w3c/character_phrase_tests/issues/23">a test</a>.</li>
+<li>All browsers align single-word pinyin annotations as <code class="kw" translate="no">center</code> when the language is Simplified Chinese. See <a href="https://github.com/w3c/character_phrase_tests/issues/22">a test</a>.</li>
+</ul>
 </section>
 
 
