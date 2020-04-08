@@ -1,6 +1,9 @@
+the-bdi-element-001.html
+the-bdi-element-002.html
+
+
 the-bdi-element-080.html
 the-bdi-element-081.html
-
 the-bdi-element-082.html
 the-bdi-element-083.html
 the-bdi-element-084.html
