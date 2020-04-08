@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8" />
 <title>HTML5, bdi: Summarized test results</title>
-<meta name="description" content="Summary of results of CSS3 Text module tests" />
-<script type="text/javascript">
+<meta name="description" content="Summary of results of HTML tests" />
+<script>
 var f = { }
 
 // AUTHORS should fill in these assignments:
@@ -33,14 +33,14 @@ f.breadcrumb = 'tests'
 
 f.additionalLinks = ''
 </script>
-<script type="text/javascript" src="the-bdi-element-data/translation.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
-<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
+<script src="the-bdi-element-data/translation.js"> </script>
+<script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
+<script src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" />
 <link rel="copyright" href="#copyright"/>
-<link rel="stylesheet" href="results.css" type="text/css" />
+<link rel="stylesheet" href="results.css" />
 <script src="../batches/the-bdi-element-data.js"></script>
 <script src="../batches/the-bdi-element.json"></script>
 <script src="results-functions-k.js"></script>
@@ -57,26 +57,28 @@ HTML5, bdi</h1>
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience: </span>users, XHTML/HTML coders (using editors or scripting), script developers (PHP, JSP, etc.), CSS coders, Web project managers, and anyone who wants to know the bdi element works in current browsers.</p>
+	<div class="pageInstructions">
+	<p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. To see detailed results   click on a row and look just above the table. </p>
+	<p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
+	<table class="results" style="margin-right: 32%;">
+	<tbody>
+	<tr>
+	<th style="min-width:8em; padding: .5em">Key:</th>
+	<td class="pass" style="min-width:8em; padding: .5em">pass</td>
+	<td class="fail" style="min-width:8em; padding: .5em">fail</td>
+	<td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
+    </div>
     </div>
     
 
 			<section> 
                 <p>These tests check whether browsers correctly handle the <code class="kw" translate="no">bdi</code> element, to improve handling of bidirectional text in languages such as Arabic, Hebrew, Persian, Thaana, Urdu, etc. </p>
-<p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
-<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.  Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
-      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
-      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
-    </tr>
-  </tbody>
-</table>
-			</section>
+</section>
 		</section>
 
 <!-- ·········································································· -->
@@ -86,34 +88,37 @@ HTML5, bdi</h1>
 
 <section>
   <h2 id="bdi_basic"><a href="#bdi_basic">Basic tests</a></h2>
+<p>These basic tests check that the <code class="kw" translate="no">bdi</code> element directionally isolates the text inside from that outside, and that it applies first-strong rules to determine the base direction of the text inside it.</p>
   <div id="bdi_basic-data"></div>
-</section>
 <script>
 drawResults(
 	'bdi_basic', // sectionid 
 	'html/semantics/text-level-semantics/the-bdi-element', // base
 	'the-bdi-element', // batch
 	 [
-        'the-bdi-element-080.html',
-        'the-bdi-element-081.html',
+        'the-bdi-element-001.html',
+        'the-bdi-element-002.html',
 		]
 	 )
 </script>
+</section>
 
 
 
 
 
 <section>
-  <h2 id="bdi_other"><a href="#bdi_other">Other tests</a></h2>
+<h2 id="bdi_other"><a href="#bdi_other">Other tests</a></h2>
+<p>These other tests check for edge cases.</p>
   <div id="bdi_other-data"></div>
-</section>
 <script> 
 drawResults(
 	'bdi_other', // sectionid 
 	'html/semantics/text-level-semantics/the-bdi-element', // base
 	'the-bdi-element', // batch
 	 [
+        'the-bdi-element-080.html',
+        'the-bdi-element-081.html',
         'the-bdi-element-082.html',
         'the-bdi-element-083.html',
         'the-bdi-element-084.html',
@@ -132,6 +137,7 @@ drawResults(
 		]
 	 )
 </script>
+</section>
 
 
 
@@ -151,10 +157,10 @@ drawResults(
 	</ul>
 </section>
 
-<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
-<script type="text/javascript">completePage()</script>
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
 
-<script type="text/javascript">  
+<script>  
 generateStuffInPage();
 </script>
 </body>
