@@ -1,7 +1,7 @@
 var owner = 'w3c';
 
 var sections = {}
-var debug = true
+var debug = false
 
 var issues = []
 var maxpages = 5
