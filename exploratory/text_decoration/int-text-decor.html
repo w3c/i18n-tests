@@ -41,18 +41,21 @@ for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationStyle = value }
 }
 
 function setTextDecorationColor (value) {
+document.getElementById('textDecorationColor').value = value
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
 for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationColor = value }
 }
 
 function setTextDecorationThickness (value) {
+document.getElementById('textDecorationThickness').value = value
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
 for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationThickness = value }
 }
 
 function setTextUnderlineOffset (value) {
+document.getElementById('textUnderlineOffset').value = value
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
 if (value=='') value = 'auto'
@@ -130,7 +133,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 
 <p><code>text-underline-position:</code>
-<label onClick="setTextUnderlinePosition('auto')"><input type="radio" value="start" checked id="textUnderlinePositionauto" name="textUnderlinePosition"/><code>auto</code></label>
+<label onClick="setTextUnderlinePosition('auto')"><input type="radio" value="auto" checked id="textUnderlinePositionauto" name="textUnderlinePosition"/><code>auto</code></label>
 <label onClick="setTextUnderlinePosition('from-font')"><input type="radio" value="from-font" id="textUnderlinePositionfrom-font" name="textUnderlinePosition"/><code>from-font</code></label>
 <label onClick="setTextUnderlinePosition('under')"><input type="radio" value="under" id="textUnderlinePositionunder" name="textUnderlinePosition"/><code>under</code></label>
 <label onClick="setTextUnderlinePosition('left')"><input type="radio" value="left" id="textUnderlinePositionleft" name="textUnderlinePosition"/><code>left</code></label>
@@ -153,13 +156,13 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 </p>
 
 <p><code>text-decoration-color:</code>
-<label><input  onChange="setTextDecorationColor(this.value)" type="text" value="" id="textDecorationColor"></label>  <button onClick="setTextDecorationColor(document.getElementById('textDecorationColor').value)">Apply</button></p>
+<label><input  onChange="setTextDecorationColor(this.value)" type="text" value="" id="textDecorationColor" placeholder="Colour name"></label>  <button onClick="setTextDecorationColor(document.getElementById('textDecorationColor').value)">Apply</button></p>
 
 <p><code>text-decoration-thickness:</code>
-<label><input  onChange="setTextDecorationThickness(this.value)" type="text" value="" id="textDecorationThickness"></label> <button onClick="setTextDecorationThickness(document.getElementById('textDecorationThickness').value)">Apply</button></p>
+<label><input  onChange="setTextDecorationThickness(this.value)" type="text" value="" id="textDecorationThickness" placeholder="auto|from-font|length|percentage"></label> <button onClick="setTextDecorationThickness(document.getElementById('textDecorationThickness').value)">Apply</button></p>
 
 <p><code>text-underline-offset:</code>
-<label><input  onChange="setTextUnderlineOffset(this.value)" type="text" value="" id="textUnderlineOffset" placeholder="auto"></label> <button onClick="setTextUnderlineOffset(document.getElementById('textUnderlineOffset').value)">Apply</button></p>
+<label><input  onChange="setTextUnderlineOffset(this.value)" type="text" value="" id="textUnderlineOffset" placeholder="auto | length | percentage"></label> <button onClick="setTextUnderlineOffset(document.getElementById('textUnderlineOffset').value)">Apply</button></p>
 
 
 <p><code>text-decoration-skip-ink:</code>
@@ -235,42 +238,43 @@ for (var p=0;p<parameters.length;p++) {
 
 
 	if (pairs[0] == 'textDecorationLine' && pairs[1]) { 
-					setTextDecorationLine(pairs[1]) 
-					document.getElementById('textDecorationLine'+pairs[1]).checked = true 
+					setTextDecorationLine(decodeURIComponent(pairs[1])) 
+					document.getElementById('textDecorationLine'+decodeURIComponent(pairs[1])).checked = true 
 					}
 	if (pairs[0] == 'textUnderlinePosition' && pairs[1]) {
-					setTextUnderlinePosition(pairs[1]) 
-					document.getElementById('textUnderlinePosition'+pairs[1]).checked = true 
+					setTextUnderlinePosition(decodeURIComponent(pairs[1]))
+					document.getElementById('textUnderlinePosition'+decodeURIComponent(pairs[1])).checked = true 
 					}
 	if (pairs[0] == 'textDecorationStyle' && pairs[1]) {
-					setTextDecorationStyle(pairs[1]) 
-					document.getElementById('textDecorationStyle'+pairs[1]).checked = true 
+					setTextDecorationStyle(decodeURIComponent(pairs[1])) 
+					document.getElementById('textDecorationStyle'+decodeURIComponent(pairs[1])).checked = true 
 					}
 	if (pairs[0] == 'textDecorationColor' && pairs[1]) {
-					setTextDecorationColor(pairs[1]) 
+					setTextDecorationColor(decodeURIComponent(pairs[1])) 
 					}
 	if (pairs[0] == 'textDecorationThickness' && pairs[1]) {
-					setTextDecorationThickness(pairs[1]) 
+					setTextDecorationThickness(decodeURIComponent(pairs[1])) 
 					}
 	if (pairs[0] == 'textUnderlineOffset' && pairs[1]) {
-					setTextUnderlineOffset(pairs[1]) 
+					console.log(decodeURIComponent(pairs[1]))
+					setTextUnderlineOffset(decodeURIComponent(pairs[1])) 
 					}
 	if (pairs[0] == 'textDecorationSkipInk' && pairs[1]) {
-					setTextDecorationSkipInk(pairs[1]) 
-					document.getElementById('textDecorationSkipInk'+pairs[1]).checked = true 
+					setTextDecorationSkipInk(decodeURIComponent(pairs[1])) 
+					document.getElementById('textDecorationSkipInk'+decodeURIComponent(pairs[1])).checked = true 
 					}
 	if (pairs[0] == 'textDecorationSkipSpaces' && pairs[1]) {
-					setTextDecorationSkipSpaces(pairs[1]) 
-					document.getElementById('textDecorationSkipSpaces'+pairs[1]).checked = true 
+					setTextDecorationSkipSpaces(decodeURIComponent(pairs[1])) 
+					document.getElementById('textDecorationSkipSpaces'+decodeURIComponent(pairs[1])).checked = true 
 					}
 	if (pairs[0] == 'textDecorationSkipInset' && pairs[1]) {
-					setTextDecorationSkipInset(pairs[1]) 
-					document.getElementById('textDecorationSkipInset'+pairs[1]).checked = true 
+					setTextDecorationSkipInset(decodeURIComponent(pairs[1])) 
+					document.getElementById('textDecorationSkipInset'+decodeURIComponent(pairs[1])).checked = true 
 					}
 
 	if (pairs[0] == 'writingMode' && pairs[1]) {
-					setWritingMode(pairs[1]) 
-					document.getElementById('writingMode'+pairs[1]).checked = true 
+					setWritingMode(decodeURIComponent(pairs[1])) 
+					document.getElementById('writingMode'+decodeURIComponent(pairs[1])).checked = true 
 					}
 
 
@@ -292,16 +296,16 @@ if (document.getElementById('fontFamily') && document.getElementById('fontFamily
 if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
 if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
 
-out += '&textDecorationLine='+document.querySelector('input[name="textDecorationLine"]:checked').value
-out += '&textUnderlinePosition='+document.querySelector('input[name="textUnderlinePosition"]:checked').value
-out += '&textDecorationStyle='+document.querySelector('input[name="textDecorationStyle"]:checked').value
-out += '&textDecorationColor='+document.getElementById('textDecorationColor').value
-out += '&textDecorationThickness='+document.getElementById('textDecorationThickness').value
-out += '&textUnderlineOffset='+document.getElementById('textUnderlineOffset').value
-out += '&textDecorationSkipInk='+document.querySelector('input[name="textDecorationSkipInk"]:checked').value
-out += '&textDecorationSkipSpaces='+document.querySelector('input[name="textDecorationSkipSpaces"]:checked').value
-out += '&textDecorationSkipInset='+document.querySelector('input[name="textDecorationSkipInset"]:checked').value
-'&writingMode='+document.querySelector('input[name="writingMode"]:checked').value
+out += '&textDecorationLine='+encodeURIComponent(document.querySelector('input[name="textDecorationLine"]:checked').value)
+out += '&textUnderlinePosition='+ encodeURIComponent(document.querySelector('input[name="textUnderlinePosition"]:checked').value)
+out += '&textDecorationStyle='+encodeURIComponent(document.querySelector('input[name="textDecorationStyle"]:checked').value)
+out += '&textDecorationColor='+encodeURIComponent(document.getElementById('textDecorationColor').value)
+out += '&textDecorationThickness='+encodeURIComponent(document.getElementById('textDecorationThickness').value)
+out += '&textUnderlineOffset='+encodeURIComponent(document.getElementById('textUnderlineOffset').value)
+out += '&textDecorationSkipInk='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipInk"]:checked').value)
+out += '&textDecorationSkipSpaces='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipSpaces"]:checked').value)
+out += '&textDecorationSkipInset='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipInset"]:checked').value)
+'&writingMode='+encodeURIComponent(document.querySelector('input[name="writingMode"]:checked').value)
 
 if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
 
