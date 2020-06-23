@@ -132,7 +132,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <p><code>text-underline-position:</code>
 <label onClick="setTextUnderlinePosition('auto')"><input type="radio" value="start" checked id="textUnderlinePositionauto" name="textUnderlinePosition"/><code>auto</code></label>
 <label onClick="setTextUnderlinePosition('from-font')"><input type="radio" value="from-font" id="textUnderlinePositionfrom-font" name="textUnderlinePosition"/><code>from-font</code></label>
-<label onClick="setTextUnderlinePosition('under')"><input type="radio" value="under" id="textUnderlinePositionunder" name="rubyAlign"/><code>under</code></label>
+<label onClick="setTextUnderlinePosition('under')"><input type="radio" value="under" id="textUnderlinePositionunder" name="textUnderlinePosition"/><code>under</code></label>
 <label onClick="setTextUnderlinePosition('left')"><input type="radio" value="left" id="textUnderlinePositionleft" name="textUnderlinePosition"/><code>left</code></label>
 <label onClick="setTextUnderlinePosition('right')"><input type="radio" value="right" id="textUnderlinePositionright" name="textUnderlinePosition"/><code>right</code></label><!--br>
 
@@ -176,7 +176,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 </p>
 
 <p><code>text-decoration-skip-inset:</code>
-<label onClick="setTextDecorationSkipInset('none')"><input type="radio" value="none" id="textDecorationSkipInsetnone" name="textDecorationSkipInset"/><code>none</code></label>
+<label onClick="setTextDecorationSkipInset('none')"><input type="radio" value="none" id="textDecorationSkipInsetnone" checked name="textDecorationSkipInset"/><code>none</code></label>
 <label onClick="setTextDecorationSkipInset('auto')"><input type="radio" value="auto" id="textDecorationSkipInsetauto" name="textDecorationSkipInset"/><code>auto</code></label>
 </p>
 
@@ -285,7 +285,7 @@ function snapParameters () {
 // take a snapshot of the settings of the page and make available as URL parameters
 // this can be picked up by the user to point to the current setup of the page
 
-out = "https://w3c.github.io/i18n-tests/exploratory/inline_notes/int-ruby?"
+out = "https://w3c.github.io/i18n-tests/exploratory/text_decoration/int-text-decor.html?"
 if (document.getElementById('language') && document.getElementById('language').value != '') out += 'lang='+document.getElementById('language').value
 if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+document.getElementById('fontSize').value
 if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+document.getElementById('fontFamily').value
@@ -298,9 +298,9 @@ out += '&textDecorationStyle='+document.querySelector('input[name="textDecoratio
 out += '&textDecorationColor='+document.getElementById('textDecorationColor').value
 out += '&textDecorationThickness='+document.getElementById('textDecorationThickness').value
 out += '&textUnderlineOffset='+document.getElementById('textUnderlineOffset').value
-out += out += '&textDecorationSkipInk='+document.getElementById('textDecorationSkipInk').value
-out += out += '&textDecorationSkipSpaces='+document.getElementById('textDecorationSkipSpaces').value
-out += out += '&textDecorationSkipInset='+document.getElementById('textDecorationSkipInset').value
+out += '&textDecorationSkipInk='+document.querySelector('input[name="textDecorationSkipInk"]:checked').value
+out += '&textDecorationSkipSpaces='+document.querySelector('input[name="textDecorationSkipSpaces"]:checked').value
+out += '&textDecorationSkipInset='+document.querySelector('input[name="textDecorationSkipInset"]:checked').value
 '&writingMode='+document.querySelector('input[name="writingMode"]:checked').value
 
 if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
