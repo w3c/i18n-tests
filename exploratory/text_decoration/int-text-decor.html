@@ -25,36 +25,36 @@ padding: 40px;
 function setTextDecorationLine (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'none' }
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = value }
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationLine = 'none'
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationLine = value
 }
 
 function setTextUnderlinePosition (value) {
 tests = document.querySelectorAll('.test span')
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'auto' }
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationLine = 'auto'
 if (tests.length===0) tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) { tests[i].style.textUnderlinePosition = value }
+for (let i=0;i<tests.length;i++) tests[i].style.textUnderlinePosition = value
 }
 
 function setTextDecorationStyle (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationStyle = 'solid' }
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationStyle = value }
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationStyle = 'solid'
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationStyle = value
 }
 
 function setTextDecorationColor (value) {
 document.getElementById('textDecorationColor').value = value
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationColor = value }
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationColor = value
 }
 
 function setTextDecorationThickness (value) {
 document.getElementById('textDecorationThickness').value = value
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationThickness = value }
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationThickness = value
 }
 
 function setTextUnderlineOffset (value) {
@@ -62,34 +62,34 @@ document.getElementById('textUnderlineOffset').value = value
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
 if (value=='') value = 'auto'
-for (let i=0;i<tests.length;i++) { tests[i].style.textUnderlineOffset = value }
+for (let i=0;i<tests.length;i++) tests[i].style.textUnderlineOffset = value
 }
 
 function setTextDecorationSkipInk (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'auto' }
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationSkipInk = value }
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInk = 'auto'
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInk = value
 }
 
 function setTextDecorationSkipSpaces (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'start end' }
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationSkipSpaces = value }
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipSpaces = 'start end'
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipSpaces = value
 }
 
 function setTextDecorationSkipInset (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'none' }
-for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationSkipInset = value }
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInset = 'none'
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInset = value
 }
 
 
 function setWritingMode (value) {
 tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) { tests[i].style.writingMode = value }
+for (let i=0;i<tests.length;i++) tests[i].style.writingMode = value
 }
 
 </script>
@@ -206,10 +206,20 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <!-- INFO -->
 <div id="info" style="clear: both; position: inherit;">
 <ul class="notes">
-<li>Spec links: <a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-line-property">text-decoration-line</a> &nbsp;
-<a href="https://drafts.csswg.org/css-text-decor-3/#text-underline-position-property">text-underline-position</a> &nbsp;
-<a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-style-property">text-decoration-style</a> &nbsp;
-<a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-color-property">text-decoration-color</a>
+<li>More tests: 
+<a href="https://github.com/w3c/i18n-tests/wiki/List-of-interactive-tests-&-results">List of interactive tests &amp; results</a> &bull;
+<a href="https://github.com/w3c/character_phrase_tests/issues">Character &amp; phrase test repo</a> &bull;
+<a href="https://w3c.github.io/i18n-tests/results/int-text-decoration">Text decoration results</a>
+</li>
+<li>Spec links: <a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-line-property">text-decoration-line</a> &bull;
+<a href="https://drafts.csswg.org/css-text-decor-3/#text-underline-position-property">text-underline-position</a> &bull;
+<a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-style-property">text-decoration-style</a> &bull;
+<a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-color-property">text-decoration-color</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#text-decoration-width-property">text-decoration-thickness</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#underline-offset">text-underline-offset</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#text-decoration-skip-ink-property">text-decoration-skip-ink</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#text-decoration-skip-spaces-property">text-decoration-skip-spaces</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#text-decoration-skip-inset-property">text-decoration-skip-inset</a>
 </li>
 <li>Browser: <span id="version"></span></li>
 <li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
@@ -226,19 +236,19 @@ for (var p=0;p<parameters.length;p++) {
 	pairs = parameters[p].split('=');
 	if (pairs[0] == 'lang' && pairs[1]) setLanguage( pairs[1] )
 	if (pairs[0] == 'fontSize' && pairs[1]) {
-					setFontSize(pairs[1]) 
-					document.getElementById('fontSize').value = pairs[1] 
+					setFontSize(decodeURIComponent(pairs[1])) 
+					document.getElementById('fontSize').value = decodeURIComponent(pairs[1])
 					}
 	if (pairs[0] == 'fontFamily' && pairs[1]) {
-					setFont(pairs[1]) 
-					document.getElementById('fontFamily').value = pairs[1] 
+					setFont(decodeURIComponent(pairs[1]))
+					document.getElementById('fontFamily').value = decodeURIComponent(pairs[1])
 					}
 	if (pairs[0] == 'width' && pairs[1]) { 
-					setBoxWidth(pairs[1]) 
+					setBoxWidth(pairs[1])
 					document.getElementById('boxWidth').value = pairs[1]
 					}
 	if (pairs[0] == 'height' && pairs[1]) { 
-					setBoxHeight(pairs[1]) 
+					setBoxHeight(pairs[1])
 					document.getElementById('boxHeight').value = pairs[1]
 					}
 
@@ -262,7 +272,6 @@ for (var p=0;p<parameters.length;p++) {
 					setTextDecorationThickness(decodeURIComponent(pairs[1])) 
 					}
 	if (pairs[0] == 'textUnderlineOffset' && pairs[1]) {
-					console.log(decodeURIComponent(pairs[1]))
 					setTextUnderlineOffset(decodeURIComponent(pairs[1])) 
 					}
 	if (pairs[0] == 'textDecorationSkipInk' && pairs[1]) {
@@ -297,8 +306,8 @@ function snapParameters () {
 
 out = "https://w3c.github.io/i18n-tests/exploratory/text_decoration/int-text-decor.html?"
 if (document.getElementById('language') && document.getElementById('language').value != '') out += 'lang='+document.getElementById('language').value
-if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+document.getElementById('fontSize').value
-if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+document.getElementById('fontFamily').value
+if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+encodeURIComponent(document.getElementById('fontSize').value)
+if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+encodeURIComponent(document.getElementById('fontFamily').value)
 if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
 if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
 
