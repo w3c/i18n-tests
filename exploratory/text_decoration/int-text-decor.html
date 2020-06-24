@@ -25,11 +25,13 @@ padding: 40px;
 function setTextDecorationLine (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'none' }
 for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = value }
 }
 
 function setTextUnderlinePosition (value) {
 tests = document.querySelectorAll('.test span')
+for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'auto' }
 if (tests.length===0) tests = document.querySelectorAll('.test')
 for (let i=0;i<tests.length;i++) { tests[i].style.textUnderlinePosition = value }
 }
@@ -37,6 +39,7 @@ for (let i=0;i<tests.length;i++) { tests[i].style.textUnderlinePosition = value 
 function setTextDecorationStyle (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationStyle = 'solid' }
 for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationStyle = value }
 }
 
@@ -65,18 +68,21 @@ for (let i=0;i<tests.length;i++) { tests[i].style.textUnderlineOffset = value }
 function setTextDecorationSkipInk (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'auto' }
 for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationSkipInk = value }
 }
 
 function setTextDecorationSkipSpaces (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'start end' }
 for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationSkipSpaces = value }
 }
 
 function setTextDecorationSkipInset (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationLine = 'none' }
 for (let i=0;i<tests.length;i++) { tests[i].style.textDecorationSkipInset = value }
 }
 
@@ -159,10 +165,10 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <label><input  onChange="setTextDecorationColor(this.value)" type="text" value="" id="textDecorationColor" placeholder="Colour name"></label>  <button onClick="setTextDecorationColor(document.getElementById('textDecorationColor').value)">Apply</button></p>
 
 <p><code>text-decoration-thickness:</code>
-<label><input  onChange="setTextDecorationThickness(this.value)" type="text" value="" id="textDecorationThickness" placeholder="auto|from-font|length|percentage"></label> <button onClick="setTextDecorationThickness(document.getElementById('textDecorationThickness').value)">Apply</button></p>
+<label><input  onChange="setTextDecorationThickness(this.value)" type="text" value="" id="textDecorationThickness" placeholder="auto|from-font|length|percentage" style="width: 20em;"></label> <button onClick="setTextDecorationThickness(document.getElementById('textDecorationThickness').value)">Apply</button></p>
 
 <p><code>text-underline-offset:</code>
-<label><input  onChange="setTextUnderlineOffset(this.value)" type="text" value="" id="textUnderlineOffset" placeholder="auto | length | percentage"></label> <button onClick="setTextUnderlineOffset(document.getElementById('textUnderlineOffset').value)">Apply</button></p>
+<label><input  onChange="setTextUnderlineOffset(this.value)" type="text" value="" id="textUnderlineOffset" placeholder="auto | length | percentage" style="width: 15em;"></label> <button onClick="setTextUnderlineOffset(document.getElementById('textUnderlineOffset').value)">Apply</button></p>
 
 
 <p><code>text-decoration-skip-ink:</code>
