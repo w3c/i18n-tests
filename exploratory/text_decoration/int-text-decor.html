@@ -22,19 +22,67 @@ padding: 40px;
 </style>
 <script src="../../fonts/interactive_functions.js"> </script>
 <script>
+
 function setTextDecorationLine (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
-for (let i=0;i<tests.length;i++) tests[i].style.textDecorationLine = 'none'
+
+if (value === 'none' || value === 'spelling-error' || value === 'grammar-error'){
+	boxes = document.querySelectorAll('input[name=textDecorationLine]')
+	for (i=0;i<boxes.length;i++) boxes[i].checked = false
+	document.getElementById('textDecorationLine'+value).checked = true
+	}
+else {
+	document.getElementById('textDecorationLinenone').checked = false
+	document.getElementById('textDecorationLinespelling-error').checked = false
+	document.getElementById('textDecorationLinegrammar-error').checked = false
+	}
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textDecorationLine]')
+if (checkboxes[0].checked) value += 'none '
+if (checkboxes[1].checked) value += 'underline '
+if (checkboxes[2].checked) value += 'overline '
+if (checkboxes[3].checked) value += 'line-through '
+if (checkboxes[4].checked) value += 'spelling-error '
+if (checkboxes[5].checked) value += 'grammar-error '
+if (value === '') { 
+	value = 'none'
+	document.getElementById('textDecorationLinenone').checked = true
+	}
+
 for (let i=0;i<tests.length;i++) tests[i].style.textDecorationLine = value
 }
 
+
 function setTextUnderlinePosition (value) {
 tests = document.querySelectorAll('.test span')
-for (let i=0;i<tests.length;i++) tests[i].style.textDecorationLine = 'auto'
 if (tests.length===0) tests = document.querySelectorAll('.test')
+
+if (value === 'auto'){
+	boxes = document.querySelectorAll('input[name=textUnderlinePosition]')
+	for (i=0;i<boxes.length;i++) boxes[i].checked = false
+	document.getElementById('textUnderlinePosition'+value).checked = true
+	}
+else {
+	document.getElementById('textUnderlinePositionauto').checked = false
+	}
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textUnderlinePosition]')
+if (checkboxes[0].checked) value += 'auto '
+if (checkboxes[1].checked) value += 'from-font '
+if (checkboxes[2].checked) value += 'under '
+if (checkboxes[3].checked) value += 'left '
+if (checkboxes[4].checked) value += 'right '
+if (value === '') { 
+	value = 'auto'
+	document.getElementById('textUnderlinePositionauto').checked = true
+	}
+
 for (let i=0;i<tests.length;i++) tests[i].style.textUnderlinePosition = value
 }
+
 
 function setTextDecorationStyle (value) {
 tests = document.querySelectorAll('.test span')
@@ -72,7 +120,38 @@ for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInk = 'auto'
 for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInk = value
 }
 
+
 function setTextDecorationSkipSpaces (value) {
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+
+if (value === 'none' || value === 'all'){
+	boxes = document.querySelectorAll('input[name=textDecorationSkipSpaces]')
+	for (i=0;i<boxes.length;i++) boxes[i].checked = false
+	document.getElementById('textDecorationSkipSpaces'+value).checked = true
+	}
+else {
+	document.getElementById('textDecorationSkipSpacesnone').checked = false
+	document.getElementById('textDecorationSkipSpacesall').checked = false
+	}
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textDecorationSkipSpaces]')
+if (checkboxes[0].checked) value += 'none '
+if (checkboxes[1].checked) value += 'all '
+if (checkboxes[2].checked) value += 'start '
+if (checkboxes[3].checked) value += 'end '
+if (value === '') { 
+	value = 'none'
+	document.getElementById('textDecorationSkipSpacesnone').checked = true
+	}
+
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipSpaces = value
+}
+
+
+
+function setTextDecorationSkipSpacesOLD (value) {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
 for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipSpaces = 'start end'
@@ -128,30 +207,55 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <!-- CONTROLS -->
 <p class="advice">If you include one or more spans in the test, only the text inside the span(s) will have the style applied to them. None of the following are set in the file by default. Unless overridden in the URL parameters, the highlighted values show initial settings.</p>
 
-<p><code>text-decoration-line:</code>
-<label onClick="setTextDecorationLine('none')"><input type="radio" value="none" checked id="textDecorationLinenone" name="textDecorationLine"/><code>none</code></label>
-<label onClick="setTextDecorationLine('underline')"><input type="radio" value="underline" id="textDecorationLineunderline" name="textDecorationLine"/><code>underline</code></label>
-<label onClick="setTextDecorationLine('overline')"><input type="radio" value="overline" id="textDecorationLineoverline" name="textDecorationLine"/><code>overline</code></label> 
-<label onClick="setTextDecorationLine('line-through')"><input type="radio" value="line-through" id="textDecorationLineline-through" name="textDecorationLine"/><code>line-through</code></label> 
-<label onClick="setTextDecorationLine('spelling-error')"><input type="radio" value="spelling-error" id="textDecorationLinespelling-error" name="textDecorationLine"/><code>spelling-error</code></label> 
-<label onClick="setTextDecorationLine('grammar-error')"><input type="radio" value="grammar-error" id="textDecorationLinegrammar-error" name="textDecorationLine"/><code>grammar-error</code></label> 
+<p><fieldset><legend><code>text-decoration-line:</code></legend>
+<label onClick="setTextDecorationLine('none')"><input type="checkbox" value="none"  id="textDecorationLinenone" name="textDecorationLine"/><code>none</code></label>
+| [
+<label onClick="setTextDecorationLine('underline')"><input type="checkbox" value="underline" id="textDecorationLineunderline" name="textDecorationLine"/><code>underline</code></label> ||
+<label onClick="setTextDecorationLine('overline')"><input type="checkbox" value="overline" id="textDecorationLineoverline" name="textDecorationLine"/><code>overline</code></label> ||
+<label onClick="setTextDecorationLine('line-through')"><input type="checkbox" value="line-through" id="textDecorationLineline-through" name="textDecorationLine"/><code>line-through</code></label> 
+] |
+<label onClick="setTextDecorationLine('spelling-error')"><input type="checkbox" value="spelling-error" id="textDecorationLinespelling-error" name="textDecorationLine"/><code>spelling-error</code></label> |
+<label onClick="setTextDecorationLine('grammar-error')"><input type="checkbox" value="grammar-error" id="textDecorationLinegrammar-error" name="textDecorationLine"/><code>grammar-error</code></label> 
+</fieldset>
 </p>
 
 
-<p><code>text-underline-position:</code>
+<p><fieldset><legend><code>text-underline-position:</code></legend>
+<label onClick="setTextUnderlinePosition('auto')"><input type="checkbox" value="auto"  id="textUnderlinePositionauto" name="textUnderlinePosition"/>
+<code>auto</code></label>
+| [
+<label onClick="setTextUnderlinePosition('from-font')"><input type="checkbox" value="from-font" id="textUnderlinePositionfrom-font" name="textUnderlinePosition"/>
+<code>from-font</code></label>
+|
+<label onClick="setTextUnderlinePosition('under')"><input type="checkbox" value="under" id="textUnderlinePositionunder" name="textUnderlinePosition"/>
+<code>under</code></label>
+ ] || [
+<label onClick="setTextUnderlinePosition('left')"><input type="checkbox" value="left" id="textUnderlinePositionleft" name="textUnderlinePosition"/>
+<code>left</code></label> 
+ |
+<label onClick="setTextUnderlinePosition('right')"><input type="checkbox" value="right" id="textUnderlinePositionright" name="textUnderlinePosition"/>
+<code>right</code></label>
+ ]
+</fieldset>
+</p>
+
+
+
+
+<!--p><code>text-underline-position:</code>
 <label onClick="setTextUnderlinePosition('auto')"><input type="radio" value="auto" checked id="textUnderlinePositionauto" name="textUnderlinePosition"/><code>auto</code></label>
 <label onClick="setTextUnderlinePosition('from-font')"><input type="radio" value="from-font" id="textUnderlinePositionfrom-font" name="textUnderlinePosition"/><code>from-font</code></label>
 <label onClick="setTextUnderlinePosition('under')"><input type="radio" value="under" id="textUnderlinePositionunder" name="textUnderlinePosition"/><code>under</code></label>
 <label onClick="setTextUnderlinePosition('left')"><input type="radio" value="left" id="textUnderlinePositionleft" name="textUnderlinePosition"/><code>left</code></label>
-<label onClick="setTextUnderlinePosition('right')"><input type="radio" value="right" id="textUnderlinePositionright" name="textUnderlinePosition"/><code>right</code></label><!--br>
+<label onClick="setTextUnderlinePosition('right')"><input type="radio" value="right" id="textUnderlinePositionright" name="textUnderlinePosition"/><code>right</code></label><br>
 
 <span class="proprietary"><code>[Proprietary]</code> 
 <label onClick="setRubyAlign('distributed-letter')"><input type="radio" value="distributed-letter" id="rubyAligndistributed-letter" name="rubyAlign"/>
 <code>distributed-letter</code></label>
 <label onClick="setRubyAlign('distributed-space')"><input type="radio" value="distributed-space" id="rubyAligndistributed-space" name="rubyAlign"/>
 <code>distributed-space</code></label>
-</span-->
-</p>
+</span>
+</p-->
 
 <p><code>text-decoration-style:</code>
 <label onClick="setTextDecorationStyle('solid')"><input type="radio" value="solid" checked id="textDecorationStylesolid" name="textDecorationStyle"/><code>solid</code></label>
@@ -177,12 +281,31 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <label onClick="setTextDecorationSkipInk('all')"><input type="radio" value="all" id="textDecorationSkipInkall" name="textDecorationSkipInk"/><code>all</code></label>
 </p>
 
-<p><code>text-decoration-skip-spaces:</code>
+
+
+<p><fieldset><legend><code>text-decoration-skip-spaces:</code></legend>
+<label onClick="setTextDecorationSkipSpaces('none')"><input type="checkbox" value="none"  id="textDecorationSkipSpacesnone" name="textDecorationSkipSpaces"/>
+<code>none</code></label>
+|
+<label onClick="setTextDecorationSkipSpaces('all')"><input type="checkbox" value="all" id="textDecorationSkipSpacesall" name="textDecorationSkipSpaces"/>
+<code>all</code></label>
+| [
+<label onClick="setTextDecorationSkipSpaces('start')"><input type="checkbox" value="start" id="textDecorationSkipSpacesstart" name="textDecorationSkipSpaces"/>
+<code>start</code></label>
+ ||
+<label onClick="setTextDecorationSkipSpaces('end')"><input type="checkbox" value="end" id="textDecorationSkipSpacesend" name="textDecorationSkipSpaces"/>
+<code>end</code></label> 
+ ]
+</fieldset>
+</p>
+
+
+<!--p><code>text-decoration-skip-spaces:</code>
 <label onClick="setTextDecorationSkipSpaces('none')"><input type="radio" value="none" id="textDecorationSkipSpacesnone" name="textDecorationSkipSpaces"/><code>none</code></label>
 <label onClick="setTextDecorationSkipSpaces('all')"><input type="radio" value="all" id="textDecorationSkipSpacesall" name="textDecorationSkipSpaces"/><code>all</code></label>
 <label onClick="setTextDecorationSkipSpaces('start')"><input type="radio" value="start" checked id="textDecorationSkipSpacesstart" name="textDecorationSkipSpaces"/><code>start</code></label>
 <label onClick="setTextDecorationSkipSpaces('end')"><input type="radio" value="end" id="textDecorationSkipSpacesend" name="textDecorationSkipSpaces"/><code>end</code></label>
-</p>
+</p-->
 
 <p><code>text-decoration-skip-inset:</code>
 <label onClick="setTextDecorationSkipInset('none')"><input type="radio" value="none" id="textDecorationSkipInsetnone" checked name="textDecorationSkipInset"/><code>none</code></label>
@@ -253,13 +376,19 @@ for (var p=0;p<parameters.length;p++) {
 					}
 
 
-	if (pairs[0] == 'textDecorationLine' && pairs[1]) { 
-					setTextDecorationLine(decodeURIComponent(pairs[1])) 
-					document.getElementById('textDecorationLine'+decodeURIComponent(pairs[1])).checked = true 
+	if (pairs[0] == 'textDecorationLine' && pairs[1]) {
+					values = decodeURIComponent(pairs[1]).split(' ')
+					for (let i=0;i<values.length;i++) {
+						document.getElementById('textDecorationLine'+values[i]).checked = true
+						setTextDecorationLine(values[i])
+						}
 					}
 	if (pairs[0] == 'textUnderlinePosition' && pairs[1]) {
-					setTextUnderlinePosition(decodeURIComponent(pairs[1]))
-					document.getElementById('textUnderlinePosition'+decodeURIComponent(pairs[1])).checked = true 
+					values = decodeURIComponent(pairs[1]).split(' ')
+					for (let i=0;i<values.length;i++) {
+						document.getElementById('textUnderlinePosition'+values[i]).checked = true
+						setTextUnderlinePosition(values[i])
+						}
 					}
 	if (pairs[0] == 'textDecorationStyle' && pairs[1]) {
 					setTextDecorationStyle(decodeURIComponent(pairs[1])) 
@@ -279,8 +408,11 @@ for (var p=0;p<parameters.length;p++) {
 					document.getElementById('textDecorationSkipInk'+decodeURIComponent(pairs[1])).checked = true 
 					}
 	if (pairs[0] == 'textDecorationSkipSpaces' && pairs[1]) {
-					setTextDecorationSkipSpaces(decodeURIComponent(pairs[1])) 
-					document.getElementById('textDecorationSkipSpaces'+decodeURIComponent(pairs[1])).checked = true 
+					values = decodeURIComponent(pairs[1]).split(' ')
+					for (let i=0;i<values.length;i++) {
+						document.getElementById('textDecorationSkipSpaces'+values[i]).checked = true
+						setTextDecorationSkipSpaces(values[i])
+						}
 					}
 	if (pairs[0] == 'textDecorationSkipInset' && pairs[1]) {
 					setTextDecorationSkipInset(decodeURIComponent(pairs[1])) 
@@ -311,14 +443,41 @@ if (document.getElementById('fontFamily') && document.getElementById('fontFamily
 if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
 if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
 
-out += '&textDecorationLine='+encodeURIComponent(document.querySelector('input[name="textDecorationLine"]:checked').value)
-out += '&textUnderlinePosition='+ encodeURIComponent(document.querySelector('input[name="textUnderlinePosition"]:checked').value)
+value = ''
+checkboxes = document.querySelectorAll('input[name=textDecorationLine]')
+if (checkboxes[0].checked) value += 'none '
+if (checkboxes[1].checked) value += 'underline '
+if (checkboxes[2].checked) value += 'overline '
+if (checkboxes[3].checked) value += 'line-through '
+if (checkboxes[4].checked) value += 'spelling-error '
+if (checkboxes[5].checked) value += 'grammar-error '
+out += '&textDecorationLine='+encodeURIComponent(value.trim())
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textUnderlinePosition]')
+if (checkboxes[0].checked) value += 'auto '
+if (checkboxes[1].checked) value += 'from-font '
+if (checkboxes[2].checked) value += 'under '
+if (checkboxes[3].checked) value += 'left '
+if (checkboxes[4].checked) value += 'right '
+out += '&textUnderlinePosition='+encodeURIComponent(value.trim())
+
+//out += '&textUnderlinePosition='+ encodeURIComponent(document.querySelector('input[name="textUnderlinePosition"]:checked').value)
 out += '&textDecorationStyle='+encodeURIComponent(document.querySelector('input[name="textDecorationStyle"]:checked').value)
 out += '&textDecorationColor='+encodeURIComponent(document.getElementById('textDecorationColor').value)
 out += '&textDecorationThickness='+encodeURIComponent(document.getElementById('textDecorationThickness').value)
 out += '&textUnderlineOffset='+encodeURIComponent(document.getElementById('textUnderlineOffset').value)
 out += '&textDecorationSkipInk='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipInk"]:checked').value)
-out += '&textDecorationSkipSpaces='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipSpaces"]:checked').value)
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textDecorationSkipSpaces]')
+if (checkboxes[0].checked) value += 'none '
+if (checkboxes[1].checked) value += 'all '
+if (checkboxes[2].checked) value += 'start '
+if (checkboxes[3].checked) value += 'end '
+out += '&textDecorationSkipSpaces='+encodeURIComponent(value.trim())
+
+//out += '&textDecorationSkipSpaces='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipSpaces"]:checked').value)
 out += '&textDecorationSkipInset='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipInset"]:checked').value)
 '&writingMode='+encodeURIComponent(document.querySelector('input[name="writingMode"]:checked').value)
 
