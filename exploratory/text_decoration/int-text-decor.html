@@ -24,12 +24,12 @@ padding: 40px;
 <script>
 
 function setTextDecorationLine (value) {
-tests = document.querySelectorAll('.test span')
+var tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
 
 if (value === 'none' || value === 'spelling-error' || value === 'grammar-error'){
-	boxes = document.querySelectorAll('input[name=textDecorationLine]')
-	for (i=0;i<boxes.length;i++) boxes[i].checked = false
+	var boxes = document.querySelectorAll('input[name=textDecorationLine]')
+	for (let i=0;i<boxes.length;i++) boxes[i].checked = false
 	document.getElementById('textDecorationLine'+value).checked = true
 	}
 else {
@@ -376,10 +376,17 @@ for (var p=0;p<parameters.length;p++) {
 					}
 
 
+	if (pairs[0] == 'text' && pairs[1]) { 
+					document.getElementById('in').value = decodeURIComponent(pairs[1])
+					setText(decodeURIComponent(pairs[1]))
+					}
+
+
 	if (pairs[0] == 'textDecorationLine' && pairs[1]) {
 					values = decodeURIComponent(pairs[1]).split(' ')
 					for (let i=0;i<values.length;i++) {
 						document.getElementById('textDecorationLine'+values[i]).checked = true
+						console.log(document.querySelector('.test'))
 						setTextDecorationLine(values[i])
 						}
 					}
@@ -422,12 +429,6 @@ for (var p=0;p<parameters.length;p++) {
 	if (pairs[0] == 'writingMode' && pairs[1]) {
 					setWritingMode(decodeURIComponent(pairs[1])) 
 					document.getElementById('writingMode'+decodeURIComponent(pairs[1])).checked = true 
-					}
-
-
-	if (pairs[0] == 'text' && pairs[1]) { 
-					document.getElementById('in').value = decodeURIComponent(pairs[1])
-					setText(decodeURIComponent(pairs[1]))
 					}
 	}
 
