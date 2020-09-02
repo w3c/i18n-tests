@@ -226,13 +226,12 @@ var testresults = {
 	{"browser":"EdgeBlink", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 Edg/79.0.309.71", "date":"31-1-2020  17:39:20", "notes":"" }
 	],
 "q-lang-he.html": [
-	{"browser":"Firefox", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0", "date":"3-5-2018  11:19:44" }, 
-	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36", "date":"3-5-2018  11:25:53" }, 
-	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15", "date":"3-5-2018  11:28:25" }, 
+	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36", "date":"3-5-2018  11:25:53", "notes":"Uses ASCII quotes, rather than directional ones." }, 
+	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15", "date":"3-5-2018  11:28:25", "notes":"Uses ASCII quotes, rather than directional ones." }, 
 	{"browser":"Edge", "status":"fail", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393", "date":"3-5-2018  11:39:29" }, 
-	{"browser":"SafariMobile", "status":"fail", "ua":"Mozilla/5.0 (iPad; CPU OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0 Mobile/15C153 Safari/604.1", "date":"3-5-2018  13:37:19" }, 
-	{"browser":"Firefox", "status":"partial", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:72.0) Gecko/20100101 Firefox/72.0", "date":"31-1-2020  13:5:53" }, 
-	{"browser":"EdgeBlink", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 Edg/79.0.309.71", "date":"31-1-2020  17:39:44", "notes":"Uses ASCII notes, rather than directional ones." }
+	{"browser":"SafariMobile", "status":"fail", "ua":"Mozilla/5.0 (iPad; CPU OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0 Mobile/15C153 Safari/604.1", "date":"3-5-2018  13:37:19", "notes":"Uses ASCII quotes, rather than directional ones." }, 
+	{"browser":"Firefox", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:72.0) Gecko/20100101 Firefox/72.0", "date":"31-1-2020  13:5:53" }, 
+	{"browser":"EdgeBlink", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 Edg/79.0.309.71", "date":"31-1-2020  17:39:44", "notes":"Uses ASCII quotes, rather than directional ones." }
 	],
 "q-lang-hu.html": [
 	{"browser":"Firefox", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:59.0) Gecko/20100101 Firefox/59.0", "date":"3-5-2018  11:19:53" }, 
