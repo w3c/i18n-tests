@@ -84,7 +84,7 @@ function generateStuffInPage () {
 						case 'Webkit': wkscore = ctest[r].status; wknotes = ctest[r].notes?ctest[r].notes:''; break
 						case 'Edge': escore = ctest[r].status; enotes = ctest[r].notes?ctest[r].notes:''; break
 						case 'Internet Explorer': iescore = ctest[r].status; ienotes = ctest[r].notes?ctest[r].notes:''; break
-						case 'Android': ascore = ctest[r].status; asnotes = ctest[r].notes?ctest[r].notes:''; break
+						case 'Android': ascore = ctest[r].status; anotes = ctest[r].notes?ctest[r].notes:''; break
 						case 'ChromeMobile': cmscore = ctest[r].status; cmnotes = ctest[r].notes?ctest[r].notes:''; break
 						case 'SafariMobile': smscore = ctest[r].status; smnotes = ctest[r].notes?ctest[r].notes:''; break
 						case 'UC Browser': ucscore = ctest[r].status; ucnotes = ctest[r].notes?ctest[r].notes:''; break
