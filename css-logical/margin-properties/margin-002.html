@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>margin logical (1 value)</title>
+<meta name="assert" content="The margin property with a 'logical' flag and a single value produces a margin all around horizontal text.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-logical-1/#logical-shorthand-keyword">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style>
+#test { margin: 2em; font-size: 24px; padding: 0; text-align: center; background-color: #0f0; border: 1px solid white; width: 150px; }
+#margin { background-color: #fc3; height: 50px; }
+/* the CSS above is not part of the test */
+
+#margin { margin: logical 50px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the orange rectangle is surrounded by green.</p>
+
+
+<div class="test" id="test">
+<div id="margin">&nbsp;</div>
+</div>
+
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>A container box has a div inside it. The margin property is applied to that div. It should produce margins on all sides that let through the green colour of the container box. The margins should be all the same size.</li>
+</ul>
+</div>
+</body>
+</html>

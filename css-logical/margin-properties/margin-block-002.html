@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>margin-block (2 values)</title>
+<meta name="assert" content="The margin-block property with 2 values produces a margin above and below horizontal text.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-logical-1/#margin-properties">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style>
+#test { margin: 2em; font-size: 24px; padding: 0; text-align: center; background-color: #0f0; border: 1px solid white; width: 100px; }
+#margin { background-color: #fc3; height: 50px; }
+/* the CSS above is not part of the test */
+
+#margin { margin-block: 50px 100px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if there is a green rectangle above and below the orange, and the one below is twice the size of the one above.</p>
+
+
+<div class="test" id="test">
+<div id="margin">&nbsp;</div>
+</div>
+
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>A container box has a div inside it. The margin-block property is applied to that div. It should produce a margin that lets through the green colour of the container box.</li>
+</ul>
+</div>
+</body>
+</html>

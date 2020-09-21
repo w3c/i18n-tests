@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>caption-side: block-start (vrl)</title>
+<meta name="assert" content="caption-side:block-start will cause captions to appear to the right in RL vertical text.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-logical-1/#caption-side">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style>
+.test { margin: 0px;  font-size: 24px; }
+#test0 { font-style: italic; font-size: 10px; caption-side: top; writing-mode: vertical-rl; }
+td { border: 1px solid gray; padding: 1em; }
+caption { padding: 1em; background-color: #fc3; }
+.highlightedCell { background-color: beige; font-weight: bold; }
+/* the CSS above is not part of the test */
+
+#test1 { writing-mode: vertical-rl; }
+#test1 table { caption-side: block-start; }
+</style>
+</head>
+<body>
+<p class="skip">Skip if the caption doesn't appear to the right of this table, or if the table isn't arranged vertically.</p>
+
+<div class="test" id="test0">
+<table dir="ltr">
+<tr>
+<td>cell1</td><td>cell2</td><td>cell3</td></tr>
+<tr><td>cell4</td><td>cell5</td><td>cell6</td></tr>
+<caption>caption</caption>
+</table>
+</div>
+
+<p class="instructions">Test passes if the caption appears <strong>to the right</strong> of the table.</p>
+
+
+<div class="test" id="test1">
+<table>
+<tr>
+<td class="highlightedCell">cell1</td><td>cell2</td><td>cell3</td></tr>
+<tr><td>cell4</td><td>cell5</td><td>cell6</td></tr>
+<caption>caption</caption>
+</table>
+</div>
+
+
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>In the skip test, caption-side is set to <code>top</code>. If the browser doesn't support that value, it is not expected to support the block value.</li>
+<li>The writing-mode is set to <code>vertical-rl</code>. <code>caption-side</code> is set to <code>block-start</code>.</li>
+</ul>
+</div>
+</body>
+</html>
