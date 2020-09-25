@@ -28,7 +28,6 @@ margin-properties/margin-block-002.html
 margin-properties/margin-inline-001.html
 margin-properties/margin-inline-002.html
 margin-properties/margin-001.html
-margin-properties/margin-002.html
 
 
 padding-properties/padding-block-start-001.html
