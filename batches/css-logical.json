@@ -52,8 +52,6 @@ tests = [
 
 ["margin-properties/margin-001.html","margin logical (4 values)","",'https://drafts.csswg.org/css-logical-1/#logical-shorthand-keyword',"[Exploratory] The margin property with a 'logical' flag and 4 values produces a margin all around horizontal text, with the correct dimensions."], 
 
-["margin-properties/margin-002.html","margin logical (1 value)","",'https://drafts.csswg.org/css-logical-1/#logical-shorthand-keyword',"The margin property with a 'logical' flag and a single value produces a margin all around horizontal text."], 
-
 ["padding-properties/padding-block-start-001.html","padding-block-start","",'https://drafts.csswg.org/css-logical-1/#padding-properties',"The padding-block-start property produces padding above horizontal text."], 
 
 ["padding-properties/padding-block-end-001.html","padding-block-end","",'https://drafts.csswg.org/css-logical-1/#padding-properties',"The padding-block-end property produces padding below horizontal text."], 
@@ -116,7 +114,7 @@ tests = [
 
 ["border-width/border-inline-width-001.html","border-inline-width","",'https://drafts.csswg.org/css-logical-1/#border-width',"The border-inline-width property affects the border to the left and right of horizontal text."], 
 
-["border-width/border-width-001.html","border-width","",'https://drafts.csswg.org/css-logical-1/#border-width',"The border-width property affects the borders all around horizontal text when the 'logical' flag is used."], 
+["border-width/border-width-001.html","border-width","",'https://drafts.csswg.org/css-logical-1/#border-width',"[Exploratory] The border-width property affects the borders all around horizontal text when the 'logical' flag is used, and sets appropriate thicknesses."], 
 
 ["border-style/border-block-start-style-001.html","border-block-start-style","",'https://drafts.csswg.org/css-logical-1/#border-style',"The border-block-start-style property affects the border above horizontal text."], 
 
@@ -213,4 +211,4 @@ tests = [
 ['../testend','','','','']
 
 ]
-// 105 tests.
+// 104 tests.
