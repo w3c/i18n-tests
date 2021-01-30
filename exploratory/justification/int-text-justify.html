@@ -79,8 +79,8 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <p><code>text-justify:</code>
 <label onClick="setTextJustify('auto')"><input type="radio" checked value="auto" id="textJustifyauto" name="textJustify"/><code>auto</code></label>
 <label onClick="setTextJustify('none')"><input type="radio" value="none" id="textJustifynone" name="textJustify"/><code>none</code></label>
-<label onClick="setTextJustify('loose')"><input type="radio" value="loose" id="textJustifyinter-word" name="textJustify"/><code>inter-word</code></label>
-<label onClick="setTextJustify('strict')"><input type="radio" value="strict" id="textJustifyinter-character" name="textJustify"/><code>inter-character</code></label>
+<label onClick="setTextJustify('inter-word')"><input type="radio" value="inter-word" id="textJustifyinter-word" name="textJustify"/><code>inter-word</code></label>
+<label onClick="setTextJustify('inter-character')"><input type="radio" value="inter-character" id="textJustifyinter-character" name="textJustify"/><code>inter-character</code></label>
 </p>
 <p><code>text-align-last:</code>
 <label onClick="setTextAlignLast('auto')"><input type="radio" checked value="auto" id="textAlignLastauto" name="textAlignLast"/>
@@ -98,6 +98,10 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <li>text-align, text-justify and text-align-last are not set by default.</li>
 <li>The top test box is HTML. The bottom one is a textarea.</li>
 <li>Spec links: <a href="https://www.w3.org/TR/css-text-3/#text-align-property">text-align</a> <a href="https://www.w3.org/TR/css-text-3/#text-justify-property">text-justify</a> <a href="https://www.w3.org/TR/css-text-3/#text-align-last-property">text-align-last</a></li>
+<li>More tests: 
+<a href="https://w3c.github.io/i18n-tests/#interactive">List of interactive tests &amp; results</a> •
+<a href="https://w3c.github.io/i18n-tests/results/int-text-alignment-justification">Text alignment &amp; justification tests</a>
+</li>
 <li>Browser: <span id="version"></span></li>
 <li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
 </ul>
