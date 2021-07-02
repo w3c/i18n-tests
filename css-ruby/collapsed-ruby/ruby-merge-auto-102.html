@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <title>ruby-merge: auto, line break (v)</title>
 <meta name="assert" content="When a line break occurs between base characters while applying ruby-merge:auto, ruby annotations are kept together with their respective ruby bases.">
-<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
-<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#collapsed-ruby">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
 <link rel="help" href="https://drafts.csswg.org/css-ruby-1/#collapsed-ruby">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#collapsed-ruby">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
 <style type="text/css">
 .test { margin: 20px;  padding: 40px; font-size: 110px; height: 200px; }
 rt { color: blue; }
@@ -18,10 +20,13 @@ ruby { ruby-merge: auto; }
 </style>
 </head>
 <body>
-<p class="instructions">Skip if the text is not vertical.<br/>Test passes if the text is vertical and the first base character is associated with 1 annotation character; the second with 3; and the last with 1.</p>
+<p class="instructions">Test passes if the text is vertical and the first base character is associated with 1 annotation character; the second with 3; and the last with 1.</p>
 <div class="test" lang="ja"><ruby><rb>思</rb><rt>し</rt><rb>春</rb><rt id="middle">しゅん</rt><rb>期</rb><rt>き</rt></ruby></div>
-<!-- Notes:
-This test doesn't give a reliable result if ruby-merge: auto doesn't merge annotation characters without a line break (ie. if ruby-merge-auto-001 fails).
--->
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li><code>ruby-merge</code> is set to <code>collapse</code>, the language is set to <code>ja</code>, and the markup model is BaBaaaBa. The shallow height of the test div forces each base character onto a new line.</li>
+</ul>
 </body>
 </html>

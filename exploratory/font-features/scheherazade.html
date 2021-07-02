@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Scheherazade font features</title>
+<meta name="assert" content="[exploratory] OpenType feature settings activate the relevant feature in the Scheherazade Arabic font.">
+<link rel="help" href="https://software.sil.org/scheherazade/wp-content/uploads/sites/29/2016/03/Scheherazade-features-2.100.pdf">
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<style>
+/* the CSS below is not part of the test */
+.test td:lang(ar) {
+margin: .5em 5%;
+font-size: 5em;
+font-family: scheherazade;
+}
+td {
+vertical-align: top;
+}
+th { padding: .5em; border: 1px solid #ccc; vertical-align: bottom; }
+#dal { font-feature-settings: "cv12" 1; }
+#meem1 { font-feature-settings: "cv44" 1; }
+#heh1 { font-feature-settings: "cv48" 1; }
+#heh2 { font-feature-settings: "cv48" 2; }
+#heh3 { font-feature-settings: "cv48" 3; }
+#u1 { font-feature-settings: "cv50" 1; }
+#maddah1 { font-feature-settings: "cv60" 1; }
+#kasra1 { font-feature-settings: "cv62" 1; }
+#damma1 { font-feature-settings: "cv70" 1; }
+#damma2 { font-feature-settings: "cv70" 2; }
+#dammatan1 { font-feature-settings: "cv72" 1; }
+#inverteddamma1 { font-feature-settings: "cv74" 1; }
+#alef1 { font-feature-settings: "cv76" 1; }
+#sukun1 { font-feature-settings: "cv78" 1; }
+#sukun2 { font-feature-settings: "cv78" 2; }
+#ayah1 { font-feature-settings: "cv80" 1; }
+#ayah2 { font-feature-settings: "cv80" 2; }
+#digits1 { font-feature-settings: "cv82" 1; }
+#digits2 { font-feature-settings: "cv82" 2; }
+#digits4 { font-feature-settings: "cv82" 4; }
+#comma-1 { font-feature-settings: "cv84" 1; }
+#jeh-1 { font-feature-settings: "cv90" 1; }
+#khah-1 { font-feature-settings: "cv92" 1; }
+#invs-1 { font-feature-settings: "invs" 1; }
+</style>
+</head>
+<body>
+<div>Check that the results described at <a href="https://software.sil.org/scheherazade/wp-content/uploads/sites/29/2016/03/Scheherazade-features-2.100.pdf">Font Features for Scheherazade</a> appear here.</div>
+
+<div class="test" id="test">
+
+<table>
+<thead>
+<tr>
+<th>Feature name</th><th>Feature id</th><th>Feature setting</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dal</td><td>cv12</td>
+<td>0-Standard</td>
+<td lang="ar" dir="rtl">ࢮݚݙۮڐڏڎڍڌڋڊډڈذ د</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Alternate</td>
+<td lang="ar" dir="rtl" id="dal">ݙۮڐڏڎࢮݚڍڌڋڊډڈذ د</td>
+</tr>
+<tr>
+
+
+<td>Meem</td>
+<td>cv44</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="meem0">م ممم ݥ ݥݥݥ ݦ ݦݦݦ ࢧ ࢧࢧࢧ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Sindhi-style</td>
+<td lang="ar" dir="rtl" id="meem1">م ممم ݥ ݥݥݥ ݦ ݦݦݦ ࢧ ࢧࢧࢧ</td>
+</tr>
+
+
+<tr>
+<td>Heh</td>
+<td>cv44</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="heh0">ه ههه</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Sindhi-style</td>
+<td lang="ar" dir="rtl" id="heh1">ه ههه</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2=Urdu-style</td>
+<td lang="ar" dir="rtl" id="heh2">ه ههه</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>3=Kurdish-style</td>
+<td lang="ar" dir="rtl" id="heh3">ه ههه</td>
+</tr>
+
+<tr>
+<td>Arabic U</td>
+<td>cv50</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="u0">ۇ ۇٴ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Filled</td>
+<td lang="ar" dir="rtl" id="u1">ۇ ۇٴ</td>
+</tr>
+
+
+<tr>
+<td>Maddah</td>
+<td>cv60</td>
+<td>0=Small</td>
+<td lang="ar" dir="rtl" id="maddah0">◌ٓ آ آ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Large</td>
+<td lang="ar" dir="rtl" id="maddah1">◌ٓ آ آ</td>
+</tr>
+
+<tr>
+<td>Shadda+kasra placement</td>
+<td>cv62</td>
+<td>0=Raised</td>
+<td lang="ar" dir="rtl" id="kasra0">◌ٍّ بٍّ ◌ِّ بِّ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Lowered</td>
+<td lang="ar" dir="rtl" id="kasra1">◌ٍّ بٍّ ◌ِّ بِّ</td>
+</tr>
+
+<tr>
+<td>Damma</td>
+<td>cv70</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="damma0">◌ُ بُ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Filled</td>
+<td lang="ar" dir="rtl" id="damma1">◌ُ بُ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2=Short</td>
+<td lang="ar" dir="rtl" id="damma2">◌ُ بُ</td>
+</tr>
+
+<tr>
+<td>Dammatan</td>
+<td>cv72</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="dammatan0">◌ٌ بٌ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Six-nine</td>
+<td lang="ar" dir="rtl" id="dammatan1">◌ٌ بٌ</td>
+</tr>
+
+<tr>
+<td>Inverted damma</td>
+<td>cv74</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="inverteddamma0">◌ٗ بٗ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Hollow</td>
+<td lang="ar" dir="rtl" id="inverteddamma1">◌ٗ بٗ</td>
+</tr>
+
+<tr>
+<td>Superscript alef</td>
+<td>cv76</td>
+<td>0=Small</td>
+<td lang="ar" dir="rtl" id="alef0">ݷٰ ݷٰݷٰݷٰ ۑٰ ۑٰۑٰۑٰ ېٰ ېٰېٰېٰ يٴٰ يٴٰيٴٰي ٴٰ يٰ يٰيٰيٰ ىٰ ىٰىٰىٰ ئٰ ئٰئٰئٰ ێٰ ێٰێٰێٰ یٰ یٰیٰیٰ ؿٰ ؿٰؿٰؿٰ ؾٰ ؾٰؾٰؾٰ ؽٰ ؽٰؽٰؽٰ ࢩٰ ࢩٰࢩٰࢩٰ ࢨٰ ࢨٰࢨٰࢨٰ ڝٰ ڝٰڝٰڝٰ ضٰ ضٰضٰضٰ صٰ صٰصٰصٰ ݶٰ ݶٰݶٰݶٰ ݵٰ ݵٰݵٰݵٰ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Large</td>
+<td lang="ar" dir="rtl" id="alef1">ݷٰ ݷٰݷٰݷٰ ۑٰ ۑٰۑٰۑٰ ېٰ ېٰېٰېٰ يٴٰ يٴٰيٴٰي ٴٰ يٰ يٰيٰيٰ ىٰ ىٰىٰىٰ ئٰ ئٰئٰئٰ ێٰ ێٰێٰێٰ یٰ یٰیٰیٰ ؿٰ ؿٰؿٰؿٰ ؾٰ ؾٰؾٰؾٰ ؽٰ ؽٰؽٰؽٰ ࢩٰ ࢩٰࢩٰࢩٰ ࢨٰ ࢨٰࢨٰࢨٰ ڝٰ ڝٰڝٰڝٰ ضٰ ضٰضٰضٰ صٰ صٰصٰصٰ ݶٰ ݶٰݶٰݶٰ ݵٰ ݵٰݵٰݵٰ</td>
+</tr>
+
+<tr>
+<td>Sukun</td>
+<td>cv78</td>
+<td>0=Closed</td>
+<td lang="ar" dir="rtl" id="sukun0">◌ْ بْ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Open down</td>
+<td lang="ar" dir="rtl" id="sukun1">◌ْ بْ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2=Open left</td>
+<td lang="ar" dir="rtl" id="sukun2">◌ْ بْ</td>
+</tr>
+
+<tr>
+<td>End of ayah</td>
+<td>cv80</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="ayah0">۝123</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Simplified A</td>
+<td lang="ar" dir="rtl" id="ayah1">۝123</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2=Simplified B</td>
+<td lang="ar" dir="rtl" id="ayah2">۝123</td>
+</tr>
+
+<tr>
+<td>Eastern digits</td>
+<td>cv82</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="digits0">۴۵۶۷</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Sindhi-style</td>
+<td lang="ar" dir="rtl" id="digits1">۴۵۶۷</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2=Urdu-style</td>
+<td lang="ar" dir="rtl" id="digits2">۴۵۶۷</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>4=Rohingya-style</td>
+<td lang="ar" dir="rtl" id="digits4">۴۵۶۷</td>
+</tr>
+
+<tr>
+<td>Comma</td>
+<td>cv84</td>
+<td>0=Upward</td>
+<td lang="ar" dir="rtl" id="comma-0">؛ ،</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Downward</td>
+<td lang="ar" dir="rtl" id="comma-1">؛ ،</td>
+</tr>
+
+<tr>
+<td>Jeh hack</td>
+<td>cv90</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="jeh-0">ژ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Dot Hat</td>
+<td lang="ar" dir="rtl" id="jeh-1">ژ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>code point</td>
+<td>U+08B2 ARABIC LETTER ZAIN WITH INVERTED V ABOVE</td>
+<td lang="ar" dir="rtl" id="jeh-2">ࢲ مࢲ</td>
+</tr>
+
+<tr>
+<td>Dotless head of khah hack</td>
+<td>cv92</td>
+<td>0=Standard</td>
+<td lang="ar" dir="rtl" id="khah-0">◌ۡ بۡ</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=Jazm</td>
+<td lang="ar" dir="rtl" id="khah-1">◌ۡ بۡ</td>
+</tr>
+
+<tr>
+<td>Show invisible characters</td>
+<td>invs</td>
+<td>0=False</td>
+<td lang="ar" dir="rtl" id="invs-0">‍ ‌ ⁧ ⁦ ⁨ ⁩ ‫ ‪ ‬ ‏ ‎ ͏ ؜</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1=True</td>
+<td lang="ar" dir="rtl" id="invs-1">‍ ‌ ⁧ ⁦ ⁨ ⁩ ‫ ‪ ‬ ‏ ‎ ͏ ؜</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+</body>
+</html>

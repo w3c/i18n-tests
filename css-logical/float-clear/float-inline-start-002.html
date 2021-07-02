@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>float: inline-start</title>
+<meta name="assert" content="float:inline-start will float text to the right in RTL horizontal text.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-logical-1/#float-clear">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style>
+.test { margin: 0px;  font-size: 24px; padding: 2em; }
+.float { padding: 1em; background-color: #fc3; padding: 1em; }
+.highlightedCell { background-color: beige; font-weight: bold; }
+/* the CSS above is not part of the test */
+
+#test1 .float, #test2 .float { float: inline-start; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the yellow square containing &quot;float&quot; appears to the <strong>right</strong> of the other text.</p>
+
+
+<div class="test" id="test1" dir="rtl">
+<div class="float">float</div>
+<div class="main"><bdi class="highlightedCell">&lt; هذه</bdi> هي البداية.</div>
+</div>
+
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>The direction is set to <code>rtl</code> for the test. The test contains a floated div, followed by an ordinary div. On the floated div, <code>float</code> is set to <code>inline-start</code>.</li>
+</ul>
+</div>
+</body>
+</html>

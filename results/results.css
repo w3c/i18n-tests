@@ -34,17 +34,21 @@ p.notes { margin-left: 12%;  }
 .results .partial, .results .uncertain { background-color: #FC6; color: black; font-size: 70%; text-align: center; cursor: pointer; }
 .invalid { background-color: #CCC; cursor: pointer; }
 .results .fail { background-color: #F66; font-size: 70%; text-align: center; cursor: pointer; }
-.results .skipped { background-color: #ccc; font-size: 70%; text-align: center; cursor: pointer; }
+.results .skipped { font-size: 70%; text-align: center; cursor: pointer; background-color: azure; }
 .fail.uncertain { background-color: #FAA; color: black; }
 .results .pass { background-color: #8F8; font-size: 70%; text-align: center; cursor: pointer; }
 .pass.fail, .pass.uncertain { background-color: #BFB; color: black; }
+.results .yes { background-color:antiquewhite; font-size: 70%; text-align: center; cursor: pointer; }
+.results .no { background-color:antiquewhite; font-size: 70%; text-align: center; cursor: pointer; }
 
 
-h4 { margin-left: 7.5%; margin-right: 32%; display: block; }
+h4 { margin-left: 12%; margin-right: 32%; display: block; }
 h4 a:link { color: black; }
 h4 a:active { color: black; }
 h4 a:hover { color: black; }
 h4 a:visited { color: black; }
+
+.section_separator { margin: 2em 32% 2em 8%; display: block; font-size: 80%; }
 
 .summary { margin-bottom: 3em; margin-left: 7.5%; border-left: 4px solid #CCC; }
 .summary p, .summary h4 { margin-left: 20px; }
@@ -70,3 +74,14 @@ q { font-size: 95%; font-style: italic; }
     line-height: 1.4;
     font-size: 80%;
     }
+
+
+.notesInDetail {
+	display: block;
+	background-color: #ccc;
+	color: black;
+	padding: 0 1em;
+	border-radius: .2em;
+	margin-bottom: .2em;
+	opacity: 50%;
+	}

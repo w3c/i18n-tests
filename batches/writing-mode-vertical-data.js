@@ -550,7 +550,7 @@ var testresults = {
 	{browser:'UC Browser', status:'fail', ua:'Mozilla/5.0 (iPad; U; CPU OS 8_4 like Mac OS X; en-us; iPad3,1) AppleWebKit/534.46 (KHTML, like Gecko) UCBrowser/2.4.0.367 U3/1 Safari/7543.48.3', date:'20-8-2015  11:9:44' }, 
 	{browser:'Android', status:'fail', ua:'Mozilla/5.0 (Linux; U; Android 4.2.2; en-gb; HTC_One_X Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30', date:'20-8-2015 11:43:7' }, 
 	{browser:'Internet Explorer', status:'fail', ua:'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; .NET4.0E; .NET4.0C; Tablet PC 2.0; .NET CLR 3.5.30729; .NET CLR 2.0.50727; .NET CLR 3.0.30729; GWX:RESERVED; rv:11.0) like Gecko', date:'20-8-2015  17:6:50' }, 
-	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:41.0) Gecko/20100101 Firefox/41.0', date:'5-10-2015  18:2:27' }, 
+	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:41.0) Gecko/20100101 Firefox/41.0', date:'5-10-2015  18:2:27' }, 
 	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36', date:'12-5-2016  9:47:44' }, 
 	{browser:'Opera', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36 OPR/36.0.2130.65', date:'12-5-2016  9:55:11' }, 
 	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36', date:'12-1-2017  8:11:29' }, 

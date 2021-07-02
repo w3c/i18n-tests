@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>float: inline-end</title>
+<meta name="assert" content="float:inline-end will cause captions to appear to the right in LTR horizontal text.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-logical-1/#float-clear">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style>
+.test { margin: 0px;  font-size: 24px; padding: 2em; }
+.main { text-align: end; }
+.float { padding: 1em; background-color: #fc3; padding: 1em; }
+.highlightedCell { background-color: beige; font-weight: bold; }
+/* the CSS above is not part of the test */
+
+#test .float { float: inline-end; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the yellow square containing &quot;float&quot; appears to the <strong>left</strong> of the other text.</p>
+
+
+<div class="test" id="test" dir="ltr">
+<div class="float">float</div>
+<div class="main">The end is <bdi class="highlightedCell">nigh &gt;</bdi>.</div>
+</div>
+
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>The direction is set to <code>ltr</code>. The test contains a floated div, followed by an ordinary div. On the floated div, <code>float</code> is set to <code>inline-end</code>.  The main text div has text-align set to end (just to make the test easier to see).</li>
+</ul>
+</div>
+</body>
+</html>

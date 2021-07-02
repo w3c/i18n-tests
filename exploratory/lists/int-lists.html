@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Interactive test: lists</title>
+<link rel="help" href="https://www.w3.org/TR/2018/WD-css-text-3-20180920/#line-breaking">
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style id="customSettings">
+</style>
+<style id="colorSettings">
+</style>
+<style id="uprightSettings">
+</style>
+<style>
+.test { text-align: justify; }
+
+/* the CSS below is not part of the test */
+.test {
+margin: 40px 5%;
+width: 50%;
+font-size: 36px;
+border: 1px solid orange;
+height: 14em;
+overflow: hidden;
+padding: 2em;
+}
+</style>
+<script src="../../fonts/interactive_functions.js"> </script>
+<script>
+function setWritingMode (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) { tests[i].style.writingMode = value }
+}
+
+function setListStyleType (value) { 
+tests = document.querySelectorAll('.test li')
+for (let i=0;i<tests.length;i++) { 
+	//tests[i].style.listStyleType = "decimal" 
+	tests[i].style.listStyleType = value 
+	}
+}
+
+function setCustomStyle (value) {
+document.getElementById('customSettings').innerHTML = value
+}
+
+function setColor (value) {
+document.getElementById('colorSettings').innerHTML = 'li::marker { color: '+value+'; }'
+}
+
+function setTextCombineUpright (value) { 
+document.getElementById('uprightSettings').innerHTML = 'li::marker { text-combine-upright: '+value+'; }'
+}
+</script>
+</head>
+<body>
+<h1>Interactive test: lists</h1>
+
+<p class="advice">
+Set the language <input id="language" type="text" onChange="setLanguage(this.value)"/> <button onClick="setLanguage(document.getElementById('language').value)">Apply</button><br/>
+
+Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="setFontSize(this.value)" type="range"/> 
+<span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>
+
+Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setFont(document.getElementById('fontFamily').value)">Apply</button>
+</p>
+
+<div class="advice">Adjust the height of the test box.<br/>
+<input id="boxHeight" min="10" max="1000" step="1" value="50" oninput="setBoxHeight(this.value)" style="width:80%; margin-left: 5%;" type="range"> <span id="vSizeIndicator" style="font-size:80%;">500</span>px</div>
+
+
+<!-- INPUT AREA -->
+<div><textarea id="in" type="text" placeholder="Add text to be tested text here and click on GO." dir="auto"></textarea> 
+<button onClick="setText(document.getElementById('in').value)" id="go" style="vertical-align: top;">Go</button></div>
+
+
+
+<!-- TESTS -->
+<div class="test" id="html" dir="auto"></div>
+
+
+
+<!-- CONTROLS -->
+<p>Set custom counter style:<br/>
+<span class="advice">Code for custom styles can be found in the <a href="https://www.w3.org/TR/predefined-counter-styles/">Ready-made Counter Styles</a> document.</span><br/>
+<textarea id="custom" onChange="setCustomStyle(this.value)" style="width: 70%; height: 3em;"></textarea>  <button onClick="setCustomStyle(document.getElementById('custom').value)">Apply</button>
+</p>
+
+
+
+<p><code>list-style-type:</code>
+<select id="listStyleType" onchange="setListStyleType(this.value); return false;">
+        <option value="">Choose a style</option>
+        <optgroup label="Decimal">
+        <option value="decimal">decimal   (numeric)</option>
+        <option value="dotted-decimal">dotted-decimal  (fixed)</option>
+        <option value="circled-decimal">circled-decimal  (fixed)</option>
+        </optgroup>
+		<optgroup label="Arabic script">
+        <option value="arabic-indic">arabic-indic   (numeric)</option>
+        <option value="persian">persian   (numeric)</option>
+        <option value="persian-abjad">persian-abjad    (fixed, 1-28)</option>
+        <option value="persian-alphabetic">persian-alphabetic   (fixed, 1-32)</option>
+        </optgroup>
+        <optgroup label="Armenian script">
+        <option value="armenian">armenian  (additive, range 1-9999)</option>
+        <option value="lower-armenian">lower-armenian  (additive, range 1-9999)</option>
+        <option value="upper-armenian">upper-armenian  (additive, range 1-9999)</option>
+        </optgroup>
+        <optgroup label="Bengali script">
+        <option value="bengali">bengali  (numeric)</option>
+        </optgroup>
+        <optgroup label="Cyrillic script">
+        <option value="lower-belorussian">lower-belorussian  (alphabetic)</option>
+        <option value="upper-belorussian">upper-belorussian  (alphabetic)</option>
+        <option value="lower-bulgarian">lower-bulgarian  (alphabetic)</option>
+        <option value="upper-bulgarian">upper-bulgarian  (alphabetic)</option>
+        <option value="lower-macedonian">lower-macedonian  (alphabetic)</option>
+        <option value="upper-macedonian">upper-macedonian  (alphabetic)</option>
+        <option value="lower-russian">lower-russian  (alphabetic)</option>
+        <option value="upper-russian">upper-russian  (alphabetic)</option>
+        <option value="lower-russian-full">lower-russian-full  (alphabetic)</option>
+        <option value="upper-russian-full">upper-russian-full  (alphabetic)</option>
+        <option value="lower-serbo-croatian">lower-serbo-croatian  (alphabetic)</option>
+        <option value="upper-serbo-croatian">upper-serbo-croatian  (alphabetic)</option>
+        <option value="lower-ukrainian">lower-ukrainian  (alphabetic)</option>
+        <option value="upper-ukrainian">upper-ukrainian  (alphabetic)</option>
+        <option value="lower-ukrainian-full">lower-ukrainian-full  (alphabetic)</option>
+        <option value="upper-ukrainian-full">upper-ukrainian-full  (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Devanagari script">
+        <option value="devanagari">devanagari  (numeric)</option>
+        <option value="hindi">hindi  (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Ethiopic script">
+        <option value="ethiopic-numeric">ethiopic-numeric  (numeric)</option>
+        <option value="afar">afar  (alphabetic)</option>
+        <option value="agaw">agaw  (alphabetic)</option>
+        <option value="ari">ari  (alphabetic)</option>
+        <option value="blin">blin  (alphabetic)</option>
+        <option value="dizi">dizi  (alphabetic)</option>
+        <option value="gedeo">gedeo  (alphabetic)</option>
+        <option value="gumuz">gumuz  (alphabetic)</option>
+        <option value="hadiyya">hadiyya  (alphabetic)</option>
+        <option value="harari">harari  (alphabetic)</option>
+        <option value="kaffa">kaffa  (alphabetic)</option>
+        <option value="kebena">kebena  (alphabetic)</option>
+        <option value="kembata">kembata  (alphabetic)</option>
+        <option value="konso">konso  (alphabetic)</option>
+        <option value="kunama">kunama  (alphabetic)</option>
+        <option value="meen">meen  (alphabetic)</option>
+        <option value="oromo">oromo  (alphabetic)</option>
+        <option value="saho">saho  (alphabetic)</option>
+        <option value="sidama">sidama  (alphabetic)</option>
+        <option value="silti">silti  (alphabetic)</option>
+        <option value="tigre">tigre  (alphabetic)</option>
+        <option value="wolaita">wolaita  (alphabetic)</option>
+        <option value="yemsa">yemsa  (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Georgian script">
+        <option value="georgian">georgian  (additive, range 1-19999)</option>
+        </optgroup>
+        <optgroup label="Greek script">
+        <option value="greek-lower-modern,">greek-lower-modern,  (additive, range 1 - 999)</option>
+        <option value="greek-upper-modern,">greek-upper-modern,  (additive, range 1 - 999)</option>
+        <option value="greek-lower-ancient,">greek-lower-ancient,  (additive, range 1 - 999)</option>
+        <option value="greek-upper-ancient,">greek-upper-ancient,  (additive, range 1 - 999)</option>
+        <option value="lower-greek">lower-greek  (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Gujarati script">
+        <option value="gujarati">gujarati  (numeric)</option>
+        </optgroup>
+        <optgroup label="Gurmukhi script">
+        <option value="gurmukhi">gurmukhi  (numeric)</option>
+        </optgroup>
+        <optgroup label="Hebrew script">
+        <option value="Hebrew">Hebrew  (additive, range 1-10999)</option>
+        </optgroup>
+        <optgroup label="Ideographic script">
+        <option value="simp-chinese-informal">simp-chinese-informal  (0-9999)</option>
+        <option value="simp-chinese-formal">simp-chinese-formal  (0-9999)</option>
+        <option value="trad-chinese-informal">trad-chinese-informal  (0-9999)</option>
+        <option value="trad-chinese-formal">trad-chinese-formal  (0-9999)</option>
+        <option value="cjk-decimal">cjk-decimal  (numeric)</option>
+        <option value="cjk-earthly-branch">cjk-earthly-branch  (alphabetic)</option>
+        <option value="cjk-heavenly-stem">cjk-heavenly-stem  (alphabetic)</option>
+        <option value="japanese-informal">japanese-informal  (additive, range 0-9999)</option>
+        <option value="japanese-formal">japanese-formal  (additive, range 0-9999)</option>
+        <option value="korean-hanja-informal">korean-hanja-informal  (additive, range 0-9999)</option>
+        <option value="korean-hanja-formal">korean-hanja-formal  (additive, range 0-9999)</option>
+         <option value="circled-ideograph">circled-ideograph  (fixed)</option>
+         <option value="parenthesized-ideograph">parenthesized-ideograph  (fixed)</option>
+       </optgroup>
+        <optgroup label="Japanese script">
+        <option value="hiragana">hiragana  (alphabetic)</option>
+        <option value="hiragana-iroha">hiragana-iroha  (alphabetic)</option>
+        <option value="katakana">katakana  (alphabetic)</option>
+        <option value="katakana-iroha">katakana-iroha  (alphabetic)</option>
+         <option value="circled-katakana">circled-katakana  (fixed)</option>
+       </optgroup>
+        <optgroup label="Kannada script">
+        <option value="kannada">kannada  (numeric)</option>
+        </optgroup>
+        <optgroup label="Khmer script">
+        <option value="khmer">khmer  (numeric)</option>
+        <option value="cambodian-consonant">cambodian-consonant  (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Korean hangul script">
+        <option value="korean-hangul-formal">korean-hangul-formal  (additive, range 0-9999)</option>
+        <option value="korean-circled-consonant">korean-circled-consonant  (fixed, 1-14)</option>
+        <option value="korean-circled-syllable">korean-circled-syllable  (fixed, 1-14)</option>
+        <option value="korean-consonant">korean-consonant  (alphabetic)</option>
+        <option value="korean-syllable">korean-syllable  (alphabetic)</option>
+        <option value="korean-parenthesized-consonant">korean-parenthesized-consonant  (fixed, 1-14)</option>
+        <option value="korean-parenthesized-syllable">korean-parenthesized-syllable  (fixed, 1-14)</option>
+        </optgroup>
+        <optgroup label="Lao script">
+        <option value="lao">lao  (numeric)</option>
+        </optgroup>
+        <optgroup label="Latin script">
+        <option value="lower-roman">lower-roman  (additive, range 1-3999)</option>
+        <option value="upper-roman">upper-roman  (additive, range 1-3999)</option>
+        <option value="fullwidth-lower-alpha">fullwidth-lower-alpha  (alphabetic)</option>
+        <option value="fullwidth-upper-alpha">fullwidth-upper-alpha  (alphabetic)</option>
+        <option value="lower-alpha">lower-alpha  (alphabetic)</option>
+        <option value="upper-alpha">upper-alpha  (alphabetic)</option>
+        <option value="upper-oromo-qubee">upper-oromo-qubee  (alphabetic)</option>
+        <option value="parenthesized-lower-latin">parenthesized-lower-latin  (fixed, 1-26)</option>
+        </optgroup>
+        <optgroup label="Lepcha script">
+        <option value="lepcha">lepcha  (numeric)</option>
+        </optgroup>
+        <optgroup label="Malayalam script">
+        <option value="malayalam">malayalam  (numeric)</option>
+        </optgroup>
+        <optgroup label="Mongolian script">
+        <option value="mongolian">mongolian  (numeric)</option>
+        </optgroup>
+        <optgroup label="Myanmar script">
+        <option value="burmese/myanmar">burmese/myanmar  (numeric)</option>
+        <option value="shan">shan  (numeric)</option>
+        </optgroup>
+        <optgroup label="Oriya script">
+        <option value="oriya">oriya  (numeric)</option>
+        </optgroup>
+        <optgroup label="Tamil script">
+        <option value="tamil">tamil  (numeric)</option>
+        <option value="Tamil, ancient">Tamil, ancient  (additive, range 1-9999)</option>
+        </optgroup>
+        <optgroup label="Telugu script">
+        <option value="telugu">telugu  (numeric)</option>
+        </optgroup>
+        <optgroup label="Thai script">
+        <option value="thai">thai  (numeric)</option>
+        <option value="thai-alphabetic">thai-alphabetic  (alphabetic)</option>
+        </optgroup>
+        <optgroup label="Tibetan script">
+        <option value="tibetan">tibetan  (numeric)</option>
+        </optgroup>
+      </select></p>
+
+<p><code>writing-mode:</code>
+<label onClick="setWritingMode('horizontal-tb')"><input type="radio" checked value="horizontal-tb" id="writingModehorizontal-tb" name="writingMode"/>
+<code>horizontal-tb</code></label>
+<label onClick="setWritingMode('vertical-rl')"><input type="radio" value="vertical-rl" id="writingModevertical-rl" name="writingMode"/>
+<code>vertical-rl</code></label>
+<label onClick="setWritingMode('vertical-lr')"><input type="radio" value="vertical-lr" id="writingModevertical-lr" name="writingMode"/>
+<code>vertical-lr</code></label>
+<label onClick="setWritingMode('sideways-rl')"><input type="radio" value="sideways-rl" id="writingModesideways-rl" name="writingMode"/>
+<code>sideways-rl</code></label>
+<label onClick="setWritingMode('sideways-lr')"><input type="radio" value="sideways-lr" id="writingModesideways-lr" name="writingMode"/>
+<code>sideways-lr</code></label>
+</p>
+
+<p class="advice">The following 2 settings apply to the <code>::marker</code> pseudo-element.</p>
+<p><code>color:</code>
+<label onClick="setColor('inherit')"><input type="radio" checked value="inherit" id="colorinherit" name="color"/>
+<code>inherit</code></label>
+<label onClick="setColor('red')"><input type="radio" value="red" id="colorred" name="color"/>
+<code>red</code></label>
+<label onClick="setColor('blue')"><input type="radio" value="blue" id="colorblue" name="color"/>
+<code>blue</code></label>
+<label onClick="setColor('green')"><input type="radio" value="green" id="colorgreen" name="color"/>
+<code>green</code></label>
+</p>
+
+<p><code>text-combine-upright:</code>
+<label onClick="setTextCombineUpright('none')"><input type="radio" value="none" id="textCombineUprightnone" checked name="textCombineUpright"/>
+<code>none</code></label>
+<label onClick="setTextCombineUpright('all')"><input type="radio" value="all" id="textCombineUprightall" name="textCombineUpright"/>
+<code>all</code></label>
+</p>
+
+
+<!-- INFO -->
+<div id="info" style="clear: both; position: inherit;">
+<ul class="notes">
+<li>No properties are set by default.</li>
+<li>Spec links: <a href="https://drafts.csswg.org/css-lists-3/#text-markers">list-style-type</a> <a href="https://drafts.csswg.org/css-lists-3/#marker-pseudo">::marker</a> <a href="https://www.w3.org/TR/css-text-3/#text-align-last-property">text-combine-upright</a></li>
+<li>Browser: <span id="version"></span></li>
+<li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
+</ul>
+</div>
+<script>
+document.getElementById('version').innerHTML = navigator.userAgent
+
+// check for parameters and take appropriate action
+parameters = location.search.split('&')
+parameters[0] = parameters[0].substring(1)
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'text' && pairs[1]) { 
+					document.getElementById('in').value = decodeURIComponent(pairs[1])
+					setText(decodeURIComponent(pairs[1]))
+					}
+
+	if (pairs[0] == 'custom' && pairs[1]) { 
+					document.getElementById('custom').value = decodeURIComponent(pairs[1])
+					setCustomStyle(decodeURIComponent(pairs[1]))
+					}
+
+	if (pairs[0] == 'lang' && pairs[1]) setLanguage( pairs[1] )
+	if (pairs[0] == 'fontSize' && pairs[1]) {
+					setFontSize(pairs[1]) 
+					document.getElementById('fontSize').value = pairs[1] 
+					}
+	if (pairs[0] == 'fontFamily' && pairs[1]) {
+					setFont(pairs[1]) 
+					document.getElementById('fontFamily').value = pairs[1] 
+					}
+	if (pairs[0] == 'width' && pairs[1]) { 
+					setBoxWidth(pairs[1]) 
+					document.getElementById('boxWidth').value = pairs[1]
+					}
+	if (pairs[0] == 'height' && pairs[1]) { 
+					setBoxHeight(pairs[1]) 
+					document.getElementById('boxHeight').value = pairs[1]
+					}
+
+	if (pairs[0] == 'listStyleType' && pairs[1]) { 
+					document.getElementById('listStyleType').value = pairs[1] 
+					setListStyleType(pairs[1]) 
+					}
+	if (pairs[0] == 'color' && pairs[1]) {
+					setColor(pairs[1]) 
+					document.getElementById('color'+pairs[1]).checked = true 
+					}
+	if (pairs[0] == 'textCombineUpright' && pairs[1]) {
+					setTextCombineUpright(pairs[1]) 
+					document.getElementById('textCombineUpright'+pairs[1]).checked = true 
+					}
+	if (pairs[0] == 'writingMode' && pairs[1]) {
+					setWritingMode(pairs[1]) 
+					document.getElementById('writingMode'+pairs[1]).checked = true 
+					}
+	}
+
+
+function snapParameters () {
+// take a snapshot of the settings of the page and make available as URL parameters
+// this can be picked up by the user to point to the current setup of the page
+
+out = "https://w3c.github.io/i18n-tests/exploratory/lists/int-lists?"
+out += 'text='+encodeURIComponent(document.getElementById('in').value)
+
+if (document.getElementById('custom') && document.getElementById('custom').value != '') out += '&custom='+encodeURIComponent(document.getElementById('custom').value)
+
+if (document.getElementById('language') && document.getElementById('language').value != '') out += '&lang='+document.getElementById('language').value
+if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+document.getElementById('fontSize').value
+if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+document.getElementById('fontFamily').value
+if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
+
+if (document.getElementById('listStyleType').value !== '') out += '&listStyleType='+document.getElementById('listStyleType').value
+out += '&color='+document.querySelector('input[name="color"]:checked').value
+out += '&textCombineUpright='+document.querySelector('input[name="textCombineUpright"]:checked').value
+out += '&writingMode='+document.querySelector('input[name="writingMode"]:checked').value
+
+return out
+}
+
+</script>
+</body>
+</html>

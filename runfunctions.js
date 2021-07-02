@@ -41,14 +41,29 @@ function setTest (newptr, base) {
 		
 	document.getElementById('speclink').href = tests[newptr][cRef];
 	
-	document.getElementById('assertion').innerHTML = tests[newptr][cAssert	];
+	document.getElementById('assertion').innerHTML = tests[newptr][cAssert];
 	
+	if (testresults[tests[newptr][cTestname]]  && testresults[tests[newptr][cTestname]][0].status) document.getElementById('status').className = testresults[tests[newptr][cTestname]][0].status
+	else document.getElementById('status').className = ''
+	if (testresults[tests[newptr][cTestname]]  && testresults[tests[newptr][cTestname]][0].notes) document.getElementById('notes').value = testresults[tests[newptr][cTestname]][0].notes
+	else document.getElementById('notes').value = ''
+	
+
 	//document.getElementById('detailedresults').href = 'http://w3c-test.org/framework/details/'+base+'/'+tests[newptr][0];
 	}
 
 
 
-function adddata (testname, result) { 
+function getNotes () {
+	var notes = document.getElementById('notes').value
+	if (typeof notes === 'undefined') notes = ''
+	document.getElementById('notes').value = ''
+	return notes
+	}
+
+
+
+function adddata (testname, result, notes) { 
 	var currentdate = new Date(); 
 	var datetime = currentdate.getDate() + "-"
                 + (currentdate.getMonth()+1)  + "-" 
@@ -58,11 +73,12 @@ function adddata (testname, result) {
                 + currentdate.getSeconds();
 	
 	if (testresults[testname] ) {
-		testresults[testname][testresults[testname].length] = { browser: _browsertype, status: result, ua: navigator.userAgent, date: datetime };
+		//testresults[testname][testresults[testname].length] = { browser: _browsertype, status: result, ua: navigator.userAgent, date: datetime, 'notes':notes }
+		testresults[testname][0] = { browser: _browsertype, status: result, ua: navigator.userAgent, date: datetime, 'notes':notes }
 		}
 	else { 
 		testresults[testname] = new Array();
-		testresults[testname][testresults[testname].length] = { browser: _browsertype, status: result, ua: navigator.userAgent, date: datetime };
+		testresults[testname][testresults[testname].length] = { browser: _browsertype, status: result, ua: navigator.userAgent, date: datetime, 'notes':notes }
 		}
 	}
 
@@ -70,6 +86,7 @@ function adddata (testname, result) {
 function setUpScoring () {
 	document.getElementById('scoring').style.display = "block";
 	document.getElementById('resultsButton').style.display = "block";
+	document.getElementById('notes').style.display = "block";
 	}
 	
 function dump () { 

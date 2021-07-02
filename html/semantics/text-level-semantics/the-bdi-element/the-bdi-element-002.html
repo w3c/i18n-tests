@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>bdi first-strong</title>
+<meta name="assert" content="The bdi element applies base direction based on the first strong directional character it contains.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">
+<link rel="stylesheet" href="../../../../resources/metadata_styles.css">
+<script src="../../../../resources/metadata_code.js"> </script>
+<style type="text/css">/* this is not part of the test */
+@font-face {
+    font-family: 'hewebfont';
+    src: url('../../../../fonts/noto/NotoSerifHebrew-regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+.test, .ref { width: 90%; margin: 0 4%; font-family: hewebfont; font-size: 2.5em; position: absolute; top: 0; }
+.ref { color: red; z-index: -100; }
+</style>
+</head>
+
+<body>
+<p class="instructions" dir="ltr">Test passes if you see no clearly visible, red character strokes.</p>
+<div style="position: relative;">
+<div class="test">
+<div dir="ltr">aaa <bdi>&#x5d1;&#x5d1;&#x5d1; ccc</bdi> ddd</div>
+<div dir="rtl">&#x5d0;&#x5d0;&#x5d0; <bdi>bbb &#x5d2;&#x5d2;&#x5d2;</bdi> &#x5d3;&#x5d3;&#x5d3;</div>
+</div>
+<div class="ref">
+<div dir="ltr">&#x202d;aaa ccc &#x5d1;&#x5d1;&#x5d1; ddd&#x202c;</div>
+<div dir="rtl">&#x202d;&#x5d3;&#x5d3;&#x5d3; bbb &#x5d2;&#x5d2;&#x5d2; &#x5d0;&#x5d0;&#x5d0;&#x202c;</div>
+</div>
+</div>
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>the Unicode Bidirectional Algorithm causes a Hebrew letter followed by a number in memory to display to the left of the letter by default.  This test surrounds the number with <code>bdi</code> in order to isolate it from the letter's bidi effect.</li>
+<li>It repeats this test for a RTL and LTR surrounding context.</li>
+<li>Reference text is drawn in red behind the test text, and will show through if the order is incorrect. (&amp;#x202d; is LRO, &amp;#x202d; is PDF.)</li>
+</ul>
+</div>
+</body>
+</html>

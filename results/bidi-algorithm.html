@@ -15,7 +15,7 @@ f.previousauthors = '' // as above
 f.modifiers = '' // people making substantive changes, and their affiliation
 f.searchString = 'results-bidi-algorithm' // blog search string - usually the filename without extensions
 f.firstPubDate = '2015-03-02' // date of the first publication of the document (after review)
-f.lastSubstUpdate = { date:'2015-03-02', time:'15:20'}  // date and time of latest substantive changes to this document
+f.lastSubstUpdate = { date:'2019-01-20', time:'15:20'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
 f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
@@ -56,40 +56,27 @@ f.additionalLinks = ''
 
 <section>
   <div id="audience">
-    <!--p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know whether browsers support the CSS Ruby spec.</p-->
+	<div class="pageInstructions">
+	<p>To run the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser tested. </p>
+	<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p--></div>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
 
-			<section> 
-                <p> These tests check whether user agents apply the basic Unicode Bidirectional Algorithm (UBA) to text. In particular they test isolation  when using RLI, LRI, or FSI, ... PDI, and bracket balancing.</p>
-              <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
-<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
-      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
-      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
-    </tr>
-  </tbody>
-</table>
-			</section>
-		</section>
+<section> 
+<p> These tests check whether user agents apply the basic Unicode Bidirectional Algorithm (UBA) to text. In particular they test isolation  when using RLI, LRI, or FSI, ... PDI, and bracket balancing.</p>
+<p>The Unicode Bidirectional Algorithm is responsible for arranging a sequence  of mixed direction characters in memory (ordered undirectionally) into a bidirectional visual output. In doing so, it makes certain assumptions about the relationships between adjacent runs of opposite direction text. These assumptions don't always hold, and the Unicode formatting code points (RLI, etc.) provide hints to help in the process.</p>
+<p>The formatting characters examined here all come in pairs (RLI/LRI/FSI ... PDI), and prevent the effects of the bidi algorithm interacting with content outside of the text they encompass. As an example: in a left-to-right page, such as this, a sequence of Hebrew or Arabic characters followed in memory by a number will by default position the number to the left of the Hebrew/Arabic, eg. <span style="color:tan;">Name &amp; age: القاهرة, 43</span>, rather than ordering items from left to right, as expected, ie. <span style="color:tan;">Name &amp; age: <bdi>القاهرة</bdi>, 43</span>. In plain text, the formatting characters RLI...PDI can be placed either side of the Arabic text to prevent this issue from arising. They do so by isolating the Arabic text from what surrounds it.</p>
+<p>These tests check whether those formatting characters produce the expected effect.</p>
+<p>Where the instructions tell you to look for red strokes, these strokes should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
+</section>
+</section>
 		
 
 <br style="clear:both;"/>
 <section>
 <h2 id="rli_etc"><a href="#rli_etc">Isolating formatting characters</a></h2>
 
-  <div class="notes">
-  <p class="notesheader">Notes</p>
-  <ol>
-  <li>Edge not only fails all these tests, but it also displays the formatting characters as small rectangles.</li>
-  </ol>
-  </div>
 
 <section>
   <h3 id="following_number"><a href="#following_number">Isolation from following number</a></h3>
@@ -270,12 +257,16 @@ drawResults(
 		]
 	 )
 
-
-
-
-
-
 </script>
+
+
+
+
+
+<section>
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>Thanks to the following people who submitted results: Lucas Werkmeister.</p>
 
 
 

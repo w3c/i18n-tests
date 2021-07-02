@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>border-end-start-radius (vlr)</title>
+<meta name="assert" content="The border-end-start-radius property affects the top right corner of the border around vertical LR text.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-logical-1/#border-radius-properties">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style>
+#container { position:relative; }
+#result { background-color: #0f0; border: 10px solid #0f0; width: 100px; height: 100px; writing-mode: vertical-lr; position: absolute; top:0; left: 0; margin-top: 0; z-index: -100; }
+.test { margin: 2em; font-size: 24px; border: 0; text-align: center; }
+#test { background-color: beige; border: 10px solid brown; width: 100px; height: 100px; writing-mode: vertical-lr; }
+/* the CSS above is not part of the test */
+
+#test { border-end-start-radius: 50px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the top right corner of the square is rounded.</p>
+
+
+<div id="container">
+<div class="test" id="result">&nbsp;</div>
+<div class="test" id="test">&nbsp;</div>
+</div>
+
+
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>writing-mode: vertical-rl is applied to the test box.</li>
+<li>The border-end-start-radius property applies a 30px value to the square test box.</li>
+</ul>
+</div>
+</body>
+</html>

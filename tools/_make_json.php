@@ -59,7 +59,7 @@ else { $firsttest = 0; }
 
 function getData ($t, $file, $base) {
 	// start with file name
-	$output = "tests[".$t."]=[\"".$file."\",";
+	$output = "[\"".$file."\",";
 
 	$filestring = file_get_contents("../$base/$file");
 	
@@ -87,8 +87,8 @@ function getData ($t, $file, $base) {
 		//preg_match("/<meta[\s]+name=['|\"]assert['|\"][\s]+content=['|\"]([^\"]*)['|\"]>/i", $filestring, $titletag);
 		$success = preg_match("/<meta[\s]+name=['|\"]assert['|\"][\s]+(id=['|\"]assert['|\"][\s])?content='([^\']*)'[\s]*[\/]?>/i", $filestring, $titletag);
 		if ($success == 0) { $success = preg_match("/<meta[\s]+name=['|\"]assert['|\"][\s]+(id=['|\"]assert['|\"][\s])?content=\"([^\"]*)\"[\s]*[\/]?>/i", $filestring, $titletag); }
-		if ($success) { $foundItem = str_replace("\n",' ', "\"".htmlspecialchars($titletag[2], ENT_QUOTES)."\"]\n"); $output .= $foundItem; }
-		else { $output .= "\"\"]\n"; }
+		if ($success) { $foundItem = str_replace("\n",' ', "\"".htmlspecialchars($titletag[2], ENT_QUOTES)."\"],\n"); $output .= $foundItem; }
+		else { $output .= "\"\"],\n"; }
 		
 		}
 	else { print "Could not open ".$file."\n"; }
@@ -112,7 +112,7 @@ var tests = new Array();
 </head>
 <body>
 <?php
-$out = "tests = []\n";
+$out = "tests = [\n\n";
 for ($t=0; $t<count($tests); $t++) {
 	$output = getData($t, $tests[$t], $base); 
 	$output .= "\n";
@@ -124,7 +124,7 @@ $levels = explode('/',$base);
 $backuppath = '';
 for ($i=0;$i<count($levels);$i++) { $backuppath .= '../'; }
 
-$out .= "tests[".$t."]=['".$backuppath."testend','','','','']\n";
+$out .= "['".$backuppath."testend','','','','']\n\n]\n// ".$t." tests.";
 
 	$numbytes = file_put_contents( '../batches/'.$_GET['batch'].'.json', "$out");
 	chmod("../batches/".$_GET['batch'].'.json', 0777);

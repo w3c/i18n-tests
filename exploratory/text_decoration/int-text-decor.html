@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Interactive test: text-decoration</title>
+<link rel="help" href="https://www.w3.org/TR/2018/WD-css-text-3-20180920/#line-breaking">
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>
+
+/* the CSS below is not part of the test */
+.test {
+margin: 40px 5%;
+width: 400px;
+font-size: 36px;
+border: 1px solid orange;
+height: 400px;
+overflow: hidden;
+padding: 40px;
+}
+</style>
+<script src="../../fonts/interactive_functions.js"> </script>
+<script>
+
+function setTextDecorationLine (value) {
+var tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+
+if (value === 'none' || value === 'spelling-error' || value === 'grammar-error'){
+	var boxes = document.querySelectorAll('input[name=textDecorationLine]')
+	for (let i=0;i<boxes.length;i++) boxes[i].checked = false
+	document.getElementById('textDecorationLine'+value).checked = true
+	}
+else {
+	document.getElementById('textDecorationLinenone').checked = false
+	document.getElementById('textDecorationLinespelling-error').checked = false
+	document.getElementById('textDecorationLinegrammar-error').checked = false
+	}
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textDecorationLine]')
+if (checkboxes[0].checked) value += 'none '
+if (checkboxes[1].checked) value += 'underline '
+if (checkboxes[2].checked) value += 'overline '
+if (checkboxes[3].checked) value += 'line-through '
+if (checkboxes[4].checked) value += 'spelling-error '
+if (checkboxes[5].checked) value += 'grammar-error '
+if (value === '') { 
+	value = 'none'
+	document.getElementById('textDecorationLinenone').checked = true
+	}
+
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationLine = value
+}
+
+
+function setTextUnderlinePosition (value) {
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+
+if (value === 'auto'){
+	boxes = document.querySelectorAll('input[name=textUnderlinePosition]')
+	for (i=0;i<boxes.length;i++) boxes[i].checked = false
+	document.getElementById('textUnderlinePosition'+value).checked = true
+	}
+else {
+	document.getElementById('textUnderlinePositionauto').checked = false
+	}
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textUnderlinePosition]')
+if (checkboxes[0].checked) value += 'auto '
+if (checkboxes[1].checked) value += 'from-font '
+if (checkboxes[2].checked) value += 'under '
+if (checkboxes[3].checked) value += 'left '
+if (checkboxes[4].checked) value += 'right '
+if (value === '') { 
+	value = 'auto'
+	document.getElementById('textUnderlinePositionauto').checked = true
+	}
+
+for (let i=0;i<tests.length;i++) tests[i].style.textUnderlinePosition = value
+}
+
+
+function setTextDecorationStyle (value) {
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationStyle = 'solid'
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationStyle = value
+}
+
+function setTextDecorationColor (value) {
+document.getElementById('textDecorationColor').value = value
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationColor = value
+}
+
+function setTextDecorationThickness (value) {
+document.getElementById('textDecorationThickness').value = value
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationThickness = value
+}
+
+function setTextUnderlineOffset (value) {
+document.getElementById('textUnderlineOffset').value = value
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+if (value=='') value = 'auto'
+for (let i=0;i<tests.length;i++) tests[i].style.textUnderlineOffset = value
+}
+
+function setTextDecorationSkipInk (value) {
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInk = 'auto'
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInk = value
+}
+
+
+function setTextDecorationSkipSpaces (value) {
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+
+if (value === 'none' || value === 'all'){
+	boxes = document.querySelectorAll('input[name=textDecorationSkipSpaces]')
+	for (i=0;i<boxes.length;i++) boxes[i].checked = false
+	document.getElementById('textDecorationSkipSpaces'+value).checked = true
+	}
+else {
+	document.getElementById('textDecorationSkipSpacesnone').checked = false
+	document.getElementById('textDecorationSkipSpacesall').checked = false
+	}
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textDecorationSkipSpaces]')
+if (checkboxes[0].checked) value += 'none '
+if (checkboxes[1].checked) value += 'all '
+if (checkboxes[2].checked) value += 'start '
+if (checkboxes[3].checked) value += 'end '
+if (value === '') { 
+	value = 'none'
+	document.getElementById('textDecorationSkipSpacesnone').checked = true
+	}
+
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipSpaces = value
+}
+
+
+
+function setTextDecorationSkipSpacesOLD (value) {
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipSpaces = 'start end'
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipSpaces = value
+}
+
+function setTextDecorationSkipInset (value) {
+tests = document.querySelectorAll('.test span')
+if (tests.length===0) tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInset = 'none'
+for (let i=0;i<tests.length;i++) tests[i].style.textDecorationSkipInset = value
+}
+
+
+function setWritingMode (value) {
+tests = document.querySelectorAll('.test')
+for (let i=0;i<tests.length;i++) tests[i].style.writingMode = value
+}
+
+</script>
+</head>
+<body>
+<h1>Interactive test: text-decoration</h1>
+
+
+<!-- BOILERPLATE SETTINGS AT THE TOP -->
+<p class="advice">
+Set the language <input id="language" type="text" onChange="setLanguage(this.value)"/> <button onClick="setLanguage(document.getElementById('language').value)">Apply</button><br/>
+
+Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="setFontSize(this.value)" type="range"/> 
+<span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>
+
+Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setFont(document.getElementById('fontFamily').value)">Apply</button>
+</p>
+
+<div class="advice">Adjust the width of the test boxes.<br/>
+<input id="boxWidth" min="10" max="1000" step="1" value="400" oninput="setBoxWidth(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="wSizeIndicator" style="font-size:80%;">400</span>px</div>
+
+<div class="advice">Adjust the height of the test box.<br/>
+<input id="boxHeight" min="10" max="1000" step="1" value="400" oninput="setBoxHeight(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="vSizeIndicator" style="font-size:80%;">400</span>px</div>
+
+
+<!-- INPUT AREA -->
+<div><textarea id="in" dir="auto" type="text" placeholder="Add text to be tested text here and click on GO."></textarea> 
+<button onClick="setText(document.getElementById('in').value)" id="go" style="vertical-align: top;">Go</button></div>
+
+
+
+<!-- TESTS -->
+<div class="test" id="normal" dir="auto"></div>
+
+
+<!-- CONTROLS -->
+<p class="advice">If you include one or more spans in the test, only the text inside the span(s) will have the style applied to them. None of the following are set in the file by default. Unless overridden in the URL parameters, the highlighted values show initial settings.</p>
+
+<p><fieldset><legend><code>text-decoration-line:</code></legend>
+<label onClick="setTextDecorationLine('none')"><input type="checkbox" value="none"  id="textDecorationLinenone" name="textDecorationLine"/><code>none</code></label>
+| [
+<label onClick="setTextDecorationLine('underline')"><input type="checkbox" value="underline" id="textDecorationLineunderline" name="textDecorationLine"/><code>underline</code></label> ||
+<label onClick="setTextDecorationLine('overline')"><input type="checkbox" value="overline" id="textDecorationLineoverline" name="textDecorationLine"/><code>overline</code></label> ||
+<label onClick="setTextDecorationLine('line-through')"><input type="checkbox" value="line-through" id="textDecorationLineline-through" name="textDecorationLine"/><code>line-through</code></label> 
+] |
+<label onClick="setTextDecorationLine('spelling-error')"><input type="checkbox" value="spelling-error" id="textDecorationLinespelling-error" name="textDecorationLine"/><code>spelling-error</code></label> |
+<label onClick="setTextDecorationLine('grammar-error')"><input type="checkbox" value="grammar-error" id="textDecorationLinegrammar-error" name="textDecorationLine"/><code>grammar-error</code></label> 
+</fieldset>
+</p>
+
+
+<p><fieldset><legend><code>text-underline-position:</code></legend>
+<label onClick="setTextUnderlinePosition('auto')"><input type="checkbox" value="auto"  id="textUnderlinePositionauto" name="textUnderlinePosition"/>
+<code>auto</code></label>
+| [
+<label onClick="setTextUnderlinePosition('from-font')"><input type="checkbox" value="from-font" id="textUnderlinePositionfrom-font" name="textUnderlinePosition"/>
+<code>from-font</code></label>
+|
+<label onClick="setTextUnderlinePosition('under')"><input type="checkbox" value="under" id="textUnderlinePositionunder" name="textUnderlinePosition"/>
+<code>under</code></label>
+ ] || [
+<label onClick="setTextUnderlinePosition('left')"><input type="checkbox" value="left" id="textUnderlinePositionleft" name="textUnderlinePosition"/>
+<code>left</code></label> 
+ |
+<label onClick="setTextUnderlinePosition('right')"><input type="checkbox" value="right" id="textUnderlinePositionright" name="textUnderlinePosition"/>
+<code>right</code></label>
+ ]
+</fieldset>
+</p>
+
+
+
+
+<!--p><code>text-underline-position:</code>
+<label onClick="setTextUnderlinePosition('auto')"><input type="radio" value="auto" checked id="textUnderlinePositionauto" name="textUnderlinePosition"/><code>auto</code></label>
+<label onClick="setTextUnderlinePosition('from-font')"><input type="radio" value="from-font" id="textUnderlinePositionfrom-font" name="textUnderlinePosition"/><code>from-font</code></label>
+<label onClick="setTextUnderlinePosition('under')"><input type="radio" value="under" id="textUnderlinePositionunder" name="textUnderlinePosition"/><code>under</code></label>
+<label onClick="setTextUnderlinePosition('left')"><input type="radio" value="left" id="textUnderlinePositionleft" name="textUnderlinePosition"/><code>left</code></label>
+<label onClick="setTextUnderlinePosition('right')"><input type="radio" value="right" id="textUnderlinePositionright" name="textUnderlinePosition"/><code>right</code></label><br>
+
+<span class="proprietary"><code>[Proprietary]</code> 
+<label onClick="setRubyAlign('distributed-letter')"><input type="radio" value="distributed-letter" id="rubyAligndistributed-letter" name="rubyAlign"/>
+<code>distributed-letter</code></label>
+<label onClick="setRubyAlign('distributed-space')"><input type="radio" value="distributed-space" id="rubyAligndistributed-space" name="rubyAlign"/>
+<code>distributed-space</code></label>
+</span>
+</p-->
+
+<p><code>text-decoration-style:</code>
+<label onClick="setTextDecorationStyle('solid')"><input type="radio" value="solid" checked id="textDecorationStylesolid" name="textDecorationStyle"/><code>solid</code></label>
+<label onClick="setTextDecorationStyle('double')"><input type="radio" value="double" id="textDecorationStyledouble" name="textDecorationStyle"/><code>double</code></label>
+<label onClick="setTextDecorationStyle('dotted')"><input type="radio" value="dotted" id="textDecorationStyledotted" name="textDecorationStyle"/><code>dotted</code></label>
+<label onClick="setTextDecorationStyle('dashed')"><input type="radio" value="dashed" id="textDecorationStyledashed" name="textDecorationStyle"/><code>dashed</code></label>
+<label onClick="setTextDecorationStyle('wavy')"><input type="radio" value="wavy" id="textDecorationStylewavy" name="textDecorationStyle"/><code>wavy</code></label>
+</p>
+
+<p><code>text-decoration-color:</code>
+<label><input  onChange="setTextDecorationColor(this.value)" type="text" value="" id="textDecorationColor" placeholder="Colour name"></label>  <button onClick="setTextDecorationColor(document.getElementById('textDecorationColor').value)">Apply</button></p>
+
+<p><code>text-decoration-thickness:</code>
+<label><input  onChange="setTextDecorationThickness(this.value)" type="text" value="" id="textDecorationThickness" placeholder="auto|from-font|length|percentage" style="width: 20em;"></label> <button onClick="setTextDecorationThickness(document.getElementById('textDecorationThickness').value)">Apply</button></p>
+
+<p><code>text-underline-offset:</code>
+<label><input  onChange="setTextUnderlineOffset(this.value)" type="text" value="" id="textUnderlineOffset" placeholder="auto | length | percentage" style="width: 15em;"></label> <button onClick="setTextUnderlineOffset(document.getElementById('textUnderlineOffset').value)">Apply</button></p>
+
+
+<p><code>text-decoration-skip-ink:</code>
+<label onClick="setTextDecorationSkipInk('auto')"><input type="radio" value="auto" checked id="textDecorationSkipInkauto" name="textDecorationSkipInk"/><code>auto</code></label>
+<label onClick="setTextDecorationSkipInk('none')"><input type="radio" value="none" id="textDecorationSkipInknone" name="textDecorationSkipInk"/><code>none</code></label>
+<label onClick="setTextDecorationSkipInk('all')"><input type="radio" value="all" id="textDecorationSkipInkall" name="textDecorationSkipInk"/><code>all</code></label>
+</p>
+
+
+
+<p><fieldset><legend><code>text-decoration-skip-spaces:</code></legend>
+<label onClick="setTextDecorationSkipSpaces('none')"><input type="checkbox" value="none"  id="textDecorationSkipSpacesnone" name="textDecorationSkipSpaces"/>
+<code>none</code></label>
+|
+<label onClick="setTextDecorationSkipSpaces('all')"><input type="checkbox" value="all" id="textDecorationSkipSpacesall" name="textDecorationSkipSpaces"/>
+<code>all</code></label>
+| [
+<label onClick="setTextDecorationSkipSpaces('start')"><input type="checkbox" value="start" id="textDecorationSkipSpacesstart" name="textDecorationSkipSpaces"/>
+<code>start</code></label>
+ ||
+<label onClick="setTextDecorationSkipSpaces('end')"><input type="checkbox" value="end" id="textDecorationSkipSpacesend" name="textDecorationSkipSpaces"/>
+<code>end</code></label> 
+ ]
+</fieldset>
+</p>
+
+
+<!--p><code>text-decoration-skip-spaces:</code>
+<label onClick="setTextDecorationSkipSpaces('none')"><input type="radio" value="none" id="textDecorationSkipSpacesnone" name="textDecorationSkipSpaces"/><code>none</code></label>
+<label onClick="setTextDecorationSkipSpaces('all')"><input type="radio" value="all" id="textDecorationSkipSpacesall" name="textDecorationSkipSpaces"/><code>all</code></label>
+<label onClick="setTextDecorationSkipSpaces('start')"><input type="radio" value="start" checked id="textDecorationSkipSpacesstart" name="textDecorationSkipSpaces"/><code>start</code></label>
+<label onClick="setTextDecorationSkipSpaces('end')"><input type="radio" value="end" id="textDecorationSkipSpacesend" name="textDecorationSkipSpaces"/><code>end</code></label>
+</p-->
+
+<p><code>text-decoration-skip-inset:</code>
+<label onClick="setTextDecorationSkipInset('none')"><input type="radio" value="none" id="textDecorationSkipInsetnone" checked name="textDecorationSkipInset"/><code>none</code></label>
+<label onClick="setTextDecorationSkipInset('auto')"><input type="radio" value="auto" id="textDecorationSkipInsetauto" name="textDecorationSkipInset"/><code>auto</code></label>
+</p>
+
+<p><code>writing-mode:</code>
+<label onClick="setWritingMode('horizontal-tb')"><input type="radio" checked value="horizontal-tb" id="writingModehorizontal-tb" name="writingMode"/>
+<code>horizontal-tb</code></label>
+<label onClick="setWritingMode('vertical-rl')"><input type="radio" value="vertical-rl" id="writingModevertical-rl" name="writingMode"/>
+<code>vertical-rl</code></label>
+<label onClick="setWritingMode('vertical-lr')"><input type="radio" value="vertical-lr" id="writingModevertical-lr" name="writingMode"/>
+<code>vertical-lr</code></label>
+<label onClick="setWritingMode('sideways-rl')"><input type="radio" value="sideways-rl" id="writingModesideways-rl" name="writingMode"/>
+<code>sideways-rl</code></label>
+<label onClick="setWritingMode('sideways-lr')"><input type="radio" value="sideways-lr" id="writingModesideways-lr" name="writingMode"/>
+<code>sideways-lr</code></label>
+</p>
+
+
+<!-- INFO -->
+<div id="info" style="clear: both; position: inherit;">
+<ul class="notes">
+<li>More tests: 
+<a href="https://github.com/w3c/i18n-tests/wiki/List-of-interactive-tests-&-results">List of interactive tests &amp; results</a> &bull;
+<a href="https://github.com/w3c/character_phrase_tests/issues">Character &amp; phrase test repo</a> &bull;
+<a href="https://w3c.github.io/i18n-tests/results/int-text-decoration">Text decoration results</a>
+</li>
+<li>Spec links: <a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-line-property">text-decoration-line</a> &bull;
+<a href="https://drafts.csswg.org/css-text-decor-3/#text-underline-position-property">text-underline-position</a> &bull;
+<a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-style-property">text-decoration-style</a> &bull;
+<a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-color-property">text-decoration-color</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#text-decoration-width-property">text-decoration-thickness</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#underline-offset">text-underline-offset</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#text-decoration-skip-ink-property">text-decoration-skip-ink</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#text-decoration-skip-spaces-property">text-decoration-skip-spaces</a> &bull;
+<a href="https://www.w3.org/TR/css-text-decor-4/#text-decoration-skip-inset-property">text-decoration-skip-inset</a>
+</li>
+<li>Browser: <span id="version"></span></li>
+<li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
+</ul>
+</div>
+<script>
+document.getElementById('version').innerHTML = navigator.userAgent
+
+
+// check for parameters and take appropriate action
+parameters = location.search.split('&')
+parameters[0] = parameters[0].substring(1)
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'lang' && pairs[1]) setLanguage( pairs[1] )
+	if (pairs[0] == 'fontSize' && pairs[1]) {
+					setFontSize(decodeURIComponent(pairs[1])) 
+					document.getElementById('fontSize').value = decodeURIComponent(pairs[1])
+					}
+	if (pairs[0] == 'fontFamily' && pairs[1]) {
+					setFont(decodeURIComponent(pairs[1]))
+					document.getElementById('fontFamily').value = decodeURIComponent(pairs[1])
+					}
+	if (pairs[0] == 'width' && pairs[1]) { 
+					setBoxWidth(pairs[1])
+					document.getElementById('boxWidth').value = pairs[1]
+					}
+	if (pairs[0] == 'height' && pairs[1]) { 
+					setBoxHeight(pairs[1])
+					document.getElementById('boxHeight').value = pairs[1]
+					}
+
+
+	if (pairs[0] == 'text' && pairs[1]) { 
+					document.getElementById('in').value = decodeURIComponent(pairs[1])
+					setText(decodeURIComponent(pairs[1]))
+					}
+
+
+	if (pairs[0] == 'textDecorationLine' && pairs[1]) {
+					values = decodeURIComponent(pairs[1]).split(' ')
+					for (let i=0;i<values.length;i++) {
+						document.getElementById('textDecorationLine'+values[i]).checked = true
+						console.log(document.querySelector('.test'))
+						setTextDecorationLine(values[i])
+						}
+					}
+	if (pairs[0] == 'textUnderlinePosition' && pairs[1]) {
+					values = decodeURIComponent(pairs[1]).split(' ')
+					for (let i=0;i<values.length;i++) {
+						document.getElementById('textUnderlinePosition'+values[i]).checked = true
+						setTextUnderlinePosition(values[i])
+						}
+					}
+	if (pairs[0] == 'textDecorationStyle' && pairs[1]) {
+					setTextDecorationStyle(decodeURIComponent(pairs[1])) 
+					document.getElementById('textDecorationStyle'+decodeURIComponent(pairs[1])).checked = true 
+					}
+	if (pairs[0] == 'textDecorationColor' && pairs[1]) {
+					setTextDecorationColor(decodeURIComponent(pairs[1])) 
+					}
+	if (pairs[0] == 'textDecorationThickness' && pairs[1]) {
+					setTextDecorationThickness(decodeURIComponent(pairs[1])) 
+					}
+	if (pairs[0] == 'textUnderlineOffset' && pairs[1]) {
+					setTextUnderlineOffset(decodeURIComponent(pairs[1])) 
+					}
+	if (pairs[0] == 'textDecorationSkipInk' && pairs[1]) {
+					setTextDecorationSkipInk(decodeURIComponent(pairs[1])) 
+					document.getElementById('textDecorationSkipInk'+decodeURIComponent(pairs[1])).checked = true 
+					}
+	if (pairs[0] == 'textDecorationSkipSpaces' && pairs[1]) {
+					values = decodeURIComponent(pairs[1]).split(' ')
+					for (let i=0;i<values.length;i++) {
+						document.getElementById('textDecorationSkipSpaces'+values[i]).checked = true
+						setTextDecorationSkipSpaces(values[i])
+						}
+					}
+	if (pairs[0] == 'textDecorationSkipInset' && pairs[1]) {
+					setTextDecorationSkipInset(decodeURIComponent(pairs[1])) 
+					document.getElementById('textDecorationSkipInset'+decodeURIComponent(pairs[1])).checked = true 
+					}
+
+	if (pairs[0] == 'writingMode' && pairs[1]) {
+					setWritingMode(decodeURIComponent(pairs[1])) 
+					document.getElementById('writingMode'+decodeURIComponent(pairs[1])).checked = true 
+					}
+	}
+
+
+function snapParameters () {
+// take a snapshot of the settings of the page and make available as URL parameters
+// this can be picked up by the user to point to the current setup of the page
+
+out = "https://w3c.github.io/i18n-tests/exploratory/text_decoration/int-text-decor.html?"
+if (document.getElementById('language') && document.getElementById('language').value != '') out += 'lang='+document.getElementById('language').value
+if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+encodeURIComponent(document.getElementById('fontSize').value)
+if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+encodeURIComponent(document.getElementById('fontFamily').value)
+if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
+if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textDecorationLine]')
+if (checkboxes[0].checked) value += 'none '
+if (checkboxes[1].checked) value += 'underline '
+if (checkboxes[2].checked) value += 'overline '
+if (checkboxes[3].checked) value += 'line-through '
+if (checkboxes[4].checked) value += 'spelling-error '
+if (checkboxes[5].checked) value += 'grammar-error '
+out += '&textDecorationLine='+encodeURIComponent(value.trim())
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textUnderlinePosition]')
+if (checkboxes[0].checked) value += 'auto '
+if (checkboxes[1].checked) value += 'from-font '
+if (checkboxes[2].checked) value += 'under '
+if (checkboxes[3].checked) value += 'left '
+if (checkboxes[4].checked) value += 'right '
+out += '&textUnderlinePosition='+encodeURIComponent(value.trim())
+
+//out += '&textUnderlinePosition='+ encodeURIComponent(document.querySelector('input[name="textUnderlinePosition"]:checked').value)
+out += '&textDecorationStyle='+encodeURIComponent(document.querySelector('input[name="textDecorationStyle"]:checked').value)
+out += '&textDecorationColor='+encodeURIComponent(document.getElementById('textDecorationColor').value)
+out += '&textDecorationThickness='+encodeURIComponent(document.getElementById('textDecorationThickness').value)
+out += '&textUnderlineOffset='+encodeURIComponent(document.getElementById('textUnderlineOffset').value)
+out += '&textDecorationSkipInk='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipInk"]:checked').value)
+
+value = ''
+checkboxes = document.querySelectorAll('input[name=textDecorationSkipSpaces]')
+if (checkboxes[0].checked) value += 'none '
+if (checkboxes[1].checked) value += 'all '
+if (checkboxes[2].checked) value += 'start '
+if (checkboxes[3].checked) value += 'end '
+out += '&textDecorationSkipSpaces='+encodeURIComponent(value.trim())
+
+//out += '&textDecorationSkipSpaces='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipSpaces"]:checked').value)
+out += '&textDecorationSkipInset='+encodeURIComponent(document.querySelector('input[name="textDecorationSkipInset"]:checked').value)
+'&writingMode='+encodeURIComponent(document.querySelector('input[name="writingMode"]:checked').value)
+
+if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
+
+out += '&text='+encodeURIComponent(document.getElementById('in').value)
+return out
+}
+</script>
+</body>
+</html>

@@ -63,18 +63,19 @@ function initialise () {
 </head>
 <body onLoad="initialise()">
 <p id="title" class="title">HTTP charset</p>
-<p id="scoring" style="display:none;"><button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'pass'); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Pass</button>
-<button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'fail'); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Fail</button>
-<button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'partial'); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Partial</button>
-<button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'skipped'); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Skip</button>  &nbsp;&nbsp; 
+<p id="scoring" style="display:none;"><button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'pass',getNotes()); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Pass</button>
+<button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'fail',getNotes()); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Fail</button>
+<button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'partial', getNotes()); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Partial</button>
+<button onClick="if (_browsertype == '') { alert('Select a browser!'); return;} adddata(tests[ptr][cTestname], 'skipped', getNotes()); if (ptr<tests.length-1) {ptr++; setTest(ptr, base); }">Skip</button>  &nbsp;&nbsp; 
 <select onChange="_browsertype = this.value">
 <option value="">Select a browser</option>
 <optgroup label="desktop">
-<option value="Firefox">Firefox</option>
-<option value="Chrome">Chrome</option>
-<option value="Opera">Opera</option>
-<option value="Safari">Safari</option>
-<option value="Edge">Edge</option>
+<option value="Firefox">Firefox (Gecko)</option>
+<option value="Chrome">Chrome (Blink)</option>
+<option value="BlinkEdge">Edge (Blink)</option>
+<option value="Safari">Safari (Webkit)</option>
+<option value="Opera">Opera (Blink)</option>
+<option value="Edge">Edge (EdgeHTML)</option>
 <option value="Internet Explorer">Internet Explorer</option>
 </optgroup>
 <optgroup label="nightlies">
@@ -94,6 +95,8 @@ function initialise () {
 </select>
 </p>
 
+
+<div style="display: flex;"><span id="status" style="display: inline-block; width:1.4em;height:1.4em;border-radius:.7em; text-align: center; vertical-align: middle;margin-right: 1em; border: 1px dotted #ccc;" class=""> </span><textarea id="notes" placeholder="Add any notes here before clicking above. Particularly for partial passes." style="width: 60%; height:2em; border:1px dotted #ccc; background-color: white; display: none;"></textarea></div>
 
 <iframe name="testframe" id="testframe" src="none.html">Test framework not supported</iframe>
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>ruby-position: over</title>
+<meta name="assert" content="ruby-position:over will make ruby appear over the base in horizontal Chinese text.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#rubypos">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#rubypos">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style type="text/css">
+.test { margin: 20px;  padding: 40px; font-size: 110px; }
+rt { color: blue; }
+</style>
+<style type="text/css">/* this is the test */
+ruby { ruby-position: over; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the ruby text appears over the base.</p>
+<div class="test" lang="zh-hans"><ruby>汉<rt>hàn</rt>语<rt>yǔ</rt></ruby></div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li><code>ruby-position</code> is set to <code>over</code>.</li>
+<li>The markup is <code>&lt;ruby&gt;汉&lt;rt&gt;hàn&lt;/rt&gt;语&lt;rt&gt;yǔ&lt;/rt&gt;&lt;/ruby&gt;</code>.
+<li>The default position for HTML ruby is over, so it is difficult to ascertain whether this test is actually producing an effect. At least we can test that no harm is done.</li>
+</ul>
+</div>
+</body>
+</html>

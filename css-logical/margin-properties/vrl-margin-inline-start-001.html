@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>margin-inline-start (vrl)</title>
+<meta name="assert" content="The margin-inline-start property produces a margin above a line of vertical text.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-logical-1/#margin-properties">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style>
+#test { writing-mode: vertical-rl; margin: 2em; font-size: 24px; padding: 0; background-color: #0f0; border: 1px solid white; width: 100px; }
+#margin { background-color: #fc3; width: 100px; }
+/* the CSS above is not part of the test */
+
+#margin { margin-inline-start: 50px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the arrowheads point to a green rectangle.</p>
+
+
+<div class="test" id="test">
+<div id="margin">&lt;&lt;&lt;</div>
+</div>
+
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>writing-mode: vertical-rl is set on the test box.</li>
+<li>A container box has a div inside it. The margin-block-end property is applied to that div. It should produce a margin that lets through the green colour of the container box.</li>
+</ul>
+</div>
+</body>
+</html>

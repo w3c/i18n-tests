@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>border-block-end-width</title>
+<meta name="assert" content="The border-block-end-width property affects the border to the right in vertical text where lines run left to right.">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-logical-1/#border-width">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style>
+.test { margin: 2em; font-size: 24px; border: 0; text-align: center; }
+#test { background-color: beige; border: 1px solid brown; width: 100px; height: 100px; writing-mode: vertical-lr; }
+/* the CSS above is not part of the test */
+
+#test { border-block-end-width: 20px; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if the arrowheads point to a heavy border.</p>
+
+
+<div class="test" id="test">^^^</div>
+
+
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>The border-block-end property applies a 20px border to the square test box.</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>ruby-position: under, pinyin (v)</title>
+<meta name="assert" content="ruby-position:under for vertical text with pinyin annotations will make ruby appear to the left of the base, with pinyin characters rotated and running down the page.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#rubypos">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#rubypos">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style type="text/css">
+.test { margin: 20px;  padding: 40px; font-size: 110px; }
+rt { color: blue; }
+</style>
+<style type="text/css">/* this is the test */
+.test { -webkit-writing-mode: vertical-lr; writing-mode: tb-rl; writing-mode: vertical-rl; }
+ruby { ruby-position: under; }
+</style>
+</head>
+<body>
+<p class="instructions"><em>Skip if the text is not vertical.</em><br/>Test passes if the ruby text is set vertically to the left of the base, and the characters are rotated to run down the page.</p>
+<div class="test" lang="zh-hans"><ruby>汉<rt>hàn</rt>语<rt>yǔ</rt></ruby></div>
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li><code>ruby-position</code> is set to <code>under</code>.</li>
+<li>The markup is <code>&lt;ruby&gt;汉&lt;rt&gt;hàn&lt;/rt&gt;语&lt;rt&gt;yǔ&lt;/rt&gt;&lt;/ruby&gt;</code>.
+</ul>
+</div>
+</body>
+</html>

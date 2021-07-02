@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8" />
 <title>HTML5, dir isolation: Summarized test results</title>
-<meta name="description" content="Summary of results of CSS3 Text module tests" />
-<script type="text/javascript">
+<meta name="description" content="Summary of results of HTML5 tests" />
+<script>
 var f = { }
 
 // AUTHORS should fill in these assignments:
-f.directory = 'tests/repo/results'+'/' // the path to this file, not including /International or the file name
+f.directory = 'results'+'/' // the path to this file, not including i18n-tests or the file name
 f.filename = 'the-dir-attribute-isolation' // the file name WITHOUT extensions
 f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
 f.previousauthors = '' // as above
 f.modifiers = '' // people making substantive changes, and their affiliation
 f.searchString = 'results-the-dir-attribute-isolation' // blog search string - usually the filename without extensions
 f.firstPubDate = '2009-04-16' // date of the first publication of the document (after review)
-f.lastSubstUpdate = { date:'2017-02-21', time:'15:26'}  // date and time of latest substantive changes to this document
+f.lastSubstUpdate = { date:'2020-05-01', time:'11:44'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
-f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2017-02-21', time:'15:26'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2020-05-01', time:'11:44'} // date and time of latest edits to this document/translation
 f.contributors = 'Owen Leibman' // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 f.sources = '' // describes sources of information
 
 // TRANSLATORS should fill in these assignments:
-f.translators = 'xxxNAME, ORG' // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+f.translators = 'name, org' // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
 
 f.breadcrumb = 'tests'
 
 f.additionalLinks = ''
 </script>
-<script type="text/javascript" src="the-dir-attribute-isolation-data/translation.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
-<script type="text/javascript" src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
-<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
-<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" type="text/css" />
+<script src="the-dir-attribute-isolation-data/translation.js"> </script>
+<script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
+<script src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" />
 <link rel="copyright" href="#copyright"/>
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<link rel="stylesheet" href="results.css" type="text/css" />
-<script src="the-dir-attribute-isolation-data/data.js"></script>
-<script src="the-dir-attribute-isolation-data/manifest.js"></script>
-<script src="results-functions.js"></script>
+<link rel="stylesheet" href="results.css" />
+<script src="../batches/the-dir-attribute-isolation-data.js"></script>
+<script src="../batches/the-dir-attribute-isolation.json"></script>
+<script src="results-functions-k.js"></script>
 </head>
 
 <body>
@@ -51,145 +51,158 @@ f.additionalLinks = ''
   <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
   
   <h1>Summarized test results: <br>
-  HTML5, dir isolation</h1>
+HTML5, dir isolation</h1>
 </header>
 
 
 <section>
   <div id="audience">
-    <p><span id="intendedAudience" class="leadin">Intended audience:</span> 
-    users, HTML coders, script developers, CSS coders, Web project managers, and anyone who wants to know the dir attribute works in current browsers.</p>
+	<div class="pageInstructions">
+	<p>To run the test, or to see detailed, per character, results, click on the link in the left-most column. To see detailed results   click on a row and look just above the table. </p>
+<p>Where the instructions tell you to look for red strokes, these strokes should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p>
+	<!--p>Where the instructions tell you to look for red characters, these characters should be clearly discernable behind the black text of the test – ignore any anti-aliasing 'glow'.</p-->
+	<table class="results" style="margin-right: 32%;">
+	<tbody>
+	<tr>
+	<th style="min-width:8em; padding: .5em">Key:</th>
+	<td class="pass" style="min-width:8em; padding: .5em">pass</td>
+	<td class="fail" style="min-width:8em; padding: .5em">fail</td>
+	<td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
     <div id="updateInfo"></div><script>document.getElementById('updateInfo').innerHTML = g.updated</script>
     </div>
     
 
-			<section>
-			  <p>These tests check whether user agents apply  isolation around an element where the <code class="kw">dir</code> attribute is used, and treat it as a neutral character.</p>
-			  <p><a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">Section 3.2.5.6 The dir attribute</a> says that when values of <code class="kw" translate="no">dir</code> are <code class="kw" translate="no">rtl</code> or <code class="kw" translate="no">ltr</code> &quot;contents of the element are explicitly directionally isolated&quot;.</p>
-			  <p><a href="http://www.w3.org/TR/html5/dom.html#user-agent-conformance-criteria">Section 3.2.6.2 of the HTML5 specification</a>, part of the section <a href="https://html.spec.whatwg.org/multipage/dom.html#requirements-relating-to-the-bidirectional-algorithm">Requirements relating to the bidirectional algorithm</a>, says &quot;The following elements and attributes have requirements defined by the rendering section that, due to the requirements in this section, are requirements on all user agents (not just those that support the suggested default rendering)&quot;. <a href="http://www.w3.org/TR/html5/rendering.html#bidi-rendering">Section 10.3.5 Bidirectional text</a> expresses the expected rendering in terms of CSS.</p>
-			  <p>To see the test, click on the link in the left-most column. To see detailed results for a single test, click on a row and look just above the table. The detailed results show the date(s) the test result was recorded, and the version of the browser&nbsp;tested. </p>
-<p>Any dependencies are shown in notes above the table, and notes below the table will usually provide any additional useful information, including an explanation&nbsp;of why a result was marked as 'partially successful'.</p>
-<p><strong>Key:</strong></p>
-<table class="results" style="margin-right: 32%;">
-  <tbody>
-    <tr>
-      <td class="pass" style="min-width:8em; padding: .5em">pass</td>
-      <td class="fail" style="min-width:8em; padding: .5em">fail</td>
-      <td class="partial" style="min-width:8em; padding: .5em">partially successful</td>
-    </tr>
-  </tbody>
-</table>
-			</section>
-		</section>
-		
-
-<section>
-<h2 id="results"><a href="#results">Results</a></h2>
-<p> The tests do not use any vendor prefixes.</p>
+<section> 
+<p>These tests check whether user agents apply  isolation around an element where the <code class="kw">dir</code> attribute is used, and treat it as a neutral character.</p>
+<p><a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">Section 3.2.5.6 The dir attribute</a> says that when values of <code class="kw" translate="no">dir</code> are <code class="kw" translate="no">rtl</code> or <code class="kw" translate="no">ltr</code> &quot;contents of the element are explicitly directionally isolated&quot;.</p>
+<p><a href="http://www.w3.org/TR/html5/dom.html#user-agent-conformance-criteria">Section 3.2.6.2 of the HTML5 specification</a>, part of the section <a href="https://html.spec.whatwg.org/multipage/dom.html#requirements-relating-to-the-bidirectional-algorithm">Requirements relating to the bidirectional algorithm</a>, says &quot;The following elements and attributes have requirements defined by the rendering section that, due to the requirements in this section, are requirements on all user agents (not just those that support the suggested default rendering)&quot;. <a href="http://www.w3.org/TR/html5/rendering.html#bidi-rendering">Section 10.3.5 Bidirectional text</a> expresses the expected rendering in terms of CSS.</p>
+</section>
+</section>
 
 <!-- ·········································································· -->
 <br style="clear:both;"/>
 
-<!-- SECTION CONTAINERS GO HERE -->
-
+<!-- List of tests here -->
 <section>
-  <h3 id="basic"><a href="#basic">Basic dir isolation</a></h3>
-  <div id="basic-data"></div>
-</section>
-
-<section>
-<h3 id="inheritance"><a href="#inheritance">With CSS shim</a></h3>
-<p>The results below are for tests that use <a href="http://www.w3.org/International/articles/inline-bidi-markup/#cssshim">some CSS  that authors can apply</a> to simulate the effect of isolation of the <code class="kw" translate="no">dir</code> attribute. The Internationalization WG recommends that authors include that CSS for all their content until the <code class="kw" translate="no">dir</code> attribute supports isolation by default. </p>
-  <div id="inheritance-data"></div>
-</section>
-</section>
-
-
-
-<!-- ·········································································· -->
-
-<script> 	// DRAW THE TABLES
-  
+  <h2 id="basic"><a href="#basic">Basic tests</a></h2>
+<div id="basic-data"></div>
+<script>
 drawResults(
 	'basic', // sectionid 
 	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
-	'rli-etc', // batch
-	'3.2.5.6', // specsection
-	'http://www.w3.org/TR/html5/Overview.html#requirements-relating-to-the-bidirectional-algorithm', // uri 
-	'html5-text-direction', // related 
+	'the-dir-attribute-isolation', // batch
 	 [
-						'dir-isolation-001a.html',
-						'dir-isolation-001b.html',
-						'dir-isolation-001c.html',
-						'dir-isolation-002a.html',
-						'dir-isolation-002b.html',
-						'dir-isolation-002c.html',
-						'dir-isolation-003a.html',
-						'dir-isolation-003b.html',
-						'dir-isolation-003c.html',
-						'dir-isolation-004a.html',
-						'dir-isolation-004b.html',
-						'dir-isolation-004c.html',
-						'dir-isolation-005a.html',
-						'dir-isolation-005b.html',
-						'dir-isolation-005c.html',
-						'dir-isolation-006a.html',
-						'dir-isolation-006b.html',
-						'dir-isolation-006c.html',
-						'dir-isolation-007a.html',
-						'dir-isolation-007b.html',
-						'dir-isolation-007c.html',
-						'dir-isolation-008a.html',
-						'dir-isolation-008b.html',
-						'dir-isolation-008c.html',
-						'dir-isolation-009a.html',
-						'dir-isolation-009b.html',
-						'dir-isolation-009c.html',
+		'dir-isolation-001.html',
+		'dir-isolation-002.html',
 		]
 	 )
-
-drawResults(
-	'inheritance', // sectionid 
-	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
-	'rli-etc', // batch
-	'3.2.5.6', // specsection
-	'http://www.w3.org/TR/html5/Overview.html#requirements-relating-to-the-bidirectional-algorithm', // uri 
-	'html5-text-direction', // related 
-	 [
-						'dir-isolation-shim-001a.html',
-						'dir-isolation-shim-001b.html',
-						'dir-isolation-shim-001c.html',
-						'dir-isolation-shim-002a.html',
-						'dir-isolation-shim-002b.html',
-						'dir-isolation-shim-002c.html',
-						'dir-isolation-shim-003a.html',
-						'dir-isolation-shim-003b.html',
-						'dir-isolation-shim-003c.html',
-						'dir-isolation-shim-004a.html',
-						'dir-isolation-shim-004b.html',
-						'dir-isolation-shim-004c.html',
-						'dir-isolation-shim-005a.html',
-						'dir-isolation-shim-005b.html',
-						'dir-isolation-shim-005c.html',
-						'dir-isolation-shim-006a.html',
-						'dir-isolation-shim-006b.html',
-						'dir-isolation-shim-006c.html',
-						'dir-isolation-shim-007a.html',
-						'dir-isolation-shim-007b.html',
-						'dir-isolation-shim-007c.html',
-						'dir-isolation-shim-008a.html',
-						'dir-isolation-shim-008b.html',
-						'dir-isolation-shim-008c.html',
-						'dir-isolation-shim-009a.html',
-						'dir-isolation-shim-009b.html',
-						'dir-isolation-shim-009c.html',
-		]
-	 )
-
-
-
-
 </script>
+</section>
+
+
+
+<section>
+  <h2 id="other"><a href="#other">Other tests</a></h2>
+<p>These tests look at edge cases.</p>
+  <div id="other-data"></div>
+<script>
+drawResults(
+	'other', // sectionid 
+	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
+	'the-dir-attribute-isolation', // batch
+	 [
+		'dir-isolation-001a.html',
+		'dir-isolation-001b.html',
+		'dir-isolation-001c.html',
+		'dir-isolation-002a.html',
+		'dir-isolation-002b.html',
+		'dir-isolation-002c.html',
+		'dir-isolation-003a.html',
+		'dir-isolation-003b.html',
+		'dir-isolation-003c.html',
+		'dir-isolation-004a.html',
+		'dir-isolation-004b.html',
+		'dir-isolation-004c.html',
+		'dir-isolation-005a.html',
+		'dir-isolation-005b.html',
+		'dir-isolation-005c.html',
+		'dir-isolation-006a.html',
+		'dir-isolation-006b.html',
+		'dir-isolation-006c.html',
+		'dir-isolation-007a.html',
+		'dir-isolation-007b.html',
+		'dir-isolation-007c.html',
+		'dir-isolation-008a.html',
+		'dir-isolation-008b.html',
+		'dir-isolation-008c.html',
+		'dir-isolation-009a.html',
+		'dir-isolation-009b.html',
+		'dir-isolation-009c.html',
+		]
+	 )
+</script>
+</section>
+
+
+
+ <section>
+  <h2 id="shim"><a href="#shim">With CSS shim</a></h2>
+  
+  <p>The following tests are the same as those in the previous section, but use the following CSS shim to produce the needed isolation.</p>
+<pre style="margin-left: 10%;">
+[dir='ltr'], [dir='rtl'] {
+  unicode-bidi: -webkit-isolate;
+  unicode-bidi: -moz-isolate;
+  unicode-bidi: -ms-isolate;
+  unicode-bidi: isolate;
+  }
+</pre>
+
+<div id="shim-data"></div>
+<script>
+drawResults(
+	'shim', // sectionid 
+	'html/dom/elements/requirements-relating-to-bidirectional-algorithm-formatting-characters', // base
+	'the-dir-attribute-isolation', // batch
+	 [
+		'dir-isolation-shim-001a.html',
+		'dir-isolation-shim-001b.html',
+		'dir-isolation-shim-001c.html',
+		'dir-isolation-shim-002a.html',
+		'dir-isolation-shim-002b.html',
+		'dir-isolation-shim-002c.html',
+		'dir-isolation-shim-003a.html',
+		'dir-isolation-shim-003b.html',
+		'dir-isolation-shim-003c.html',
+		'dir-isolation-shim-004a.html',
+		'dir-isolation-shim-004b.html',
+		'dir-isolation-shim-004c.html',
+		'dir-isolation-shim-005a.html',
+		'dir-isolation-shim-005b.html',
+		'dir-isolation-shim-005c.html',
+		'dir-isolation-shim-006a.html',
+		'dir-isolation-shim-006b.html',
+		'dir-isolation-shim-006c.html',
+		'dir-isolation-shim-007a.html',
+		'dir-isolation-shim-007b.html',
+		'dir-isolation-shim-007c.html',
+		'dir-isolation-shim-008a.html',
+		'dir-isolation-shim-008b.html',
+		'dir-isolation-shim-008c.html',
+		'dir-isolation-shim-009a.html',
+		'dir-isolation-shim-009b.html',
+		'dir-isolation-shim-009c.html',
+		]
+	)
+</script>
+</section>
+
+
+
 
 
 
@@ -200,19 +213,15 @@ drawResults(
 <aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
 
 <ul id="full-links">
-  <li>
-    <p><a href="http://www.w3.org/TR/html5/dom.html#user-agent-conformance-criteria">3.2.6.2 User agent conformance criteria</a></p>
-  </li>
-  <li>
-		  <p><a href="/International/tests/">i18n test suite home</a></p>
-	  </li>
+    <li><a href="http://www.w3.org/TR/html5/dom.html#user-agent-conformance-criteria">3.2.6.2 User agent conformance criteria</a></li>
+    <li><a href="http://www.w3.org/International/tests/">Related tests</a></li>
 	</ul>
 </section>
 
-<footer id="thefooter"></footer><script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
-<script type="text/javascript">completePage()</script>
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
 
-<script type="text/javascript">  
+<script>  
 generateStuffInPage();
 </script>
 </body>

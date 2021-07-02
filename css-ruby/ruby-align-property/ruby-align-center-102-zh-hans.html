@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>ruby-align: center, long annotation, pinyin (v)</title>
+<meta name="assert" content="ruby-align:center will centre Simplified Chinese base text shorter than the annotation, and set it solid.">
+<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
+<link rel="help" href="https://drafts.csswg.org/css-ruby-1/#ruby-align-property">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#ruby-align-property">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
+<style type="text/css">/* this is not part of the test */
+.test { margin: 20px;  padding: 40px; font-size: 110px; }
+.test { -webkit-writing-mode: vertical-lr; writing-mode: tb-rl; writing-mode: vertical-rl; }
+rt { color: blue; }
+</style>
+<style type="text/css">/* this is the test */
+ruby { ruby-align: center; }
+</style>
+</head>
+<body>
+<p class="instructions"><em>Skip if the text is not vertical.</em><br/>Test passes if the base text is centered relative to the annotation text, and set solid.</p>
+
+<div class="test" lang="zh-hans"><ruby><rb>崇禎</rb><rt>Chóngzhēn</rt></ruby></div>
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li>In this test the base text is shorter than the annotation.</li>
+<li><code>ruby-align</code> is set to <code>center</code>. The markup is <code>lang=&quot;zh-hans&quot;&gt;&lt;ruby&gt;&lt;rb&gt;BASE&lt;/rb&gt;&lt;rt&gt;annotation&lt;/rt&gt;&lt;/ruby&gt;</code>.</li>
+</ul>
+</div>
+</body>
+</html>

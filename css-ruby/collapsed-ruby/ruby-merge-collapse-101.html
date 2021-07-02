@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <title>ruby-merge: collapse (v)</title>
 <meta name="assert" content="ruby-merge:collapse will render all annotations evenly across the base text.">
-<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
-<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#collapsed-ruby">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
 <link rel="help" href="https://drafts.csswg.org/css-ruby-1/#collapsed-ruby">
+<link rel="help" href="http://www.w3.org/TR/css-ruby-1/#collapsed-ruby">
+<link rel="stylesheet" href="../../resources/metadata_styles.css">
+<script src="../../resources/metadata_code.js"> </script>
 <style type="text/css">
 .test { margin: 20px;  padding: 40px; font-size: 110px; }
 rt { color: blue; }
@@ -18,9 +20,13 @@ ruby { ruby-merge: collapse; }
 </style>
 </head>
 <body>
-<p class="instructions">Skip if the text is not vertical.<br/>Test passes if the text is vertical and the annotation characters are spread evenly across both the base characters.</p>
+<p class="instructions"><em>Skip if the text is not vertical.</em><br/>Test passes if the text is vertical and the annotation characters are spread evenly across all the base characters.</p>
 <div class="test" lang="ja"><ruby><rb>思</rb><rt>し</rt><rb>春</rb><rt id="middle">しゅん</rt><rb>期</rb><rt>き</rt></ruby></div>
-<!-- Notes:
--->
+
+<div id="info">
+<div id="assertion"></div><script>showAssertion()</script>
+<ul class="notes">
+<li><code>ruby-merge</code> is set to <code>collapse</code>, the language is set to <code>ja</code>, and the markup model is BaBaaaBa.</li>
+</ul>
 </body>
 </html>

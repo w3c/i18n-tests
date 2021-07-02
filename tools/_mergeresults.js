@@ -2,11 +2,13 @@ function convert () {
 // convert the input data to an object
 var resultStr = document.getElementById('newresults').value
 resultStr = resultStr.replace('var newresults = {', '{')
-resultStr = resultStr.replace(/browser/g, '"browser"')
-resultStr = resultStr.replace(/status/g, '"status"')
-resultStr = resultStr.replace(/ua/g, '"ua"')
-resultStr = resultStr.replace(/date/g, '"date"')
+resultStr = resultStr.replace(/browser:/g, '"browser":')
+resultStr = resultStr.replace(/status:/g, '"status":')
+resultStr = resultStr.replace(/ua:/g, '"ua":')
+resultStr = resultStr.replace(/date:/g, '"date":')
+resultStr = resultStr.replace(/notes:/g, '"notes":')
 resultStr = resultStr.replace(/'/g, '"')
+console.log(resultStr)
 var resultObj = JSON.parse(resultStr)
 
 return resultObj
