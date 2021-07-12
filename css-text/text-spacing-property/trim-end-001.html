@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CSS Test: text-spacing: trim-end</title>
+<meta name="flags" content="font">
+<meta name="assert" id="assert" content="text-spacing:trim-end sets fullwidth closing punctuation with half-width glyphs (flush) at the end of each line.">
+<link rel="author" title="Hiroshi Takase" href="mailto:takase@est.co.jp">
+<link rel="help" title="CSS Text Level 4: 10.2. Character Class Spacing: the text-spacing property" href="https://www.w3.org/TR/css-text-4/#text-spacing-property">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css">
+<style>
+@font-face {
+    font-family: 'webfont';
+    src: url('../../fonts/mplus-1p-regular.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ref, .test {
+    font: 3em/1em webfont;
+    position: absolute;
+    top: 0;
+}
+.ref, .ref > span {
+    background-color: black;
+}
+.test {
+    color: red;
+    background-color: red;
+    z-index: -1;
+}
+/* the CSS above is not part of the test */
+
+.test { text-spacing: trim-end; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if there is no red visible on the page.</p>
+
+<div style="position: relative" lang="ja">
+<div class="test">行末カギ「ベタ組」</div>
+<div class="ref">行末カギ「ベタ組<span style="display:inline-block;width:0.5em;margin-right:-0.5em">」</span></div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li>When <code>text-spacing</code> is set to <code>trim-end</code>, the 」 character should be a half-width size at the end of each line. The red test text should be 0.5 em shorter than all in full-width.</li>
+<li>The black ref text has -0.5 em margin to trim the blank half of the glyph, and should cover the red test text completely, when the glyph at the end of the line set with half-width glyph.</li>
+</ul>
+</div>
+
+</body></html>
