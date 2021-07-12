@@ -18,17 +18,17 @@
     #test, #ref {
         position:absolute; top:0;
         font-family: webfont;
+        width: 20em;
     }
     #test {
-        width: 20em;
         color: green;
     }
     #ref {
-        width: 15em;
-        padding-left: 5em;
-        text-indent: -5em;
         color: red;
         z-index: -100;
+    }
+    .refspace {
+        padding-left: 5em;
     }
 /* the CSS above is not part of the test */
     #test {
@@ -42,7 +42,7 @@
 
 <div style="position:relative">
 <div id="test">XXXX pppp XXXX pppp XXXX pppp XXXX pppp XXXX</div>
-<div id="ref">XXXX pppp XXXX pppp XXXX pppp XXXX pppp XXXX</div>
+<div id="ref">XXXX pppp XXXX pppp <br><span class="refspace">XXXX pppp XXXX </span><br><span class="refspace">pppp XXXX</span></div>
 </div>
 
 <div id="info">
