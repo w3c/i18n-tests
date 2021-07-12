@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>CSS Text: text-indent: hanging</title>
 <meta name="flags" content="font">
-<meta name="assert" id="assert" content="text-indent:hanging indents all lines except the first">
+<meta name="assert" id="assert" content="text-indent:hanging indents all lines except the first including a forced line break">
 <link rel="help" title="CSS Text Level 3: 8.1. First Line Indentation: the text-indent property" href="https://drafts.csswg.org/css-text-3/#text-indent-property">
 <link rel="author" title="hiroshi takase" href="mailto:takase@est.co.jp">
 <link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
@@ -41,14 +41,14 @@
 <p class="instructions">Test passes if there is no red visible on the page.</p>
 
 <div style="position:relative">
-<div id="test">XXXX pppp XXXX pppp XXXX pppp XXXX pppp XXXX</div>
-<div id="ref">XXXX pppp XXXX pppp <br><span class="refspace">XXXX pppp XXXX </span><br><span class="refspace">pppp XXXX</span></div>
+<div id="test">XXXX pppp XXXX pppp XXXX pppp XXXX<br>pppp XXXX pppp XXXX pppp XXXX</div>
+<div id="ref">XXXX pppp XXXX pppp <br><span class="refspace">XXXX pppp XXXX</span><br><span class="refspace">pppp XXXX pppp </span><br><span class="refspace">XXXX pppp XXXX</span></div>
 </div>
 
 <div id="info">
 <p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
 <ul class="notes">
-<li><code>hanging</code> is set to <code>text-indent</code>. Each line after a soft break should have indent with specified length.</li>
+<li><code>hanging</code> is set to <code>text-indent</code>. Each line after a soft and forced break (all except for the first line) should have indent with specified length.</li>
 </ul>
 </div>
 
