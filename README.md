@@ -5,6 +5,8 @@ There are two main types of test:
 1. standard tests written in HTML files that are accessed via the i18n test suite, and
 2. interactive tests, which are accessed via test script pages in the wiki of this repository.
 
+To find tests go to the [Test Index page](https://www.w3.org/International/i18n-tests/).
+
 ## Interactive tests
 
 Interactive tests allow you to quickly set up test scenarios with minimal formality. They are particularly useful for tests that have many permutations on a language-by-language basis, and can be easier to manage for people creating gap-analysis documents.
