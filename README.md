@@ -13,6 +13,8 @@ The test pages themselves allow you to set various CSS properties or other aspec
 
 You can then take a snapshot of the settings and add that as a URL to a wiki page in this repo as part of a test script. There are test scripts for each of the sections in the Language Enablement Index. Having created a test, it is very quick and simple to point back to it from the test script and report findings.
 
+For more information, see [Working with interactive tests](https://www.w3.org/International/i18n-drafts/pages/interactive_tests). 
+
 Tests in a test script could be converted to standard tests at some point if resources become available to do the work.
 
 ## Standard tests
