@@ -15,15 +15,38 @@
 #in {
 	width: 80%;
 	height: 3em;
-	font-size: 20px;
+	font-size: 1.8rem;
 	color: gray;
+    border: 1px solid #ccc;
+    padding: .4rem;
 	}
+#instructions, #assertion {
+	width: 85%;
+	height: 3em;
+	font-size: .9rem;
+	color: chocolate;
+	border: 1px solid white;
+	padding: .4em;
+    margin-block-start: 1rem;
+    margin-block-end: 0;
+	}
+#instructions:hover, #assertion:hover {
+	border: 1px solid #ccc;
+	}
+#assertion {
+    font-size: 1.2rem;
+    }
+#instructions {
+    height: 4em;
+    font-size: .8rem;
+    }
 #go {
 	padding: 10px;
 	margin: 0;
 	border-radius: .25em;
 	font-size: 36px;
 	background-color: aquamarine;
+    margin-block-start: 1rem;
 	}
 #language { width: 5em; }
 #fontSize { width: 20em; }
