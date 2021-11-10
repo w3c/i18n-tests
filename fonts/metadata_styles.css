@@ -19,10 +19,11 @@
 	color: gray;
     border: 1px solid #ccc;
     padding: .4rem;
+    margin-inline-start: 1rem;
 	}
 #instructions, #assertion {
 	width: 85%;
-	height: 3em;
+	height: 4em;
 	font-size: .9rem;
 	color: chocolate;
 	border: 1px solid white;
@@ -37,7 +38,6 @@
     font-size: 1.2rem;
     }
 #instructions {
-    height: 4em;
     font-size: .8rem;
     }
 #go {
