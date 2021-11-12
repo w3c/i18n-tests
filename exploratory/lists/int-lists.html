@@ -18,7 +18,7 @@
 
 /* the CSS below is not part of the test */
 .test {
-margin: 40px 5%;
+margin: 0px 2% 1rem 2%;
 width: 50%;
 font-size: 36px;
 border: 1px solid orange;
@@ -58,31 +58,37 @@ document.getElementById('uprightSettings').innerHTML = 'li::marker { text-combin
 <body>
 <h1>Interactive test: lists</h1>
 
-<p class="advice">
-Set the language <input id="language" type="text" onChange="setLanguage(this.value)"/> <button onClick="setLanguage(document.getElementById('language').value)">Apply</button><br/>
-
-Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="setFontSize(this.value)" type="range"/> 
-<span id="sizeOfFont" style="font-size:80%;">36</span>px<br/>
-
-Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setFont(document.getElementById('fontFamily').value)">Apply</button>
-</p>
-
-<div class="advice">Adjust the height of the test box.<br/>
-<input id="boxHeight" min="10" max="1000" step="1" value="50" oninput="setBoxHeight(this.value)" style="width:80%; margin-left: 5%;" type="range"> <span id="vSizeIndicator" style="font-size:80%;">500</span>px</div>
-
 
 <!-- INPUT AREA -->
+<div><textarea id="assertion" type="text" placeholder="Add an assertion here." dir="auto"></textarea></div>
+
 <div><textarea id="in" type="text" placeholder="Add text to be tested text here and click on GO." dir="auto"></textarea> 
 <button onClick="setText(document.getElementById('in').value)" id="go" style="vertical-align: top;">Go</button></div>
 
 
 
 <!-- TESTS -->
+<div><textarea id="instructions" type="text" placeholder="Add instructions here." dir="auto"></textarea></div>
+
 <div class="test" id="html" dir="auto"></div>
 
 
 
 <!-- CONTROLS -->
+<div class="advice">Adjust the height of the test box.<br/>
+<input id="boxHeight" min="10" max="1000" step="1" value="50" oninput="setBoxHeight(this.value)" style="width:80%; margin-left: 5%;" type="range"> <span id="vSizeIndicator" style="font-size:80%;">500</span>px</div>
+
+
+<p class="advice">Set the language <input id="language" type="text" onChange="setLanguage(this.value)"/> <button onClick="setLanguage(document.getElementById('language').value)">Apply</button></p>
+
+<p class="advice">Set font size&nbsp;<input id="fontSize" min="10" max="120" step="1" value="36" oninput="setFontSize(this.value)" type="range"/> 
+<span id="sizeOfFont" style="font-size:80%;">36</span>px</p>
+
+<p class="advice">Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setFont(document.getElementById('fontFamily').value)">Apply</button></p>
+<p class="advice">&nbsp;</p>
+
+
+
 <p>Set custom counter style:<br/>
 <span class="advice">Code for custom styles can be found in the <a href="https://www.w3.org/TR/predefined-counter-styles/">Ready-made Counter Styles</a> document.</span><br/>
 <textarea id="custom" onChange="setCustomStyle(this.value)" style="width: 70%; height: 3em;"></textarea>  <button onClick="setCustomStyle(document.getElementById('custom').value)">Apply</button>
@@ -299,6 +305,10 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <ul class="notes">
 <li>No properties are set by default.</li>
 <li>Spec links: <a href="https://drafts.csswg.org/css-lists-3/#text-markers">list-style-type</a> <a href="https://drafts.csswg.org/css-lists-3/#marker-pseudo">::marker</a> <a href="https://www.w3.org/TR/css-text-3/#text-align-last-property">text-combine-upright</a></li>
+<li>More tests: 
+<a href="https://w3c.github.io/i18n-tests/#interactive">All interactive tests &amp; results</a> &gt;
+<a href="https://www.w3.org/International/i18n-tests/results/int-lists-counters-etc">Lists, counters, etc</a>
+</li>
 <li>Browser: <span id="version"></span></li>
 <li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
 </ul>
@@ -314,6 +324,12 @@ for (var p=0;p<parameters.length;p++) {
 	if (pairs[0] == 'text' && pairs[1]) { 
 					document.getElementById('in').value = decodeURIComponent(pairs[1])
 					setText(decodeURIComponent(pairs[1]))
+					}
+	if (pairs[0] == 'a' && pairs[1]) { 
+					document.getElementById('assertion').value = decodeURIComponent(pairs[1])
+					}
+	if (pairs[0] == 'i' && pairs[1]) { 
+					document.getElementById('instructions').value = decodeURIComponent(pairs[1])
 					}
 
 	if (pairs[0] == 'custom' && pairs[1]) { 
@@ -376,6 +392,9 @@ if (document.getElementById('listStyleType').value !== '') out += '&listStyleTyp
 out += '&color='+document.querySelector('input[name="color"]:checked').value
 out += '&textCombineUpright='+document.querySelector('input[name="textCombineUpright"]:checked').value
 out += '&writingMode='+document.querySelector('input[name="writingMode"]:checked').value
+
+out += '&a='+encodeURIComponent(document.getElementById('assertion').value)
+out += '&i='+encodeURIComponent(document.getElementById('instructions').value)
 
 return out
 }
