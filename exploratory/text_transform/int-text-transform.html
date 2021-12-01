@@ -12,10 +12,10 @@
 /* the CSS below is not part of the test */
 .test {
 margin: 0px 2% 1rem 2%;
-width: 750px;
+width: 600px;
+height: 200px;
 font-size: 24px;
 border: 1px solid orange;
-height: 200px;
 overflow: hidden;
 padding: 40px;
 }
@@ -88,10 +88,10 @@ for (let i=0;i<tests.length;i++) tests[i].style.writingMode = value
 
 <!-- CONTROLS -->
 <div class="advice">Adjust the width of the test boxes.<br/>
-<input id="boxWidth" min="10" max="1000" step="1" value="750" oninput="setBoxWidth(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="wSizeIndicator" style="font-size:80%;">400</span>px</div>
+<input id="boxWidth" min="10" max="1000" step="1" value="600" oninput="setBoxWidth(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="wSizeIndicator" style="font-size:80%;">600</span>px</div>
 
 <div class="advice">Adjust the height of the test box.<br/>
-<input id="boxHeight" min="10" max="1000" step="1" value="200" oninput="setBoxHeight(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="vSizeIndicator" style="font-size:80%;">400</span>px</div>
+<input id="boxHeight" min="10" max="1000" step="1" value="200" oninput="setBoxHeight(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="vSizeIndicator" style="font-size:80%;">200</span>px</div>
 
 
 <p class="advice">
