@@ -249,12 +249,12 @@ function snapParameters () {
 
 out = "https://w3c.github.io/i18n-tests/exploratory/text_spacing/int-text-spacing.html?"
 
-out += '&text='+encodeURIComponent(document.getElementById('in').value)
+out += 'text='+encodeURIComponent(document.getElementById('in').value)
 out += '&a='+encodeURIComponent(document.getElementById('assertion').value)
 out += '&i='+encodeURIComponent(document.getElementById('instructions').value)
 
 
-if (document.getElementById('language') && document.getElementById('language').value != '') out += 'lang='+document.getElementById('language').value
+if (document.getElementById('language') && document.getElementById('language').value != '') out += '&lang='+document.getElementById('language').value
 if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+encodeURIComponent(document.getElementById('fontSize').value)
 if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+encodeURIComponent(document.getElementById('fontFamily').value)
 if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
