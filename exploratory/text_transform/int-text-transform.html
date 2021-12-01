@@ -160,7 +160,7 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 <a href="https://github.com/w3c/i18n-tests/wiki/List-of-interactive-tests-&-results">All interactive tests &amp; results</a> &bull;
 <a href="https://github.com/w3c/character_phrase_tests/issues">Character &amp; phrase test repo</a> &bull;
-<a href="https://w3c.github.io/i18n-tests/results/int-text-decoration">Text decoration results</a>
+<a href="https://w3c.github.io/i18n-tests/results/int-transforming-characters">Transforming characters results</a>
 </li>
 
 <li>Browser: <span id="version"></span></li>
@@ -242,8 +242,6 @@ function snapParameters () {
 // this can be picked up by the user to point to the current setup of the page
 
 out = "https://w3c.github.io/i18n-tests/exploratory/text_transform/int-text-transform.html?"
-out = "localhost/i18n-tests/exploratory/text_transform/int-text-transform.html?"
-
 
 out += '&text='+encodeURIComponent(document.getElementById('in').value)
 out += '&a='+encodeURIComponent(document.getElementById('assertion').value)
