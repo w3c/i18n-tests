@@ -91,6 +91,7 @@ document.getElementById('uprightSettings').innerHTML = 'li::marker { text-combin
 
 <p>Set custom counter style:<br/>
 <span class="advice">Code for custom styles can be found in the <a href="https://www.w3.org/TR/predefined-counter-styles/">Ready-made Counter Styles</a> document.</span><br/>
+<span class="advice">Add the definition of the counter style here, then select 'custom style test' for list-style-type.</span><br/>
 <textarea id="custom" onChange="setCustomStyle(this.value)" style="width: 70%; height: 3em;"></textarea>  <button onClick="setCustomStyle(document.getElementById('custom').value)">Apply</button>
 </p>
 
@@ -99,6 +100,7 @@ document.getElementById('uprightSettings').innerHTML = 'li::marker { text-combin
 <p><code>list-style-type:</code>
 <select id="listStyleType" onchange="setListStyleType(this.value); return false;">
         <option value="">Choose a style</option>
+        <option value="test-custom-style">custom style test</option>
         <optgroup label="Decimal">
         <option value="decimal">decimal   (numeric)</option>
         <option value="dotted-decimal">dotted-decimal  (fixed)</option>
