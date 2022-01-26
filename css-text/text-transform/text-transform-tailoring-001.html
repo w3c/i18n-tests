@@ -14,11 +14,11 @@
 	font-weight: normal;
 	font-style: normal;
 	}
-.test, .ref { font-size: 200%; line-height: 2.5em; font-family: 'Gentium Plus', 'Noto Serif', 'Noto Sans', webfont, sans-serif; }
-.test span, .ref span { margin-right: 0; white-space: nowrap; }
-.ref span { color: red; }  .ref { z-index: -100; }
+.test, .ref { font-size: 400%; line-height: 3; font-family: webfont, sans-serif; }
+.test, .ref { margin-right: 0; white-space: nowrap; }
+.ref { color: red; }  .ref { z-index: -100; }
 span { display: inline-block; min-width: 2em; }
-.ref, .test { position:absolute; top:0; }
+.ref, .test { position:absolute; top:0; left:0; }
 
 /* the CSS above is not part of the test */
 .test { text-transform: capitalize; }
@@ -29,7 +29,7 @@ span { display: inline-block; min-width: 2em; }
 
 <div style="position:relative">
 <div class="test" lang="nl">ijsland</div>
-<div class="ref">IJsland</div>
+<div class="ref" lang="nl">IJsland</div>
 </div>
 </body>
 </html>
