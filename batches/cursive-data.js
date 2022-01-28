@@ -48,7 +48,7 @@ var testresults = {
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36", "date":"22-11-2018  15:49:30" }, 
 	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.1 Safari/605.1.15", "date":"22-11-2018  15:51:7" }, 
 	{"browser":"Edge", "status":"pass", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134", "date":"22-11-2018  16:53:39" }, 
-	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15", "date":"28-1-2020  13:34:57" }
+	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15", "date":"28-1-2020  13:34:57" }
 	],
 "css-color/transparency/cursive-opacity-002.html": [
 	{"browser":"Firefox", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:63.0) Gecko/20100101 Firefox/63.0", "date":"22-11-2018  15:42:50" }, 
@@ -57,7 +57,7 @@ var testresults = {
 	{"browser":"Edge", "status":"pass", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134", "date":"22-11-2018  16:53:40" }, 
 	{"browser":"ChromeMobile", "status":"fail", "ua":"Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.93 Mobile Safari/537.36", "date":"2-1-2020 7:59:49" }, 
 	{"browser":"ChromeMobile", "status":"fail", "ua":"Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.93 Mobile Safari/537.36", "date":"2-1-2020 8:3:45" }, 
-	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15", "date":"28-1-2020  13:34:58" }
+	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15", "date":"28-1-2020  13:34:58" }
 	],
 "css-color/transparency/cursive-opacity-003.html": [
 	{"browser":"Firefox", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:63.0) Gecko/20100101 Firefox/63.0", "date":"22-11-2018  15:43:21" }, 
