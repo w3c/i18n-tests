@@ -1,4 +1,8 @@
 #info { position:fixed;bottom:0;color:#bbb;font-size:90%; }
+
+#info details { background: white; margin-block-end: 1rem; }
+#info summary { cursor: pointer; }
+
 #info li {
     margin: 0;
     padding: 0;
