@@ -1,16 +1,29 @@
-#info { position:fixed;bottom:0;color:#bbb;font-size:90%; }
+#info { 
+	position:fixed;
+	bottom:0;
+	color:#777;
+	font-size:100%;
+	}
 
-#info details { background: white; margin-block-end: 1rem; }
-#info summary { cursor: pointer; }
+#info details { 
+	background: white; 
+	margin-block-end: 1rem;
+	}
+#info summary { 
+	cursor: pointer;
+	}
 
 #info li {
     margin: 0;
     padding: 0;
-}
+	}
 #info ul {
     margin: 0;
     padding: 1em;
-}
+	}
+#info a {
+	color: #B95C22;
+	}
 
 
 
