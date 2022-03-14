@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>n'ko text-shadow</title>
+<meta name="assert" id="assert" content="[exploratory] text-shadow on cursive N'Ko text doesn't break the joins">
+<link rel="help" href="https://www.w3.org/TR/css-text-decor-3/#text-shadow-property">
+<link rel="prev" href="../../results/text-shadow.html">
+<link rel="top" href="../../index.html#css3-text-decor">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<script src="../../fonts/metadata_code.js"></script>
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>/* not part of the test */
+@font-face {
+	font-family: 'webfont';
+	src: url('../../fonts/noto/NotoSansNko-regular-webfont.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test { font-family: webfont; margin: .5em 5%; font-size: 8em; }
+</style>
+
+<style>/* test */
+#test { text-shadow: -6px 4px 2px pink; }
+</style>
+
+</head>
+<body>
+<div>
+<em>Skip if <span style="text-shadow: 2px 2px 2px green;" id="control">this text</span> has no shadow.</em><br>
+Test passes if there are no pink lines between joined characters.
+</div>
+
+
+<div class="test" id="test" lang="nqo">ߟߐ߬ ߕߋ߬ߟߋ</div>
+
+
+
+<div class="control">Change the font: 
+<select id="fontList" name="fontList" onchange="document.getElementById('test').style.fontFamily = this.value; return false;">
+<option value="0">Select...</option>
+<optgroup label="Windows fonts">
+<option value="Ebrima">Ebrima</option>
+</optgroup>
+<optgroup label="Google fonts">
+<option value="Noto Serif NKo">Noto Serif NKo</option>
+</optgroup>
+<optgroup label="General fonts">
+<option value="sans-serif">sans-serif</option>
+<option value="serif">serif</option>
+</optgroup>
+</select>
+ </div>
+
+<div id="info">
+<details>
+<summary>Show notes</summary>
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li><code>text-shadow</code> is set to <code>-6px 4px 2px pink</code>.</li>
+<li>The 'skip' directive checks that <code>text-shadow</code> is supported. If not, the test is invalid.</li>
+<li>The default test uses the Noto Sans Nko webfont, but the font change control allows you to test whether particular fonts make a difference to the outcome.</li>
+</ul>
+<p id="links"></p>
+</details>
+</div>
+<script>addToInfo()</script>
+</body>
+</html>
