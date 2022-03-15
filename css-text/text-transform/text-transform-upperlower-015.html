@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8"/>
 <title>CSS3 Text, text transform: Monotonic Greek, lowercase</title>
-<meta name="assert" id="assert" content="text-transform:lowercase renders all modern Greek monotonic uppercase letters as expected in lowercase.">
-<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
-<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#text-transform'>
+<meta name="assert" id="assert" content="text-transform:lowercase renders all modern Greek monotonic uppercase letters in lowercase as expected.">
+<link rel="help" href="https://www.w3.org/TR/css-text-3/#text-transform">
+<link rel="prev" href="../../results/text-transform.html#greek_coptic_ul">
+<link rel="top" href="../../index.html#css3-text-transform">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
 <script src="../../fonts/metadata_code.js"></script>
 <link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
-<style>
+<style>/* not part of the test */
 @font-face {
 	font-family: 'webfont';
 	src: url('../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
@@ -20,8 +22,9 @@
 .ref span { color: red; }  .ref { z-index: -100; }
 span { display: inline-block; min-width: 2em; }
 .ref, .test { position:absolute; top:0; }
+</style>
 
-/* the CSS above is not part of the test */
+<style>/* test */
 .test { text-transform: lowercase; }
 </style>
 
@@ -69,7 +72,7 @@ function createTest () {
 <li><code>text-transform:lowercase</code> is applied to a set of uppercase characters. The text of the test is overlaid on red reference text. If the text transform is not applied to the test text, the red comes through.</li>
 <li>Characters listed are those in normal use for modern monotonic Greek.</li>
 <li>All the letters are in NFC.</li>
-<li id="helpLinks"></li>
+<p id="links"></p>
 </ul>
 </details>
 </div>
