@@ -2,7 +2,7 @@ function showAssertion () {
     document.getElementById('assertion').innerHTML='Assertion: '+document.querySelector('meta[name=assert]').content
     }
 
-function showLinks (path) {
+function showLinks () {
     var out = ''
     
     // do spec links
@@ -30,8 +30,8 @@ function showLinks (path) {
 
 
 
-function addToInfo (path) {
+function addToInfo () {
     showAssertion()
     //showHelpLinks() //showResultsPage(document.getElementById('resultsPage'))
-    showLinks(path)
+    showLinks()
     }
