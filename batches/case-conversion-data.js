@@ -38,10 +38,10 @@ var testresults = {
 	{"browser":"Edge", "status":"pass", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36", "date":"28-3-2019  8:4:51" }
 	],
 "greek/text-transform-uc-el-monotonic-vowels-exp.html": [
-	{"browser":"Firefox", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0", "date":"28-3-2019  6:27:59" }, 
-	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36", "date":"28-3-2019  6:56:51" }, 
-	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1 Safari/605.1.15", "date":"28-3-2019  7:0:41" }, 
-	{"browser":"Edge", "status":"fail", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36", "date":"28-3-2019  8:4:54" }
+	{"browser":"Firefox", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0", "date":"28-3-2019  6:27:59" }, 
+	{"browser":"Chrome", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36", "date":"28-3-2019  6:56:51" }, 
+	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1 Safari/605.1.15", "date":"28-3-2019  7:0:41" }, 
+	{"browser":"Edge", "status":"pass", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36", "date":"28-3-2019  8:4:54" }
 	],
 "greek/text-transform-uc-el-monotonic-vowels-diphthongs.html": [
 	{"browser":"Firefox", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0", "date":"28-3-2019  6:28:7" }, 
