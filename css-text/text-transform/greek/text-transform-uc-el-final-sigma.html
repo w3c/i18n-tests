@@ -2,12 +2,15 @@
 <html  lang="en" >
 <head>
 <meta charset="utf-8"/>
-<title>CSS3 Text, text transform: uppercase, Greek final sigma</title>
+<title>text transform: uppercase, Greek final sigma</title>
 <meta name="assert" id="assert" content="text-transform:uppercase converts lowercase Greek sigma to uppercase sigma whether the word medial or word final variant is used.">
-<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
-<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#text-transform-property'>
-<link rel="match" href="reference/text-transform-upperlower-035-ref.html">
-<style type='text/css'>
+<link rel="help" href="https://www.w3.org/TR/css-text-3/#text-transform-property">
+<link rel="prev" href="../../../results/case-conversion#el_uppercase">
+<link rel="top" href="../../../index.html#css3-text-transform">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<script src="../../../fonts/metadata_code.js"></script>
+<link rel="stylesheet" href="../../../fonts/metadata_styles.css">
+<style>/* not part of the test */
 @font-face {
 	font-family: 'webfont';
 	src: url('../../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
@@ -19,14 +22,20 @@
 .test span { color: red; }  .test { z-index: -100; }
 span { display: inline-block; min-width: 1em; }
 .ref, .test { position:absolute; top:0; }
-#info { position:fixed;bottom:0;color:#bbb; }
+</style>
 
-/* the CSS above is not part of the test */
+<style>/* test */
 .test span { text-transform: uppercase; }
 </style>
+
 </head>
 <body>
-<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+<div class="instructions">
+<p class="instructions"><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+<p>Test passes if you see <b>no clearly distinct, red letter strokes</b>.</p>
+</div>
+
+
 
 <div style="position:relative" lang="el">
 <div class="test">οδυσσευς <span>οδυσσευς</span></div>
@@ -34,9 +43,19 @@ span { display: inline-block; min-width: 1em; }
 <div class="ref">οδυσσευς <span>ΟΔΥΣΣΕΥΣ</span></div>
 </div>
 
+
+
+
 <div id="info">
-<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
-<p class="notes">The test contains 2 instances of a lowercase monotonic word; text-transform:uppercase is applied to the right-hand word in the pair. The word used contains both U+03C3 GREEK SMALL LETTER SIGMA and U+03C2 GREEK SMALL LETTER FINAL SIGMA. The red test data is overlaid by black reference results.</p>
+<details>
+<summary>Show notes</summary>
+<p id="assertion"></p>
+<ul class="notes">
+<li>The test contains 2 instances of a lowercase monotonic word; <code>text-transform:uppercase</code> is applied to the right-hand word in the pair. The word used contains both U+03C3 GREEK SMALL LETTER SIGMA and U+03C2 GREEK SMALL LETTER FINAL SIGMA. The red test data is overlaid by black reference results.</li>
+</ul>
+<p id="links"></p>
+</details>
 </div>
+<script>addToInfo()</script>
 </body>
 </html> 

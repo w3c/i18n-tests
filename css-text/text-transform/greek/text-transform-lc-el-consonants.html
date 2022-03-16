@@ -2,11 +2,15 @@
 <html  lang="en" >
 <head>
 <meta charset="utf-8"/>
-<title>CSS3 Text, text transform: lowercase, modern Greek consonants</title>
+<title>text transform: lowercase, modern Greek consonants</title>
 <meta name="assert" id="assert" content="text-transform:lowercase produces the expected result when converting uppercase Greek consonants to lowercase.">
-<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
-<link rel="help" href="http://dev.w3.org/csswg/css-text-3/#text-transform-property">
-<style type="text/css">
+<link rel="help" href="https://www.w3.org/TR/css-text-3/#text-transform-property">
+<link rel="prev" href="../../../results/case-conversion#el_lowercase">
+<link rel="top" href="../../../index.html#css3-text-transform">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<script src="../../../fonts/metadata_code.js"></script>
+<link rel="stylesheet" href="../../../fonts/metadata_styles.css">
+<style>/* not part of the test */
 @font-face {
 	font-family: 'webfont';
 	src: url('../../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
@@ -18,14 +22,20 @@
 .test span { color: red; }  .test { z-index: -100; }
 span { display: inline-block; min-width: 1em; }
 .ref, .test { position:absolute; top:0; }
-#info { position:fixed;bottom:0;color:#bbb; }
+</style>
 
-/* the CSS above is not part of the test */
+<style>/* test */
 .test span { text-transform: lowercase; }
 </style>
+
 </head>
 <body>
-<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+<div class="instructions">
+<p class="instructions"><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+<p>Test passes if you see <b>no clearly distinct, red letter strokes</b>.</p>
+</div>
+
+
 
 <div style="position:relative" lang="el">
 
@@ -34,9 +44,20 @@ span { display: inline-block; min-width: 1em; }
 <div class="ref">Β<span>β</span>  Γ<span>γ</span>  Δ<span>δ</span> Ζ<span>ζ</span> Η<span>η</span> Θ<span>θ</span> Κ<span>κ</span> Λ<span>λ</span> Μ<span>μ</span> Ν<span>ν</span> Ξ<span>ξ</span> Π<span>π</span> Ρ<span>ρ</span> Σ<span>σ</span> Τ<span>τ</span> Φ<span>φ</span> Χ<span>χ</span> Ψ<span>ψ</span></div>
 </div>
 
+
+
+
 <div id="info">
-<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
-<p class="notes">The test contains pairs of lowercase characters; text-transform:lowercase is applied to the right-hand character in each pair. The red test data is overlaid by black reference results.</p>
+<details>
+<summary>Show notes</summary>
+<p id="assertion"></p>
+<ul class="notes">
+<li>The test contains pairs of lowercase characters; <code>text-transform:lowercase</code> is applied to the right-hand character in each pair. The red test data is overlaid by black reference results.</li>
+<li>Characters listed are those in normal use for modern monotonic Greek.</li>
+</ul>
+<p id="links"></p>
+</details>
 </div>
+<script>addToInfo()</script>
 </body>
 </html> 

@@ -2,12 +2,15 @@
 <html  lang="en" >
 <head>
 <meta charset="utf-8"/>
-<title>CSS3 Text, text transform: uppercase, monotonic Greek vowels</title>
-<meta name="assert" id="assert" content="[Exploratory] When the language of the text is NOT set to el (Greek), text-transform:uppercase still behaves as expected.">
-<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
-<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#text-transform-property'>
-<link rel="match" href="reference/text-transform-upperlower-035-ref.html">
-<style type='text/css'>
+<title>text transform: uppercase, monotonic Greek vowels, no language</title>
+<meta name="assert" id="assert" content="[Exploratory] When the language of the text is NOT set to el (Greek), text-transform:uppercase doesn't produce the necessary results.">
+<link rel="help" href="https://www.w3.org/TR/css-text-3/#text-transform-property">
+<link rel="prev" href="../../../results/case-conversion#el_uppercase">
+<link rel="top" href="../../../index.html#css3-text-transform">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<script src="../../../fonts/metadata_code.js"></script>
+<link rel="stylesheet" href="../../../fonts/metadata_styles.css">
+<style>/* not part of the test */
 @font-face {
 	font-family: 'webfont';
 	src: url('../../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
@@ -16,17 +19,23 @@
 	}
 .test, .ref { font-size: 500%; line-height: 1.2em; font-family: 'Gentium Plus', 'Noto Serif', 'Noto Sans', webfont, sans-serif; }
 .test span, .ref span { margin-right: 0; white-space: nowrap; }
-.test span { color: red; }  .test { z-index: -100; }
+.test span { color: blue; }  .test { z-index: -100; }
 span { display: inline-block; min-width: 1em; }
 .ref, .test { position:absolute; top:0; }
-#info { position:fixed;bottom:0;color:#bbb; }
+</style>
 
-/* the CSS above is not part of the test */
+<style>/* test */
 .test span { text-transform: uppercase; }
 </style>
+
 </head>
 <body>
-<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+<div class="instructions">
+<p class="instructions"><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+<p>The assertion holds if you <b>DO see clearly distinct, blue letter strokes</b>.</p>
+</div>
+
+
 
 <div style="position:relative">
 <div class="test">α<span>α</span> ε<span>ε</span> η<span>η</span> ι<span>ι</span> ο<span>ο</span> υ<span>υ</span> ω<span>ω</span><br/>
@@ -38,9 +47,20 @@ span { display: inline-block; min-width: 1em; }
 ϊ<span>Ϊ</span> ϋ<span>Ϋ</span> ΐ<span>Ϊ</span> ΰ<span>Ϋ</span></div>
 </div>
 
+
+
+
 <div id="info">
-<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
-<p class="notes">The test contains pairs of lowercase monotonic characters; text-transform:uppercase is applied to the right-hand character in each pair. The red test data is overlaid by black reference results. The ή is doubled so that this is not mistaken for a disjunctive eta.</p>
+<details>
+<summary>Show notes</summary>
+<p id="assertion"></p>
+<ul class="notes">
+<li>For this test, the language declaration (lang="el") is not used.  The aim of the test is to check whether the rules are applied only if the linguistic context is known to be Greek.</li>
+<li>The test contains pairs of lowercase monotonic characters; <code>text-transform:uppercase</code> is applied to the right-hand character in each pair. The red test data is overlaid by black reference results. The ή is doubled so that this is not mistaken for a disjunctive eta.</li>
+</ul>
+<p id="links"></p>
+</details>
 </div>
+<script>addToInfo()</script>
 </body>
 </html> 

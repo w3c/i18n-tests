@@ -4,10 +4,13 @@
 <meta charset="utf-8"/>
 <title>CSS3 Text, text transform: capitalize, monotonic Greek vowels</title>
 <meta name="assert" id="assert" content="text-transform:capitalize produces titlecased vowels for the first character in a short lowercase monotonic Greek word.">
-<link rel="author" title="Richard Ishida" href="mailto:ishida@w3.org">
-<link rel="help" href="http://dev.w3.org/csswg/css-text-3/#text-transform-property">
-<link rel="match" href="reference/text-transform-upperlower-035-ref.html">
-<style type="text/css">
+<link rel="help" href="https://www.w3.org/TR/css-text-3/#text-transform-property">
+<link rel="prev" href="../../../results/case-conversion#el_capitalize">
+<link rel="top" href="../../../index.html#css3-text-transform">
+<link rel="author" title="r12a" href="mailto:r12a@w3.org">
+<script src="../../../fonts/metadata_code.js"></script>
+<link rel="stylesheet" href="../../../fonts/metadata_styles.css">
+<style>/* not part of the test */
 @font-face {
 	font-family: 'webfont';
 	src: url('../../../fonts/sil/GentiumPlus-regular.woff2') format('woff');
@@ -20,13 +23,21 @@
 span { display: inline-block; min-width: 1em; }
 .ref, .test { position:absolute; top:0; }
 #info { position:fixed;bottom:0;color:#bbb; }
+</style>
 
-/* the CSS above is not part of the test */
+<style>/* test */
 .test span { text-transform: capitalize; }
 </style>
+
 </head>
 <body>
-<p class="instructions">Test passes if you see no red character strokes (ignoring any red glow).<br/><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+<div class="instructions">
+<p class="instructions"><em>If you are missing a font glyph for a character, ignore that item, but report which items were ignored.</em></p>
+<p>Test passes if you see <b>no clearly distinct, red letter strokes</b>.</p>
+</div>
+
+
+
 
 <div style="position:relative" lang="el">
 <div class="test"><span>ααα</span> <span>εεε</span> <span>ηηη</span> <span>ιιι</span> <span>οοο</span> <span>υυυ</span> <span>ωωω</span><br/>
@@ -36,10 +47,20 @@ span { display: inline-block; min-width: 1em; }
 <span>Άάά</span> <span>Έέέ</span> <span>Ήήή</span> <span>Όόό</span> <span>Ίίί</span> <span>Ύύύ</span> <span>Ώώώ</span></div>
 </div>
 
+
+
+
 <div id="info">
-<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
-<p class="notes">It is assumed that iota and upsilon never appear in titlecase position with dialytika, so there are no tests for that.</p>
-<p class="notes">The test contains short 'words' of 3 identical lowercase characters; text-transform:capitalize should uppercase just the first letter in the word. The red test data is overlaid by black reference results.</p>
+<details>
+<summary>Show notes</summary>
+<p id="assertion"></p>
+<ul class="notes">
+<li>It is assumed that iota and upsilon never appear in titlecase position with dialytika, so there are no tests for that.</li>
+<li>The test contains short 'words' of 3 identical lowercase characters; <code>text-transform:capitalize</code> should uppercase just the first letter in the word. The red test data is overlaid by black reference results.</li>
+</ul>
+<p id="links"></p>
+</details>
 </div>
+<script>addToInfo()</script>
 </body>
 </html> 
