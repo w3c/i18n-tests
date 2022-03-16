@@ -46,7 +46,9 @@ tests = [
 
 ["georgian/text-transform-lc-geor-archaic-khutsuri.html","CSS3 Text, text transform: lowercase, archaic khutsuri","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase produces nuskhuri consonants from asomtavruli for archaic Georgian-script characters."], 
 
-["georgian/text-transform-cap-geor-ka-nuskhuri.html",
+["georgian/text-transform-cap-geor-ka-nuskhuri.html","CSS3 Text, text transform: lowercase, archaic khutsuri","",'http://dev.w3.org/csswg/css-text-3/#text-transform-property',"text-transform:lowercase produces nuskhuri consonants from asomtavruli for archaic Georgian-script characters."], 
+
+["georgian/text-transform-cap-geor-ka-nuskhuri.html","TBD","TBD",'TBD',"TBD"],
 
 ['../../testend','','','','']
 
