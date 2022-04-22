@@ -34,12 +34,15 @@ f.additionalLinks = ''
 <script src="index-data/translations.js"> </script>
 <script src="../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
 <script src="../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
-<script src="../i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
-<script src="../i18n-drafts/javascript/articletoc-html5.js"></script>
+<script src="../i18n-drafts/javascript/doc-structure/sitepage-2022.js"> </script>
+<script src="../i18n-drafts/javascript/articletoc-2022.js"></script>
 
-<link rel="stylesheet" href="../i18n-drafts/style/sitepage-2016.css" />
+<link rel="stylesheet" href="../i18n-drafts/style/sitepage-2022.css" />
 <link rel="stylesheet" href="specdev-data/local.css" />
 <link rel="copyright" href="#copyright"/>
+<style>
+.tests h3 { color: chocolate; }
+</style>
 </head>
 
 <body>
@@ -51,15 +54,22 @@ f.additionalLinks = ''
 <h1>Internationalization tests</h1>
 
 
-<section id="sidebarExtras">
-</section>
+<section id="sidebarExtras"></section>
+
 
 
 <div id="mainLayout">
+
+
+
 <section>
 <p>This page groups together pages being developed by the W3C Internationalization  Working Group to assess internationalization support of user agents. It is an ongoing effort.</p>
 <p>Note that these tests do not only test conformance with W3C standards. In some cases the tests also allow for exploration of the behavior of user agents in ways not described by the standards.</p>
 <p>See the <a href="https://github.com/w3c/i18n-tests/">GitHub repo</a> and the <a href="https://github.com/w3c/i18n-tests/#i18n-tests">notes on how the test suite works</a>.</p>
+
+<p style="text-align: start;">Jump to one of:<br>
+<a class="highlightLink" href="#testsuite">Internationalization test suite tests & results</a><br>
+<a class="highlightLink" href="#interactive">Interactive tests & results</a>.</p>
 </section>
 
 
@@ -69,18 +79,17 @@ f.additionalLinks = ''
 
 
 
-<div style="width: 45%; float:right;" id="interactive">
-<section class="interactive">
-<p style="font-size: 200%; text-align: center; margin-top: 2em;">Interactive tests &amp; results</p>
-<!--h2 id="interactive_tests"><a href="#interactive_tests" class="href">Interactive tests</a></h2-->
+<section id="interactive">
+<h2>Interactive tests</h2>
+
 <p>Interactive tests are particularly useful for gap-analysis work or for creating quick ad-hoc tests. You can create a new test, or find recorded tests with their results. For more information, click on the link just below.</p>
 <p>Interactive test files provide flexibility and ease of use that is useful for experimental or gap-analysis testing. See <a href="https://www.w3.org/International/i18n-drafts/pages/interactive_tests.html">Working with interactive tests</a>.</p>
-</section>
 
 
 
 <section id="results_summary_pages">
-<h2>Results summary pages</h2>
+<h3>Results summary pages</h3>
+
 <p>Pages that group test results by topic. Click on links to see detailed result information or to open the test.</p>
 <ul>
 <li>Text direction
@@ -113,7 +122,8 @@ f.additionalLinks = ''
 
 
 <section id="test_rigs">
-<h2>Test rigs</h2>
+<h3>Test rigs</h3>
+
 <p>The test rigs allow you to set up tests yourself and produce a URL to reproduce the page which can be shared or stored.</p>
 <ul>
 <li>
@@ -137,7 +147,7 @@ f.additionalLinks = ''
 
 
 <section id="repositories">
-<h2>Repositories:</h2>
+<h3>Repositories:</h3>
 <p>Each repository is effectively a database of test links and results.  Each stored test is maintained and discussed in a GitHub issue in one of these repos. The results pages pull their information from the repositories.</p>
 <ul>
 <li><a href="https://github.com/w3c/text_direction_tests/issues">Text direction</a></li>
@@ -145,28 +155,26 @@ f.additionalLinks = ''
 <li><a href="https://github.com/w3c/line_paragraph_tests/issues">Lines &amp; paragraphs</a></li>
 </ul>
 </section>
-</div>
-
-
-
-
-
-
-
-
-<div style="width: 45%; float:left;" id="testsuite">
-<section class="interactive">
-<p style="font-size: 200%; text-align: center; margin-top: 2em;">Internationalization test suite tests &amp; results</p>
-<!--h2 id="interactive_tests"><a href="#interactive_tests" class="href">Interactive tests</a></h2-->
-<p>The links below point you to pages that sumarise results across major browsers for features described in W3C/WhatWG specs. From the results pages you can link to the tests themselves, which run within a test framework. You can also run the tests and provide a set of results that can be incorporated into these pages.</p>
 </section>
 
 
-<section class="tests">
-<h2 id="css3-counter-styles"><a href="#css3-counter-styles" class="href">CSS Counter Styles</a></h2>
+
+
+
+
+
+
+<section id="testsuite">
+<!--p style="font-size: 200%; text-align: center; margin-top: 2em;">Internationalization test suite tests &amp; results</p-->
+<h2>Internationalization test suite tests &amp; results</h2>
+<p>The links below point you to pages that sumarise results across major browsers for features described in W3C/WhatWG specs. From the results pages you can link to the tests themselves, which run within a test framework. You can also run the tests and provide a set of results that can be incorporated into these pages.</p>
+
+
+<section id="css3-counter-styles" class="tests">
+<h3>CSS Counter Styles</h3>
   
-<section>
-<h3 id="css3-selectors-lang"><a href="#css3-selectors-lang">Custom styles</a></h3>
+<section id="css3-selectors-lang">
+<h4>Custom styles</h4>
 <ul>
 <li>3.1. Counter algorithms: the system descriptor
 <ul>
@@ -187,8 +195,8 @@ f.additionalLinks = ''
 </section>
 
 
-<section>
-<h3 id="simple-ccs"><a href="#simple-ccs">Simple predefined counter styles</a></h3>
+<section id="simple-ccs">
+<h4>Simple predefined counter styles</h4>
 <ul>
 <li>6.1. Numeric
 <ul>
@@ -205,8 +213,8 @@ f.additionalLinks = ''
  
 
 
-<section>
-<h3 id="complex-ccs"><a href="#complex-ccs">Complex predefined counter styles</a></h3>
+<section id="complex-ccs">
+<h4>Complex predefined counter styles</h4>
 <ul>
 <li>7.1. Longhand East Asian
 <ul>
@@ -225,11 +233,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-<h2 id="css3-logical"><a href="#css3-logical" class="href">CSS Logical Properties and Values</a></h2>
+<section id="css3-logical" class="tests">
+<h3>CSS Logical Properties and Values</h3>
 
-<section>
-<h3 id="flow_relative_values"><a href="#flow_relative_values">Flow-relative values</a></h3>
+<section id="flow_relative_values">
+<h4>Flow-relative values</h4>
 <ul>
 <li>2.1. Logical Values for the caption-side Property
 <ul>
@@ -245,8 +253,8 @@ f.additionalLinks = ''
 </section>
 
 
-<section>
-<h3 id="logical_box_model"><a href="#ruby_box_model">Box Model Properties</a></h3>
+<section id="logical_box_model">
+<h4>Box Model Properties</h4>
 <ul>
 <li>4.1 Logical Height and Logical Width
 <ul>
@@ -276,11 +284,11 @@ f.additionalLinks = ''
 </section>
 
 
-<section class="tests">
-<h2 id="css3-ruby"><a href="#css3-ruby" class="href">CSS Ruby</a></h2>
+<section id="css3-ruby" class="tests">
+<h3>CSS Ruby</h3>
   
-<section>
-<h3 id="ruby_box_model"><a href="#ruby_box_model">Ruby Box Model</a></h3>
+<section id="ruby_box_model">
+<h4>Ruby Box Model</h4>
 <ul>
 <li>2.4 Autohiding Base-identical Annotations
 <ul>
@@ -290,8 +298,8 @@ f.additionalLinks = ''
 </ul>
 </section>
  
-<section>
-<h3 id="ruby_formatting_properties"><a href="#ruby_formatting_properties">Ruby Formatting Properties</a></h3>
+<section id="ruby_formatting_properties">
+<h4>Ruby Formatting Properties</h4>
 <ul>
 <li>4.1 Ruby Positioning: the ruby-position property
 <ul>
@@ -315,11 +323,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-<h2 id="predefined-counter-styles"><a href="#predefined-counter-styles" class="href">Custom Counter Styles</a></h2>
+<section id="predefined-counter-styles" class="tests">
+<h3>Custom Counter Styles</h3>
   
-<section>
-<h3 id="custom-cs-expl"><a href="#custom-cs-expl">Exploratory tests</a></h3>
+<section id="custom-cs-expl">
+<h4>Exploratory tests</h4>
 <ul>
 <li><a href="results/custom-counter-styles">All results</a></li>
 </ul>
@@ -329,11 +337,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-<h2 id="css_pseudo"><a href="#css_pseudo" class="href">CSS Pseudo</a></h2>
+<section id="css_pseudo" class="tests">
+<h3>CSS Pseudo</h3>
   
-<section>
-<h3 id="first_letter"><a href="#first_letter">First-letter</a></h3>
+<section id="first_letter">
+<h4>First-letter</h4>
 <ul>
 <li>7.2. The ::first-letter pseudo-element
 <ul>
@@ -349,11 +357,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-  <h2 id="css3-syntax"><a href="#css3-syntax" class="href">CSS Syntax</a></h2>
+<section id="css3-syntax" class="tests">
+<h3>CSS Syntax</h3>
   
-<section>
-<h3 id="i18n-css-syntax-bytes"><a href="#i18n-css-syntax-bytes">Character encoding</a></h3>
+<section id="i18n-css-syntax-bytes">
+<h4>Character encoding</h4>
 <ul>
 <li>3.2 The input byte stream
 <ul>
@@ -369,11 +377,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-  <h2 id="css3-text"><a href="#css3-text" class="href">CSS Text</a></h2>
+<section id="css3-text" class="tests">
+<h3>CSS Text</h3>
   
-<section>
-<h3 id="css3-text-transform"><a href="#css3-text-transform">Text transform</a></h3>
+<section id="css3-text-transform">
+<h4>Text transform</h4>
 <ul>
 <li>2.1. Case Transforms
 <ul>
@@ -391,8 +399,8 @@ f.additionalLinks = ''
   
   
   
-<section>
-<h3 id="css3-white-space"><a href="#css3-white-space">White space</a></h3>
+<section id="css3-white-space">
+<h4>White space</h4>
 <ul>
 <li>4.1. The White Space Processing Details
 <ul>
@@ -405,8 +413,8 @@ f.additionalLinks = ''
   
   
   
-<section>
-<h3 id="css3-text-line-breaks"><a href="#css3-text-line-breaks">Line breaks</a></h3>
+<section id="css3-text-line-breaks">
+<h4>Line breaks</h4>
 <ul>
 <li>5.  Line Breaking and Word Boundaries
 <ul>
@@ -438,8 +446,8 @@ f.additionalLinks = ''
   
   
   
-<section>
-<h3 id="css3-hyphens"><a href="#css3-hyphens">Word breaks</a></h3>
+<section id="css3-hyphens">
+<h4>Word breaks</h4>
 <ul>
 <li>6.1 Hyphenation Control: the hyphens property
 <ul>
@@ -453,8 +461,8 @@ f.additionalLinks = ''
   
   
   
-<section>
-<h3 id="css3-justification"><a href="#css3-justification">Alignment &amp; justification</a></h3>
+<section id="css3-justification">
+<h4>Alignment &amp; justification</h4>
 <ul>
 <li>7.1 Text Alignment: the text-align shorthand
 <ul>
@@ -480,8 +488,8 @@ f.additionalLinks = ''
 
   
   
-<section>
-<h3 id="cursive_boundaries"><a href="#cursive_boundaries">Cursive boundaries</a></h3>
+<section id="cursive_boundaries">
+<h4>Cursive boundaries</h4>
 <ul>
 <li>8.3 Shaping Across Element Boundaries
 <ul>
@@ -495,11 +503,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-  <h2 id="css3-text-decor"><a href="#css3-text-decor" class="href">CSS Text Decoration</a></h2>
+<section id="css3-text-decor" class="tests">
+<h3>CSS Text Decoration</h3>
   
-<section>
-<h3 id="css3-text-decor-line-decoration"><a href="#css3-text-decor-line-decoration">Line decoration</a></h3>
+<section id="css3-text-decor-line-decoration">
+<h4>Line decoration</h4>
 <ul>
 <li>2.  Line Decoration: underline, overline and strike-through
 <ul>
@@ -514,8 +522,8 @@ f.additionalLinks = ''
 
 
   
-<section>
-<h3 id="css3-text-decor-emph"><a href="#css3-text-decor-emph">Text emphasis</a></h3>
+<section id="css3-text-decor-emph">
+<h4>Text emphasis</h4>
 <ul>
 <li>3. Emphasis marks
   <ul>
@@ -529,8 +537,8 @@ f.additionalLinks = ''
 
 
   
-<section>
-<h3 id="css3-text-decor-text-shadow"><a href="#css3-text-decor-text-shadow">Text shadow</a></h3>
+<section id="css3-text-decor-text-shadow">
+<h4>Text shadow</h4>
 <ul>
 <li>4. Text shadow
   <ul>
@@ -545,11 +553,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-<h2 id="css3-writing-modes"><a href="#css3-writing-modes" class="href">CSS Writing Modes</a></h2>
+<section id="css3-writing-modes" class="tests">
+<h3>CSS Writing Modes</h3>
 
 <section>
-<h3 id="css-writing-modes-bidi"><a href="#css-writing-modes-bidi">Bidi</a></h3>
+<h4 id="css-writing-modes-bidi">Bidi</h4>
 <ul>
 <li>2.  Inline Direction and Bidirectionality
 <ul>
@@ -562,8 +570,8 @@ f.additionalLinks = ''
 
 
   
-<section>
-<h3 id="css-writing-modes-vertical"><a href="#css-writing-modes-vertical">Vertical text</a></h3>
+<section id="css-writing-modes-vertical">
+<h4>Vertical text</h4>
 <ul>
 <li>3.1. Block Flow Direction: the writing-mode property
 <ul>
@@ -587,11 +595,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-<h2 id="selectors"><a href="#selectors-3" class="href">Selectors</a></h2>
+<section id="selectors" class="tests">
+<h3>Selectors</h3>
   
-<section>
-<h3 id="css-normalization"><a href="#css-normalization">Normalization</a></h3>
+<section id="css-normalization">
+<h4>Normalization</h4>
 <ul>
 <li>2. Selectors
   <ul>
@@ -602,8 +610,8 @@ f.additionalLinks = ''
 </section>
  
 
-<section>
-<h3 id="css3-selector-lang"><a href="#css3-selector-lang">Language selection</a></h3>
+<section id="css3-selector-lang">
+<h4>Language selection</h4>
 <ul>
 <li>6.3.1. Attribute presence and value selectors
   <ul>
@@ -622,11 +630,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-  <h2 id="html5-devt"><a href="#html5-devt" class="href">HTML5</a></h2>
+<section id="html5-devt" class="tests">
+<h3>HTML5</h3>
   
-<section>
-<h3 id="html5-characters"><a href="#html5-characters">Character encoding</a></h3>
+<section id="html5-characters">
+<h4>Character encoding</h4>
 <ul>
 <li>8.1.4 Character references
   <ul>
@@ -650,8 +658,8 @@ f.additionalLinks = ''
   
   
   
-<section>
-<h3 id="html5-language"><a href="#html5-language">Language</a></h3>
+<section id="html5-language">
+<h4>Language</h4>
 <ul>
 <li>3.2.2.3 The lang and xml:lang attributes
   <ul>
@@ -672,8 +680,8 @@ f.additionalLinks = ''
   
   
   
-<section>
-<h3 id="html5-text-direction"><a href="#html5-text-direction">Text direction</a></h3>
+<section id="html5-text-direction">
+<h4>Text direction</h4>
 <ul>
 <li>3.2.3.6 The dir attribute
   <ul>
@@ -729,8 +737,8 @@ f.additionalLinks = ''
   
   
   
-<section>
-<h3 id="html5-ruby"><a href="#html5-ruby">Ruby</a></h3>
+<section id="html5-ruby">
+<h4>Ruby</h4>
 <ul>
 <li>4.5.21 The ruby, rb, rt elements
   <ul>
@@ -745,8 +753,8 @@ f.additionalLinks = ''
   
   
   
-<section>
-<h3 id="html5-q"><a href="#html5-q">The q element</a></h3>
+<section id="html5-q">
+<h4>The q element</h4>
 <ul>
 <li>4.5.7 The q element
   <ul>
@@ -764,8 +772,8 @@ f.additionalLinks = ''
   
   
   
-<section>
-<h3 id="html5-translate"><a href="#html5-translate">Translation</a></h3>
+<section id="html5-translate">
+<h4>Translation</h4>
 <ul>
 <li>3.2.3.4 The translate attribute
   <ul>
@@ -781,11 +789,11 @@ f.additionalLinks = ''
 
 
 
-<section class="tests">
-<h2 id="encoding-spec"><a href="#encoding-spec" class="href">Encoding spec</a></h2>
+<section id="encoding-spec" class="tests">
+<h3>Encoding spec</h3>
   
-<section>
-<h3 id="encoding-sb-indexes"><a href="#encoding-sb-indexes">Single-byte encodings</a></h3>
+<section id="encoding-sb-indexes">
+<h4>Single-byte encodings</h4>
 <ul>
 <li>10 Legacy single-byte encodings
   <ul>
@@ -794,41 +802,44 @@ f.additionalLinks = ''
 </li>
 </ul>
 </section>
-<section>
-<h3 id="encoding-db-indexes"><a href="#encoding-db-indexes">Double-byte encodings</a></h3>
+
+
+<section id="encoding-db-indexes">
+<h4>Double-byte encodings</h4>
 <ul>
 <li><a href="https://www.w3.org/International/tests/repo/results/encoding-dbl-byte-labels.en">5.2 Names and labels</a></li>
 <li><a href="https://www.w3.org/International/tests/repo/results/encoding-dbl-byte.en#zhhans">11 Legacy multi-byte Chinese (simplified) encodings</a></li>
-<li><a href="https://www.w3.org/International/tests/repo/results/encoding-dbl-byte.en#zhhant">12 Legacy multi-byte Chinese (traditional) encodings</a></li>
+<li><a href="https://www.w3.org/International/tests/repo/results/encoding-dbl-byte.en#zhhant">1x2 Legacy multi-byte Chinese (traditional) encodings</a></li>
 <li><a href="https://www.w3.org/International/tests/repo/results/encoding-dbl-byte.en#ja">13 Legacy multi-byte Japanese encodings</a></li>
 <li><a href="https://www.w3.org/International/tests/repo/results/encoding-dbl-byte.en#ko">14 Legacy multi-byte Korean encodings</a></li>
 </ul>
 </section>
 </section>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="interactive" style="clear: both;">
-<p style="font-size: 200%; text-align: center; margin-top: 4em;">Other tests.</p>
-<!--h2 id="interactive_tests"><a href="#interactive_tests" class="href">Interactive tests</a></h2-->
-<p>The following is a mixed bag of additional tests.</p>
 </section>
-<section class="tests">
-<h2 id="exploratory"><a href="#other" class="href">Exploratory tests</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="other">
+<h2>Other tests</h2>
+
+
+<p>The following is a mixed bag of additional tests.</p>
+
+
+<section id="exploratory">
+<h3>Exploratory tests</h3>
   
 <section id="other_linebreak">
-<h3><a href="#other_linebreak">Line-breaking</a></h3>
+<h4>Line-breaking</h4>
 <ul>
 <li><a href="results/exploring-linebreak">Basic</a></li>
 <li><a href="results/exploring-linebreak">Textarea</a></li>
@@ -836,7 +847,7 @@ f.additionalLinks = ''
 </section>
   
 <section id="other_justification">
-<h3><a href="#other_justification">Justification &amp; letter-spacing</a></h3>
+<h4>Justification &amp; letter-spacing</h4>
 <ul>
 <li><a href="results/exploring-justify-space">Justification</a></li>
 <li><a href="results/exploring-justify-space">Letter-spacing</a></li>
@@ -844,7 +855,7 @@ f.additionalLinks = ''
 </section>
   
 <section id="other_cursive">
-<h3><a href="#other_cursive">Cursive behaviour</a></h3>
+<h4>Cursive behaviour</h4>
 <ul>
 <li><a href="results/cursive">Text shadow</a></li>
 <li><a href="results/cursive">Text stroke</a></li>
@@ -854,14 +865,14 @@ f.additionalLinks = ''
 </section>
   
 <section id="other_language">
-<h3><a href="#other_language">Language and fonts</a></h3>
+<h4>Language and fonts</h4>
 <ul>
 <li><a href="results/default-font">Language-specific default fonts</a></li>
 </ul>
 </section>
   
 <section id="other_text_selection">
-<h3><a href="#other_text_selection">Text selection</a></h3>
+<h4>Text selection</h4>
 <ul>
 <li><a href="results/text-selection">Arabic, Bengali, Hindi, etc.</a></li>
 </ul>
@@ -869,11 +880,16 @@ f.additionalLinks = ''
 </section>
 
 
-<section class="tests">
-  <h2 id="css-old"><a href="#css-old" class="href">Older tests (still using old frameworks)</a></h2>
+
+
+
+
+
+<section id="css-old">
+<h3>Older tests (still using old frameworks)</h3>
   
 <section id="css-selectors">
-<h3><a href="#css-selectors">CSS selectors</a></h3>
+<h4>CSS selectors</h4>
 <ul>
 <li><a href="https://www.w3.org/International/tests/html-css/selectors/results-css-lang">:lang with xml:lang</a></li>
 <li><a href="https://www.w3.org/International/tests/html-css/selectors/results-css-lang">lang and xml:lang precedence</a></li>
@@ -884,8 +900,8 @@ f.additionalLinks = ''
 
 
   
-<section>
-<h3 id="css-fonts"><a href="#css-fonts">Fonts</a></h3>
+<section id="css-fonts">
+<h4>Fonts</h4>
 <ul>
   <li><a href="https://www.w3.org/International/tests/html-css/webfonts/results-webfonts">WOFF font download</a></li>
   <li><a href="https://www.w3.org/International/tests/html-css/webfonts/results-webfonts">Opentype font download</a></li>
@@ -895,8 +911,8 @@ f.additionalLinks = ''
 
 
   
-<section>
-<h3 id="h5-characters"><a href="#h5-characters">HTML character encoding</a></h3>
+<section id="h5-characters">
+<h4>HTML character encoding</h4>
 <ul>
 <li><a href="https://www.w3.org/International/tests/html-css/character-encoding-xhtml/results-xhtml-encoding">XHTML5 basics &amp; precedence</a></li>
 </ul>
@@ -904,8 +920,8 @@ f.additionalLinks = ''
 
 
   
-<section>
-<h3 id="svg"><a href="#svg">SVG</a></h3>
+<section id="svg">
+<h4>SVG</h4>
 <ul id="qa2" style="width: 100%;">
 <li><a href="https://www.w3.org/International/tests/svg/test-direction-unicode-bidi-0" id="svg-direction">Direction &amp; unicode-bidi *</a></li>
 <li><a href="https://www.w3.org/International/tests/svg/test-direction-alignment-0" id="svg-alignment">Direction &amp; alignment</a> *</li>
@@ -914,8 +930,8 @@ f.additionalLinks = ''
 
 
   
-<section>
-<h3 id="other"><a href="#other">Other</a></h3>
+<section id="other_other">
+<h4>Other</h4>
 <ul id="qa" style="width: 100%;">
 <li><a href="https://www.w3.org/International/tests/test-incubator/oldtests/sec-idn-0" id="iri">Resource identifiers</a> *</li>
 <li><a href="https://www.w3.org/International/tests/test-incubator/oldtests/test-idn-display-0" id="idn-display">IDN display</a> &nbsp; (<a href="https://www.w3.org/International/tests/test-incubator/oldtests/results/results-idn-display">Results
@@ -927,14 +943,16 @@ f.additionalLinks = ''
     href="https://www.w3.org/International/tests/test-incubator/oldtests/results/results-link-element">Results available</a>) *</li>
 </ul>
 </section>
- 
- </section>
+</section>
+</section>
+
+
 </div>
 
 
 <br style="clear: both;" />
 
 <footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
-<script>completePage()</script>
+<script>completePage(3)</script>
 </body>
 </html>
