@@ -29,13 +29,13 @@ overflow: hidden;
 
 <!-- INPUT AREA -->
 <div><textarea id="assertion" placeholder="Add an assertion here." dir="auto"></textarea></div>
-<div><textarea id="in" type="text" placeholder="Add text to be tested text here and click on GO." dir="auto"></textarea> 
+<div><textarea id="in" placeholder="Add text to be tested text here and click on GO." dir="auto"></textarea> 
 <button onClick="setText(document.getElementById('in').value)" id="go" style="vertical-align: top;">Go</button></div>
 
 
 
 <!-- TESTS -->
-<div><textarea id="instructions" type="text" placeholder="Add instructions here." dir="auto"></textarea></div>
+<div><textarea id="instructions" placeholder="Add instructions here." dir="auto"></textarea></div>
 
 <div class="test" id="test" dir="auto"></div>
 
@@ -117,7 +117,7 @@ out += 'text='+encodeURIComponent(document.getElementById('in').value)
 
 if (document.getElementById('language') && document.getElementById('language').value != '') out += '&lang='+document.getElementById('language').value
 if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+document.getElementById('fontSize').value
-if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+document.getElementById('fontFamily').value
+if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+encodeURIComponent(document.getElementById('fontFamily').value)
 if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
 if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
 
