@@ -94,7 +94,7 @@ for (var p=0;p<parameters.length;p++) {
 					document.getElementById('fontSize').value = pairs[1] 
 					}
 	if (pairs[0] == 'fontFamily' && pairs[1]) {
-					setFont(pairs[1]) 
+					setFont(decodeURIComponent(pairs[1]))
 					document.getElementById('fontFamily').value = decodeURIComponent(pairs[1]) 
 					}
 	if (pairs[0] == 'width' && pairs[1]) { 
@@ -112,7 +112,7 @@ function snapParameters () {
 // take a snapshot of the settings of the page and make available as URL parameters
 // this can be picked up by the user to point to the current setup of the page
 
-out = "https://w3c.github.io/i18n-tests/exploratory/vanilla?"
+out = "https://w3c.github.io/i18n-tests/exploratory/vanilla/index.html?"
 out += 'text='+encodeURIComponent(document.getElementById('in').value)
 
 if (document.getElementById('language') && document.getElementById('language').value != '') out += '&lang='+document.getElementById('language').value
