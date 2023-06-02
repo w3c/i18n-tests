@@ -23,18 +23,9 @@ padding: 40px;
 <script src="../../fonts/interactive_functions.js"> </script>
 <script>
 
-function setTextEmphasisStyle (value) {
+function setTextEmphasisStyle () {
 var tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
-
-if (value === 'none'){
-	var boxes = document.querySelectorAll('input[name=textEmphasisStyle]')
-	for (let i=0;i<boxes.length;i++) boxes[i].checked = false
-	document.getElementById('textEmphasisStyle'+value).checked = true
-	}
-else {
-	document.getElementById('textEmphasisStylenone').checked = false
-	}
 
 value = ''
 checkboxes = document.querySelectorAll('input[name=textEmphasisStyle]')
@@ -46,16 +37,12 @@ if (checkboxes[4].checked) value += 'circle '
 if (checkboxes[5].checked) value += 'double-circle '
 if (checkboxes[6].checked) value += 'triangle '
 if (checkboxes[7].checked) value += 'sesame '
-if (value === '') { 
-	value = 'none'
-	document.getElementById('textEmphasisStylenone').checked = true
-	}
 
 for (let i=0;i<tests.length;i++) tests[i].style.textEmphasisStyle = value
 }
 
 
-function setTextEmphasisPosition (value) {
+function setTextEmphasisPosition () {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
 
@@ -79,7 +66,7 @@ for (let i=0;i<tests.length;i++) tests[i].style.textEmphasisColor = value
 
 
 
-function setTextEmphasisSkip (value) {
+function setTextEmphasisSkip () {
 tests = document.querySelectorAll('.test span')
 if (tests.length===0) tests = document.querySelectorAll('.test')
 
@@ -96,7 +83,8 @@ for (let i=0;i<tests.length;i++) tests[i].style.textEmphasisSkip = value
 
 
 
-function setWritingMode (value) {
+function setWritingMode () {
+value = document.querySelector('input[name="writingMode"]:checked').value;
 tests = document.querySelectorAll('.test')
 for (let i=0;i<tests.length;i++) tests[i].style.writingMode = value
 }
@@ -111,7 +99,12 @@ for (let i=0;i<tests.length;i++) tests[i].style.writingMode = value
 <div><textarea id="assertion" placeholder="Add an assertion here." dir="auto"></textarea></div>
 
 <div><textarea id="in" dir="auto" type="text" placeholder="Add text to be tested text here and click on GO."></textarea> 
-<button onClick="setText(document.getElementById('in').value)" id="go" style="vertical-align: top;">Go</button></div>
+<button onClick="setText(document.getElementById('in').value);
+    setTextEmphasisStyle();
+    setTextEmphasisPosition();
+    setTextEmphasisSkip();
+    setWritingMode();
+    " id="go" style="vertical-align: top;">Go</button></div>
 
 
 
@@ -142,29 +135,74 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 
 <p class="advice">If you include one or more spans in the test, only the text inside the span(s) will have the style applied to them. None of the following are set in the file by default. Unless overridden in the URL parameters, the highlighted values show initial settings.</p>
 
+
 <p><fieldset>
 <legend><code>text-emphasis-style:</code></legend>
-<label onClick="setTextEmphasisStyle('none')"><input type="checkbox" value="none"  id="textEmphasisStylenone" name="textEmphasisStyle"/><code>none</code></label>
+<label onClick="boxes = document.querySelectorAll('input[name=textEmphasisStyle]');
+    for (let i=0;i<boxes.length;i++) boxes[i].checked = false;
+    this.checked = true;
+    setTextEmphasisStyle()"><input type="checkbox" value="none"  id="textEmphasisStylenone" name="textEmphasisStyle"/><code>none</code></label>
 | [ [
-<label onClick="setTextEmphasisStyle('filled')"><input type="checkbox" value="filled" id="textEmphasisStylefilled" name="textEmphasisStyle"/>
+<label onClick="
+    document.getElementById('textEmphasisStylenone').checked = false;
+    document.getElementById('textEmphasisStyleopen').checked = false;
+    setTextEmphasisStyle()"><input type="checkbox" value="filled" id="textEmphasisStylefilled" name="textEmphasisStyle"/>
 <code>filled</code></label>
-||
-<label onClick="setTextEmphasisStyle('open')"><input type="checkbox" value="open" id="textEmphasisStyleopen" name="textEmphasisStyle"/>
+|
+<label onClick="
+    document.getElementById('textEmphasisStylenone').checked = false;
+    document.getElementById('textEmphasisStylefilled').checked = false;
+    setTextEmphasisStyle()"><input type="checkbox" value="open" id="textEmphasisStyleopen" name="textEmphasisStyle"/>
 <code>open</code></label> 
 ] || [ 
-<label onClick="setTextEmphasisStyle('dot')"><input type="checkbox" value="dot" id="textEmphasisStyledot" name="textEmphasisStyle"/>
+<label onClick="
+    document.getElementById('textEmphasisStylenone').checked = false;
+    document.getElementById('textEmphasisStylecircle').checked = false;
+    document.getElementById('textEmphasisStyledouble-circle').checked = false;
+    document.getElementById('textEmphasisStyletriangle').checked = false;
+    document.getElementById('textEmphasisStylesesame').checked = false;
+    setTextEmphasisStyle()
+    "><input type="checkbox" value="dot" id="textEmphasisStyledot" name="textEmphasisStyle"/>
 <code>dot</code></label>
 |
-<label onClick="setTextEmphasisStyle('circle')"><input type="checkbox" value="circle" id="textEmphasisStylecircle" name="textEmphasisStyle"/>
+<label onClick="
+    document.getElementById('textEmphasisStylenone').checked = false;
+    document.getElementById('textEmphasisStyledot').checked = false;
+    document.getElementById('textEmphasisStyledouble-circle').checked = false;
+    document.getElementById('textEmphasisStyletriangle').checked = false;
+    document.getElementById('textEmphasisStylesesame').checked = false;
+    setTextEmphasisStyle()
+    "><input type="checkbox" value="circle" id="textEmphasisStylecircle" name="textEmphasisStyle"/>
 <code>circle</code></label>
 |
-<label onClick="setTextEmphasisStyle('double-circle')"><input type="checkbox" value="double-circle" id="textEmphasisStyledouble-circle" name="textEmphasisStyle"/>
+<label onClick="
+    document.getElementById('textEmphasisStylenone').checked = false;
+    document.getElementById('textEmphasisStyledot').checked = false;
+    document.getElementById('textEmphasisStylecircle').checked = false;
+    document.getElementById('textEmphasisStyletriangle').checked = false;
+    document.getElementById('textEmphasisStylesesame').checked = false;
+    setTextEmphasisStyle()
+    "><input type="checkbox" value="double-circle" id="textEmphasisStyledouble-circle" name="textEmphasisStyle"/>
 <code>double-circle</code></label>
 |
-<label onClick="setTextEmphasisStyle('triangle')"><input type="checkbox" value="triangle" id="textEmphasisStyletriangle" name="textEmphasisStyle"/>
+<label onClick="
+    document.getElementById('textEmphasisStylenone').checked = false;
+    document.getElementById('textEmphasisStyledot').checked = false;
+    document.getElementById('textEmphasisStylecircle').checked = false;
+    document.getElementById('textEmphasisStyledouble-circle').checked = false;
+    document.getElementById('textEmphasisStylesesame').checked = false;
+    setTextEmphasisStyle()
+    "><input type="checkbox" value="triangle" id="textEmphasisStyletriangle" name="textEmphasisStyle"/>
 <code>triangle</code></label>
 |
-<label onClick="setTextEmphasisStyle('sesame')"><input type="checkbox" value="sesame" id="textEmphasisStylesesame" name="textEmphasisStyle"/>
+<label onClick="
+    document.getElementById('textEmphasisStylenone').checked = false;
+    document.getElementById('textEmphasisStyledot').checked = false;
+    document.getElementById('textEmphasisStylecircle').checked = false;
+    document.getElementById('textEmphasisStyledouble-circle').checked = false;
+    document.getElementById('textEmphasisStyletriangle').checked = false;
+    setTextEmphasisStyle()
+    "><input type="checkbox" value="sesame" id="textEmphasisStylesesame" name="textEmphasisStyle"/>
 <code>sesame</code></label>
  ] ] | 
  string: tbd
@@ -175,16 +213,28 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <p><fieldset>
 <legend><code>text-emphasis-position:</code></legend>
 [ 
-<label onClick="setTextEmphasisPosition('over')"><input type="checkbox" value="over"  id="textEmphasisPositionover" name="textEmphasisPosition"/>
+<label onClick="
+    document.getElementById('textEmphasisPositionunder').checked = false;
+    setTextEmphasisPosition()
+    "><input type="checkbox" value="over"  id="textEmphasisPositionover" name="textEmphasisPosition"/>
 <code>over</code></label>
 |
-<label onClick="setTextEmphasisPosition('under')"><input type="checkbox" value="under" id="textEmphasisPositionunder" name="textEmphasisPosition"/>
+<label onClick="
+    document.getElementById('textEmphasisPositionover').checked = false;
+    setTextEmphasisPosition()
+    "><input type="checkbox" value="under" id="textEmphasisPositionunder" name="textEmphasisPosition"/>
 <code>under</code></label>
  ] &amp;&amp; [
-<label onClick="setTextEmphasisPosition('right')"><input type="checkbox" value="right" id="textEmphasisPositionright" name="textEmphasisPosition"/>
+<label onClick="
+    document.getElementById('textEmphasisPositionleft').checked = false;
+    setTextEmphasisPosition()
+    "><input type="checkbox" value="right" id="textEmphasisPositionright" name="textEmphasisPosition"/>
 <code>right</code></label>
 |
-<label onClick="setTextEmphasisPosition('left')"><input type="checkbox" value="left" id="textEmphasisPositionleft" name="textEmphasisPosition"/>
+<label onClick="
+    document.getElementById('textEmphasisPositionright').checked = false;
+    setTextEmphasisPosition()
+    "><input type="checkbox" value="left" id="textEmphasisPositionleft" name="textEmphasisPosition"/>
 <code>left</code></label> 
 ]
 </fieldset>
@@ -250,7 +300,13 @@ Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)
 <li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
 </ul>
 </div>
+
+
+
+
+
 <script>
+// READ IN DATA FROM URL AND SET UP TEST
 document.getElementById('version').innerHTML = navigator.userAgent
 
 
@@ -300,15 +356,15 @@ for (var p=0;p<parameters.length;p++) {
 					values = decodeURIComponent(pairs[1]).split(' ')
 					for (let i=0;i<values.length;i++) {
 						document.getElementById('textEmphasisStyle'+values[i]).checked = true
-						setTextEmphasisStyle(values[i])
 						}
+                    setTextEmphasisStyle()
 					}
 	if (pairs[0] == 'textEmphasisPosition' && pairs[1]) {
 					values = decodeURIComponent(pairs[1]).split(' ')
 					for (let i=0;i<values.length;i++) {
 						document.getElementById('textEmphasisPosition'+values[i]).checked = true
-						setTextEmphasisPosition(values[i])
 						}
+				    setTextEmphasisPosition()
 					}
 	if (pairs[0] == 'textEmphasisColor' && pairs[1]) {
 					setTextEmphasisColor(decodeURIComponent(pairs[1])) 
@@ -317,8 +373,8 @@ for (var p=0;p<parameters.length;p++) {
 					values = decodeURIComponent(pairs[1]).split(' ')
 					for (let i=0;i<values.length;i++) {
 						document.getElementById('textEmphasisSkip'+values[i]).checked = true
-						setTextEmphasisSkip(values[i])
 						}
+				    setTextEmphasisSkip()
 					}
 
 	if (pairs[0] == 'writingMode' && pairs[1]) {
