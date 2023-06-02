@@ -314,6 +314,18 @@ for (var p=0;p<parameters.length;p++) {
 					setWritingMode(decodeURIComponent(pairs[1])) 
 					document.getElementById('writingMode'+decodeURIComponent(pairs[1])).checked = true 
 					}
+
+
+	if (pairs[0] == 'text' && pairs[1]) { 
+					document.getElementById('in').value = decodeURIComponent(pairs[1])
+					setText(decodeURIComponent(pairs[1]))
+					}
+	if (pairs[0] == 'a' && pairs[1]) { 
+					document.getElementById('assertion').value = decodeURIComponent(pairs[1])
+					}
+	if (pairs[0] == 'i' && pairs[1]) { 
+					document.getElementById('instructions').value = decodeURIComponent(pairs[1])
+					}
 	}
 
 
@@ -362,6 +374,10 @@ out += '&textEmphasisSkip='+encodeURIComponent(value.trim())
 if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
 
 out += '&text='+encodeURIComponent(document.getElementById('in').value)
+
+out += '&a='+encodeURIComponent(document.getElementById('assertion').value)
+out += '&i='+encodeURIComponent(document.getElementById('instructions').value)
+
 return out
 }
 </script>
