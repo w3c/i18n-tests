@@ -259,7 +259,19 @@ parameters = location.search.split('&')
 parameters[0] = parameters[0].substring(1)
 for (var p=0;p<parameters.length;p++) {  
 	pairs = parameters[p].split('=');
-	if (pairs[0] == 'lang' && pairs[1]) setLanguage( pairs[1] )
+
+	if (pairs[0] == 'text' && pairs[1]) { 
+					document.getElementById('in').value = decodeURIComponent(pairs[1])
+					setText(decodeURIComponent(pairs[1]))
+					}
+	if (pairs[0] == 'a' && pairs[1]) { 
+					document.getElementById('assertion').value = decodeURIComponent(pairs[1])
+					}
+	if (pairs[0] == 'i' && pairs[1]) { 
+					document.getElementById('instructions').value = decodeURIComponent(pairs[1])
+					}
+
+    if (pairs[0] == 'lang' && pairs[1]) setLanguage( pairs[1] )
 	if (pairs[0] == 'fontSize' && pairs[1]) {
 					setFontSize(decodeURIComponent(pairs[1])) 
 					document.getElementById('fontSize').value = decodeURIComponent(pairs[1])
@@ -288,7 +300,6 @@ for (var p=0;p<parameters.length;p++) {
 					values = decodeURIComponent(pairs[1]).split(' ')
 					for (let i=0;i<values.length;i++) {
 						document.getElementById('textEmphasisStyle'+values[i]).checked = true
-						console.log(document.querySelector('.test'))
 						setTextEmphasisStyle(values[i])
 						}
 					}
@@ -314,27 +325,18 @@ for (var p=0;p<parameters.length;p++) {
 					setWritingMode(decodeURIComponent(pairs[1])) 
 					document.getElementById('writingMode'+decodeURIComponent(pairs[1])).checked = true 
 					}
-
-
-	if (pairs[0] == 'text' && pairs[1]) { 
-					document.getElementById('in').value = decodeURIComponent(pairs[1])
-					setText(decodeURIComponent(pairs[1]))
-					}
-	if (pairs[0] == 'a' && pairs[1]) { 
-					document.getElementById('assertion').value = decodeURIComponent(pairs[1])
-					}
-	if (pairs[0] == 'i' && pairs[1]) { 
-					document.getElementById('instructions').value = decodeURIComponent(pairs[1])
-					}
 	}
 
 
 function snapParameters () {
 // take a snapshot of the settings of the page and make available as URL parameters
 // this can be picked up by the user to point to the current setup of the page
-
 out = "https://w3c.github.io/i18n-tests/exploratory/text_decoration/int-text-emphasis.html?"
-if (document.getElementById('language') && document.getElementById('language').value != '') out += 'lang='+document.getElementById('language').value
+
+
+out += 'text='+encodeURIComponent(document.getElementById('in').value)
+
+if (document.getElementById('language') && document.getElementById('language').value != '') out += '&lang='+document.getElementById('language').value
 if (document.getElementById('fontSize') && document.getElementById('fontSize').value != '') out += '&fontSize='+encodeURIComponent(document.getElementById('fontSize').value)
 if (document.getElementById('fontFamily') && document.getElementById('fontFamily').value != '') out += '&fontFamily='+encodeURIComponent(document.getElementById('fontFamily').value)
 if (document.getElementById('boxWidth')) out += '&width='+document.getElementById('boxWidth').value
@@ -372,9 +374,6 @@ out += '&textEmphasisSkip='+encodeURIComponent(value.trim())
 
 
 if (document.getElementById('boxHeight')) out += '&height='+document.getElementById('boxHeight').value
-
-out += '&text='+encodeURIComponent(document.getElementById('in').value)
-
 out += '&a='+encodeURIComponent(document.getElementById('assertion').value)
 out += '&i='+encodeURIComponent(document.getElementById('instructions').value)
 
