@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>dirname test: ltr</title>
+<script src="../../../../../resources/testharness.js"></script>
+<script src="../../../../../resources/testharnessreport.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../../testharness.css">
+</head>
+
+
+<body>
+<script>
+var str = window.location.search.substr(1);
+var parameters = str.split ("&");
+
+var result = ''; var expected = '';
+for (i=0; i<parameters.length; i++) {
+	parts = parameters[i].split('=');
+	if (parts[0] == 'commentdir') {
+		result = parts[1];
+		}
+	if (parts[0] == 'expected') {
+		expected = parts[1];
+		}
+	if (parts[0] == 'comment') {
+		value = parts[1];
+		}
+	}
+
+test(function () {
+    assert_equals(result, expected);
+	}, 'commentdir should be '+expected);
+</script>
+
+<div id="log"></div>
+
+
+<p>The form value is displayed as follows using the direction information provided by the commentdir attribute (which is sent using dirname).</p>
+
+<p id="rendered"></p>
+<script>
+var document.getElementById('rendered').outerHTML = `<p id="rendered" dir="${ result }">${ value }</p>`
+</script>
+
+
+</body>
+</html>
