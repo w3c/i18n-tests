@@ -24,7 +24,7 @@ for (i=0; i<parameters.length; i++) {
 		expected = parts[1];
 		}
 	if (parts[0] == 'comment') {
-		value = parts[1];
+		inputvalue = parts[1];
 		}
 	}
 
@@ -36,11 +36,11 @@ test(function () {
 <div id="log"></div>
 
 
-<p>The form value is displayed as follows using the direction information provided by the commentdir attribute (which is sent using dirname).</p>
+<p>The form value is displayed as follows using the direction information provided by the commentdir attribute (which is sent using dirname):</p>
 
 <p id="rendered"></p>
 <script>
-var document.getElementById('rendered').outerHTML = `<p id="rendered" dir="${ result }">${ value }</p>`
+document.getElementById('rendered').outerHTML = `<p dir="${ result }">${ inputvalue }</p>`
 </script>
 
 
