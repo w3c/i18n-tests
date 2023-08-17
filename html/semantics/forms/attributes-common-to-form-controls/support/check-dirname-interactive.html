@@ -24,7 +24,7 @@ for (i=0; i<parameters.length; i++) {
 		expected = parts[1];
 		}
 	if (parts[0] == 'comment') {
-		inputvalue = parts[1];
+		inputvalue = decodeURIComponent(parts[1])
 		}
 	}
 
