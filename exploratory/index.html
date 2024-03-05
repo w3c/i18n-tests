@@ -47,17 +47,28 @@ overflow: hidden;
 <div id="css_hints" style="width: 45%;">Hints: 
 <select onchange="document.getElementById('hints').innerHTML = hints[this.value]">
 <option value="none">Choose one...</option>
-<option value="vertical_text">Vertical text</option>
+<option value="vertical">Vertical text</option>
+<option value="bidi">Bidi text</option>
+
+<option value="fonts">Fonts</option>
+<option value="cursive">Cursive text</option>
+<option value="transforms">Transforming characters</option>
+<option value="grapheme">Grapheme/word segmentation &amp; selection</option>
+<option value="decoration">Text decoration</option>
+<option value="emphasis">Text emphasis</option>
+<option value="quotations">Quotations</option>
+<option value="annotations">Inline notes &amp; annotations</option>
+
+<option value="breaking">Line breaking &amp; hyphenation</option>
+<option value="justification">Text alignment &amp; justification</option>
+<option value="spacing">Text spacing</option>
+<option value="counters">Lists, counters, etc</option>
+<option value="initials">Styling initials</option>
 </select>
 
-<div id="hints">
-</div>
-<!--details><summary>Show hints</summary>
-<iframe src="settings/vertical-text.html" style="width:100%; border: 0;"></iframe>
-</details-->
+<div id="hints"></div>
 </div>
 </div>
-
 
 
 
@@ -93,8 +104,7 @@ overflow: hidden;
 <div id="info" style="clear: both; position:inherit;">
 <ul class="notes">
 <li>More tests: 
-<a href="https://www.w3.org/International/i18n-tests/#results_summary_pages">All interactive tests &amp; results</a> •
-<a href="https://github.com/w3c/character_phrase_tests/issues">Character &amp; phrase test repo</a>
+<a href="https://www.w3.org/International/i18n-tests/#results_summary_pages">All interactive tests &amp; results</a>
 </li>
 <li>Browser: <span id="version"></span> <img src="settings/copy.svg" alt="Copy!" style="cursor: pointer; height: 1rem;" onClick="navigator.clipboard.writeText(document.getElementById('version').textContent)"></li>
 <li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
