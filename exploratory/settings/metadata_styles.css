@@ -1,0 +1,72 @@
+#info { 
+	position:fixed;
+	bottom:0;
+	color:#777;
+	font-size:100%;
+	}
+
+#info details { 
+	background: white; 
+	margin-block-end: 1rem;
+	}
+#info summary { 
+	cursor: pointer;
+	}
+
+#info li {
+    margin: 0;
+    padding: 0;
+	}
+#info ul {
+    margin: 0;
+    padding: 1em;
+	}
+#info a {
+	color: #B95C22;
+	}
+
+
+
+/* exploratory tests */
+
+#in, #css_settings {
+	width: 80%;
+	height: 5rem;
+	font-size: 1rem;
+	color: gray;
+    border: 1px solid #ccc;
+    padding: .4rem;
+    margin-inline-start: 1rem;
+	}
+#instructions, #assertion {
+	width: 85%;
+	height: 4em;
+	font-size: .9rem;
+	color: chocolate;
+	border: 1px solid white;
+	padding: .4em;
+    margin-block-start: 1rem;
+    margin-block-end: 0;
+	}
+#instructions:hover, #assertion:hover {
+	border: 1px solid #ccc;
+	}
+#assertion {
+    font-size: 1.2rem;
+    }
+#instructions {
+    font-size: .8rem;
+    }
+#go {
+	padding: 10px;
+	margin: 0;
+	border-radius: .25em;
+	font-size: 36px;
+	background-color: aquamarine;
+    margin-block-start: 1rem;
+	}
+#language { width: 5em; }
+#fontSize { width: 20em; }
+#fontFamily { width: 20em; }
+.advice { font-style: italic; font-size: 90%; }
+.proprietary { color: gray; }
