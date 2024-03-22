@@ -3,25 +3,25 @@
 
 <head>
 <meta charset="utf-8" />
-<title>Quotations &amp; citations: Interactive test results</title>
+<title>Emphasis: Interactive test results</title>
 <meta name="description" content="Summarises results of interactive tests by pulling data from a GitHub repository." />
 <script>
 var f = { }
 
 // AUTHORS should fill in these assignments:
 f.directory = 'results'+'/' // the path to this file, not including i18n-tests or the file name
-f.filename = 'int-text-alignment-justification' // the file name WITHOUT extensions
+f.filename = 'int-emphasis' // the file name WITHOUT extensions
 f.authors = 'Richard Ishida, W3C' // author(s) and affiliations
 f.previousauthors = '' // as above
 f.modifiers = '' // people making substantive changes, and their affiliation
-f.searchString = 'int-text-alignment-justification' // blog search string - usually the filename without extensions
-f.firstPubDate = '2020-02-12' // date of the first publication of the document (after review)
-f.lastSubstUpdate = { date:'2020-02-12', time:'10:50'}  // date and time of latest substantive changes to this document
+f.searchString = 'int-emphasis' // blog search string - usually the filename without extensions
+f.firstPubDate = '2024-03-22' // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2024-03-22', time:'08:54'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed'  // should be one of draft, review, published, notreviewed or obsolete
 f.path = '../../i18n-drafts/' // what you need to prepend to a URL to get to the /i18n-drafts directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2020-02-12', time:'10:50'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2024-03-22', time:'08:54'} // date and time of latest edits to this document/translation
 f.contributors = '' // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 f.sources = '' // describes sources of information
@@ -39,9 +39,9 @@ f.additionalLinks = ''
 <script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
 <script src="../../i18n-drafts/javascript/doc-structure/article.js"> </script>
 <script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
-<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css">
+<link rel="stylesheet" href="../../i18n-drafts/style/article-2016.css" />
 <link rel="copyright" href="#copyright"/>
-<link rel="stylesheet" href="results.css">
+<link rel="stylesheet" href="results.css"/>
 <style>
 table .assert {
 	width: 50%;
@@ -58,7 +58,7 @@ table .assert {
   <nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
   
   <h1>Interactive test results: <br> 
-Quotations &amp; citations
+Emphasis
 </h1>
 </header>
 
@@ -75,7 +75,7 @@ Quotations &amp; citations
    
 
 <section> 
-<p>This page summarises results for interactive tests related to text alignment &amp; justification. It complements the <a href="https://w3c.github.io/typography#quotations">Quotations.</a> section of the <a href="https://w3c.github.io/typography">Language Enablement Index</a>.</p>
+<p>This page summarises results for interactive tests related to text decoration. It complements the <a href="https://www.w3.org/TR/typography/#emphasis">Emphasis</a> section of the <a href="https://www.w3.org/TR/typography/">Language Enablement Index</a>.</p>
 
 <p>The tests themselves are linked to and described in a set of <a href="https://github.com/w3c/character_phrase_tests/issues">GitHub issues</a>. Follow the links to the issue to run the test, or to see notes on the results (especially where the test only partially passes).</p>
 
@@ -102,15 +102,14 @@ Quotations &amp; citations
 
 
 
-
 <section>
 <h2 id="endlinks" class="notoc">Links</h2>
 <aside class="section" id="survey"> </aside><script>document.getElementById('survey').innerHTML = g.survey</script>
 
 <ul id="full-links">
-<li><a href="https://w3c.github.io/typography#quotations">Quotations</a> in the Language Enablement Index.</li>
+<li><a href="https://www.w3.org/TR/typography/#emphasis">Text decoration</a> in the Language Enablement Index.</li>
 
-<li><a href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+is%3Aopen+label%3Adoc%3AQuotations">Quotations</a> in the Character Phrase tests repo.</li>
+<li><a href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+is%3Aopen+label%3Adoc%3AEmphasis">Text decoration</a> in the Character Phrase tests repo.</li>
 
 <li>The full set of issues in the <a href="https://github.com/w3c/character_phrase_tests/issues/">Character Phrase tests repo</a>.</li>
 
@@ -124,7 +123,7 @@ Quotations &amp; citations
 
 
 <script>
-getAllData('character_phrase_tests','doc:Quotations')
+getAllData('character_phrase_tests','doc:Emphasis')
 </script>
 </body>
 </html>
