@@ -151,13 +151,13 @@ tests[74]=["text-emphasis-tbrl-017.html","text-emphasis: &#039;string&#039; (tbr
 
 tests[75]=["text-emphasis-tbrl-020.html","text-emphasis and space (tbrl)","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-property',"text-emphasis:dot; no dot appears next to the space (Zs) characters"] 
 
-tests[76]=["text-emphasis-position-001.html","text-emphasis-position: default (ja)","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property',"[exploratory test] text-emphasis:dot; by default the dot appears OVER horizontal Japanese text"] 
+tests[76]=["text-emphasis-position-001.html","text-emphasis-position: default (ja)","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property',"text-emphasis:dot; by default the dot appears OVER horizontal Japanese text"] 
 
-tests[77]=["text-emphasis-position-002.html","text-emphasis-position: default (zh)","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property',"[exploratory test] text-emphasis:dot; by default the dot appears UNDER horizontal Chinese text"] 
+tests[77]=["text-emphasis-position-002.html","text-emphasis-position: default (zh)","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property',"text-emphasis:dot; by default the dot appears UNDER horizontal Chinese text"] 
 
-tests[78]=["text-emphasis-position-003.html","text-emphasis-position: default (ja, vertical)","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property',"[exploratory test] text-emphasis:dot; by default the dot appears to the RIGHT of vertical Japanese text"] 
+tests[78]=["text-emphasis-position-003.html","text-emphasis-position: default (ja, vertical)","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property',"text-emphasis:dot; by default the dot appears to the RIGHT of vertical Japanese text"] 
 
-tests[79]=["text-emphasis-position-004.html","text-emphasis-position: default (zh, vertical)","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property',"[exploratory test] text-emphasis:dot; by default the dot appears to the RIGHT of vertical Chinese text"] 
+tests[79]=["text-emphasis-position-004.html","text-emphasis-position: default (zh, vertical)","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property',"text-emphasis:dot; by default the dot appears to the RIGHT of vertical Chinese text"] 
 
 tests[80]=["text-emphasis-position-005.html","text-emphasis-position: over right","",'https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property',"text-emphasis:dot; text-emphasis-position:over right; the dot appears OVER horizontally set characters"] 
 
