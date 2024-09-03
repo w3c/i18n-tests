@@ -11,11 +11,11 @@ tests[4]=["css-text-decor/text-shadow-property/cursive-text-stroke-002.html","n&
 
 tests[5]=["css-text-decor/text-shadow-property/cursive-text-stroke-003.html","mongolian text-stroke","",'https://drafts.csswg.org/css-text-decor-3/#line-decoration',"[exploratory] -webkit-text-stroke on cursive Mongolian text doesn&#039;t break the joins"] 
 
-tests[6]=["css-color/transparency/cursive-opacity-001.html","arabic opaque text","",'https://www.w3.org/TR/css-color-4/#transparency',"[exploratory] When opacity is applied to cursive text in arabic the joins are not visible."] 
+tests[6]=["css-color/transparency/cursive-opacity-001.html","arabic opaque text","",'https://www.w3.org/TR/css-color-4/#transparency',"When opacity is applied to cursive text in arabic the joins are not visible."] 
 
-tests[7]=["css-color/transparency/cursive-opacity-002.html","n&#039;ko opaque text","",'https://www.w3.org/TR/css-color-4/#transparency',"[exploratory] When opacity is applied to cursive text in N&#039;Ko the joins are not visible."] 
+tests[7]=["css-color/transparency/cursive-opacity-002.html","n&#039;ko opaque text","",'https://www.w3.org/TR/css-color-4/#transparency',"When opacity is applied to cursive text in N&#039;Ko the joins are not visible."] 
 
-tests[8]=["css-color/transparency/cursive-opacity-003.html","mongolian opaque text","",'https://www.w3.org/TR/css-color-4/#transparency',"[exploratory] When opacity is applied to cursive text in Mongolian the joins are not visible."] 
+tests[8]=["css-color/transparency/cursive-opacity-003.html","mongolian opaque text","",'https://www.w3.org/TR/css-color-4/#transparency',"When opacity is applied to cursive text in Mongolian the joins are not visible."] 
 
 tests[9]=["css-text/shaping/shaping-001.html","shaping: colour","",'https://drafts.csswg.org/css-text/#boundary-shaping',"Shaping should not be broken across inline box boundaries for changes to colour."] 
 
