@@ -27,7 +27,7 @@ Links on the [main test page](https://www.w3.org/International/i18n-tests/) take
 
 The tests follow the pattern of the [Web Platform Tests](https://github.com/w3c/web-platform-tests), since it is our aim to copy all appropriate tests to that repository.  The i18n test suite is maintained separately because it contains exploratory tests that don't belong in the WPT repo, and because the tests and their results are arranged so that they can be linked to from educational materials created by the Internationalization activity.
 
-We have some [guidelines for writing i18n tests](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests) that complement the guidelines in the WPT documentation.
+We have some [guidelines for writing i18n tests](https://github.com/w3c/i18n-tests/wiki/Writing-i18n-tests) that complement the guidelines in the WPT documentation.
 
 ## Notes on structure of the repo
 
