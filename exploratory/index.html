@@ -17,6 +17,16 @@ font-size: 36px;
 border: 1px solid orange;
 overflow: hidden;
 }
+#snapshotButton {
+    color: white;
+    background: #1e883e;
+    border-radius: .5em;
+    border: 0;
+    padding-block: .5rem;
+    padding-inline: 1rem;
+    font-size: 1rem;
+    margin-block: 1rem;
+    }
 </style>
 <style id="css_code"></style>
 <script src="settings/interactive_functions.js"> </script>
@@ -75,13 +85,14 @@ overflow: hidden;
 
 
 <!-- TESTS -->
-<div><textarea id="instructions" placeholder="Add instructions here." dir="auto"></textarea></div>
+<div style="margin-inline: 1rem;"><textarea id="instructions" placeholder="Add instructions here." dir="auto"></textarea></div>
 
 <div class="test" id="test" dir="auto"></div>
 
 
 
 <!-- CONTROLS -->
+<div id="controls" style="margin-inline: 1rem;">
 <div class="advice">Adjust the width of the test box.<br/>
 <input id="boxWidth" min="10" max="1000" step="1" value="500" oninput="setBoxWidth(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="wSizeIndicator" style="font-size:80%;">500</span>px</div>
 
@@ -94,21 +105,21 @@ overflow: hidden;
 <span id="sizeOfFont" style="font-size:80%;">36</span>px</p>
 
 <p class="advice">Set the font to <input id="fontFamily" type="text" onChange="setFont(this.value)"/> <button onClick="setFont(document.getElementById('fontFamily').value)">Apply</button></p>
-
+</div>
 
 
 
 
 
 <!-- INFO -->
-<div id="info" style="clear: both; position:inherit;">
-<ul class="notes">
-<li>More tests: 
+<div id="info" class="notes" style="clear: both; position:inherit; margin-inline: 1rem; margin-block: 3rem;">
+<p>More tests: 
 <a href="https://www.w3.org/International/i18n-tests/#results_summary_pages">All interactive tests &amp; results</a>
-</li>
-<li>Browser: <span id="version"></span> <img src="settings/copy.svg" alt="Copy!" style="cursor: pointer; height: 1rem;" onClick="navigator.clipboard.writeText(document.getElementById('version').textContent)"></li>
-<li><button onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button>: <input id="snapshot" style="width:30em;" /></li>
-</ul>
+</p>
+
+<p><img src="settings/copy.svg" alt="Copy!" style="cursor: pointer; height: 2rem;" onClick="navigator.clipboard.writeText(document.getElementById('version').textContent)"> &nbsp; Browser: <span id="version"></span></p>
+
+<p><button id="snapshotButton" onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button> &nbsp; <input id="snapshot" style="width:50em; height: 1.8rem; font-size: 1.2rem;"></p>
 </div>
 
 
