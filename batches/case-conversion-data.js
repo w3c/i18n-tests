@@ -74,19 +74,19 @@ var testresults = {
 	{"browser":"Firefox", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0", "date":"28-3-2019  11:52:21" }, 
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36", "date":"28-3-2019  11:54:17" }, 
 	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1 Safari/605.1.15", "date":"28-3-2019  11:56:51" }, 
-	{"browser":"Edge", "status":"fail", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36", "date":"28-3-2019  12:58:22" }
+	{ browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:137.0) Gecko/20100101 Firefox/137.0', date:'16-4-2025  17:32:56', notes:'' }, 
 	],
 "georgian/text-transform-uc-geor-other-mkhedruli.html": [
 	{"browser":"Firefox", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0", "date":"28-3-2019  11:52:22" }, 
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36", "date":"28-3-2019  11:54:18" }, 
 	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1 Safari/605.1.15", "date":"28-3-2019  11:56:52" }, 
-	{"browser":"Edge", "status":"fail", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36", "date":"28-3-2019  12:58:23" }
+	{ browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:137.0) Gecko/20100101 Firefox/137.0', date:'16-4-2025  17:32:56', notes:'' }, 
 	],
 "georgian/text-transform-uc-geor-archaic-mkhedruli.html": [
 	{"browser":"Firefox", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0", "date":"28-3-2019  11:52:23" }, 
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36", "date":"28-3-2019  11:54:19" }, 
 	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1 Safari/605.1.15", "date":"28-3-2019  11:56:53" }, 
-	{"browser":"Edge", "status":"fail", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36", "date":"28-3-2019  12:58:24" }
+	{ browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:137.0) Gecko/20100101 Firefox/137.0', date:'16-4-2025  17:32:56', notes:'' }, 
 	],
 "georgian/text-transform-lc-geor-ka-mkhedruli.html": [
 	{"browser":"Firefox", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0", "date":"28-3-2019  11:52:25" }, 
