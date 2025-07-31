@@ -712,6 +712,7 @@ var testresults = {
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36", "date":"21-9-2020  9:10:51", "notes":"" }, 
 	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15", "date":"21-9-2020  9:15:52", "notes":"" }, 
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36", "date":"28-10-2021  10:45:31", "notes":"" }, 
+	{ browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', date:'31-7-2025  11:2:35', notes:'' },
 	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15", "date":"28-10-2021  10:51:18", "notes":"" }
 	],
 "float-clear/float-inline-start-002.html": [
@@ -719,6 +720,7 @@ var testresults = {
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36", "date":"21-9-2020  9:10:52", "notes":"" }, 
 	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15", "date":"21-9-2020  9:15:53", "notes":"" }, 
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36", "date":"28-10-2021  10:45:32", "notes":"" }, 
+	{ browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', date:'31-7-2025  11:2:35', notes:'' },
 	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15", "date":"28-10-2021  10:51:20", "notes":"" }
 	],
 "float-clear/float-inline-end-001.html": [
@@ -726,6 +728,7 @@ var testresults = {
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36", "date":"21-9-2020  9:10:53", "notes":"" }, 
 	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15", "date":"21-9-2020  9:15:53", "notes":"" }, 
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36", "date":"28-10-2021  10:45:34", "notes":"" }, 
+	{ browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', date:'31-7-2025  11:2:35', notes:'' },
 	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15", "date":"28-10-2021  10:51:21", "notes":"" }
 	],
 "float-clear/float-inline-end-002.html": [
@@ -733,6 +736,7 @@ var testresults = {
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36", "date":"21-9-2020  9:10:54", "notes":"" }, 
 	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15", "date":"21-9-2020  9:15:54", "notes":"" }, 
 	{"browser":"Chrome", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36", "date":"28-10-2021  10:45:35", "notes":"" }, 
+	{ browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', date:'31-7-2025  11:2:35', notes:'' },
 	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15", "date":"28-10-2021  10:51:22", "notes":"" }
 	]
 }
