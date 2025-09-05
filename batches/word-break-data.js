@@ -22,8 +22,7 @@ var testresults = {
 'word-break-normal-bo-000.html': [
 	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0', date:'20-3-2018  18:36:3' }, 
 	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', date:'20-3-2018  18:37:57' }, 
-	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6', date:'20-3-2018  18:41:0' }, 
-	{browser:'Edge', status:'pass', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', date:'20-3-2018  18:46:17' }
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6', date:'20-3-2018  18:41:0' }
 	],
 'word-break-normal-ja-000.html': [
 	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0', date:'20-3-2018  18:36:3' }, 
@@ -92,16 +91,14 @@ var testresults = {
 	{browser:'Edge', status:'pass', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', date:'20-3-2018  18:46:34' }
 	],
 'word-break-normal-jv-000.html': [
-	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0', date:'20-3-2018  18:36:14' }, 
-	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', date:'20-3-2018  18:38:8' }, 
-	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6', date:'20-3-2018  18:41:26' }, 
-	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', date:'20-3-2018  18:46:36' }
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:142.0) Gecko/20100101 Firefox/142.0', date:'5-9-2025  17:27:37', notes:'' },
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36', date:'5-9-2025  17:36:2', notes:'' },
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:142.0) Gecko/20100101 Firefox/142.0', date:'5-9-2025  17:40:7', notes:'' }
 	],
 'word-break-normal-jv-001.html': [
-	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0', date:'20-3-2018  18:36:15' }, 
-	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', date:'20-3-2018  18:38:9' }, 
-	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6', date:'20-3-2018  18:41:27' }, 
-	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299', date:'20-3-2018  18:46:36' }
+	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:142.0) Gecko/20100101 Firefox/142.0', date:'5-9-2025  17:27:37', notes:'' },	
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36', date:'5-9-2025  17:36:2', notes:'' },
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:142.0) Gecko/20100101 Firefox/142.0', date:'5-9-2025  17:40:7', notes:'' }
 	],
 'word-break-normal-zwj-001.html': [
 	{browser:'Firefox', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0', date:'20-3-2018  18:36:17' }, 
