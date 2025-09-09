@@ -117,7 +117,7 @@ overflow: hidden;
 <a href="https://www.w3.org/International/i18n-tests/#results_summary_pages">All interactive tests &amp; results</a>
 </p>
 
-<p><img src="settings/copy.svg" alt="Copy!" style="cursor: pointer; height: 2rem;" onClick="navigator.clipboard.writeText(document.getElementById('version').textContent)"> &nbsp; Browser: <span id="version"></span></p>
+<p><img src="settings/copy.svg" alt="Copy!" style="cursor: pointer; height: 2rem;" onClick="navigator.clipboard.writeText(document.getElementById('version').textContent).then(()=>{ const s = document.getElementById('copyStatus'); if (s) { s.textContent='Copied!'; s.style.color='#2a7b2e'; clearTimeout(s._t); s._t=setTimeout(()=>{ s.textContent=''; }, 2000); } }).catch(()=>{ const s = document.getElementById('copyStatus'); if (s) { s.textContent='Copy failed'; s.style.color='#b3261e'; clearTimeout(s._t); s._t=setTimeout(()=>{ s.textContent=''; }, 3000); } })"> &nbsp; Browser: <span id="version"></span> <span id="copyStatus" aria-live="polite" style="font-size: .9rem; margin-inline-start: .5rem;"></span></p>
 
 <p><button id="snapshotButton" onClick="document.getElementById('snapshot').value = snapParameters(); document.getElementById('snapshot').select()">Take a snapshot</button> &nbsp; <input id="snapshot" style="width:50em; height: 1.8rem; font-size: 1.2rem;"></p>
 </div>
