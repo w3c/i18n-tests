@@ -38,8 +38,7 @@ overflow: hidden;
 
 <!-- INPUT AREA -->
 <div><textarea id="assertion" placeholder="Add an assertion here." dir="auto"></textarea></div>
-<div><textarea id="in" placeholder="Add here HTML code to be tested, then click on GO." dir="auto"></textarea>
-<button onClick="setCSS(document.getElementById('css_settings').value); setText(document.getElementById('in').value);" id="go" style="vertical-align: top;">Go</button></div>
+<div><textarea id="in" placeholder="Add here HTML code to be tested. Changes will be reflected automatically." dir="auto"></textarea></div>
 
 
 
@@ -188,6 +187,28 @@ out += '&i='+encodeURIComponent(document.getElementById('instructions').value)
 
 return out
 }
+
+
+// Auto-sync with debounce function
+let debounceTimer;
+function debounce(func, delay) {
+	return function() {
+		const context = this;
+		const args = arguments;
+		clearTimeout(debounceTimer);
+		debounceTimer = setTimeout(() => func.apply(context, args), delay);
+	}
+}
+
+// Auto-update preview when HTML or CSS changes
+function updatePreview() {
+	setCSS(document.getElementById('css_settings').value);
+	setText(document.getElementById('in').value);
+}
+
+// Add event listeners for auto-sync (with 500ms debounce)
+document.getElementById('in').addEventListener('input', debounce(updatePreview, 500));
+document.getElementById('css_settings').addEventListener('input', debounce(updatePreview, 500));
 
 </script>
 </body>
