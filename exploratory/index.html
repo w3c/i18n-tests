@@ -189,6 +189,28 @@ out += '&i='+encodeURIComponent(document.getElementById('instructions').value)
 return out
 }
 
+
+// Auto-sync with debounce function
+let debounceTimer;
+function debounce(func, delay) {
+	return function() {
+		const context = this;
+		const args = arguments;
+		clearTimeout(debounceTimer);
+		debounceTimer = setTimeout(() => func.apply(context, args), delay);
+	}
+}
+
+// Auto-update preview when HTML or CSS changes
+function updatePreview() {
+	setCSS(document.getElementById('css_settings').value);
+	setText(document.getElementById('in').value);
+}
+
+// Add event listeners for auto-sync (with 500ms debounce)
+document.getElementById('in').addEventListener('input', debounce(updatePreview, 500));
+document.getElementById('css_settings').addEventListener('input', debounce(updatePreview, 500));
+
 </script>
 </body>
 </html>
