@@ -38,7 +38,8 @@ overflow: hidden;
 
 <!-- INPUT AREA -->
 <div><textarea id="assertion" placeholder="Add an assertion here." dir="auto"></textarea></div>
-<div><textarea id="in" placeholder="Add here HTML code to be tested. Changes will be reflected automatically." dir="auto"></textarea></div>
+<div><textarea id="in" placeholder="Add here HTML code to be tested, then click on GO." dir="auto"></textarea>
+<button onClick="setCSS(document.getElementById('css_settings').value); setText(document.getElementById('in').value);" id="go" style="vertical-align: top;">Go</button></div>
 
 
 
