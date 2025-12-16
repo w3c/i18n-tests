@@ -8,14 +8,106 @@
 <link rel="stylesheet" href="settings/metadata_styles.css"/>
 <style>
 
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --input-bg: white;
+  --input-text: gray;
+  --input-border: #ccc;
+  --instruction-text: chocolate;
+  --go-bg: aquamarine;
+  --go-text: black;
+  --link-color: #B95C22;
+  --info-color: #777;
+  --test-border: orange;
+  --snapshot-bg: #1e883e;
+  --snapshot-text: white;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --input-bg: #1e1e1e;
+  --input-text: #ccc;
+  --input-border: #444;
+  --instruction-text: #ffb74d;
+  --go-bg: #008b8b;
+  --go-text: white;
+  --link-color: #ffab91;
+  --info-color: #aaa;
+  --test-border: #ff9800;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#in, #css_settings {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--input-border);
+}
+
+#instructions, #assertion {
+  background-color: var(--input-bg);
+  color: var(--instruction-text);
+  border-color: var(--input-border);
+}
+
+#go {
+  background-color: var(--go-bg);
+  color: var(--go-text);
+}
+
+#info {
+  color: var(--info-color);
+}
+
+#info details {
+  background-color: var(--input-bg);
+}
+
+#info a {
+  color: var(--link-color);
+}
+
+#snapshotButton {
+    color: var(--snapshot-text);
+    background: var(--snapshot-bg);
+}
+
 /* the CSS below is not part of the test */
 .test {
+border-color: var(--test-border);
 margin: 0px 2% 1rem 2%;
 width: 500px;
 height: 500px;
 font-size: 36px;
 border: 1px solid orange;
 overflow: hidden;
+}
+#themeToggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+#themeToggle:hover {
+    background-color: var(--input-border);
+    transform: scale(1.05);
 }
 #snapshotButton {
     color: white;
@@ -32,6 +124,7 @@ overflow: hidden;
 <script src="settings/interactive_functions.js"> </script>
 </head>
 <body>
+<button onclick="toggleTheme()" id="themeToggle" aria-label="Toggle Dark Mode"></button>
 <h1>Interactive test</h1>
 
 
@@ -93,6 +186,7 @@ overflow: hidden;
 
 <!-- CONTROLS -->
 <div id="controls" style="margin-inline: 1rem;">
+
 <div class="advice">Adjust the width of the test box.<br/>
 <input id="boxWidth" min="10" max="1000" step="1" value="500" oninput="setBoxWidth(this.value)" style="width:90%; margin-left: 5%;" type="range"> <span id="wSizeIndicator" style="font-size:80%;">500</span>px</div>
 
@@ -126,6 +220,50 @@ overflow: hidden;
 
 
 <script>
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateThemeButton(newTheme);
+}
+
+function updateThemeButton(theme) {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+
+    if (theme === 'dark') {
+        // Currently Dark, switch to Light. Show Sun.
+        btn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+        `;
+    } else {
+        // Currently Light, switch to Dark. Show Moon.
+        btn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        `;
+    }
+}
+
+// Init theme
+const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+document.documentElement.setAttribute('data-theme', savedTheme);
+window.addEventListener('DOMContentLoaded', () => {
+    updateThemeButton(document.documentElement.getAttribute('data-theme'));
+});
+
 document.getElementById('version').innerHTML = navigator.userAgent
 
 // check for parameters and take appropriate action
