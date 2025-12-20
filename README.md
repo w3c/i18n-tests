@@ -1,5 +1,5 @@
 # i18n-tests
-This repository contains most of the tests created for use with the W3C Internationalization test suite and others that are more interactive in nature.  The majority test international features of W3C specifications, but there are others that just explore browser support for certain international features.
+This repository contains most of the tests created for use with the W3C Internationalization test suite and others that are more interactive in nature.  The majority test international features of W3C specifications, but there are others that just explore browser and font support for certain international features.
 
 There are two main types of test:
 1. standard tests written in HTML files that are accessed via the i18n test suite, and
