@@ -70,3 +70,11 @@
 #fontFamily { width: 20em; }
 .advice { font-style: italic; font-size: 90%; }
 .proprietary { color: gray; }
+
+#font_selector {
+    margin-inline: 1rem;
+    }
+#fontlist {
+    margin-inline: 3rem;
+    font-size: .9em;
+    }
