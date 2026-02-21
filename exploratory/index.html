@@ -140,14 +140,13 @@ overflow: hidden;
 
 
 <!-- CSS -->
-<div id="settings" style="display: flex; flex-wrap: nowrap; flex-direction: row; width: 100%;">
 <div style="width: 45%;">
 <textarea id="css_settings" placeholder="Add CSS code here.">.test {  }</textarea>
 </div>
 
 
 
-<div id="css_hints" style="width: 45%;">Hints: 
+<div id="css_hints" style="margin-inline:1rem;">Hints: 
 <select onchange="document.getElementById('hints').innerHTML = hints[this.value]">
 <option value="none">Choose one...</option>
 <option value="vertical">Vertical text</option>
@@ -171,7 +170,6 @@ overflow: hidden;
 
 <div id="hints"></div>
 </div>
-</div>
 
 
 
@@ -181,6 +179,13 @@ overflow: hidden;
 <div style="margin-inline: 1rem;"><textarea id="instructions" placeholder="Add instructions here." dir="auto"></textarea></div>
 
 <div class="test" id="test" dir="auto"></div>
+
+
+
+
+<!-- FONT SELECTOR -->
+<div id="font_selector"></div>
+
 
 
 
@@ -304,7 +309,83 @@ for (var p=0;p<parameters.length;p++) {
 					setBoxHeight(pairs[1]) 
 					document.getElementById('boxHeight').value = pairs[1]
 					}
-	}
+	if (pairs[0] == 'fonts' && pairs[1]) { 
+					buildFontList(decodeURIComponent(pairs[1]))
+					}
+    }
+
+
+
+
+function buildFontList(input) {
+    const container = document.getElementById("font_selector")
+    if (!container) return
+
+    const items = input.split(",").map(s => s.trim())
+    let html = `<div class="advice">Mouse over or tap on a font name to apply it.</div><div id="fontlist">`
+    let currentLine = ""
+
+    items.forEach(item => {
+        if (item.toLowerCase().startsWith("title:")) {
+            // Flush previous line if it exists
+            if (currentLine) {
+                html += `<p>${currentLine}</p>`
+                currentLine = ""
+                }
+            const title = item.slice(6).trim()
+            currentLine = `<strong>${title}</strong>`
+            }
+        else {
+            const safeFont = item.replace(/"/g, '&quot;');
+            const span = `
+            <span 
+              style="cursor:pointer"
+              onmouseover="document.getElementById('test').style.fontFamily='${safeFont}'"
+              onclick="document.getElementById('test').style.fontFamily='${safeFont}'"
+            >${safeFont}</span>
+            `;
+            currentLine += ` • ${span}`
+            }
+        })
+
+    // Flush final line
+    if (currentLine) {
+    html += `<p>${currentLine}</p></div>`
+    }
+
+    container.innerHTML = html
+    }
+
+
+
+function extractFontList() {
+  const container = document.getElementById("fontlist")
+  if (!container) return ""
+
+  const paragraphs = container.querySelectorAll("p")
+  const output = []
+
+  paragraphs.forEach(p => {
+    const strong = p.querySelector("strong")
+    if (!strong) return
+
+    // Title
+    const title = strong.textContent.trim()
+    output.push("title:" + title)
+
+    // Fonts
+    const spans = p.querySelectorAll("span")
+    spans.forEach(span => {
+      const font = span.textContent.trim()
+      output.push(font)
+      })
+    })
+
+  return output.join(",")
+  }
+
+
+
 
 
 function snapParameters () {
@@ -324,8 +405,12 @@ if (document.getElementById('boxHeight')) out += '&height='+document.getElementB
 out += '&a='+encodeURIComponent(document.getElementById('assertion').value)
 out += '&i='+encodeURIComponent(document.getElementById('instructions').value)
 
+if (document.getElementById('fontlist').textContent !== '') out += `&fonts=${ encodeURIComponent(extractFontList()) }`
+
 return out
 }
+
+
 
 
 // Auto-sync with debounce function
