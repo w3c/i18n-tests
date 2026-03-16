@@ -405,7 +405,7 @@ if (document.getElementById('boxHeight')) out += '&height='+document.getElementB
 out += '&a='+encodeURIComponent(document.getElementById('assertion').value)
 out += '&i='+encodeURIComponent(document.getElementById('instructions').value)
 
-if (document.getElementById('fontlist').textContent !== '') out += `&fonts=${ encodeURIComponent(extractFontList()) }`
+if (document.getElementById('fontlist') && document.getElementById('fontlist').textContent !== '') out += `&fonts=${ encodeURIComponent(extractFontList()) }`
 
 return out
 }
