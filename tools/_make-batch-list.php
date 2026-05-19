@@ -6,7 +6,7 @@
 <body>
 <?php
 
-$base = '/Users/ishida/Sites/i18n-tests/'.$_GET['base'].'/';
+$base = dirname(__DIR__).'/'.trim($_GET['base'], '/').'/';
 echo '<p style="color:#aaa;">Base: '.$base."</p>";
 
 $prefix = '';
