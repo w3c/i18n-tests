@@ -467,8 +467,8 @@ var testresults = {
 	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/603.2.5 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.5', date:'23-5-2017  14:53:16' }
 	],
 'writing-mode-vrl-forms-001.html': [
-	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', date:'17-8-2015  19:42:24' }, 
-	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12', date:'17-8-2015  20:34:6' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', date:'29-8-2024  14:49:38' },
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15', date:'29-8-2024  15:0:4' }, 
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:40.0) Gecko/20100101 Firefox/40.0', date:'17-8-2015  20:40:5' }, 
 	{browser:'Opera', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36 OPR/31.0.1889.99', date:'17-8-2015  20:41:55' }, 
 	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240', date:'17-8-2015  20:47:9' }, 
@@ -482,8 +482,8 @@ var testresults = {
 	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/603.2.5 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.5', date:'23-5-2017  14:53:22' }
 	],
 'writing-mode-vrl-forms-002.html': [
-	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', date:'17-8-2015  19:42:25' }, 
-	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12', date:'17-8-2015  20:34:7' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', date:'29-8-2024  14:49:38' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15', date:'29-8-2024  15:0:4' }, 
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:40.0) Gecko/20100101 Firefox/40.0', date:'17-8-2015  20:40:5' }, 
 	{browser:'Opera', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36 OPR/31.0.1889.99', date:'17-8-2015  20:41:55' }, 
 	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240', date:'17-8-2015  20:47:10' }, 
@@ -497,8 +497,8 @@ var testresults = {
 	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/603.2.5 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.5', date:'23-5-2017  14:53:24' }
 	],
 'writing-mode-vrl-forms-003.html': [
-	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', date:'17-8-2015  19:42:25' }, 
-	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12', date:'17-8-2015  20:34:7' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', date:'29-8-2024  14:49:38' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15', date:'29-8-2024  15:0:4' }, 
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:40.0) Gecko/20100101 Firefox/40.0', date:'17-8-2015  20:40:6' }, 
 	{browser:'Opera', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36 OPR/31.0.1889.99', date:'17-8-2015  20:41:56' }, 
 	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240', date:'17-8-2015  20:47:11' }, 
@@ -512,8 +512,8 @@ var testresults = {
 	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/603.2.5 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.5', date:'23-5-2017  14:53:26' }
 	],
 'writing-mode-vrl-forms-004.html': [
-	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', date:'17-8-2015  19:42:26' }, 
-	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12', date:'17-8-2015  20:34:8' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', date:'29-8-2024  14:49:38' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15', date:'29-8-2024  15:0:4' }, 
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:40.0) Gecko/20100101 Firefox/40.0', date:'17-8-2015  20:40:6' }, 
 	{browser:'Opera', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36 OPR/31.0.1889.99', date:'17-8-2015  20:41:56' }, 
 	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240', date:'17-8-2015  20:47:12' }, 
@@ -527,8 +527,8 @@ var testresults = {
 	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/603.2.5 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.5', date:'23-5-2017  14:53:27' }
 	],
 'writing-mode-vrl-forms-005.html': [
-	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', date:'17-8-2015  19:42:27' }, 
-	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12', date:'17-8-2015  20:34:9' }, 
+	{browser:'Chrome', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', date:'29-8-2024  14:49:38' }, 
+	{browser:'Safari', status:'pass', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15', date:'29-8-2024  15:0:4' }, 
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:40.0) Gecko/20100101 Firefox/40.0', date:'17-8-2015  20:40:7' }, 
 	{browser:'Opera', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36 OPR/31.0.1889.99', date:'17-8-2015  20:41:57' }, 
 	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240', date:'17-8-2015  20:47:13' }, 
@@ -542,8 +542,8 @@ var testresults = {
 	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/603.2.5 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.5', date:'23-5-2017  14:53:34' }
 	],
 'writing-mode-vrl-forms-006.html': [
-	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', date:'17-8-2015  19:42:27' }, 
-	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12', date:'17-8-2015  20:34:9' }, 
+	{browser:'Chrome', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', date:'29-8-2024  14:50:59' }, 
+	{browser:'Safari', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15', date:'29-8-2024  15:0:18' }, 
 	{browser:'Firefox', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:40.0) Gecko/20100101 Firefox/40.0', date:'17-8-2015  20:40:7' }, 
 	{browser:'Opera', status:'fail', ua:'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36 OPR/31.0.1889.99', date:'17-8-2015  20:41:57' }, 
 	{browser:'Edge', status:'fail', ua:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10240', date:'17-8-2015  20:47:15' }, 
