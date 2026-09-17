@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Emphasis mark position in vertical Japanese text</title>
+<meta name="assert" content="text-emphasis-position: over right; in a vertical-rl line the emphasis dot is drawn to the right of each character."/>
+<link rel="author" title="W3C Internationalization Working Group" href="https://www.w3.org/International/"/>
+<link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property"/>
+<style>
+body { font-family: sans-serif; }
+.test {
+  font-size: 1.5em;
+  writing-mode: vertical-rl;
+  text-emphasis: dot;
+  }
+</style>
+</head>
+<body>
+<h1>Emphasis mark position in vertical Japanese text</h1>
+
+<p>This book contains one test. It passes if both of the following are true.</p>
+<ol>
+<li>The Japanese text below runs vertically, from top to bottom.</li>
+<li>A small filled dot is drawn to the right of each character of that text.</li>
+</ol>
+
+<p>It fails if the text runs horizontally, if no dots are drawn at all, or if the dots are
+drawn anywhere other than to the right of the characters. If the reading system cannot lay
+text out vertically at all, record the result as not applicable.</p>
+
+<p class="test" xml:lang="ja" lang="ja">可能性を最大限に導き出すために</p>
+</body>
+</html>

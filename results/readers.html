@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Reading systems: Summarized test results</title>
+<meta name="description" content="Summarized results of running the internationalization tests in EPUB reading systems">
+<link rel="stylesheet" href="results.css">
+<style>
+body { font-family: Verdana, Geneva, sans-serif; line-height: 1.4; margin: 2em; }
+h1, h2 { font-weight: normal; }
+table.results { border-collapse: collapse; }
+table.results th, table.results td { border: 1px solid #CCC; padding: .4em .6em; text-align: center; }
+table.results th.title { text-align: left; }
+table.results td.none { background-color: azure; color: #999; }
+table.results td { min-width: 7em; }
+.intro { max-width: 45em; }
+</style>
+</head>
+
+<body>
+<h1>Reading systems: summarized test results</h1>
+
+<div class="intro">
+<p>These tests check how far EPUB reading systems support the internationalization features covered by the browser test suite. Each test is a single EPUB file. Reading systems also apply their own stylesheets and user settings, so browser results are not a reliable guide to what a reading system does.</p>
+
+<h2>How to run the tests</h2>
+
+<p>If you have Node.js, build the test books with <code>node tools/make-epubs.mjs</code>; the EPUB files appear next to the test sources in <a href="../readers/">readers/</a>. Open each <code>.epub</code> file in the reading system and compare what you see with the pass criteria at the top of the book itself. Record a result for every test you ran.</p>
+
+<h2>How to add a result</h2>
+
+<p>Add an entry to <a href="../readers/readers-data.js">readers/readers-data.js</a>, under the identifier of the test you ran. Use the reading system's name in the <code>reader</code> field, its version, the operating system you ran it on, and one of the <code>pass</code>, <code>fail</code>, <code>partial</code> or <code>skipped</code> status values. A reading system only appears in the table once all of its results are in the file, so a newly tested reading system adds a column without any change to this page.</p>
+
+<h2>Results</h2>
+</div>
+
+<div id="results"></div>
+
+<script src="../readers/readers-data.js"></script>
+<script>
+function readersWithResults (data) {
+	var readers = []
+	for (var test in data) {
+		for (var i = 0; i < data[test].length; i++) {
+			if (readers.indexOf(data[test][i].reader) === -1) readers.push(data[test][i].reader)
+			}
+		}
+	return readers
+	}
+
+function resultFor (results, reader) {
+	// later entries override earlier ones, as in the browser data files
+	var found = null
+	for (var i = 0; i < results.length; i++) {
+		if (results[i].reader === reader) found = results[i]
+		}
+	return found
+	}
+
+function describe (result) {
+	var parts = []
+	if (result.version) parts.push(result.reader + ' ' + result.version)
+	else parts.push(result.reader)
+	if (result.os) parts.push(result.os)
+	if (result.date) parts.push('tested ' + result.date)
+	if (result.notes) parts.push(result.notes)
+	return parts.join(', ')
+	}
+
+function drawResults () {
+	var readers = readersWithResults(readerresults)
+	var out = '<table class="results">\n<tr><th class="topleft">Test</th>'
+	for (var i = 0; i < readers.length; i++) out += '<th>' + readers[i] + '</th>'
+	out += '</tr>\n'
+
+	for (var test in readerresults) {
+		out += '<tr><th class="title"><a href="../readers/' + test + '/EPUB/content_001.xhtml" target="_blank">' + test + '</a></th>'
+		for (var i = 0; i < readers.length; i++) {
+			var result = resultFor(readerresults[test], readers[i])
+			if (result) out += '<td class="' + result.status + '" title="' + describe(result) + '">' + result.status + '</td>'
+			else out += '<td class="none">-</td>'
+			}
+		out += '</tr>\n'
+		}
+
+	out += '</table>'
+	document.getElementById('results').innerHTML = out
+	}
+
+drawResults()
+</script>
+</body>
+
+</html>
