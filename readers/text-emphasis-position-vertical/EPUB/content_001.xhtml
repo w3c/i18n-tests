@@ -10,8 +10,8 @@
 body { font-family: sans-serif; }
 section { margin: 2em 0; }
 h2 { font-size: 1.2em; }
-.assertion { color: #b95000; }
-.assertion h2 { color: black; }
+.assertion, .instructions { color: #b95000; }
+.assertion h2, .instructions h2 { color: black; }
 pre {
   padding: 1em;
   border: 1px solid #ccc;
@@ -36,7 +36,10 @@ pre {
 <section class="assertion" aria-labelledby="assertion-heading">
 <h2 id="assertion-heading">Assertion</h2>
 <p>text-emphasis-position: over right; in a vertical-rl line the emphasis dot is drawn to the right of each character.</p>
+</section>
 
+<section class="instructions" aria-labelledby="instructions-heading">
+<h2 id="instructions-heading">Instructions</h2>
 <p>This book contains one test. It passes if both of the following are true.</p>
 <ol>
 <li>The Japanese text below runs vertically, from top to bottom.</li>
