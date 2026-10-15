@@ -41,15 +41,17 @@ pre {
 
 <section class="instructions" aria-labelledby="instructions-heading">
 <h2 id="instructions-heading">Instructions</h2>
-<p>This book contains one test. It passes if both of the following are true.</p>
+<p>This book contains one test. First check that the Japanese text below runs vertically,
+from top to bottom. If it does not, record the result as <code>blocked</code> and note that
+vertical layout is unavailable, so emphasis mark positioning cannot be assessed.</p>
+<p>Once that prerequisite is met, it passes if both of the following are true.</p>
 <ol>
 <li>The Japanese text below runs vertically, from top to bottom.</li>
 <li>A small filled dot is drawn to the right of each character of that text.</li>
 </ol>
 
-<p>It fails if the text runs horizontally, if no dots are drawn at all, or if the dots are
-drawn anywhere other than to the right of the characters. If the reading system cannot lay
-text out vertically at all, record the result as not applicable.</p>
+<p>It fails if no dots are drawn at all, or if the dots are drawn anywhere other than to
+the right of the characters. Use <code>skipped</code> only if you did not run the test.</p>
 </section>
 
 <section aria-labelledby="source-heading">

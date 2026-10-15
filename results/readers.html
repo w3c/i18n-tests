@@ -13,6 +13,7 @@ table.results { border-collapse: collapse; }
 table.results th, table.results td { border: 1px solid #CCC; padding: .4em .6em; text-align: center; }
 table.results th.title { text-align: left; }
 table.results td.none { background-color: azure; color: #999; }
+table.results td.blocked { background-color: #eee; color: #333; }
 table.results td { min-width: 7em; }
 .intro { max-width: 45em; }
 </style>
@@ -24,18 +25,21 @@ table.results td { min-width: 7em; }
 <div class="intro">
 <p>These tests check how far EPUB reading systems support the internationalization features covered by the browser test suite. Each test is a single EPUB file. Reading systems also apply their own stylesheets and user settings, so browser results are not a reliable guide to what a reading system does.</p>
 
+
+<h2>Results</h2>
+</div>
+
+<div id="results"></div>
+
 <h2>How to run the tests</h2>
 
 <p>If you have Node.js, build the test books with <code>node tools/make-epubs.mjs</code>; the EPUB files appear next to the test sources in <a href="../readers/">readers/</a>. Open each <code>.epub</code> file in the reading system and compare what you see with the pass criteria at the top of the book itself. Record a result for every test you ran.</p>
 
 <h2>How to add a result</h2>
 
-<p>Add an entry to <a href="../readers/readers-data.js">readers/readers-data.js</a>, under the identifier of the test you ran. Use the reading system's name in the <code>reader</code> field, its version, the operating system you ran it on, and one of the <code>pass</code>, <code>fail</code>, <code>partial</code> or <code>skipped</code> status values. A reading system only appears in the table once all of its results are in the file, so a newly tested reading system adds a column without any change to this page.</p>
+<p>Add an entry to <a href="../readers/readers-data.js">readers/readers-data.js</a>, under the identifier of the test you ran. Use the reading system's name in the <code>reader</code> field, its version, the operating system you ran it on, and one of the <code>pass</code>, <code>fail</code>, <code>partial</code>, <code>blocked</code> or <code>skipped</code> status values. A reading system only appears in the table once all of its results are in the file, so a newly tested reading system adds a column without any change to this page.</p>
 
-<h2>Results</h2>
-</div>
-
-<div id="results"></div>
+<p>Use <code>blocked</code> when an unmet prerequisite prevents assessment of the feature under test, and explain the prerequisite in <code>notes</code>. For example, emphasis mark positioning in vertical text is blocked if vertical layout is unavailable. Reserve <code>skipped</code> for tests that were not run.</p>
 
 <script src="../readers/readers-data.js"></script>
 <script>
