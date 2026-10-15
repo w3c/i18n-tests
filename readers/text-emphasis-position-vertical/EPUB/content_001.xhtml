@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Emphasis mark position in vertical Japanese text</title>
+<meta name="assert" content="text-emphasis-position: over right; in a vertical-rl line the emphasis dot is drawn to the right of each character."/>
+<link rel="author" title="W3C Internationalization Working Group" href="https://www.w3.org/International/"/>
+<link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property"/>
+<style>
+body { font-family: sans-serif; }
+section { margin: 2em 0; }
+h2 { font-size: 1.2em; }
+.assertion, .instructions { color: #b95000; }
+.assertion h2, .instructions h2 { color: black; }
+pre {
+  padding: 1em;
+  border: 1px solid #ccc;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  }
+.rendered {
+  padding: 1em;
+  border: 1px solid orange;
+  }
+/* the CSS above is not part of the test */
+.test {
+  font-size: 1.5em;
+  writing-mode: vertical-rl;
+  text-emphasis: dot;
+  text-emphasis-position: over right;
+  }
+</style>
+</head>
+<body>
+<h1>Emphasis mark position in vertical Japanese text</h1>
+
+<section class="assertion" aria-labelledby="assertion-heading">
+<h2 id="assertion-heading">Assertion</h2>
+<p>text-emphasis-position: over right; in a vertical-rl line the emphasis dot is drawn to the right of each character.</p>
+</section>
+
+<section class="instructions" aria-labelledby="instructions-heading">
+<h2 id="instructions-heading">Instructions</h2>
+<p>This book contains one test. First check that the Japanese text below runs vertically,
+from top to bottom. If it does not, record the result as <code>blocked</code> and note that
+vertical layout is unavailable, so emphasis mark positioning cannot be assessed.</p>
+<p>Once that prerequisite is met, it passes if both of the following are true.</p>
+<ol>
+<li>The Japanese text below runs vertically, from top to bottom.</li>
+<li>A small filled dot is drawn to the right of each character of that text.</li>
+</ol>
+
+<p>It fails if no dots are drawn at all, or if the dots are drawn anywhere other than to
+the right of the characters. Use <code>skipped</code> only if you did not run the test.</p>
+</section>
+
+<section aria-labelledby="source-heading">
+<h2 id="source-heading">Source code</h2>
+<pre><code>.test {
+  font-size: 1.5em;
+  writing-mode: vertical-rl;
+  text-emphasis: dot;
+  text-emphasis-position: over right;
+  }</code></pre>
+<pre><code>&lt;p class="test" xml:lang="ja" lang="ja"&gt;可能性を最大限に導き出すために&lt;/p&gt;</code></pre>
+</section>
+
+<section aria-labelledby="rendered-heading">
+<h2 id="rendered-heading">Rendered result</h2>
+<div class="rendered">
+<p class="test" xml:lang="ja" lang="ja">可能性を最大限に導き出すために</p>
+</div>
+</section>
+</body>
+</html>

@@ -1,1 +1,4 @@
 *.DS_Store
+
+# EPUB files are built from the unpacked sources in readers/ by tools/make-epubs.mjs
+readers/*.epub
