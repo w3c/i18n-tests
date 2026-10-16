@@ -21,7 +21,7 @@ var ptr = 0; // current index in tests array
 // load the appropriate db file	
 if (! base.match(/\.\./) && ! batch.match(/\.\./)) {
     var db = document.createElement('script')
-    db.src = 'batches/' + batch +'.json'
+    db.src = 'batches/' + batch +'.js'
     db.async = false
     document.head.appendChild(db)
     }

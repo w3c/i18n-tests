@@ -1,24 +1,24 @@
 <?php
-# this file creates a .json file in the batches directory
-# the .json filename is the same as a related xxx-batch.txt file
+# this file creates a .js metadata file in the batches directory
+# the .js filename is the same as a related xxx-batch.txt file
 # the xxx is passed to this php script as 'base'
-# this script looks at each test file in the batch list, and sucks out information which it arranges in json format
+# this script looks at each test file in the batch list, and sucks out information which it arranges as JavaScript
 # that information is used by the i18n test framework and results pages
 
 // create a backup file
 $iteration = '';
-if (file_exists("../batches/".$_GET['batch'].".json")) {
-	if (file_exists("../batches/".$_GET['batch']."-backup.json")) {
+if (file_exists("../batches/".$_GET['batch'].".js")) {
+	if (file_exists("../batches/".$_GET['batch']."-backup.js")) {
 		$iteration = 1;
-		while (file_exists("../batches/".$_GET['batch']."-backup".strval($iteration).".json")) {
+		while (file_exists("../batches/".$_GET['batch']."-backup".strval($iteration).".js")) {
 			$iteration++;
 			}
 		}
 	$backedup = false;
-	$backedup = rename("../batches/".$_GET['batch'].".json", "../batches/".$_GET['batch']."-backup".strval($iteration).".json");
+	$backedup = rename("../batches/".$_GET['batch'].".js", "../batches/".$_GET['batch']."-backup".strval($iteration).".js");
 	if ($backedup) echo "Old file backed up.<br>";
 	}
-else { echo 'No file found: '."../batches/".$_GET['batch'].".json"; }
+else { echo 'No file found: '."../batches/".$_GET['batch'].".js"; }
 
 
 define("testname", 0);
@@ -101,7 +101,7 @@ function getData ($t, $file, $base) {
 <html  lang="en" >
 <head>
 <meta charset="utf-8"/>
-<title>JSON file generator</title>
+<title>Batch metadata file generator</title>
 <link rel="stylesheet" type="text/css" href="./runstyle.css">
 <script src="runfunctions.js"></script>
 <script>
@@ -126,8 +126,8 @@ for ($i=0;$i<count($levels);$i++) { $backuppath .= '../'; }
 
 $out .= "['".$backuppath."testend','','','','']\n\n]\n// ".$t." tests.";
 
-	$numbytes = file_put_contents( '../batches/'.$_GET['batch'].'.json', "$out");
-	chmod("../batches/".$_GET['batch'].'.json', 0777);
+	$numbytes = file_put_contents( '../batches/'.$_GET['batch'].'.js', "$out");
+	chmod("../batches/".$_GET['batch'].'.js', 0777);
 
 echo '<textarea style="width:100%;height:1000px;">'.$out.'</textarea>';
 
