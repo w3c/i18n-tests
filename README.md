@@ -40,7 +40,7 @@ We group tests into batches. There is typically one results page per batch, but 
 
 - **Batch file** (`batches/*-batch.txt`): A list of test filenames that make up a batch, one per line
 - **Base**: The path from the root of the repo to the location of the tests listed in the batch file (e.g., `css-text/text-transform`)
-- **JSON file** (`batches/*.json`): Contains metadata such as assertion, title, etc. for each test in the batch (extracted from test `<meta>` tags)
+- **Batch metadata file** (`batches/<batch>.js`): A JavaScript file containing metadata such as assertion, title, etc. for each test in the batch (extracted from test `<meta>` tags)
 - **Data file** (`batches/*-data.js`): Stores results for major browsers. There's a tool available for quickly merging new results with existing ones
 
 ## Moving tests to the test framework
@@ -49,7 +49,7 @@ The process of adding new tests to the test framework is explained at https://w3
 
 That page helps you with the following steps. In most cases it is just a question of ensuring you give the name and path for the batch and then press a button to generate files or data.
 
-1. Setting up a batch file and associated data and json files once you have a set of test files to add to the test framework
+1. Setting up a batch file and associated data and metadata files once you have a set of test files to add to the test framework
 2. Running the tests to check that they work
 3. Creating a partially filled-out results file for the batch from a template
 4. Adding test results to the data file

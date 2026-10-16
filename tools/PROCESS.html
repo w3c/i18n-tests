@@ -16,7 +16,7 @@ form { border: 1px solid #F67070; padding: 10px; }
 <body>
 <h1>Process for adding tests to the framework &amp; results pages</h1>
 
-<p>This page helps you create the additional support files needed for the results pages and the test framework. These are: <code>BATCHNAME-batch.txt</code>, <code>BATCHNAME.json</code>, <code>BATCHNAME-data.js</code>, all in the <code>batches</code> directory; and in the <code>results</code> directory, for each results page, <code>FILENAME.html</code> and <code>FILENAME-data/translations.js</code>.</p>
+<p>This page helps you create the additional support files needed for the results pages and the test framework. These are: <code>BATCHNAME-batch.txt</code>, <code>BATCHNAME.js</code>, <code>BATCHNAME-data.js</code>, all in the <code>batches</code> directory; and in the <code>results</code> directory, for each results page, <code>FILENAME.html</code> and <code>FILENAME-data/translations.js</code>.</p>
 
 <p class="note"><strong>Note:</strong> This page requires a local PHP server to function. The "do it" buttons call PHP scripts in the <code>tools</code> directory.</p>
 <h1 class="major_part">Create the tests</h1>
@@ -61,18 +61,18 @@ form { border: 1px solid #F67070; padding: 10px; }
 <button type="submit">do it</button>
 </div>
 </form>
-<h2>Create a json file</h2>
-<p>The JSON file contains metadata extracted from each test file, and is used by the test runner and the results page. It will be saved to <code>batches/BATCHNAME.json</code>.</p>
+<h2>Create a batch metadata file</h2>
+<p>The JavaScript file contains metadata extracted from each test file, and is used by the test runner and the results page. It will be saved to <code>batches/BATCHNAME.js</code>.</p>
 <form action="../tools/_make_json.php">
 <input id="baseShadow_json" type="hidden" name="base">
 <input id="batchShadow_json" type="hidden" name="batch">
 <input id="fnameShadow_json" type="hidden" name="filename">
-<p>Create a json file for this batch: <button onclick="
+<p>Create a metadata file for this batch: <button onclick="
     document.getElementById('baseShadow_json').value=document.getElementById('base').value;
     document.getElementById('batchShadow_json').value=document.getElementById('batchname').value;"
     type="submit">do it</button></p>
 </form>
-<p class="note"><strong>Note:</strong> You need to recreate the .json file each time you change the -batch.txt file, or change the metadata inside the test files themselves.</p>
+<p class="note"><strong>Note:</strong> You need to recreate the metadata file each time you change the -batch.txt file, or change the metadata inside the test files themselves.</p>
 
 
 
