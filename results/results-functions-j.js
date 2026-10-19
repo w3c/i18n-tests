@@ -341,7 +341,7 @@ var assertion = 3
 var title = 0
 var help = 1
 
-// reading from the batches/...json file, reformat the test object
+// reading from the batch metadata script, reformat the test object
 temp = {}
 for (let i=0;i<tests.length-1;i++) {
     tempName = tests[i].shift()
