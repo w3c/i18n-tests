@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="pub-id">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <dc:identifier id="pub-id">text-emphasis-position-vertical</dc:identifier>
-    <dc:title>Emphasis mark position in vertical Japanese text</dc:title>
+    <dc:identifier id="pub-id">https://w3c.github.io/i18n-tests/readers/text-emphasis-position-horizontal-under/</dc:identifier>
+    <dc:title>Emphasis mark position: under in horizontal Japanese text</dc:title>
+    <dc:language>ja</dc:language>
     <dc:language>en</dc:language>
     <dc:creator>W3C Internationalization Working Group</dc:creator>
     <dc:publisher>W3C</dc:publisher>
-    <dc:date>2026-09-16</dc:date>
-    <dc:description>Checks that text-emphasis-position: over right draws the emphasis dot to the right of each character in a vertical-rl line of Japanese text.</dc:description>
-    <dc:coverage>Internationalization</dc:coverage>
+    <dc:date>2026-10-19</dc:date>
+    <dc:description>Checks that text-emphasis-position: under right draws the emphasis dot below each character in a horizontal-tb line of Japanese text.</dc:description>
+    <dc:subject>Internationalization</dc:subject>
     <link rel="dcterms:rights" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document"/>
     <link rel="dcterms:rightsHolder" href="https://www.w3.org"/>
     <meta property="dcterms:isReferencedBy">https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property</meta>
-    <meta property="dcterms:modified">2026-09-24T00:00:00Z</meta>
+    <meta property="dcterms:modified">2026-10-19T00:00:00Z</meta>
   </metadata>
   <manifest>
     <item id="nav" properties="nav" href="nav.xhtml" media-type="application/xhtml+xml"/>

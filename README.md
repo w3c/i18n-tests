@@ -1,9 +1,10 @@
 # i18n-tests
 This repository contains most of the tests created for use with the W3C Internationalization test suite and others that are more interactive in nature.  The majority test international features of W3C specifications, but there are others that just explore browser and font support for certain international features.
 
-There are two main types of test:
-1. standard tests written in HTML files that are accessed via the i18n test suite, and
-2. interactive tests, which are accessed via test script pages in the wiki of this repository.
+There are three main types of test:
+1. standard tests written in HTML files that are accessed via the i18n test suite,
+2. interactive tests, which are accessed via test script pages in the wiki of this repository, and
+3. EPUB reading-system tests, which are single EPUB books under `readers/`.
 
 To find tests, go to the [Test Index page](https://www.w3.org/International/i18n-tests/).
 
@@ -18,6 +19,10 @@ You can then take a snapshot of the settings and add that as a URL to a wiki pag
 For more information, see [Working with interactive tests](https://www.w3.org/International/i18n-drafts/pages/interactive_tests).
 
 Tests in a test script could be converted to standard tests at some point if resources become available to do the work.
+
+## EPUB reading system tests
+
+The sources live in `readers/<test-id>/EPUB/`; the built books (`readers/<test-id>.epub`) and the generated registry (`readers/tests.js`) are committed so that GitHub Pages can serve them. Build with `node tools/make-epubs.mjs` (Node.js 18+ and `zip` are required), record results in `readers/readers-data.js`, and see `readers/README.md` for the full workflow. The [results page](https://w3c.github.io/i18n-tests/results/readers.html) lists every test.
 
 ## Standard tests
 
@@ -42,6 +47,7 @@ We group tests into batches. There is typically one results page per batch, but 
 - **Base**: The path from the root of the repo to the location of the tests listed in the batch file (e.g., `css-text/text-transform`)
 - **Batch metadata file** (`batches/<batch>.js`): A JavaScript file containing metadata such as assertion, title, etc. for each test in the batch (extracted from test `<meta>` tags)
 - **Data file** (`batches/*-data.js`): Stores results for major browsers. There's a tool available for quickly merging new results with existing ones
+- **Reading-system tests** (`readers/`): One EPUB book per feature, its sources, a generated test registry (`tests.js`), and the recorded results in `readers-data.js`
 
 ## Moving tests to the test framework
 

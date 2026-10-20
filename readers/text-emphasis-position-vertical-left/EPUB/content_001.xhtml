@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Emphasis mark position in vertical Japanese text</title>
-<meta name="assert" content="text-emphasis-position: over right; in a vertical-rl line the emphasis dot is drawn to the right of each character."/>
+<title>Emphasis mark position: left in vertical Japanese text</title>
+<meta name="assert" content="text-emphasis-position: over left; in a vertical-rl line the emphasis dot is drawn to the left of each character."/>
 <link rel="author" title="W3C Internationalization Working Group" href="https://www.w3.org/International/"/>
 <link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property"/>
 <style>
@@ -27,16 +27,18 @@ pre {
   font-size: 1.5em;
   writing-mode: vertical-rl;
   text-emphasis: dot;
-  text-emphasis-position: over right;
+  text-emphasis-position: over left;
+  break-inside: avoid;
   }
 </style>
 </head>
-<body>
-<h1>Emphasis mark position in vertical Japanese text</h1>
+<body epub:type="bodymatter">
+<h1>Emphasis mark position: left in vertical Japanese text</h1>
 
 <section class="assertion" aria-labelledby="assertion-heading">
 <h2 id="assertion-heading">Assertion</h2>
-<p>text-emphasis-position: over right; in a vertical-rl line the emphasis dot is drawn to the right of each character.</p>
+<p><code>text-emphasis-position: over left</code>; in a <code>vertical-rl</code> line the emphasis dot is drawn to the <strong>left</strong> of each character.</p>
+<p>This test uses a value other than the initial value (<code>over right</code>), so a reading system that ignores <code>text-emphasis-position</code> will draw the dots on the right and fail.</p>
 </section>
 
 <section class="instructions" aria-labelledby="instructions-heading">
@@ -44,14 +46,19 @@ pre {
 <p>This book contains one test. First check that the Japanese text below runs vertically,
 from top to bottom. If it does not, record the result as <code>blocked</code> and note that
 vertical layout is unavailable, so emphasis mark positioning cannot be assessed.</p>
-<p>Once that prerequisite is met, it passes if both of the following are true.</p>
+<p>If the text runs vertically, it passes if both of the following are true.</p>
 <ol>
 <li>The Japanese text below runs vertically, from top to bottom.</li>
-<li>A small filled dot is drawn to the right of each character of that text.</li>
+<li>A small filled dot is drawn to the <strong>left</strong> of each character of that text.</li>
 </ol>
-
-<p>It fails if no dots are drawn at all, or if the dots are drawn anywhere other than to
-the right of the characters. Use <code>skipped</code> only if you did not run the test.</p>
+<p>It fails if no dots are drawn at all, or if the dots are drawn on the right of the
+characters or anywhere else. Record <code>partial</code> if dots are drawn on the left but
+are clipped, overlap the characters, or are missing for some characters; explain what you
+saw in <code>notes</code>.</p>
+<p>Use the reading system's default settings where possible. If publisher styles are
+disabled, record <code>blocked</code> and note that the author CSS was not applied. If a
+font, theme, or font-size override changes the result, record it in <code>notes</code>.
+Use <code>skipped</code> only if you did not run the test.</p>
 </section>
 
 <section aria-labelledby="source-heading">
@@ -60,15 +67,15 @@ the right of the characters. Use <code>skipped</code> only if you did not run th
   font-size: 1.5em;
   writing-mode: vertical-rl;
   text-emphasis: dot;
-  text-emphasis-position: over right;
+  text-emphasis-position: over left;
   }</code></pre>
-<pre><code>&lt;p class="test" xml:lang="ja" lang="ja"&gt;可能性を最大限に導き出すために&lt;/p&gt;</code></pre>
+<pre><code>&lt;p class="test" xml:lang="ja" lang="ja"&gt;可能性を最大限に&lt;/p&gt;</code></pre>
 </section>
 
 <section aria-labelledby="rendered-heading">
 <h2 id="rendered-heading">Rendered result</h2>
 <div class="rendered">
-<p class="test" xml:lang="ja" lang="ja">可能性を最大限に導き出すために</p>
+<p class="test" xml:lang="ja" lang="ja">可能性を最大限に</p>
 </div>
 </section>
 </body>

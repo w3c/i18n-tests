@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="pub-id">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="pub-id">https://w3c.github.io/i18n-tests/readers/text-emphasis-position-vertical-left/</dc:identifier>
+    <dc:title>Emphasis mark position: left in vertical Japanese text</dc:title>
+    <dc:language>ja</dc:language>
+    <dc:language>en</dc:language>
+    <dc:creator>W3C Internationalization Working Group</dc:creator>
+    <dc:publisher>W3C</dc:publisher>
+    <dc:date>2026-10-19</dc:date>
+    <dc:description>Checks that text-emphasis-position: over left draws the emphasis dot to the left of each character in a vertical-rl line of Japanese text.</dc:description>
+    <dc:subject>Internationalization</dc:subject>
+    <link rel="dcterms:rights" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document"/>
+    <link rel="dcterms:rightsHolder" href="https://www.w3.org"/>
+    <meta property="dcterms:isReferencedBy">https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property</meta>
+    <meta property="dcterms:modified">2026-10-19T00:00:00Z</meta>
+  </metadata>
+  <manifest>
+    <item id="nav" properties="nav" href="nav.xhtml" media-type="application/xhtml+xml"/>
+    <item id="content_001" href="content_001.xhtml" media-type="application/xhtml+xml"/>
+  </manifest>
+  <spine>
+    <itemref idref="content_001"/>
+  </spine>
+</package>

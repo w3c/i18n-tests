@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Emphasis mark position: under in horizontal Japanese text</title>
+<meta name="assert" content="text-emphasis-position: under right; in a horizontal-tb line the emphasis dot is drawn below each character."/>
+<link rel="author" title="W3C Internationalization Working Group" href="https://www.w3.org/International/"/>
+<link rel="help" href="https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property"/>
+<style>
+body { font-family: sans-serif; }
+section { margin: 2em 0; }
+h2 { font-size: 1.2em; }
+.assertion, .instructions { color: #b95000; }
+.assertion h2, .instructions h2 { color: black; }
+pre {
+  padding: 1em;
+  border: 1px solid #ccc;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  }
+.rendered {
+  padding: 1em;
+  border: 1px solid orange;
+  }
+/* the CSS above is not part of the test */
+.test {
+  font-size: 1.5em;
+  writing-mode: horizontal-tb;
+  text-emphasis: dot;
+  text-emphasis-position: under right;
+  break-inside: avoid;
+  }
+</style>
+</head>
+<body epub:type="bodymatter">
+<h1>Emphasis mark position: under in horizontal Japanese text</h1>
+
+<section class="assertion" aria-labelledby="assertion-heading">
+<h2 id="assertion-heading">Assertion</h2>
+<p><code>text-emphasis-position: under right</code>; in a <code>horizontal-tb</code> line the emphasis dot is drawn <strong>below</strong> each character. The <code>right</code> component is ignored in horizontal writing mode.</p>
+<p>This test uses a value other than the initial value (<code>over right</code>), so a reading system that ignores <code>text-emphasis-position</code> will draw the dots above the text and fail.</p>
+</section>
+
+<section class="instructions" aria-labelledby="instructions-heading">
+<h2 id="instructions-heading">Instructions</h2>
+<p>This book contains one test. Check that the Japanese text below runs horizontally,
+from left to right. If it does not, record the result as <code>blocked</code> and note that
+horizontal layout is unavailable, so emphasis mark positioning cannot be assessed.</p>
+<p>If the text runs horizontally, it passes if both of the following are true.</p>
+<ol>
+<li>The Japanese text below runs horizontally, from left to right.</li>
+<li>A small filled dot is drawn <strong>below</strong> each character of that text.</li>
+</ol>
+<p>It fails if no dots are drawn at all, or if the dots are drawn above the characters or
+anywhere else. Record <code>partial</code> if dots are drawn below but are clipped, overlap
+the characters, or are missing for some characters; explain what you saw in
+<code>notes</code>.</p>
+<p>Use the reading system's default settings where possible. If publisher styles are
+disabled, record <code>blocked</code> and note that the author CSS was not applied. If a
+font, theme, or font-size override changes the result, record it in <code>notes</code>.
+Use <code>skipped</code> only if you did not run the test.</p>
+</section>
+
+<section aria-labelledby="source-heading">
+<h2 id="source-heading">Source code</h2>
+<pre><code>.test {
+  font-size: 1.5em;
+  writing-mode: horizontal-tb;
+  text-emphasis: dot;
+  text-emphasis-position: under right;
+  }</code></pre>
+<pre><code>&lt;p class="test" xml:lang="ja" lang="ja"&gt;可能性を最大限に&lt;/p&gt;</code></pre>
+</section>
+
+<section aria-labelledby="rendered-heading">
+<h2 id="rendered-heading">Rendered result</h2>
+<div class="rendered">
+<p class="test" xml:lang="ja" lang="ja">可能性を最大限に</p>
+</div>
+</section>
+</body>
+</html>

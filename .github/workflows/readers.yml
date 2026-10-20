@@ -1,0 +1,60 @@
+name: EPUB reading system tests
+
+on:
+  push:
+    paths:
+      - 'readers/**'
+      - 'results/readers.html'
+      - 'tools/**'
+      - '.github/workflows/readers.yml'
+  pull_request:
+    paths:
+      - 'readers/**'
+      - 'results/readers.html'
+      - 'tools/**'
+      - '.github/workflows/readers.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check generated test registry
+        run: node tools/make-readers-index.mjs --check
+
+      - name: Validate results data
+        run: node tools/check-readers.mjs
+
+      - name: Build EPUBs
+        run: node tools/make-epubs.mjs
+
+      - name: Check committed EPUBs are up to date
+        run: node tools/check-epubs.mjs
+
+      - name: Run builder and data tests
+        run: node --test tools/test/*.test.mjs
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Install EPUBCheck
+        run: |
+          curl -fsSL -o /tmp/epubcheck.zip https://github.com/w3c/epubcheck/releases/download/v5.4.0/epubcheck-5.4.0.zip
+          unzip -q /tmp/epubcheck.zip -d /tmp
+
+      - name: Validate EPUBs
+        run: |
+          for book in readers/*.epub; do
+            java -jar /tmp/epubcheck-5.4.0/epubcheck.jar "$book"
+          done
