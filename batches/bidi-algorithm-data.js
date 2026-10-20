@@ -251,7 +251,8 @@ var testresults = {
 	{"browser":"Edge", "status":"pass", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063", "date":"14-6-2017  16:12:32" }, 
 	{"browser":"Chrome", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36", "date":"20-1-2020  13:17:20" }, 
 	{"browser":"BlinkEdge", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.53 Safari/537.36 Edg/80.0.361.33", "date":"20-1-2020  13:33:32" }, 
-	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15", "date":"21-9-2022  15:15:25", "notes":"" }
+	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15", "date":"21-9-2022  15:15:25", "notes":"" }, 
+	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0 Safari/605.1.15", "date":"20-10-2026  3:46:2", "notes":"" }
 	],
 "brackets-002.html": [
 	{"browser":"Firefox", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:54.0) Gecko/20100101 Firefox/54.0", "date":"14-6-2017  15:54:39" }, 
@@ -260,7 +261,8 @@ var testresults = {
 	{"browser":"Edge", "status":"pass", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063", "date":"14-6-2017  16:12:33" }, 
 	{"browser":"Chrome", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36", "date":"20-1-2020  13:17:21" }, 
 	{"browser":"BlinkEdge", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.53 Safari/537.36 Edg/80.0.361.33", "date":"20-1-2020  13:33:32" }, 
-	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15", "date":"21-9-2022  15:15:27", "notes":"" }
+	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15", "date":"21-9-2022  15:15:27", "notes":"" }, 
+	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0 Safari/605.1.15", "date":"20-10-2026  3:46:2", "notes":"" }
 	],
 "brackets-003.html": [
 	{"browser":"Firefox", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:54.0) Gecko/20100101 Firefox/54.0", "date":"14-6-2017  15:54:40" }, 
@@ -269,7 +271,8 @@ var testresults = {
 	{"browser":"Edge", "status":"pass", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063", "date":"14-6-2017  16:12:34" }, 
 	{"browser":"Chrome", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36", "date":"20-1-2020  13:17:22" }, 
 	{"browser":"BlinkEdge", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.53 Safari/537.36 Edg/80.0.361.33", "date":"20-1-2020  13:33:33" }, 
-	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15", "date":"21-9-2022  15:15:29", "notes":"" }
+	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15", "date":"21-9-2022  15:15:29", "notes":"" }, 
+	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0 Safari/605.1.15", "date":"20-10-2026  3:46:2", "notes":"" }
 	],
 "brackets-010.html": [
 	{"browser":"Firefox", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:54.0) Gecko/20100101 Firefox/54.0", "date":"14-6-2017  15:54:41" }, 
@@ -278,6 +281,7 @@ var testresults = {
 	{"browser":"Edge", "status":"pass", "ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063", "date":"14-6-2017  16:12:36" }, 
 	{"browser":"Chrome", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36", "date":"20-1-2020  13:17:23" }, 
 	{"browser":"BlinkEdge", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.53 Safari/537.36 Edg/80.0.361.33", "date":"20-1-2020  13:33:33" }, 
-	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15", "date":"21-9-2022  15:15:30", "notes":"" }
+	{"browser":"Safari", "status":"fail", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15", "date":"21-9-2022  15:15:30", "notes":"" }, 
+	{"browser":"Safari", "status":"pass", "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0 Safari/605.1.15", "date":"20-10-2026  3:46:2", "notes":"" }
 	]
 }
