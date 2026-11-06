@@ -121,6 +121,7 @@ overflow: hidden;
     }
 </style>
 <style id="css_code"></style>
+<script src="../fonts/interactive_functions.js"> </script>
 <script src="settings/interactive_functions.js"> </script>
 </head>
 <body>
@@ -321,39 +322,51 @@ function buildFontList(input) {
     const container = document.getElementById("font_selector")
     if (!container) return
 
+    // Build the list with DOM methods: the font names come from a URL
+    // parameter, so they must never be interpolated into HTML or inline JS.
+    const advice = document.createElement("div")
+    advice.className = "advice"
+    advice.textContent = "Mouse over or tap on a font name to apply it."
+    const list = document.createElement("div")
+    list.id = "fontlist"
+
     const items = input.split(",").map(s => s.trim())
-    let html = `<div class="advice">Mouse over or tap on a font name to apply it.</div><div id="fontlist">`
-    let currentLine = ""
+    let currentLine = null
+
+    function flushLine() {
+        if (!currentLine) return
+        list.appendChild(currentLine)
+        currentLine = null
+        }
 
     items.forEach(item => {
         if (item.toLowerCase().startsWith("title:")) {
-            // Flush previous line if it exists
-            if (currentLine) {
-                html += `<p>${currentLine}</p>`
-                currentLine = ""
-                }
-            const title = item.slice(6).trim()
-            currentLine = `<strong>${title}</strong>`
+            flushLine()
+            currentLine = document.createElement("p")
+            const title = document.createElement("strong")
+            title.textContent = item.slice(6).trim()
+            currentLine.appendChild(title)
             }
         else {
-            const safeFont = item.replace(/"/g, '&quot;');
-            const span = `
-            <span 
-              style="cursor:pointer"
-              onmouseover="document.getElementById('test').style.fontFamily='${safeFont}'"
-              onclick="document.getElementById('test').style.fontFamily='${safeFont}'"
-            >${safeFont}</span>
-            `;
-            currentLine += ` • ${span}`
+            if (!currentLine) currentLine = document.createElement("p")
+            currentLine.appendChild(document.createTextNode(" • "))
+            const span = document.createElement("span")
+            span.style.cursor = "pointer"
+            span.textContent = item
+            const applyFont = () => {
+                const test = document.getElementById("test")
+                if (test) test.style.fontFamily = item
+                }
+            span.addEventListener("mouseover", applyFont)
+            span.addEventListener("click", applyFont)
+            currentLine.appendChild(span)
             }
         })
 
-    // Flush final line
-    if (currentLine) {
-    html += `<p>${currentLine}</p></div>`
-    }
-
-    container.innerHTML = html
+    flushLine()
+    while (container.firstChild) container.removeChild(container.firstChild)
+    container.appendChild(advice)
+    container.appendChild(list)
     }
 
 

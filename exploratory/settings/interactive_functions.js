@@ -19,22 +19,9 @@ document.getElementById('sizeOfFont').textContent = value
 }
 
 
-function setText (markup) {
-if (markup.includes('<script') || markup.includes('../')) {
-    alert( "Badly formed text!" )
-    return
-    }
-document.getElementById('test').innerHTML = markup
-}
-
-
 function setCSS (css) {
-
-if (css.includes('<script') || css.includes('../')) {
-    document.alert( "Badly formed text!" )
-    return
-    }
-document.getElementById('css_code').innerHTML = css
+// #css_code is a <style> element: set its text, never markup.
+document.getElementById('css_code').textContent = css
 }
 
 

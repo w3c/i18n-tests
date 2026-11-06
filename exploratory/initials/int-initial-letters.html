@@ -33,7 +33,7 @@ if (initialLetters) properties += 'initial-letters: '+initialLetters+';'
 if (webkitInitialLetters) properties += '-webkit-initial-letter: '+webkitInitialLetters+';'
 if (initialLettersAlign) properties += 'initial-letters-align: '+initialLettersAlign+';'
 if (initialLetters || webkitInitialLetters || initialLettersAlign) properties += ' }'
-document.getElementById('computedStyle').innerHTML = properties
+document.getElementById('computedStyle').textContent = properties
 }
 
 function deleteCP () {

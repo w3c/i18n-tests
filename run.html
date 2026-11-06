@@ -8,18 +8,23 @@
 <script>
 // get parameters
 var firstTest = ''
-parameters = location.search.split('&');
-parameters[0] = parameters[0].substring(1);
-for (var p=0;p<parameters.length;p++) {  
-    pairs = parameters[p].split('=');
-    if (pairs[0] == 'base') { if (pairs[1]) { var base = pairs[1] } }
-    if (pairs[0] == 'batch') { if (pairs[1]) { var batch = pairs[1] } }
-    if (pairs[0] == 'test') { if (pairs[1]) { var testparam = pairs[1] } }
+var parameters = new URLSearchParams(location.search)
+var base = parameters.get('base') || ''
+var batch = parameters.get('batch') || ''
+var testparam = parameters.get('test') || ''
+
+// base builds the test iframe URL and batch builds a script URL, so both must
+// be plain relative paths: no scheme, host or absolute path, and no '..'.
+function isSafePath (value) {
+    return value !== '' &&
+        /^[A-Za-z0-9][A-Za-z0-9._\/-]*$/.test(value) &&
+        !value.includes('..') &&
+        !value.includes('//')
     }
 
 var ptr = 0; // current index in tests array
 // load the appropriate db file	
-if (! base.match(/\.\./) && ! batch.match(/\.\./)) {
+if (isSafePath(base) && isSafePath(batch)) {
     var db = document.createElement('script')
     db.src = 'batches/' + batch +'.js'
     db.async = false
@@ -34,6 +39,7 @@ iframe { height: 800px; width: 80%; border: 1px solid #CCC; }
 </style>
 <script>
 function initialise () {  
+    if (typeof tests === 'undefined') return // the batch file failed to load
     // set select options
     for (let t=0; t<tests.length; t++) {
         var option = document.createElement('option')
@@ -43,14 +49,11 @@ function initialise () {
         }
     
     // display the requested test
+    // testparam is only ever compared with the names in the batch, so it
+    // cannot be used to point the iframe at an arbitrary URL.
     if (testparam) {
-        if (testparam.match("/\.\./")) {
-            firstTest = ''
-            }
-        else {
-            for (let t=0;t<tests.length;t++) {
-                if (tests[t][0] === testparam) { firstTest = t; break; }
-                } 
+        for (let t=0;t<tests.length;t++) {
+            if (tests[t][0] === testparam) { firstTest = t; break; }
             }
         if (firstTest === '') { alert('Bad test name.'); firstTest = 0; }
         }
